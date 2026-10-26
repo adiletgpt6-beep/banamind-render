@@ -1,0 +1,44 @@
+[
+  {
+    "path": "muslimkids-threads-of-wonder/public/fonts/montserrat-cyrillic-500-normal.woff2",
+    "sha": "0e7627f9c73f20467a8cc39ee40ee813ef6c9a34",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "muslimkids-threads-of-wonder/public/fonts/montserrat-cyrillic-700-normal.woff2",
+    "sha": "cd7efd3729b49759727bf762460f5973a805a1e5",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "muslimkids-threads-of-wonder/public/fonts/montserrat-cyrillic-800-normal.woff2",
+    "sha": "1637bd89154537f7626dc34dadc373271b559087",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "muslimkids-threads-of-wonder/public/fonts/montserrat-latin-500-normal.woff2",
+    "sha": "7f1c585e1db5c1c14a6adf30d061189873356a64",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "muslimkids-threads-of-wonder/public/fonts/montserrat-latin-700-normal.woff2",
+    "sha": "1ea70996729418fb7c5cc13ffa67aac40e646fbc",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "muslimkids-threads-of-wonder/public/fonts/montserrat-latin-800-normal.woff2",
+    "sha": "56a632322a882d22acf5568614d5f8b053c82bd6",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]

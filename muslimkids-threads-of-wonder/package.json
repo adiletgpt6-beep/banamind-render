@@ -1,0 +1,41 @@
+{
+  "name": "muslimkids-threads-of-wonder",
+  "version": "1.0.0",
+  "description": "MUSLIM KIDS — эксперимент 011 «Нити мироздания»: 3D-текстильная анимация (Remotion + Three.js)",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "typecheck": "tsc",
+    "landmask": "node scripts/build-landmask.mjs",
+    "voice": "python3 scripts/voice.py",
+    "audio": "python3 scripts/mix_audio.py",
+    "stills": "node scripts/render-stills.mjs",
+    "render": "remotion render MuslimKidsThreadsOfWonder011 output/final/MuslimKids_ThreadsOfWonder_011.mp4 --codec=h264 --audio-codec=aac --pixel-format=yuv420p --color-space=bt709 --gl=swangle --crf=16"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.3.0",
+    "@remotion/cli": "^4.0.532",
+    "@remotion/fonts": "^4.0.532",
+    "@remotion/three": "^4.0.532",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "remotion": "^4.0.532",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@fontsource/montserrat": "^5.2.6",
+    "@remotion/bundler": "^4.0.532",
+    "@remotion/renderer": "^4.0.532",
+    "@types/react": "^19.2.7",
+    "@types/three": "^0.180.0",
+    "d3-geo": "^3.1.1",
+    "topojson-client": "^3.1.0",
+    "typescript": "^5.9.3",
+    "world-atlas": "^2.0.2"
+  }
+}
