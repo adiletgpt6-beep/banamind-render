@@ -1,0 +1,244 @@
+{
+  "hash": "9176f7ee8913bddd",
+  "done": true,
+  "rows": [
+    {
+      "who": "remix2",
+      "id": "K01",
+      "file": "remix2-k01.mp3",
+      "speechSec": 1.25,
+      "cer": 0,
+      "f0": 238.8,
+      "profile": {
+        "age": 27.3,
+        "female": 0.985,
+        "male": 0.015,
+        "child": 0.001
+      },
+      "heard": "ал менин атымды билеби",
+      "penalty": 0.226
+    },
+    {
+      "who": "remix2",
+      "id": "K02",
+      "file": "remix2-k02.mp3",
+      "speechSec": 1.75,
+      "cer": 0.032,
+      "f0": 240.6,
+      "profile": {
+        "age": 29.6,
+        "female": 0.984,
+        "male": 0.015,
+        "child": 0.001
+      },
+      "heard": "эми мени башка киши алп кетеби",
+      "penalty": 0.27
+    },
+    {
+      "who": "remix2",
+      "id": "K03",
+      "file": "remix2-k03.mp3",
+      "speechSec": 6.24,
+      "cer": 0.082,
+      "f0": 258.1,
+      "profile": {
+        "age": 30.1,
+        "female": 0.984,
+        "male": 0.016,
+        "child": 0
+      },
+      "heard": "анда мен үчүнчү бей класста укумдеп айткыла спорт жалда сабак болгондо биз башка ишиктен чыгалыз",
+      "penalty": 0.323
+    },
+    {
+      "who": "remix2",
+      "id": "K04",
+      "file": "remix2-k04.mp3",
+      "speechSec": 3.12,
+      "cer": 0.045,
+      "f0": 273.5,
+      "profile": {
+        "age": 29.4,
+        "female": 0.989,
+        "male": 0.01,
+        "child": 0.001
+      },
+      "heard": "далы сурагылачы машинкамды кошу алсам болобу",
+      "penalty": 0.282
+    },
+    {
+      "who": "remix2",
+      "id": "K05",
+      "file": "remix2-k05.mp3",
+      "speechSec": 2.11,
+      "cer": 0.081,
+      "f0": 285.7,
+      "profile": {
+        "age": 29.1,
+        "female": 0.976,
+        "male": 0.024,
+        "child": 0
+      },
+      "heard": "таанышканда атомду өзүм айтсан болобу",
+      "penalty": 0.317
+    },
+    {
+      "who": "kgboy",
+      "id": "K01",
+      "file": "kgboy-k01.mp3",
+      "speechSec": 1.2,
+      "cer": 0.045,
+      "f0": 200,
+      "profile": {
+        "age": 26.8,
+        "female": 0.987,
+        "male": 0.013,
+        "child": 0.001
+      },
+      "heard": "ал менин атымды биле би",
+      "penalty": 0.269
+    },
+    {
+      "who": "kgboy",
+      "id": "K02",
+      "file": "kgboy-k02.mp3",
+      "speechSec": 1.76,
+      "cer": 0.226,
+      "f0": 285.7,
+      "profile": {
+        "age": 27,
+        "female": 0.977,
+        "male": 0.02,
+        "child": 0.003
+      },
+      "heard": "эме мени башла кише алкетеви",
+      "penalty": 0.45
+    },
+    {
+      "who": "kgboy",
+      "id": "K03",
+      "file": "kgboy-k03.mp3",
+      "speechSec": 5.65,
+      "cer": 0.052,
+      "f0": 280.7,
+      "profile": {
+        "age": 30.5,
+        "female": 0.985,
+        "male": 0.014,
+        "child": 0.001
+      },
+      "heard": "анда мен үчүнчү бөй класста окуюм деп айткыла спорт салда сабак болгондо биз башка ишиктен чыгабыз",
+      "penalty": 0.294
+    },
+    {
+      "who": "kgboy",
+      "id": "K04",
+      "file": "kgboy-k04.mp3",
+      "speechSec": 2.8,
+      "cer": 0.091,
+      "f0": 266.7,
+      "profile": {
+        "age": 27.9,
+        "female": 0.984,
+        "male": 0.015,
+        "child": 0.001
+      },
+      "heard": "дагы сырагбаче машинкамды кошо алсам болобу",
+      "penalty": 0.32
+    },
+    {
+      "who": "kgboy",
+      "id": "K05",
+      "file": "kgboy-k05.mp3",
+      "speechSec": 2.27,
+      "cer": 0.054,
+      "f0": 280.7,
+      "profile": {
+        "age": 27.2,
+        "female": 0.979,
+        "male": 0.021,
+        "child": 0
+      },
+      "heard": "таанышканда атынды өзүмайтсам болобу",
+      "penalty": 0.28
+    },
+    {
+      "who": "narrator",
+      "id": "N01",
+      "file": "narrator-n01.mp3",
+      "speechSec": 6.573,
+      "cer": 0.036,
+      "f0": 219.2,
+      "profile": {
+        "age": 32.6,
+        "female": 0.994,
+        "male": 0.005,
+        "child": 0
+      },
+      "heard": "атайнеси даректи убакытты каттанды талкуулап жатышты уулунун суроосу башкача болду",
+      "penalty": 0.036
+    },
+    {
+      "who": "mother",
+      "id": "M01",
+      "file": "mother-m01.mp3",
+      "speechSec": 4.099,
+      "cer": 0.062,
+      "f0": 216.2,
+      "profile": {
+        "age": 37.8,
+        "female": 0.997,
+        "male": 0.003,
+        "child": 0
+      },
+      "heard": "жулго чыгарда мурда таанышып баарын сүйлөшөз сен да таанышасың",
+      "penalty": 0.062
+    },
+    {
+      "who": "father",
+      "id": "F02",
+      "file": "father-f02.mp3",
+      "speechSec": 2.392,
+      "cer": 0.119,
+      "f0": 113.5,
+      "profile": {
+        "age": 25.4,
+        "female": 0.001,
+        "male": 0.998,
+        "child": 0
+      },
+      "heard": "албетти машинканын тууралууда айтып бересиң",
+      "penalty": 0.119
+    }
+  ],
+  "summary": [
+    {
+      "id": "remix2",
+      "name": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "penalty": 0.284,
+      "cer": 0.048,
+      "f0": 259.34,
+      "age": 29.1,
+      "child": 0.001,
+      "female": 0.984
+    },
+    {
+      "id": "kgboy",
+      "name": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "penalty": 0.323,
+      "cer": 0.094,
+      "f0": 262.76,
+      "age": 27.88,
+      "child": 0.001,
+      "female": 0.982
+    }
+  ],
+  "picked": {
+    "id": "remix2",
+    "name": "KG-son v7 remix-2",
+    "voiceId": "1c81DEBcmaJMj1QDHWU6",
+    "reason": "меньший средний штраф (CER + темп + профиль); при равенстве — remix2"
+  }
+}

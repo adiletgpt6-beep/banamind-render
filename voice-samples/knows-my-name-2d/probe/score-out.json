@@ -1,0 +1,158 @@
+[
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/remix2-k01.mp3",
+    "heard": "ал менин атымды билеби",
+    "cer": 0.0,
+    "f0": 238.8,
+    "profile": {
+      "age": 27.3,
+      "female": 0.985,
+      "male": 0.015,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/remix2-k02.mp3",
+    "heard": "эми мени башка киши алп кетеби",
+    "cer": 0.032,
+    "f0": 240.6,
+    "profile": {
+      "age": 29.6,
+      "female": 0.984,
+      "male": 0.015,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/remix2-k03.mp3",
+    "heard": "анда мен үчүнчү бей класста укумдеп айткыла спорт жалда сабак болгондо биз башка ишиктен чыгалыз",
+    "cer": 0.082,
+    "f0": 258.1,
+    "profile": {
+      "age": 30.1,
+      "female": 0.984,
+      "male": 0.016,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/remix2-k04.mp3",
+    "heard": "далы сурагылачы машинкамды кошу алсам болобу",
+    "cer": 0.045,
+    "f0": 273.5,
+    "profile": {
+      "age": 29.4,
+      "female": 0.989,
+      "male": 0.01,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/remix2-k05.mp3",
+    "heard": "таанышканда атомду өзүм айтсан болобу",
+    "cer": 0.081,
+    "f0": 285.7,
+    "profile": {
+      "age": 29.1,
+      "female": 0.976,
+      "male": 0.024,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/kgboy-k01.mp3",
+    "heard": "ал менин атымды биле би",
+    "cer": 0.045,
+    "f0": 200.0,
+    "profile": {
+      "age": 26.8,
+      "female": 0.987,
+      "male": 0.013,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/kgboy-k02.mp3",
+    "heard": "эме мени башла кише алкетеви",
+    "cer": 0.226,
+    "f0": 285.7,
+    "profile": {
+      "age": 27.0,
+      "female": 0.977,
+      "male": 0.02,
+      "child": 0.003
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/kgboy-k03.mp3",
+    "heard": "анда мен үчүнчү бөй класста окуюм деп айткыла спорт салда сабак болгондо биз башка ишиктен чыгабыз",
+    "cer": 0.052,
+    "f0": 280.7,
+    "profile": {
+      "age": 30.5,
+      "female": 0.985,
+      "male": 0.014,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/kgboy-k04.mp3",
+    "heard": "дагы сырагбаче машинкамды кошо алсам болобу",
+    "cer": 0.091,
+    "f0": 266.7,
+    "profile": {
+      "age": 27.9,
+      "female": 0.984,
+      "male": 0.015,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/kgboy-k05.mp3",
+    "heard": "таанышканда атынды өзүмайтсам болобу",
+    "cer": 0.054,
+    "f0": 280.7,
+    "profile": {
+      "age": 27.2,
+      "female": 0.979,
+      "male": 0.021,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/narrator-n01.mp3",
+    "heard": "атайнеси даректи убакытты каттанды талкуулап жатышты уулунун суроосу башкача болду",
+    "cer": 0.036,
+    "f0": 219.2,
+    "profile": {
+      "age": 32.6,
+      "female": 0.994,
+      "male": 0.005,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/mother-m01.mp3",
+    "heard": "жулго чыгарда мурда таанышып баарын сүйлөшөз сен да таанышасың",
+    "cer": 0.062,
+    "f0": 216.2,
+    "profile": {
+      "age": 37.8,
+      "female": 0.997,
+      "male": 0.003,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/knows-my-name-2d/probe/father-f02.mp3",
+    "heard": "албетти машинканын тууралууда айтып бересиң",
+    "cer": 0.119,
+    "f0": 113.5,
+    "profile": {
+      "age": 25.4,
+      "female": 0.001,
+      "male": 0.998,
+      "child": 0.0
+    }
+  }
+]
