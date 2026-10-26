@@ -1,0 +1,894 @@
+[
+  {
+    "name": "ccr-02af52fb-c49qt7",
+    "sha": "bb41cc52eb4438add3a72c3f8cb318679d18a79d"
+  },
+  {
+    "name": "ccr-2cd5811f-nmpumx",
+    "sha": "163084677673c03c4d88c49f34fd5f3cade1d9b3"
+  },
+  {
+    "name": "ccr-3c89ba1b-55ai0l",
+    "sha": "5fa74fef8c404ca24101dab98db0fe30511ceefb"
+  },
+  {
+    "name": "ccr-4f103c15-3srmjy",
+    "sha": "739bf55d793b858327e11e5f51bf7e2d11d5b6d9"
+  },
+  {
+    "name": "ccr-05ace312-9bpcuh",
+    "sha": "25b422f1e6a1b7db30f557b1c7e8d29d6f3c80e0"
+  },
+  {
+    "name": "ccr-5eea4ddb-244j53",
+    "sha": "5f3f97276bdc3e8c854b4614eb71f57e7211c81e"
+  },
+  {
+    "name": "ccr-7a274e88-qxkgo4",
+    "sha": "ee91a7340981c025ef3b5b59d84d0d675a81be6d"
+  },
+  {
+    "name": "ccr-07c0677a-db534r",
+    "sha": "81c2a514997f13e8288c7168477feab0db76a668"
+  },
+  {
+    "name": "ccr-7ee5f49a-ktqok1",
+    "sha": "935c5d23a6474266ae0ee453d00ca8afd30105bc"
+  },
+  {
+    "name": "ccr-7f75ac6f-n6xyq8",
+    "sha": "54fef428cc9451f1fb61e86e040b21a95c4f6de3"
+  },
+  {
+    "name": "ccr-7fce4eba-56pf5w",
+    "sha": "a77a7f3eddd0ee3db1bb51e96b25add69e6bc2ff"
+  },
+  {
+    "name": "ccr-7fde52ef-jr0k0g",
+    "sha": "68317f3a57fdb49a10b9b4ec380e1ae53f415173"
+  },
+  {
+    "name": "ccr-22cec22b-fstu10",
+    "sha": "8e4cbd0d44199f5af870ea4b8881d0f553ee05f9"
+  },
+  {
+    "name": "ccr-26ffbc1d-p5w0zs",
+    "sha": "116a3f18a77432417d5dd862422b82050ba0f73d"
+  },
+  {
+    "name": "ccr-34cc45b5-0trsov",
+    "sha": "211bd8d6b9c0f8607858c19b31e2e3c79a10e8bc"
+  },
+  {
+    "name": "ccr-40bdb443-7306bs",
+    "sha": "5d9f3545335ade846c11d92a38f140ce981bcc39"
+  },
+  {
+    "name": "ccr-45e8aeba-jnj1q5",
+    "sha": "a2e34a0d5e1cf78a3ea98b95fc7c0f5c5b2bf2af"
+  },
+  {
+    "name": "ccr-57e055c6-h9s31k",
+    "sha": "c9330399c66946920fa48a1e87c4ea585b4c5242"
+  },
+  {
+    "name": "ccr-62c106e3-zfw40t",
+    "sha": "8772233a685151b6e3570dc2021299ce9505bc82"
+  },
+  {
+    "name": "ccr-76bad4cf-8ukwwb",
+    "sha": "ce71bf9c4f003c628d6b73d00de3ebcf274f85a8"
+  },
+  {
+    "name": "ccr-78af08c0-wgw1r3",
+    "sha": "47dc33f7219918251fceb5c52614a99498499c46"
+  },
+  {
+    "name": "ccr-431ff063-5lzbg4",
+    "sha": "283b46aa3e1087b5d379e6274af53645e3fd6619"
+  },
+  {
+    "name": "ccr-489fc45a-hz01z0",
+    "sha": "6c267e92f061299419bd365b1a4e02e4aa68b802"
+  },
+  {
+    "name": "ccr-688d17ec-qln2oy",
+    "sha": "ce576c2aca48fe791e900660da2fbd6f4d5c2843"
+  },
+  {
+    "name": "ccr-849bbdaf-u3b258",
+    "sha": "59891b5a332970656d4522efd70fab5c96ad9c13"
+  },
+  {
+    "name": "ccr-988fbfcc-ikstft",
+    "sha": "4862d8fa52b92cba2c85cc27af82f1ac8cae04d0"
+  },
+  {
+    "name": "ccr-1552cd7c-gmcu4j",
+    "sha": "024ca4b82dabdb96b3e4c6926bb4287024d3e4a7"
+  },
+  {
+    "name": "ccr-10669cd3-nxv3kk",
+    "sha": "091e44ec497dcbba339fd1c95e546cfbb3e91fe1"
+  },
+  {
+    "name": "ccr-48778e7d-zh468a",
+    "sha": "3e0228e63a1a75d94379c99e3f8699d752ed8098"
+  },
+  {
+    "name": "ccr-79579e90-n6jhcb",
+    "sha": "5a1790971a0371320fc3173d79619bde4b521964"
+  },
+  {
+    "name": "ccr-169526b2-0idi8u",
+    "sha": "edb497c4a887c3f440fc79ce165c1729ebf3191a"
+  },
+  {
+    "name": "ccr-291071da-bb390s",
+    "sha": "a09c3b5e7bc8ee7f57c38316aa9598f944a66c18"
+  },
+  {
+    "name": "ccr-945848c0-kn6azb",
+    "sha": "27211be612a8e74426c09f196c817a142a0b0a14"
+  },
+  {
+    "name": "ccr-09793426-cn12m9",
+    "sha": "397d148a8a5aa5b5f61f61b6dc32682d9ba14bbe"
+  },
+  {
+    "name": "ccr-42704944-32ncot",
+    "sha": "f52f888306023c8576d45278a148ac050cf6b7ff"
+  },
+  {
+    "name": "ccr-a9e780a0-y0dker",
+    "sha": "e9fb4be810d6995fae38c160d0ed71ae924e0bc4"
+  },
+  {
+    "name": "ccr-a01323d7-vo0a7d",
+    "sha": "eb8437e958e6310818aab77fd7893fc80d9c7656"
+  },
+  {
+    "name": "ccr-baf3b523-5pnkb5",
+    "sha": "9c5a70e578960ff9dec7354847e33396b5e43630"
+  },
+  {
+    "name": "ccr-bd1ae82c-7u966t",
+    "sha": "1bf599deef02710a507b6652cf4ba068fbda639f"
+  },
+  {
+    "name": "ccr-c5b00ecd-hdz8or",
+    "sha": "bf5adb84776ac5f85a3ca4ca3d1b8521c4b2a81c"
+  },
+  {
+    "name": "ccr-c43fb24c-katck0",
+    "sha": "ed37cb633540d08d7151f658becc7b8b9b879d9e"
+  },
+  {
+    "name": "ccr-cca3a6bd-qb7004",
+    "sha": "09e67307bb8836a46d44b472691e98c23bf0e321"
+  },
+  {
+    "name": "ccr-d5e23467-28iel9",
+    "sha": "7c05c241fe657ef1784f86dd47da3b5b7c0690a7"
+  },
+  {
+    "name": "ccr-d9a09636-crxqp4",
+    "sha": "65cca13a2e20321c5499345d6a75da8e85f19f3e"
+  },
+  {
+    "name": "ccr-d248ab5b-lof74j",
+    "sha": "23503b38f1a59b833b092027276a8afb6f6da0ba"
+  },
+  {
+    "name": "ccr-da013216-1tuhh2",
+    "sha": "17efbe0ec2370d1a6550b9793107170af269dbfe"
+  },
+  {
+    "name": "ccr-e10c4814-hjeu4w",
+    "sha": "a67605acdb37ffcd3f6038132f76129889e32e19"
+  },
+  {
+    "name": "ccr-ea4a3a84-cdhbcd",
+    "sha": "7352b2e6e45b253b5781c030ccec302c980a94a0"
+  },
+  {
+    "name": "ccr-f43dc4e9-7ul71g",
+    "sha": "a4cd06bf5fc0011ab571eff4732b0725a37fa9b1"
+  },
+  {
+    "name": "ccr-f6655a84-pd290x",
+    "sha": "4d9c185500d0bf1d1074d468967b4f1207580fac"
+  },
+  {
+    "name": "ccr-f10418e4-op0q83",
+    "sha": "fb651b19d00a3cb589488bf28602c7b994855c24"
+  },
+  {
+    "name": "ccr-ffd2c6fe-scdz66",
+    "sha": "38139513f4c97390cf43287a2287fde80297078c"
+  },
+  {
+    "name": "claude/audio-review-analyzer-rgg1fw",
+    "sha": "bbf73523e05fab034e85774ce0e6f24335777adf"
+  },
+  {
+    "name": "claude/awesome-meitner-4xrd90",
+    "sha": "43c19650be439861cd2caae0ce99f4033b9590c2"
+  },
+  {
+    "name": "claude/balago-29-twenty-five-envelopes-quc238",
+    "sha": "70ce8f0c3fc60a0bb0e8673a495e0d55187e206c"
+  },
+  {
+    "name": "claude/balago-33-moms-old-video-24ds8n",
+    "sha": "de43a46f4cfae673eb435fe071ab6b19c507215a"
+  },
+  {
+    "name": "claude/balago-34-extra-line-yywmh7",
+    "sha": "809a4197a5d6765dfdcd6300c8e08597d3d7dad8"
+  },
+  {
+    "name": "claude/balago-bg-012-video-e89ckv",
+    "sha": "af83f1ce524d8d8bedcfedea9d4d1ba4e89cc1f8"
+  },
+  {
+    "name": "claude/balago-bg-032-video-75hnz7",
+    "sha": "f46013d249fc30f5b97d0a3cd2450f77aeb2341f"
+  },
+  {
+    "name": "claude/balago-episode-26-production-j9ycw9",
+    "sha": "a45b2d353d698d5e46ae03fce91a5102e877f2dd"
+  },
+  {
+    "name": "claude/balago-episode-28-bg-027-782opk",
+    "sha": "41fc9ff3ae29d221db64228a6493562ca2619567"
+  },
+  {
+    "name": "claude/balago-episode-35-prep-4dc5ua",
+    "sha": "03af934d54ac90a96a679ef2f4a505bb770a932c"
+  },
+  {
+    "name": "claude/balago-half-hour-2d-qjhgwq",
+    "sha": "f8cdfbf47c0c9b757a7d1d195851913eefd38c5b"
+  },
+  {
+    "name": "claude/balago-video-17-bonuhn",
+    "sha": "ff4d6011ef469157dfa7c2372fa22a1807f104bc"
+  },
+  {
+    "name": "claude/balago-video-18-cnfaih",
+    "sha": "b73160a8179df233881da0a753d187ff84e3672a"
+  },
+  {
+    "name": "claude/balago-video-21-j48hf9",
+    "sha": "00e72826dfc96c6687c65b22ce75b3c8b7077274"
+  },
+  {
+    "name": "claude/balago-video-22-82l7va",
+    "sha": "1485bcc1e58629bb701110eccce9b95f03863ded"
+  },
+  {
+    "name": "claude/balago-video-23-33gitu",
+    "sha": "3bc0201593e10fc3894f9d50e1bccbc7897f6269"
+  },
+  {
+    "name": "claude/balago-video-25-b8mqrg",
+    "sha": "3d9f3c7d1c0c9b82433d167ba785444cc1ca17e5"
+  },
+  {
+    "name": "claude/balago-video-30-prep-gm7v48",
+    "sha": "0f4d4fb52d40d6fc965b3335adba92d953f7dd5e"
+  },
+  {
+    "name": "claude/balago-video-31-prep-09idy8",
+    "sha": "603a326b61bacd1b846daf30af3ff57205c9e8e3"
+  },
+  {
+    "name": "claude/balago-video-bg-004-ep05-io7wl3",
+    "sha": "fc0391142d89d0b66f09e3d0582da96401717621"
+  },
+  {
+    "name": "claude/balago-video-bg-005-ep06-ahnid9",
+    "sha": "1882b42ff33634f9ca5d30b84a07aed9aa0eafa4"
+  },
+  {
+    "name": "claude/balago-video-bg-006-ep07-qhh4e6",
+    "sha": "68397c154d0246e61ecc202d097bb9af06446323"
+  },
+  {
+    "name": "claude/balago-video-bg-007-ep08-4nlcp2",
+    "sha": "fffd37d50c3c3b860ec7f99e157cd150431f2659"
+  },
+  {
+    "name": "claude/balago-video-bg-011-ep12-3157c2",
+    "sha": "0d98f402224327eaa31cc510ba6cbf48956de4c1"
+  },
+  {
+    "name": "claude/balago-video-bg-013-npcrjy",
+    "sha": "803189a565ee05b4c00f1445cc3abe051bdb33bf"
+  },
+  {
+    "name": "claude/balago-video-bg-014-t31za0",
+    "sha": "31beeb9dddfb0e71de4f9813d356cb95d9f0e531"
+  },
+  {
+    "name": "claude/balago-video-episode-11-8tlxqa",
+    "sha": "0581fe515833221540feadb31cfe6d9e21cd66df"
+  },
+  {
+    "name": "claude/balago-video-fixes-master-2yz4ai",
+    "sha": "5210769700f6dd9a18941ae3cf211592d5b2c6bb"
+  },
+  {
+    "name": "claude/balago-video-refinement-smne63",
+    "sha": "7f8e58dd41e7e6bd6fbab27e7e983f0503da8f74"
+  },
+  {
+    "name": "claude/banamind-bm-027-guns-germs-steel-cuh8z3",
+    "sha": "417d08e241596e5188daf571819009efbc829f19"
+  },
+  {
+    "name": "claude/banamind-bm-030-animation-buqj94",
+    "sha": "0154e91cb3dd4bcf449d0edc907b0526fed181a0"
+  },
+  {
+    "name": "claude/banamind-bm-030-war-peace-6awnth",
+    "sha": "ab4a591a046944297622479ce2700f8a3bf531ac"
+  },
+  {
+    "name": "claude/banamind-bm-031-production-uvwe0p",
+    "sha": "ef6af89ec02878427dc188a1f6d65cfc42d5dbda"
+  },
+  {
+    "name": "claude/bg-037-episode-37-nyj34v",
+    "sha": "0a782b8af63aa37980d2a760c11b246148d0f96b"
+  },
+  {
+    "name": "claude/bg-045-episode-45-9muqbp",
+    "sha": "5ab8e1177b5eac8b41a4a750ea986ab9a1145516"
+  },
+  {
+    "name": "claude/bg-048-episode-48-bd51gn",
+    "sha": "b16abdca3270f523cf0a0884fd952b79cd20bd54"
+  },
+  {
+    "name": "claude/bm-022-seven-habits-film-8mrfpk",
+    "sha": "7dd422681e5a7a56d66291119efa2f6f4125a53d"
+  },
+  {
+    "name": "claude/bm-025-win-friends-hpamvi",
+    "sha": "75869abbe7d477de62b4423e6cbd998e3f3c15b8"
+  },
+  {
+    "name": "claude/bm-038-contagious-film-zedqlk",
+    "sha": "8a4fdf025631f3ae1033f89a9b6eb20fe98a68ee"
+  },
+  {
+    "name": "claude/bold-dirac-1qvmff",
+    "sha": "8662a120ac21b85b5e6731ff9bb9737d0fbfd6ff"
+  },
+  {
+    "name": "claude/crystal-knowledge-animation-phv8jt",
+    "sha": "ab7e02fdbbb2eb571e2882054438611d315e085c"
+  },
+  {
+    "name": "claude/magnetic-universe-animation-42s8ol",
+    "sha": "b49c172916eb323fcc41215eb8981eace455d70b"
+  },
+  {
+    "name": "claude/muslim-kids-living-matter-ve21dc",
+    "sha": "e612acdb33b55454f27a30ee789c7af8f4e263eb"
+  },
+  {
+    "name": "claude/sleepy-allen-quk54h",
+    "sha": "32aba972406b35c34b3b1e77aa0ceba52ec1b44b"
+  },
+  {
+    "name": "claude/tb-004-video-production-jx7c3n",
+    "sha": "aa2d24215452536d2ecf684944c6970e35dc0c3e"
+  },
+  {
+    "name": "claude/video-29-bg-028-prep-9tvtuf",
+    "sha": "048466842195a384cf8f1ddd82b36e0fda090566"
+  },
+  {
+    "name": "claude/vigilant-wozniak-edoiv5",
+    "sha": "e398f9cc27166e7681db2ccf04e3b58cc7e65907"
+  },
+  {
+    "name": "claude/windows-of-wonder-animation-tk92fn",
+    "sha": "ff511519d86285d439ef1016ec4d72658e1be258"
+  },
+  {
+    "name": "claude/zen-dijkstra-7hipmb",
+    "sha": "970e08cd6d29bae064a6859c0c3da64106215e05"
+  },
+  {
+    "name": "codex/audio-review-chatgpt-service",
+    "sha": "1eafd7846a0bfd30cb704cdd987050b53b909928"
+  },
+  {
+    "name": "codex/half-hour-polish",
+    "sha": "ce50fdaf2139f8e0cc76422e1ae13f1f3082f211"
+  },
+  {
+    "name": "docs/banamind-500-production-system",
+    "sha": "178666d2d596d645d135559a5ee3c9f3be42967b"
+  },
+  {
+    "name": "docs/live-cancel-run-38464139695",
+    "sha": "6e55bb0b506b3001a4dbf5b75811f059f886a692"
+  },
+  {
+    "name": "docs/live-video-production-v1",
+    "sha": "d840cc5a722c6c2a117bfc7318f9d94863e25242"
+  },
+  {
+    "name": "docs/three-books-production-system",
+    "sha": "49be81b14a158618f947062e8476a85eca741e35"
+  },
+  {
+    "name": "feat/balago-25-two-cars-one-question",
+    "sha": "b3ce299c9a44bea70bb2335fa415c784a8b811cd"
+  },
+  {
+    "name": "feat/balago-live-02-motion-edit",
+    "sha": "7d7c581a422fa4a0084b448d5fba46ce912ed896"
+  },
+  {
+    "name": "feat/balago-video-studio-mvp",
+    "sha": "4a8fc9b0934a3c0091e01f777b8f4f891f7bd089"
+  },
+  {
+    "name": "feat/live-videos-system",
+    "sha": "596ad2fad3b91c63fb1b538310c40afff2c40b5e"
+  },
+  {
+    "name": "feat/studio-auto-claude-live006",
+    "sha": "737908a9b0f50d8e6ab915c0df9c4bcb7a252fee"
+  },
+  {
+    "name": "feature/balago-50-campaign-plan",
+    "sha": "47113a9389b8616307c9fb805b4478a62e28b170"
+  },
+  {
+    "name": "feature/balago-50-episode-26-script",
+    "sha": "c85bc39155e862b29bc5ca57bdb7552035f5cbcb"
+  },
+  {
+    "name": "feature/balago-50-episodes-03-10",
+    "sha": "17e01d06e15f9621d233c272900a96f83cc07f57"
+  },
+  {
+    "name": "feature/balago-50-episodes-11-15",
+    "sha": "76c809ab67084862c067533a6fcb3e03a7d75f90"
+  },
+  {
+    "name": "feature/balago-50-episodes-16-25",
+    "sha": "1a5bf277ae8d27fd8bcfb7552307ccded52e5508"
+  },
+  {
+    "name": "feature/balago-50-episodes-27-35",
+    "sha": "b411ce83105ef78648f7942400afc12acbcd2f18"
+  },
+  {
+    "name": "feature/balago-50-episodes-36-50",
+    "sha": "33ab0d000e913446f698dfa9a4f5cdaa3b2303ff"
+  },
+  {
+    "name": "feature/banamind-bm-002-ibn-khisham",
+    "sha": "e6a3c44c66ef12ecaa73dd30f921476266922818"
+  },
+  {
+    "name": "feature/banamind-bm-003-akaida",
+    "sha": "0807e927cc5b98a74f08d35f78dd19946cd09a37"
+  },
+  {
+    "name": "feature/banamind-bm-004-kahneman",
+    "sha": "7393125e3045ff74c12a5723c4c5e2135eb2a9fa"
+  },
+  {
+    "name": "feature/banamind-bm-005-robert-greene",
+    "sha": "fc4638f754ad83d3803615a531683b848ef370ac"
+  },
+  {
+    "name": "feature/banamind-bm-006-ayn-rand",
+    "sha": "fea27244cef9a445229850c4b105fe27e61ab423"
+  },
+  {
+    "name": "feature/banamind-bm-007-robin-sharma",
+    "sha": "49b1d1fe49f3beecf21979af046878091c371c9b"
+  },
+  {
+    "name": "feature/banamind-bm-008-atomic-habits",
+    "sha": "3cdcbd550008792f647a71bc2953db80e254c85e"
+  },
+  {
+    "name": "feature/banamind-bm-009-psychology-of-money",
+    "sha": "1ce7362c1ab9127ed616ea88172e09125995d886"
+  },
+  {
+    "name": "feature/banamind-bm-010-zero-to-one",
+    "sha": "28ac350683938b0d2b4cda79ac940fbbfc838f23"
+  },
+  {
+    "name": "feature/banamind-bm-011-22-laws-of-marketing",
+    "sha": "8f965fa1fff7427e6a0a17d40733b8c554a078d4"
+  },
+  {
+    "name": "feature/banamind-bm-012-marcus-aurelius-meditations",
+    "sha": "ea7de8fed6f6d61b32ed2bce014ffdbeb39d0b01"
+  },
+  {
+    "name": "feature/banamind-bm-013-sapiens-history-humankind",
+    "sha": "4650acc3a2d857f0619f22402b3f718e7c427238"
+  },
+  {
+    "name": "feature/banamind-bm-014-hawking-brief-history-time",
+    "sha": "b5a3fa7483d51624668f28b875d59efd4be5d0c4"
+  },
+  {
+    "name": "feature/banamind-bm-015-steve-jobs-isaacson",
+    "sha": "01403b431b710d512816f06c34852337cb2924ca"
+  },
+  {
+    "name": "feature/banamind-bm-016-crime-and-punishment",
+    "sha": "cf5bfbf1ecc9fc3989d68692607ab3c451b4d25b"
+  },
+  {
+    "name": "feature/banamind-bm-017-and-then-there-were-none",
+    "sha": "aac969ebb3ca3d60a88590d025889712a4692ce9"
+  },
+  {
+    "name": "feature/banamind-bm-018-lord-of-the-rings",
+    "sha": "3c74c8d78aff80505aa6bb6c73b97f7711ea72e2"
+  },
+  {
+    "name": "feature/banamind-bm-019-pride-and-prejudice",
+    "sha": "831a5976a593a1bd7c5f4b01611cac39b9002a81"
+  },
+  {
+    "name": "feature/banamind-bm-020-it-king-volume-one",
+    "sha": "977a9b83e99d755ebd623b22b9459eaf03f869da"
+  },
+  {
+    "name": "feature/banamind-bm-021-influence-cialdini",
+    "sha": "5ff4bc901aa63d458ec3a50a3110875afa55d3a1"
+  },
+  {
+    "name": "feature/banamind-bm-022-seven-habits-covey",
+    "sha": "7dd422681e5a7a56d66291119efa2f6f4125a53d"
+  },
+  {
+    "name": "feature/banamind-bm-023-rich-dad-poor-dad",
+    "sha": "2f109c2cd72ba29475ae4c317b88d428536612d5"
+  },
+  {
+    "name": "feature/banamind-bm-024-lean-startup-ries",
+    "sha": "d33c5b1d9026e6ef376fde99612ae8b0c2dc51ed"
+  },
+  {
+    "name": "feature/banamind-bm-025-how-to-win-friends-carnegie",
+    "sha": "75869abbe7d477de62b4423e6cbd998e3f3c15b8"
+  },
+  {
+    "name": "feature/banamind-bm-026-seneca-letters-lucilius",
+    "sha": "e15af14b1b6c73c6714cf03a25820347e7520b18"
+  },
+  {
+    "name": "feature/banamind-bm-027-guns-germs-and-steel",
+    "sha": "417d08e241596e5188daf571819009efbc829f19"
+  },
+  {
+    "name": "feature/banamind-bm-028-cosmos-carl-sagan",
+    "sha": "d0a174ff84364c9b5bbac0cabf81f00d9d4c5152"
+  },
+  {
+    "name": "feature/banamind-bm-029-elon-musk-vance",
+    "sha": "f575c2f77dd93b09380d33d2469c9de3947f0680"
+  },
+  {
+    "name": "feature/banamind-bm-030-war-and-peace-tolstoy",
+    "sha": "60e30ef87fae1f85e52d53e12f65c63a4158ff6e"
+  },
+  {
+    "name": "feature/banamind-bm-031-harry-potter-philosophers-stone",
+    "sha": "ef6af89ec02878427dc188a1f6d65cfc42d5dbda"
+  },
+  {
+    "name": "feature/banamind-bm-032-jane-eyre-bronte",
+    "sha": "b24bdc770c7c4726547798ef1c4129bcd19a2f07"
+  },
+  {
+    "name": "feature/banamind-bm-033-dracula-stoker",
+    "sha": "4116e23f9f696da4889f84c5de1b38adee0ce3ae"
+  },
+  {
+    "name": "feature/banamind-bm-034-games-people-play-berne",
+    "sha": "e2a1b9f3b37a5403c1473c954492026777ff13a3"
+  },
+  {
+    "name": "feature/banamind-bm-035-power-of-habit-duhigg",
+    "sha": "344f15305fa0890ed1f57ea01c8461634b8befb4"
+  },
+  {
+    "name": "feature/banamind-bm-036-richest-man-in-babylon-clason",
+    "sha": "f86194a2d89a652b1a85afcf5227d15256b1f39c"
+  },
+  {
+    "name": "feature/banamind-bm-037-good-to-great-collins",
+    "sha": "3522f0302ae89ca67a2ae08b10a610522650fe4f"
+  },
+  {
+    "name": "feature/banamind-bm-038-contagious-berger",
+    "sha": "8a4fdf025631f3ae1033f89a9b6eb20fe98a68ee"
+  },
+  {
+    "name": "feature/banamind-bm-039-plato-republic",
+    "sha": "0dc6e7ec48e1444905876961240863f5c226539d"
+  },
+  {
+    "name": "feature/banamind-bm-040-spqr-ancient-rome-beard",
+    "sha": "38f3d25915eb5d7915eb10cec8a71f7dfdca57eb"
+  },
+  {
+    "name": "feature/banamind-bm-041-selfish-gene-dawkins",
+    "sha": "c1bab2507f20bcf3fe199b0405ee05bcd1558343"
+  },
+  {
+    "name": "feature/banamind-bm-042-long-walk-to-freedom-mandela",
+    "sha": "e373ff3355d6756ea9c28c899af87e73214f4152"
+  },
+  {
+    "name": "feature/banamind-bm-043-hound-of-the-baskervilles",
+    "sha": "869d8b10d309ef899f4fd8aec1a0431e23ea87e3"
+  },
+  {
+    "name": "feature/banamind-bm-044-martian-andy-weir",
+    "sha": "58c41e4bef8e41f2f949dc8e08719b00bbff26f8"
+  },
+  {
+    "name": "feature/bg-026-episode-27",
+    "sha": "c3728d167c92df9a7d0b6202514e629385f3b391"
+  },
+  {
+    "name": "feature/bg-031-episode-32",
+    "sha": "6a3f22708fba9b30b83d34163a74b7dc5f4c5c1e"
+  },
+  {
+    "name": "feature/bg-036-episode-36",
+    "sha": "10c2525542be3107ff3ff0f233aa51be04b2ef1e"
+  },
+  {
+    "name": "feature/bg-037-episode-37",
+    "sha": "0a782b8af63aa37980d2a760c11b246148d0f96b"
+  },
+  {
+    "name": "feature/bg-038-episode-38",
+    "sha": "10bc764548045272a1af29706b5222083e1da759"
+  },
+  {
+    "name": "feature/bg-039-episode-39",
+    "sha": "428768278836b295d8c99b714eac5440c5ad95bf"
+  },
+  {
+    "name": "feature/bg-040-episode-40",
+    "sha": "e6352dda2d505438cf59353414d08f758af0c848"
+  },
+  {
+    "name": "feature/bg-041-episode-41",
+    "sha": "132324273d3d34966aedaebef6b02377c0c28521"
+  },
+  {
+    "name": "feature/bg-042-episode-42",
+    "sha": "43c98fc7923f43a087b9147f0fea59528c5c2284"
+  },
+  {
+    "name": "feature/bg-043-episode-43",
+    "sha": "e40c5c622bae8e935e38b0b472554a0a18644882"
+  },
+  {
+    "name": "feature/bg-044-episode-44",
+    "sha": "c80fe6885ab5dd7cfc4dd4837948e81f15ffa061"
+  },
+  {
+    "name": "feature/bg-045-episode-45",
+    "sha": "5ab8e1177b5eac8b41a4a750ea986ab9a1145516"
+  },
+  {
+    "name": "feature/bg-046-episode-46",
+    "sha": "5d701f55f1a908b049571dc4b26cf6aa55f520f7"
+  },
+  {
+    "name": "feature/bg-047-episode-47",
+    "sha": "48f6bfe8de017c3cc94b3bc3f945f2e3e74174dd"
+  },
+  {
+    "name": "feature/bg-048-episode-48",
+    "sha": "b16abdca3270f523cf0a0884fd952b79cd20bd54"
+  },
+  {
+    "name": "feature/bg-049-episode-49",
+    "sha": "d2698fa7c8cbc0057b33d665de9725b7208fe8dc"
+  },
+  {
+    "name": "feature/bg-050-episode-50",
+    "sha": "1166ecfddb7e65591ddf3d3b885a55b3c1449778"
+  },
+  {
+    "name": "feature/driver-intro",
+    "sha": "1594814cf7c5c1f82b099ee082ce0721d0bb0b01"
+  },
+  {
+    "name": "feature/eleven-minutes-2d",
+    "sha": "b802d3ceabc7071867b8ac224d2c442d4752f987"
+  },
+  {
+    "name": "feature/five-unsent-messages-2d",
+    "sha": "6defd64e6ba3298dd4d017347c7775050187cfcd"
+  },
+  {
+    "name": "feature/founder-story-60s",
+    "sha": "f306b72e507e4a0876ae084d65c527e8782795c5"
+  },
+  {
+    "name": "feature/half-hour-v3",
+    "sha": "99728c23b95f2f50186b25869dcc456dcc16c45e"
+  },
+  {
+    "name": "feature/half-hour-v4",
+    "sha": "281ec10c2eb43b29d411699532b508703fdedfbf"
+  },
+  {
+    "name": "feature/how-it-works",
+    "sha": "837258f908c1de0929c2ba42db59e94d57c1ba94"
+  },
+  {
+    "name": "feature/invitation-without-name-2d",
+    "sha": "d64f8e78fa46a04d1a832108bed4d2a6d7a494a4"
+  },
+  {
+    "name": "feature/morning-rush",
+    "sha": "30aeb17f480e1fba29269bc94b3abcd674c1b4b5"
+  },
+  {
+    "name": "feature/morning-story",
+    "sha": "b9796f1de53d1285ed8d0f240b531775a2490cb8"
+  },
+  {
+    "name": "feature/nine-year-old-employee-2d",
+    "sha": "edc9978273d303e3a791be3798175c199abf1f7f"
+  },
+  {
+    "name": "feature/no-backup",
+    "sha": "07713790357e612c886514644fa4af3ce8a297a5"
+  },
+  {
+    "name": "feature/no-backup-2d",
+    "sha": "2f07e9ffa37ef2ba5564711ff2840e27a76b019e"
+  },
+  {
+    "name": "feature/promo-v2",
+    "sha": "67b58840d4a48799d572c496b2669e905846d567"
+  },
+  {
+    "name": "feature/remotion-promo",
+    "sha": "ef262b1950c43042bdb83ce53b33e467295917e2"
+  },
+  {
+    "name": "feature/taxi-child-sabak-buttu",
+    "sha": "c4cd5310007c3e80bed6820a3eb633fea1d0fd2f"
+  },
+  {
+    "name": "feature/third-b-meeting-2d",
+    "sha": "1595cc7f62b1b891c2700b6d17f3887bff823f9c"
+  },
+  {
+    "name": "feature/three-books-tb-002-tiko",
+    "sha": "c98e27c6e9090c4d041906fb2a23e88e523b5292"
+  },
+  {
+    "name": "feature/three-books-tb-003-rin",
+    "sha": "990ec5c838d91e4a0400508b7bf733cd373f946f"
+  },
+  {
+    "name": "feature/three-books-tb-004-vey",
+    "sha": "aa2d24215452536d2ecf684944c6970e35dc0c3e"
+  },
+  {
+    "name": "feature/trip-questions-60s",
+    "sha": "9c05c22b91f935b4cf37f4f98753b3fc2d511f50"
+  },
+  {
+    "name": "feature/two-schedules-2d",
+    "sha": "a710e7471cdd7ab057fa1c339f27d851f605237a"
+  },
+  {
+    "name": "feature/two-sundays-2d",
+    "sha": "da0463ae18d0ed10562d4c29cc61acd21568a708"
+  },
+  {
+    "name": "feature/unanswered-letter-2d",
+    "sha": "03d45aa98e1b0460d600e3fadaf06ecc7778b351"
+  },
+  {
+    "name": "feature/voiceover-audio",
+    "sha": "a91d4b3ccf8020d1d67679d7b3beeca3b6c94e01"
+  },
+  {
+    "name": "feature/work-half-hour",
+    "sha": "d7379227c4510610562b8b39d88d5520918505af"
+  },
+  {
+    "name": "feature/27-chess-2d",
+    "sha": "a159fd37477863b84d226c38c098eacfb7367a35"
+  },
+  {
+    "name": "fix/eleven-minutes-2d-review",
+    "sha": "8c4858bb818d65f5294bb1c2363da6d50e900cc8"
+  },
+  {
+    "name": "fix/eleven-minutes-2d-v2",
+    "sha": "ff2e0e6d3c81633c544766cfe339a72cd12f7e58"
+  },
+  {
+    "name": "fix/five-unsent-messages-2d-family-choice",
+    "sha": "fc5a725ea396e820d35419a34bc7b694f172dd94"
+  },
+  {
+    "name": "fix/five-unsent-messages-2d-music-voice-finale",
+    "sha": "66422d3ba007e1a1f6e0dd02b92164a44d59a010"
+  },
+  {
+    "name": "fix/five-unsent-messages-2d-voice-sound",
+    "sha": "921f4b1dcc068150f682748b4bba5c2c7cc51708"
+  },
+  {
+    "name": "fix/founder-chat-continuity",
+    "sha": "df54a3b448e0aa67ae3ca97018c358e5f905a60e"
+  },
+  {
+    "name": "fix/founder-family-chat",
+    "sha": "487f24458b417bb92693345ebf7a5481fcb2b212"
+  },
+  {
+    "name": "fix/morning-story-natural-motion",
+    "sha": "1ed750e6b0223838e0ba69b92ef7ea8eb1a1fd45"
+  },
+  {
+    "name": "fix/studio-auth-smoke-tools-args",
+    "sha": "3684c5b1750b5a91874460eb5f9e2f182cfd2c42"
+  },
+  {
+    "name": "fix/studio-claude-auth-smoke-115",
+    "sha": "2a4f90f4962842985cd9efd96b9da71ebb5748a9"
+  },
+  {
+    "name": "fix/studio-cli-oauth-diagnostic",
+    "sha": "3d2f76990aeeb732e30105523989cf2b17fae2ee"
+  },
+  {
+    "name": "fix/studio-retry-live006-asr-pyav",
+    "sha": "ad3785242e6729c91e0ae7670e8dd6ed4fe5c7a8"
+  },
+  {
+    "name": "fix/two-schedules-2d-final-polish",
+    "sha": "92d388ac5144622f5be5c21e62354649c7254234"
+  },
+  {
+    "name": "main",
+    "sha": "e0df9c8885bf3c613724c84daa1f9afd08e5d98b"
+  },
+  {
+    "name": "nb2d-foley-candidates",
+    "sha": "fd1603d8434fc863354655336e902bfa33af88eb"
+  },
+  {
+    "name": "qa/two-schedules-2d-37211230942",
+    "sha": "9c39b145b44984e136488267ec2751690d1acf71"
+  },
+  {
+    "name": "qa/two-schedules-2d-37211317012",
+    "sha": "358905a3b48e3f5565956a956da7801551662bf2"
+  }
+]

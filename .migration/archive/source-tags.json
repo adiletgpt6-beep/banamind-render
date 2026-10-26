@@ -1,0 +1,1422 @@
+[
+  {
+    "ref": "refs/tags/balago-10-3d-2702eb8eec32",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9iYWxhZ28tMTAtM2QtMjcwMmViOGVlYzMy",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/balago-10-3d-2702eb8eec32",
+    "object": {
+      "sha": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/2702eb8eec326a8cc0557a6e32e698102088582c"
+    }
+  },
+  {
+    "ref": "refs/tags/balago-10-3d-3eaba1d57740",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9iYWxhZ28tMTAtM2QtM2VhYmExZDU3NzQw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/balago-10-3d-3eaba1d57740",
+    "object": {
+      "sha": "3eaba1d5774039c84db33ac6b174a4f893946141",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/3eaba1d5774039c84db33ac6b174a4f893946141"
+    }
+  },
+  {
+    "ref": "refs/tags/balago-33-moms-old-video-preview",
+    "node_id": "REF_kwDOU2m009oAKnJlZnMvdGFncy9iYWxhZ28tMzMtbW9tcy1vbGQtdmlkZW8tcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/balago-33-moms-old-video-preview",
+    "object": {
+      "sha": "a3b2e557e8581143bb8ae1d33461b84c8f3de908",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/a3b2e557e8581143bb8ae1d33461b84c8f3de908"
+    }
+  },
+  {
+    "ref": "refs/tags/balago-live-02-preview",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy9iYWxhZ28tbGl2ZS0wMi1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/balago-live-02-preview",
+    "object": {
+      "sha": "7d7c581a422fa4a0084b448d5fba46ce912ed896",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/7d7c581a422fa4a0084b448d5fba46ce912ed896"
+    }
+  },
+  {
+    "ref": "refs/tags/balago-live-02-raw-v1",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvYmFsYWdvLWxpdmUtMDItcmF3LXYx",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/balago-live-02-raw-v1",
+    "object": {
+      "sha": "d4965bdb03a07d352152a1d676b7525be6009976",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d4965bdb03a07d352152a1d676b7525be6009976"
+    }
+  },
+  {
+    "ref": "refs/tags/balago-live-03-assets",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvYmFsYWdvLWxpdmUtMDMtYXNzZXRz",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/balago-live-03-assets",
+    "object": {
+      "sha": "d4965bdb03a07d352152a1d676b7525be6009976",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d4965bdb03a07d352152a1d676b7525be6009976"
+    }
+  },
+  {
+    "ref": "refs/tags/balago-live04-sources",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvYmFsYWdvLWxpdmUwNC1zb3VyY2Vz",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/balago-live04-sources",
+    "object": {
+      "sha": "084e5a6d1348f21fd049a08081ce6b5998732f6e",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/084e5a6d1348f21fd049a08081ce6b5998732f6e"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-001-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDAxLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-001-preview",
+    "object": {
+      "sha": "d879120ff55231b3d897235d81311b25423f8fb5",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d879120ff55231b3d897235d81311b25423f8fb5"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-003-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDAzLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-003-preview",
+    "object": {
+      "sha": "e0cf18546c8162893cdb9d5557e34042e2c544ab",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e0cf18546c8162893cdb9d5557e34042e2c544ab"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-004-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDA0LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-004-preview",
+    "object": {
+      "sha": "d44c078a9954ea1bf66130a8bed17b7c18a2fbb7",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d44c078a9954ea1bf66130a8bed17b7c18a2fbb7"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-005-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDA1LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-005-preview",
+    "object": {
+      "sha": "f7be5f4268a60cea9e95f539e5c25217b5c41cbe",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/f7be5f4268a60cea9e95f539e5c25217b5c41cbe"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-007-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDA3LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-007-preview",
+    "object": {
+      "sha": "55d4aa5f5e0991476a89ca5ca2d38b740f23df8a",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/55d4aa5f5e0991476a89ca5ca2d38b740f23df8a"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-008-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDA4LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-008-preview",
+    "object": {
+      "sha": "925c6a0ea2841525a8bd876ed8eb28397b05772e",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/925c6a0ea2841525a8bd876ed8eb28397b05772e"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-009-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDA5LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-009-preview",
+    "object": {
+      "sha": "3365eeab507ebf49df5e0f322de2180ccc78fc75",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/3365eeab507ebf49df5e0f322de2180ccc78fc75"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-010-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDEwLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-010-preview",
+    "object": {
+      "sha": "aa0b5c76e53cbf69ab9789e1c1619a784af8b9aa",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/aa0b5c76e53cbf69ab9789e1c1619a784af8b9aa"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-011-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDExLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-011-preview",
+    "object": {
+      "sha": "07146c8d15865df1111ce1b9a37a2017c093131c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/07146c8d15865df1111ce1b9a37a2017c093131c"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-013-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDEzLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-013-preview",
+    "object": {
+      "sha": "bbb84f9d683966d5afb1a7de1cd80e1e40672c6b",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/bbb84f9d683966d5afb1a7de1cd80e1e40672c6b"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-014-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDE0LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-014-preview",
+    "object": {
+      "sha": "91d4670ee8897da2d5ab6861f07047890626c836",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/91d4670ee8897da2d5ab6861f07047890626c836"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-015-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDE1LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-015-preview",
+    "object": {
+      "sha": "d3ed59e2a0649663fc70d44b9686a9392e3fd46f",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d3ed59e2a0649663fc70d44b9686a9392e3fd46f"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-016-ep17-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvYmctMDE2LWVwMTctcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-016-ep17-preview",
+    "object": {
+      "sha": "b46cf2c297c588e7210be4c8a46a8027c88526af",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/b46cf2c297c588e7210be4c8a46a8027c88526af"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-020-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDIwLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-020-preview",
+    "object": {
+      "sha": "da477dd40eb5b19e18f9a61d837112a902ec4050",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/da477dd40eb5b19e18f9a61d837112a902ec4050"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-021-ep22-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvYmctMDIxLWVwMjItcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-021-ep22-preview",
+    "object": {
+      "sha": "25ff26c317df1a4f06bcd38f95887d1a62d6fe45",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/25ff26c317df1a4f06bcd38f95887d1a62d6fe45"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-022-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDIyLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-022-preview",
+    "object": {
+      "sha": "87b199352acca7f9f91f5e7ecb1799bfb7538250",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/87b199352acca7f9f91f5e7ecb1799bfb7538250"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-023-ep24",
+    "node_id": "REF_kwDOU2m007VyZWZzL3RhZ3MvYmctMDIzLWVwMjQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-023-ep24",
+    "object": {
+      "sha": "1d624298d4da6773c6849c78a923d28dabdc8741",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1d624298d4da6773c6849c78a923d28dabdc8741"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-024-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDI0LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-024-preview",
+    "object": {
+      "sha": "e44544767d601dee16fc86075b135c9ea57587f7",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e44544767d601dee16fc86075b135c9ea57587f7"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-028-ep29-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvYmctMDI4LWVwMjktcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-028-ep29-preview",
+    "object": {
+      "sha": "8e4d129e83a64d799af7d76ab15943f797ed2c30",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/8e4d129e83a64d799af7d76ab15943f797ed2c30"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-029-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDI5LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-029-preview",
+    "object": {
+      "sha": "82f7c467e17b49e9b762902eda5a2d789eb49ab8",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/82f7c467e17b49e9b762902eda5a2d789eb49ab8"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-030-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDMwLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-030-preview",
+    "object": {
+      "sha": "4778eb183f27fa4c91ff067849970218f62a5e59",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/4778eb183f27fa4c91ff067849970218f62a5e59"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-031-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDMxLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-031-preview",
+    "object": {
+      "sha": "1ca760d6a1cd7f691038be4543e01b5f600fd0ca",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1ca760d6a1cd7f691038be4543e01b5f600fd0ca"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-032-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDMyLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-032-preview",
+    "object": {
+      "sha": "ffe0a91a465f748081d7403219042be6d082eeaf",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/ffe0a91a465f748081d7403219042be6d082eeaf"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-034-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDM0LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-034-preview",
+    "object": {
+      "sha": "724984afa5bf864b25d037b0c5e9af7e372829da",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/724984afa5bf864b25d037b0c5e9af7e372829da"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-036-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDM2LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-036-preview",
+    "object": {
+      "sha": "db614bf71c0263184ba8108925147766e32fff88",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/db614bf71c0263184ba8108925147766e32fff88"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-037-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDM3LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-037-preview",
+    "object": {
+      "sha": "0b2d030f6abf141ebfacb1b7e16e9ff40a3cd30b",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/0b2d030f6abf141ebfacb1b7e16e9ff40a3cd30b"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-041-ep41",
+    "node_id": "REF_kwDOU2m007VyZWZzL3RhZ3MvYmctMDQxLWVwNDE",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-041-ep41",
+    "object": {
+      "sha": "179ec8d9f5b4fb8ddafbe5d0c0449797d2cd137e",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/179ec8d9f5b4fb8ddafbe5d0c0449797d2cd137e"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-042-ep42",
+    "node_id": "REF_kwDOU2m007VyZWZzL3RhZ3MvYmctMDQyLWVwNDI",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-042-ep42",
+    "object": {
+      "sha": "2eb97fe9cef66af4e025bfc962844ae5f7bdfd03",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/2eb97fe9cef66af4e025bfc962844ae5f7bdfd03"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-043-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDQzLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-043-preview",
+    "object": {
+      "sha": "ad373ee13809bb466cf69dddffa7b3e35375fbe5",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/ad373ee13809bb466cf69dddffa7b3e35375fbe5"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-045-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDQ1LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-045-preview",
+    "object": {
+      "sha": "5ab8e1177b5eac8b41a4a750ea986ab9a1145516",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/5ab8e1177b5eac8b41a4a750ea986ab9a1145516"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-046",
+    "node_id": "REF_kwDOU2m007ByZWZzL3RhZ3MvYmctMDQ2",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-046",
+    "object": {
+      "sha": "ae48ca79281383b83aff6b4ceca83b2cd4c2b7ad",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/ae48ca79281383b83aff6b4ceca83b2cd4c2b7ad"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-046-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDQ2LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-046-preview",
+    "object": {
+      "sha": "230f0fc364f79888db553eb85fcd37d3e6d6b0c2",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/230f0fc364f79888db553eb85fcd37d3e6d6b0c2"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-048-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDQ4LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-048-preview",
+    "object": {
+      "sha": "d3ca93529f4d0342a5d5f04fa8afb9712575b258",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d3ca93529f4d0342a5d5f04fa8afb9712575b258"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-049-preview",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvYmctMDQ5LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-049-preview",
+    "object": {
+      "sha": "81fff5b614df7a72f9daf10fdd50d3177f052c50",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/81fff5b614df7a72f9daf10fdd50d3177f052c50"
+    }
+  },
+  {
+    "ref": "refs/tags/bg-050-ep50",
+    "node_id": "REF_kwDOU2m007VyZWZzL3RhZ3MvYmctMDUwLWVwNTA",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bg-050-ep50",
+    "object": {
+      "sha": "c78f6dc16a5ab70c4d72e954aa610d45a85f0c20",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/c78f6dc16a5ab70c4d72e954aa610d45a85f0c20"
+    }
+  },
+  {
+    "ref": "refs/tags/bm-017-pilot",
+    "node_id": "REF_kwDOU2m007ZyZWZzL3RhZ3MvYm0tMDE3LXBpbG90",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/bm-017-pilot",
+    "object": {
+      "sha": "1828592a8e19f3b3cd2e3926306679cb242d8924",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1828592a8e19f3b3cd2e3926306679cb242d8924"
+    }
+  },
+  {
+    "ref": "refs/tags/book-22-laws-of-marketing",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9ib29rLTIyLWxhd3Mtb2YtbWFya2V0aW5n",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-22-laws-of-marketing",
+    "object": {
+      "sha": "0e438a7b772d083492120da4cbdc6561c38ae423",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/0e438a7b772d083492120da4cbdc6561c38ae423"
+    }
+  },
+  {
+    "ref": "refs/tags/book-akyda-film",
+    "node_id": "REF_kwDOU2m007lyZWZzL3RhZ3MvYm9vay1ha3lkYS1maWxt",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-akyda-film",
+    "object": {
+      "sha": "a63637a70c0518440254b645fe08ef6e4c0d694c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/a63637a70c0518440254b645fe08ef6e4c0d694c"
+    }
+  },
+  {
+    "ref": "refs/tags/book-ayn-rand-atlas-shrugged-fragment",
+    "node_id": "REF_kwDOU2m009oAL3JlZnMvdGFncy9ib29rLWF5bi1yYW5kLWF0bGFzLXNocnVnZ2VkLWZyYWdtZW50",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-ayn-rand-atlas-shrugged-fragment",
+    "object": {
+      "sha": "b0bbe728f065321f6308009c53eb0bd60e2cf938",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/b0bbe728f065321f6308009c53eb0bd60e2cf938"
+    }
+  },
+  {
+    "ref": "refs/tags/book-cosmos-carl-sagan",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy9ib29rLWNvc21vcy1jYXJsLXNhZ2Fu",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-cosmos-carl-sagan",
+    "object": {
+      "sha": "c343838abe69bb7ef80b5dd767ae05587155eb07",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/c343838abe69bb7ef80b5dd767ae05587155eb07"
+    }
+  },
+  {
+    "ref": "refs/tags/book-crime-and-punishment-dostoevsky",
+    "node_id": "REF_kwDOU2m009oALnJlZnMvdGFncy9ib29rLWNyaW1lLWFuZC1wdW5pc2htZW50LWRvc3RvZXZza3k",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-crime-and-punishment-dostoevsky",
+    "object": {
+      "sha": "a12f9f06696020708bb7ffed853da8e98cc60de1",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/a12f9f06696020708bb7ffed853da8e98cc60de1"
+    }
+  },
+  {
+    "ref": "refs/tags/book-elon-musk-ashlee-vance",
+    "node_id": "REF_kwDOU2m009oAJXJlZnMvdGFncy9ib29rLWVsb24tbXVzay1hc2hsZWUtdmFuY2U",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-elon-musk-ashlee-vance",
+    "object": {
+      "sha": "f7a8e857c636bdcf7930f84bc1d5358181d21f60",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/f7a8e857c636bdcf7930f84bc1d5358181d21f60"
+    }
+  },
+  {
+    "ref": "refs/tags/book-games-people-play-berne",
+    "node_id": "REF_kwDOU2m009oAJnJlZnMvdGFncy9ib29rLWdhbWVzLXBlb3BsZS1wbGF5LWJlcm5l",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-games-people-play-berne",
+    "object": {
+      "sha": "8fc27d7dafcb0ecd5b2590158cca2cca605cfa10",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/8fc27d7dafcb0ecd5b2590158cca2cca605cfa10"
+    }
+  },
+  {
+    "ref": "refs/tags/book-guns-germs-and-steel-diamond",
+    "node_id": "REF_kwDOU2m009oAK3JlZnMvdGFncy9ib29rLWd1bnMtZ2VybXMtYW5kLXN0ZWVsLWRpYW1vbmQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-guns-germs-and-steel-diamond",
+    "object": {
+      "sha": "4949b89ec30706818fba56261078995bada42ab7",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/4949b89ec30706818fba56261078995bada42ab7"
+    }
+  },
+  {
+    "ref": "refs/tags/book-harari-sapiens",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvYm9vay1oYXJhcmktc2FwaWVucw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-harari-sapiens",
+    "object": {
+      "sha": "bb10d3ace78b5f3996a701ad6e5984b18d68a59d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/bb10d3ace78b5f3996a701ad6e5984b18d68a59d"
+    }
+  },
+  {
+    "ref": "refs/tags/book-hawking-brief-history-time",
+    "node_id": "REF_kwDOU2m009oAKXJlZnMvdGFncy9ib29rLWhhd2tpbmctYnJpZWYtaGlzdG9yeS10aW1l",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-hawking-brief-history-time",
+    "object": {
+      "sha": "034b02cb7a094d1b8055b77b201957d533980dfe",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/034b02cb7a094d1b8055b77b201957d533980dfe"
+    }
+  },
+  {
+    "ref": "refs/tags/book-how-to-win-friends-carnegie",
+    "node_id": "REF_kwDOU2m009oAKnJlZnMvdGFncy9ib29rLWhvdy10by13aW4tZnJpZW5kcy1jYXJuZWdpZQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-how-to-win-friends-carnegie",
+    "object": {
+      "sha": "750473599b56125efa8f4f2f9a36792d81fb39d3",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/750473599b56125efa8f4f2f9a36792d81fb39d3"
+    }
+  },
+  {
+    "ref": "refs/tags/book-ibn-khisham-film",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvYm9vay1pYm4ta2hpc2hhbS1maWxt",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-ibn-khisham-film",
+    "object": {
+      "sha": "2bf49fa7c05671a353ee1584739052f34491440f",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/2bf49fa7c05671a353ee1584739052f34491440f"
+    }
+  },
+  {
+    "ref": "refs/tags/book-ibn-khisham-zhizneopisanie-proroka",
+    "node_id": "REF_kwDOU2m009oAMXJlZnMvdGFncy9ib29rLWlibi1raGlzaGFtLXpoaXpuZW9waXNhbmllLXByb3Jva2E",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-ibn-khisham-zhizneopisanie-proroka",
+    "object": {
+      "sha": "e6a3c44c66ef12ecaa73dd30f921476266922818",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e6a3c44c66ef12ecaa73dd30f921476266922818"
+    }
+  },
+  {
+    "ref": "refs/tags/book-islamskoe-verouchenie-akyda",
+    "node_id": "REF_kwDOU2m009oAKnJlZnMvdGFncy9ib29rLWlzbGFtc2tvZS12ZXJvdWNoZW5pZS1ha3lkYQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-islamskoe-verouchenie-akyda",
+    "object": {
+      "sha": "2821c81f825dad65a749426e420cfbc1245f89ce",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/2821c81f825dad65a749426e420cfbc1245f89ce"
+    }
+  },
+  {
+    "ref": "refs/tags/book-it-king-volume-one",
+    "node_id": "REF_kwDOU2m009oAIXJlZnMvdGFncy9ib29rLWl0LWtpbmctdm9sdW1lLW9uZQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-it-king-volume-one",
+    "object": {
+      "sha": "45918c0e2573be449ef3cdc7c5db75fcdf71403e",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/45918c0e2573be449ef3cdc7c5db75fcdf71403e"
+    }
+  },
+  {
+    "ref": "refs/tags/book-james-clear-atomic-habits",
+    "node_id": "REF_kwDOU2m009oAKHJlZnMvdGFncy9ib29rLWphbWVzLWNsZWFyLWF0b21pYy1oYWJpdHM",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-james-clear-atomic-habits",
+    "object": {
+      "sha": "33b9945a3bf90c066de633ceff01ea93a7e18fd1",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/33b9945a3bf90c066de633ceff01ea93a7e18fd1"
+    }
+  },
+  {
+    "ref": "refs/tags/book-kahneman-thinking-fast-and-slow",
+    "node_id": "REF_kwDOU2m009oALnJlZnMvdGFncy9ib29rLWthaG5lbWFuLXRoaW5raW5nLWZhc3QtYW5kLXNsb3c",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-kahneman-thinking-fast-and-slow",
+    "object": {
+      "sha": "f1b898593ef43354285052fb843846b687388bb5",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/f1b898593ef43354285052fb843846b687388bb5"
+    }
+  },
+  {
+    "ref": "refs/tags/book-lean-startup-eric-ries",
+    "node_id": "REF_kwDOU2m009oAJXJlZnMvdGFncy9ib29rLWxlYW4tc3RhcnR1cC1lcmljLXJpZXM",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-lean-startup-eric-ries",
+    "object": {
+      "sha": "3bea4296d1318bc0eb6b413cd4124b7b34a6645f",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/3bea4296d1318bc0eb6b413cd4124b7b34a6645f"
+    }
+  },
+  {
+    "ref": "refs/tags/book-lider-bez-titula",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvYm9vay1saWRlci1iZXotdGl0dWxh",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-lider-bez-titula",
+    "object": {
+      "sha": "80334988beb243a310e7b0fd1322cac68d96cc33",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/80334988beb243a310e7b0fd1322cac68d96cc33"
+    }
+  },
+  {
+    "ref": "refs/tags/book-lord-of-the-rings-tolkien",
+    "node_id": "REF_kwDOU2m009oAKHJlZnMvdGFncy9ib29rLWxvcmQtb2YtdGhlLXJpbmdzLXRvbGtpZW4",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-lord-of-the-rings-tolkien",
+    "object": {
+      "sha": "e707259f2e1cc4b23c2382985b974b56ef91c4b6",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e707259f2e1cc4b23c2382985b974b56ef91c4b6"
+    }
+  },
+  {
+    "ref": "refs/tags/book-marcus-aurelius-meditations",
+    "node_id": "REF_kwDOU2m009oAKnJlZnMvdGFncy9ib29rLW1hcmN1cy1hdXJlbGl1cy1tZWRpdGF0aW9ucw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-marcus-aurelius-meditations",
+    "object": {
+      "sha": "9e0f7b14c3f04b1c8bd5aaabddaa0f190ea03c25",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/9e0f7b14c3f04b1c8bd5aaabddaa0f190ea03c25"
+    }
+  },
+  {
+    "ref": "refs/tags/book-morgan-housel-psychology-of-money",
+    "node_id": "REF_kwDOU2m009oAMHJlZnMvdGFncy9ib29rLW1vcmdhbi1ob3VzZWwtcHN5Y2hvbG9neS1vZi1tb25leQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-morgan-housel-psychology-of-money",
+    "object": {
+      "sha": "62b43967179b69c1f32d42a814650d3359b25747",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/62b43967179b69c1f32d42a814650d3359b25747"
+    }
+  },
+  {
+    "ref": "refs/tags/book-peter-thiel-zero-to-one",
+    "node_id": "REF_kwDOU2m009oAJnJlZnMvdGFncy9ib29rLXBldGVyLXRoaWVsLXplcm8tdG8tb25l",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-peter-thiel-zero-to-one",
+    "object": {
+      "sha": "1731e83de8babf1a1e738146d94c8cee29fc8921",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1731e83de8babf1a1e738146d94c8cee29fc8921"
+    }
+  },
+  {
+    "ref": "refs/tags/book-pride-and-prejudice-austen",
+    "node_id": "REF_kwDOU2m009oAKXJlZnMvdGFncy9ib29rLXByaWRlLWFuZC1wcmVqdWRpY2UtYXVzdGVu",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-pride-and-prejudice-austen",
+    "object": {
+      "sha": "d61fc19af10f18e65da7986cef9165d058df3cdc",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d61fc19af10f18e65da7986cef9165d058df3cdc"
+    }
+  },
+  {
+    "ref": "refs/tags/book-psychology-of-influence-cialdini",
+    "node_id": "REF_kwDOU2m009oAL3JlZnMvdGFncy9ib29rLXBzeWNob2xvZ3ktb2YtaW5mbHVlbmNlLWNpYWxkaW5p",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-psychology-of-influence-cialdini",
+    "object": {
+      "sha": "ab87ad4f300de4ddf54f8779e66e7c1d527672dd",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/ab87ad4f300de4ddf54f8779e66e7c1d527672dd"
+    }
+  },
+  {
+    "ref": "refs/tags/book-rich-dad-poor-dad-kiyosaki",
+    "node_id": "REF_kwDOU2m009oAKXJlZnMvdGFncy9ib29rLXJpY2gtZGFkLXBvb3ItZGFkLWtpeW9zYWtp",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-rich-dad-poor-dad-kiyosaki",
+    "object": {
+      "sha": "1e476c41ebe8795a1eadcf59b27d9e151dbd5a73",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1e476c41ebe8795a1eadcf59b27d9e151dbd5a73"
+    }
+  },
+  {
+    "ref": "refs/tags/book-richest-man-in-babylon-clason",
+    "node_id": "REF_kwDOU2m009oALHJlZnMvdGFncy9ib29rLXJpY2hlc3QtbWFuLWluLWJhYnlsb24tY2xhc29u",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-richest-man-in-babylon-clason",
+    "object": {
+      "sha": "c7cd49362276fc4f4085cc302c62d8fca7d255de",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/c7cd49362276fc4f4085cc302c62d8fca7d255de"
+    }
+  },
+  {
+    "ref": "refs/tags/book-robert-greene-48-laws-of-power",
+    "node_id": "REF_kwDOU2m009oALXJlZnMvdGFncy9ib29rLXJvYmVydC1ncmVlbmUtNDgtbGF3cy1vZi1wb3dlcg",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-robert-greene-48-laws-of-power",
+    "object": {
+      "sha": "83756b87883f4cbfec367736d7da58f4a0191d85",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/83756b87883f4cbfec367736d7da58f4a0191d85"
+    }
+  },
+  {
+    "ref": "refs/tags/book-seneca-letters-lucilius",
+    "node_id": "REF_kwDOU2m009oAJnJlZnMvdGFncy9ib29rLXNlbmVjYS1sZXR0ZXJzLWx1Y2lsaXVz",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-seneca-letters-lucilius",
+    "object": {
+      "sha": "0676b469d4c15dadb64e2736b78672530ca1b860",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/0676b469d4c15dadb64e2736b78672530ca1b860"
+    }
+  },
+  {
+    "ref": "refs/tags/book-seven-habits-covey",
+    "node_id": "REF_kwDOU2m009oAIXJlZnMvdGFncy9ib29rLXNldmVuLWhhYml0cy1jb3ZleQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-seven-habits-covey",
+    "object": {
+      "sha": "99513a059e34b2e5e0040b37235ee2525b02120d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/99513a059e34b2e5e0040b37235ee2525b02120d"
+    }
+  },
+  {
+    "ref": "refs/tags/book-steve-jobs-isaacson",
+    "node_id": "REF_kwDOU2m009oAInJlZnMvdGFncy9ib29rLXN0ZXZlLWpvYnMtaXNhYWNzb24",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-steve-jobs-isaacson",
+    "object": {
+      "sha": "a68df1abc6b9e9e84f5758664d972633e0030d87",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/a68df1abc6b9e9e84f5758664d972633e0030d87"
+    }
+  },
+  {
+    "ref": "refs/tags/book-traktat-o-prirode",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy9ib29rLXRyYWt0YXQtby1wcmlyb2Rl",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-traktat-o-prirode",
+    "object": {
+      "sha": "3234723827b283ae26e021777ad5b93aea6d4420",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/3234723827b283ae26e021777ad5b93aea6d4420"
+    }
+  },
+  {
+    "ref": "refs/tags/book-war-and-peace-tolstoy",
+    "node_id": "REF_kwDOU2m009oAJHJlZnMvdGFncy9ib29rLXdhci1hbmQtcGVhY2UtdG9sc3RveQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/book-war-and-peace-tolstoy",
+    "object": {
+      "sha": "e002c0a7dd7f71d16f0c8ca369ac3e68706b5490",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e002c0a7dd7f71d16f0c8ca369ac3e68706b5490"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-002-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAwMi1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-002-preview",
+    "object": {
+      "sha": "2f166770e15712dfec0dd83f42c91c0388ec7d99",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/2f166770e15712dfec0dd83f42c91c0388ec7d99"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-006-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAwNi1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-006-preview",
+    "object": {
+      "sha": "093265d8e3da43964e50272afbb1fba27824927e",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/093265d8e3da43964e50272afbb1fba27824927e"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-012-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAxMi1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-012-preview",
+    "object": {
+      "sha": "96a70b62a6a8c345089ac31de033fe92cb9487f0",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/96a70b62a6a8c345089ac31de033fe92cb9487f0"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-017-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAxNy1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-017-preview",
+    "object": {
+      "sha": "73b7db88a5b09ff1a2123b4b2f150ca6afa68602",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/73b7db88a5b09ff1a2123b4b2f150ca6afa68602"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-018-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAxOC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-018-preview",
+    "object": {
+      "sha": "ce06d721a870b3b74d6b87f856721d434619ae27",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/ce06d721a870b3b74d6b87f856721d434619ae27"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-019-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAxOS1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-019-preview",
+    "object": {
+      "sha": "631a3ecb861179a2a870cd3698c8c558175fcfef",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/631a3ecb861179a2a870cd3698c8c558175fcfef"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-026-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAyNi1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-026-preview",
+    "object": {
+      "sha": "7fff83eff6162aecf47105a8117c7cbd7c2ae8b4",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/7fff83eff6162aecf47105a8117c7cbd7c2ae8b4"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-027-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAyNy1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-027-preview",
+    "object": {
+      "sha": "7bccdfedae4663ced6f1d008c670c9f345a57e1a",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/7bccdfedae4663ced6f1d008c670c9f345a57e1a"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-038-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAzOC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-038-preview",
+    "object": {
+      "sha": "14ab184c1bf61de0647ce09ccf062366e996074d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/14ab184c1bf61de0647ce09ccf062366e996074d"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-039",
+    "node_id": "REF_kwDOU2m007tyZWZzL3RhZ3MvY2FtcGFpZ241MC1iZy0wMzk",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-039",
+    "object": {
+      "sha": "7e3c4883bf1f938b28e8b4c4dc263f1700664df2",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/7e3c4883bf1f938b28e8b4c4dc263f1700664df2"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-039-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTAzOS1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-039-preview",
+    "object": {
+      "sha": "d53cd0b103fa99d5ea24a48d371cac83d0e0d2e1",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d53cd0b103fa99d5ea24a48d371cac83d0e0d2e1"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-040-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTA0MC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-040-preview",
+    "object": {
+      "sha": "cf62cd673c7f1025afb7390c2037aee0b18d58bf",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/cf62cd673c7f1025afb7390c2037aee0b18d58bf"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-044-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTA0NC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-044-preview",
+    "object": {
+      "sha": "d7c55f2aa9711c5a78c71e9fc9ff639f705e0a4d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d7c55f2aa9711c5a78c71e9fc9ff639f705e0a4d"
+    }
+  },
+  {
+    "ref": "refs/tags/campaign50-bg-047-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9jYW1wYWlnbjUwLWJnLTA0Ny1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/campaign50-bg-047-preview",
+    "object": {
+      "sha": "aeb96c632455c32567d46b56d3951d2cb7983173",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/aeb96c632455c32567d46b56d3951d2cb7983173"
+    }
+  },
+  {
+    "ref": "refs/tags/chess-tournament-2d-preview",
+    "node_id": "REF_kwDOU2m009oAJXJlZnMvdGFncy9jaGVzcy10b3VybmFtZW50LTJkLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/chess-tournament-2d-preview",
+    "object": {
+      "sha": "b1331e255ae4af3ea71d690338ecdf1a5f89f14b",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/b1331e255ae4af3ea71d690338ecdf1a5f89f14b"
+    }
+  },
+  {
+    "ref": "refs/tags/dad-driver-preview",
+    "node_id": "REF_kwDOU2m007xyZWZzL3RhZ3MvZGFkLWRyaXZlci1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/dad-driver-preview",
+    "object": {
+      "sha": "34eb9295af5247fec6bcd36e12d001a1f6b5e486",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/34eb9295af5247fec6bcd36e12d001a1f6b5e486"
+    }
+  },
+  {
+    "ref": "refs/tags/eleven-minutes-2d-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy9lbGV2ZW4tbWludXRlcy0yZC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/eleven-minutes-2d-preview",
+    "object": {
+      "sha": "b802d3ceabc7071867b8ac224d2c442d4752f987",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/b802d3ceabc7071867b8ac224d2c442d4752f987"
+    }
+  },
+  {
+    "ref": "refs/tags/extra-line-34-preview",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvZXh0cmEtbGluZS0zNC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/extra-line-34-preview",
+    "object": {
+      "sha": "e34e4353f570af711d157509e8c7ee3e25947c47",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e34e4353f570af711d157509e8c7ee3e25947c47"
+    }
+  },
+  {
+    "ref": "refs/tags/finance-horse-preview",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvZmluYW5jZS1ob3JzZS1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/finance-horse-preview",
+    "object": {
+      "sha": "c09de3e954c040eb11b9f4ea7d8b9ac65fb422b3",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/c09de3e954c040eb11b9f4ea7d8b9ac65fb422b3"
+    }
+  },
+  {
+    "ref": "refs/tags/finance-horse-ru-preview",
+    "node_id": "REF_kwDOU2m009oAInJlZnMvdGFncy9maW5hbmNlLWhvcnNlLXJ1LXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/finance-horse-ru-preview",
+    "object": {
+      "sha": "17d94de81e166a45b4d445941449a0dfba255215",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/17d94de81e166a45b4d445941449a0dfba255215"
+    }
+  },
+  {
+    "ref": "refs/tags/five-unsent-messages-2d-preview",
+    "node_id": "REF_kwDOU2m009oAKXJlZnMvdGFncy9maXZlLXVuc2VudC1tZXNzYWdlcy0yZC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/five-unsent-messages-2d-preview",
+    "object": {
+      "sha": "6defd64e6ba3298dd4d017347c7775050187cfcd",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/6defd64e6ba3298dd4d017347c7775050187cfcd"
+    }
+  },
+  {
+    "ref": "refs/tags/invitation-without-name-2d-preview",
+    "node_id": "REF_kwDOU2m009oALHJlZnMvdGFncy9pbnZpdGF0aW9uLXdpdGhvdXQtbmFtZS0yZC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/invitation-without-name-2d-preview",
+    "object": {
+      "sha": "d64f8e78fa46a04d1a832108bed4d2a6d7a494a4",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d64f8e78fa46a04d1a832108bed4d2a6d7a494a4"
+    }
+  },
+  {
+    "ref": "refs/tags/knows-my-name-2d-preview",
+    "node_id": "REF_kwDOU2m009oAInJlZnMvdGFncy9rbm93cy1teS1uYW1lLTJkLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/knows-my-name-2d-preview",
+    "object": {
+      "sha": "bb41cc52eb4438add3a72c3f8cb318679d18a79d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/bb41cc52eb4438add3a72c3f8cb318679d18a79d"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-10-preview",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy9sZXNzb24tODAtMS0xMC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-10-preview",
+    "object": {
+      "sha": "024ca4b82dabdb96b3e4c6926bb4287024d3e4a7",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/024ca4b82dabdb96b3e4c6926bb4287024d3e4a7"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-11-preview",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy9sZXNzb24tODAtMS0xMS1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-11-preview",
+    "object": {
+      "sha": "a9bfb600e8f6159c9767153fe45c246804ccd388",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/a9bfb600e8f6159c9767153fe45c246804ccd388"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-12-preview",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy9sZXNzb24tODAtMS0xMi1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-12-preview",
+    "object": {
+      "sha": "7055ea63e4613aae81a60488f6d491555b471531",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/7055ea63e4613aae81a60488f6d491555b471531"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-13-preview",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy9sZXNzb24tODAtMS0xMy1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-13-preview",
+    "object": {
+      "sha": "963184e9a1a72ef41a61d203eca795cffd5ada25",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/963184e9a1a72ef41a61d203eca795cffd5ada25"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-14",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvbGVzc29uLTgwLTEtMTQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-14",
+    "object": {
+      "sha": "3e0228e63a1a75d94379c99e3f8699d752ed8098",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/3e0228e63a1a75d94379c99e3f8699d752ed8098"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-5-preview",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvbGVzc29uLTgwLTEtNS1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-5-preview",
+    "object": {
+      "sha": "0df08f7bf80a378c0eecdffdada489d529d80391",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/0df08f7bf80a378c0eecdffdada489d529d80391"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-6-preview",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvbGVzc29uLTgwLTEtNi1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-6-preview",
+    "object": {
+      "sha": "4d9c185500d0bf1d1074d468967b4f1207580fac",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/4d9c185500d0bf1d1074d468967b4f1207580fac"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-7-preview",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvbGVzc29uLTgwLTEtNy1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-7-preview",
+    "object": {
+      "sha": "8de1263a3abfbf413f4bb4955d04f58c351effc1",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/8de1263a3abfbf413f4bb4955d04f58c351effc1"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-8-preview",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvbGVzc29uLTgwLTEtOC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-8-preview",
+    "object": {
+      "sha": "e033298e6d1e154fbeb5f9ea51ff32d8df05af8a",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e033298e6d1e154fbeb5f9ea51ff32d8df05af8a"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-80-1-9-preview",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvbGVzc29uLTgwLTEtOS1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-80-1-9-preview",
+    "object": {
+      "sha": "d15a7ae3f87555263b1388ca7d24da3fed1a444e",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d15a7ae3f87555263b1388ca7d24da3fed1a444e"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-atlas-fragment",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvbGVzc29uLWF0bGFzLWZyYWdtZW50",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-atlas-fragment",
+    "object": {
+      "sha": "1b08a05e367e9ae195025ff7b6d5a31caf43a76c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1b08a05e367e9ae195025ff7b6d5a31caf43a76c"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-hawking-bm014",
+    "node_id": "REF_kwDOU2m0075yZWZzL3RhZ3MvbGVzc29uLWhhd2tpbmctYm0wMTQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-hawking-bm014",
+    "object": {
+      "sha": "1514b5a5c5a32228295ef6846289f9ee87dfd2f1",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1514b5a5c5a32228295ef6846289f9ee87dfd2f1"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-jobs-bm015",
+    "node_id": "REF_kwDOU2m007tyZWZzL3RhZ3MvbGVzc29uLWpvYnMtYm0wMTU",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-jobs-bm015",
+    "object": {
+      "sha": "6a367b545f010a01e63dc31f9e393e46f2e80b1d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/6a367b545f010a01e63dc31f9e393e46f2e80b1d"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-sagan-bm028",
+    "node_id": "REF_kwDOU2m007xyZWZzL3RhZ3MvbGVzc29uLXNhZ2FuLWJtMDI4",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-sagan-bm028",
+    "object": {
+      "sha": "c343838abe69bb7ef80b5dd767ae05587155eb07",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/c343838abe69bb7ef80b5dd767ae05587155eb07"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-sapiens-bm013",
+    "node_id": "REF_kwDOU2m0075yZWZzL3RhZ3MvbGVzc29uLXNhcGllbnMtYm0wMTM",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-sapiens-bm013",
+    "object": {
+      "sha": "bc68985bb9819b348d45e4613d28b76e13bde4a5",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/bc68985bb9819b348d45e4613d28b76e13bde4a5"
+    }
+  },
+  {
+    "ref": "refs/tags/lesson-traktat-banan",
+    "node_id": "REF_kwDOU2m0075yZWZzL3RhZ3MvbGVzc29uLXRyYWt0YXQtYmFuYW4",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/lesson-traktat-banan",
+    "object": {
+      "sha": "fa89fd056b9ba5649d94c89c405939dce28e9dd8",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/fa89fd056b9ba5649d94c89c405939dce28e9dd8"
+    }
+  },
+  {
+    "ref": "refs/tags/live-004-v2-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvbGl2ZS0wMDQtdjItcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/live-004-v2-preview",
+    "object": {
+      "sha": "d325325786634806b08f9ff235bdac1173f4b5f8",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d325325786634806b08f9ff235bdac1173f4b5f8"
+    }
+  },
+  {
+    "ref": "refs/tags/live-004-v3-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvbGl2ZS0wMDQtdjMtcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/live-004-v3-preview",
+    "object": {
+      "sha": "faf7cc78c6dbdd29cda49a841fdcd9fb2fef042b",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/faf7cc78c6dbdd29cda49a841fdcd9fb2fef042b"
+    }
+  },
+  {
+    "ref": "refs/tags/live-004-v4-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvbGl2ZS0wMDQtdjQtcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/live-004-v4-preview",
+    "object": {
+      "sha": "05cd582bc890fa6fce92370cd8f3b06e6bdb87f2",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/05cd582bc890fa6fce92370cd8f3b06e6bdb87f2"
+    }
+  },
+  {
+    "ref": "refs/tags/live-004-v5-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvbGl2ZS0wMDQtdjUtcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/live-004-v5-preview",
+    "object": {
+      "sha": "4826512acfdc0feff6222433ae64dd145860ec3b",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/4826512acfdc0feff6222433ae64dd145860ec3b"
+    }
+  },
+  {
+    "ref": "refs/tags/live-004-v6-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvbGl2ZS0wMDQtdjYtcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/live-004-v6-preview",
+    "object": {
+      "sha": "2b58c90c7886399071463ec85b51ae10d8ad6f99",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/2b58c90c7886399071463ec85b51ae10d8ad6f99"
+    }
+  },
+  {
+    "ref": "refs/tags/live-005-v1-preview",
+    "node_id": "REF_kwDOU2m0071yZWZzL3RhZ3MvbGl2ZS0wMDUtdjEtcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/live-005-v1-preview",
+    "object": {
+      "sha": "78153c9596475863bb6b6140e5a76ac5176df35d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/78153c9596475863bb6b6140e5a76ac5176df35d"
+    }
+  },
+  {
+    "ref": "refs/tags/live-reel-source",
+    "node_id": "REF_kwDOU2m007pyZWZzL3RhZ3MvbGl2ZS1yZWVsLXNvdXJjZQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/live-reel-source",
+    "object": {
+      "sha": "d4965bdb03a07d352152a1d676b7525be6009976",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/d4965bdb03a07d352152a1d676b7525be6009976"
+    }
+  },
+  {
+    "ref": "refs/tags/live04-motion-preview",
+    "node_id": "REF_kwDOU2m0079yZWZzL3RhZ3MvbGl2ZTA0LW1vdGlvbi1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/live04-motion-preview",
+    "object": {
+      "sha": "1ffc3df75e44cc5935ce08bb6b94ec50ed52d756",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1ffc3df75e44cc5935ce08bb6b94ec50ed52d756"
+    }
+  },
+  {
+    "ref": "refs/tags/meeting-1320-2d-preview",
+    "node_id": "REF_kwDOU2m009oAIXJlZnMvdGFncy9tZWV0aW5nLTEzMjAtMmQtcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/meeting-1320-2d-preview",
+    "object": {
+      "sha": "1f7b23af4e1ac3c35dcd64de9522906478695a1c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/1f7b23af4e1ac3c35dcd64de9522906478695a1c"
+    }
+  },
+  {
+    "ref": "refs/tags/muslim-kids-ali-imran-190-191",
+    "node_id": "REF_kwDOU2m009oAJ3JlZnMvdGFncy9tdXNsaW0ta2lkcy1hbGktaW1yYW4tMTkwLTE5MQ",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/muslim-kids-ali-imran-190-191",
+    "object": {
+      "sha": "70080cff01d2563ae9d4b235cfa0e7b3149c0fd9",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/70080cff01d2563ae9d4b235cfa0e7b3149c0fd9"
+    }
+  },
+  {
+    "ref": "refs/tags/muslimkids-005",
+    "node_id": "REF_kwDOU2m007hyZWZzL3RhZ3MvbXVzbGlta2lkcy0wMDU",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/muslimkids-005",
+    "object": {
+      "sha": "298aa9c618afb2fb3459b76ec399fd7d2b334fdd",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/298aa9c618afb2fb3459b76ec399fd7d2b334fdd"
+    }
+  },
+  {
+    "ref": "refs/tags/muslimkids-crystal-007",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy9tdXNsaW1raWRzLWNyeXN0YWwtMDA3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/muslimkids-crystal-007",
+    "object": {
+      "sha": "ab7e02fdbbb2eb571e2882054438611d315e085c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/ab7e02fdbbb2eb571e2882054438611d315e085c"
+    }
+  },
+  {
+    "ref": "refs/tags/nine-year-old-employee-2d-preview",
+    "node_id": "REF_kwDOU2m009oAK3JlZnMvdGFncy9uaW5lLXllYXItb2xkLWVtcGxveWVlLTJkLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/nine-year-old-employee-2d-preview",
+    "object": {
+      "sha": "822e37d9cc22e4ed176372d5b03ec21e482d24fb",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/822e37d9cc22e4ed176372d5b03ec21e482d24fb"
+    }
+  },
+  {
+    "ref": "refs/tags/nox-film",
+    "node_id": "REF_kwDOU2m007JyZWZzL3RhZ3Mvbm94LWZpbG0",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/nox-film",
+    "object": {
+      "sha": "e668cd7bd035a62bd5cb2105ef33f31fa5b6a5ce",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e668cd7bd035a62bd5cb2105ef33f31fa5b6a5ce"
+    }
+  },
+  {
+    "ref": "refs/tags/programmers-hardest-task-preview",
+    "node_id": "REF_kwDOU2m009oAKnJlZnMvdGFncy9wcm9ncmFtbWVycy1oYXJkZXN0LXRhc2stcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/programmers-hardest-task-preview",
+    "object": {
+      "sha": "e132cc44693fe7a64655b654c18725fa85e5910a",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/e132cc44693fe7a64655b654c18725fa85e5910a"
+    }
+  },
+  {
+    "ref": "refs/tags/suitcase-by-the-door-2d-preview",
+    "node_id": "REF_kwDOU2m009oAKXJlZnMvdGFncy9zdWl0Y2FzZS1ieS10aGUtZG9vci0yZC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/suitcase-by-the-door-2d-preview",
+    "object": {
+      "sha": "16d68238506007708a7a4e0888ff1751ffb0b1eb",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/16d68238506007708a7a4e0888ff1751ffb0b1eb"
+    }
+  },
+  {
+    "ref": "refs/tags/taxi-child-preview",
+    "node_id": "REF_kwDOU2m007xyZWZzL3RhZ3MvdGF4aS1jaGlsZC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/taxi-child-preview",
+    "object": {
+      "sha": "ad5020c1c342b74410e444a47bbf5f56f09e93b4",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/ad5020c1c342b74410e444a47bbf5f56f09e93b4"
+    }
+  },
+  {
+    "ref": "refs/tags/tb-002-film",
+    "node_id": "REF_kwDOU2m007VyZWZzL3RhZ3MvdGItMDAyLWZpbG0",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/tb-002-film",
+    "object": {
+      "sha": "b1b8544f68bd04d32973467a88725d4235d4f470",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/b1b8544f68bd04d32973467a88725d4235d4f470"
+    }
+  },
+  {
+    "ref": "refs/tags/tb-003-film",
+    "node_id": "REF_kwDOU2m007VyZWZzL3RhZ3MvdGItMDAzLWZpbG0",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/tb-003-film",
+    "object": {
+      "sha": "7e5638f7137568cd18e244f7ebe466db72bc6004",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/7e5638f7137568cd18e244f7ebe466db72bc6004"
+    }
+  },
+  {
+    "ref": "refs/tags/tb-004-film",
+    "node_id": "REF_kwDOU2m007VyZWZzL3RhZ3MvdGItMDA0LWZpbG0",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/tb-004-film",
+    "object": {
+      "sha": "681f5771e47b3809d5b290e7fd2332b699b0e337",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/681f5771e47b3809d5b290e7fd2332b699b0e337"
+    }
+  },
+  {
+    "ref": "refs/tags/third-b-meeting-2d-preview",
+    "node_id": "REF_kwDOU2m009oAJHJlZnMvdGFncy90aGlyZC1iLW1lZXRpbmctMmQtcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/third-b-meeting-2d-preview",
+    "object": {
+      "sha": "4b6922749c5f9e621c6a540663d050d51b962090",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/4b6922749c5f9e621c6a540663d050d51b962090"
+    }
+  },
+  {
+    "ref": "refs/tags/twenty-five-envelopes-2d-preview",
+    "node_id": "REF_kwDOU2m009oAKnJlZnMvdGFncy90d2VudHktZml2ZS1lbnZlbG9wZXMtMmQtcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/twenty-five-envelopes-2d-preview",
+    "object": {
+      "sha": "70ce8f0c3fc60a0bb0e8673a495e0d55187e206c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/70ce8f0c3fc60a0bb0e8673a495e0d55187e206c"
+    }
+  },
+  {
+    "ref": "refs/tags/two-cars-one-question-preview",
+    "node_id": "REF_kwDOU2m009oAJ3JlZnMvdGFncy90d28tY2Fycy1vbmUtcXVlc3Rpb24tcHJldmlldw",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/two-cars-one-question-preview",
+    "object": {
+      "sha": "dac9d9817a7eb118f41d290e38aaf87d52dab16d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/dac9d9817a7eb118f41d290e38aaf87d52dab16d"
+    }
+  },
+  {
+    "ref": "refs/tags/two-schedules-2d-preview",
+    "node_id": "REF_kwDOU2m009oAInJlZnMvdGFncy90d28tc2NoZWR1bGVzLTJkLXByZXZpZXc",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/two-schedules-2d-preview",
+    "object": {
+      "sha": "3b36ed5e5ea10473250e66954f9441e4b1fc5b6c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/3b36ed5e5ea10473250e66954f9441e4b1fc5b6c"
+    }
+  },
+  {
+    "ref": "refs/tags/two-sundays-2d-preview",
+    "node_id": "REF_kwDOU2m009oAIHJlZnMvdGFncy90d28tc3VuZGF5cy0yZC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/two-sundays-2d-preview",
+    "object": {
+      "sha": "867369be568f16a2bcb3e0a19aa5a66b0d606175",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/867369be568f16a2bcb3e0a19aa5a66b0d606175"
+    }
+  },
+  {
+    "ref": "refs/tags/unanswered-letter-2d-preview",
+    "node_id": "REF_kwDOU2m009oAJnJlZnMvdGFncy91bmFuc3dlcmVkLWxldHRlci0yZC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/unanswered-letter-2d-preview",
+    "object": {
+      "sha": "03d45aa98e1b0460d600e3fadaf06ecc7778b351",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/03d45aa98e1b0460d600e3fadaf06ecc7778b351"
+    }
+  },
+  {
+    "ref": "refs/tags/work-from-home-2d-preview",
+    "node_id": "REF_kwDOU2m009oAI3JlZnMvdGFncy93b3JrLWZyb20taG9tZS0yZC1wcmV2aWV3",
+    "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/refs/tags/work-from-home-2d-preview",
+    "object": {
+      "sha": "397d148a8a5aa5b5f61f61b6dc32682d9ba14bbe",
+      "type": "commit",
+      "url": "https://api.github.com/repos/adiletzainidinov/balago-video/git/commits/397d148a8a5aa5b5f61f61b6dc32682d9ba14bbe"
+    }
+  }
+]
