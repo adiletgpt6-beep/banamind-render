@@ -1,0 +1,16 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "178666d2d596d645d135559a5ee3c9f3be42967b",
+  "source_branches": [
+    "docs/banamind-500-production-system"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 12,
+  "withheld_file_counts": {
+    "private_source_or_binary": 374,
+    "unreviewed_source_transcript": 3
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 11
+}
