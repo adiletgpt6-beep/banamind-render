@@ -1,0 +1,270 @@
+name: Lesson 80-1-9 «Кому сказать спасибо?»
+
+# Мини-фильм 80-1-9 (композиция Lesson80-1-9, 1920×1080, 30 к/с, ≈ 3:50).
+#   voice   → озвучка 45 реплик ElevenLabs голосами из
+#             src/lesson80/film-1-9/script.ts (при исчерпанной квоте — резервная
+#             дорожка RHVoice с пометкой provider в манифесте); замер
+#             разборчивости MMS по всем репликам; новые файлы сохраняются в
+#             ветку, готовые реплики повторно не синтезируются.
+#   render  → lint/TypeScript, проверки, контрольные кадры, MP4 1920×1080
+#             (faststart), SRT; задача падает, если MP4 не создан или
+#             формат/длительность/звук не те.
+#   publish → MP4 и SRT как файлы предварительного релиза lesson-80-1-9-preview.
+
+on:
+  push:
+    paths:
+      - "src/lesson80/film-1-9/**"
+      - "src/Lesson80_1_9.tsx"
+      - "src/lesson80/rig/**"
+      - "src/lesson80/core/**"
+      - "src/lesson80/sets/**"
+      - "src/lesson80/characters/**"
+      - "scripts/lesson80-1-9*"
+      - "public/lesson-80-1-9/**"
+      - ".github/workflows/lesson-80-1-9.yml"
+  workflow_dispatch:
+    inputs:
+      render:
+        description: "Собрать MP4"
+        type: boolean
+        default: true
+
+concurrency:
+  group: lesson-80-1-9-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: lesson-80-1-9
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-ts2d-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-ts2d-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      - name: Install RHVoice (offline fallback)
+        run: sudo apt-get install -y --no-install-recommends rhvoice rhvoice-russian librhvoice5 || true
+
+      # Состояние квоты ElevenLabs (только тариф и счётчики символов, без ключа).
+      - name: ElevenLabs quota
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ]; then echo "ELEVENLABS_API_KEY не задан"; exit 0; fi
+          code=$(curl -sS -o sub.json -w '%{http_code}' -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription || true)
+          echo "HTTP $code"
+          node -e 'const s=require("./sub.json"); const pick={tier:s.tier,status:s.status,character_count:s.character_count,character_limit:s.character_limit,next_character_count_reset_unix:s.next_character_count_reset_unix,next_reset:s.next_character_count_reset_unix?new Date(s.next_character_count_reset_unix*1000).toISOString():null,detail:s.detail&&(s.detail.status||s.detail.message||s.detail)}; console.log(JSON.stringify(pick,null,1))' | tee -a "$GITHUB_STEP_SUMMARY" || true
+          rm -f sub.json
+
+      # Реплики: готовые (тот же хэш) переиспользуются без обращения к API.
+      - name: Voiceover (ElevenLabs; cached lines are reused)
+        id: eleven
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          L80_TAKES: ${{ vars.L80_TAKES || '1' }}
+        run: node scripts/lesson80-1-9-voice.mjs --provider elevenlabs 2>&1 | tee voice.log
+
+      # Квота ElevenLabs исчерпана или ключа нет → резервная офлайн-дорожка
+      # RHVoice (честно помечается в манифесте: provider = rhvoice).
+      - name: Is the ElevenLabs track complete?
+        id: complete
+        run: |
+          if node -e 'const m=require("./public/lesson-80-1-9/audio/manifest.json"); process.exit(m.provider==="elevenlabs" && !m.partial && m.lines.length===45 && m.lines.every((l)=>l && l.provider==="elevenlabs" && l.file) ? 0 : 1)' 2>/dev/null; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Voiceover fallback (RHVoice) if ElevenLabs track is incomplete
+        if: steps.complete.outputs.ok != 'true'
+        run: |
+          echo "::warning::ElevenLabs не дал полной дорожки (см. voice.log) — собирается резервная дорожка RHVoice"
+          node scripts/lesson80-1-9-voice.mjs --provider rhvoice 2>&1 | tee voice-rhvoice.log
+
+      - name: Room tone and prop sounds
+        run: node scripts/lesson80-1-9-sfx.mjs
+
+      # Разборчивость и основной тон каждой реплики (MMS, русский адаптер).
+      - name: Voice intelligibility check (MMS)
+        continue-on-error: true
+        run: node scripts/lesson80-1-9-asr.mjs 2>&1 | tee asr.log
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          # неполный манифест (прерванный синтез) в ветку не сохраняется
+          if [ -f public/lesson-80-1-9/audio/manifest.json ] && node -e 'const m=require("./public/lesson-80-1-9/audio/manifest.json"); process.exit(m.partial || m.lines.some((l)=>!l) ? 1 : 0)'; then :; else echo "::warning::Озвучка неполная — файлы не сохраняются"; git checkout -- public/lesson-80-1-9/audio/manifest.json 2>/dev/null || true; fi
+          git add -A public/lesson-80-1-9 voice-samples/lesson-80-1-9 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save lesson-80-1-9 voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "saved=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Voice summary
+        if: always()
+        run: |
+          { echo '### Озвучка'; echo '```'; (tail -14 voice.log 2>/dev/null || true); (tail -8 voice-rhvoice.log 2>/dev/null || true); echo '```'; echo '### Распознавание MMS'; echo '```'; (tail -60 asr.log 2>/dev/null || true); echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          node -e 'const m=require("./public/lesson-80-1-9/audio/manifest.json"); console.log("provider:", m.provider, "lines:", m.lines.length, "partial:", m.partial)' 2>/dev/null | tee -a "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Upload voice files
+        if: always() && hashFiles('public/lesson-80-1-9/audio/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-80-1-9-voice
+          path: |
+            public/lesson-80-1-9/audio/
+            voice-samples/lesson-80-1-9/
+          retention-days: 30
+
+  render:
+    needs: voice
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.render }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      # Голова ветки: в ней уже сохранённые задачей voice файлы.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (lines, class, napkins, pauses, meal, plate, captions, voice files)
+        run: node --test scripts/lesson80-1-9.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames
+        run: node scripts/lesson80-1-9-stills.mjs
+
+      - name: Render MP4 (H.264/AAC, yuv420p, 1920×1080)
+        run: npm run render:lesson-80-1-9 -- --log=warn
+
+      - name: Faststart, SRT and verification
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -c copy -movflags +faststart "out/$OUT-fs.mp4"
+          mv "out/$OUT-fs.mp4" "out/$OUT.mp4"
+          node scripts/lesson80-1-9-srt.mjs "out/$OUT.srt"
+          node scripts/lesson80-1-9-verify.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4 and SRT
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-80-1-9-mp4
+          path: |
+            out/lesson-80-1-9.mp4
+            out/lesson-80-1-9.srt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-80-1-9-frames
+          path: out/frames-lesson-80-1-9/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  publish:
+    needs: [voice, render]
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.render }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: lesson-80-1-9-mp4
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: lesson-80-1-9-preview
+        run: |
+          ls -la out
+          NOTES="Урок 80-1, мини-фильм 9 «Кому сказать спасибо?» — предварительный просмотр. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          TITLE="Урок 80-1-9 «Кому сказать спасибо?» (предпросмотр)"
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --title "$TITLE" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "$TITLE" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber "out/$OUT.mp4" "out/$OUT.srt"
+          {
+            echo "### MP4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.srt"
+          } >> "$GITHUB_STEP_SUMMARY"
