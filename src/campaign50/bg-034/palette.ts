@@ -1,0 +1,26 @@
+// Фирменные цвета ролика: белый и светлый фон, ярко-жёлтые акценты,
+// тёмно-синие надписи; бумага билетов — тёплая кремовая, чернила печати —
+// тёмно-синие. Машина — белая легковая (не жёлтое такси).
+export const C = {
+  paper: "#FFFDF7",
+  desk: "#F7F1E4",
+  deskEdge: "#E9DDC6",
+  navy: "#14285A",
+  ink: "#24365F",
+  muted: "#5B6B8C",
+  yellow: "#FFC90E",
+  yellowDeep: "#F2B200",
+  yellowSoft: "#FFF4C2",
+  sky: "#EAF3FC",
+  skyDeep: "#CFE2F6",
+  green: "#2E8B57",
+  greenSoft: "#E8F6EC",
+  ticket: "#FFF9E8",
+  ticketEdge: "#E7D6A6",
+  ticketBand: "#FFD84A",
+  stampInk: "#1E3F8F",
+  trial: "#EAF7EF",
+  trialEdge: "#7BC79A",
+  glass: "rgba(214,232,250,0.55)",
+  car: "#FBFBFA",
+} as const;
