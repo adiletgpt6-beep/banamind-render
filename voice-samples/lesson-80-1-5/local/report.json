@@ -1,0 +1,236 @@
+[
+  {
+    "role": "teacher",
+    "voice": "rhvoice:aleksandr-hq",
+    "file": "voice-samples/lesson-80-1-5/local/teacher-rhvoice-aleksandr-hq.mp3",
+    "f0": 142,
+    "speechSec": 5.49,
+    "charsPerSec": 9.7,
+    "peakDb": -5.679
+  },
+  {
+    "role": "teacher",
+    "voice": "rhvoice:aleksandr",
+    "file": "voice-samples/lesson-80-1-5/local/teacher-rhvoice-aleksandr.mp3",
+    "f0": 143,
+    "speechSec": 5.67,
+    "charsPerSec": 9.3,
+    "peakDb": -5.143
+  },
+  {
+    "role": "teacher",
+    "voice": "rhvoice:pavel",
+    "file": "voice-samples/lesson-80-1-5/local/teacher-rhvoice-pavel.mp3",
+    "f0": 108,
+    "speechSec": 5.55,
+    "charsPerSec": 9.5,
+    "peakDb": -2.752
+  },
+  {
+    "role": "teacher",
+    "voice": "rhvoice:yuriy",
+    "file": "voice-samples/lesson-80-1-5/local/teacher-rhvoice-yuriy.mp3",
+    "f0": 116,
+    "speechSec": 5.25,
+    "charsPerSec": 10.1,
+    "peakDb": -4.507
+  },
+  {
+    "role": "teacher",
+    "voice": "rhvoice:mikhail",
+    "file": "voice-samples/lesson-80-1-5/local/teacher-rhvoice-mikhail.mp3",
+    "f0": 103,
+    "speechSec": 4.29,
+    "charsPerSec": 12.4,
+    "peakDb": -3.267
+  },
+  {
+    "role": "teacher",
+    "voice": "rhvoice:vitaliy",
+    "file": "voice-samples/lesson-80-1-5/local/teacher-rhvoice-vitaliy.mp3",
+    "f0": 109,
+    "speechSec": 4.45,
+    "charsPerSec": 11.9,
+    "peakDb": -3.728
+  },
+  {
+    "role": "teacher",
+    "voice": "rhvoice:evgeniy-rus",
+    "file": "voice-samples/lesson-80-1-5/local/teacher-rhvoice-evgeniy-rus.mp3",
+    "f0": 106,
+    "speechSec": 5.34,
+    "charsPerSec": 9.9,
+    "peakDb": -2.754
+  },
+  {
+    "role": "yusuf",
+    "voice": "piper:ru-irinia-medium",
+    "file": "voice-samples/lesson-80-1-5/local/yusuf-piper-ru-irinia-medium.mp3",
+    "f0": 182,
+    "speechSec": 4.71,
+    "charsPerSec": 10.8,
+    "peakDb": -2.757
+  },
+  {
+    "role": "yusuf",
+    "voice": "rhvoice:arina",
+    "file": "voice-samples/lesson-80-1-5/local/yusuf-rhvoice-arina.mp3",
+    "f0": 184,
+    "speechSec": 4.28,
+    "charsPerSec": 11.9,
+    "peakDb": -5.97
+  },
+  {
+    "role": "yusuf",
+    "voice": "rhvoice:anna",
+    "file": "voice-samples/lesson-80-1-5/local/yusuf-rhvoice-anna.mp3",
+    "f0": 213,
+    "speechSec": 3.73,
+    "charsPerSec": 13.7,
+    "peakDb": -5.285
+  },
+  {
+    "role": "yusuf",
+    "voice": "rhvoice:elena",
+    "file": "voice-samples/lesson-80-1-5/local/yusuf-rhvoice-elena.mp3",
+    "f0": 210,
+    "speechSec": 4.04,
+    "charsPerSec": 12.6,
+    "peakDb": -6.174
+  },
+  {
+    "role": "yusuf",
+    "voice": "rhvoice:tatiana",
+    "file": "voice-samples/lesson-80-1-5/local/yusuf-rhvoice-tatiana.mp3",
+    "f0": 205,
+    "speechSec": 4.1,
+    "charsPerSec": 12.4,
+    "peakDb": -5.679
+  },
+  {
+    "role": "yusuf",
+    "voice": "rhvoice:victoria",
+    "file": "voice-samples/lesson-80-1-5/local/yusuf-rhvoice-victoria.mp3",
+    "f0": 185,
+    "speechSec": 5.28,
+    "charsPerSec": 9.7,
+    "peakDb": -5.209
+  },
+  {
+    "role": "yusuf",
+    "voice": "rhvoice:irina",
+    "file": "voice-samples/lesson-80-1-5/local/yusuf-rhvoice-irina.mp3",
+    "f0": 173,
+    "speechSec": 4.59,
+    "charsPerSec": 11.1,
+    "peakDb": -2.754
+  },
+  {
+    "role": "amir",
+    "voice": "piper:ru-irinia-medium",
+    "file": "voice-samples/lesson-80-1-5/local/amir-piper-ru-irinia-medium.mp3",
+    "f0": 160,
+    "speechSec": 3.66,
+    "charsPerSec": 9.3,
+    "peakDb": -2.727
+  },
+  {
+    "role": "amir",
+    "voice": "rhvoice:arina",
+    "file": "voice-samples/lesson-80-1-5/local/amir-rhvoice-arina.mp3",
+    "f0": 186,
+    "speechSec": 3.39,
+    "charsPerSec": 10,
+    "peakDb": -4.624
+  },
+  {
+    "role": "amir",
+    "voice": "rhvoice:anna",
+    "file": "voice-samples/lesson-80-1-5/local/amir-rhvoice-anna.mp3",
+    "f0": 222,
+    "speechSec": 3.09,
+    "charsPerSec": 11,
+    "peakDb": -3.857
+  },
+  {
+    "role": "amir",
+    "voice": "rhvoice:elena",
+    "file": "voice-samples/lesson-80-1-5/local/amir-rhvoice-elena.mp3",
+    "f0": 210,
+    "speechSec": 3.25,
+    "charsPerSec": 10.5,
+    "peakDb": -7.374
+  },
+  {
+    "role": "amir",
+    "voice": "rhvoice:tatiana",
+    "file": "voice-samples/lesson-80-1-5/local/amir-rhvoice-tatiana.mp3",
+    "f0": 207,
+    "speechSec": 3.46,
+    "charsPerSec": 9.8,
+    "peakDb": -4.489
+  },
+  {
+    "role": "amir",
+    "voice": "rhvoice:victoria",
+    "file": "voice-samples/lesson-80-1-5/local/amir-rhvoice-victoria.mp3",
+    "f0": 188,
+    "speechSec": 4.16,
+    "charsPerSec": 8.2,
+    "peakDb": -5.918
+  },
+  {
+    "role": "amir",
+    "voice": "rhvoice:irina",
+    "file": "voice-samples/lesson-80-1-5/local/amir-rhvoice-irina.mp3",
+    "f0": 176,
+    "speechSec": 3.85,
+    "charsPerSec": 8.8,
+    "peakDb": -2.753
+  },
+  {
+    "role": "bilal",
+    "voice": "rhvoice:artemiy",
+    "file": "voice-samples/lesson-80-1-5/local/bilal-rhvoice-artemiy.mp3",
+    "f0": 96,
+    "speechSec": 3.65,
+    "charsPerSec": 14.5,
+    "peakDb": -2.758
+  },
+  {
+    "role": "bilal",
+    "voice": "rhvoice:evgeniy-rus",
+    "file": "voice-samples/lesson-80-1-5/local/bilal-rhvoice-evgeniy-rus.mp3",
+    "f0": 105,
+    "speechSec": 5.08,
+    "charsPerSec": 10.4,
+    "peakDb": -2.759
+  },
+  {
+    "role": "bilal",
+    "voice": "rhvoice:yuriy",
+    "file": "voice-samples/lesson-80-1-5/local/bilal-rhvoice-yuriy.mp3",
+    "f0": 116,
+    "speechSec": 6.3,
+    "charsPerSec": 8.4,
+    "peakDb": -2.751
+  },
+  {
+    "role": "bilal",
+    "voice": "rhvoice:vitaliy",
+    "file": "voice-samples/lesson-80-1-5/local/bilal-rhvoice-vitaliy.mp3",
+    "f0": 111,
+    "speechSec": 4.52,
+    "charsPerSec": 11.7,
+    "peakDb": -3.904
+  },
+  {
+    "role": "bilal",
+    "voice": "rhvoice:pavel",
+    "file": "voice-samples/lesson-80-1-5/local/bilal-rhvoice-pavel.mp3",
+    "f0": 107,
+    "speechSec": 4.9,
+    "charsPerSec": 10.8,
+    "peakDb": -2.759
+  }
+]

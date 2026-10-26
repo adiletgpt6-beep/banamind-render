@@ -1,0 +1,37 @@
+node_modules
+dist
+build
+.DS_Store
+.env
+
+# Готовые видео и кадры не храним в Git.
+out
+*.mp4
+*.mov
+
+# Локальные модели голосов (скачиваются scripts/l815-local-voices.sh) и их окружение.
+scripts/l815-voices/*.onnx
+scripts/l815-voices/*.onnx.json
+scripts/l815-voices/MODEL_CARD
+.venv-piper
+
+# Public copy: private inputs and production outputs stay outside Git
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+**/source-text/
+**/source_text/
+books/**/sources/
+.private/
+**/*.pdf
+**/*.epub
+**/*.fb2
+**/*.zip
+**/*.mp3
+**/*.mp4
+**/*.wav
+**/*.m4a
+**/*.b64
+**/*.part[0-9]*

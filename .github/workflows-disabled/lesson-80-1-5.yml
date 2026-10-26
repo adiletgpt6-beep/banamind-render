@@ -1,0 +1,192 @@
+name: Lesson80-1-5 (16:9, 4:05–5:00)
+
+# Курс из 80 уроков: урок 1, мини-фильм 5 «А лодочку сделал я!».
+# Собирается только эта композиция.
+#   voice   → 48 реплик: OpenAI gpt-4o-mini-tts (секрет OPENAI_API_KEY; иначе
+#             ElevenLabs при секрете ELEVENLABS_API_KEY) с
+#             таймингами whisper-1; готовые файлы (тот же хэш) не синтезируются.
+#             Без ключа используются файлы из репозитория; если они —
+#             временная дорожка (локальные голоса), это отмечается в отчёте.
+#   render  → lint/TypeScript, тесты (паузы, тексты, озвучка), SRT,
+#             контрольные кадры, MP4 1920×1080 30 fps H.264/AAC 48 кГц с
+#             faststart, проверка формата, длительности, громкости и пауз.
+#   publish → MP4 и SRT в предварительный релиз lesson-80-1-5-preview.
+
+on:
+  push:
+    paths:
+      - "src/lesson-80-1-5/**"
+      - "src/Lesson80_1_5.tsx"
+      - "scripts/*l815*"
+      - "scripts/lib/l815-*"
+      - "scripts/lesson-80-1-5.test.mjs"
+      - "public/audio/lesson-80-1-5/**"
+      - ".github/workflows/lesson-80-1-5.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: lesson-80-1-5-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: lesson-80-1-5
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      # Основной провайдер — OpenAI (только если задан секрет). Реплики с тем же
+      # хэшем переиспользуются. Без ключа шаг пропускается, в ролик идут
+      # файлы из репозитория.
+      - name: Voiceover (OpenAI, cached lines are reused)
+        if: env.OPENAI_API_KEY != ''
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/generate-l815-voice.mjs --provider openai
+
+      # Запасной внешний провайдер: голоса проекта ElevenLabs (тайминги букв).
+      - name: Voiceover (ElevenLabs, if no OpenAI key)
+        if: env.OPENAI_API_KEY == '' && env.ELEVENLABS_API_KEY != ''
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/generate-l815-voice.mjs --provider elevenlabs
+
+      - name: Sound effects (deterministic)
+        run: node scripts/l815-sfx.mjs
+
+      - name: Save new voice files to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          git add public/audio/lesson-80-1-5
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save lesson-80-1-5 voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+  render:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint + TypeScript
+        run: npm run lint
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Tests (script, pauses, voice files)
+        env:
+          L815_REQUIRE_VOICE: "1"
+        run: npm run test:lesson-80-1-5
+      - name: Subtitles (SRT by the real audio track)
+        run: npm run srt:lesson-80-1-5
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+      - name: Bundle
+        run: npm run bundle
+      - name: Render check frames
+        run: node scripts/render-l815-stills.mjs --bundle
+      - name: Render MP4 (H.264/AAC, yuv420p, 1920×1080)
+        run: npm run render:lesson-80-1-5 -- --log=warn
+      - name: Faststart
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -c copy -movflags +faststart "out/$OUT-fs.mp4"
+          mv "out/$OUT-fs.mp4" "out/$OUT.mp4"
+      - name: Verify MP4 (format, duration, loudness, pauses)
+        run: |
+          node scripts/verify-l815.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+          node -e 'const m=require("./public/audio/lesson-80-1-5/manifest.json"); if (m.temporary) console.log("::warning::Озвучка — временная дорожка (локальные голоса). Для финальных голосов задайте секрет OPENAI_API_KEY и перезапустите.")'
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-80-1-5-mp4
+          path: out/lesson-80-1-5.mp4
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload SRT
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-80-1-5-srt
+          path: out/lesson-80-1-5.srt
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-80-1-5-frames
+          path: out/frames-lesson-80-1-5/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  publish:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lesson-80-1-5-*
+          merge-multiple: true
+          path: out
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: lesson-80-1-5-preview
+        run: |
+          ls -la out
+          NOTES="Урок 1, мини-фильм 5 «А лодочку сделал я!» — предварительный просмотр. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "Урок 1 — 5. А лодочку сделал я! (предпросмотр)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber "out/$OUT.mp4" "out/$OUT.srt"
+          {
+            echo "### Файлы"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.srt"
+          } >> "$GITHUB_STEP_SUMMARY"
