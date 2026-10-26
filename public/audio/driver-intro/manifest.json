@@ -1,0 +1,281 @@
+{
+  "version": 2,
+  "hash": "c170f2ba42baa73e",
+  "seed": 11,
+  "voiceId": "cjVigY5qzO86Huf0OWal",
+  "modelId": "eleven_v3",
+  "file": "narration.mp3",
+  "durationSec": 21.21,
+  "segments": [
+    {
+      "id": "question",
+      "start": 0,
+      "end": 1.88
+    },
+    {
+      "id": "name",
+      "start": 2.36,
+      "end": 3.4
+    },
+    {
+      "id": "trips",
+      "start": 4.24,
+      "end": 5.96
+    },
+    {
+      "id": "arabic",
+      "start": 6.56,
+      "end": 8.04
+    },
+    {
+      "id": "page",
+      "start": 9.04,
+      "end": 12.52
+    },
+    {
+      "id": "care",
+      "start": 13.28,
+      "end": 16.28
+    },
+    {
+      "id": "slogan",
+      "start": 17,
+      "end": 18.52
+    },
+    {
+      "id": "cta",
+      "start": 18.78,
+      "end": 20.84
+    }
+  ],
+  "words": [
+    {
+      "text": "Балаңызды",
+      "start": 0,
+      "end": 0.44,
+      "segment": "question"
+    },
+    {
+      "text": "кимге",
+      "start": 0.48,
+      "end": 0.76,
+      "segment": "question"
+    },
+    {
+      "text": "ишенип",
+      "start": 0.8,
+      "end": 1.12,
+      "segment": "question"
+    },
+    {
+      "text": "тапшырасыз?",
+      "start": 1.14,
+      "end": 1.88,
+      "segment": "question"
+    },
+    {
+      "text": "Менин",
+      "start": 2.36,
+      "end": 2.76,
+      "segment": "name"
+    },
+    {
+      "text": "атым",
+      "start": 2.8,
+      "end": 3,
+      "segment": "name"
+    },
+    {
+      "text": "Адилет.",
+      "start": 3.027,
+      "end": 3.4,
+      "segment": "name"
+    },
+    {
+      "text": "Беш",
+      "start": 4.24,
+      "end": 4.44,
+      "segment": "trips"
+    },
+    {
+      "text": "миңден",
+      "start": 4.493,
+      "end": 4.84,
+      "segment": "trips"
+    },
+    {
+      "text": "ашык",
+      "start": 4.88,
+      "end": 5.08,
+      "segment": "trips"
+    },
+    {
+      "text": "сапар",
+      "start": 5.16,
+      "end": 5.48,
+      "segment": "trips"
+    },
+    {
+      "text": "жасагам.",
+      "start": 5.52,
+      "end": 5.96,
+      "segment": "trips"
+    },
+    {
+      "text": "Балдарга",
+      "start": 6.56,
+      "end": 7,
+      "segment": "arabic"
+    },
+    {
+      "text": "араб",
+      "start": 7.08,
+      "end": 7.32,
+      "segment": "arabic"
+    },
+    {
+      "text": "тилин",
+      "start": 7.36,
+      "end": 7.56,
+      "segment": "arabic"
+    },
+    {
+      "text": "окуткам.",
+      "start": 7.6,
+      "end": 8.04,
+      "segment": "arabic"
+    },
+    {
+      "text": "Балдарга",
+      "start": 9.04,
+      "end": 9.32,
+      "segment": "page"
+    },
+    {
+      "text": "арналган",
+      "start": 9.373,
+      "end": 9.8,
+      "segment": "page"
+    },
+    {
+      "text": "баракчамда",
+      "start": 9.827,
+      "end": 10.44,
+      "segment": "page"
+    },
+    {
+      "text": "жүз",
+      "start": 10.48,
+      "end": 10.76,
+      "segment": "page"
+    },
+    {
+      "text": "жыйырма",
+      "start": 10.8,
+      "end": 11.08,
+      "segment": "page"
+    },
+    {
+      "text": "миңден",
+      "start": 11.133,
+      "end": 11.4,
+      "segment": "page"
+    },
+    {
+      "text": "ашык",
+      "start": 11.48,
+      "end": 11.72,
+      "segment": "page"
+    },
+    {
+      "text": "катталуучу",
+      "start": 11.78,
+      "end": 12.36,
+      "segment": "page"
+    },
+    {
+      "text": "бар.",
+      "start": 12.4,
+      "end": 12.52,
+      "segment": "page"
+    },
+    {
+      "text": "Балага",
+      "start": 13.28,
+      "end": 13.64,
+      "segment": "care"
+    },
+    {
+      "text": "камкор",
+      "start": 13.7,
+      "end": 14.04,
+      "segment": "care"
+    },
+    {
+      "text": "мамиле",
+      "start": 14.08,
+      "end": 14.44,
+      "segment": "care"
+    },
+    {
+      "text": "жана",
+      "start": 14.72,
+      "end": 15.24,
+      "segment": "care"
+    },
+    {
+      "text": "ыңгайлуу",
+      "start": 15.4,
+      "end": 15.88,
+      "segment": "care"
+    },
+    {
+      "text": "сапар.",
+      "start": 15.92,
+      "end": 16.28,
+      "segment": "care"
+    },
+    {
+      "text": "БалаГо",
+      "start": 17,
+      "end": 17.48,
+      "segment": "slogan"
+    },
+    {
+      "text": "менен",
+      "start": 17.52,
+      "end": 17.72,
+      "segment": "slogan"
+    },
+    {
+      "text": "жолго",
+      "start": 17.76,
+      "end": 18.12,
+      "segment": "slogan"
+    },
+    {
+      "text": "чыгалы!",
+      "start": 18.16,
+      "end": 18.52,
+      "segment": "slogan"
+    },
+    {
+      "text": "Каттоо",
+      "start": 18.78,
+      "end": 19.56,
+      "segment": "cta"
+    },
+    {
+      "text": "шилтемеси",
+      "start": 19.6,
+      "end": 20.2,
+      "segment": "cta"
+    },
+    {
+      "text": "профилде.",
+      "start": 20.264,
+      "end": 20.84,
+      "segment": "cta"
+    }
+  ]
+}
