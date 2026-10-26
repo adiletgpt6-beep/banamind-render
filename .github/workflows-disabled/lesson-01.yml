@@ -1,0 +1,133 @@
+name: Lesson01WhoBuiltHouse3D (3D, 20 s)
+
+# Урок 1 «Үйдү ким курду?» в 3D (Three.js, 1920×1080). Собирается только
+# эта композиция: lint/TypeScript, контрольные кадры, MP4 (H.264/AAC) и
+# облегчённая копия 960×540, проверка формата, публикация обоих файлов
+# в предварительный релиз lesson-01-3d-preview (прямые ссылки на MP4).
+# Для Three.js рендер идёт с --gl=angle.
+
+on:
+  push:
+    paths:
+      - "src/lesson-01/**"
+      - "src/Lesson01WhoBuiltHouse3D.tsx"
+      - "scripts/*lesson-01*"
+      - "public/audio/lesson-01/**"
+      - ".github/workflows/lesson-01.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: lesson-01-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: lesson-01-who-built-the-house-3d
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render check frames
+        run: npm run stills:lesson-01
+
+      - name: Render MP4 (H.264/AAC, yuv420p, --gl=angle)
+        run: npm run render:lesson-01 -- --log=warn
+
+      - name: Faststart + light copy (960×540)
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -c copy -movflags +faststart "out/$OUT-fs.mp4"
+          mv "out/$OUT-fs.mp4" "out/$OUT.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+            -vf scale=960:540:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 23 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
+            "out/$OUT-light.mp4"
+
+      - name: Verify MP4 files (fail if missing or wrong format)
+        run: |
+          node scripts/verify-lesson-01.mjs "out/$OUT.mp4"
+          node scripts/verify-lesson-01.mjs "out/$OUT-light.mp4" --light
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-01-3d-mp4
+          path: out/lesson-01-who-built-the-house-3d.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload light MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-01-3d-light-mp4
+          path: out/lesson-01-who-built-the-house-3d-light.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-01-3d-frames
+          path: out/frames-lesson-01/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  # Оба MP4 — файлами предварительного релиза: прямые ссылки на MP4.
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lesson-01-3d-*mp4
+          merge-multiple: true
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: lesson-01-3d-preview
+        run: |
+          ls -la out
+          NOTES="Lesson01WhoBuiltHouse3D — предварительный просмотр. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "Урок 1 «Үйдү ким курду?» — 3D (предпросмотр)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-light.mp4"
+          {
+            echo "### MP4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-light.mp4"
+          } >> "$GITHUB_STEP_SUMMARY"
