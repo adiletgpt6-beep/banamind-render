@@ -1,0 +1,74 @@
+name: Muslim Kids 004 — voice (Geometry of Wonders)
+
+# Отдельный проект muslimkids-geometry-wonders/ (не BalaGo).
+# Только русская озвучка ElevenLabs: файлы сохраняются обратно в ветку,
+# видео рендерится локально (см. muslimkids-geometry-wonders/README.md).
+# Готовые реплики повторно не синтезируются (хеш текста и голоса).
+on:
+  push:
+    paths:
+      - "muslimkids-geometry-wonders/voice.json"
+      - "muslimkids-geometry-wonders/scripts/generate-voice.mjs"
+      - "muslimkids-geometry-wonders/scripts/asr_ru.py"
+      - ".github/workflows/muslimkids-geometry-voice.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: mk-geometry-voice-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  voice:
+    if: github.ref_name != 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install speech recognition (take check)
+        run: pip install --quiet faster-whisper==1.1.1 requests
+
+      - name: Cache Whisper model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-faster-whisper-small-v1
+
+      - name: Russian narration (ElevenLabs, best take by speech recognition)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node muslimkids-geometry-wonders/scripts/generate-voice.mjs
+
+      - name: Save voice files to the branch
+        run: |
+          git add muslimkids-geometry-wonders/public/audio/voice
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(muslimkids-004): save Russian narration"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
+            sleep 5
+          done
+          exit 1

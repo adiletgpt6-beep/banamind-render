@@ -1,0 +1,82 @@
+[
+  {
+    "file": "connect-soft.wav",
+    "at": 2.6,
+    "volume": 0.16
+  },
+  {
+    "file": "connect-bloom.wav",
+    "at": 5.2,
+    "volume": 0.2
+  },
+  {
+    "file": "air-fold.wav",
+    "at": 6.3,
+    "volume": 0.22
+  },
+  {
+    "file": "sphere-close.wav",
+    "at": 9.25,
+    "volume": 0.2
+  },
+  {
+    "file": "air-dive.wav",
+    "at": 21.7,
+    "volume": 0.24
+  },
+  {
+    "file": "wind.wav",
+    "at": 23.8,
+    "volume": 0.13
+  },
+  {
+    "file": "rise.wav",
+    "at": 24.3,
+    "volume": 0.22
+  },
+  {
+    "file": "sparkle.wav",
+    "at": 28,
+    "volume": 0.1
+  },
+  {
+    "file": "sparkle.wav",
+    "at": 31.4,
+    "volume": 0.1
+  },
+  {
+    "file": "air-short.wav",
+    "at": 32.6,
+    "volume": 0.18
+  },
+  {
+    "file": "connect-soft.wav",
+    "at": 35,
+    "volume": 0.12
+  },
+  {
+    "file": "air-short.wav",
+    "at": 40.6,
+    "volume": 0.15
+  },
+  {
+    "file": "connect-bloom.wav",
+    "at": 43.4,
+    "volume": 0.17
+  },
+  {
+    "file": "sphere-close.wav",
+    "at": 46.3,
+    "volume": 0.12
+  },
+  {
+    "file": "air-short.wav",
+    "at": 57,
+    "volume": 0.12
+  },
+  {
+    "file": "logo.wav",
+    "at": 58,
+    "volume": 0.2
+  }
+]

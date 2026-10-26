@@ -1,0 +1,22 @@
+{
+  "language": "ru",
+  "modelId": "eleven_v3",
+  "fallbackModelId": "eleven_multilingual_v2",
+  "voiceSettings": { "stability": 0.5, "similarity_boost": 0.8, "style": 0.15, "use_speaker_boost": true },
+  "seed": 4004,
+  "takes": 2,
+  "preferredVoices": [
+    { "name": "George", "id": "JBFqnCBsd6RMkjVDRZzb" },
+    { "name": "Eric", "id": "cjVigY5qzO86Huf0OWal" },
+    { "name": "Brian", "id": "nPczCjzI2devNBz1zQrb" }
+  ],
+  "clips": [
+    { "id": "s1", "start": 0.7,  "text": "Смотри: один маленький треугольник. А что, если его оживить?" },
+    { "id": "s2", "start": 6.5,  "text": "Он соединяется с другими фигурами. И появляется наша Земля!" },
+    { "id": "s3", "start": 14.6, "text": "Земля вращается. Там, где светит Солнце, — день. На другой стороне — ночь." },
+    { "id": "s4", "start": 23.5, "text": "Теперь приблизимся. Из треугольников поднимаются горы, а из узоров раскрывается красивый лес." },
+    { "id": "s5", "start": 33.6, "text": "Посмотри на соты! Пчёлы строят ячейки удивительной формы. Видишь, как они повторяются?" },
+    { "id": "s6", "start": 44.0, "text": "Коран учит нас размышлять о небе, земле и смене дня и ночи." },
+    { "id": "s7", "start": 53.6, "text": "Господь наш! Ты не сотворил это понапрасну." }
+  ]
+}
