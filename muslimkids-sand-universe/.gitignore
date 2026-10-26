@@ -1,0 +1,11 @@
+node_modules/
+output/frames/
+output/tests/stills/
+output/tests/full/
+output/tests/*.png
+output/tests/*.mp4
+output/previews/
+output/final/*_master.mp4
+public/audio/sfx.wav
+public/audio/mix.wav
+output/**/*.log
