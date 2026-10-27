@@ -1,0 +1,21 @@
+{
+  "slug": "ibn-khisham-zhizneopisanie-proroka",
+  "title": "Жизнеописание Пророка Мухаммада",
+  "author": "Ибн Хишам (со слов аль-Баккаи, со слов Ибн Исхака)",
+  "collection": "Сира; русский перевод Н. А. Гайнуллина, «Умма», 2007",
+  "channel": "BanaMind",
+  "task": "BM-002",
+  "source": "Только текст книги (656 стр.), извлечённый из PDF владельца: books/500-series/tasks/BM-002/source-text/; бриф, карта источников и сценарий — books/ibn-khisham-zhizneopisanie-proroka/",
+  "rights": "Права на публичную/коммерческую публикацию русского перевода НЕ подтверждены: только закрытый производственный прототип, без загрузки на YouTube.",
+  "lesson": {
+    "dir": "books/ibn-khisham-zhizneopisanie-proroka",
+    "timeline": "scripts/books/ibn-khisham/lib.mjs",
+    "remotionEntry": "src/books/ibn-khisham-zhizneopisanie-proroka/index.ts",
+    "composition": "IbnKhishamFilm",
+    "workflow": ".github/workflows/book-ibn-khisham.yml",
+    "release": "book-ibn-khisham-film",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-ibn-khisham-zhizneopisanie-proroka",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}

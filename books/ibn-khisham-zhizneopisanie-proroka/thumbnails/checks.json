@@ -1,0 +1,102 @@
+{
+  "slug": "ibn-khisham-zhizneopisanie-proroka",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 168,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 138,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 163,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 200,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 149,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 24,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 66.9
+      },
+      {
+        "pair": "1-3",
+        "diff": 55.4
+      },
+      {
+        "pair": "1-4",
+        "diff": 72.8
+      },
+      {
+        "pair": "1-5",
+        "diff": 62.8
+      },
+      {
+        "pair": "2-3",
+        "diff": 55.7
+      },
+      {
+        "pair": "2-4",
+        "diff": 95
+      },
+      {
+        "pair": "2-5",
+        "diff": 91.3
+      },
+      {
+        "pair": "3-4",
+        "diff": 77.3
+      },
+      {
+        "pair": "3-5",
+        "diff": 80.8
+      },
+      {
+        "pair": "4-5",
+        "diff": 79.7
+      }
+    ],
+    "min": 55.4,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
