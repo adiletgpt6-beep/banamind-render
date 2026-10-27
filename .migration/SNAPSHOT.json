@@ -1,0 +1,16 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "b16abdca3270f523cf0a0884fd952b79cd20bd54",
+  "source_branches": [
+    "claude/bg-048-episode-48-bd51gn",
+    "feature/bg-048-episode-48"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 3,
+  "withheld_file_counts": {
+    "private_source_or_binary": 187
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
