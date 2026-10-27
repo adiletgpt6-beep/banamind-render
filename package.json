@@ -1,0 +1,41 @@
+{
+  "name": "balago-video",
+  "version": "1.0.0",
+  "description": "BalaGo promo videos (Remotion)",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "4.0.532",
+    "@remotion/media": "4.0.532",
+    "@remotion/paths": "4.0.532",
+    "@remotion/transitions": "4.0.532",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.532",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.39.5",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "studio": "remotion studio",
+    "typecheck": "tsc",
+    "lint": "eslint src && tsc",
+    "bundle": "remotion bundle",
+    "build": "remotion bundle",
+    "render": "remotion render BalaGoPromo out/balago-promo.mp4 --codec=h264 --pixel-format=yuv420p --color-space=bt709",
+    "stills": "node scripts/render-stills.mjs",
+    "check": "npm run lint",
+    "upgrade": "remotion upgrade"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}

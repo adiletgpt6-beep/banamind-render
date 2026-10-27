@@ -1,0 +1,64 @@
+name: Check & render BalaGoPromo
+
+on:
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames (one per scene)
+        run: npm run stills
+
+      - name: Render MP4 (H.264)
+        run: npm run render
+
+      - name: Inspect video
+        run: |
+          ls -la out out/frames
+          npx remotion ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate,pix_fmt,nb_frames -show_entries format=duration -of compact out/balago-promo.mp4
+
+      - name: Upload video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-promo-mp4
+          path: out/balago-promo.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-promo-frames
+          path: out/frames/*.png
+          if-no-files-found: warn
+          retention-days: 30
