@@ -1,0 +1,75 @@
+name: hidjaz-premium — public Instagram read + ElevenLabs check
+
+# Отдельный проект рекламы @hidjaz.premium (не BalaGo).
+# Один публичный просмотр профиля без входа (Playwright, человеческий темп)
+# и проверка доступа к ElevenLabs без вывода ключа. Результаты сохраняются
+# в ветку: hidjaz-premium/research/capture/ и research/elevenlabs-check.json.
+# Аккаунты для чтения — hidjaz-premium/research/accounts.txt.
+
+on:
+  push:
+    paths:
+      - "hidjaz-premium/research/accounts.txt"
+      - "hidjaz-premium/tools/capture-instagram.mjs"
+      - "hidjaz-premium/tools/check-elevenlabs.mjs"
+      - ".github/workflows/hidjaz-premium-research.yml"
+
+concurrency:
+  group: hidjaz-research-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Install Playwright (outside the project's lockfile)
+        run: |
+          mkdir -p "$RUNNER_TEMP/pw" && cd "$RUNNER_TEMP/pw"
+          npm init -y >/dev/null && npm i --no-audit --no-fund playwright@1.55.0 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+      - name: ElevenLabs access check (key never printed)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node hidjaz-premium/tools/check-elevenlabs.mjs hidjaz-premium/research/elevenlabs-check.json
+      - name: Read public profiles (no login)
+        run: |
+          # скрипт рядом с node_modules Playwright (ESM ищет пакеты от файла)
+          cp hidjaz-premium/tools/capture-instagram.mjs "$RUNNER_TEMP/pw/capture.mjs"
+          while read -r handle max; do
+            [ -z "$handle" ] && continue
+            case "$handle" in \#*) continue;; esac
+            echo "::group::$handle"
+            node "$RUNNER_TEMP/pw/capture.mjs" "$handle" "hidjaz-premium/research/capture/$handle" "${max:-12}" || echo "capture failed for $handle"
+            echo "::endgroup::"
+            sleep 20
+          done < hidjaz-premium/research/accounts.txt
+      - name: Upload capture
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hidjaz-premium-research
+          path: hidjaz-premium/research/
+          retention-days: 30
+      - name: Save results to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          git add hidjaz-premium/research
+          if git diff --cached --quiet; then echo "Нет новых данных"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(hidjaz-premium): save public Instagram capture and ElevenLabs check"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
+            sleep 5
+          done
+          exit 1

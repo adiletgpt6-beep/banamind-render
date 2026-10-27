@@ -1,0 +1,170 @@
+[
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-500-italic.woff2",
+    "sha": "82dc313a5416cc0cf5efe8d87d4a9fcec59f5575",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-500-normal.woff2",
+    "sha": "82c87bf51c1fc48480752e427eb9c9bcb3044b46",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-600-italic.woff2",
+    "sha": "a0ded471c3ccaa2558a245ca4d3471d87fcfdc11",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-600-normal.woff2",
+    "sha": "589e1d796f28330b6497d47e2f01873e4a4070af",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-700-italic.woff2",
+    "sha": "b7bd42b020609737998e07d61bdcb8a2ac321ed1",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-700-normal.woff2",
+    "sha": "d8dfe313e3196ec9e3172a6673491480e048b77f",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-ext-500-italic.woff2",
+    "sha": "b180f20c38598ef1e03fc8575519618065875dd4",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-ext-500-normal.woff2",
+    "sha": "4463074c1377d3bcc80a1435419022b0a2c17ac3",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-ext-600-italic.woff2",
+    "sha": "f211a244d4cb628ede1c8dcf3e0fc1901681ebcc",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-ext-600-normal.woff2",
+    "sha": "7e6f3430f3b81402dddc5d3c6b274ad0d816fe68",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-ext-700-italic.woff2",
+    "sha": "da3cbfc06fbca7c8d2fea950ae1debc93da06759",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-cyrillic-ext-700-normal.woff2",
+    "sha": "1dfe0f8db784c88e04a6e1472ab18469dfe071d9",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-latin-500-italic.woff2",
+    "sha": "1a4e58fa35242be73c054757c263ac935fe82b1f",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-latin-500-normal.woff2",
+    "sha": "efade81b31a46f4d000d05d44050de3d4ed3cb32",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-latin-600-italic.woff2",
+    "sha": "070e7bdf164ad047b6712308d56da8ee1def9b8d",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-latin-600-normal.woff2",
+    "sha": "937e0149bfe17cf17eab23524054f4d480031c6a",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-latin-700-italic.woff2",
+    "sha": "100e53db35b327a851095283b410552d9daa3633",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/cormorant-garamond-latin-700-normal.woff2",
+    "sha": "a0fd9f62b0d0ce862662eb53a2418a24aa7207f0",
+    "kind": "font",
+    "license_sha": "ddb0b853d7eeff136646bbb132edcda9e8afd2ef"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-cyrillic-500-normal.woff2",
+    "sha": "e92b9344dec9e2b46d805f6742e9c9a19157ea95",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-cyrillic-600-normal.woff2",
+    "sha": "a2ec8920e117417d71a34cfcd54dad49a2dfef42",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-cyrillic-800-normal.woff2",
+    "sha": "69ff56e59bd6b6e872def0144ef9dfaf7240bfb3",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-cyrillic-ext-500-normal.woff2",
+    "sha": "31eb127458cda48b947208c95316c49e6f92ffaf",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-cyrillic-ext-600-normal.woff2",
+    "sha": "65f1476f7c63dbad636e4f9f4abc1624e581acff",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-cyrillic-ext-800-normal.woff2",
+    "sha": "a2a61419235e31306e66a64a988f2dd7156eb248",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-latin-500-normal.woff2",
+    "sha": "429a87d96801e5bc859793e1f5d096f9936de5de",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-latin-600-normal.woff2",
+    "sha": "453f06337e1f5a76b6a64774f4b691e120251220",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "hidjaz-premium/public/fonts/montserrat-latin-800-normal.woff2",
+    "sha": "c66c715bbe6161e83be2d004fe5cb98a6897d101",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]

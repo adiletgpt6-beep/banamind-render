@@ -1,0 +1,175 @@
+name: hidjaz-premium — voice, render, publish (60 s ad)
+
+# Реклама @hidjaz.premium (отдельный проект, не BalaGo).
+#   voice   → ElevenLabs (eleven_v3, ky) по CONTENT.lines; готовые реплики
+#             с тем же хэшем не синтезируются; файлы сохраняются в ветку.
+#   render  → проверка содержания (только подтверждённые факты и фото),
+#             TypeScript, кадры, MP4 1080×1920 30 fps H.264/AAC + 540×960,
+#             faststart, проверка файла.
+#   publish → GitHub Release hidjaz-premium (прямые ссылки на MP4)
+#             и Cloudflare R2 (ссылка на 7 дней в DELIVERY.md).
+# Пробы голосов: изменить hidjaz-premium/research/voice-samples.request.
+
+on:
+  push:
+    paths:
+      - "hidjaz-premium/src/**"
+      - "hidjaz-premium/public/**"
+      - "hidjaz-premium/tools/voice.mjs"
+      - "hidjaz-premium/tools/verify*.mjs"
+      - "hidjaz-premium/research/voice-samples.request"
+      - ".github/workflows/hidjaz-premium.yml"
+
+concurrency:
+  group: hidjaz-premium-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: hidjaz-premium-final
+  PUBLIC_DIR: hidjaz-premium/public
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Voice samples (on request)
+        if: contains(github.event.head_commit.modified, 'hidjaz-premium/research/voice-samples.request') || contains(github.event.head_commit.added, 'hidjaz-premium/research/voice-samples.request')
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node hidjaz-premium/tools/voice.mjs --samples
+      - name: Voiceover (cached lines reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if node -e "import('./hidjaz-premium/src/content.ts').then(m=>process.exit(m.CONTENT.lines.length?0:1))"; then
+            node hidjaz-premium/tools/voice.mjs
+          else
+            echo "Реплик нет (содержание не подтверждено) — озвучка пропущена."
+          fi
+      - name: Save voice files to the branch
+        if: github.ref_name != 'main'
+        run: |
+          git add hidjaz-premium/public/audio/voice hidjaz-premium/research/voice-samples 2>/dev/null || true
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(hidjaz-premium): save ElevenLabs voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+
+  render:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: TypeScript
+        run: npx tsc -p hidjaz-premium/tsconfig.json
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Content check (confirmed facts, real photos, voice)
+        id: content
+        continue-on-error: true
+        run: node hidjaz-premium/tools/verify-content.mjs
+      - run: npx remotion browser ensure
+      - name: Check frames
+        run: node hidjaz-premium/tools/stills.mjs out/hidjaz-frames
+      - name: Render MP4 (1080×1920, 30 fps, H.264/AAC)
+        run: |
+          npx remotion render hidjaz-premium/src/index.ts HidjazPremiumAd "out/$OUT-raw.mp4" \
+            --public-dir="$PUBLIC_DIR" --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --audio-codec=aac --audio-bitrate=192k --crf=16 --log=warn
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT-raw.mp4" -c copy -movflags +faststart "out/$OUT.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf scale=540:960:flags=lanczos -r 30 \
+            -c:v libx264 -profile:v high -preset slow -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k \
+            -movflags +faststart "out/$OUT-preview-540x960.mp4"
+          rm -f "out/$OUT-raw.mp4"
+      - name: Verify MP4
+        run: |
+          node hidjaz-premium/tools/verify.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+          node hidjaz-premium/tools/verify.mjs "out/$OUT-preview-540x960.mp4" --mobile
+      - name: Mark technical run
+        if: steps.content.outcome != 'success'
+        run: |
+          echo "::warning::Содержание не подтверждено — это технический прогон, не публикуется."
+          for f in out/$OUT*.mp4; do mv "$f" "${f/$OUT/$OUT-TECH}"; done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hidjaz-premium-mp4
+          path: |
+            out/*.mp4
+            out/hidjaz-frames/contact-sheet.jpg
+          if-no-files-found: error
+          retention-days: 30
+    outputs:
+      confirmed: ${{ steps.content.outcome == 'success' }}
+
+  publish:
+    needs: render
+    if: needs.render.outputs.confirmed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: hidjaz-premium-mp4
+          path: out
+      - name: GitHub Release (direct MP4 links)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: hidjaz-premium
+        run: |
+          NOTES="hidjaz-premium — реклама 60 с, 1080×1920, 30 fps, H.264/AAC. Коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" >/dev/null 2>&1; then gh release edit "$TAG" --notes "$NOTES" --prerelease --target "$GITHUB_SHA";
+          else gh release create "$TAG" --title "hidjaz-premium — реклама 60 с" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"; fi
+          gh release upload "$TAG" --clobber "out/$OUT.mp4" "out/$OUT-preview-540x960.mp4" out/hidjaz-frames/contact-sheet.jpg
+      - name: Cloudflare R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          bash hidjaz-premium/tools/upload-r2.sh "out/$OUT.mp4" r2-link.txt
+          {
+            echo "# Выдача hidjaz-premium-final.mp4"
+            echo
+            echo "- Посмотреть (предпросмотр 540×960): ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/hidjaz-premium/$OUT-preview-540x960.mp4"
+            echo "- Скачать оригинал 1080×1920 (GitHub Release): ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/hidjaz-premium/$OUT.mp4"
+            echo "- Cloudflare R2 (просмотр и скачивание, ссылка действует 7 дней с $(date -u +%F)): $(cat r2-link.txt)"
+          } > hidjaz-premium/DELIVERY.md
+          git add hidjaz-premium/DELIVERY.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(hidjaz-premium): delivery links" && git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"
