@@ -1,0 +1,20 @@
+{
+  "slug": "hawking-brief-history-time",
+  "title": "Краткая история времени",
+  "author": "Стивен Хокинг",
+  "collection": "От Большого взрыва до чёрных дыр",
+  "channel": "BanaMind",
+  "source": "Только TXT владельца (FB2 → TXT, SHA-256 843562…b01a); карта источников — books/hawking-brief-history-time/source/SOURCE_MAP.md. Текст книги в репозиторий не загружается.",
+  "lesson": {
+    "dir": "books/hawking-brief-history-time",
+    "timeline": "scripts/lesson-hawking/lib.mjs",
+    "remotionEntry": "src/lesson-hawking/index.ts",
+    "composition": "HawkingLesson",
+    "workflow": ".github/workflows/lesson-hawking.yml",
+    "release": "lesson-hawking-bm014",
+    "asset": "hawking_bm014_30min.mp4"
+  },
+  "release": "book-hawking-brief-history-time",
+  "rights": "PUBLICATION_RIGHTS_UNVERIFIED — приватный предпросмотр; публичная публикация и монетизация заблокированы до проверки прав.",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "≈30:00" }
+}

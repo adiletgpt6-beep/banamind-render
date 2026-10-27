@@ -1,0 +1,22 @@
+{
+  "repo": "adiletzainidinov/balago-video",
+  "tag": "balago-live04-sources",
+  "dir": "public/live04/src",
+  "files": [
+    {
+      "role": "main",
+      "name": "1000211283.mp4",
+      "assetNames": ["1000211283.mp4", "InShot_20261013_165645276.mp4"],
+      "sha256": "e224a5c69859e3dd678ea793ea8123d9cd698a0c4698a3c178e1321a5b7d6fb1",
+      "note": "Основная съёмка: 1080×1920, 34.51 с, AAC 44.1 кГц стерео"
+    },
+    {
+      "role": "reference",
+      "name": "1000209821.mp4",
+      "assetNames": ["1000209821.mp4", "SaveClip.App_AQNrLBeLVHPDVC_kOhGON5DyBeJBYjVqvhB56CJVTpQPTKpX-0hfCLM12DZDZGrtOs3Egm77O-SLZHpQ0ZS1rIoFJopE7V-SYzPfTyQ.mp4"],
+      "sha256": "b80790b99c3bfb744e137f622a80ed8276bc6b994aa1adb169379a5fa003ccb2",
+      "optional": true,
+      "note": "Референс монтажа: 720×1280, 43.95 с (только для анализа, в ролик не входит)"
+    }
+  ]
+}
