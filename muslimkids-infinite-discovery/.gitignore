@@ -1,0 +1,7 @@
+node_modules
+output/**/*.mp4
+output/**/*.png
+.remotion
+.remotion-bundle
+public/audio/sfx.wav
+output/final/chunks

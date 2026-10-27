@@ -1,0 +1,11 @@
+{
+  "id": "balago-live-edit-reference",
+  "role": "Единственный референс монтажа живых видео BalaGo. Хранится один раз; повторно не запрашивать.",
+  "release": "balago-live04-sources",
+  "repo": "adiletzainidinov/balago-video",
+  "asset": "SaveClip.App_AQNrLBeLVHPDVC_kOhGON5DyBeJBYjVqvhB56CJVTpQPTKpX-0hfCLM12DZDZGrtOs3Egm77O-SLZHpQ0ZS1rIoFJopE7V-SYzPfTyQ.mp4",
+  "localName": "1000209821.mp4",
+  "sha256": "b80790b99c3bfb744e137f622a80ed8276bc6b994aa1adb169379a5fa003ccb2",
+  "format": "720×1280, 30 fps, 43.95 с, H.264/AAC",
+  "download": "node scripts/live04/fetch-sources.mjs --all"
+}
