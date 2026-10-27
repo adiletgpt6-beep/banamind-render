@@ -1,0 +1,20 @@
+{
+  "slug": "cosmos-carl-sagan",
+  "title": "Космос",
+  "author": "Карл Саган",
+  "collection": "Окно доказательств",
+  "channel": "BanaMind",
+  "source": "PDF владельца (Альпина нон-фикшн, 2024, пер. А. Сергеева) → 17 TXT в books/500-series/sources/BM-028/ (17/17 SHA-256 OK); карта источников — books/cosmos-carl-sagan/scripts/SOURCE_MAP.md.",
+  "lesson": {
+    "dir": "books/cosmos-carl-sagan",
+    "timeline": "scripts/lesson-sagan/lib.mjs",
+    "remotionEntry": "src/lesson-sagan/index.ts",
+    "composition": "SaganLesson",
+    "workflow": ".github/workflows/lesson-sagan.yml",
+    "release": "lesson-sagan-bm028",
+    "asset": "sagan_bm028_30min.mp4"
+  },
+  "release": "book-cosmos-carl-sagan",
+  "rights": "PUBLICATION_RIGHTS_UNVERIFIED — приватный предпросмотр; публичная публикация и монетизация заблокированы до проверки прав.",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "≈30:00" }
+}
