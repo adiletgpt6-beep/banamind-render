@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "fps": 30,
+  "durationInFrames": 5512,
+  "durationSec": 183.733,
+  "speechEndSec": 176.733,
+  "ctaHoldSec": 7,
+  "scenes": [
+    {
+      "id": "s01Morning",
+      "startSec": 0,
+      "endSec": 14
+    },
+    {
+      "id": "s02Plan",
+      "startSec": 14,
+      "endSec": 27.867
+    },
+    {
+      "id": "s03Order",
+      "startSec": 27.867,
+      "endSec": 39.867
+    },
+    {
+      "id": "s04First",
+      "startSec": 39.867,
+      "endSec": 52.867
+    },
+    {
+      "id": "s05Second",
+      "startSec": 52.867,
+      "endSec": 63.867
+    },
+    {
+      "id": "s06Traffic",
+      "startSec": 63.867,
+      "endSec": 80.5
+    },
+    {
+      "id": "s07Ride",
+      "startSec": 80.5,
+      "endSec": 95.5
+    },
+    {
+      "id": "s08School",
+      "startSec": 95.5,
+      "endSec": 109.167
+    },
+    {
+      "id": "s09Office",
+      "startSec": 109.167,
+      "endSec": 127.5
+    },
+    {
+      "id": "s10Idea",
+      "startSec": 127.5,
+      "endSec": 141.133
+    },
+    {
+      "id": "s11Call",
+      "startSec": 141.133,
+      "endSec": 165.867
+    },
+    {
+      "id": "s12Final",
+      "startSec": 165.867,
+      "endSec": 177.233
+    },
+    {
+      "id": "s13Cta",
+      "startSec": 177.233,
+      "endSec": 183.733
+    }
+  ],
+  "lines": [
+    {
+      "id": "n01",
+      "scene": "s01Morning",
+      "role": "narrator",
+      "speechStartSec": 2.2,
+      "speechEndSec": 12.767
+    },
+    {
+      "id": "f01",
+      "scene": "s02Plan",
+      "role": "father",
+      "speechStartSec": 15.2,
+      "speechEndSec": 19.533
+    },
+    {
+      "id": "m01",
+      "scene": "s02Plan",
+      "role": "mother",
+      "speechStartSec": 20.033,
+      "speechEndSec": 23.567
+    },
+    {
+      "id": "f02",
+      "scene": "s02Plan",
+      "role": "father",
+      "speechStartSec": 24.033,
+      "speechEndSec": 26.267
+    },
+    {
+      "id": "n02",
+      "scene": "s03Order",
+      "role": "narrator",
+      "speechStartSec": 30.267,
+      "speechEndSec": 38.133
+    },
+    {
+      "id": "m02",
+      "scene": "s04First",
+      "role": "mother",
+      "speechStartSec": 43.267,
+      "speechEndSec": 45.067
+    },
+    {
+      "id": "m03",
+      "scene": "s04First",
+      "role": "mother",
+      "speechStartSec": 48.667,
+      "speechEndSec": 50.267
+    },
+    {
+      "id": "d01",
+      "scene": "s05Second",
+      "role": "daughter",
+      "speechStartSec": 55.667,
+      "speechEndSec": 57.867
+    },
+    {
+      "id": "m04",
+      "scene": "s05Second",
+      "role": "mother",
+      "speechStartSec": 58.467,
+      "speechEndSec": 60.6
+    },
+    {
+      "id": "m05",
+      "scene": "s06Traffic",
+      "role": "mother",
+      "speechStartSec": 65.867,
+      "speechEndSec": 70.433
+    },
+    {
+      "id": "t01",
+      "scene": "s06Traffic",
+      "role": "driver",
+      "speechStartSec": 70.933,
+      "speechEndSec": 77.2
+    },
+    {
+      "id": "m06",
+      "scene": "s06Traffic",
+      "role": "mother",
+      "speechStartSec": 77.633,
+      "speechEndSec": 79.3
+    },
+    {
+      "id": "m07",
+      "scene": "s07Ride",
+      "role": "mother",
+      "speechStartSec": 83.1,
+      "speechEndSec": 83.9
+    },
+    {
+      "id": "t02",
+      "scene": "s07Ride",
+      "role": "driver",
+      "speechStartSec": 84.267,
+      "speechEndSec": 85.067
+    },
+    {
+      "id": "n03",
+      "scene": "s07Ride",
+      "role": "narrator",
+      "speechStartSec": 87.267,
+      "speechEndSec": 93.767
+    },
+    {
+      "id": "e01",
+      "scene": "s08School",
+      "role": "teacher",
+      "speechStartSec": 98.1,
+      "speechEndSec": 102.7
+    },
+    {
+      "id": "m08",
+      "scene": "s08School",
+      "role": "mother",
+      "speechStartSec": 103.133,
+      "speechEndSec": 104
+    },
+    {
+      "id": "d02",
+      "scene": "s08School",
+      "role": "daughter",
+      "speechStartSec": 104.7,
+      "speechEndSec": 105.9
+    },
+    {
+      "id": "m09",
+      "scene": "s08School",
+      "role": "mother",
+      "speechStartSec": 106.267,
+      "speechEndSec": 107.167
+    },
+    {
+      "id": "b01",
+      "scene": "s09Office",
+      "role": "boss",
+      "speechStartSec": 111.367,
+      "speechEndSec": 115.467
+    },
+    {
+      "id": "m10",
+      "scene": "s09Office",
+      "role": "mother",
+      "speechStartSec": 115.9,
+      "speechEndSec": 117.533
+    },
+    {
+      "id": "n04",
+      "scene": "s09Office",
+      "role": "narrator",
+      "speechStartSec": 119.533,
+      "speechEndSec": 126.1
+    },
+    {
+      "id": "n05",
+      "scene": "s10Idea",
+      "role": "narrator",
+      "speechStartSec": 131.1,
+      "speechEndSec": 139.533
+    },
+    {
+      "id": "m11",
+      "scene": "s11Call",
+      "role": "mother",
+      "speechStartSec": 142.933,
+      "speechEndSec": 147.867
+    },
+    {
+      "id": "g01",
+      "scene": "s11Call",
+      "role": "balago",
+      "speechStartSec": 148.367,
+      "speechEndSec": 158
+    },
+    {
+      "id": "m12",
+      "scene": "s11Call",
+      "role": "mother",
+      "speechStartSec": 158.5,
+      "speechEndSec": 160.667
+    },
+    {
+      "id": "g02",
+      "scene": "s11Call",
+      "role": "balago",
+      "speechStartSec": 161.1,
+      "speechEndSec": 164.467
+    },
+    {
+      "id": "n06",
+      "scene": "s12Final",
+      "role": "narrator",
+      "speechStartSec": 167.867,
+      "speechEndSec": 176.733
+    }
+  ]
+}

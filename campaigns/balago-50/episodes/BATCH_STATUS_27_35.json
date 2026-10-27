@@ -1,0 +1,114 @@
+{
+  "campaign": "BalaGo-50",
+  "batch": "episodes-27-35",
+  "preparedAt": "2026-10-15",
+  "basedOnPR": 78,
+  "baseBranch": "feature/balago-50-episode-26-script",
+  "documentationBranch": "feature/balago-50-episodes-27-35",
+  "productionRequested": true,
+  "explicitScenarioApproval": false,
+  "renderedInThisPR": false,
+  "earlierEpisodesModified": false,
+  "criticalNote": "BG-032 is already pilot episode 2; episode 33 uses BG-033 (not BG-032).",
+  "episodes": [
+    {
+      "episode": 27,
+      "bgId": "BG-026",
+      "titleKy": "Балам азыр кайда?",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/27-BG-026.md",
+      "task": "campaigns/balago-50/production/TASK_BG-026_EP27.md"
+    },
+    {
+      "episode": 28,
+      "bgId": "BG-027",
+      "titleKy": "Баланы ким тосуп алат?",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/28-BG-027.md",
+      "task": "campaigns/balago-50/production/TASK_BG-027_EP28.md"
+    },
+    {
+      "episode": 29,
+      "bgId": "BG-028",
+      "titleKy": "Тааныш айдоочу",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/29-BG-028.md",
+      "task": "campaigns/balago-50/production/TASK_BG-028_EP29.md"
+    },
+    {
+      "episode": 30,
+      "bgId": "BG-029",
+      "titleKy": "Чоң сапардын майда деталдары",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/30-BG-029.md",
+      "task": "campaigns/balago-50/production/TASK_BG-029_EP30.md"
+    },
+    {
+      "episode": 31,
+      "bgId": "BG-030",
+      "titleKy": "Бишкектеги бир багыт",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/31-BG-030.md",
+      "task": "campaigns/balago-50/production/TASK_BG-030_EP31.md"
+    },
+    {
+      "episode": 32,
+      "bgId": "BG-031",
+      "titleKy": "1000 сом — эмнеге?",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/32-BG-031.md",
+      "task": "campaigns/balago-50/production/TASK_BG-031_EP32.md"
+    },
+    {
+      "episode": 33,
+      "bgId": "BG-033",
+      "titleKy": "Алгач сынап көрүңүз",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/33-BG-033.md",
+      "task": "campaigns/balago-50/production/TASK_BG-033_EP33.md"
+    },
+    {
+      "episode": 34,
+      "bgId": "BG-034",
+      "titleKy": "10 толук сапар",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/34-BG-034.md",
+      "task": "campaigns/balago-50/production/TASK_BG-034_EP34.md"
+    },
+    {
+      "episode": 35,
+      "bgId": "BG-035",
+      "titleKy": "20 + 2 толук сапар",
+      "status": "draft",
+      "explicitScenarioApproval": false,
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/35-BG-035.md",
+      "task": "campaigns/balago-50/production/TASK_BG-035_EP35.md"
+    }
+  ]
+}
