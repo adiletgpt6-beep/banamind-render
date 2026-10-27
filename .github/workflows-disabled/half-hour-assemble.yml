@@ -1,0 +1,95 @@
+name: Half-hour 3D assembly and verification
+on:
+  push:
+    branches: [feature/work-half-hour]
+    paths: [.github/half-hour-assemble-request.json]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: request
+        name: Verify source run and unchanged render sources
+        run: |
+          python3 - <<'PY'
+          import json, os, re, subprocess
+          from pathlib import Path
+          r = json.loads(Path(".github/half-hour-assemble-request.json").read_text())
+          assert isinstance(r["run_id"], int) and r["run_id"] > 0
+          assert re.fullmatch(r"[0-9a-f]{40}", r["render_commit"])
+          source = json.loads(subprocess.run(["gh","api",f'repos/{os.environ["GITHUB_REPOSITORY"]}/actions/runs/{r["run_id"]}'],check=True,capture_output=True,text=True).stdout)
+          assert source["head_sha"] == r["render_commit"]
+          subprocess.run(["git","diff","--exit-code",r["render_commit"],"HEAD","--","src","public","package.json","package-lock.json","remotion.config.ts","tsconfig.json",".nvmrc","scripts/render-half-hour-final.mjs"],check=True)
+          with open(os.environ["GITHUB_OUTPUT"],"a") as f:
+              f.write(f'run_id={r["run_id"]}\nrender_commit={r["render_commit"]}\n')
+          PY
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: half-hour-part-*
+          path: pieces
+          merge-multiple: true
+          run-id: ${{ steps.request.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: half-hour-master-audio
+          path: pieces
+          run-id: ${{ steps.request.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: python3 -m py_compile scripts/assemble-half-hour.py scripts/verify-half-hour-audio.py
+      - id: verify
+        name: Assemble and verify both MP4s
+        env:
+          HH_RENDER_COMMIT: ${{ steps.request.outputs.render_commit }}
+        run: python3 scripts/assemble-half-hour.py
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: half-hour-unverified-assembly
+          path: |
+            out/BalaGo_10_3D.mp4
+            out/BalaGo_10_3D_mobile.mp4
+            pieces/audio-timing.json
+            pieces/master-voice-check.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-final-review
+          path: |
+            out/overview-*.jpg
+            out/timeline-*.jpg
+            out/final-*.jpg
+            out/validation.json
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full
+          path: out/BalaGo_10_3D.mp4
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-phone
+          path: out/BalaGo_10_3D_mobile.mp4
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full-00
+          path: out/full-parts/full-00.bin
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full-01
+          path: out/full-parts/full-01.bin
+          if-no-files-found: ignore
+          retention-days: 30

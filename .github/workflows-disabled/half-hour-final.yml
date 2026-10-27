@@ -1,0 +1,162 @@
+# Each runner has two cores; all Remotion workers respect that limit.
+name: Half-hour 3D final film
+on:
+  push:
+    branches: [feature/work-half-hour]
+    paths: [.github/half-hour-final-request.json]
+  workflow_dispatch:
+    inputs:
+      reuse_run:
+        description: 'Optional run containing verified unaffected pictures and audio'
+        type: string
+        default: ''
+      parts:
+        description: 'JSON array of parts to render (0–7)'
+        type: string
+        default: '[0,1,2,3,4,5,6,7]'
+env:
+  HH_REUSE_RUN: ${{ inputs.reuse_run || '' }}
+concurrency:
+  group: half-hour-final-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+  actions: read
+jobs:
+  soundtrack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run lint && npm run test:half-hour && python3 -m py_compile scripts/assemble-half-hour.py scripts/verify-half-hour-audio.py
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: npx remotion browser ensure
+      - name: Render continuous audio
+        if: env.HH_REUSE_RUN == ''
+        run: node scripts/render-half-hour-final.mjs
+      - name: Verify all dialogue in the continuous master
+        if: env.HH_REUSE_RUN == ''
+        run: python3 scripts/verify-half-hour-audio.py out/half-hour-master.wav out/audio-timing.json > out/master-voice-check.json
+      - uses: actions/upload-artifact@v4
+        if: env.HH_REUSE_RUN == ''
+        with:
+          name: half-hour-master-audio
+          path: |
+            out/half-hour-master.wav
+            out/audio.provenance.json
+            out/audio-timing.json
+            out/master-voice-check.json
+          retention-days: 7
+  pictures:
+    needs: soundtrack
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        part: ${{ fromJSON(inputs.parts || '[0,1,2,3,4,5,6,7]') }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx remotion browser ensure
+      - name: Render native 1080p pictures
+        env:
+          HH_PART: ${{ matrix.part }}
+        run: node scripts/render-half-hour-final.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-part-${{ matrix.part }}
+          path: |
+            out/part-${{ matrix.part }}.mp4
+            out/part-${{ matrix.part }}.provenance.json
+          retention-days: 7
+  assemble:
+    needs: [soundtrack, pictures]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        if: env.HH_REUSE_RUN != ''
+        with:
+          pattern: half-hour-part-*
+          path: pieces
+          merge-multiple: true
+          run-id: ${{ env.HH_REUSE_RUN }}
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: half-hour-part-*
+          path: pieces
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: half-hour-master-audio
+          path: pieces
+          run-id: ${{ env.HH_REUSE_RUN || github.run_id }}
+          github-token: ${{ github.token }}
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: python scripts/assemble-half-hour.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-final-review
+          path: |
+            out/overview-*.jpg
+            out/timeline-*.jpg
+            out/final-*.jpg
+            out/validation.json
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full
+          path: out/BalaGo_10_3D.mp4
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-phone
+          path: out/BalaGo_10_3D_mobile.mp4
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full-00
+          path: out/full-parts/full-00.bin
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full-01
+          path: out/full-parts/full-01.bin
+          if-no-files-found: ignore
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full-02
+          path: out/full-parts/full-02.bin
+          if-no-files-found: ignore
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full-03
+          path: out/full-parts/full-03.bin
+          if-no-files-found: ignore
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full-04
+          path: out/full-parts/full-04.bin
+          if-no-files-found: ignore
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: half-hour-3d-full-05
+          path: out/full-parts/full-05.bin
+          if-no-files-found: ignore
+          retention-days: 30
