@@ -1,0 +1,49 @@
+name: Half-hour verified video release
+on:
+  push:
+    branches: [feature/work-half-hour]
+    paths: [.github/half-hour-release-request.json]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: request
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          r = json.loads(Path(".github/half-hour-release-request.json").read_text())
+          assert r["review_complete"] is True
+          assert isinstance(r["run_id"], int) and r["run_id"] > 0
+          assert re.fullmatch(r"[0-9a-f]{40}", r["render_commit"])
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f'run_id={r["run_id"]}\n')
+          PY
+      - uses: actions/download-artifact@v4
+        with:
+          name: half-hour-3d-full
+          run-id: ${{ steps.request.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: release-assets
+      - uses: actions/download-artifact@v4
+        with:
+          name: half-hour-3d-phone
+          run-id: ${{ steps.request.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: release-assets
+      - uses: actions/download-artifact@v4
+        with:
+          name: half-hour-final-review
+          run-id: ${{ steps.request.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: release-review
+      - name: Verify checksums, upload and publish both MP4s
+        run: python3 scripts/publish-half-hour-release.py
