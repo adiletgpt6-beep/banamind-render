@@ -1,0 +1,102 @@
+{
+  "slug": "seneca-letters-lucilius",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 175,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 149,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 162,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 146,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 126,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 30,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 46.8
+      },
+      {
+        "pair": "1-3",
+        "diff": 54.3
+      },
+      {
+        "pair": "1-4",
+        "diff": 53.4
+      },
+      {
+        "pair": "1-5",
+        "diff": 97.8
+      },
+      {
+        "pair": "2-3",
+        "diff": 49.4
+      },
+      {
+        "pair": "2-4",
+        "diff": 47.3
+      },
+      {
+        "pair": "2-5",
+        "diff": 100
+      },
+      {
+        "pair": "3-4",
+        "diff": 43.4
+      },
+      {
+        "pair": "3-5",
+        "diff": 102.7
+      },
+      {
+        "pair": "4-5",
+        "diff": 100.1
+      }
+    ],
+    "min": 43.4,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
