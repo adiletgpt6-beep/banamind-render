@@ -1,0 +1,40 @@
+// Фирменные цвета ролика: белая бумага, ярко-жёлтая линия, тёмно-синие
+// контуры и надписи. Персонажи и предметы — тонкий тёмно-синий контур с
+// мягкой заливкой (стиль «рисунок одной линией»).
+export const C = {
+  paper: "#FFFDF7",
+  paperShade: "#F6F1E4",
+  white: "#FFFFFF",
+  sky: "#EAF3FC",
+  skyDeep: "#CFE3F7",
+  mountain: "#BFD6EE",
+  mountainFar: "#DCE8F5",
+  snow: "#FFFFFF",
+  rule: "#D9E2EE",
+  navy: "#14285A",
+  ink: "#24365F",
+  muted: "#6A7AA0",
+  soft: "#9AA8C4",
+  yellow: "#FFC90E",
+  yellowDeep: "#F2B500",
+  yellowSoft: "#FFF4C2",
+  yellowGlow: "#FFE27A",
+  green: "#25A35A",
+  greenSoft: "#E3F5EA",
+  waGreen: "#1FA855",
+  waBg: "#EFE7DE",
+  waBubble: "#D9FDD3",
+  coral: "#E8735A",
+  coralSoft: "#FCE7E1",
+  skin: "#EDC19E",
+  skinShade: "#D9A47F",
+  blush: "#F2A08C",
+  hair: "#2A2030",
+  cardigan: "#5B7FC7",
+  cardiganShade: "#4A6AB0",
+  top: "#FFFFFF",
+  wood: "#E9D3B0",
+  woodShade: "#D8BE95",
+} as const;
+
+export const STROKE = 4.5; // толщина контура рисунка
