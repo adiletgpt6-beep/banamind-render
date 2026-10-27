@@ -1,0 +1,48 @@
+{
+  "designs": {
+    "narratorF": {
+      "hash": "4d88c15e3e628c76",
+      "description": "A warm, confident Kyrgyz woman narrator in her late thirties from Bishkek, a native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Clear mid-range voice, kind and calm, gently engaging, like a trusted friend telling a family story. Not deep, not husky, not breathy. Clear, close-mic studio recording, no background noise, relaxed natural breathing, unhurried storytelling pace with natural pauses, not theatrical.",
+      "text": "Айжан бул сунушту эки жыл күткөн. Бирок катка үч күндөн бери жооп бере албай жүрөт. Кызын чоң апасына калтырып, кеңсеге кайтчу. Каттын жообу үч күн бүтпөй турду. Баарын жылдыруу мүмкүн эмес. Чоң апасына күн сайын шаар аралоо да оңой эмес.",
+      "previews": [
+        {
+          "file": "narratorF-1.mp3",
+          "generatedVoiceId": "6ygcojxkPqZNv5oIR3aV",
+          "durationSec": 17.6345
+        },
+        {
+          "file": "narratorF-2.mp3",
+          "generatedVoiceId": "4YbRyZQGzRMFNw4Pz5QN",
+          "durationSec": 17.712875
+        },
+        {
+          "file": "narratorF-3.mp3",
+          "generatedVoiceId": "sCVos46Ah8EVZdfFMc77",
+          "durationSec": 15.805958333333333
+        }
+      ]
+    },
+    "narratorM": {
+      "hash": "d56bf3d0dbac9088",
+      "description": "A warm, calm Kyrgyz man narrator in his early forties from Bishkek, a native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Clear, friendly light baritone, confident and kind, like a documentary storyteller for families. Not deep, not gravelly, not dramatic. Clear, close-mic studio recording, no background noise, relaxed natural breathing, unhurried storytelling pace with natural pauses, not theatrical.",
+      "text": "Айжан бул сунушту эки жыл күткөн. Бирок катка үч күндөн бери жооп бере албай жүрөт. Кызын чоң апасына калтырып, кеңсеге кайтчу. Каттын жообу үч күн бүтпөй турду. Баарын жылдыруу мүмкүн эмес. Чоң апасына күн сайын шаар аралоо да оңой эмес.",
+      "previews": [
+        {
+          "file": "narratorM-1.mp3",
+          "generatedVoiceId": "4Rpxy9B6xSlm4hZ3JFSp",
+          "durationSec": 14.447583333333334
+        },
+        {
+          "file": "narratorM-2.mp3",
+          "generatedVoiceId": "b8klhsYSLT1pQ56JtaJ6",
+          "durationSec": 15.570833333333333
+        },
+        {
+          "file": "narratorM-3.mp3",
+          "generatedVoiceId": "Pex1hxe2eqHO7Dv7pZ05",
+          "durationSec": 15.649208333333334
+        }
+      ]
+    }
+  }
+}

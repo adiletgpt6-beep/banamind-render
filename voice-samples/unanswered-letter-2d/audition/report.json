@@ -1,0 +1,56 @@
+{
+  "samples": {
+    "teacher-natural": {
+      "hash": "06539fb88abc8b89",
+      "file": "teacher-natural.mp3",
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "text": "Айжан бул сунушту эки жыл күткөн. Бирок катка үч күндөн бери жооп бере албай жүрөт.",
+      "durationSec": 5.36,
+      "speechSec": 5.16
+    },
+    "teacher-robust": {
+      "hash": "b6faff8f882aaa56",
+      "file": "teacher-robust.mp3",
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "voiceSettings": {
+        "stability": 1,
+        "similarity_boost": 0.8
+      },
+      "text": "Айжан бул сунушту эки жыл күткөн. Бирок катка үч күндөн бери жооп бере албай жүрөт.",
+      "durationSec": 5.41,
+      "speechSec": 5.33
+    },
+    "boss-natural": {
+      "hash": "9fbc399cc3eca352",
+      "file": "boss-natural.mp3",
+      "voiceName": "KG-boss",
+      "voiceId": "yCcjraKUNFsfIv02eS9D",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "text": "Айжан бул сунушту эки жыл күткөн. Бирок катка үч күндөн бери жооп бере албай жүрөт.",
+      "durationSec": 5.27,
+      "speechSec": 5.11
+    },
+    "colleague-kg": {
+      "hash": "6b3911b0fc21ad1b",
+      "file": "colleague-kg.mp3",
+      "voiceName": "KG-colleague",
+      "voiceId": "S87HaYymDP3SARzmBPgS",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "text": "Куттуктайм! Сен ушуну каалап жүргөн эмес белең?",
+      "durationSec": 2.52,
+      "speechSec": 2.48
+    }
+  }
+}

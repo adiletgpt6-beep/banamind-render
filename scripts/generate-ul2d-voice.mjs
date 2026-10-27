@@ -1,0 +1,148 @@
+// Полная озвучка BalaGoUnansweredLetter2D: файл на реплику, голос роли — готовые
+// кыргызские голоса проекта (UL2_VOICES в src/unanswered-letter-2d/script.ts).
+//
+// Кэш: реплика с тем же хэшем (текст, тег, голос, модель, настройки, seed),
+// уже лежащая в public/audio/unanswered-letter-2d/, повторно не синтезируется.
+// Новая или изменённая реплика синтезируется в 3 дублях; в ролик идёт дубль,
+// который Meta MMS распознаёт точнее (scripts/ul2d_asr.py). Если реплика
+// перегенерируется (новый seed), прежний дубль участвует в сравнении —
+// хуже не станет.
+//
+// Запуск: npm run audio:voice:unanswered-letter-2d (нужен ELEVENLABS_API_KEY).
+import { execFileSync } from "node:child_process";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { UL2_LINES, UL2_SEGMENTS, UL2_VIDEO } from "../src/unanswered-letter-2d/script.ts";
+import { buildUl2Cues, checkUl2Timing, segmentLimit } from "../src/unanswered-letter-2d/timing.ts";
+import { lineSeed, ul2Hash, synthLine, voiceOfRole } from "./lib/ul2d-tts.mjs";
+import { decodeMono } from "./lib/audio.mjs";
+
+const OUT = join("public", UL2_VIDEO.voiceDir);
+const MANIFEST = join(OUT, "manifest.json");
+const apiKey = process.env.ELEVENLABS_API_KEY?.trim();
+
+
+mkdirSync(OUT, { recursive: true });
+const prev = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : { lines: [] };
+const prevById = new Map(prev.lines.map((l) => [l.id, l]));
+const lines = [];
+const save = (partial) =>
+  writeFileSync(MANIFEST, JSON.stringify({ version: 1, kind: "ul2d", video: UL2_VIDEO.id, partial, lines }, null, 2) + "\n");
+
+const TAKES = Number(process.env.UL2_TAKES ?? 3);
+// Конец файла — тишина (последний слог не оборван).
+const endsInSilence = (path) => {
+  const pcm = decodeMono(path);
+  const n = Math.round(0.12 * 44100);
+  let acc = 0;
+  for (let i = Math.max(0, pcm.length - n); i < pcm.length; i++) acc += pcm[i] * pcm[i];
+  return 10 * Math.log10(acc / n + 1e-12) < -45;
+};
+// Без ключа и без готовых файлов ролик собирается по оценочным таймингам.
+if (!apiKey && !existsSync(MANIFEST)) {
+  console.log("ELEVENLABS_API_KEY не задан и озвучки нет — ролик собирается без голоса.");
+  process.exit(0);
+}
+const TMP = join(tmpdir(), "balago-ul2d-takes");
+mkdirSync(TMP, { recursive: true });
+const pending = [];
+let made = 0;
+let reused = 0;
+for (const line of UL2_LINES) {
+  const voice = voiceOfRole(line.role);
+  const hash = ul2Hash(line, voice.voiceId);
+  const file = `${line.id}.mp3`;
+  const old = prevById.get(line.id);
+  if (old?.hash === hash && existsSync(join(OUT, file))) {
+    lines.push(old);
+    reused++;
+    continue;
+  }
+  if (!apiKey) throw new Error(`Нет озвучки для ${line.id}, а ELEVENLABS_API_KEY не задан.`);
+  const takes = [];
+  // прежний дубль того же текста и голоса — тоже кандидат, если его конец
+  // не оборван (последние 0,12 с — тишина)
+  if (old && old.voiceId === voice.voiceId && old.spoken === (line.spoken ?? line.text) && (old.tag ?? null) === (line.tag ?? null) && existsSync(join(OUT, file)) && endsInSilence(join(OUT, file))) {
+    const path = join(TMP, `${line.id}-prev.mp3`);
+    copyFileSync(join(OUT, file), path);
+    const { asrCer: _c, asrHeard: _h, f0: _f, takes: _t, hash: _x, ...info } = old;
+    takes.push({ path, info, seed: old.seed, prev: true });
+  }
+  for (let k = 0; k < TAKES; k++) {
+    const seed = lineSeed(line) + k * 11;
+    const path = join(TMP, `${line.id}-${seed}.mp3`);
+    const info = await synthLine(apiKey, line, voice, path, seed);
+    takes.push({ path, info, seed });
+    made++;
+  }
+  lines.push(null);
+  pending.push({ line, hash, file, takes, index: lines.length - 1 });
+}
+
+let scores = null;
+if (pending.length) {
+  const inp = join(TMP, "score-in.json");
+  const out = join(TMP, "score-out.json");
+  writeFileSync(inp, JSON.stringify(pending.flatMap((p) => p.takes.map((t) => ({ path: t.path, text: p.line.spoken ?? p.line.text })))));
+  try {
+    execFileSync("python3", ["scripts/ul2d_asr.py", "--score", inp, out], { stdio: "inherit" });
+    scores = new Map(JSON.parse(readFileSync(out, "utf8")).map((r) => [r.path, r]));
+  } catch (e) {
+    console.warn(`  ⚠ распознавание недоступно (${e.message.split("\n")[0]}) — берётся первый новый дубль`);
+  }
+}
+for (const p of pending) {
+  const ranked = p.takes.map((t) => ({ ...t, asr: scores?.get(t.path) ?? null }));
+  // Окно речи: самое узкое из сегментов, где звучит этот файл.
+  const maxSpeech = Math.min(...UL2_SEGMENTS.map((sg, i) => (sg.line === p.line.id ? segmentLimit(i) - sg.at : Infinity)));
+  // Разборчивый дубль должен целиком поместиться в монтаж; если не
+  // помещается ни один — берётся лучший, а шкала сдвигается в script.ts.
+  // Речь никогда не ускоряется и не обрезается ради монтажного окна.
+  const fits = ranked.filter((t) => t.info.speechEnd - t.info.speechStart <= maxSpeech);
+  const eligible = fits.length ? fits : ranked;
+  if (!fits.length) console.warn(`  ⚠ ${p.line.id}: ни один дубль не помещается в ${maxSpeech.toFixed(2)} с — сдвиньте шкалу`);
+  const fresh = eligible.filter((t) => !t.prev);
+  const best = scores
+    ? eligible.reduce((a, b) => ((b.asr?.cer ?? Infinity) < (a.asr?.cer ?? Infinity) ? b : a))
+    : fresh[0] ?? eligible[0];
+  copyFileSync(best.path, join(OUT, p.file));
+  lines[p.index] = {
+    ...best.info,
+    hash: p.hash,
+    file: p.file,
+    asrCer: best.asr?.cer ?? null,
+    asrHeard: best.asr?.heard ?? null,
+    f0: best.asr?.f0 ?? null,
+    takes: ranked.map((t) => ({ seed: t.seed, prev: Boolean(t.prev), cer: t.asr?.cer ?? null, fits: fits.includes(t), speechSec: Number((t.info.speechEnd - t.info.speechStart).toFixed(3)) })),
+  };
+  console.log(
+    `✓ ${p.line.id}: дубль seed ${best.seed}${best.prev ? " (прежний)" : ""}` +
+      (best.asr ? `, CER ${best.asr.cer} (дубли: ${ranked.map((t) => t.asr?.cer ?? "?").join(" / ")})` : ""),
+  );
+}
+save(false);
+// Шкала речи: каждый сегмент — ID, роль, текст, файл, длительность,
+// начало и конец речи на общей шкале, режим (рассказчик / живая речь /
+// внутреннее чтение).
+const r3 = (x) => Number(x.toFixed(3));
+const timeline = buildUl2Cues({ version: 1, kind: "ul2d", lines }).map((c) => ({
+  id: c.id,
+  line: c.line,
+  role: c.role,
+  mode: c.mode,
+  text: UL2_LINES.find((l) => l.id === c.line).text,
+  file: c.file,
+  durationSec: c.durationSec,
+  from: r3(c.from),
+  to: r3(c.to),
+}));
+writeFileSync(join(OUT, "timeline.json"), JSON.stringify({ video: UL2_VIDEO.id, segments: timeline }, null, 2) + "\n");
+console.log(`Реплик: ${lines.length} (синтезов: ${made}, из кэша: ${reused})`);
+
+const problems = checkUl2Timing(lines);
+for (const p of problems) console.warn(`  ⚠ ${p}`);
+if (problems.length) {
+  console.error("✗ Реплики не помещаются в шкалу — сдвиньте at в UL2_SEGMENTS (src/unanswered-letter-2d/script.ts)");
+  process.exit(1);
+}

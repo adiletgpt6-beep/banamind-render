@@ -1,0 +1,72 @@
+{
+  "voice-samples/unanswered-letter-2d/design/narratorF-1.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/design/narratorF-1.mp3",
+    "heard": "айжам бул сунушту эки жыл күткөн бирок катка үч күндөн бери жоопер албай жүрөт кызын чоң апасына калтырып кеңсеге кайтчу каттын жообу үч күн бүтпөй турду баарын жылдыруу мүмкүн эмес чоң апасына күн сайын шаар аралоо да оңой эмес",
+    "cer": 0.017,
+    "f0": 216.2,
+    "bytes": 423228
+  },
+  "voice-samples/unanswered-letter-2d/design/narratorF-2.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/design/narratorF-2.mp3",
+    "heard": "айжан бул сунушту эки жыл күткөн бирок катка үч күндөн бери жооп бере албай жүрөт кызын чоң апасына калтырып кеңсейе кайтчу каттын жообу үч күн бүтпөй турду баарын жылдыруу мүмкүн эмес чоң апасына күн сайын шаар аралоо да оңой эмес",
+    "cer": 0.004,
+    "f0": 172,
+    "bytes": 425109
+  },
+  "voice-samples/unanswered-letter-2d/design/narratorF-3.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/design/narratorF-3.mp3",
+    "heard": "айжан бул сунушту эки жыл кеткен бирок катка үч күндөн бери жооп бере албай жүрет кызын чоң апасына калтырып кеңсеге кайтчу каттын жообу үч күн бүтпөй турду баарын жылдыруу мүмкүн эмес чоң апасына күн сайын шаар аралоо да омой эмес",
+    "cer": 0.017,
+    "f0": 177.8,
+    "bytes": 379343
+  },
+  "voice-samples/unanswered-letter-2d/design/narratorM-1.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/design/narratorM-1.mp3",
+    "heard": "айжан бул сунушту эки жыл күткөн бирок катка үч күндөн бери жуоп бере албай жүрөт кызын чоң апасына калтырып кенсеге кайтчу каттын жогу үч күн бүтпөй турду баарын жылдыруу мүмкүн эмес чоң апасына күн сайын шаар аралоуда уңой эмес",
+    "cer": 0.03,
+    "f0": 116.8,
+    "bytes": 346742
+  },
+  "voice-samples/unanswered-letter-2d/design/narratorM-2.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/design/narratorM-2.mp3",
+    "heard": "айжам бул сунушту эки жыл күткөн бирок катка үч күндөн бери жоопер албай жүрөт кызын чом апасына калтырып кеңсеге кайтчу каттын жообу үч күн бүтпөй турду баарын жылдыруу мүмкүн эмес чом апасына күн сайын шаар аралуу да омой эмес",
+    "cer": 0.039,
+    "f0": 111.1,
+    "bytes": 373700
+  },
+  "voice-samples/unanswered-letter-2d/design/narratorM-3.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/design/narratorM-3.mp3",
+    "heard": "айжан болсунушту эки жыл киткөн бирок катка үч күндөн бери жооп бере алба жибет кызын чом апасына калтырып кенсее кайтчу каттын жообу үч күн бүт петирдо баарын жылдыруу мүңкүн эмес чом апасына күн сайын шаарарылоода оңой эмес",
+    "cer": 0.091,
+    "f0": 128,
+    "bytes": 375581
+  },
+  "voice-samples/unanswered-letter-2d/audition/teacher-natural.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/audition/teacher-natural.mp3",
+    "heard": "айжам бул сунушту эки жыл күткөн бирок катка үч күндөн бири жооп бер албай жүрөт",
+    "cer": 0.037,
+    "f0": 238.8,
+    "bytes": 130447
+  },
+  "voice-samples/unanswered-letter-2d/audition/teacher-robust.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/audition/teacher-robust.mp3",
+    "heard": "айжам бул сунуштуу эки жыл күткөн бирок катка үч күндөн бери жоо пер албай жүрөт",
+    "cer": 0.062,
+    "f0": 228.6,
+    "bytes": 131701
+  },
+  "voice-samples/unanswered-letter-2d/audition/boss-natural.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/audition/boss-natural.mp3",
+    "heard": "айжам бул сунушту эки жыл күткөн бирок катка үч күндөн бери жоо бере албай жүрөт",
+    "cer": 0.025,
+    "f0": 125,
+    "bytes": 127939
+  },
+  "voice-samples/unanswered-letter-2d/audition/colleague-kg.mp3": {
+    "path": "voice-samples/unanswered-letter-2d/audition/colleague-kg.mp3",
+    "heard": "куттуктайым сен ушуну калап жүргөн эмес билиң",
+    "cer": 0.089,
+    "f0": 144.1,
+    "bytes": 62111
+  }
+}

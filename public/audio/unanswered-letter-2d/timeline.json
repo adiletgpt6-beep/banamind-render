@@ -1,0 +1,159 @@
+{
+  "video": "BalaGoUnansweredLetter2D",
+  "segments": [
+    {
+      "id": "n01",
+      "line": "n01",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Айжан бул сунушту эки жыл күткөн. Бирок катка үч күндөн бери жооп бере албай жүрөт.",
+      "file": "n01.mp3",
+      "durationSec": 5.27,
+      "from": 0.4,
+      "to": 5.43
+    },
+    {
+      "id": "c01",
+      "line": "c01",
+      "role": "colleague",
+      "mode": "live",
+      "text": "Куттуктайм! Сен ушуну каалап жүргөн эмес белең?",
+      "file": "c01.mp3",
+      "durationSec": 3.477,
+      "from": 10.3,
+      "to": 13.617
+    },
+    {
+      "id": "m01",
+      "line": "m01",
+      "role": "mother",
+      "mode": "live",
+      "text": "Ооба. Бир нерсени ойлонуп алышым керек.",
+      "file": "m01.mp3",
+      "durationSec": 2.64,
+      "from": 14.4,
+      "to": 16.84
+    },
+    {
+      "id": "d01",
+      "line": "d01",
+      "role": "daughter",
+      "mode": "live",
+      "text": "Апа, бизде сүрөт сынагы болот! Мен да катышам.",
+      "file": "d01.mp3",
+      "durationSec": 2.69,
+      "from": 30.2,
+      "to": 32.456
+    },
+    {
+      "id": "m02",
+      "line": "m02",
+      "role": "mother",
+      "mode": "live",
+      "text": "Абдан жакшы!",
+      "file": "m02.mp3",
+      "durationSec": 1.08,
+      "from": 33,
+      "to": 33.741
+    },
+    {
+      "id": "n02",
+      "line": "n02",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Кызын чоң апасына калтырып, кеңсеге кайтчу. Каттын жообу үч күн бүтпөй турду.",
+      "file": "n02.mp3",
+      "durationSec": 5.43,
+      "from": 36.6,
+      "to": 41.71
+    },
+    {
+      "id": "h01",
+      "line": "h01",
+      "role": "father",
+      "mode": "live",
+      "text": "Сен дагы эле жооп бере элексиңби? Сени эмне токтотуп жатат?",
+      "file": "h01.mp3",
+      "durationSec": 4.03,
+      "from": 46.6,
+      "to": 50.29
+    },
+    {
+      "id": "m03",
+      "line": "m03",
+      "role": "mother",
+      "mode": "live",
+      "text": "Бул кызматты каалайм. Бирок кызды мектептен алып келүүнү кантип уюштурарыбызды азырынча билбейм. Сенин да ошол убакта жолугушууларың бар.",
+      "file": "m03.mp3",
+      "durationSec": 9.11,
+      "from": 54.8,
+      "to": 63.68
+    },
+    {
+      "id": "n03",
+      "line": "n03",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Баарын жылдыруу мүмкүн эмес. Чоң апасына күн сайын шаар аралоо да оңой эмес.",
+      "file": "n03.mp3",
+      "durationSec": 5.53,
+      "from": 68.7,
+      "to": 73.98
+    },
+    {
+      "id": "m04",
+      "line": "m04",
+      "role": "mother",
+      "mode": "live",
+      "text": "Муну кайда коёбуз?",
+      "file": "m04.mp3",
+      "durationSec": 1.4,
+      "from": 80.3,
+      "to": 81.35
+    },
+    {
+      "id": "d02",
+      "line": "d02",
+      "role": "daughter",
+      "mode": "live",
+      "text": "Сенин жаңы жумушуңа. Сен жетекчи болосуң да?",
+      "file": "d02.mp3",
+      "durationSec": 2.84,
+      "from": 82.2,
+      "to": 84.84
+    },
+    {
+      "id": "m05",
+      "line": "m05",
+      "role": "mother",
+      "mode": "live",
+      "text": "Абдан каалайм.",
+      "file": "m05.mp3",
+      "durationSec": 1.13,
+      "from": 86.2,
+      "to": 87.021
+    },
+    {
+      "id": "n04",
+      "line": "n04",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Эртеси алар BalaGo’нун баракчасын карап, мектептен үйгө каттамга алдын ала арыз калтырышты.",
+      "file": "n04.mp3",
+      "durationSec": 5.73,
+      "from": 93.8,
+      "to": 99.24
+    },
+    {
+      "id": "m06",
+      "line": "m06",
+      "role": "mother",
+      "mode": "inner",
+      "text": "Сунушуңуздарга рахмат. Жаңы кызматты жана ага өтүүнүн шарттарын талкуулагым келет.",
+      "file": "m06.mp3",
+      "durationSec": 5.52,
+      "from": 103.4,
+      "to": 108.76
+    }
+  ]
+}
