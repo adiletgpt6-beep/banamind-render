@@ -1,0 +1,43 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "5ff4bc901aa63d458ec3a50a3110875afa55d3a1",
+  "source_branches": [
+    "feature/banamind-bm-021-influence-cialdini"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 13,
+  "withheld_file_counts": {
+    "private_source_or_binary": 669,
+    "unreviewed_source_transcript": 3
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 11,
+  "continuation_date": "2026-10-27",
+  "continuation_exclusions": [
+    {
+      "path": "apps/balago-studio/tests/auth.test.ts",
+      "mode": "100644",
+      "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+      "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+    },
+    {
+      "path": "apps/balago-studio/tests/github.test.ts",
+      "mode": "100644",
+      "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+      "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+    },
+    {
+      "path": "apps/balago-studio/tests/helpers.ts",
+      "mode": "100644",
+      "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+      "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+    },
+    {
+      "path": "apps/balago-studio/tests/storage.test.ts",
+      "mode": "100644",
+      "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+      "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+    }
+  ]
+}

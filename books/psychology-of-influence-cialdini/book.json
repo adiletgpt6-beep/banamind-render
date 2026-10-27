@@ -1,0 +1,20 @@
+{
+  "slug": "psychology-of-influence-cialdini",
+  "bm": "BM-021",
+  "title": "Психология влияния",
+  "author": "Роберт Чалдини",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-021/part-01…19.txt — полный текст русского издания (7 принципов, включая «Единство»); карта источников — books/psychology-of-influence-cialdini/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/psychology-of-influence-cialdini/scripts",
+    "timeline": "scripts/lesson-influence/lib.mjs",
+    "remotionEntry": "src/lesson-influence/index.ts",
+    "composition": "InfluenceLesson",
+    "workflow": ".github/workflows/lesson-influence.yml",
+    "release": "book-psychology-of-influence-cialdini",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-psychology-of-influence-cialdini",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}

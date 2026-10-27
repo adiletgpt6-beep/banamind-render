@@ -1,0 +1,254 @@
+name: Lesson — Трактат о природе (банан, 30 мин, 16:9)
+
+# Анимационное объяснение книги с бананом-ведущим (не реклама BalaGo): правила BalaGo
+# о контактах/Бишкеке/кыргызской озвучке к нему не применяются.
+# Своя точка входа Remotion src/lesson-traktat/index.ts, прежние ролики не трогает.
+#   voice    → озвучка ElevenLabs по репликам (готовые с тем же хэшем
+#              переиспользуются), новые файлы сохраняются в ветку.
+#   render   → 8 параллельных частей кадров (без звука), 1920×1080 30 fps.
+#   assemble → склейка частей без пережатия, звуковая дорожка по тайм-лайну,
+#              AAC + faststart, SRT, проверка формата/длительности/звука,
+#              облегчённая копия 960×540, релиз lesson-traktat-banan.
+
+on:
+  push:
+    paths:
+      - "lessons/traktat-banan/**"
+      - "src/lesson-traktat/**"
+      - "src/banana-host/**"
+      - "src/banamind/**"
+      - "scripts/lesson-traktat/**"
+      - "public/lesson-traktat/**"
+      - ".github/workflows/lesson-traktat.yml"
+
+concurrency:
+  group: lesson-traktat-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  OUT: lesson_traktat_banan_30min
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.plan.outputs.ranges }}
+      render: ${{ steps.plan.outputs.render }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: ElevenLabs quota (info)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit','next_character_count_reset_unix')} if 'tier' in d else d)"
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson-traktat/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          [ -d public/lesson-traktat/voice ] && git add public/lesson-traktat/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(lesson-traktat): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Plan render chunks
+        id: plan
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          node --test scripts/lesson-traktat/*.test.mjs
+          P=$(node scripts/lesson-traktat/frames.mjs 8)
+          echo "$P"
+          echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+          if [[ "$MSG" == *"[no render]"* ]]; then echo "render=false" >> "$GITHUB_OUTPUT"; else echo "render=true" >> "$GITHUB_OUTPUT"; fi
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.render == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/lesson-traktat/index.ts TraktatLesson "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lesson-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lesson-part-*
+          path: out/parts
+          merge-multiple: true
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart)
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          cat out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          node scripts/lesson-traktat/mixdown.mjs out/audio.wav
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "out/$OUT.mp4"
+          node scripts/lesson-traktat/srt.mjs "out/$OUT.srt"
+          # сценарий и карта источников — с таймкодами финальной озвучки
+          node scripts/lesson-traktat/export-docs.mjs
+
+      - name: Verify MP4
+        run: node scripts/lesson-traktat/verify.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Preview copy (960×540) and check frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 26 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-preview-960x540.mp4"
+          # новое вступление отдельным файлом (первые 75 с, 1920×1080)
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -t 75 -c:v libx264 -preset medium -crf 18 \
+            -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart "out/$OUT-intro-75s.mp4"
+          # тестовый фрагмент анимированных титров BanaMind (3:40–4:40)
+          ffmpeg -hide_banner -loglevel error -y -ss 220 -i "out/$OUT.mp4" -t 60 -c:v libx264 -preset medium -crf 18 \
+            -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart "out/$OUT-captions-test-60s.mp4"
+          mkdir -p out/frames
+          for s in 5 300 600 900 1200 1500 1790; do
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/$OUT.mp4" -frames:v 1 -vf scale=960:-2 "out/frames/t$(printf %04d $s).jpg"
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lesson-traktat-mp4
+          path: |
+            out/${{ env.OUT }}.mp4
+            out/${{ env.OUT }}-preview-960x540.mp4
+            out/${{ env.OUT }}-intro-75s.mp4
+            out/${{ env.OUT }}.srt
+            out/frames/*.jpg
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=lesson-traktat-banan
+          NOTES="«Трактат о природе» простым языком — 2D-анимация с бананом-ведущим (русский, 1920×1080, 30 fps, H.264/AAC). Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "Трактат о природе — объясняет Банан (30 мин)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-preview-960x540.mp4" "out/$OUT-intro-75s.mp4" "out/$OUT-captions-test-60s.mp4" "out/$OUT.srt" \
+            lessons/traktat-banan/lesson_30min_script.md lessons/traktat-banan/source_transcript.md lessons/traktat-banan/source_map.md
+          {
+            echo "### Файлы"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-preview-960x540.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.srt"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Update BanaMind book release (final-youtube.mp4 + SRT)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BOOK=book-traktat-o-prirode
+          if gh release view "$BOOK" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            mkdir -p out/book
+            ln -f "out/$OUT.mp4" out/book/final-youtube.mp4
+            cp "out/$OUT.srt" out/book/final-youtube.srt
+            gh release upload "$BOOK" -R "$GITHUB_REPOSITORY" --clobber out/book/final-youtube.mp4 out/book/final-youtube.srt
+          fi
