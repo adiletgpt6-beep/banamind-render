@@ -1,0 +1,253 @@
+{
+  "video": "BalaGoFiveUnsentMessages2D",
+  "segments": [
+    {
+      "id": "n01",
+      "line": "n01",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Уулу атасына беш үн билдирүү жазган. Бирин да жөнөткөн эмес. Атасы муну кокусунан билди.",
+      "file": "n01.mp3",
+      "durationSec": 6.32,
+      "from": 0.6,
+      "to": 6.68
+    },
+    {
+      "id": "n02",
+      "line": "n02",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Атасы сатуу бөлүмүн жетектечү. Күн сайын уулун мектептен өзү алып кетчү.",
+      "file": "n02.mp3",
+      "durationSec": 5.38,
+      "from": 8.5,
+      "to": 13.73
+    },
+    {
+      "id": "f01",
+      "line": "f01",
+      "role": "father",
+      "mode": "live",
+      "text": "Салам, уулум! Бүгүн кандай өттү?",
+      "file": "f01.mp3",
+      "durationSec": 2.307,
+      "from": 15.6,
+      "to": 17.587
+    },
+    {
+      "id": "s01",
+      "line": "s01",
+      "role": "son",
+      "mode": "live",
+      "text": "Ата, билесиңби, бүгүн биз…",
+      "file": "s01.mp3",
+      "durationSec": 2.34,
+      "from": 18.4,
+      "to": 20.335
+    },
+    {
+      "id": "f02",
+      "line": "f02",
+      "role": "father",
+      "mode": "live",
+      "text": "Азыр, уулум. Бир мүнөт күтө турчу.",
+      "file": "f02.mp3",
+      "durationSec": 3,
+      "from": 21.5,
+      "to": 24.16
+    },
+    {
+      "id": "f03",
+      "line": "f03",
+      "role": "father",
+      "mode": "live",
+      "text": "Анан, бүгүн эмне болду?",
+      "file": "f03.mp3",
+      "durationSec": 1.72,
+      "from": 28.2,
+      "to": 29.67
+    },
+    {
+      "id": "s02",
+      "line": "s02",
+      "role": "son",
+      "mode": "live",
+      "text": "Өзгөчө деле эч нерсе.",
+      "file": "s02.mp3",
+      "durationSec": 1.52,
+      "from": 30.9,
+      "to": 32.04
+    },
+    {
+      "id": "n03",
+      "line": "n03",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Күндөр өттү. Уулу аз сүйлөй баштады. Атасы: «Чоңоюп жаткандыр», — деп ойлоду.",
+      "file": "n03.mp3",
+      "durationSec": 6.1,
+      "from": 34.6,
+      "to": 40.4
+    },
+    {
+      "id": "sat-monday",
+      "line": "rec1",
+      "role": "son",
+      "mode": "record",
+      "record": "monday",
+      "text": "Ата, бүгүн биринчи жолу класстын алдында өзүм сүйлөдүм.",
+      "file": "rec1.mp3",
+      "durationSec": 3.2,
+      "from": 44.3,
+      "to": 47.188
+    },
+    {
+      "id": "f04",
+      "line": "f04",
+      "role": "father",
+      "mode": "live",
+      "text": "Буларды кимге жаздың?",
+      "file": "f04.mp3",
+      "durationSec": 1.39,
+      "from": 52.9,
+      "to": 54.07
+    },
+    {
+      "id": "s03",
+      "line": "s03",
+      "role": "son",
+      "mode": "live",
+      "text": "Сага.",
+      "file": "s03.mp3",
+      "durationSec": 0.68,
+      "from": 55,
+      "to": 55.4
+    },
+    {
+      "id": "f05",
+      "line": "f05",
+      "role": "father",
+      "mode": "live",
+      "text": "Анда эмнеге жөнөткөн жоксуң?",
+      "file": "f05.mp3",
+      "durationSec": 1.76,
+      "from": 57.5,
+      "to": 58.819
+    },
+    {
+      "id": "s04",
+      "line": "s04",
+      "role": "son",
+      "mode": "live",
+      "text": "Өзүм айтып бергим келген. Унутуп калбайын деп жазып койгом.",
+      "file": "s04.mp3",
+      "durationSec": 3.36,
+      "from": 59.6,
+      "to": 62.72
+    },
+    {
+      "id": "monday",
+      "line": "rec1",
+      "role": "son",
+      "mode": "record",
+      "record": "monday",
+      "text": "Ата, бүгүн биринчи жолу класстын алдында өзүм сүйлөдүм.",
+      "file": "rec1.mp3",
+      "durationSec": 3.2,
+      "from": 67.2,
+      "to": 70.088
+    },
+    {
+      "id": "tuesday",
+      "line": "rec2",
+      "role": "son",
+      "mode": "record",
+      "record": "tuesday",
+      "text": "Ата, бүгүн досума бир маселени чыгарууга жардам бердим.",
+      "file": "rec2.mp3",
+      "durationSec": 3.19,
+      "from": 72.6,
+      "to": 75.55
+    },
+    {
+      "id": "wednesday",
+      "line": "rec3",
+      "role": "son",
+      "mode": "record",
+      "record": "wednesday",
+      "text": "Ата, бүгүн биздин командага ат ойлоп таптым.",
+      "file": "rec3.mp3",
+      "durationSec": 2.94,
+      "from": 78,
+      "to": 80.576
+    },
+    {
+      "id": "thursday",
+      "line": "rec4",
+      "role": "son",
+      "mode": "record",
+      "record": "thursday",
+      "text": "Ата, бүгүн китепти окуп бүттүм.",
+      "file": "rec4.mp3",
+      "durationSec": 2.23,
+      "from": 83,
+      "to": 84.97
+    },
+    {
+      "id": "friday",
+      "line": "rec5",
+      "role": "son",
+      "mode": "record",
+      "record": "friday",
+      "text": "Ата, бүгүн сага күнүмдү айтып бергим келди.",
+      "file": "rec5.mp3",
+      "durationSec": 2.73,
+      "from": 87.6,
+      "to": 90.016
+    },
+    {
+      "id": "n04",
+      "line": "n04",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Мектепке барып келүү жумуш күнүн бөлчү. Бүтпөгөн иштер кечинде да убакыт алчу.",
+      "file": "n04.mp3",
+      "durationSec": 5.39,
+      "from": 94.6,
+      "to": 99.72
+    },
+    {
+      "id": "n05",
+      "line": "n05",
+      "role": "narrator",
+      "mode": "narrator",
+      "text": "Алар BalaGo’го алдын ала арыз калтырышты.",
+      "file": "n05.mp3",
+      "durationSec": 3.04,
+      "from": 101.6,
+      "to": 104.4
+    },
+    {
+      "id": "f06",
+      "line": "f06",
+      "role": "father",
+      "mode": "live",
+      "text": "Бүгүн жаңы жазуу болобу?",
+      "file": "f06.mp3",
+      "durationSec": 1.84,
+      "from": 108.2,
+      "to": 109.728
+    },
+    {
+      "id": "s05",
+      "line": "s05",
+      "role": "son",
+      "mode": "live",
+      "text": "Бүгүн дароо эле айтып бере алам.",
+      "file": "s05.mp3",
+      "durationSec": 1.64,
+      "from": 110.4,
+      "to": 111.768
+    }
+  ]
+}
