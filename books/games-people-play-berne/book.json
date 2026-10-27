@@ -1,0 +1,20 @@
+{
+  "slug": "games-people-play-berne",
+  "bm": "BM-034",
+  "title": "Игры, в которые играют люди",
+  "author": "Эрик Берн",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-034/part-01…09.txt — полный предоставленный текст (исходные строки 2–786 и 788–844); переводчик, издательство, год и ISBN не установлены; карта источников — books/games-people-play-berne/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/games-people-play-berne/scripts",
+    "timeline": "scripts/lesson-berne/lib.mjs",
+    "remotionEntry": "src/lesson-berne/index.ts",
+    "composition": "BerneLesson",
+    "workflow": ".github/workflows/lesson-berne.yml",
+    "release": "book-games-people-play-berne",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-games-people-play-berne",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}
