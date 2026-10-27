@@ -1,0 +1,26 @@
+{
+  "slug": "rich-dad-poor-dad-kiyosaki",
+  "title": "Богатый папа, бедный папа",
+  "author": "Роберт Т. Кийосаки",
+  "collection": "BanaMind BM-023",
+  "channel": "BanaMind",
+  "source": "Только файл владельца books/500-series/sources/BM-023 (русский перевод О. Г. Белошеева, строки 1–1395); карта источника — books/rich-dad-poor-dad-kiyosaki/scripts/",
+  "lesson": {
+    "dir": "books/rich-dad-poor-dad-kiyosaki/scripts",
+    "timeline": "scripts/books/rddp/lib.mjs",
+    "remotionEntry": "src/books/rich-dad-poor-dad-kiyosaki/film/index.ts",
+    "composition": "RddpFilm",
+    "workflow": ".github/workflows/rddp-film.yml",
+    "release": "book-rich-dad-poor-dad-kiyosaki",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-rich-dad-poor-dad-kiyosaki",
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "codec": "h264",
+    "audio": "aac",
+    "duration": "30:00"
+  }
+}

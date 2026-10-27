@@ -1,0 +1,72 @@
+// Реестр анимированных схем BM-023: kind из сценария → компонент.
+import type React from "react";
+import { BusyLazy, Caveats, Chicken, CoinChoice, EndCard, Hundred, KnowBaskets, Obstacles, PayFirst, Stove, TenSteps, ThreeIncomes, ThreeQuestions, TodoList } from "./end";
+import { BookIntro, ChapterCard, FirstSalary, ForkRoad, Hello, PhraseDuel, PhrasePairs, SameSalary, Teaser, TwoDads } from "./intro";
+import type { VisualProps } from "./kit";
+import { BalanceNote, CoinMold, CoinTracks, ComicLibrary, DustShelf, LifePush, PriceTest, RatRace } from "./lesson1";
+import { Amplifier, Cashflow, CoupleStory, Foundation, HouseXray, PocketVisual, ThreeHands, WealthDays } from "./lesson2";
+import { AssetCards, BurgerLand, DayJob, IqFour, LuxuryLast, OrderSwap, ProfessionBusiness, ShipCorp, TaxHistory } from "./lesson34";
+import { BurgerQuestion, DealCaution, GiveReceive, GrowPath, InvestorTypes, Notebook, OptionsLens, Seeds, SkillsStack, TwoScreens } from "./lesson56";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const VISUALS: Record<string, React.FC<VisualProps<any>>> = {
+  firstSalary: FirstSalary,
+  sameSalary: SameSalary,
+  bookIntro: BookIntro,
+  teaser: Teaser,
+  hello: Hello,
+  twoDads: TwoDads,
+  phrasePairs: PhrasePairs,
+  phraseDuel: PhraseDuel,
+  forkRoad: ForkRoad,
+  chapterCard: ChapterCard,
+  coinMold: CoinMold,
+  dustShelf: DustShelf,
+  lifePush: LifePush,
+  ratRace: RatRace,
+  priceTest: PriceTest,
+  balanceNote: BalanceNote,
+  comicLibrary: ComicLibrary,
+  coinTracks: CoinTracks,
+  foundation: Foundation,
+  pocket: PocketVisual,
+  cashflow: Cashflow,
+  coupleStory: CoupleStory,
+  threeHands: ThreeHands,
+  amplifier: Amplifier,
+  houseXray: HouseXray,
+  wealthDays: WealthDays,
+  burgerLand: BurgerLand,
+  professionBusiness: ProfessionBusiness,
+  assetCards: AssetCards,
+  dayJob: DayJob,
+  luxuryLast: LuxuryLast,
+  taxHistory: TaxHistory,
+  shipCorp: ShipCorp,
+  orderSwap: OrderSwap,
+  iqFour: IqFour,
+  twoScreens: TwoScreens,
+  optionsLens: OptionsLens,
+  dealCaution: DealCaution,
+  investorTypes: InvestorTypes,
+  seeds: Seeds,
+  notebook: Notebook,
+  skillsStack: SkillsStack,
+  burgerQuestion: BurgerQuestion,
+  growPath: GrowPath,
+  giveReceive: GiveReceive,
+  obstacles: Obstacles,
+  chicken: Chicken,
+  busyLazy: BusyLazy,
+  payFirst: PayFirst,
+  knowBaskets: KnowBaskets,
+  tenSteps: TenSteps,
+  hundred: Hundred,
+  stove: Stove,
+  todoList: TodoList,
+  threeIncomes: ThreeIncomes,
+  threeQuestions: ThreeQuestions,
+  caveats: Caveats,
+  coinChoice: CoinChoice,
+  endCard: EndCard,
+};

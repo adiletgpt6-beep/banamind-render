@@ -1,0 +1,102 @@
+{
+  "slug": "rich-dad-poor-dad-kiyosaki",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 168,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 144,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 133,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 171,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 127,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 20,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 69.8
+      },
+      {
+        "pair": "1-3",
+        "diff": 102.6
+      },
+      {
+        "pair": "1-4",
+        "diff": 60.7
+      },
+      {
+        "pair": "1-5",
+        "diff": 103.2
+      },
+      {
+        "pair": "2-3",
+        "diff": 133.8
+      },
+      {
+        "pair": "2-4",
+        "diff": 74.8
+      },
+      {
+        "pair": "2-5",
+        "diff": 130.7
+      },
+      {
+        "pair": "3-4",
+        "diff": 99.4
+      },
+      {
+        "pair": "3-5",
+        "diff": 51.1
+      },
+      {
+        "pair": "4-5",
+        "diff": 104.2
+      }
+    ],
+    "min": 51.1,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
