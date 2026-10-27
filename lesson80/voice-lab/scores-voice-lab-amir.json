@@ -1,0 +1,362 @@
+[
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__none__0.mp3",
+    "heard": "давай посчитаем",
+    "cer": 0.0,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__none__1.mp3",
+    "heard": "наверное мы еще многого не замечаем",
+    "cer": 0.0,
+    "f0": 190.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__none__2.mp3",
+    "heard": "спасиба",
+    "cer": 0.143,
+    "f0": 244.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__none__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 172.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__curious__0.mp3",
+    "heard": "давай поситаем",
+    "cer": 0.067,
+    "f0": 186.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__curious__1.mp3",
+    "heard": "новерное мы ещё многого не замечаем",
+    "cer": 0.029,
+    "f0": 161.6
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__curious__2.mp3",
+    "heard": "спасиба",
+    "cer": 0.143,
+    "f0": 215.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__curious__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 166.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__cheerful__0.mp3",
+    "heard": "товай посчитаем",
+    "cer": 0.133,
+    "f0": 242.4
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__cheerful__1.mp3",
+    "heard": "наверное мы есе многого не замечаем",
+    "cer": 0.029,
+    "f0": 250.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__cheerful__2.mp3",
+    "heard": "спасибо",
+    "cer": 0.0,
+    "f0": 195.6
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Charlotte__cheerful__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 200.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__none__0.mp3",
+    "heard": "давай пощитаем",
+    "cer": 0.133,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__none__1.mp3",
+    "heard": "но верное мы еще многого не замечаем",
+    "cer": 0.057,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__none__2.mp3",
+    "heard": "spaсивa",
+    "cer": 0.714,
+    "f0": 242.4
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__none__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 231.9
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__curious__0.mp3",
+    "heard": "давай пощитаем",
+    "cer": 0.133,
+    "f0": 205.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__curious__1.mp3",
+    "heard": "наверное мы еше многого не замечаем",
+    "cer": 0.029,
+    "f0": 200.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__curious__2.mp3",
+    "heard": "спасиба",
+    "cer": 0.143,
+    "f0": 250.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__curious__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 213.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__cheerful__0.mp3",
+    "heard": "давай посчитаем",
+    "cer": 0.0,
+    "f0": 210.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__cheerful__1.mp3",
+    "heard": "новерное мы еше многого не замечаем",
+    "cer": 0.057,
+    "f0": 216.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__cheerful__2.mp3",
+    "heard": "спасиво",
+    "cer": 0.143,
+    "f0": 217.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Laura__cheerful__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__none__0.mp3",
+    "heard": "давой пресчитаем",
+    "cer": 0.2,
+    "f0": 256.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__none__1.mp3",
+    "heard": "но верное мы еще многого не замечаем",
+    "cer": 0.057,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__none__2.mp3",
+    "heard": "спасиба",
+    "cer": 0.143,
+    "f0": 242.4
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__none__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 250.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__curious__0.mp3",
+    "heard": "давай посчитаем",
+    "cer": 0.0,
+    "f0": 264.6
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__curious__1.mp3",
+    "heard": "наверное мы еще многого не замечаем",
+    "cer": 0.0,
+    "f0": 242.4
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__curious__2.mp3",
+    "heard": "спасиба",
+    "cer": 0.143,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__curious__3.mp3",
+    "heard": "ты помог не получить воду",
+    "cer": 0.038,
+    "f0": 250.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__cheerful__0.mp3",
+    "heard": "давай песчитаем",
+    "cer": 0.067,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__cheerful__1.mp3",
+    "heard": "наверное мы еще многого не замечаем",
+    "cer": 0.0,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__cheerful__2.mp3",
+    "heard": "спасибо",
+    "cer": 0.0,
+    "f0": 310.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__KG-daughter__cheerful__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 246.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__none__0.mp3",
+    "heard": "давай посчитаем",
+    "cer": 0.0,
+    "f0": 264.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__none__1.mp3",
+    "heard": "новерное мы ещё многого не замечаем",
+    "cer": 0.029,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__none__2.mp3",
+    "heard": "спасиба",
+    "cer": 0.143,
+    "f0": 333.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__none__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__curious__0.mp3",
+    "heard": "давай посчитаем",
+    "cer": 0.0,
+    "f0": 278.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__curious__1.mp3",
+    "heard": "но верное мы еще многого не замечаем",
+    "cer": 0.057,
+    "f0": 210.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__curious__2.mp3",
+    "heard": "спасибо",
+    "cer": 0.0,
+    "f0": 242.4
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__curious__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 280.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__cheerful__0.mp3",
+    "heard": "давай посчитаем",
+    "cer": 0.0,
+    "f0": 266.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__cheerful__1.mp3",
+    "heard": "наверное мы ещё многого не замечаем",
+    "cer": 0.0,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__cheerful__2.mp3",
+    "heard": "спасиба",
+    "cer": 0.143,
+    "f0": 301.9
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Aria__cheerful__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 280.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__none__0.mp3",
+    "heard": "давай пощитаем",
+    "cer": 0.133,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__none__1.mp3",
+    "heard": "наверное мы еще многого не замечаем",
+    "cer": 0.0,
+    "f0": 225.4
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__none__2.mp3",
+    "heard": "спасива",
+    "cer": 0.286,
+    "f0": 296.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__none__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 181.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__curious__0.mp3",
+    "heard": "давай посчитаем",
+    "cer": 0.0,
+    "f0": 194.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__curious__1.mp3",
+    "heard": "новерное мы ещё многого не замечаем",
+    "cer": 0.029,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__curious__2.mp3",
+    "heard": "спасибо",
+    "cer": 0.0,
+    "f0": 231.9
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__curious__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 192.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__cheerful__0.mp3",
+    "heard": "давай посчитаем",
+    "cer": 0.0,
+    "f0": 320.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__cheerful__1.mp3",
+    "heard": "наверное мы еще многого не замечаем",
+    "cer": 0.0,
+    "f0": 197.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__cheerful__2.mp3",
+    "heard": "спасибо",
+    "cer": 0.0,
+    "f0": 326.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/amir__Jessica__cheerful__3.mp3",
+    "heard": "ты помог мне получить воду",
+    "cer": 0.0,
+    "f0": 213.3
+  }
+]

@@ -1,0 +1,216 @@
+name: Lesson80_1_14 (2D, «Можно ли посчитать дары?», voice)
+
+# Мини-фильм 80-1-14. Ключ ElevenLabs есть только в секретах CI, поэтому
+# здесь выполняется озвучка; рендер MP4 делается из сохранённых в ветке
+# файлов (npm run render:lesson80 — локально или в этом workflow).
+# Режим задаётся файлом scripts/lesson80/ci-mode.txt:
+#   lab    → образцы голосов + замеры MMS (артефакт lesson80-voice-lab);
+#   voice  → озвучка 41 реплики (кэш по хэшу), новые файлы коммитятся
+#            в public/audio/lesson80-1-14/ той же ветки;
+#   render → проверки, MP4 1920×1080 (CRF 18, −16 LUFS), SRT/VTT, превью
+#            960×540; файлы — в предварительный релиз lesson-80-1-14
+#            (прямые ссылки на MP4, не ZIP).
+
+on:
+  push:
+    paths:
+      - "scripts/lesson80/**"
+      - "src/lesson80/script.ts"
+      - "src/lesson80/voices.ts"
+      - ".github/workflows/lesson80-1-14.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: lesson80-1-14-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  mode:
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.m.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: m
+        run: echo "mode=$(tr -d '[:space:]' < scripts/lesson80/ci-mode.txt)" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: mode
+    if: needs.mode.outputs.mode == 'render'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Lint + TypeScript
+        run: npm run lint
+      - name: Tests (timeline, cast, pauses, sheet, cups, subtitles)
+        env:
+          L80_STRICT_VOICE: "1"
+        run: npm run test:lesson80
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+      - name: Render MP4 + loudness + format check
+        run: npm run render:lesson80 -- --log=warn
+      - name: Subtitles and 540p preview
+        run: |
+          B=out/lesson-80-1-14-can-we-count-the-gifts
+          node scripts/lesson80/subtitles.mjs "$B"
+          ffmpeg -hide_banner -loglevel error -y -i "$B.mp4" -vf scale=960:540:flags=lanczos -c:v libx264 -preset slow -crf 23 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "$B-preview-540p.mp4"
+          ls -la out/lesson-80-1-14-* | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Upload files
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-80-1-14
+          path: out/lesson-80-1-14-can-we-count-the-gifts*
+          if-no-files-found: error
+          retention-days: 90
+
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: lesson-80-1-14
+          path: out
+      - name: Publish pre-release lesson-80-1-14
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: lesson-80-1-14
+        run: |
+          NOTES="Урок 1 «Аллах — наш Создатель», мини-фильм 14 «Можно ли посчитать дары?». 1920×1080, 30 fps, H.264/AAC, −16 LUFS, без музыки; русские субтитры в кадре и файлами SRT/VTT. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "lesson-80 · 80-1-14 «Можно ли посчитать дары?»" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber out/lesson-80-1-14-can-we-count-the-gifts*
+          {
+            echo "### Файлы"
+            for f in out/lesson-80-1-14-can-we-count-the-gifts*; do echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$(basename "$f")"; done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  voice:
+    needs: mode
+    if: needs.mode.outputs.mode == 'lab' || needs.mode.outputs.mode == 'voice'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-ts2d-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-ts2d-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      - name: Mode
+        id: mode
+        run: echo "mode=$(tr -d '[:space:]' < scripts/lesson80/ci-mode.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Voice lab (samples + MMS scores)
+        if: steps.mode.outputs.mode == 'lab'
+        env:
+          LAB_SCRIPT: voice-lab-amir
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          node scripts/lesson80/${LAB_SCRIPT:-voice-lab}.mjs
+          python scripts/lesson80/asr.py out/lesson80-voice-lab/score-in.json out/lesson80-voice-lab/scores.json
+
+      # Образцы и замеры — в ветку (lesson80/voice-lab/), чтобы их можно было
+      # разобрать вне CI; в main не нужны.
+      - name: Save voice lab to the branch
+        if: steps.mode.outputs.mode == 'lab' && github.ref_name != 'main'
+        env:
+          LAB_SCRIPT: voice-lab-amir
+        run: |
+          mkdir -p lesson80/voice-lab
+          cp out/lesson80-voice-lab/scores.json "lesson80/voice-lab/scores-${LAB_SCRIPT:-voice-lab}.json"
+          git add lesson80/voice-lab
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: lesson80-1-14 voice lab samples [skip ci]"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Voiceover (cached lines are reused)
+        if: steps.mode.outputs.mode == 'voice'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson80/voice.mjs
+
+      - name: Upload takes
+        if: always() && steps.mode.outputs.mode == 'voice'
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson80-voice-takes
+          path: out/lesson80-takes/
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Save new voice files to the branch
+        if: steps.mode.outputs.mode == 'voice' && github.ref_name != 'main'
+        run: |
+          git add public/audio/lesson80-1-14
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save lesson80-1-14 voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1

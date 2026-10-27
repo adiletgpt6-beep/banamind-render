@@ -1,0 +1,338 @@
+[
+  {
+    "path": "out/lesson80-voice-lab/teacher__KG-husband__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 111.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__George__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 144.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Daniel__eleven_v3.mp3",
+    "heard": "да   в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 137.9
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Brian__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости алаха всех их не пересчитать",
+    "cer": 0.014,
+    "f0": 122.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Eric__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 156.9
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Chris__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 124.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Roger__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 128.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Liam__eleven_v3.mp3",
+    "heard": "да в корани говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.014,
+    "f0": 135.6
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Will__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 122.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Callum__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 131.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/teacher__Charlie__eleven_v3.mp3",
+    "heard": "да в коране говорится если считать милости аллаха всех их не пересчитать",
+    "cer": 0.0,
+    "f0": 134.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__KG-son__eleven_v3.mp3",
+    "heard": "вода такая обычная  а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 285.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__KG-son__eleven_v3.mp3",
+    "heard": "альхамдулиля хвала аллаху",
+    "cer": 0.074,
+    "f0": 285.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__KG-son__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без неё хочется пить",
+    "cer": 0.0,
+    "f0": 235.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__KG-daughter__eleven_v3.mp3",
+    "heard": "вода такая обычная о безнею хочется пить",
+    "cer": 0.073,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__KG-daughter__eleven_v3.mp3",
+    "heard": "альхамду леля хвала аллагу",
+    "cer": 0.185,
+    "f0": 250.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__KG-daughter__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без нею хочется пить",
+    "cer": 0.024,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__KG-mother__eleven_v3.mp3",
+    "heard": "вода такая обычная а обез неё хочется пить",
+    "cer": 0.024,
+    "f0": 207.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__KG-mother__eleven_v3.mp3",
+    "heard": "альхамдалеля хвала алаху",
+    "cer": 0.185,
+    "f0": 213.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__KG-mother__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 163.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__KG-teacher__eleven_v3.mp3",
+    "heard": "вода такая обычная  а без нее хочется петь",
+    "cer": 0.024,
+    "f0": 246.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__KG-teacher__eleven_v3.mp3",
+    "heard": "альхам дулелях хвала алагу",
+    "cer": 0.185,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__KG-teacher__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 188.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Alice__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 231.9
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Alice__eleven_v3.mp3",
+    "heard": "аламдулила – хвала – алаху",
+    "cer": 0.222,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Alice__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а обез нее хочется пить",
+    "cer": 0.024,
+    "f0": 231.9
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Jessica__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 178.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Jessica__eleven_v3.mp3",
+    "heard": "алхамдурила хвала аллагьу",
+    "cer": 0.259,
+    "f0": 219.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Jessica__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без него хочется пить",
+    "cer": 0.049,
+    "f0": 238.8
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Laura__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 250.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Laura__eleven_v3.mp3",
+    "heard": "аланdули ла хвала а лау",
+    "cer": 0.333,
+    "f0": 225.4
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Laura__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 237.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Charlotte__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 258.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Charlotte__eleven_v3.mp3",
+    "heard": "алхамдулила хвала аллаху",
+    "cer": 0.148,
+    "f0": 197.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Charlotte__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 190.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Aria__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 216.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Aria__eleven_v3.mp3",
+    "heard": "алхамдал илла  хвала аллаху",
+    "cer": 0.185,
+    "f0": 250.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Aria__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычна а без нее хочется пить",
+    "cer": 0.024,
+    "f0": 216.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Sarah__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 216.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Sarah__eleven_v3.mp3",
+    "heard": "алхамдулила – хвала аллаху",
+    "cer": 0.148,
+    "f0": 219.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Sarah__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без неё хочется пить",
+    "cer": 0.0,
+    "f0": 188.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__River__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 200.0
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__River__eleven_v3.mp3",
+    "heard": "алхамдулила хвала аллау",
+    "cer": 0.185,
+    "f0": 202.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__River__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 168.4
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Will__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 131.7
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Will__eleven_v3.mp3",
+    "heard": "алхамдули лях хвала алаху",
+    "cer": 0.111,
+    "f0": 130.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Will__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без неё хочется пить",
+    "cer": 0.0,
+    "f0": 114.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Liam__eleven_v3.mp3",
+    "heard": "вода такая обычная а обез нее хочется пить",
+    "cer": 0.024,
+    "f0": 113.9
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Liam__eleven_v3.mp3",
+    "heard": "алам д л ила а l",
+    "cer": 0.63,
+    "f0": 123.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Liam__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 123.1
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Callum__eleven_v3.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 93.6
+  },
+  {
+    "path": "out/lesson80-voice-lab/hamd__Callum__eleven_v3.mp3",
+    "heard": "алмд л хвла лл",
+    "cer": 0.519,
+    "f0": 155.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/child__Callum__eleven_multilingual_v2.mp3",
+    "heard": "вода такая обычная а без нее хочется пить",
+    "cer": 0.0,
+    "f0": 110.3
+  },
+  {
+    "path": "out/lesson80-voice-lab/design__teacher__v3_0.mp3",
+    "heard": "мы часто привыкаем к тому что нам помогает назовите один дар который вы замечаете сейчас как вы считаете можем-ли мы перечислить все одары аллаха",
+    "cer": 0.007,
+    "f0": 134.5
+  },
+  {
+    "path": "out/lesson80-voice-lab/design__teacher__v3_1.mp3",
+    "heard": "мы часто привыкаем к тому что нам помогает назавите один дар который вы замечаете сейчас как вы считаете можем-ли мы перечислить все дары аллаха",
+    "cer": 0.007,
+    "f0": 121.2
+  },
+  {
+    "path": "out/lesson80-voice-lab/design__teacher__v3_2.mp3",
+    "heard": "мы часто привыкаем к тому что нам помогает назывите один дар который вы замечаете сейчас как вы считайте можем-ли мы перечислить все дары аллаха",
+    "cer": 0.014,
+    "f0": 125.0
+  }
+]

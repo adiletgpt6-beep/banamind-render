@@ -1,0 +1,476 @@
+{
+  "voices": [],
+  "items": [
+    {
+      "path": "out/lesson80-voice-lab/teacher__KG-husband__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "name": "KG-husband",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__George__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+      "name": "George",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Daniel__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "onwK4e9ZLuTAKqWW03F9",
+      "name": "Daniel",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Brian__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "name": "Brian",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Eric__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "name": "Eric",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Chris__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
+      "name": "Chris",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Roger__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+      "name": "Roger",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Liam__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
+      "name": "Liam",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Will__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "name": "Will",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Callum__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO",
+      "name": "Callum",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/teacher__Charlie__eleven_v3.mp3",
+      "text": "Да. В Коране говорится: если считать милости Аллаха, всех их не пересчитать.",
+      "voiceId": "IKne3meq5aSn9XLyUdCD",
+      "name": "Charlie",
+      "kind": "teacher",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__KG-son__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "name": "KG-son",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__KG-son__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "name": "KG-son",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__KG-son__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "name": "KG-son",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__KG-daughter__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "name": "KG-daughter",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__KG-daughter__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "name": "KG-daughter",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__KG-daughter__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "name": "KG-daughter",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__KG-mother__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "name": "KG-mother",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__KG-mother__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "name": "KG-mother",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__KG-mother__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "name": "KG-mother",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__KG-teacher__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "name": "KG-teacher",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__KG-teacher__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "name": "KG-teacher",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__KG-teacher__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "name": "KG-teacher",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Alice__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "name": "Alice",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Alice__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "name": "Alice",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Alice__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "name": "Alice",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Jessica__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "name": "Jessica",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Jessica__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "name": "Jessica",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Jessica__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "name": "Jessica",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Laura__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "name": "Laura",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Laura__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "name": "Laura",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Laura__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "name": "Laura",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Charlotte__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "XB0fDUnXU5powFXDhCwa",
+      "name": "Charlotte",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Charlotte__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "XB0fDUnXU5powFXDhCwa",
+      "name": "Charlotte",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Charlotte__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "XB0fDUnXU5powFXDhCwa",
+      "name": "Charlotte",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Aria__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "name": "Aria",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Aria__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "name": "Aria",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Aria__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "name": "Aria",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Sarah__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Sarah",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Sarah__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Sarah",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Sarah__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Sarah",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__River__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "name": "River",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__River__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "name": "River",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__River__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "name": "River",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Will__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "name": "Will",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Will__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "name": "Will",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Will__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "name": "Will",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Liam__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
+      "name": "Liam",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Liam__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
+      "name": "Liam",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Liam__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
+      "name": "Liam",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Callum__eleven_v3.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO",
+      "name": "Callum",
+      "kind": "child",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/hamd__Callum__eleven_v3.mp3",
+      "text": "Альхамдулиллях — Хвала Аллаху!",
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO",
+      "name": "Callum",
+      "kind": "hamd",
+      "model": "eleven_v3"
+    },
+    {
+      "path": "out/lesson80-voice-lab/child__Callum__eleven_multilingual_v2.mp3",
+      "text": "Вода такая обычная. А без неё хочется пить.",
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO",
+      "name": "Callum",
+      "kind": "child",
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "path": "out/lesson80-voice-lab/design__teacher__v3_0.mp3",
+      "text": "Мы часто привыкаем к тому, что нам помогает. Назовите один дар, который вы замечаете сейчас. Как вы считаете: можем ли мы перечислить все дары Аллаха?",
+      "name": "design-teacher-0",
+      "kind": "design-teacher",
+      "generatedVoiceId": "b8z9rkUm9SM05ONFIuKc",
+      "endpoint": "/v1/text-to-voice/design"
+    },
+    {
+      "path": "out/lesson80-voice-lab/design__teacher__v3_1.mp3",
+      "text": "Мы часто привыкаем к тому, что нам помогает. Назовите один дар, который вы замечаете сейчас. Как вы считаете: можем ли мы перечислить все дары Аллаха?",
+      "name": "design-teacher-1",
+      "kind": "design-teacher",
+      "generatedVoiceId": "fFuGgSwhyFLnbVLUchpM",
+      "endpoint": "/v1/text-to-voice/design"
+    },
+    {
+      "path": "out/lesson80-voice-lab/design__teacher__v3_2.mp3",
+      "text": "Мы часто привыкаем к тому, что нам помогает. Назовите один дар, который вы замечаете сейчас. Как вы считаете: можем ли мы перечислить все дары Аллаха?",
+      "name": "design-teacher-2",
+      "kind": "design-teacher",
+      "generatedVoiceId": "QqrXSv807owj9KfJq1cL",
+      "endpoint": "/v1/text-to-voice/design"
+    }
+  ],
+  "designs": [
+    {
+      "role": "teacher",
+      "endpoint": "/v1/text-to-voice/design",
+      "i": 0,
+      "generatedVoiceId": "b8z9rkUm9SM05ONFIuKc",
+      "file": "out/lesson80-voice-lab/design__teacher__v3_0.mp3"
+    },
+    {
+      "role": "teacher",
+      "endpoint": "/v1/text-to-voice/design",
+      "i": 1,
+      "generatedVoiceId": "fFuGgSwhyFLnbVLUchpM",
+      "file": "out/lesson80-voice-lab/design__teacher__v3_1.mp3"
+    },
+    {
+      "role": "teacher",
+      "endpoint": "/v1/text-to-voice/design",
+      "i": 2,
+      "generatedVoiceId": "QqrXSv807owj9KfJq1cL",
+      "file": "out/lesson80-voice-lab/design__teacher__v3_2.mp3"
+    }
+  ]
+}
