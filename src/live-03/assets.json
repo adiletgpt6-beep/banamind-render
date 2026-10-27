@@ -1,0 +1,33 @@
+{
+  "comment": "Исходники BalaGoLive03. Видео лежат в GitHub Release и в Git не хранятся (public/live-03/ в .gitignore). npm run live03:prepare скачивает их, проверяет SHA-256 и параметры и готовит рабочие копии.",
+  "repo": "adiletzainidinov/balago-video",
+  "releaseTag": "balago-live-03-assets",
+  "dir": "public/live-03",
+  "source": {
+    "role": "Живое видео Адилета (кыргызча, ночная улица)",
+    "releaseAsset": "InShot_20261009_224951008.mp4",
+    "localName": "1000209127.mp4",
+    "sha256": "6518f91cc0088d24498ba37d9ac79f8c0d356effa7e4c08295f9a6aaeea060c9",
+    "bytes": 81481662,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationSec": 45.677,
+    "audio": true
+  },
+  "reference": {
+    "role": "Референс моушн-дизайна (только для принципов движения, в ролик не вставляется)",
+    "releaseAssetPrefix": "SaveClip.App_",
+    "localName": "1000206958.mp4",
+    "sha256": "43016b8710ad197596a9508798d8560497031ffbcc82729fb7bcffbccb06a055",
+    "bytes": 16858078,
+    "width": 1276,
+    "height": 720,
+    "durationSec": 84.12,
+    "audio": true
+  },
+  "prepared": {
+    "video": "live-03/live03-graded.mp4",
+    "voice": "live-03/live03-voice.wav"
+  }
+}
