@@ -1,0 +1,31 @@
+{
+  "episode_id": "TB-004",
+  "status": "PROPOSED_NOT_SYNTHESIZED",
+  "provider": "elevenlabs",
+  "voice_name": "George",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model_id": "eleven_multilingual_v2",
+  "language_code": "ru",
+  "seed": 7,
+  "output_format": "mp3_44100_192",
+  "voice_settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.8,
+    "style": 0.12,
+    "use_speaker_boost": true,
+    "speed": 0.96
+  },
+  "music": false,
+  "pilot_blocks": [
+    "B001",
+    "B018",
+    "B019",
+    "B021",
+    "B024",
+    "B043",
+    "B047",
+    "B051",
+    "B060"
+  ],
+  "source": "Pinned TB-003/TB-002 production; verify compatibility before synthesis"
+}

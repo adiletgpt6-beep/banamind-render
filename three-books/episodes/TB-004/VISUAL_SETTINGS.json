@@ -1,0 +1,41 @@
+{
+  "episode_id": "TB-004",
+  "status": "PROPOSED_NOT_IMPLEMENTED",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "space": "SDR bt709"
+  },
+  "legacy_reference": {
+    "commit": "990ec5c838d91e4a0400508b7bf733cd373f946f",
+    "path": "src/three-books/tb003/engine/",
+    "spacing": 4.2,
+    "dot": 3.2
+  },
+  "clarity_targets": {
+    "separate_core_halo": true,
+    "core_diameter_px_range": [
+      3,
+      4
+    ],
+    "minimum_medium_spacing_px": 5.5,
+    "core_coverage": "bounded",
+    "protected_negative_spaces": [
+      "eye-beak",
+      "eye-eye",
+      "ear-tuft"
+    ],
+    "text_bypasses_bloom": true,
+    "supersampling_candidates": [
+      1,
+      2
+    ],
+    "halo_strength": null,
+    "bloom_radius_px": null,
+    "bloom_gain": null,
+    "chosen_internal_scale": null,
+    "encoded_crf": null
+  },
+  "note": "Targets and nulls are not measured results. Record actual compatible shader/config values and freeze quality hash after pilot."
+}

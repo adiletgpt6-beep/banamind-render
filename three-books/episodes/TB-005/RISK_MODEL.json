@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "episode_id": "TB-005",
+  "currency": "fictional_tokens",
+  "probabilities": "unknown",
+  "expected_value": null,
+  "initial_capital": 600,
+  "contract_receipt": 600,
+  "complete_units_required": 100,
+  "crate_count": 10,
+  "units_per_crate": 10,
+  "halves": [
+    50,
+    50
+  ],
+  "receipt_condition": "all 100 units delivered by the fictional deadline; no assumed part payment",
+  "next_run_cash_floor": 300,
+  "floor_scope": "end of an adverse case without client receipt; not a minimum during every intermediate production step",
+  "plans": {
+    "A": {
+      "label": "Прямой",
+      "production": 300,
+      "land": 120,
+      "water": 0,
+      "base_cost": 420,
+      "shared_bridge": true
+    },
+    "B": {
+      "label": "Два имени",
+      "production": 300,
+      "carrier1": 75,
+      "carrier2": 75,
+      "base_cost": 450,
+      "shared_bridge": true
+    },
+    "C": {
+      "label": "Разные пути",
+      "production": 300,
+      "land": 90,
+      "water": 90,
+      "base_cost": 480,
+      "shared_bridge": false,
+      "conditional_transfer": 60,
+      "known_correction_allowance": 40
+    }
+  },
+  "states": {
+    "A.normal": {
+      "plan_id": "A",
+      "scenario_id": "normal",
+      "status": "hypothetical",
+      "cost": 420,
+      "receipt": 600,
+      "complete_units": 100,
+      "cash_before_receipt": 180,
+      "cash_after": 780,
+      "net_cash_change": 180
+    },
+    "A.bridge_closed": {
+      "plan_id": "A",
+      "scenario_id": "bridge_closed",
+      "status": "hypothetical",
+      "cost": 420,
+      "receipt": 0,
+      "complete_units": 0,
+      "cash_before_receipt": 180,
+      "cash_after": 180,
+      "net_cash_change": -420
+    },
+    "A.common_stop": {
+      "plan_id": "A",
+      "scenario_id": "common_stop",
+      "status": "hypothetical",
+      "cost": 420,
+      "receipt": 0,
+      "complete_units": 0,
+      "cash_before_receipt": 180,
+      "cash_after": 180,
+      "net_cash_change": -420
+    },
+    "B.normal": {
+      "plan_id": "B",
+      "scenario_id": "normal",
+      "status": "hypothetical",
+      "cost": 450,
+      "receipt": 600,
+      "complete_units": 100,
+      "cash_before_receipt": 150,
+      "cash_after": 750,
+      "net_cash_change": 150
+    },
+    "B.bridge_closed": {
+      "plan_id": "B",
+      "scenario_id": "bridge_closed",
+      "status": "hypothetical",
+      "cost": 450,
+      "receipt": 0,
+      "complete_units": 0,
+      "cash_before_receipt": 150,
+      "cash_after": 150,
+      "net_cash_change": -450
+    },
+    "B.common_stop": {
+      "plan_id": "B",
+      "scenario_id": "common_stop",
+      "status": "hypothetical",
+      "cost": 450,
+      "receipt": 0,
+      "complete_units": 0,
+      "cash_before_receipt": 150,
+      "cash_after": 150,
+      "net_cash_change": -450
+    },
+    "C.normal": {
+      "plan_id": "C",
+      "scenario_id": "normal",
+      "status": "hypothetical",
+      "cost": 480,
+      "receipt": 600,
+      "complete_units": 100,
+      "cash_before_receipt": 120,
+      "cash_after": 720,
+      "net_cash_change": 120
+    },
+    "C.bridge_closed": {
+      "plan_id": "C",
+      "scenario_id": "bridge_closed",
+      "status": "hypothetical",
+      "cost": 540,
+      "receipt": 600,
+      "complete_units": 100,
+      "cash_before_receipt": 60,
+      "cash_after": 660,
+      "net_cash_change": 60,
+      "transfer": 60
+    },
+    "C.known_correction": {
+      "plan_id": "C",
+      "scenario_id": "known_correction",
+      "status": "hypothetical",
+      "cost": 520,
+      "receipt": 600,
+      "complete_units": 100,
+      "cash_before_receipt": 80,
+      "cash_after": 680,
+      "net_cash_change": 80,
+      "correction": 40
+    },
+    "C.combined40": {
+      "plan_id": "C",
+      "scenario_id": "combined40",
+      "status": "hypothetical",
+      "cost": 580,
+      "receipt": 600,
+      "complete_units": 100,
+      "cash_before_receipt": 20,
+      "cash_after": 620,
+      "net_cash_change": 20,
+      "correction": 40,
+      "transfer": 60
+    },
+    "C.common_stop": {
+      "plan_id": "C",
+      "scenario_id": "common_stop",
+      "status": "hypothetical",
+      "cost": 480,
+      "receipt": 0,
+      "complete_units": 0,
+      "cash_before_receipt": 120,
+      "cash_after": 120,
+      "net_cash_change": -480
+    },
+    "C.actual_base_committed": {
+      "plan_id": "C",
+      "scenario_id": "actual_base_committed",
+      "status": "actual_in_progress",
+      "cost": 480,
+      "receipt": 0,
+      "complete_units": 0,
+      "cash_before_receipt": 120,
+      "cash_after": 120,
+      "net_cash_change": -480,
+      "phase": "before_dispatch",
+      "final_result": false
+    },
+    "C.actual_after_repair": {
+      "plan_id": "C",
+      "scenario_id": "actual_after_repair",
+      "status": "actual_in_progress",
+      "cost": 500,
+      "receipt": 0,
+      "complete_units": 0,
+      "cash_before_receipt": 100,
+      "cash_after": 100,
+      "net_cash_change": -500,
+      "phase": "before_payment",
+      "correction": 20,
+      "transfer": 0,
+      "final_result": false
+    },
+    "C.actual_completed": {
+      "plan_id": "C",
+      "scenario_id": "actual_completed",
+      "status": "actual_in_progress",
+      "cost": 500,
+      "receipt": 0,
+      "complete_units": 100,
+      "cash_before_receipt": 100,
+      "cash_after": 100,
+      "net_cash_change": -500,
+      "phase": "accepted_before_receipt",
+      "correction": 20,
+      "transfer": 0,
+      "final_result": false
+    },
+    "C.actual20": {
+      "plan_id": "C",
+      "scenario_id": "actual20",
+      "status": "actual_chosen_day",
+      "cost": 500,
+      "receipt": 600,
+      "complete_units": 100,
+      "cash_before_receipt": 100,
+      "cash_after": 700,
+      "net_cash_change": 100,
+      "phase": "settled",
+      "correction": 20,
+      "transfer": 0,
+      "bridge_open": true,
+      "final_result": true
+    },
+    "C.overflow80": {
+      "plan_id": "C",
+      "scenario_id": "overflow80",
+      "status": "OUTSIDE_CURRENT_BUDGET_NOT_EXECUTABLE",
+      "base": 480,
+      "correction": 80,
+      "transfer": 60,
+      "total_required": 620,
+      "available": 600,
+      "over_budget": 20,
+      "receipt": null,
+      "cash_after": null,
+      "net_cash_change": null
+    }
+  },
+  "mitigation_premium_C_vs_A": 60,
+  "initial_buffer_C": 120,
+  "actual_state": "C.actual20",
+  "graph": {
+    "nodes": [
+      "workshop",
+      "land_split",
+      "bridge",
+      "destination",
+      "pier",
+      "water_leg"
+    ],
+    "direct": [
+      "workshop",
+      "land_split",
+      "bridge",
+      "destination"
+    ],
+    "two_names_1": [
+      "workshop",
+      "land_split",
+      "bridge",
+      "destination"
+    ],
+    "two_names_2": [
+      "workshop",
+      "land_split",
+      "bridge",
+      "destination"
+    ],
+    "land_C": [
+      "workshop",
+      "land_split",
+      "bridge",
+      "destination"
+    ],
+    "water_C": [
+      "workshop",
+      "pier",
+      "water_leg",
+      "destination"
+    ],
+    "transfer_C": [
+      "workshop",
+      "pier",
+      "water_leg",
+      "destination"
+    ],
+    "common_nodes_C": [
+      "workshop",
+      "destination"
+    ],
+    "water_capacity_units": 100
+  },
+  "assumptions": [
+    "Costs in adverse cases are accepted and non-refundable in this illustrative cash model.",
+    "Goods physically remain if not delivered; residual value, resale, later payment and contract law are not modelled.",
+    "Bridge closed means unavailable during the relevant departure window, not one moment of animation.",
+    "Land half can reach the transshipment pier without the bridge; water capacity and timing for all 100 are confirmed before selection.",
+    "Cost 60 for transfer is conditional and absent in actual day; base logistics premium 60 is paid and never refunded.",
+    "Known correction allowance 40 is a chosen scope, not an upper bound on every possible cost.",
+    "Scenario list is incomplete and has no probability weights; different routes are not statistically independent of every event."
+  ],
+  "labels": {
+    "result": "денежный результат по названным статьям",
+    "cash": "свои оборотные деньги",
+    "actual": "Настоящий день",
+    "model": "Проверка",
+    "likelihood": "Неизвестно"
+  }
+}

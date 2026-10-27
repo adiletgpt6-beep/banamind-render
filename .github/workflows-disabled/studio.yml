@@ -1,0 +1,98 @@
+name: BalaGo Video Studio (tests)
+
+# Только проверки закрытого приложения загрузки: typecheck, тесты, сборка.
+# Без рендера, без секретов, без доступа к R2/GitHub — подменные сервисы в тестах.
+on:
+  push:
+    paths:
+      - "apps/balago-studio/**"
+      - ".github/workflows/studio.yml"
+  # Ручная недорогая проверка доступа к исходнику LIVE-005 в Cloudflare R2.
+  # Запускать осознанно через Actions → Run workflow; без рендера видео.
+  workflow_dispatch:
+    inputs:
+      object_key:
+        description: "Ключ MP4 в приватном R2 (по умолчанию LIVE-005)"
+        required: true
+        type: string
+        default: "live/raw/c1a07194-c62b-4504-85f8-334b2bd24c71/source.mp4"
+  pull_request:
+    paths:
+      - "apps/balago-studio/**"
+      - ".github/workflows/studio.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: studio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: apps/balago-studio
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/balago-studio/package-lock.json
+      - run: npm ci
+      - run: npm test
+      # Сборка генерирует типы маршрутов Next.js; typecheck — после неё.
+      - run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+      - run: npm run typecheck
+
+  r2_check:
+    name: Проверка R2 — чтение исходника, без монтажа
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    defaults:
+      run:
+        working-directory: apps/balago-studio
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/balago-studio/package-lock.json
+      - name: Проверка пути к исходнику
+        env:
+          R2_SOURCE_KEY: ${{ inputs.object_key }}
+        run: |
+          node -e 'if (!new RegExp("^live/raw/[0-9a-f-]{36}/source[.](mp4|mov)$").test(process.env.R2_SOURCE_KEY ?? "")) { console.error("Некорректный путь к исходнику"); process.exit(1) }'
+      - name: Проверка четырёх секретов (без вывода значений)
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          for key in R2_ACCOUNT_ID R2_BUCKET_NAME R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY; do
+            if [ -z "${!key}" ]; then echo "::error::Отсутствует секрет $key"; exit 1; fi
+          done
+          echo "Все четыре секрета доступны задаче (значения скрыты)."
+      - name: Скачать и проверить исходник LIVE (временный файл)
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_SOURCE_KEY: ${{ inputs.object_key }}
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-audit --no-fund
+          node scripts/fetch-source.mjs "$R2_SOURCE_KEY" "$RUNNER_TEMP/balago-source-check.mp4"
+          node -e 'const fs = require("node:fs"); const file = process.env.RUNNER_TEMP + "/balago-source-check.mp4"; const fd = fs.openSync(file, "r"); const bytes = Buffer.alloc(32); fs.readSync(fd, bytes, 0, 32, 0); fs.closeSync(fd); const size = fs.statSync(file).size; if (size < 1024 || bytes.toString("ascii", 4, 8) !== "ftyp") { console.error("Скачанный объект не похож на MP4/MOV"); process.exit(1) } console.log("R2: чтение успешно, MP4/MOV загружен и проверен. Размер: " + size + " байт");'
+          echo "### ✅ R2: чтение исходника успешно, без рендера и публикации файла" >> "$GITHUB_STEP_SUMMARY"
+          rm -f "$RUNNER_TEMP/balago-source-check.mp4"

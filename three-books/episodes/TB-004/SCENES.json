@@ -1,0 +1,752 @@
+{
+  "schema_version": 1,
+  "episode_id": "TB-004",
+  "timing": "PRELIMINARY_NOT_MEASURED_TTS",
+  "fps": 30,
+  "duration_seconds": 1800,
+  "frame_count": 54000,
+  "part_count": 8,
+  "speech_block_count": 60,
+  "scenes": [
+    {
+      "scene_id": "S01",
+      "part_id": "A01",
+      "start_seconds": 0,
+      "end_seconds": 27,
+      "start_frame": 0,
+      "end_frame": 810,
+      "speech_blocks": [
+        "B001"
+      ],
+      "action": "Вей переворачивает карточку первого удачного вечера; за ней виден экран продления.",
+      "state_in": "Хорошая карточка кажется ответом.",
+      "state_out": "Зритель видит загадку оценки целого.",
+      "caption": "Удачный вечер?",
+      "camera": "Крупный план карточки → средний план лица.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S02",
+      "part_id": "A01",
+      "start_seconds": 27,
+      "end_seconds": 54,
+      "start_frame": 810,
+      "end_frame": 1620,
+      "speech_blocks": [
+        "B002"
+      ],
+      "action": "Показ работы: частицы складываются в птицу и сад над ладонью гостя.",
+      "state_in": "Мастерство ещё не показано.",
+      "state_out": "Качество работы признано до финансовой ошибки.",
+      "caption": "Красивая работа",
+      "camera": "Объёмный проезд внутри купола с ясным лицом.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S03",
+      "part_id": "A01",
+      "start_seconds": 54,
+      "end_seconds": 82,
+      "start_frame": 1620,
+      "end_frame": 2460,
+      "speech_blocks": [
+        "B003"
+      ],
+      "action": "Крыло зависает у кнопки; отдельно лежат четыре конверта.",
+      "state_in": "Вся касса выглядит возможностью.",
+      "state_out": "Предоплата выделяется как иной вид денег.",
+      "caption": "Ещё один сеанс",
+      "camera": "Камера на крыле и кнопке, конверты вторым фокусом.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S04",
+      "part_id": "A01",
+      "start_seconds": 82,
+      "end_seconds": 131,
+      "start_frame": 2460,
+      "end_frame": 3930,
+      "speech_blocks": [
+        "B004",
+        "B005"
+      ],
+      "action": "Ина ждёт ответа; фотография первого сеанса занимает центр, затем раскрывается лист трёх вечеров.",
+      "state_in": "Хочется отложить ответ.",
+      "state_out": "Поставлена честная задача восстановить учёт.",
+      "caption": "Условная история",
+      "camera": "Диалог через предмет, затем лист без мелкого текста.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S05",
+      "part_id": "A01",
+      "start_seconds": 131,
+      "end_seconds": 161,
+      "start_frame": 3930,
+      "end_frame": 4830,
+      "speech_blocks": [
+        "B006"
+      ],
+      "action": "Огни соседнего павильона отвлекают Вея, он снова тянется к экрану.",
+      "state_in": "Есть пауза для подсчёта.",
+      "state_out": "Социальное сравнение создаёт спешку.",
+      "caption": "Нужно быстрее?",
+      "camera": "Перевод взгляда, без ручной тряски и вспышки.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S06",
+      "part_id": "A01",
+      "start_seconds": 161,
+      "end_seconds": 190,
+      "start_frame": 4830,
+      "end_frame": 5700,
+      "speech_blocks": [
+        "B007"
+      ],
+      "action": "Ина освобождает стол, карточка превращается в купол до открытия.",
+      "state_in": "Архив закрыт фотографией.",
+      "state_out": "Открыта реконструкция проекта.",
+      "caption": "Что было на самом деле",
+      "camera": "Переход через край карточки с сохранением масштаба.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S07",
+      "part_id": "A02",
+      "start_seconds": 190,
+      "end_seconds": 220,
+      "start_frame": 5700,
+      "end_frame": 6600,
+      "speech_blocks": [
+        "B008"
+      ],
+      "action": "900 разделяются: оплаченная подготовка 300 уходит к готовым фигурам, остаётся 600.",
+      "state_in": "Начальные деньги известны.",
+      "state_out": "Невозвратный расход привязан к проекту.",
+      "caption": "Подготовка: −300",
+      "camera": "Чистый верхний ракурс; жетоны содержат точки, но не равны каждой световой частице.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S08",
+      "part_id": "A02",
+      "start_seconds": 220,
+      "end_seconds": 276,
+      "start_frame": 6600,
+      "end_frame": 8280,
+      "speech_blocks": [
+        "B009",
+        "B010"
+      ],
+      "action": "Два вечера по очереди: 8×30−160=80 и 7×30−160=50.",
+      "state_in": "Есть начальный расход.",
+      "state_out": "Два локальных плюса остаются правдивыми.",
+      "caption": "+80   +50",
+      "camera": "Раздельные карточки, доход показан перед оплатой текущего вечера.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S09",
+      "part_id": "A02",
+      "start_seconds": 276,
+      "end_seconds": 334,
+      "start_frame": 8280,
+      "end_frame": 10020,
+      "speech_blocks": [
+        "B011",
+        "B012"
+      ],
+      "action": "Третья карточка 3×30−160=−70; все четыре денежные строки соединяются в −240.",
+      "state_in": "Удобные карточки оставлены впереди.",
+      "state_out": "Показан результат всего проекта.",
+      "caption": "Весь проект: −240",
+      "camera": "Стоп камеры на итоговой строке, карточки не уносятся из расчёта.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S10",
+      "part_id": "A02",
+      "start_seconds": 334,
+      "end_seconds": 420,
+      "start_frame": 10020,
+      "end_frame": 12600,
+      "speech_blocks": [
+        "B013",
+        "B014",
+        "B015"
+      ],
+      "action": "Касса собственных 660 сверяется с началом; фигуры остаются ресурсом; рядом появляются отдельные 120.",
+      "state_in": "Убыток признан, принадлежность ещё смешана.",
+      "state_out": "Физические 780 разделимы на две группы.",
+      "caption": "660 своих + 120 предоплаты",
+      "camera": "Средний план → две независимые ёмкости; не делать единую гору денег.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S11",
+      "part_id": "A03",
+      "start_seconds": 420,
+      "end_seconds": 479,
+      "start_frame": 12600,
+      "end_frame": 14370,
+      "speech_blocks": [
+        "B016",
+        "B017"
+      ],
+      "action": "Четыре конверта по 30 получают статусы предварительной записи и полного возврата при отмене.",
+      "state_in": "Платежи выглядят доступной кассой.",
+      "state_out": "Видно обещание четырём конкретным гостям.",
+      "caption": "Предоплата: 4 × 30",
+      "camera": "Ровно четыре крупных конверта, не россыпь декоративных значков.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S12",
+      "part_id": "A03",
+      "start_seconds": 479,
+      "end_seconds": 515,
+      "start_frame": 14370,
+      "end_frame": 15450,
+      "speech_blocks": [
+        "B018"
+      ],
+      "action": "Из 660 выделяются 500 назначенных домашних расходов и свободные 160.",
+      "state_in": "Собственные деньги уже отделены.",
+      "state_out": "Появляется назначение, не универсальная норма.",
+      "caption": "Свободно для решения: 160",
+      "camera": "Две зоны собственного листа; подпись назначения обязательна.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S13",
+      "part_id": "A03",
+      "start_seconds": 515,
+      "end_seconds": 546,
+      "start_frame": 15450,
+      "end_frame": 16380,
+      "speech_blocks": [
+        "B019"
+      ],
+      "action": "Прежняя подготовка 300 остаётся слева во времени, новое предложение 300+80=380 появляется справа.",
+      "state_in": "Две суммы 300 могут смешаться.",
+      "state_out": "Потраченное и пока предотвратимое различаются.",
+      "caption": "Новые расходы: 380",
+      "camera": "Одинаковый размер чисел, разные названия и временные позиции.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S14",
+      "part_id": "A03",
+      "start_seconds": 546,
+      "end_seconds": 577,
+      "start_frame": 16380,
+      "end_frame": 17310,
+      "speech_blocks": [
+        "B020"
+      ],
+      "action": "Условная ветвь четырёх гостей: 660+120−380=400, ниже назначения 500.",
+      "state_in": "Продление ещё не случилось.",
+      "state_out": "Показан неблагоприятный возможный остаток.",
+      "caption": "Если придут только четверо",
+      "camera": "Ветка в пунктирной рамке; возврат к факту 660 перед следующей сценой.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S15",
+      "part_id": "A03",
+      "start_seconds": 577,
+      "end_seconds": 636,
+      "start_frame": 17310,
+      "end_frame": 19080,
+      "speech_blocks": [
+        "B021",
+        "B022"
+      ],
+      "action": "14 мест ограничивают 420; после 380 остаётся 40. Для 620 требуются минимум 21 билет, семь не помещаются.",
+      "state_in": "Надежда вернуть всё не проверена.",
+      "state_out": "Физический предел опровергает односеансовое обещание.",
+      "caption": "14 мест. Нужно 21.",
+      "camera": "Два последовательных кадра: максимум сеанса, затем требуемое покрытие прошлого.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S16",
+      "part_id": "A03",
+      "start_seconds": 636,
+      "end_seconds": 670,
+      "start_frame": 19080,
+      "end_frame": 20100,
+      "speech_blocks": [
+        "B023"
+      ],
+      "action": "На листе обводится именно сегодняшнее предложение; другие будущие варианты остаются пустыми.",
+      "state_in": "Есть соблазн обобщить отказ.",
+      "state_out": "Ответ ограничен условиями одной оферты.",
+      "caption": "На этих условиях",
+      "camera": "Отъезд от локальной рамки без книжных схем и лестниц богатства.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S17",
+      "part_id": "A04",
+      "start_seconds": 670,
+      "end_seconds": 727,
+      "start_frame": 20100,
+      "end_frame": 21810,
+      "speech_blocks": [
+        "B024",
+        "B025"
+      ],
+      "action": "Крыло продолжает тянуться к кнопке; рамка переносит нас к многократной тренировке световой птицы.",
+      "state_in": "Числа уже известны.",
+      "state_out": "Старый полезный совет попал в другой контекст.",
+      "caption": "Упорство для какой задачи?",
+      "camera": "Сопоставить упражнение и оплату, без одинакового победного монтажа.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S18",
+      "part_id": "A04",
+      "start_seconds": 727,
+      "end_seconds": 784,
+      "start_frame": 21810,
+      "end_frame": 23520,
+      "speech_blocks": [
+        "B026",
+        "B027"
+      ],
+      "action": "Вей удерживает карточку образа успешного мастера; затем открывает ящик с сохранившимися фигурами.",
+      "state_in": "Отмена кажется потерей самого себя.",
+      "state_out": "Навык и сделанная работа остаются без нового платежа.",
+      "caption": "Что уже осталось у меня",
+      "camera": "Портретная реакция → реальные вещи, без медицинской схемы сознания.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S19",
+      "part_id": "A04",
+      "start_seconds": 784,
+      "end_seconds": 840,
+      "start_frame": 23520,
+      "end_frame": 25200,
+      "speech_blocks": [
+        "B028",
+        "B029"
+      ],
+      "action": "Уверенные слова не меняют схему 14 мест; рядом возникают две строки: чувство и четыре записи.",
+      "state_in": "Надежда подменяет подтверждение.",
+      "state_out": "Чувство признано, факт остаётся фактом.",
+      "caption": "Чувство ≠ условие",
+      "camera": "Две спокойные карточки одинакового достоинства, без перечёркивания эмоции.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S20",
+      "part_id": "A04",
+      "start_seconds": 840,
+      "end_seconds": 871,
+      "start_frame": 25200,
+      "end_frame": 26130,
+      "speech_blocks": [
+        "B030"
+      ],
+      "action": "Пустая галерея, Вей ощущает перила, расправляет крылья, коротко дышит.",
+      "state_in": "Лента объявлений подгоняет.",
+      "state_out": "Уменьшается спешка, решение ещё впереди.",
+      "caption": "",
+      "camera": "Длиннее удержать средний план, без тумана, мыла и мистического свечения.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S21",
+      "part_id": "A04",
+      "start_seconds": 871,
+      "end_seconds": 900,
+      "start_frame": 26130,
+      "end_frame": 27000,
+      "speech_blocks": [
+        "B031"
+      ],
+      "action": "Вей признаёт неловкость; Ина возвращает внимание к четырём конвертам.",
+      "state_in": "Пауза закончилась.",
+      "state_out": "Можно действовать без полного исчезновения страха.",
+      "caption": "Неприятно — и всё же ясно",
+      "camera": "Равные планы собеседников, фокус на конвертах.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S22",
+      "part_id": "A05",
+      "start_seconds": 900,
+      "end_seconds": 961,
+      "start_frame": 27000,
+      "end_frame": 28830,
+      "speech_blocks": [
+        "B032",
+        "B033"
+      ],
+      "action": "Настоящая фотография полного соседнего зала; вокруг неё пустые поля неизвестных затрат и условий.",
+      "state_in": "Чужой успех кажется инструкцией.",
+      "state_out": "Фото признано фактом, вывод ограничен.",
+      "caption": "Чего не видно на фото",
+      "camera": "Не делать соседа мошенником и не размывать его успех.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S23",
+      "part_id": "A05",
+      "start_seconds": 961,
+      "end_seconds": 997,
+      "start_frame": 28830,
+      "end_frame": 29910,
+      "speech_blocks": [
+        "B034"
+      ],
+      "action": "Архив первого вечера раскрывает экскурсионную группу у причала.",
+      "state_in": "Удачный результат казался повторяемым сам собой.",
+      "state_out": "Видно одно конкретное обстоятельство.",
+      "caption": "У результата есть условия",
+      "camera": "Два связанных плана: причал и вход, без выдуманных процентов конверсии.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S24",
+      "part_id": "A05",
+      "start_seconds": 997,
+      "end_seconds": 1057,
+      "start_frame": 29910,
+      "end_frame": 31710,
+      "speech_blocks": [
+        "B035",
+        "B036"
+      ],
+      "action": "Предварительная граница 500 остаётся на листе; три оправдания проходят поверх неизменной сметы.",
+      "state_in": "Хочется исключения.",
+      "state_out": "Новых внешних условий нет.",
+      "caption": "Что действительно изменилось?",
+      "camera": "Камера неподвижна; меняются только словесные основания, не цифры.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S25",
+      "part_id": "A05",
+      "start_seconds": 1057,
+      "end_seconds": 1120,
+      "start_frame": 31710,
+      "end_frame": 33600,
+      "speech_blocks": [
+        "B037",
+        "B038"
+      ],
+      "action": "Старый журнал содержит только результат; новый лист заполняется до решения, поле результата пустое.",
+      "state_in": "Память правит прогноз после факта.",
+      "state_out": "Зафиксировано состояние знания до выбора.",
+      "caption": "До решения",
+      "camera": "Одна строка заполняется за раз; никакого заранее поставленного PASS.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S26",
+      "part_id": "A06",
+      "start_seconds": 1120,
+      "end_seconds": 1154,
+      "start_frame": 33600,
+      "end_frame": 34620,
+      "speech_blocks": [
+        "B039"
+      ],
+      "action": "Тот же стол очищается от призрачного старого расхода, текущие деньги и условия остаются.",
+      "state_in": "Прошлое диктует согласие.",
+      "state_out": "Сформулирован вопрос о первой встрече с предложением.",
+      "caption": "Выбрал бы впервые?",
+      "camera": "Матч-кадр с теми же суммами, исчезает только стрелка оправдания прошлого.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S27",
+      "part_id": "A06",
+      "start_seconds": 1154,
+      "end_seconds": 1215,
+      "start_frame": 34620,
+      "end_frame": 36450,
+      "speech_blocks": [
+        "B040",
+        "B041"
+      ],
+      "action": "Вей отказывается от первого мысленного предложения; проверяются стоимость выхода и обещания.",
+      "state_in": "Отказ кажется скрытой катастрофой.",
+      "state_out": "Установлены реальные обязательства без выдуманного штрафа.",
+      "caption": "Что останется при отказе",
+      "camera": "Проверочный лист оплаты прежних вечеров, неподписанного продления и возвратов.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S28",
+      "part_id": "A06",
+      "start_seconds": 1215,
+      "end_seconds": 1278,
+      "start_frame": 36450,
+      "end_frame": 38340,
+      "speech_blocks": [
+        "B042",
+        "B043"
+      ],
+      "action": "Хорошая ветвь +40 даёт общий −200; Ина спокойно допускает будущее сожаление.",
+      "state_in": "Хочется абсолютной уверенности.",
+      "state_out": "Отказ возможен при существующем положительном исходе.",
+      "caption": "Гарантии сожаления нет",
+      "camera": "Финансовый кадр и затем портрет, не мелкий текст одновременно.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S29",
+      "part_id": "A06",
+      "start_seconds": 1278,
+      "end_seconds": 1310,
+      "start_frame": 38340,
+      "end_frame": 39300,
+      "speech_blocks": [
+        "B044"
+      ],
+      "action": "Крыло закрывает фото, проверяет конверты, 500 и строку аренды, затем останавливается.",
+      "state_in": "Желание управляет жестом.",
+      "state_out": "Между импульсом и оплатой появилась последовательность проверки.",
+      "caption": "Перед платежом",
+      "camera": "Реальный контакт с реквизитом и пауза, без шлейфа ложных рук.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S30",
+      "part_id": "A06",
+      "start_seconds": 1310,
+      "end_seconds": 1340,
+      "start_frame": 39300,
+      "end_frame": 40200,
+      "speech_blocks": [
+        "B045"
+      ],
+      "action": "Нажат отказ; ничего не взрывается и не возвращается чудом.",
+      "state_in": "Решение не завершено.",
+      "state_out": "Новый расход не принят, возвраты ещё нужно выполнить.",
+      "caption": "Не продлевать",
+      "camera": "Ясный локальный жест и устойчивый свет галереи.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S31",
+      "part_id": "A07",
+      "start_seconds": 1340,
+      "end_seconds": 1371,
+      "start_frame": 40200,
+      "end_frame": 41130,
+      "speech_blocks": [
+        "B046"
+      ],
+      "action": "Длинный черновик сообщения сокращается до отмены и полного возврата.",
+      "state_in": "Герой защищает свою репутацию словами.",
+      "state_out": "Гостю понятен статус и способ возврата.",
+      "caption": "Отмена. Полный возврат.",
+      "camera": "Короткий читаемый итог; мелкий черновик не нужно заставлять читать.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S32",
+      "part_id": "A07",
+      "start_seconds": 1371,
+      "end_seconds": 1403,
+      "start_frame": 41130,
+      "end_frame": 42090,
+      "speech_blocks": [
+        "B047"
+      ],
+      "action": "Четыре гостя реагируют по-разному: спасибо, разочарование, позднее прочтение, личный приход.",
+      "state_in": "Ожидается одобрение.",
+      "state_out": "Возврат не зависит от реакции получателя.",
+      "caption": "Обещание остаётся",
+      "camera": "Короткие самостоятельные реакции без комического злого клиента.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S33",
+      "part_id": "A07",
+      "start_seconds": 1403,
+      "end_seconds": 1436,
+      "start_frame": 42090,
+      "end_frame": 43080,
+      "speech_blocks": [
+        "B048"
+      ],
+      "action": "Четыре возврата по 30; чужое обязательство становится 0, своих остаётся 660.",
+      "state_in": "Конверты ещё в кассе.",
+      "state_out": "Принадлежность и наличность сверены.",
+      "caption": "120 возвращено",
+      "camera": "Сначала действие, затем итоговая сверка 660/0/660.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S34",
+      "part_id": "A07",
+      "start_seconds": 1436,
+      "end_seconds": 1499,
+      "start_frame": 43080,
+      "end_frame": 44970,
+      "speech_blocks": [
+        "B049",
+        "B050"
+      ],
+      "action": "Учёт закрывается с −240; все три карточки остаются рядом, фигуры не выброшены.",
+      "state_in": "Хочется переименовать убыток в опыт.",
+      "state_out": "Опыт сохранён, денежная строка не переписана.",
+      "caption": "Все три вечера",
+      "camera": "Верхний план полного архива, без положительного glow на минусе.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S35",
+      "part_id": "A07",
+      "start_seconds": 1499,
+      "end_seconds": 1530,
+      "start_frame": 44970,
+      "end_frame": 45900,
+      "speech_blocks": [
+        "B051"
+      ],
+      "action": "Настоящая экскурсионная группа приходит после отказа.",
+      "state_in": "Выбор кажется завершённым.",
+      "state_out": "Возвращается соблазн и возможность сожаления.",
+      "caption": "А если я поторопился?",
+      "camera": "Узнаваемые фигуры, не десятки несвязных шумящих силуэтов.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S36",
+      "part_id": "A07",
+      "start_seconds": 1530,
+      "end_seconds": 1590,
+      "start_frame": 45900,
+      "end_frame": 47700,
+      "speech_blocks": [
+        "B052",
+        "B053"
+      ],
+      "action": "Старое предложение истекло; Вей отвечает гостям, принимает контакт без аванса и даты.",
+      "state_in": "Толпа кажется приказом снова платить.",
+      "state_out": "Новое предложение потребует новых условий, сейчас сеанс завершён.",
+      "caption": "Сегодня завершено",
+      "camera": "Одна простая запись контакта, никакого внезапного большого контракта.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S37",
+      "part_id": "A08",
+      "start_seconds": 1590,
+      "end_seconds": 1620,
+      "start_frame": 47700,
+      "end_frame": 48600,
+      "speech_blocks": [
+        "B054"
+      ],
+      "action": "Первое фото снова перед Веем, теперь как память об одном хорошем вечере.",
+      "state_in": "Фотография служила финансовым обещанием.",
+      "state_out": "Радость сохранена без прогноза.",
+      "caption": "Один хороший вечер",
+      "camera": "Повтор композиции начала с новым отношением, не новый рисунок удачи.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S38",
+      "part_id": "A08",
+      "start_seconds": 1620,
+      "end_seconds": 1681,
+      "start_frame": 48600,
+      "end_frame": 50430,
+      "speech_blocks": [
+        "B055",
+        "B056"
+      ],
+      "action": "Три вопроса журнала отделяют чувство, факт и обязательство; другие будущие условия оставлены открытыми.",
+      "state_in": "Есть риск сделать новый запрет навсегда.",
+      "state_out": "Появился способ рассматривать предложения заново.",
+      "caption": "Чувствую. Знаю. Обязан.",
+      "camera": "Три крупных последовательных карточки, без длинной одновременно читаемой анкеты.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S39",
+      "part_id": "A08",
+      "start_seconds": 1681,
+      "end_seconds": 1743,
+      "start_frame": 50430,
+      "end_frame": 52290,
+      "speech_blocks": [
+        "B057",
+        "B058"
+      ],
+      "action": "Вей бережно складывает фигуры; итог −240, свои 660, назначение 500, возвраты завершены.",
+      "state_in": "Ошибка могла стать самонаказанием.",
+      "state_out": "Мастерство и честный итог сохраняются вместе.",
+      "caption": "Учёт закрыт",
+      "camera": "Ящик с птицей → короткая сверка без повторного урока арифметики.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    },
+    {
+      "scene_id": "S40",
+      "part_id": "A08",
+      "start_seconds": 1743,
+      "end_seconds": 1800,
+      "start_frame": 52290,
+      "end_frame": 54000,
+      "speech_blocks": [
+        "B059",
+        "B060"
+      ],
+      "action": "Вопрос о первой встрече с предложением; птица распадается на отдельные огни и гаснет, журнал закрывается на трёх карточках.",
+      "state_in": "Фраза ещё чуть-чуть подгоняла героя.",
+      "state_out": "Следующий платёж не состоялся, прошлый итог сохранён.",
+      "caption": "Выбрал бы сейчас?",
+      "camera": "Птица различима до отдельных точек; последняя фраза и четыре секунды спокойного завершения.",
+      "visual_profile": "clarity",
+      "timing_status": "PRELIMINARY_NOT_MEASURED_TTS"
+    }
+  ]
+}

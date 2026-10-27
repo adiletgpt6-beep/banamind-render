@@ -1,0 +1,623 @@
+{
+  "id": "S02",
+  "input_bytes": 4702485,
+  "input_sha256": "af488e23b76518b6af83c8cdbdd72257735fb3f09ada34eb136fa169969717fa",
+  "members": [
+    {
+      "name": "Davlatov_Vostochnaya-filosofiya-bogatstva-Komplekt-knig-Saidmuroda-Davlatova.889436.txt",
+      "bytes": 2073539,
+      "sha256": "07b9a3f15e62a225c2f3e740e06b349645a1273e451f92c2486e8f7b3b2dc379"
+    },
+    {
+      "name": "cover.jpg",
+      "bytes": 504281,
+      "sha256": "19b2dc1e3ad5a8b299f9fae545c5a330d68740713b53a1679bda32ab68ac516d"
+    },
+    {
+      "name": "i_001.jpg",
+      "bytes": 97565,
+      "sha256": "f0b90acb8beb97fb7e5f66a11186a6476643ddc26cd95b72148b920973a633e1"
+    },
+    {
+      "name": "i_002.jpg",
+      "bytes": 296663,
+      "sha256": "e814edab1716af770e9b74c9078d3a663921238b926eb468d01b1b49a35dc478"
+    },
+    {
+      "name": "i_003.jpg",
+      "bytes": 99991,
+      "sha256": "4ccaac00fa33a8ab6e3b35e3d76a45ebb03ec157a4e83acd3b5a0235b4cb2c6f"
+    },
+    {
+      "name": "i_004.jpg",
+      "bytes": 143494,
+      "sha256": "78fc0ff20afa7f2d740d1de412421cccd58761217a5bb6cce77766e57b4f58a9"
+    },
+    {
+      "name": "i_005.jpg",
+      "bytes": 146180,
+      "sha256": "74cb53a1b9c23e3e6dc733396b7753f01f15d8cf9a8d88ab6076caab3b1cb7e8"
+    },
+    {
+      "name": "i_006.jpg",
+      "bytes": 132116,
+      "sha256": "42950a67a708c347716e9f59b4be5d8db98a61d1e7a366bc0437ca073f46ae31"
+    },
+    {
+      "name": "i_007.jpg",
+      "bytes": 150107,
+      "sha256": "147d5d214fee5508baeb436d957278f1ddc5e95bdda3310a4bfb854b07ec40e3"
+    },
+    {
+      "name": "i_008.jpg",
+      "bytes": 117422,
+      "sha256": "1876d55dd1ccd6d8ed248099dd50cb4773ab0530613b223d63760767e2ebe41d"
+    },
+    {
+      "name": "i_009.png",
+      "bytes": 10032,
+      "sha256": "3657c11b6baa400f30aa8b9d4e542777343096a1f07687f241efee1f8f59b254"
+    },
+    {
+      "name": "i_010.jpg",
+      "bytes": 150766,
+      "sha256": "7f02c34d6feadcaa82ad8e0b168416d4c410a4424d7f34bb493b4ff1ae6fc770"
+    },
+    {
+      "name": "i_011.png",
+      "bytes": 12206,
+      "sha256": "5f351a152d8a88e6a1631410f3106122396a0ee06aaf6e608962c4b88b3cda49"
+    },
+    {
+      "name": "i_012.png",
+      "bytes": 9942,
+      "sha256": "ba22b0063db9afc5db04f73e45f326e9507d7686667d0cc73e0afe356c59b3bf"
+    },
+    {
+      "name": "i_013.png",
+      "bytes": 17459,
+      "sha256": "94744dba13add7aafe1826d7879e11e6ca90075bf0e20fc61375b1952cd15f35"
+    },
+    {
+      "name": "i_014.jpg",
+      "bytes": 83247,
+      "sha256": "507a430c3e14be8c4cc8f1483d0b5c232e2791e6665f4b6bc963e0e553c1385d"
+    },
+    {
+      "name": "i_015.jpg",
+      "bytes": 108606,
+      "sha256": "5208a143ae91b8af7ca4581535b83b0ad5f926ecebcfda81c1bcbe924869d7f3"
+    },
+    {
+      "name": "i_016.jpg",
+      "bytes": 111233,
+      "sha256": "8045fee5b6943a6f9c75125d7832d597df3b4b83db24afa4673481252c1bb353"
+    },
+    {
+      "name": "i_017.jpg",
+      "bytes": 28034,
+      "sha256": "3ac512021b460da52d05feec2206be2f9e261b77dd9fe5f188d125fded9d282c"
+    },
+    {
+      "name": "i_018.jpg",
+      "bytes": 15809,
+      "sha256": "1e8d1007825876aacd394db9b2593108a01f4be85a3e4d5d7f21ab60ab5dc550"
+    },
+    {
+      "name": "i_019.jpg",
+      "bytes": 22573,
+      "sha256": "bf15f4f4ff60caada1e1d393d098acead034232b5fc52f28d53c39454c7614a4"
+    },
+    {
+      "name": "i_020.jpg",
+      "bytes": 109740,
+      "sha256": "f7f504c42b90f5bd12ca5154c8c058aaa4b7563b399a3aaf5c74d88963f6e3b6"
+    },
+    {
+      "name": "i_021.jpg",
+      "bytes": 109344,
+      "sha256": "77de7cb34e2aecabd01bff5929e2b69682650c71a1bc30e4c03c781379f537f9"
+    },
+    {
+      "name": "i_022.png",
+      "bytes": 11832,
+      "sha256": "8e08ab38e415c948442755de9368681cb90bec247cc057bf8dee57289bc8c60f"
+    },
+    {
+      "name": "i_023.png",
+      "bytes": 38054,
+      "sha256": "775affb5288fe67429800c4fd76c854288b098e6aa6e6af8a70e22b7493319c1"
+    },
+    {
+      "name": "i_024.jpg",
+      "bytes": 159650,
+      "sha256": "de70da03d9610f30b3e22b9f6ee45c318cac09f1274e82609015a9e95b0a5247"
+    },
+    {
+      "name": "i_025.png",
+      "bytes": 271549,
+      "sha256": "f3b68749581bc9d1bb06bac35315d07f3442c41333371c96729e040e1ec0bb8b"
+    },
+    {
+      "name": "i_026.jpg",
+      "bytes": 165822,
+      "sha256": "e085859821a3e8e79cbc96ee37a6abd39ea1c8cf8078574f17ed39ec86d45cb3"
+    },
+    {
+      "name": "i_027.png",
+      "bytes": 23905,
+      "sha256": "44bfbac663cde6b1400fa2ee87c11b59ade5bcddc23d48e0cf07593968b4d9e4"
+    },
+    {
+      "name": "i_028.png",
+      "bytes": 1897,
+      "sha256": "474cbef7ce8f21a9126fc6de98d2438d196900df15492902c4d8c131715ec7cb"
+    },
+    {
+      "name": "i_029.png",
+      "bytes": 2141,
+      "sha256": "82507acb625e657fb23ba796d8f0d063c89e86f91471d9511a6126f77981b3ec"
+    },
+    {
+      "name": "i_030.png",
+      "bytes": 2886,
+      "sha256": "49a815a31bb2bf903f73127f51e5d8a6252a2168c33b75be337f18bd432f3f00"
+    },
+    {
+      "name": "i_031.png",
+      "bytes": 32429,
+      "sha256": "6441c24339b805b13e03a7e24d8e9288a5138f83511ac944b42baf1d3014ac90"
+    },
+    {
+      "name": "i_032.png",
+      "bytes": 35470,
+      "sha256": "15a9a971ca78fd4a69d9d8767d0ef512b058a386dcae01cb6b13b033df90b924"
+    },
+    {
+      "name": "i_033.png",
+      "bytes": 28495,
+      "sha256": "15b3b5192eaab94d1325285e11184061dfd7553499d88fbb1a0a5aa631f394f0"
+    },
+    {
+      "name": "i_034.png",
+      "bytes": 2437,
+      "sha256": "e416a81fac04a7429a871b4cbcd36beaa733baa1186ac668a2b41b91a16a8085"
+    },
+    {
+      "name": "i_035.png",
+      "bytes": 28106,
+      "sha256": "2ecc82ccf55ea77d457da5eb27f0ffd8021fd1e1a4fbff954fd322ee91d089c4"
+    },
+    {
+      "name": "i_036.png",
+      "bytes": 20083,
+      "sha256": "67714b27ab218d02a0915067e92ada0f3a4dc7f2efeba3195b7b27663a0ebe74"
+    },
+    {
+      "name": "i_037.png",
+      "bytes": 336,
+      "sha256": "66b092bb51eee5c21f07b34ac5e001113b4a7d2dcfcc596c1113de9717704495"
+    },
+    {
+      "name": "i_038.png",
+      "bytes": 3880,
+      "sha256": "1be5488f25639bc30ae3c80802e994074af10b398eca60523116893d149573d2"
+    },
+    {
+      "name": "i_039.png",
+      "bytes": 30003,
+      "sha256": "046c70e58a1e95f0ddcdb6c7e22dc55c716e071fc96c39ceae20bfc00fb5c829"
+    },
+    {
+      "name": "i_040.png",
+      "bytes": 2863,
+      "sha256": "409c8ca9b26841d1a083d824282bd5ba4f7c691b17625154ac981568cc007481"
+    },
+    {
+      "name": "i_041.png",
+      "bytes": 3390,
+      "sha256": "b68f58867062c89a13da9e42ab43f00dfa24ff0ac0c99cea9a9ba777e03aa569"
+    },
+    {
+      "name": "i_042.png",
+      "bytes": 4907,
+      "sha256": "cb3a91d840c845a06ffcd10b4af9c72be78e7eb2b100a5ee4760dd2082d5e5a7"
+    },
+    {
+      "name": "i_043.png",
+      "bytes": 5471,
+      "sha256": "cf8ddd72d90eb07cec3747090bbb07c967521a301f7cb9b0ce79ce785311347d"
+    },
+    {
+      "name": "i_044.png",
+      "bytes": 7419,
+      "sha256": "f234157ce6af1d352a5be22a7adaa7474fdd11ba884fb7d03faace6eaa98aa00"
+    },
+    {
+      "name": "i_045.png",
+      "bytes": 26927,
+      "sha256": "93cbf540d2f3b153004bf745a81d1875a992bb91be0d464bb3467b7b31bcf9c4"
+    },
+    {
+      "name": "i_046.png",
+      "bytes": 5115,
+      "sha256": "d6113e2e25e978b212b60eeae92e19d066653395aed78861495d6a08d427299e"
+    },
+    {
+      "name": "i_047.png",
+      "bytes": 4238,
+      "sha256": "716e4118c3a1a431eb579ff839e92e0ab81571cdff947301bc66c8665b556e6a"
+    },
+    {
+      "name": "i_048.png",
+      "bytes": 4188,
+      "sha256": "68fb07189e150ccc49d34f7d60dbc254a3e2799b47a1c6e009faa95b6418cc60"
+    },
+    {
+      "name": "i_049.png",
+      "bytes": 9078,
+      "sha256": "f8c05498d9c8910d6ebeae6d920c592f9b6813471fd79fdf6d0ab25ab4a5c008"
+    },
+    {
+      "name": "i_050.png",
+      "bytes": 1990,
+      "sha256": "a7483f26a07dec9c3cbf1da93684eaa737cee873ec5fafd0bdcb21bd46c48ac9"
+    },
+    {
+      "name": "i_051.png",
+      "bytes": 3866,
+      "sha256": "39f0526d34f8fabc5b105389709220ed0c77c1e3262e0ecd00cd5b8778bc56a0"
+    },
+    {
+      "name": "i_052.png",
+      "bytes": 6093,
+      "sha256": "fd73a5757b00887d5955fc31f87e49af2c0a6738d4d8ff91ebc7dd21beb1820a"
+    },
+    {
+      "name": "i_053.png",
+      "bytes": 9215,
+      "sha256": "2d8f751933e839f936a401a8d34e03adc1cb947e5a5617873b47762aee0d69c9"
+    },
+    {
+      "name": "i_054.png",
+      "bytes": 3868,
+      "sha256": "a0ca888bebfa6087605a6b2000b90c3ca1dba77271165ddcd8c4a134fa35ddaa"
+    },
+    {
+      "name": "i_055.png",
+      "bytes": 34344,
+      "sha256": "9253b01a4ccc31de1b080a8914e69e9be25a9dbdbd1aa9863a815a9ba56df293"
+    },
+    {
+      "name": "i_056.png",
+      "bytes": 15191,
+      "sha256": "26cf37b5289f310a49cf60884cb92099b79f5beddf3f6d5704626eaabb916da3"
+    },
+    {
+      "name": "i_057.png",
+      "bytes": 26539,
+      "sha256": "7747e7f14ec3bec7f9704e080db26aca6b94ca45569ad3695d74bc6c2db51739"
+    },
+    {
+      "name": "i_058.png",
+      "bytes": 5157,
+      "sha256": "d9e61f1d217d1384151000bf16d5a78964f06946486c8e1a3db887f6c57e8cca"
+    },
+    {
+      "name": "i_059.png",
+      "bytes": 12514,
+      "sha256": "4101750f8054446a6ba541192edbc5ee0289aae077882fb2fb7ef8b59da4fcfd"
+    },
+    {
+      "name": "i_060.png",
+      "bytes": 15632,
+      "sha256": "c86be2b26e7a347a04f5f90ca080ec35d280d4c1dc020d739e9d292fa4826101"
+    },
+    {
+      "name": "i_061.png",
+      "bytes": 26447,
+      "sha256": "bb3f9910328ad5d69d95bbd0b49dfbed6aed1cc375fc6278aa972f24d40841eb"
+    },
+    {
+      "name": "i_062.png",
+      "bytes": 1720,
+      "sha256": "83113c1eb9e6b8a97ef35a21270a1d5c3558a1d614ddd244beb9f29e4962c666"
+    },
+    {
+      "name": "i_063.png",
+      "bytes": 4865,
+      "sha256": "96588849da998220b3a025a304858f7661a0f74b408fdb1df0a2a14c9f696b62"
+    },
+    {
+      "name": "i_064.png",
+      "bytes": 4797,
+      "sha256": "832f0e4d6ad0c967a470a29d1fc6def594f552c5bdccbc6fa82efd95bf4e5bb4"
+    },
+    {
+      "name": "i_065.png",
+      "bytes": 4049,
+      "sha256": "581841d4942ea6fb8f3fe9d1d6db473b0c50c54773a22deece6cfdd1977b2cc6"
+    },
+    {
+      "name": "i_066.png",
+      "bytes": 3069,
+      "sha256": "26c8757f71e0c06a727401417fe708e90505c1d62fafd643e35b1a33bfc26aca"
+    },
+    {
+      "name": "i_067.png",
+      "bytes": 2050,
+      "sha256": "ce2f3dfd6cd47cbf39cae14beb5dabf81dc96810f2d7367cdf16cddd9c0e8573"
+    },
+    {
+      "name": "i_068.png",
+      "bytes": 8904,
+      "sha256": "ce006952f2e3ada4f9a27fe135ffd777eeac81a613316108ae082c47db584ecb"
+    },
+    {
+      "name": "i_069.jpg",
+      "bytes": 496632,
+      "sha256": "e5643dcf8f8a74df205d8ea12903eed0dcab7ef46bd1e6a2f0b35207c8e1bcb4"
+    },
+    {
+      "name": "i_070.jpg",
+      "bytes": 14799,
+      "sha256": "15983236a465c1fb32e0888e6fc2ec41e6a706aab842b4892c0395667c4387fd"
+    },
+    {
+      "name": "i_071.jpg",
+      "bytes": 18583,
+      "sha256": "bc439b3319d463d99288d4edc53e7ba2f1d2eb241f3c2edd2fe54fedf99288bb"
+    },
+    {
+      "name": "i_072.jpg",
+      "bytes": 46742,
+      "sha256": "f9ea3b5a112b905283b420192696b43edb5e69c85f191f6a9194b451e8f0daba"
+    },
+    {
+      "name": "i_073.jpg",
+      "bytes": 60033,
+      "sha256": "88cc47c1807f6d7ae28b2dc232d580f94fbcc6dff02e8b797a16fb63fd1f618c"
+    },
+    {
+      "name": "i_074.jpg",
+      "bytes": 11192,
+      "sha256": "a79a5b5454108a6bd7d655bc68baaeefc38656ee97dfb782e3c9d2583020b436"
+    },
+    {
+      "name": "i_075.jpg",
+      "bytes": 7913,
+      "sha256": "9c9438df27bb779f17d92a2318da8990e0a153d6b708968a8cf7771f2565bcc9"
+    },
+    {
+      "name": "i_076.jpg",
+      "bytes": 18695,
+      "sha256": "56afb5e6e9006f9a72f9026ada83d107569b75e4dd4bcf9fcb6e2bbc3531107d"
+    },
+    {
+      "name": "i_077.jpg",
+      "bytes": 19518,
+      "sha256": "ee2b1d45e1ba21ed028c07c88b7bd48db8001d960e8380ac91a9d54599a6e555"
+    },
+    {
+      "name": "i_078.jpg",
+      "bytes": 11946,
+      "sha256": "313e4bce30ccd37699cd7fe490b59d4f6e57bba739c1d6126ece0cfc2bd94b08"
+    },
+    {
+      "name": "i_079.jpg",
+      "bytes": 11146,
+      "sha256": "a5514d7bfbe577555230f6050a20e2e2db2b9dfaec290948f25424d4565f8db8"
+    },
+    {
+      "name": "i_080.png",
+      "bytes": 15379,
+      "sha256": "f88498f2f6856fa04c64ae97a9166a223d4cc98e3eaf899bdf693a9c729a6f00"
+    }
+  ],
+  "archive_crc_ok": true,
+  "input_format": "zip+txt",
+  "archive_member_name": "Davlatov_Vostochnaya-filosofiya-bogatstva-Komplekt-knig-Saidmuroda-Davlatova.889436.txt",
+  "encoding": "utf-8-sig",
+  "author": "Саидмурод Раджабович Давлатов",
+  "title": "Восточная философия богатства. Комплект книг Саидмурода Давлатова",
+  "headings": [
+    {
+      "line": 25,
+      "title": "Предисловие автора",
+      "level": 2
+    },
+    {
+      "line": 41,
+      "title": "Введение",
+      "level": 2
+    },
+    {
+      "line": 1031,
+      "title": "Книга успехов",
+      "level": 2
+    },
+    {
+      "line": 1032,
+      "title": "Книга мудрости",
+      "level": 2
+    },
+    {
+      "line": 1033,
+      "title": "Книга побед",
+      "level": 2
+    },
+    {
+      "line": 1034,
+      "title": "Книга идей",
+      "level": 2
+    },
+    {
+      "line": 1142,
+      "title": "Заключение",
+      "level": 2
+    },
+    {
+      "line": 1183,
+      "title": "Введение",
+      "level": 2
+    },
+    {
+      "line": 2255,
+      "title": "Заключение",
+      "level": 2
+    },
+    {
+      "line": 2300,
+      "title": "Введение",
+      "level": 2
+    },
+    {
+      "line": 2319,
+      "title": "Глава 1",
+      "level": 2
+    },
+    {
+      "line": 2377,
+      "title": "Глава 2",
+      "level": 2
+    },
+    {
+      "line": 2440,
+      "title": "Глава 3",
+      "level": 2
+    },
+    {
+      "line": 2460,
+      "title": "Глава 4",
+      "level": 2
+    },
+    {
+      "line": 2534,
+      "title": "Глава 5",
+      "level": 2
+    },
+    {
+      "line": 2594,
+      "title": "Глава 6",
+      "level": 2
+    },
+    {
+      "line": 2748,
+      "title": "Глава 7",
+      "level": 2
+    },
+    {
+      "line": 2803,
+      "title": "Глава 8",
+      "level": 2
+    },
+    {
+      "line": 2898,
+      "title": "Глава 9",
+      "level": 2
+    },
+    {
+      "line": 2990,
+      "title": "Глава 10",
+      "level": 2
+    },
+    {
+      "line": 3038,
+      "title": "Глава 11",
+      "level": 2
+    },
+    {
+      "line": 3070,
+      "title": "Глава 12",
+      "level": 2
+    },
+    {
+      "line": 3135,
+      "title": "Глава 13",
+      "level": 2
+    },
+    {
+      "line": 3188,
+      "title": "Глава 14",
+      "level": 2
+    },
+    {
+      "line": 3206,
+      "title": "Глава 15",
+      "level": 2
+    },
+    {
+      "line": 3251,
+      "title": "Глава 16",
+      "level": 2
+    },
+    {
+      "line": 3309,
+      "title": "Глава 17",
+      "level": 2
+    },
+    {
+      "line": 3360,
+      "title": "Глава 18",
+      "level": 2
+    },
+    {
+      "line": 3404,
+      "title": "Глава 19",
+      "level": 2
+    },
+    {
+      "line": 3453,
+      "title": "Глава 20",
+      "level": 2
+    },
+    {
+      "line": 3558,
+      "title": "Глава 21",
+      "level": 2
+    },
+    {
+      "line": 3587,
+      "title": "Глава 22",
+      "level": 2
+    },
+    {
+      "line": 3618,
+      "title": "Глава 23",
+      "level": 2
+    },
+    {
+      "line": 3659,
+      "title": "Глава 24",
+      "level": 2
+    },
+    {
+      "line": 3687,
+      "title": "Глава 25",
+      "level": 2
+    },
+    {
+      "line": 3747,
+      "title": "Глава 26",
+      "level": 2
+    },
+    {
+      "line": 3797,
+      "title": "Введение",
+      "level": 2
+    },
+    {
+      "line": 5284,
+      "title": "Заключение",
+      "level": 2
+    }
+  ],
+  "text_member_sha256": "07b9a3f15e62a225c2f3e740e06b349645a1273e451f92c2486e8f7b3b2dc379",
+  "text_member_bytes": 2073539,
+  "images": 80,
+  "preservation": "Complete TXT including preface, advertising, images-as-markers and end sections; only BOM/newline normalization. Headings are a navigation aid, not a claim of reconstructed typography.",
+  "bytes": 2073539,
+  "lines": 5366,
+  "words": 171053,
+  "sha256": "07b9a3f15e62a225c2f3e740e06b349645a1273e451f92c2486e8f7b3b2dc379"
+}

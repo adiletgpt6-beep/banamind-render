@@ -1,0 +1,31 @@
+{
+  "episode_id": "TB-005",
+  "status": "PROPOSED_NOT_SYNTHESIZED",
+  "provider": "elevenlabs",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "voice_name": "George",
+  "model_id": "eleven_multilingual_v2",
+  "language_code": "ru",
+  "seed": 7,
+  "output_format": "mp3_44100_192",
+  "voice_settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.8,
+    "style": 0.12,
+    "use_speaker_boost": true,
+    "speed": 0.96
+  },
+  "music": false,
+  "pilot_blocks": [
+    "B001",
+    "B007",
+    "B013",
+    "B018",
+    "B025",
+    "B029",
+    "B032",
+    "B043",
+    "B046",
+    "B048"
+  ]
+}

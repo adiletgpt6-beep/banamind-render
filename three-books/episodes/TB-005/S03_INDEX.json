@@ -1,0 +1,293 @@
+{
+  "id": "S03",
+  "input_bytes": 2211576,
+  "input_sha256": "5d6039d518c0b55edb11b803f25b9462d477a673057a66350a9fc86d1c702def",
+  "members": [
+    {
+      "name": "Dalio_Principy-Zhizn-i-rabota.594067.txt",
+      "bytes": 1764573,
+      "sha256": "9891a3f2852988c491182e749e18ebbc7b8b7d86ccc7acf946cafa657a4c408e"
+    },
+    {
+      "name": "cover.jpg",
+      "bytes": 202149,
+      "sha256": "b762b35852055c232d9831bbfec2475adb5ba5ea2a39136b4cf2ae05e603cd0a"
+    },
+    {
+      "name": "i_001.jpg",
+      "bytes": 53135,
+      "sha256": "0b4b43f8a70750ee205543fed90997bd551f45ca59b526d3467188c8252d94dc"
+    },
+    {
+      "name": "i_002.jpg",
+      "bytes": 30642,
+      "sha256": "373f718aa2f7b50b04f3f4bb1be98ea07933f4e6a81f2d4f0a06ea7480e6c167"
+    },
+    {
+      "name": "i_003.jpg",
+      "bytes": 29740,
+      "sha256": "2d986a4121d5f3fdf763690d2e2181e62cc5f72300383fca9b6df9fa552441d2"
+    },
+    {
+      "name": "i_004.jpg",
+      "bytes": 29708,
+      "sha256": "c42e8f7569e56c4b658c7c0a4c983290839b6e2d8be90a086683fed89d3e9fb8"
+    },
+    {
+      "name": "i_005.jpg",
+      "bytes": 23042,
+      "sha256": "76f9d023a6a2c27ff7579c3bab880e25307271713267950b95239f75bd80185d"
+    },
+    {
+      "name": "i_006.jpg",
+      "bytes": 62813,
+      "sha256": "05b7c7578800ac10692f83173811d40b805ab35960d71b7d81e0285ed93fbbe3"
+    },
+    {
+      "name": "i_007.jpg",
+      "bytes": 65955,
+      "sha256": "4f7b389177d789a250ddd599c2beb13541d5c22c09eccbfa3190310284394493"
+    },
+    {
+      "name": "i_008.jpg",
+      "bytes": 58953,
+      "sha256": "1e177ad3fd8e57d61386d36d9a18789da04297aa09cba3457698f81f167855e6"
+    },
+    {
+      "name": "i_009.jpg",
+      "bytes": 8478,
+      "sha256": "b1ab0f921a8b9c63041cea8afbd9297db77badefb9e41abb220ab0b93d405775"
+    },
+    {
+      "name": "i_010.jpg",
+      "bytes": 19152,
+      "sha256": "6e817168b0ca9706506dad916f7b17d5920c195a48d3f3c01bea85f6acf63ed5"
+    },
+    {
+      "name": "i_011.jpg",
+      "bytes": 19667,
+      "sha256": "3abe7e411bce9c11036014def60f0b50dd646611f7619c41ff4ba4db90adb01a"
+    },
+    {
+      "name": "i_012.jpg",
+      "bytes": 22885,
+      "sha256": "25dbd2c6acbe7e88fe758833cf31e8339d8e31d2ee60c05ab53d01f0de1888d0"
+    },
+    {
+      "name": "i_013.jpg",
+      "bytes": 34169,
+      "sha256": "64c08e29e2ecba9695c4389a49dcd8e58dfbd46c6aff765701a8b16c7a54b631"
+    },
+    {
+      "name": "i_014.jpg",
+      "bytes": 37945,
+      "sha256": "a7a9b1466b8e78b7cd173378d595fb9403de9d60e1a5f991b1be966c96802eaa"
+    },
+    {
+      "name": "i_015.jpg",
+      "bytes": 47778,
+      "sha256": "76b19eff182b9fe0c9ca154cf6697ab74ba8667e5d4f8350c9bd1cd77587de5f"
+    },
+    {
+      "name": "i_016.jpg",
+      "bytes": 28450,
+      "sha256": "0a2dac9b62a4bc4c5d5f0220ba55162797e766015774083258bd181a95333b5f"
+    },
+    {
+      "name": "i_017.jpg",
+      "bytes": 48205,
+      "sha256": "0a342c2bc517408bd54f37c2740cf6755934fdebaa6ecb8e3d12e670da7316cd"
+    },
+    {
+      "name": "i_018.jpg",
+      "bytes": 118327,
+      "sha256": "52635d9e913edb07257615ad466ff1b7233bc2a33189dc94280a69b5edc153c5"
+    },
+    {
+      "name": "i_019.jpg",
+      "bytes": 50979,
+      "sha256": "779daddb36ff09e79bbc444b4cf663d320aa9cd16fab360d542cd8dc24201228"
+    },
+    {
+      "name": "i_020.jpg",
+      "bytes": 26849,
+      "sha256": "a35b3513b0e804c725075eda18a489beae564fce02bfa7853468d96bc2647eab"
+    },
+    {
+      "name": "i_021.jpg",
+      "bytes": 184046,
+      "sha256": "c2670e461dafc72235ff1b9953544caf102929558c906a1f1bcaa9125c432a13"
+    },
+    {
+      "name": "i_022.jpg",
+      "bytes": 79159,
+      "sha256": "3ed32a34a098f27f53e9f82b961bca57c339c5d5cc3a2cee559b55d1a6a40ff2"
+    },
+    {
+      "name": "i_023.jpg",
+      "bytes": 47647,
+      "sha256": "f1165f104b75de5cc34ee0e970570771cdc8b989542baf3e96491b567721b96d"
+    },
+    {
+      "name": "i_024.jpg",
+      "bytes": 25686,
+      "sha256": "e537c9fff29fb15b3243344eb54e4ee786e04fcc882abe8ca72f855bc665baff"
+    },
+    {
+      "name": "i_025.jpg",
+      "bytes": 31355,
+      "sha256": "d48c3b6c6f22d57ff40de07764fba691da9cf21293a12eb0551bf5e6eec12bc7"
+    },
+    {
+      "name": "i_026.jpg",
+      "bytes": 31039,
+      "sha256": "f6b4181d524f9b290725992e2a7a591ae5b54b0da366f2a7c320584f3be533bb"
+    },
+    {
+      "name": "i_027.jpg",
+      "bytes": 24959,
+      "sha256": "0aa25f8f584f222e96bf8e5a337be25abc9be4dfe9c8fc1ccb4673de28340eda"
+    },
+    {
+      "name": "i_028.jpg",
+      "bytes": 8347,
+      "sha256": "b133f99e7d45f0c5810b1eb33ad3f9d62aea4f7eb466347395d31bfbb7876739"
+    },
+    {
+      "name": "i_029.jpg",
+      "bytes": 20182,
+      "sha256": "f9d40a2d89bfbc288e4184b6491bc323a14c27343db893d6d2b95c03e1bcded9"
+    },
+    {
+      "name": "i_030.jpg",
+      "bytes": 10392,
+      "sha256": "c50f5b12573d52d72442bebbf346dd826ac3718decdb8a8d333ebb754bb105dc"
+    },
+    {
+      "name": "i_031.jpg",
+      "bytes": 60746,
+      "sha256": "22f89b603e9ca59761250e9c9356879065be6dbcf130278414a95d2659dc43ed"
+    },
+    {
+      "name": "i_032.jpg",
+      "bytes": 59038,
+      "sha256": "c11a682aba8eda2da9a63d4583aaded015f698d6725b3f4c88c9293f2b726399"
+    },
+    {
+      "name": "i_033.jpg",
+      "bytes": 28829,
+      "sha256": "8f0be6c0bca57a90ea930c68ae6fa67d1af56175d288479ad8f32f21dd98fe07"
+    },
+    {
+      "name": "i_034.jpg",
+      "bytes": 46132,
+      "sha256": "4b77a03d1365a8acf1559d49dbd7c8b1611dea2788ba02637bd42b65305ef3b3"
+    },
+    {
+      "name": "i_035.jpg",
+      "bytes": 44579,
+      "sha256": "2f4f5e235b7a9e0add356714842bd292439c657296cd259a218aa6a015452065"
+    },
+    {
+      "name": "i_036.jpg",
+      "bytes": 21308,
+      "sha256": "226a140f050e08183fbeea49e30ac7ac0b441e269063ea6f40e9869dec5097aa"
+    },
+    {
+      "name": "i_037.jpg",
+      "bytes": 32593,
+      "sha256": "450c4b6b9dd3739e9cff0c5d6a940f1f968554c2a7f529461d1ab463a7221784"
+    },
+    {
+      "name": "i_038.jpg",
+      "bytes": 41409,
+      "sha256": "13566ff7d86f1af8f86e3530c86b81c15ecb45e102133ddbdb19575bac1e4780"
+    },
+    {
+      "name": "i_039.jpg",
+      "bytes": 35840,
+      "sha256": "ac6771fcf45026c6e21cde856b3990e1ce345a2e0ea9a75484f18a94c48b5b78"
+    },
+    {
+      "name": "i_040.jpg",
+      "bytes": 30493,
+      "sha256": "efe74461654439fb2f25df12e270d41f79facc72c6f4702d7b025cde847a0907"
+    },
+    {
+      "name": "i_041.jpg",
+      "bytes": 29324,
+      "sha256": "eae3744d8604709fcddeace0ce8196de10beaead67522b15f90a043d49dd459c"
+    },
+    {
+      "name": "i_042.jpg",
+      "bytes": 78452,
+      "sha256": "b0840978148a6c8ff58b9061752a35da86e5a945b38ce872b7b632b23b5be2ef"
+    },
+    {
+      "name": "i_043.jpg",
+      "bytes": 86545,
+      "sha256": "4cae039af4711ef55885e9246088f8cc7c5b670aa97aa3ec907c984a7af5ab8b"
+    }
+  ],
+  "archive_crc_ok": true,
+  "input_format": "zip+txt",
+  "archive_member_name": "Dalio_Principy-Zhizn-i-rabota.594067.txt",
+  "encoding": "utf-8-sig",
+  "author": "Рэй Далио",
+  "title": "Принципы. Жизнь и работа",
+  "headings": [
+    {
+      "line": 18,
+      "title": "Предисловие к российскому изданию",
+      "level": 2
+    },
+    {
+      "line": 46,
+      "title": "Введение",
+      "level": 2
+    },
+    {
+      "line": 84,
+      "title": "Часть I. Мои истоки",
+      "level": 1
+    },
+    {
+      "line": 87,
+      "title": "Часть II. Жизненные принципы",
+      "level": 1
+    },
+    {
+      "line": 90,
+      "title": "Часть III. Принципы работы",
+      "level": 1
+    },
+    {
+      "line": 100,
+      "title": "Часть I. Мои истоки",
+      "level": 1
+    },
+    {
+      "line": 557,
+      "title": "Часть II. Жизненные принципы",
+      "level": 1
+    },
+    {
+      "line": 1377,
+      "title": "Часть III. Принципы работы",
+      "level": 1
+    },
+    {
+      "line": 3033,
+      "title": "Заключение",
+      "level": 2
+    }
+  ],
+  "text_member_sha256": "9891a3f2852988c491182e749e18ebbc7b8b7d86ccc7acf946cafa657a4c408e",
+  "text_member_bytes": 1764573,
+  "images": 45,
+  "preservation": "Complete TXT including preface, advertising, images-as-markers and end sections; only BOM/newline normalization. Headings are a navigation aid, not a claim of reconstructed typography.",
+  "bytes": 1764573,
+  "lines": 3305,
+  "words": 136070,
+  "sha256": "9891a3f2852988c491182e749e18ebbc7b8b7d86ccc7acf946cafa657a4c408e"
+}

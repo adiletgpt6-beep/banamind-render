@@ -1,0 +1,181 @@
+{
+  "episode_id": "TB-004",
+  "fps": 30,
+  "output": [
+    1920,
+    1080
+  ],
+  "status": "SPEC_ONLY_NOT_MEASURED",
+  "shots": [
+    {
+      "id": "Q01",
+      "scene_id": "S02",
+      "selection": "choose measured interval around semantic action, do not use old planned PTS blindly",
+      "target": "Лицо и птица внутри прозрачного купола",
+      "roi_labels": [
+        "face",
+        "beak",
+        "cupola-front"
+      ],
+      "motion_clip_seconds": 12,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "outputs": [
+        "native_reference.png",
+        "decoded_h264.png",
+        "motion.mp4",
+        "native_crops.png"
+      ],
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q02",
+      "scene_id": "S10",
+      "selection": "choose measured interval around semantic action, do not use old planned PTS blindly",
+      "target": "Касса и отдельные конверты",
+      "roi_labels": [
+        "cash-vs-advance"
+      ],
+      "motion_clip_seconds": 10,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "outputs": [
+        "native_reference.png",
+        "decoded_h264.png",
+        "motion.mp4",
+        "native_crops.png"
+      ],
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q03",
+      "scene_id": "S13",
+      "selection": "choose measured interval around semantic action, do not use old planned PTS blindly",
+      "target": "Две суммы 300 и новое 380",
+      "roi_labels": [
+        "number-edges"
+      ],
+      "motion_clip_seconds": 8,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "outputs": [
+        "native_reference.png",
+        "decoded_h264.png",
+        "motion.mp4",
+        "native_crops.png"
+      ],
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q04",
+      "scene_id": "S15",
+      "selection": "choose measured interval around semantic action, do not use old planned PTS blindly",
+      "target": "14 посадочных позиций против 21 билета",
+      "roi_labels": [
+        "seats-and-tickets"
+      ],
+      "motion_clip_seconds": 12,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "outputs": [
+        "native_reference.png",
+        "decoded_h264.png",
+        "motion.mp4",
+        "native_crops.png"
+      ],
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q05",
+      "scene_id": "S19",
+      "selection": "choose measured interval around semantic action, do not use old planned PTS blindly",
+      "target": "Две спокойные карточки чувства и факта",
+      "roi_labels": [
+        "light-board-text"
+      ],
+      "motion_clip_seconds": 8,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "outputs": [
+        "native_reference.png",
+        "decoded_h264.png",
+        "motion.mp4",
+        "native_crops.png"
+      ],
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q06",
+      "scene_id": "S29",
+      "selection": "choose measured interval around semantic action, do not use old planned PTS blindly",
+      "target": "Крыло проверяет конверт перед выбором",
+      "roi_labels": [
+        "wing-contact"
+      ],
+      "motion_clip_seconds": 10,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "outputs": [
+        "native_reference.png",
+        "decoded_h264.png",
+        "motion.mp4",
+        "native_crops.png"
+      ],
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q07",
+      "scene_id": "S33",
+      "selection": "choose measured interval around semantic action, do not use old planned PTS blindly",
+      "target": "Возврат 120 без изменения собственных 660",
+      "roi_labels": [
+        "envelope-flap"
+      ],
+      "motion_clip_seconds": 10,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "outputs": [
+        "native_reference.png",
+        "decoded_h264.png",
+        "motion.mp4",
+        "native_crops.png"
+      ],
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q08",
+      "scene_id": "S40",
+      "selection": "choose measured interval around semantic action, do not use old planned PTS blindly",
+      "target": "Птица гаснет до отдельных различимых ядер",
+      "roi_labels": [
+        "settling-particle-cores"
+      ],
+      "motion_clip_seconds": 12,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "outputs": [
+        "native_reference.png",
+        "decoded_h264.png",
+        "motion.mp4",
+        "native_crops.png"
+      ],
+      "status": "PENDING_RENDER"
+    }
+  ]
+}

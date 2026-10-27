@@ -1,0 +1,115 @@
+{
+  "episode_id": "TB-005",
+  "status": "SPEC_ONLY_NOT_MEASURED",
+  "fps": 30,
+  "output": [
+    1920,
+    1080
+  ],
+  "shots": [
+    {
+      "id": "Q01",
+      "scene_id": "S01",
+      "target": "Общий узел двух маршрутов",
+      "event_id": "bridge_reveal",
+      "seconds": 10,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "alignment": "same normalized event phase after measured timeline",
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q02",
+      "scene_id": "S04",
+      "target": "Мара указывает лапой на карту",
+      "event_id": "map_point",
+      "seconds": 10,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "alignment": "same normalized event phase after measured timeline",
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q03",
+      "scene_id": "S21",
+      "target": "Лодка и полный комплект лотков",
+      "event_id": "capacity_check",
+      "seconds": 12,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "alignment": "same normalized event phase after measured timeline",
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q04",
+      "scene_id": "S24",
+      "target": "580 и предел 600",
+      "event_id": "combined_cost",
+      "seconds": 10,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "alignment": "same normalized event phase after measured timeline",
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q05",
+      "scene_id": "S25",
+      "target": "620 за пределом 600",
+      "event_id": "budget_overflow",
+      "seconds": 8,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "alignment": "same normalized event phase after measured timeline",
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q06",
+      "scene_id": "S33",
+      "target": "Фактические 20 против предусмотренных 40",
+      "event_id": "actual_repair",
+      "seconds": 8,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "alignment": "same normalized event phase after measured timeline",
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q07",
+      "scene_id": "S34",
+      "target": "Дневные пути и открытый мост",
+      "event_id": "actual_departure",
+      "seconds": 12,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "alignment": "same normalized event phase after measured timeline",
+      "status": "PENDING_RENDER"
+    },
+    {
+      "id": "Q08",
+      "scene_id": "S35",
+      "target": "Касса 100→700 после приёмки",
+      "event_id": "actual_receipt",
+      "seconds": 12,
+      "profiles": [
+        "legacy",
+        "clarity"
+      ],
+      "alignment": "same normalized event phase after measured timeline",
+      "status": "PENDING_RENDER"
+    }
+  ]
+}

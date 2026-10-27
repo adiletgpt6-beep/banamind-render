@@ -1,0 +1,26 @@
+{
+  "episode_id": "TB-005",
+  "status": "PROPOSED_NOT_IMPLEMENTED",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "space": "SDR bt709"
+  },
+  "inheritance": "../TB-004/VISUAL_QUALITY_SPEC.md",
+  "new_targets": {
+    "graph_id_consistency": true,
+    "model_frame_label": "Проверка",
+    "daylight_core_readability": true,
+    "map_pattern_legend": true,
+    "cargo_units": 100,
+    "crates": 10,
+    "fixed_budget_scale": 600
+  },
+  "selected_core_px": null,
+  "selected_halo_gain": null,
+  "selected_bloom_radius_px": null,
+  "selected_internal_scale": null,
+  "quality_profile_hash": null,
+  "model_hash": null
+}

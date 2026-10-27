@@ -1,0 +1,183 @@
+{
+  "id": "S01",
+  "input_bytes": 488087,
+  "input_sha256": "8acd3872b315ee304815b71f78cd2de305d04c4debe86839c4a90b935c8962b8",
+  "members": [
+    {
+      "name": "Taleb_Odurachennye-sluchaynostyu-Skrytaya-rol-shansa-v-biznese-i-zhizni.246383.txt",
+      "bytes": 1061183,
+      "sha256": "8e70b167c1306b15163ba64a36528712c97ee6a5e353c01eb3dfc06f3aa38f13"
+    },
+    {
+      "name": "cover.jpg",
+      "bytes": 31017,
+      "sha256": "db9c3c3b2190afc96c7c321ad3ec09cc6c0a41504693997b1e42eee5cc13d109"
+    },
+    {
+      "name": "i_001.jpg",
+      "bytes": 49659,
+      "sha256": "aeb8443298b9e7ab4dba7961b66854e68ae2b008f0daffa8e5e6cd33e0f9f4af"
+    },
+    {
+      "name": "i_002.jpg",
+      "bytes": 13662,
+      "sha256": "8049a635c8d50d789d4490e464cde402ead2e2332a0a5c455d8dc66bd0d3c06b"
+    },
+    {
+      "name": "i_003.jpg",
+      "bytes": 15153,
+      "sha256": "2efb768758cc1025cda88ce9138c60488803e4e683d15a1dc9435a7ae8f65af3"
+    },
+    {
+      "name": "i_004.jpg",
+      "bytes": 14293,
+      "sha256": "846e0c3a055b37f5be3a84d789fe2a88b0f594ee125cc704bf068f91ef2e88f7"
+    },
+    {
+      "name": "i_005.jpg",
+      "bytes": 7533,
+      "sha256": "b4b38d3c1607ab46a57393d42c1aa247b3ab9227e3f823067c340e51e2b099e5"
+    },
+    {
+      "name": "i_006.jpg",
+      "bytes": 53501,
+      "sha256": "7df34b99c2230ad01e0d7b5e6b60238ab5ad41f32324fd94405684821fdbc522"
+    },
+    {
+      "name": "i_007.jpg",
+      "bytes": 6184,
+      "sha256": "68a9832e851ce13d8b460007573523532a2bd01440b1923aef6998e914a4cdb4"
+    },
+    {
+      "name": "i_008.jpg",
+      "bytes": 7352,
+      "sha256": "21a750c1386b07d33eb540256860cada15e17b14acb608c59c73e28d78c00753"
+    },
+    {
+      "name": "i_009.jpg",
+      "bytes": 6084,
+      "sha256": "6b4cf5168a55a6eee4b591d4433e01d825ce8539252be9a7f23b1db380242198"
+    }
+  ],
+  "archive_crc_ok": true,
+  "input_format": "zip+txt",
+  "archive_member_name": "Taleb_Odurachennye-sluchaynostyu-Skrytaya-rol-shansa-v-biznese-i-zhizni.246383.txt",
+  "encoding": "utf-8-sig",
+  "author": "Нассим Талеб",
+  "title": "Одураченные случайностью. Скрытая роль шанса в бизнесе и в жизни",
+  "headings": [
+    {
+      "line": 6,
+      "title": "ПредисловиеНе очень серьезное представление знаний",
+      "level": 2
+    },
+    {
+      "line": 58,
+      "title": "Часть I",
+      "level": 1
+    },
+    {
+      "line": 65,
+      "title": "Глава 1",
+      "level": 2
+    },
+    {
+      "line": 116,
+      "title": "Глава 2",
+      "level": 2
+    },
+    {
+      "line": 183,
+      "title": "Глава 3",
+      "level": 2
+    },
+    {
+      "line": 272,
+      "title": "Глава 4",
+      "level": 2
+    },
+    {
+      "line": 301,
+      "title": "Глава 5",
+      "level": 2
+    },
+    {
+      "line": 369,
+      "title": "Глава 6",
+      "level": 2
+    },
+    {
+      "line": 432,
+      "title": "Глава 7",
+      "level": 2
+    },
+    {
+      "line": 497,
+      "title": "Часть II",
+      "level": 1
+    },
+    {
+      "line": 509,
+      "title": "Глава 8",
+      "level": 2
+    },
+    {
+      "line": 541,
+      "title": "Глава 9",
+      "level": 2
+    },
+    {
+      "line": 635,
+      "title": "Глава 10",
+      "level": 2
+    },
+    {
+      "line": 668,
+      "title": "Глава 11",
+      "level": 2
+    },
+    {
+      "line": 796,
+      "title": "Часть III",
+      "level": 1
+    },
+    {
+      "line": 813,
+      "title": "Глава 12",
+      "level": 2
+    },
+    {
+      "line": 835,
+      "title": "Глава 13",
+      "level": 2
+    },
+    {
+      "line": 871,
+      "title": "Глава 14",
+      "level": 2
+    },
+    {
+      "line": 884,
+      "title": "Эпилог",
+      "level": 2
+    },
+    {
+      "line": 996,
+      "title": "Книга Нидерхоффера.См. Niderhoffer (1997).",
+      "level": 2
+    },
+    {
+      "line": 1053,
+      "title": "Книга Жана-Мануэля Розана «Деньги» (Le fric). См. Rozan (1999).",
+      "level": 2
+    }
+  ],
+  "text_member_sha256": "8e70b167c1306b15163ba64a36528712c97ee6a5e353c01eb3dfc06f3aa38f13",
+  "text_member_bytes": 1061183,
+  "images": 9,
+  "preservation": "Complete TXT including preface, advertising, images-as-markers and end sections; only BOM/newline normalization. Headings are a navigation aid, not a claim of reconstructed typography.",
+  "bytes": 1061183,
+  "lines": 1165,
+  "words": 80928,
+  "sha256": "8e70b167c1306b15163ba64a36528712c97ee6a5e353c01eb3dfc06f3aa38f13"
+}

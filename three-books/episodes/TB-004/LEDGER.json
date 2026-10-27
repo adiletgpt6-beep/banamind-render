@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "episode_id": "TB-004",
+  "currency": "fictional_tokens",
+  "model": "Simplified cash example, not valuation of own labour or forecast of attendance",
+  "initial_owned": 900,
+  "personal_earmark": 500,
+  "ticket_price": 30,
+  "capacity": 14,
+  "costs": {
+    "setup_cost": 300,
+    "night_cost": 160,
+    "extension_rent": 300,
+    "extension_helper": 80,
+    "extension_total": 380
+  },
+  "events": [
+    {
+      "id": "initial",
+      "owned": 900,
+      "advance_liability": 0,
+      "cash": 900
+    },
+    {
+      "id": "setup_paid",
+      "owned": 600,
+      "advance_liability": 0,
+      "cash": 600,
+      "delta_owned": -300
+    },
+    {
+      "id": "night1",
+      "tickets": 8,
+      "receipts": 240,
+      "cost": 160,
+      "delta_owned": 80,
+      "owned": 680,
+      "advance_liability": 0,
+      "cash": 680
+    },
+    {
+      "id": "night2",
+      "tickets": 7,
+      "receipts": 210,
+      "cost": 160,
+      "delta_owned": 50,
+      "owned": 730,
+      "advance_liability": 0,
+      "cash": 730
+    },
+    {
+      "id": "night3",
+      "tickets": 3,
+      "receipts": 90,
+      "cost": 160,
+      "delta_owned": -70,
+      "owned": 660,
+      "advance_liability": 0,
+      "cash": 660
+    },
+    {
+      "id": "four_refundable_advances",
+      "owned": 660,
+      "advance_liability": 120,
+      "cash": 780,
+      "available_for_project": 160
+    },
+    {
+      "id": "extension_declined",
+      "owned": 660,
+      "advance_liability": 120,
+      "cash": 780,
+      "new_cost": 0
+    },
+    {
+      "id": "four_refunds_completed",
+      "owned": 660,
+      "advance_liability": 0,
+      "cash": 660,
+      "delta_cash": -120,
+      "delta_owned": 0,
+      "project_result": -240
+    }
+  ],
+  "cash_order_note": "Within each completed evening, ticket receipts precede settlement of that evening cost. Show aggregated nightly result, not a new upfront cost after the fact.",
+  "scenarios": {
+    "four_only": {
+      "status": "hypothetical_not_realized",
+      "receipts": 120,
+      "cost": 380,
+      "incremental_result": -260,
+      "owned_after": 400
+    },
+    "full": {
+      "status": "hypothetical_not_realized",
+      "tickets": 14,
+      "receipts": 420,
+      "cost": 380,
+      "incremental_result": 40,
+      "owned_after": 700,
+      "project_result": -200
+    },
+    "recover_all": {
+      "required_receipts": 620,
+      "minimum_tickets": 21,
+      "receipts_at_20": 600,
+      "receipts_at_21": 630,
+      "capacity": 14,
+      "possible_in_one_session": false
+    }
+  },
+  "refunds": [
+    {
+      "guest": "G1",
+      "advance": 30,
+      "refunded": 30,
+      "status": "refunded_in_chosen_story"
+    },
+    {
+      "guest": "G2",
+      "advance": 30,
+      "refunded": 30,
+      "status": "refunded_in_chosen_story"
+    },
+    {
+      "guest": "G3",
+      "advance": 30,
+      "refunded": 30,
+      "status": "refunded_in_chosen_story"
+    },
+    {
+      "guest": "G4",
+      "advance": 30,
+      "refunded": 30,
+      "status": "refunded_in_chosen_story"
+    }
+  ],
+  "state_rules": [
+    "cash = owned + advance_liability at the three shown balance states",
+    "earmark 500 is inside owned, never added on top of it",
+    "decorative particles are material, a monetary token is a separate logical entity",
+    "do not double-count refund as an additional owned expense",
+    "after a hypothetical branch restore actual owned=660"
+  ],
+  "source_of_numbers": "Original fictional example devised for this screenplay; not copied from any source and not a financial recommendation"
+}

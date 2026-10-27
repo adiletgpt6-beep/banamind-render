@@ -1,0 +1,128 @@
+{
+  "pdf_pages": 670,
+  "low_text_pages": [
+    1,
+    295,
+    401,
+    489,
+    670
+  ],
+  "visual_review_engine": "PyMuPDF 1.26.6",
+  "visual_pages": [
+    1,
+    2,
+    295,
+    401,
+    489,
+    546,
+    547,
+    556,
+    670
+  ],
+  "font_note": "14 Type1 fonts are unembedded with custom encodings. Poppler rendering loses most Cyrillic glyphs in this environment; PyMuPDF fallback renders selected Cyrillic pages correctly. Extraction is separate from rendering.",
+  "independent_character_multiset_comparison": {
+    "method": "per-page letters/digits with case folding and ё→е; order not proven by a multiset",
+    "exact_pages": 655,
+    "mismatches": [
+      {
+        "pdf_page": 243,
+        "character_multiset_delta": 1,
+        "poppler_chars": 1467,
+        "mupdf_chars": 1466
+      },
+      {
+        "pdf_page": 318,
+        "character_multiset_delta": 11,
+        "poppler_chars": 663,
+        "mupdf_chars": 674
+      },
+      {
+        "pdf_page": 348,
+        "character_multiset_delta": 89,
+        "poppler_chars": 1242,
+        "mupdf_chars": 1331
+      },
+      {
+        "pdf_page": 379,
+        "character_multiset_delta": 14,
+        "poppler_chars": 797,
+        "mupdf_chars": 811
+      },
+      {
+        "pdf_page": 386,
+        "character_multiset_delta": 1,
+        "poppler_chars": 620,
+        "mupdf_chars": 621
+      },
+      {
+        "pdf_page": 452,
+        "character_multiset_delta": 1,
+        "poppler_chars": 515,
+        "mupdf_chars": 514
+      },
+      {
+        "pdf_page": 458,
+        "character_multiset_delta": 100,
+        "poppler_chars": 1298,
+        "mupdf_chars": 1398
+      },
+      {
+        "pdf_page": 470,
+        "character_multiset_delta": 4,
+        "poppler_chars": 575,
+        "mupdf_chars": 579
+      },
+      {
+        "pdf_page": 493,
+        "character_multiset_delta": 121,
+        "poppler_chars": 1188,
+        "mupdf_chars": 1309
+      },
+      {
+        "pdf_page": 494,
+        "character_multiset_delta": 5,
+        "poppler_chars": 1467,
+        "mupdf_chars": 1472
+      },
+      {
+        "pdf_page": 498,
+        "character_multiset_delta": 4,
+        "poppler_chars": 1233,
+        "mupdf_chars": 1237
+      },
+      {
+        "pdf_page": 502,
+        "character_multiset_delta": 218,
+        "poppler_chars": 1204,
+        "mupdf_chars": 1422
+      },
+      {
+        "pdf_page": 515,
+        "character_multiset_delta": 8,
+        "poppler_chars": 1034,
+        "mupdf_chars": 1042
+      },
+      {
+        "pdf_page": 523,
+        "character_multiset_delta": 95,
+        "poppler_chars": 1304,
+        "mupdf_chars": 1399
+      },
+      {
+        "pdf_page": 658,
+        "character_multiset_delta": 1,
+        "poppler_chars": 656,
+        "mupdf_chars": 657
+      }
+    ]
+  },
+  "low_text_review": {
+    "1": "English title page is image-visible, no extracted text",
+    "295": "visually blank separator",
+    "401": "visually blank separator",
+    "489": "visually blank separator",
+    "670": "image-only Russian cover, original retained"
+  },
+  "text_correctness_scope": "No fresh OCR was performed. All text-layer pages are stored, and full original bytes remain available. This is not a claim of manual proofreading of all 670 pages.",
+  "review_image": "private/source-review/S02-review.png"
+}

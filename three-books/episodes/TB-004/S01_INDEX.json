@@ -1,0 +1,309 @@
+{
+  "id": "S01",
+  "input_bytes": 459031,
+  "input_sha256": "10dadd56edc5625e70ba513532c4293ec7ea961091256b3870f516ed7585f584",
+  "members": [
+    {
+      "name": "mimetype",
+      "bytes": 20,
+      "sha256": "e468e350d1143eb648f60c7b0bd6031101ec0544a361ca74ecef256ac901f48b"
+    },
+    {
+      "name": "META-INF/container.xml",
+      "bytes": 242,
+      "sha256": "b9c0c7373fcfc90da2250b68296c07e6625c007dbb82c96fd25b99469cf42e92"
+    },
+    {
+      "name": "content.opf",
+      "bytes": 3208,
+      "sha256": "e5481bd14dd11122a73c531ce01eba3b8d258ea41672f2d77afb905d63759b95"
+    },
+    {
+      "name": "content0.html",
+      "bytes": 26724,
+      "sha256": "a04b507289e9ba8dddaa6588a343c7df5f440c4acdd95dfca18d4a1c62c042d6"
+    },
+    {
+      "name": "content1.html",
+      "bytes": 18591,
+      "sha256": "64e7ebe5f3e6d66ca69211dde8ba462d4f4219aa2e0e72201991de51d9343413"
+    },
+    {
+      "name": "content2.html",
+      "bytes": 11530,
+      "sha256": "8760372a870ba79482ce4f437c23788de3659cdb2eee65700fe80b21449549b5"
+    },
+    {
+      "name": "content3.html",
+      "bytes": 12975,
+      "sha256": "19e20063dfcea52952c5be90a81a7cdf3c3d4685602833b37c3e8a227575cbee"
+    },
+    {
+      "name": "content4.html",
+      "bytes": 200037,
+      "sha256": "a2b701e7baf56ceb700949ff330fb259f75d2ca6a325455dd8f858dd85856cdd"
+    },
+    {
+      "name": "content5.html",
+      "bytes": 5448,
+      "sha256": "fe483951924da949ef86a0df8a8885b216a18f0f1e5fbe3d63abbb4c6bdbc0ea"
+    },
+    {
+      "name": "cover.jpg",
+      "bytes": 108437,
+      "sha256": "e4509c3fa04e3be2a5696ccf861f503b9fda1a04af75af8ee86a2a7fa3781a90"
+    },
+    {
+      "name": "cover.xhtml",
+      "bytes": 645,
+      "sha256": "9f6fe7c46ade75104e0131f2ba522dcc6f2c606edfd8007ccee4fc7e5a20a43e"
+    },
+    {
+      "name": "image0_5f44c68c92ae5600071c5d15_jpg.jpeg",
+      "bytes": 68033,
+      "sha256": "3e2c5dd745776d8461d76fab9a1cc6bb4bf0787823066ceb879ffd3bc1275b09"
+    },
+    {
+      "name": "style.css",
+      "bytes": 2036,
+      "sha256": "e315875d8a2db80104388bf4a647a9fb39f340a1dcaa4da85f9aa3214aa4d742"
+    },
+    {
+      "name": "toc.ncx",
+      "bytes": 824,
+      "sha256": "6f98f5fcb7dfb51f925d8d6e121c0a51b8d2de3c4dc9d6282f8daa4aaf999fbf"
+    },
+    {
+      "name": "unicode_fonts.css",
+      "bytes": 577,
+      "sha256": "1b5a469405e89198819cdbf8354329d84520281d849d33676ec1bd86ee0e6dd5"
+    }
+  ],
+  "archive_crc_ok": true,
+  "input_format": "epub",
+  "title": "Финергетика. Наука о денежном магнетизме",
+  "author": "Олжас Сеитов",
+  "encoding": "utf-8",
+  "spine": [
+    "cover.xhtml",
+    "content0.html",
+    "content1.html",
+    "content2.html",
+    "content3.html",
+    "content4.html",
+    "content5.html"
+  ],
+  "documents": [
+    {
+      "path": "cover.xhtml",
+      "first_line": 2,
+      "last_line": 2,
+      "sha256": "9f6fe7c46ade75104e0131f2ba522dcc6f2c606edfd8007ccee4fc7e5a20a43e",
+      "images": [
+        {
+          "src": "cover.jpg",
+          "alt": "cover"
+        }
+      ],
+      "links": [],
+      "anchors": []
+    },
+    {
+      "path": "content0.html",
+      "first_line": 4,
+      "last_line": 51,
+      "sha256": "a04b507289e9ba8dddaa6588a343c7df5f440c4acdd95dfca18d4a1c62c042d6",
+      "images": [],
+      "links": [
+        {
+          "href": "http://www.finergetika.com/",
+          "line": 34,
+          "noteref": false
+        },
+        {
+          "href": "http://www.seitov.kz/",
+          "line": 46,
+          "noteref": false
+        }
+      ],
+      "anchors": [
+        {
+          "id": "mh_toc_31",
+          "line": 1
+        },
+        {
+          "id": "mh_toc_42",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "content1.html",
+      "first_line": 53,
+      "last_line": 76,
+      "sha256": "64e7ebe5f3e6d66ca69211dde8ba462d4f4219aa2e0e72201991de51d9343413",
+      "images": [],
+      "links": [],
+      "anchors": [
+        {
+          "id": "mh_toc_91",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "content2.html",
+      "first_line": 78,
+      "last_line": 86,
+      "sha256": "8760372a870ba79482ce4f437c23788de3659cdb2eee65700fe80b21449549b5",
+      "images": [],
+      "links": [],
+      "anchors": [
+        {
+          "id": "mh_toc_120",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "content3.html",
+      "first_line": 88,
+      "last_line": 112,
+      "sha256": "19e20063dfcea52952c5be90a81a7cdf3c3d4685602833b37c3e8a227575cbee",
+      "images": [],
+      "links": [],
+      "anchors": [
+        {
+          "id": "mh_toc_132",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "content4.html",
+      "first_line": 114,
+      "last_line": 328,
+      "sha256": "a2b701e7baf56ceb700949ff330fb259f75d2ca6a325455dd8f858dd85856cdd",
+      "images": [
+        {
+          "src": "image0_5f44c68c92ae5600071c5d15_jpg.jpeg",
+          "alt": ""
+        }
+      ],
+      "links": [],
+      "anchors": [
+        {
+          "id": "mh_toc_163",
+          "line": 1
+        },
+        {
+          "id": "mh_toc_191",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "content5.html",
+      "first_line": 330,
+      "last_line": 343,
+      "sha256": "fe483951924da949ef86a0df8a8885b216a18f0f1e5fbe3d63abbb4c6bdbc0ea",
+      "images": [],
+      "links": [
+        {
+          "href": "https://finergetika.com/painhunting",
+          "line": 5,
+          "noteref": false
+        },
+        {
+          "href": "http://instagram.com/seitov.official",
+          "line": 7,
+          "noteref": false
+        },
+        {
+          "href": "http://finergetika.com/",
+          "line": 9,
+          "noteref": false
+        },
+        {
+          "href": "http://seitov.kz/fe",
+          "line": 10,
+          "noteref": false
+        }
+      ],
+      "anchors": [
+        {
+          "id": "mh_toc_428",
+          "line": 1
+        }
+      ]
+    }
+  ],
+  "headings": [
+    {
+      "line": 4,
+      "title": "Финергетика",
+      "level": 1,
+      "document": "content0.html"
+    },
+    {
+      "line": 5,
+      "title": "Наука о денежном магнетизме",
+      "level": 1,
+      "document": "content0.html"
+    },
+    {
+      "line": 6,
+      "title": "Олжас Сеитов",
+      "level": 1,
+      "document": "content0.html"
+    },
+    {
+      "line": 10,
+      "title": "О финергетике",
+      "level": 1,
+      "document": "content0.html"
+    },
+    {
+      "line": 53,
+      "title": "Немного о возникновении подсознательных установок",
+      "level": 1,
+      "document": "content1.html"
+    },
+    {
+      "line": 78,
+      "title": "Подсознание – как большая корпорация",
+      "level": 1,
+      "document": "content2.html"
+    },
+    {
+      "line": 88,
+      "title": "Боль и сила подсознательных установок",
+      "level": 1,
+      "document": "content3.html"
+    },
+    {
+      "line": 114,
+      "title": "Степень упрямства установок",
+      "level": 1,
+      "document": "content4.html"
+    },
+    {
+      "line": 132,
+      "title": "Шкала эмоций",
+      "level": 1,
+      "document": "content4.html"
+    },
+    {
+      "line": 330,
+      "title": "Заключение",
+      "level": 1,
+      "document": "content5.html"
+    }
+  ],
+  "images": 2,
+  "preservation": "All spine bodies in package reading order, mixed inline text, image markers; original bytes retained. Navigation/metadata/assets retained in original, not substituted for body text.",
+  "bytes": 260903,
+  "lines": 343,
+  "words": 21844,
+  "sha256": "6b930b977717baf40f783aeb7252462fdd4a4ef304ec4be8525e49d00ad5b9aa"
+}

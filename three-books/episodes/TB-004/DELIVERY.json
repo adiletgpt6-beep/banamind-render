@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "episode_id": "TB-004",
+  "revision_id": null,
+  "status": "NOT_PRODUCED",
+  "video": {
+    "watch_url": null,
+    "download_url": null,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_seconds": 1800,
+    "frame_count": 54000
+  },
+  "preview": null,
+  "audio": null,
+  "subtitles": [],
+  "titles_file": "metadata/TITLES.md",
+  "thumbnails": [],
+  "gallery_url": null,
+  "visual_quality": {
+    "status": "NOT_MEASURED",
+    "profile_hash": null,
+    "report": null,
+    "evidence_url": null
+  },
+  "qa_report": "QA.md",
+  "release_tag": "tb-004-film",
+  "note": "Specification only; URLs and hashes are filled only after real rendering and verified upload."
+}
