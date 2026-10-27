@@ -1,0 +1,984 @@
+{
+  "probes": [
+    {
+      "file": "N01-KG-teacher-2801-curious.mp3",
+      "line": "N01",
+      "voice": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "seed": 2801,
+      "tag": "[curious]",
+      "durationSec": 6.93,
+      "speechSec": 6.573,
+      "words": [
+        {
+          "text": "Апасы",
+          "start": 0.117,
+          "end": 0.45
+        },
+        {
+          "text": "үйдөн",
+          "start": 0.53,
+          "end": 0.77
+        },
+        {
+          "text": "иштечү.",
+          "start": 0.85,
+          "end": 1.517
+        },
+        {
+          "text": "Бирок",
+          "start": 1.677,
+          "end": 1.97
+        },
+        {
+          "text": "жумуштан",
+          "start": 2.01,
+          "end": 2.53
+        },
+        {
+          "text": "үйгө",
+          "start": 2.61,
+          "end": 3.05
+        },
+        {
+          "text": "баарынан",
+          "start": 3.09,
+          "end": 3.49
+        },
+        {
+          "text": "кеч",
+          "start": 3.53,
+          "end": 3.73
+        },
+        {
+          "text": "кайтчу...",
+          "start": 3.77,
+          "end": 4.29
+        },
+        {
+          "text": "Болгону,",
+          "start": 4.73,
+          "end": 5.25
+        },
+        {
+          "text": "коңшу",
+          "start": 5.57,
+          "end": 5.73
+        },
+        {
+          "text": "бөлмөдөн",
+          "start": 5.77,
+          "end": 6.21
+        },
+        {
+          "text": "чыкчу.",
+          "start": 6.25,
+          "end": 6.69
+        }
+      ],
+      "cer": 0.126,
+      "heard": "апасы үйдөн иштечи бирок жомуштан үйгү баарынан кеч кайтчы бол бону оншу бирмөдөн чыкчы",
+      "f0": 252
+    },
+    {
+      "file": "N01-KG-teacher-2801-notag.mp3",
+      "line": "N01",
+      "voice": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "seed": 2801,
+      "tag": null,
+      "durationSec": 6.75,
+      "speechSec": 6.55,
+      "words": [
+        {
+          "text": "Апасы",
+          "start": 0,
+          "end": 0.47
+        },
+        {
+          "text": "үйдөн",
+          "start": 0.55,
+          "end": 0.79
+        },
+        {
+          "text": "иштечү.",
+          "start": 0.83,
+          "end": 1.47
+        },
+        {
+          "text": "Бирок",
+          "start": 1.63,
+          "end": 1.91
+        },
+        {
+          "text": "жумуштан",
+          "start": 1.95,
+          "end": 2.47
+        },
+        {
+          "text": "үйгө",
+          "start": 2.549,
+          "end": 3.03
+        },
+        {
+          "text": "баарынан",
+          "start": 3.057,
+          "end": 3.43
+        },
+        {
+          "text": "кеч",
+          "start": 3.47,
+          "end": 3.59
+        },
+        {
+          "text": "кайтчу...",
+          "start": 3.67,
+          "end": 4.15
+        },
+        {
+          "text": "Болгону,",
+          "start": 4.67,
+          "end": 5.11
+        },
+        {
+          "text": "коңшу",
+          "start": 5.243,
+          "end": 5.59
+        },
+        {
+          "text": "бөлмөдөн",
+          "start": 5.63,
+          "end": 6.07
+        },
+        {
+          "text": "чыкчу.",
+          "start": 6.11,
+          "end": 6.55
+        }
+      ],
+      "cer": 0.092,
+      "heard": "апасы үйлөн иштечи бирок юмуштан үйгү баарынан кеч кайтчы болгону коңшу белмөдөн чыкчы",
+      "f0": 227
+    },
+    {
+      "file": "N01-Eric-2801-curious.mp3",
+      "line": "N01",
+      "voice": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "seed": 2801,
+      "tag": "[curious]",
+      "durationSec": 6.85,
+      "speechSec": 6.493,
+      "words": [
+        {
+          "text": "Апасы",
+          "start": 0.077,
+          "end": 0.57
+        },
+        {
+          "text": "үйдөн",
+          "start": 0.73,
+          "end": 0.97
+        },
+        {
+          "text": "иштечү.",
+          "start": 1.01,
+          "end": 1.743
+        },
+        {
+          "text": "Бирок",
+          "start": 2.063,
+          "end": 2.33
+        },
+        {
+          "text": "жумуштан",
+          "start": 2.37,
+          "end": 2.81
+        },
+        {
+          "text": "үйгө",
+          "start": 2.89,
+          "end": 3.13
+        },
+        {
+          "text": "баарынан",
+          "start": 3.157,
+          "end": 3.45
+        },
+        {
+          "text": "кеч",
+          "start": 3.49,
+          "end": 3.61
+        },
+        {
+          "text": "кайтчу...",
+          "start": 3.65,
+          "end": 4.17
+        },
+        {
+          "text": "Болгону,",
+          "start": 4.95,
+          "end": 5.37
+        },
+        {
+          "text": "коңшу",
+          "start": 5.61,
+          "end": 5.77
+        },
+        {
+          "text": "бөлмөдөн",
+          "start": 5.81,
+          "end": 6.223
+        },
+        {
+          "text": "чыкчу.",
+          "start": 6.237,
+          "end": 6.57
+        }
+      ],
+      "cer": 0.034,
+      "heard": "апасы үйдөн иштечү бирок жумуштан үйгө баарынан кеч кайтчу болгону көнчу бөлмөдөн чыкчу",
+      "f0": 163.3
+    },
+    {
+      "file": "N01-Eric-2801-notag.mp3",
+      "line": "N01",
+      "voice": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "seed": 2801,
+      "tag": null,
+      "durationSec": 8,
+      "speechSec": 7.76,
+      "words": [
+        {
+          "text": "Апасы",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "text": "үйдөн",
+          "start": 0.48,
+          "end": 0.747
+        },
+        {
+          "text": "иштечү.",
+          "start": 0.773,
+          "end": 1.547
+        },
+        {
+          "text": "Бирок",
+          "start": 1.947,
+          "end": 2.4
+        },
+        {
+          "text": "жумуштан",
+          "start": 2.52,
+          "end": 3.04
+        },
+        {
+          "text": "үйгө",
+          "start": 3.119,
+          "end": 3.64
+        },
+        {
+          "text": "баарынан",
+          "start": 3.707,
+          "end": 4.08
+        },
+        {
+          "text": "кеч",
+          "start": 4.16,
+          "end": 4.32
+        },
+        {
+          "text": "кайтчу...",
+          "start": 4.36,
+          "end": 4.88
+        },
+        {
+          "text": "Болгону,",
+          "start": 5.48,
+          "end": 6.16
+        },
+        {
+          "text": "коңшу",
+          "start": 6.373,
+          "end": 6.88
+        },
+        {
+          "text": "бөлмөдөн",
+          "start": 6.92,
+          "end": 7.28
+        },
+        {
+          "text": "чыкчу.",
+          "start": 7.32,
+          "end": 7.76
+        }
+      ],
+      "cer": 0,
+      "heard": "апасы үйдөн иштечү – бирок жумуштан үйгө баарынан кеч кайтчу болгону коңшу бөлмөдөн чыкчу",
+      "f0": 156.9
+    },
+    {
+      "file": "M02-KG-mother-2801-calm.mp3",
+      "line": "M02",
+      "voice": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "seed": 2801,
+      "tag": "[calm]",
+      "durationSec": 5.03,
+      "speechSec": 4.576,
+      "words": [
+        {
+          "text": "Жок,",
+          "start": 0.144,
+          "end": 0.4
+        },
+        {
+          "text": "ошол",
+          "start": 0.64,
+          "end": 0.88
+        },
+        {
+          "text": "эле.",
+          "start": 0.96,
+          "end": 1.2
+        },
+        {
+          "text": "Болгону,",
+          "start": 1.48,
+          "end": 2.32
+        },
+        {
+          "text": "алаксыбай",
+          "start": 2.453,
+          "end": 3.04
+        },
+        {
+          "text": "отуруп,",
+          "start": 3.093,
+          "end": 3.36
+        },
+        {
+          "text": "талдоону",
+          "start": 3.64,
+          "end": 4.08
+        },
+        {
+          "text": "бүтүрүп",
+          "start": 4.12,
+          "end": 4.507
+        },
+        {
+          "text": "алдым.",
+          "start": 4.524,
+          "end": 4.72
+        }
+      ],
+      "cer": 0.033,
+      "heard": "доок ошол эле болгону алаксыбай отуруп талдоону бүтүрүп алдым",
+      "f0": 219.2
+    },
+    {
+      "file": "M02-KG-mother-2801-notag.mp3",
+      "line": "M02",
+      "voice": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "seed": 2801,
+      "tag": null,
+      "durationSec": 4.5,
+      "speechSec": 4.24,
+      "words": [
+        {
+          "text": "Жок,",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "ошол",
+          "start": 0.38,
+          "end": 0.64
+        },
+        {
+          "text": "эле.",
+          "start": 0.68,
+          "end": 0.88
+        },
+        {
+          "text": "Болгону,",
+          "start": 1.28,
+          "end": 1.68
+        },
+        {
+          "text": "алаксыбай",
+          "start": 1.787,
+          "end": 2.32
+        },
+        {
+          "text": "отуруп,",
+          "start": 2.373,
+          "end": 2.72
+        },
+        {
+          "text": "талдоону",
+          "start": 3,
+          "end": 3.52
+        },
+        {
+          "text": "бүтүрүп",
+          "start": 3.56,
+          "end": 3.947
+        },
+        {
+          "text": "алдым.",
+          "start": 3.964,
+          "end": 4.24
+        }
+      ],
+      "cer": 0.033,
+      "heard": "жоок ошол эле болгону алак сыбай отуруп талдоону бүтүрүп алдым",
+      "f0": 225.4
+    },
+    {
+      "file": "M02-KG-mother-2812-calm.mp3",
+      "line": "M02",
+      "voice": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "seed": 2812,
+      "tag": "[calm]",
+      "durationSec": 4.95,
+      "speechSec": 4.648,
+      "words": [
+        {
+          "text": "Жок,",
+          "start": 0.062,
+          "end": 0.39
+        },
+        {
+          "text": "ошол",
+          "start": 0.55,
+          "end": 0.87
+        },
+        {
+          "text": "эле.",
+          "start": 0.91,
+          "end": 1.11
+        },
+        {
+          "text": "Болгону,",
+          "start": 1.61,
+          "end": 2.23
+        },
+        {
+          "text": "алаксыбай",
+          "start": 2.443,
+          "end": 2.95
+        },
+        {
+          "text": "отуруп,",
+          "start": 3.03,
+          "end": 3.43
+        },
+        {
+          "text": "талдоону",
+          "start": 3.55,
+          "end": 3.99
+        },
+        {
+          "text": "бүтүрүп",
+          "start": 4.03,
+          "end": 4.417
+        },
+        {
+          "text": "алдым.",
+          "start": 4.434,
+          "end": 4.71
+        }
+      ],
+      "cer": 0.033,
+      "heard": "жоок ошол эле болгону алахсыбай отуруп талдоону бүтүрүп алдым",
+      "f0": 220.7
+    },
+    {
+      "file": "M02-KG-mother-2812-notag.mp3",
+      "line": "M02",
+      "voice": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "seed": 2812,
+      "tag": null,
+      "durationSec": 4.6,
+      "speechSec": 4.32,
+      "words": [
+        {
+          "text": "Жок,",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "ошол",
+          "start": 0.44,
+          "end": 0.64
+        },
+        {
+          "text": "эле.",
+          "start": 0.68,
+          "end": 0.96
+        },
+        {
+          "text": "Болгону,",
+          "start": 1.36,
+          "end": 1.92
+        },
+        {
+          "text": "алаксыбай",
+          "start": 2.133,
+          "end": 2.64
+        },
+        {
+          "text": "отуруп,",
+          "start": 2.693,
+          "end": 2.96
+        },
+        {
+          "text": "талдоону",
+          "start": 3.12,
+          "end": 3.6
+        },
+        {
+          "text": "бүтүрүп",
+          "start": 3.64,
+          "end": 4.027
+        },
+        {
+          "text": "алдым.",
+          "start": 4.044,
+          "end": 4.32
+        }
+      ],
+      "cer": 0.033,
+      "heard": "жоок ошол эле болгону ал аксыбай отуруп талдоону бүтүрүп алдым",
+      "f0": 205.1
+    },
+    {
+      "file": "B01-KG-son-2801-softly.mp3",
+      "line": "B01",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "seed": 2801,
+      "tag": "[softly]",
+      "durationSec": 2.901,
+      "speechSec": 2.688,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0.072,
+          "end": 0.24
+        },
+        {
+          "text": "жазганымды",
+          "start": 0.44,
+          "end": 0.96
+        },
+        {
+          "text": "карачы.",
+          "start": 1,
+          "end": 1.52
+        },
+        {
+          "text": "Шашпай",
+          "start": 1.72,
+          "end": 2.08
+        },
+        {
+          "text": "карасаң,",
+          "start": 2.1,
+          "end": 2.52
+        },
+        {
+          "text": "ээ?",
+          "start": 2.6,
+          "end": 2.76
+        }
+      ],
+      "cer": 0.103,
+      "heard": "апа жазганымды карайчы шашпай карасаңы",
+      "f0": 333.3
+    },
+    {
+      "file": "B01-KG-son-2801-notag.mp3",
+      "line": "B01",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "seed": 2801,
+      "tag": null,
+      "durationSec": 3.23,
+      "speechSec": 2.94,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0,
+          "end": 0.38
+        },
+        {
+          "text": "жазганымды",
+          "start": 0.56,
+          "end": 1.18
+        },
+        {
+          "text": "карачы.",
+          "start": 1.22,
+          "end": 1.74
+        },
+        {
+          "text": "Шашпай",
+          "start": 1.92,
+          "end": 2.3
+        },
+        {
+          "text": "карасаң,",
+          "start": 2.34,
+          "end": 2.779
+        },
+        {
+          "text": "ээ?",
+          "start": 2.82,
+          "end": 2.94
+        }
+      ],
+      "cer": 0.077,
+      "heard": "апа жазганымды каратче шашпай карасаң э",
+      "f0": 340.4
+    },
+    {
+      "file": "B01-KG-son-2812-softly.mp3",
+      "line": "B01",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "seed": 2812,
+      "tag": "[softly]",
+      "durationSec": 3.2,
+      "speechSec": 2.888,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0.072,
+          "end": 0.4
+        },
+        {
+          "text": "жазганымды",
+          "start": 0.6,
+          "end": 1.2
+        },
+        {
+          "text": "карачы.",
+          "start": 1.24,
+          "end": 1.76
+        },
+        {
+          "text": "Шашпай",
+          "start": 1.96,
+          "end": 2.32
+        },
+        {
+          "text": "карасаң,",
+          "start": 2.36,
+          "end": 2.827
+        },
+        {
+          "text": "ээ?",
+          "start": 2.867,
+          "end": 2.96
+        }
+      ],
+      "cer": 0.179,
+      "heard": "апа  жазганында карачи шашпай карасаны",
+      "f0": 326.5
+    },
+    {
+      "file": "B01-KG-son-2812-notag.mp3",
+      "line": "B01",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "seed": 2812,
+      "tag": null,
+      "durationSec": 3.09,
+      "speechSec": 2.85,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0,
+          "end": 0.37
+        },
+        {
+          "text": "жазганымды",
+          "start": 0.57,
+          "end": 1.09
+        },
+        {
+          "text": "карачы.",
+          "start": 1.13,
+          "end": 1.65
+        },
+        {
+          "text": "Шашпай",
+          "start": 1.81,
+          "end": 2.21
+        },
+        {
+          "text": "карасаң,",
+          "start": 2.25,
+          "end": 2.609
+        },
+        {
+          "text": "ээ?",
+          "start": 2.69,
+          "end": 2.85
+        }
+      ],
+      "cer": 0.051,
+      "heard": "апа  жазбанымды каратчы шашпай карасаң ээ",
+      "f0": 320
+    },
+    {
+      "file": "B02-KG-son-2801-hopeful.mp3",
+      "line": "B02",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "seed": 2801,
+      "tag": "[hopeful]",
+      "durationSec": 1.28,
+      "speechSec": 0.968,
+      "words": [
+        {
+          "text": "Бир",
+          "start": 0.072,
+          "end": 0.16
+        },
+        {
+          "text": "бөлүм",
+          "start": 0.2,
+          "end": 0.453
+        },
+        {
+          "text": "окуйбузбу?",
+          "start": 0.467,
+          "end": 1.04
+        }
+      ],
+      "cer": 0.053,
+      "heard": "бир бөлүм окубузбу",
+      "f0": 355.6
+    },
+    {
+      "file": "B02-KG-son-2801-notag.mp3",
+      "line": "B02",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "seed": 2801,
+      "tag": null,
+      "durationSec": 1.22,
+      "speechSec": 1.04,
+      "words": [
+        {
+          "text": "Бир",
+          "start": 0,
+          "end": 0.16
+        },
+        {
+          "text": "бөлүм",
+          "start": 0.2,
+          "end": 0.4
+        },
+        {
+          "text": "окуйбузбу?",
+          "start": 0.44,
+          "end": 1.04
+        }
+      ],
+      "cer": 0.105,
+      "heard": "бир бөлүм окойбузбы",
+      "f0": 355.6
+    },
+    {
+      "file": "B02-KG-son-2812-hopeful.mp3",
+      "line": "B02",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "seed": 2812,
+      "tag": "[hopeful]",
+      "durationSec": 1.5,
+      "speechSec": 1.064,
+      "words": [
+        {
+          "text": "Бир",
+          "start": 0.116,
+          "end": 0.14
+        },
+        {
+          "text": "бөлүм",
+          "start": 0.22,
+          "end": 0.46
+        },
+        {
+          "text": "окуйбузбу?",
+          "start": 0.54,
+          "end": 1.18
+        }
+      ],
+      "cer": 0.053,
+      "heard": "бир бөлүм окуюбузбу",
+      "f0": 320
+    },
+    {
+      "file": "B02-KG-son-2812-notag.mp3",
+      "line": "B02",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "seed": 2812,
+      "tag": null,
+      "durationSec": 1.42,
+      "speechSec": 1.12,
+      "words": [
+        {
+          "text": "Бир",
+          "start": 0,
+          "end": 0.08
+        },
+        {
+          "text": "бөлүм",
+          "start": 0.16,
+          "end": 0.507
+        },
+        {
+          "text": "окуйбузбу?",
+          "start": 0.533,
+          "end": 1.12
+        }
+      ],
+      "cer": 0,
+      "heard": "бир бөлүм окуйбузбу",
+      "f0": 313.7
+    },
+    {
+      "file": "F02-KG-husband-2801-surprised.mp3",
+      "line": "F02",
+      "voice": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "seed": 2801,
+      "tag": "[surprised]",
+      "durationSec": 1.42,
+      "speechSec": 1.127,
+      "words": [
+        {
+          "text": "Бүгүн",
+          "start": 0.043,
+          "end": 0.29
+        },
+        {
+          "text": "ишиң",
+          "start": 0.33,
+          "end": 0.65
+        },
+        {
+          "text": "азыраакпы?",
+          "start": 0.67,
+          "end": 1.17
+        }
+      ],
+      "cer": 0.15,
+      "heard": "бүгөн ишиң азырахпы",
+      "f0": 131.1
+    },
+    {
+      "file": "F02-KG-husband-2801-notag.mp3",
+      "line": "F02",
+      "voice": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "seed": 2801,
+      "tag": null,
+      "durationSec": 1.41,
+      "speechSec": 1.12,
+      "words": [
+        {
+          "text": "Бүгүн",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "ишиң",
+          "start": 0.36,
+          "end": 0.6
+        },
+        {
+          "text": "азыраакпы?",
+          "start": 0.62,
+          "end": 1.12
+        }
+      ],
+      "cer": 0.1,
+      "heard": "бүгүн ишең азыракпы",
+      "f0": 122.1
+    },
+    {
+      "file": "F02-KG-husband-2812-surprised.mp3",
+      "line": "F02",
+      "voice": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "seed": 2812,
+      "tag": "[surprised]",
+      "durationSec": 1.45,
+      "speechSec": 1.127,
+      "words": [
+        {
+          "text": "Бүгүн",
+          "start": 0.063,
+          "end": 0.337
+        },
+        {
+          "text": "ишиң",
+          "start": 0.363,
+          "end": 0.657
+        },
+        {
+          "text": "азыраакпы?",
+          "start": 0.683,
+          "end": 1.19
+        }
+      ],
+      "cer": 0.15,
+      "heard": "бүгүн ишим назыракпы",
+      "f0": 133.9
+    },
+    {
+      "file": "F02-KG-husband-2812-notag.mp3",
+      "line": "F02",
+      "voice": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "seed": 2812,
+      "tag": null,
+      "durationSec": 1.43,
+      "speechSec": 1.17,
+      "words": [
+        {
+          "text": "Бүгүн",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "text": "ишиң",
+          "start": 0.33,
+          "end": 0.65
+        },
+        {
+          "text": "азыраакпы?",
+          "start": 0.67,
+          "end": 1.17
+        }
+      ],
+      "cer": 0.25,
+      "heard": "бүбүн ичең назыракпы",
+      "f0": 115.9
+    }
+  ]
+}

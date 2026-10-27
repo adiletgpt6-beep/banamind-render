@@ -1,0 +1,249 @@
+name: BalaGoWorkFromHome2D (2D, №28)
+
+# Сценарий №28 в 2D: «Почему мама задерживалась дома?».
+# Собирается только эта композиция (прежние ролики здесь не рендерятся).
+#   voice   → короткие голосовые пробы (scripts/wfh2d-probe.json) и полная
+#             озвучка 19 реплик готовыми кыргызскими голосами проекта
+#             (3 дубля новой реплики, лучший по распознаванию MMS); новые
+#             файлы сохраняются в ветку, готовые не синтезируются повторно.
+#   render  → lint/TypeScript, тесты, контрольные кадры, MP4 1080×1920,
+#             мастеринг звука (−14 LUFS, true peak ≤ −2 dBTP), faststart и
+#             мобильная копия 540×960 из готового фильма, проверка формата.
+#   publish → оба MP4 файлами предварительного релиза work-from-home-2d-preview.
+
+on:
+  push:
+    paths:
+      - "src/work-from-home-2d/**"
+      - "src/BalaGoWorkFromHome2D.tsx"
+      - "scripts/*wfh2d*"
+      - "scripts/lib/wfh2d-*"
+      - "scripts/work-from-home-2d.test.mjs"
+      - "public/audio/work-from-home-2d/**"
+      - ".github/workflows/work-from-home-2d.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: work-from-home-2d-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: balago-28-work-from-home-2d
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    outputs:
+      complete: ${{ steps.check.outputs.complete }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-ts2d-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-ts2d-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      - name: Voice probes (cached probes are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/wfh2d-probe.mjs
+
+      - name: Full voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if node -e "process.exit(JSON.parse(require('fs').readFileSync('scripts/wfh2d-probe.json','utf8')).fullVoice ? 0 : 1)"; then
+            node scripts/generate-wfh2d-voice.mjs
+          else
+            echo "Полная озвучка ещё не включена (fullVoice: false) — только пробы."
+          fi
+
+      - name: Save new voice files to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          for d in public/audio/work-from-home-2d voice-samples/work-from-home-2d; do
+            if [ -d "$d" ]; then git add "$d"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save work-from-home-2d voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Is the voiceover complete?
+        id: check
+        run: |
+          # render: false в scripts/wfh2d-probe.json — пока сцены не готовы, MP4 не собирается.
+          if ! node -e "process.exit(JSON.parse(require('fs').readFileSync('scripts/wfh2d-probe.json','utf8')).render === false ? 1 : 0)"; then
+            echo "Рендер выключен (render: false)."
+            echo "complete=false" >> "$GITHUB_OUTPUT"
+          elif node --test scripts/work-from-home-2d.test.mjs > /tmp/t.log 2>&1 && WFH_STRICT_VOICE=1 node --test scripts/work-from-home-2d.test.mjs >> /tmp/t.log 2>&1; then
+            echo "complete=true" >> "$GITHUB_OUTPUT"
+          else
+            tail -40 /tmp/t.log
+            echo "complete=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload voice files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-28-work-from-home-2d-voice
+          path: |
+            public/audio/work-from-home-2d/
+            voice-samples/work-from-home-2d/
+          if-no-files-found: ignore
+          retention-days: 30
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.complete == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      # Голова ветки: в ней уже сохранённые задачей voice файлы.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (timeline, voice files, texts)
+        env:
+          WFH_STRICT_VOICE: "1"
+        run: node --test scripts/work-from-home-2d.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames
+        run: npm run stills:work-from-home-2d
+
+      - name: Render MP4 (H.264/AAC, yuv420p)
+        run: npx remotion render build BalaGoWorkFromHome2D "out/$OUT-raw.mp4" --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --audio-bitrate=192k --log=warn
+
+      - name: Master audio, faststart, mobile copy (540×960)
+        run: node scripts/wfh2d-master.mjs "out/$OUT-raw.mp4" "out/$OUT.mp4" "out/$OUT-mobile.mp4"
+
+      - name: Verify MP4 files (fail if missing or wrong format)
+        run: |
+          node scripts/verify-wfh2d.mjs "out/$OUT.mp4"
+          node scripts/verify-wfh2d.mjs "out/$OUT-mobile.mp4" --mobile
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-28-work-from-home-2d-mp4
+          path: out/balago-28-work-from-home-2d.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload mobile MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-28-work-from-home-2d-mobile-mp4
+          path: out/balago-28-work-from-home-2d-mobile.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-28-work-from-home-2d-frames
+          path: out/frames-work-from-home-2d/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  # Оба MP4 — файлами предварительного релиза: прямые ссылки на MP4.
+  publish:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: balago-28-work-from-home-2d-*mp4
+          merge-multiple: true
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: work-from-home-2d-preview
+        run: |
+          ls -la out
+          NOTES="BalaGoWorkFromHome2D (№28) — предварительный просмотр. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BalaGo №28 — 2D (предпросмотр)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-mobile.mp4"
+          {
+            echo "### MP4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-mobile.mp4"
+          } >> "$GITHUB_STEP_SUMMARY"

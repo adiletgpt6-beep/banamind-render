@@ -1,0 +1,550 @@
+{
+  "video": "BalaGoWorkFromHome2D",
+  "durationSec": 153,
+  "frames": 4590,
+  "cardFrom": 4440,
+  "scenes": [
+    {
+      "id": "paradox",
+      "title": "01. Ал үйдөн иштейт — бирок баарынан кеч",
+      "from": 0,
+      "to": 10
+    },
+    {
+      "id": "work",
+      "title": "02. Чыныгы жумуш күнү",
+      "from": 10,
+      "to": 21
+    },
+    {
+      "id": "morning",
+      "title": "03. Эртең мененки жол",
+      "from": 21,
+      "to": 29.5
+    },
+    {
+      "id": "keys",
+      "title": "04. Кайра ачкыч",
+      "from": 29.5,
+      "to": 41.5
+    },
+    {
+      "id": "context",
+      "title": "05. Баягы эле документ",
+      "from": 41.5,
+      "to": 55
+    },
+    {
+      "id": "late",
+      "title": "06. Дагы бир аз",
+      "from": 55,
+      "to": 68.5
+    },
+    {
+      "id": "dadPickup",
+      "title": "07. Бул жолу атасы алып келди",
+      "from": 68.5,
+      "to": 76.5
+    },
+    {
+      "id": "focus",
+      "title": "08. Иш үзгүлтүксүз",
+      "from": 76.5,
+      "to": 86.5
+    },
+    {
+      "id": "closing",
+      "title": "09. 17:30",
+      "from": 86.5,
+      "to": 101
+    },
+    {
+      "id": "notebook",
+      "title": "10. Шашпай карачы",
+      "from": 101,
+      "to": 112
+    },
+    {
+      "id": "calendars",
+      "title": "11. Туруктуу жол керек",
+      "from": 112,
+      "to": 125
+    },
+    {
+      "id": "search",
+      "title": "12. BalaGo'ну өздөрү табышты",
+      "from": 125,
+      "to": 139
+    },
+    {
+      "id": "book",
+      "title": "13. Бир бөлүм",
+      "from": 139,
+      "to": 148
+    },
+    {
+      "id": "card",
+      "title": "14. Байланыш",
+      "from": 148,
+      "to": 153
+    }
+  ],
+  "lines": [
+    {
+      "id": "N01",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "paradox",
+      "text": "Апасы үйдөн иштечү. Бирок жумуштан үйгө баарынан кеч кайтчу… Болгону, коңшу бөлмөдөн чыкчу.",
+      "spoken": "Апасы үйдөн иштечү. Бирок жумуштан үйгө баарынан кеч кайтчу... Болгону, коңшу бөлмөдөн чыкчу.",
+      "file": "public/audio/work-from-home-2d/N01.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2801,
+      "durationSec": 7.74,
+      "speechSec": 7.44,
+      "montageFrom": 0.5,
+      "montageTo": 7.94,
+      "asrCer": 0.011
+    },
+    {
+      "id": "N02",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "work",
+      "text": "Ал — аналитик. Өзүнчө иш үстөлү, жакшы компьютери, команда менен жолугушуулары жана мөөнөтүндө бүтүрө турган тапшырмалары бар.",
+      "spoken": "Ал аналитик. Өзүнчө иш үстөлү, жакшы компьютери, команда менен жолугушуулары жана мөөнөтүндө бүтүрө турган тапшырмалары бар.",
+      "file": "public/audio/work-from-home-2d/N02.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2812,
+      "durationSec": 9.13,
+      "speechSec": 8.88,
+      "montageFrom": 10.6,
+      "montageTo": 19.48,
+      "asrCer": 0.008
+    },
+    {
+      "id": "N03",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "morning",
+      "text": "Эртең менен атасы кеңсеге кетчү. Апасы уулун мектепке жеткирип, кайра компьютерине отурчу.",
+      "spoken": "Эртең менен атасы кеңсеге кетчү. Апасы уулун мектепке жеткирип, кайра компьютерине отурчу.",
+      "file": "public/audio/work-from-home-2d/N03.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2823,
+      "durationSec": 6.31,
+      "speechSec": 6.08,
+      "montageFrom": 21.5,
+      "montageTo": 27.58,
+      "asrCer": 0.011
+    },
+    {
+      "id": "N04",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "keys",
+      "text": "Сабак бүткөндө кайра ачкычын алчу. Уулун мектептен алып келип, түшкү тамагын жылытып берчү.",
+      "spoken": "Сабак бүткөндө кайра ачкычын алчу. Уулун мектептен алып келип, түшкү тамагын жылытып берчү.",
+      "file": "public/audio/work-from-home-2d/N04.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2812,
+      "durationSec": 7.537,
+      "speechSec": 7.39,
+      "montageFrom": 31.2,
+      "montageTo": 38.59,
+      "asrCer": 0
+    },
+    {
+      "id": "N05",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "context",
+      "text": "Экранда баягы эле документ. Эми токтогон жерин эстеп, билдирүүлөрдү окуп, өзү жокто талкууланган суроону түшүнүшү керек.",
+      "spoken": "Экранда баягы эле документ. Эми токтогон жерин эстеп, билдирүүлөрдү окуп, өзү жокто талкууланган суроону түшүнүшү керек.",
+      "file": "public/audio/work-from-home-2d/N05.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2812,
+      "durationSec": 8.63,
+      "speechSec": 8.36,
+      "montageFrom": 42.6,
+      "montageTo": 50.96,
+      "asrCer": 0.043
+    },
+    {
+      "id": "F01",
+      "role": "father",
+      "mode": "dialogue",
+      "scene": "late",
+      "text": "Жакында бүтүрөсүңбү?",
+      "spoken": "Жакында бүтүрөсүңбү?",
+      "file": "public/audio/work-from-home-2d/F01.mp3",
+      "voiceName": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2823,
+      "durationSec": 1.357,
+      "speechSec": 1.21,
+      "montageFrom": 57.4,
+      "montageTo": 58.61,
+      "asrCer": 0.053
+    },
+    {
+      "id": "M01",
+      "role": "mother",
+      "mode": "dialogue",
+      "scene": "late",
+      "text": "Дагы бир аз.",
+      "spoken": "Дагы бир аз.",
+      "file": "public/audio/work-from-home-2d/M01.mp3",
+      "voiceName": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": "[tired]",
+      "seed": 2801,
+      "durationSec": 0.99,
+      "speechSec": 0.54,
+      "montageFrom": 59.6,
+      "montageTo": 60.14,
+      "asrCer": 0
+    },
+    {
+      "id": "N06",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "late",
+      "text": "Кечки тамак муздап калды. Апасы чыкканда уулу дасторконду жыйнап жаткан.",
+      "spoken": "Кечки тамак муздап калды. Апасы чыкканда уулу дасторконду жыйнап жаткан.",
+      "file": "public/audio/work-from-home-2d/N06.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2801,
+      "durationSec": 5.62,
+      "speechSec": 5.35,
+      "montageFrom": 62.2,
+      "montageTo": 67.55,
+      "asrCer": 0.014
+    },
+    {
+      "id": "N07",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "dadPickup",
+      "text": "Бир күнү атасынын жолугушуулары эрте бүттү. Бул жолу уулун өзү алып келди.",
+      "spoken": "Бир күнү атасынын жолугушуулары эрте бүттү. Бул жолу уулун өзү алып келди.",
+      "file": "public/audio/work-from-home-2d/N07.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2823,
+      "durationSec": 5.15,
+      "speechSec": 4.88,
+      "montageFrom": 69.2,
+      "montageTo": 74.08,
+      "asrCer": 0.056
+    },
+    {
+      "id": "N08",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "focus",
+      "text": "Атасы уулу менен алек болуп турду. Апасы болсо ишин үзбөй улантты.",
+      "spoken": "Атасы уулу менен алек болуп турду. Апасы болсо ишин үзбөй улантты.",
+      "file": "public/audio/work-from-home-2d/N08.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2801,
+      "durationSec": 4.79,
+      "speechSec": 4.48,
+      "montageFrom": 77.4,
+      "montageTo": 81.88,
+      "asrCer": 0
+    },
+    {
+      "id": "N09",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "closing",
+      "text": "Саат беш жарымда ал ноутбугун жапты.",
+      "spoken": "Саат беш жарымда ал ноутбугун жапты.",
+      "file": "public/audio/work-from-home-2d/N09.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2801,
+      "durationSec": 2.23,
+      "speechSec": 1.92,
+      "montageFrom": 87.2,
+      "montageTo": 89.12,
+      "asrCer": 0.114
+    },
+    {
+      "id": "F02",
+      "role": "father",
+      "mode": "dialogue",
+      "scene": "closing",
+      "text": "Бүгүн ишиң азыраакпы?",
+      "spoken": "Бүгүн ишиң азыраакпы?",
+      "file": "public/audio/work-from-home-2d/F02.mp3",
+      "voiceName": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2812,
+      "durationSec": 1.39,
+      "speechSec": 1.09,
+      "montageFrom": 93.2,
+      "montageTo": 94.29,
+      "asrCer": 0.05
+    },
+    {
+      "id": "M02",
+      "role": "mother",
+      "mode": "dialogue",
+      "scene": "closing",
+      "text": "Жок, ошол эле. Болгону, алаксыбай отуруп, талдоону бүтүрүп алдым.",
+      "spoken": "Жок, ошол эле. Болгону, алаксыбай отуруп, талдоону бүтүрүп алдым.",
+      "file": "public/audio/work-from-home-2d/M02.mp3",
+      "voiceName": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2801,
+      "durationSec": 4.5,
+      "speechSec": 4.24,
+      "montageFrom": 95,
+      "montageTo": 99.24,
+      "asrCer": 0.017
+    },
+    {
+      "id": "B01",
+      "role": "son",
+      "mode": "dialogue",
+      "scene": "notebook",
+      "text": "Апа, жазганымды карачы. Шашпай карасаң, ээ?",
+      "spoken": "Апа, жазганымды карачы. Шашпай карасаң, ээ?",
+      "file": "public/audio/work-from-home-2d/B01.mp3",
+      "voiceName": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2823,
+      "durationSec": 3.12,
+      "speechSec": 2.88,
+      "montageFrom": 102.6,
+      "montageTo": 105.48,
+      "asrCer": 0.026
+    },
+    {
+      "id": "N10",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "calendars",
+      "text": "Атасы айрым күндөрү жардам бере алат. Бирок анын иш тартиби өзгөрүп турат. Алар мектепке барып-келүүнү туруктуу уюштуруунун жолун издешти.",
+      "spoken": "Атасы айрым күндөрү жардам бере алат. Бирок анын иш тартиби өзгөрүп турат. Алар мектепке барып-келүүнү туруктуу уюштуруунун жолун издешти.",
+      "file": "public/audio/work-from-home-2d/N10.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2801,
+      "durationSec": 8.9,
+      "speechSec": 8.56,
+      "montageFrom": 112.6,
+      "montageTo": 121.16,
+      "asrCer": 0.059
+    },
+    {
+      "id": "N11",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "search",
+      "text": "BalaGo кызматын таап, мектеп маршрутуна алдын ала өтүнмө калтырышты. Үйдө уулун апасы тосуп алат.",
+      "spoken": "БалаГо кызматын таап, мектеп маршрутуна алдын ала өтүнмө калтырышты. Үйдө уулун апасы тосуп алат.",
+      "file": "public/audio/work-from-home-2d/N11.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2823,
+      "durationSec": 7.58,
+      "speechSec": 7.36,
+      "montageFrom": 130,
+      "montageTo": 137.36,
+      "asrCer": 0.011
+    },
+    {
+      "id": "B02",
+      "role": "son",
+      "mode": "dialogue",
+      "scene": "book",
+      "text": "Бир бөлүм окуйбузбу?",
+      "spoken": "Бир бөлүм окуйбузбу?",
+      "file": "public/audio/work-from-home-2d/B02.mp3",
+      "voiceName": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": null,
+      "seed": 2834,
+      "durationSec": 1.38,
+      "speechSec": 1.12,
+      "montageFrom": 140.6,
+      "montageTo": 141.72,
+      "asrCer": 0.053
+    },
+    {
+      "id": "M03",
+      "role": "mother",
+      "mode": "dialogue",
+      "scene": "book",
+      "text": "Кел, баштайлы.",
+      "spoken": "Кел, баштайлы.",
+      "file": "public/audio/work-from-home-2d/M03.mp3",
+      "voiceName": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": "[warmly]",
+      "seed": 2861,
+      "durationSec": 1.29,
+      "speechSec": 0.97,
+      "montageFrom": 143.4,
+      "montageTo": 144.37,
+      "asrCer": 0.083
+    },
+    {
+      "id": "N12",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "card",
+      "text": "BalaGo — балдар үчүн такси.",
+      "spoken": "БалаГо — балдар үчүн такси.",
+      "file": "public/audio/work-from-home-2d/N12.mp3",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "languageCode": "ky",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "tag": "[warmly]",
+      "seed": 2823,
+      "durationSec": 2.11,
+      "speechSec": 1.73,
+      "montageFrom": 148.4,
+      "montageTo": 150.13,
+      "asrCer": 0
+    }
+  ]
+}

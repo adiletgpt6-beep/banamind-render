@@ -1,0 +1,40 @@
+{
+  "enabled": true,
+  "fullVoice": true,
+  "render": true,
+  "probes": [
+    {
+      "line": "N01",
+      "voices": [
+        { "name": "KG-teacher", "voiceId": "EBOfpUWl9G5ltD2PkFgy" },
+        { "name": "Eric", "voiceId": "cjVigY5qzO86Huf0OWal" }
+      ],
+      "seeds": [2801],
+      "tags": ["[curious]", null]
+    },
+    {
+      "line": "M02",
+      "voices": [{ "name": "KG-mother", "voiceId": "5Xx0r0RX4XWEq5vEdv8p" }],
+      "seeds": [2801, 2812],
+      "tags": ["[calm]", null]
+    },
+    {
+      "line": "B01",
+      "voices": [{ "name": "KG-son", "voiceId": "Oxj8oi9pAu19zqQOffmM" }],
+      "seeds": [2801, 2812],
+      "tags": ["[softly]", null]
+    },
+    {
+      "line": "B02",
+      "voices": [{ "name": "KG-son", "voiceId": "Oxj8oi9pAu19zqQOffmM" }],
+      "seeds": [2801, 2812],
+      "tags": ["[hopeful]", null]
+    },
+    {
+      "line": "F02",
+      "voices": [{ "name": "KG-husband", "voiceId": "NVEGeFqcDqc5o29VoAQm" }],
+      "seeds": [2801, 2812],
+      "tags": ["[surprised]", null]
+    }
+  ]
+}
