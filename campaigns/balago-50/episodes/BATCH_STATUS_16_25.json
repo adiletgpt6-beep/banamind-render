@@ -1,0 +1,111 @@
+{
+  "campaign": "BalaGo-50",
+  "batch": "episodes-16-25",
+  "preparedAt": "2026-10-15",
+  "productionRequested": true,
+  "baseBranch": "feature/balago-50-episodes-16-25",
+  "parentBranch": "feature/balago-50-episodes-11-15",
+  "finalVideosApproved": false,
+  "episodes": [
+    {
+      "episode": 16,
+      "bgId": "BG-015",
+      "title": "Прогулка после работы",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/16-BG-015.md",
+      "task": "campaigns/balago-50/production/TASK_BG-015_EP16.md"
+    },
+    {
+      "episode": 17,
+      "bgId": "BG-016",
+      "title": "Мама сегодня не спешит",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/17-BG-016.md",
+      "task": "campaigns/balago-50/production/TASK_BG-016_EP17.md"
+    },
+    {
+      "episode": 18,
+      "bgId": "BG-017",
+      "title": "Рисунок нашей недели",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/18-BG-017.md",
+      "task": "campaigns/balago-50/production/TASK_BG-017_EP18.md"
+    },
+    {
+      "episode": 19,
+      "bgId": "BG-018",
+      "title": "Семейный чат",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/19-BG-018.md",
+      "task": "campaigns/balago-50/production/TASK_BG-018_EP19.md"
+    },
+    {
+      "episode": 20,
+      "bgId": "BG-019",
+      "title": "Школьный звонок",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/20-BG-019.md",
+      "task": "campaigns/balago-50/production/TASK_BG-019_EP20.md"
+    },
+    {
+      "episode": 21,
+      "bgId": "BG-020",
+      "title": "Тихий вечер пятницы",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/21-BG-020.md",
+      "task": "campaigns/balago-50/production/TASK_BG-020_EP21.md"
+    },
+    {
+      "episode": 22,
+      "bgId": "BG-021",
+      "title": "Это не обычный вызов такси",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/22-BG-021.md",
+      "task": "campaigns/balago-50/production/TASK_BG-021_EP22.md"
+    },
+    {
+      "episode": 23,
+      "bgId": "BG-022",
+      "title": "Что означает одна поездка?",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/23-BG-022.md",
+      "task": "campaigns/balago-50/production/TASK_BG-022_EP23.md"
+    },
+    {
+      "episode": 24,
+      "bgId": "BG-023",
+      "title": "Почему 3–4 ребёнка?",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/24-BG-023.md",
+      "task": "campaigns/balago-50/production/TASK_BG-023_EP24.md"
+    },
+    {
+      "episode": 25,
+      "bgId": "BG-024",
+      "title": "Почему не сразу завтра?",
+      "status": "ready_for_production",
+      "rendered": false,
+      "humanReviewedFinal": false,
+      "script": "campaigns/balago-50/episodes/25-BG-024.md",
+      "task": "campaigns/balago-50/production/TASK_BG-024_EP25.md"
+    }
+  ]
+}
