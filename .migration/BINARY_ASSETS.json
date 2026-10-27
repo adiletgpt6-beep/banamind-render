@@ -1,0 +1,20 @@
+[
+  {
+    "path": "muslimkids-yasin-color-universe/public/fonts/AmiriQuran.ttf",
+    "sha": "2a4de2c4fd3e6fd23656586151935a98723acaff",
+    "kind": "font",
+    "license_sha": "bc87351e07b9b427266496293cbe570507b209ef"
+  },
+  {
+    "path": "muslimkids-yasin-color-universe/public/fonts/Manrope.ttf",
+    "sha": "75274da58537d6123b14f2cd0c355ad4681fc2b3",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]

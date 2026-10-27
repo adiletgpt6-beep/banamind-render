@@ -1,0 +1,29 @@
+{
+  "name": "muslimkids-yasin-color-universe",
+  "version": "1.0.0",
+  "description": "Muslim Kids — Experiment 015: Yasin — Color Universe (colorful dot-morph infographic, Remotion)",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "4.0.532",
+    "@remotion/media": "4.0.532",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "voice": "node scripts/generate-voice.mjs",
+    "sfx": "python3 scripts/generate-sfx.py",
+    "test:render": "remotion render src/index.ts DotTest015 output/tests/dot_test_36_83.mp4 --codec=h264 --pixel-format=yuv420p --color-space=bt709",
+    "render": "remotion render src/index.ts MuslimKidsYasinColorUniverse015 output/final/MuslimKids_Yasin_ColorUniverse_015.mp4 --codec=h264 --audio-codec=aac --pixel-format=yuv420p --color-space=bt709 --crf=16",
+    "stills": "node scripts/control-frames.mjs"
+  }
+}
