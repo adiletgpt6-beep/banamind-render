@@ -1,0 +1,20 @@
+{
+  "slug": "crime-and-punishment-dostoevsky",
+  "bm": "BM-016",
+  "title": "Преступление и наказание",
+  "author": "Фёдор Михайлович Достоевский",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-016/part-01…07.txt — текст романа (общественное достояние) без современных материалов издания 2024; карта источников — books/crime-and-punishment-dostoevsky/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/crime-and-punishment-dostoevsky/scripts",
+    "timeline": "scripts/lesson-crime/lib.mjs",
+    "remotionEntry": "src/lesson-crime/index.ts",
+    "composition": "CrimeLesson",
+    "workflow": ".github/workflows/lesson-crime.yml",
+    "release": "book-crime-and-punishment-dostoevsky",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-crime-and-punishment-dostoevsky",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}

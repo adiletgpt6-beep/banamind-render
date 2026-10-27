@@ -1,0 +1,326 @@
+{
+  "version": 2,
+  "hash": "510a9065dcc21af3",
+  "voiceId": "cjVigY5qzO86Huf0OWal",
+  "modelId": "eleven_v3",
+  "file": "narration.mp3",
+  "durationSec": 27.16,
+  "segments": [
+    {
+      "id": "hook1",
+      "start": 0.03,
+      "end": 1.64
+    },
+    {
+      "id": "hook2",
+      "start": 2.12,
+      "end": 4.28
+    },
+    {
+      "id": "brand",
+      "start": 5.08,
+      "end": 7
+    },
+    {
+      "id": "route",
+      "start": 7.72,
+      "end": 10.36
+    },
+    {
+      "id": "trips",
+      "start": 10.64,
+      "end": 11.8
+    },
+    {
+      "id": "kids",
+      "start": 12.72,
+      "end": 14.279
+    },
+    {
+      "id": "car",
+      "start": 14.56,
+      "end": 17.8
+    },
+    {
+      "id": "promise",
+      "start": 18.36,
+      "end": 21.32
+    },
+    {
+      "id": "slogan",
+      "start": 22.032,
+      "end": 23.48
+    },
+    {
+      "id": "cta",
+      "start": 23.96,
+      "end": 26.68
+    }
+  ],
+  "words": [
+    {
+      "text": "Эртең",
+      "start": 0.03,
+      "end": 0.28,
+      "segment": "hook1"
+    },
+    {
+      "text": "менен",
+      "start": 0.44,
+      "end": 0.56,
+      "segment": "hook1"
+    },
+    {
+      "text": "шашып",
+      "start": 0.6,
+      "end": 0.92,
+      "segment": "hook1"
+    },
+    {
+      "text": "жатасызбы?",
+      "start": 0.96,
+      "end": 1.64,
+      "segment": "hook1"
+    },
+    {
+      "text": "Балаңызды",
+      "start": 2.12,
+      "end": 2.76,
+      "segment": "hook2"
+    },
+    {
+      "text": "мектепке",
+      "start": 2.8,
+      "end": 3.32,
+      "segment": "hook2"
+    },
+    {
+      "text": "ким",
+      "start": 3.48,
+      "end": 3.72,
+      "segment": "hook2"
+    },
+    {
+      "text": "жеткирет?",
+      "start": 3.76,
+      "end": 4.28,
+      "segment": "hook2"
+    },
+    {
+      "text": "БалаГо",
+      "start": 5.08,
+      "end": 5.64,
+      "segment": "brand"
+    },
+    {
+      "text": "балдар",
+      "start": 6,
+      "end": 6.28,
+      "segment": "brand"
+    },
+    {
+      "text": "үчүн",
+      "start": 6.44,
+      "end": 6.68,
+      "segment": "brand"
+    },
+    {
+      "text": "такси.",
+      "start": 6.7,
+      "end": 7,
+      "segment": "brand"
+    },
+    {
+      "text": "Үйдөн",
+      "start": 7.72,
+      "end": 7.96,
+      "segment": "route"
+    },
+    {
+      "text": "мектепке,",
+      "start": 8,
+      "end": 8.52,
+      "segment": "route"
+    },
+    {
+      "text": "мектептен",
+      "start": 8.96,
+      "end": 9.4,
+      "segment": "route"
+    },
+    {
+      "text": "кайра",
+      "start": 9.48,
+      "end": 9.8,
+      "segment": "route"
+    },
+    {
+      "text": "үйгө.",
+      "start": 9.88,
+      "end": 10.36,
+      "segment": "route"
+    },
+    {
+      "text": "Беш",
+      "start": 10.64,
+      "end": 10.84,
+      "segment": "trips"
+    },
+    {
+      "text": "миңден",
+      "start": 10.893,
+      "end": 11.24,
+      "segment": "trips"
+    },
+    {
+      "text": "ашык",
+      "start": 11.28,
+      "end": 11.48,
+      "segment": "trips"
+    },
+    {
+      "text": "сапар.",
+      "start": 11.52,
+      "end": 11.8,
+      "segment": "trips"
+    },
+    {
+      "text": "Балдар",
+      "start": 12.72,
+      "end": 13,
+      "segment": "kids"
+    },
+    {
+      "text": "менен",
+      "start": 13.04,
+      "end": 13.24,
+      "segment": "kids"
+    },
+    {
+      "text": "иштөө",
+      "start": 13.28,
+      "end": 13.613,
+      "segment": "kids"
+    },
+    {
+      "text": "тажрыйбасы.",
+      "start": 13.64,
+      "end": 14.279,
+      "segment": "kids"
+    },
+    {
+      "text": "Салон",
+      "start": 14.56,
+      "end": 15.08,
+      "segment": "car"
+    },
+    {
+      "text": "таза,",
+      "start": 15.12,
+      "end": 15.4,
+      "segment": "car"
+    },
+    {
+      "text": "сапар",
+      "start": 15.84,
+      "end": 16.12,
+      "segment": "car"
+    },
+    {
+      "text": "ыңгайлуу,",
+      "start": 16.16,
+      "end": 16.8,
+      "segment": "car"
+    },
+    {
+      "text": "мамиле",
+      "start": 17.04,
+      "end": 17.4,
+      "segment": "car"
+    },
+    {
+      "text": "камкор.",
+      "start": 17.46,
+      "end": 17.8,
+      "segment": "car"
+    },
+    {
+      "text": "Сизге",
+      "start": 18.36,
+      "end": 18.84,
+      "segment": "promise"
+    },
+    {
+      "text": "тынчтык,",
+      "start": 18.947,
+      "end": 19.4,
+      "segment": "promise"
+    },
+    {
+      "text": "балаңызга",
+      "start": 19.76,
+      "end": 20.44,
+      "segment": "promise"
+    },
+    {
+      "text": "камкордук.",
+      "start": 20.74,
+      "end": 21.32,
+      "segment": "promise"
+    },
+    {
+      "text": "БалаГо",
+      "start": 22.032,
+      "end": 22.44,
+      "segment": "slogan"
+    },
+    {
+      "text": "менен",
+      "start": 22.46,
+      "end": 22.6,
+      "segment": "slogan"
+    },
+    {
+      "text": "жолго",
+      "start": 22.72,
+      "end": 23.08,
+      "segment": "slogan"
+    },
+    {
+      "text": "чыгалы!",
+      "start": 23.12,
+      "end": 23.48,
+      "segment": "slogan"
+    },
+    {
+      "text": "Балаңызды",
+      "start": 23.96,
+      "end": 24.6,
+      "segment": "cta"
+    },
+    {
+      "text": "профилдеги",
+      "start": 24.648,
+      "end": 25.16,
+      "segment": "cta"
+    },
+    {
+      "text": "шилтеме",
+      "start": 25.2,
+      "end": 25.56,
+      "segment": "cta"
+    },
+    {
+      "text": "аркылуу",
+      "start": 25.613,
+      "end": 25.96,
+      "segment": "cta"
+    },
+    {
+      "text": "каттаңыз.",
+      "start": 26.06,
+      "end": 26.68,
+      "segment": "cta"
+    }
+  ]
+}
