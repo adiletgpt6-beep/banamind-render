@@ -1,0 +1,492 @@
+name: Check & render BalaGo videos
+
+# Шесть роликов:
+#   BalaGoPromo       → artifacts balago-promo-mp4, balago-promo-frames, balago-voice
+#   BalaGoDriverIntro → artifacts balago-driver-intro-mp4, balago-driver-intro-frames,
+#                       balago-driver-intro-voice
+#   BalaGoHowItWorks  → artifacts balago-how-it-works-mp4, balago-how-it-works-frames,
+#                       balago-how-it-works-voice
+#   BalaGoMorningRush → artifacts balago-morning-rush-mp4, balago-morning-rush-frames,
+#                       balago-morning-rush-voice
+#   BalaGoFounderStory → artifacts balago-founder-story-mp4, balago-founder-story-frames,
+#                        balago-founder-story-voice (60 с)
+#   BalaGoTripQuestions → artifacts balago-trip-questions-mp4, balago-trip-questions-frames,
+#                         balago-trip-questions-voice (60 с)
+#   BalaGoMorningStory → artifacts balago-morning-story-mp4, balago-morning-story-frames,
+#                        balago-morning-story-voice (≈3 мин, голоса персонажей)
+
+on:
+  push:
+    # Ветка 2D-ролика №12 собирает только свою композицию отдельным
+    # workflow (two-schedules-2d.yml) — без пересборки прежних роликов.
+    branches-ignore:
+      - "feature/two-schedules-2d"
+      - "docs/live-*"
+    # Живые видео собираются своими workflow (live04-motion.yml, live-videos.yml).
+    paths-ignore:
+      - "live/**"
+      - "src/live/**"
+      - "public/assets/live/**"
+      - "public/audio/live/**"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - "README.md"
+      - ".github/workflows/render.yml"
+      - "src/live04/**"
+      - "src/BalaGoLive04Motion.tsx"
+      - "scripts/live04/**"
+      - "public/live04/**"
+      - "public/audio/live04/**"
+      - ".github/workflows/live04-*.yml"
+      # Система живых видео (live-videos.yml) — свои задания LIVE-NNN.
+      - "live-videos/**"
+      - "src/live-videos/**"
+      - "scripts/live-videos/**"
+      - ".github/workflows/live-videos.yml"
+      - ".github/workflows/live-source-handoff.yml"
+      # Правки закрытой Studio не должны рендерить анимацию 2D.
+      - "apps/balago-studio/**"
+      - ".github/workflows/studio.yml"
+      - ".github/workflows/studio-auto-claude.yml"
+      # Объяснение книги «Трактат о природе» (lesson-traktat.yml) и персонаж-банан — не реклама BalaGo.
+      - "lessons/**"
+      - "src/lesson-traktat/**"
+      - "src/banana-host/**"
+      - "scripts/lesson-traktat/**"
+      - "public/lesson-traktat/**"
+      - ".github/workflows/lesson-traktat.yml"
+      - "src/lesson-greene/**"
+      - "scripts/lesson-greene/**"
+      - "public/lesson-greene/**"
+      - ".github/workflows/lesson-greene.yml"
+      # Канал BanaMind: обложки и метаданные книг (book-assets.yml).
+      - "books/**"
+      - "src/books/**"
+      - "src/banamind/**"
+      - "src/thumbnails/**"
+      - "scripts/books/**"
+      - "public/fonts/channel/**"
+      - ".github/workflows/book-assets.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    outputs:
+      voice_new: ${{ steps.voice.outputs.voice_new }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      # Полный FFmpeg нужен для PCM, atempo и loudnorm при обработке голоса.
+      - name: Install FFmpeg for audio processing
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Check audio processing + voice timing
+        run: npm run test:audio
+
+      # Подбор голоса: только если в корне есть voice-lab.json.
+      # Сэмплы и отчёт — в папке outDir из voice-lab.json внутри
+      # voice-samples/ (artifact balago-voice-lab); пробы сохраняются в Git.
+      - name: Voice lab (ElevenLabs voice test)
+        if: hashFiles('voice-lab.json') != ''
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/voice-lab.mjs
+
+      - name: Upload voice lab samples
+        if: always() && hashFiles('voice-samples/**/report.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-voice-lab
+          path: voice-samples/
+          retention-days: 30
+
+      # Готовая дорожка переиспользуется, пока не изменились текст/голос:
+      # тот же дубль в каждом прогоне и без лишнего расхода кредитов.
+      # (Проверенные дубли хранятся в Git; кэш — запасной вариант.)
+      - name: Restore cached voiceover
+        uses: actions/cache@v4
+        with:
+          path: public/audio/voice
+          key: voice-v2-${{ vars.ELEVENLABS_VOICE_ID }}-${{ hashFiles('src/config.ts', 'scripts/generate-voice.mjs') }}
+
+      # Озвучка ИИ-голосом ElevenLabs для каждого ролика. Если текст и голос
+      # не изменились, используется сохранённая в Git дорожка — без запроса к API.
+      - name: Generate voiceovers (ElevenLabs)
+        id: voice
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+          ELEVENLABS_MODEL_ID: ${{ vars.ELEVENLABS_MODEL_ID }}
+        shell: bash
+        run: |
+          set -o pipefail
+          for v in promo driver-intro how-it-works morning-rush founder-story trip-questions; do
+            echo "::group::Озвучка: $v"
+            node scripts/generate-voice.mjs "$v" 2>&1 | tee "voice-$v.log"
+            echo "::endgroup::"
+            if grep -q "⚠" "voice-$v.log"; then
+              echo "### ⚠️ Озвучка $v" >> "$GITHUB_STEP_SUMMARY"
+              echo '```' >> "$GITHUB_STEP_SUMMARY"
+              grep "⚠" "voice-$v.log" >> "$GITHUB_STEP_SUMMARY"
+              echo '```' >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+          [ -f public/audio/voice/manifest.json ] && echo "### 🎙 BalaGoPromo: озвучка есть" >> "$GITHUB_STEP_SUMMARY"
+          [ -f public/audio/driver-intro/manifest.json ] && echo "### 🎙 BalaGoDriverIntro: озвучка есть" >> "$GITHUB_STEP_SUMMARY"
+          [ -f public/audio/how-it-works/manifest.json ] && echo "### 🎙 BalaGoHowItWorks: озвучка есть" >> "$GITHUB_STEP_SUMMARY"
+          [ -f public/audio/morning-rush/manifest.json ] && echo "### 🎙 BalaGoMorningRush: озвучка есть" >> "$GITHUB_STEP_SUMMARY"
+          [ -f public/audio/founder-story/manifest.json ] && echo "### 🎙 BalaGoFounderStory: озвучка есть" >> "$GITHUB_STEP_SUMMARY"
+          [ -f public/audio/trip-questions/manifest.json ] && echo "### 🎙 BalaGoTripQuestions: озвучка есть" >> "$GITHUB_STEP_SUMMARY"
+          # Седьмой ролик: реплики персонажей разными голосами (по файлу на
+          # реплику). Сохранённые в Git реплики повторно не синтезируются.
+          echo "::group::Озвучка: morning-story"
+          # Ошибку запоминаем, но сначала отмечаем новые реплики (voice_new),
+          # чтобы уже оплаченные файлы сохранились в ветку (save-voice).
+          set +e
+          node scripts/generate-story-voice.mjs 2>&1 | tee voice-morning-story.log
+          STORY_STATUS=${PIPESTATUS[0]}
+          set -e
+          echo "::endgroup::"
+          if grep -q "⚠" voice-morning-story.log; then
+            echo "### ⚠️ Озвучка morning-story" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            grep "⚠" voice-morning-story.log >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          [ -f public/audio/morning-story/manifest.json ] && echo "### 🎙 BalaGoMorningStory: озвучка есть ($(grep -c '"voiceId"' public/audio/morning-story/manifest.json) реплик)" >> "$GITHUB_STEP_SUMMARY"
+          # Новый дубль второго–пятого ролика или новые пробы голосов
+          # (ещё не сохранены в Git)?
+          SAVED="public/audio/driver-intro public/audio/how-it-works public/audio/morning-rush public/audio/founder-story public/audio/trip-questions public/audio/morning-story voice-samples"
+          if [ -n "$(git status --porcelain -- $SAVED)" ]; then
+            echo "voice_new=true" >> "$GITHUB_OUTPUT"
+            git status --porcelain -- $SAVED
+            echo "### 🆕 Создан новый дубль озвучки (будет сохранён в ветку)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "$STORY_STATUS" != "0" ]; then
+            echo "::error::Озвучка morning-story завершилась с ошибкой (см. лог); готовые реплики будут сохранены"
+            exit 1
+          fi
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames (each scene, all videos)
+        run: |
+          npm run stills
+          npm run stills:driver
+          npm run stills:how
+          npm run stills:morning
+          npm run stills:founder
+          npm run stills:trip
+          npm run stills:story
+
+      - name: Render MP4s (H.264)
+        run: |
+          npm run render -- --log=warn
+          npm run render:driver -- --log=warn
+          npm run render:how -- --log=warn
+          npm run render:morning -- --log=warn
+          npm run render:founder -- --log=warn
+          npm run render:trip -- --log=warn
+          npm run render:story -- --log=warn
+
+      - name: Inspect videos
+        run: |
+          ls -la out out/frames out/frames-driver-intro out/frames-how-it-works out/frames-morning-rush out/frames-founder-story out/frames-trip-questions out/frames-morning-story
+          for f in out/balago-promo.mp4 out/balago-driver-intro.mp4 out/balago-how-it-works.mp4 out/balago-morning-rush.mp4 out/balago-founder-story.mp4 out/balago-trip-questions.mp4 out/balago-morning-story.mp4; do
+            npx remotion ffprobe -v error -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,pix_fmt,sample_rate,channels -show_entries format=duration -of compact "$f"
+          done
+
+      # Громкость итоговых роликов: интегральная (LUFS) и пиковая (дБTP).
+      # Если озвучка есть, а ролик тише −20 LUFS — голос, скорее всего, пропал.
+      - name: Audio QC (loudness, peak, voice present)
+        shell: bash
+        run: |
+          set -o pipefail
+          check() {
+            local mp4="$1" voice="$2"
+            ffmpeg -hide_banner -nostats -i "$mp4" -vn -af ebur128=peak=true -f null - 2>&1 | tail -12 | tee loudness.log
+            local I P
+            I=$(awk '/I:/ {print $2}' loudness.log | tail -1)
+            P=$(awk '/Peak:/ {print $2}' loudness.log | tail -1)
+            echo "### 🔊 $(basename "$mp4"): ${I} LUFS, пик ${P} дБTP" >> "$GITHUB_STEP_SUMMARY"
+            if awk -v p="$P" 'BEGIN{exit !(p > -0.5)}'; then
+              echo "::error::$mp4: перегруз, пик ${P} дБTP"; return 1
+            fi
+            if [ -f "$voice/manifest.json" ] && awk -v i="$I" 'BEGIN{exit !(i < -20)}'; then
+              echo "::error::$mp4: слишком тихо (${I} LUFS) — голос не слышен"; return 1
+            fi
+          }
+          check out/balago-promo.mp4 public/audio/voice
+          check out/balago-driver-intro.mp4 public/audio/driver-intro
+          check out/balago-how-it-works.mp4 public/audio/how-it-works
+          check out/balago-morning-rush.mp4 public/audio/morning-rush
+          check out/balago-founder-story.mp4 public/audio/founder-story
+          check out/balago-trip-questions.mp4 public/audio/trip-questions
+          check out/balago-morning-story.mp4 public/audio/morning-story
+
+      - name: Upload promo video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-promo-mp4
+          path: out/balago-promo.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload driver-intro video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-driver-intro-mp4
+          path: out/balago-driver-intro.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload how-it-works video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-how-it-works-mp4
+          path: out/balago-how-it-works.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload morning-rush video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-morning-rush-mp4
+          path: out/balago-morning-rush.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload founder-story video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-founder-story-mp4
+          path: out/balago-founder-story.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload trip-questions video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-trip-questions-mp4
+          path: out/balago-trip-questions.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload morning-story video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-morning-story-mp4
+          path: out/balago-morning-story.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload promo voiceover
+        if: always() && hashFiles('public/audio/voice/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-voice
+          path: public/audio/voice/
+          retention-days: 30
+
+      - name: Upload driver-intro voiceover
+        if: always() && hashFiles('public/audio/driver-intro/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-driver-intro-voice
+          path: public/audio/driver-intro/
+          retention-days: 30
+
+      - name: Upload how-it-works voiceover
+        if: always() && hashFiles('public/audio/how-it-works/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-how-it-works-voice
+          path: public/audio/how-it-works/
+          retention-days: 30
+
+      - name: Upload morning-rush voiceover
+        if: always() && hashFiles('public/audio/morning-rush/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-morning-rush-voice
+          path: public/audio/morning-rush/
+          retention-days: 30
+
+      - name: Upload founder-story voiceover
+        if: always() && hashFiles('public/audio/founder-story/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-founder-story-voice
+          path: public/audio/founder-story/
+          retention-days: 30
+
+      - name: Upload trip-questions voiceover
+        if: always() && hashFiles('public/audio/trip-questions/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-trip-questions-voice
+          path: public/audio/trip-questions/
+          retention-days: 30
+
+      # Реплики седьмого ролика выгружаются, даже если рендер упал:
+      # оплаченная озвучка не теряется.
+      - name: Upload morning-story voiceover
+        if: always() && hashFiles('public/audio/morning-story/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-morning-story-voice
+          path: public/audio/morning-story/
+          retention-days: 30
+
+      - name: Upload promo check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-promo-frames
+          path: out/frames/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload driver-intro check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-driver-intro-frames
+          path: out/frames-driver-intro/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload how-it-works check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-how-it-works-frames
+          path: out/frames-how-it-works/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload morning-rush check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-morning-rush-frames
+          path: out/frames-morning-rush/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload founder-story check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-founder-story-frames
+          path: out/frames-founder-story/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload trip-questions check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-trip-questions-frames
+          path: out/frames-trip-questions/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload morning-story check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-morning-story-frames
+          path: out/frames-morning-story/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  # Новый дубль озвучки второго–пятого ролика (и пробы голосов пятого)
+  # сохраняется в ту же рабочую ветку — только после успешного рендера и
+  # проверки громкости, только на ветках (не main) и только файлы
+  # public/audio/<ролик>/ и voice-samples/. Так в main попадает ровно тот дубль, что был
+  # проверен в PR.
+  save-voice:
+    needs: render
+    # always(): реплики седьмого ролика сохраняются, даже если рендер или
+    # часть озвучки упали (каждая реплика оплачена отдельно).
+    if: >-
+      always() &&
+      needs.render.outputs.voice_new == 'true' &&
+      github.ref_name != 'main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: balago-*-voice
+          path: voice-artifacts
+
+      - name: Download voice samples (if any)
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: balago-voice-lab
+          path: voice-samples
+
+      - name: Commit narration (MP3 + manifest)
+        run: |
+          for v in driver-intro how-it-works morning-rush founder-story trip-questions; do
+            src="voice-artifacts/balago-$v-voice"
+            if [ -f "$src/manifest.json" ] && [ -f "$src/narration.mp3" ]; then
+              mkdir -p "public/audio/$v"
+              cp "$src/manifest.json" "$src/narration.mp3" "public/audio/$v/"
+              git add "public/audio/$v/manifest.json" "public/audio/$v/narration.mp3"
+            fi
+          done
+          # седьмой ролик: все файлы реплик + manifest.json + timeline.json
+          src="voice-artifacts/balago-morning-story-voice"
+          if [ -f "$src/manifest.json" ]; then
+            mkdir -p public/audio/morning-story
+            cp "$src"/*.mp3 "$src"/*.json public/audio/morning-story/
+            git add public/audio/morning-story
+          fi
+          if [ -d voice-samples ]; then
+            git add voice-samples
+          fi
+          if git diff --cached --quiet; then
+            echo "Дубли уже сохранены."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save verified narration"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

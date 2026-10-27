@@ -1,0 +1,22 @@
+{
+  "slug": "robert-greene-48-laws-of-power",
+  "id": "BM-005",
+  "title": "48 законов власти",
+  "author": "Роберт Грин",
+  "collection": "РИПОЛ КЛАССИК, 2003 (пер. с англ. Е. Я. Мигуновой)",
+  "channel": "BanaMind",
+  "ownWorkflow": true,
+  "source": "Только приложенный TXT русского издания (390 PDF-страниц, SHA256 30d75837…845577; PDF 137–151 повреждены в источнике и не использовались); карта источников — SOURCE_MAP.md",
+  "rights": "Книга (© Robert Greene, 1998) и перевод (© РИПОЛ КЛАССИК, 2003) охраняются авторским правом; фильм — самостоятельное образовательное объяснение. Публичная/коммерческая публикация только после проверки прав владельцем канала.",
+  "lesson": {
+    "dir": "books/robert-greene-48-laws-of-power",
+    "timeline": "scripts/lesson-greene/lib.mjs",
+    "remotionEntry": "src/lesson-greene/index.ts",
+    "composition": "GreeneLesson",
+    "workflow": ".github/workflows/lesson-greene.yml",
+    "release": "book-robert-greene-48-laws-of-power",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-robert-greene-48-laws-of-power",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac" }
+}

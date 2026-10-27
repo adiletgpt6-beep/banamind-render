@@ -1,0 +1,306 @@
+name: BanaMind BM-005 — Роберт Грин «48 законов власти» (банан, 30 мин, 16:9)
+
+# Анимационное объяснение книги с бананом-ведущим (канал BanaMind, не реклама BalaGo).
+# Своя точка входа Remotion src/lesson-greene/index.ts; BM-001 и другие ролики не трогает.
+#   voice      → озвучка ElevenLabs по репликам (тот же голос банана, готовые с тем же
+#                хэшем переиспользуются), новые файлы сохраняются в ветку.
+#   render     → 8 параллельных частей кадров (без звука), 1920×1080 30 fps.
+#                В сообщении коммита [pilot] — только первые 60 с (внутренний пилот),
+#                [no render] — только озвучка и проверки.
+#   assemble   → склейка без пережатия, звук по тайм-лайну, AAC + faststart, SRT,
+#                сценарий с таймкодами, проверка формата/длительности/звука,
+#                облегчённая копия 960×540, релиз book-robert-greene-48-laws-of-power.
+#   thumbnails → пять обложек 1280×720, листы сравнения, YouTube-метаданные.
+# Репозиторий приватный: релиз доступен только участникам, публичной раздачи нет.
+
+on:
+  push:
+    paths:
+      - "books/robert-greene-48-laws-of-power/**"
+      - "src/lesson-greene/**"
+      - "src/books/robert-greene-48-laws-of-power/**"
+      - "scripts/lesson-greene/**"
+      - "public/lesson-greene/**"
+      - ".github/workflows/lesson-greene.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: lesson-greene-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  TAG: book-robert-greene-48-laws-of-power
+  SLUG: robert-greene-48-laws-of-power
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.plan.outputs.ranges }}
+      render: ${{ steps.plan.outputs.render }}
+      pilot: ${{ steps.plan.outputs.pilot }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson-greene/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          [ -d public/lesson-greene/voice ] && git add public/lesson-greene/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(lesson-greene): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Tests and render plan
+        id: plan
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          node --test scripts/lesson-greene/*.test.mjs
+          node scripts/lesson-greene/captions-check.mjs > /dev/null
+          if [[ "$MSG" == *"[pilot]"* ]]; then
+            echo 'ranges=["0-899","900-1799"]' >> "$GITHUB_OUTPUT"; echo "pilot=true" >> "$GITHUB_OUTPUT"
+          else
+            P=$(node scripts/lesson-greene/frames.mjs 8)
+            echo "$P"
+            echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+            echo "pilot=false" >> "$GITHUB_OUTPUT"
+          fi
+          if [[ "$MSG" == *"[no render]"* ]]; then echo "render=false" >> "$GITHUB_OUTPUT"; else echo "render=true" >> "$GITHUB_OUTPUT"; fi
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.render == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/lesson-greene/index.ts GreeneLesson "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: greene-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: greene-part-*
+          path: out/parts
+          merge-multiple: true
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart)
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          cat out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          node scripts/lesson-greene/mixdown.mjs out/audio.wav
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart out/final-youtube.mp4
+          node scripts/lesson-greene/srt.mjs out/final-youtube.srt
+          node scripts/lesson-greene/export-docs.mjs out/SCRIPT.md
+
+      - name: Pilot (first 60 s)
+        if: needs.voice.outputs.pilot == 'true'
+        run: |
+          mv out/final-youtube.mp4 out/pilot-60s.mp4
+          ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate -show_entries format=duration -of compact out/pilot-60s.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify MP4
+        if: needs.voice.outputs.pilot != 'true'
+        run: node scripts/lesson-greene/verify.mjs out/final-youtube.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Preview copy (960×540) and check frames
+        if: needs.voice.outputs.pilot != 'true'
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i out/final-youtube.mp4 -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 27 \
+            -pix_fmt yuv420p -c:a aac -b:a 112k -movflags +faststart out/final-youtube-preview-960x540.mp4
+          ffmpeg -hide_banner -loglevel error -y -i out/final-youtube.mp4 -t 60 -c copy -movflags +faststart out/final-youtube-first-60s.mp4
+          mkdir -p out/frames
+          for s in 5 120 300 600 900 1200 1500 1750; do
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i out/final-youtube.mp4 -frames:v 1 -vf scale=960:-2 "out/frames/t$(printf %04d $s).jpg"
+          done
+          ffmpeg -hide_banner -loglevel error -y $(for f in out/frames/*.jpg; do echo -i $f; done) \
+            -filter_complex "xstack=inputs=8:layout=0_0|w0_0|w0+w1_0|w0+w1+w2_0|0_h0|w0_h0|w0+w1_h0|w0+w1+w2_h0" -q:v 3 out/film-frames.jpg
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: greene-mp4
+          path: |
+            out/*.mp4
+            out/*.srt
+            out/SCRIPT.md
+            out/film-frames.jpg
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish release (private repo)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          R="$GITHUB_REPOSITORY"
+          NOTES="BanaMind BM-005 — Роберт Грин, «48 законов власти»: оригинальное анимационное объяснение с бананом-ведущим (русский, 1920×1080, 30 fps, H.264/AAC). Внутренний производственный релиз: публичная/коммерческая публикация — только после подтверждения прав. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${R}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$R" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$R" --notes "$NOTES" --prerelease
+          else
+            gh release create "$TAG" -R "$R" --title "Роберт Грин «48 законов власти» — BanaMind (BM-005)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          if [ "${{ needs.voice.outputs.pilot }}" = "true" ]; then
+            gh release upload "$TAG" -R "$R" --clobber out/pilot-60s.mp4
+          else
+            gh release upload "$TAG" -R "$R" --clobber out/final-youtube.mp4 out/final-youtube.srt out/final-youtube-preview-960x540.mp4 \
+              out/final-youtube-first-60s.mp4 out/film-frames.jpg out/SCRIPT.md
+          fi
+
+  thumbnails:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Thumbnails defined?
+        id: chk
+        run: |
+          if [ -f "books/$SLUG/thumbnails.json" ] && [ -f "src/books/$SLUG/thumbnails.tsx" ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: actions/setup-node@v4
+        if: steps.chk.outputs.ok == 'true'
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.chk.outputs.ok == 'true'
+        run: npm ci
+
+      - name: Install FFmpeg and Hunspell (ru)
+        if: steps.chk.outputs.ok == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg hunspell hunspell-ru
+
+      - name: Thumbnails and metadata
+        if: steps.chk.outputs.ok == 'true'
+        run: |
+          node scripts/books/thumbnails.mjs "$SLUG"
+          cp "books/$SLUG/thumbnails/comparison-sheet.jpg" "books/$SLUG/thumbnails/thumbnail-contact-sheet.jpg"
+          node scripts/books/youtube-meta.mjs "$SLUG"
+
+      - uses: actions/upload-artifact@v4
+        if: steps.chk.outputs.ok == 'true'
+        with:
+          name: greene-thumbnails
+          path: |
+            books/${{ env.SLUG }}/thumbnails/*.jpg
+            books/${{ env.SLUG }}/thumbnails/checks.json
+            books/${{ env.SLUG }}/metadata/youtube.*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish thumbnails and metadata to the release
+        if: steps.chk.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          R="$GITHUB_REPOSITORY"
+          if ! gh release view "$TAG" -R "$R" >/dev/null 2>&1; then
+            gh release create "$TAG" -R "$R" --title "Роберт Грин «48 законов власти» — BanaMind (BM-005)" --notes "BanaMind BM-005 — внутренний производственный релиз (приватный репозиторий)." --prerelease --target "$GITHUB_SHA"
+          fi
+          D="books/$SLUG"
+          gh release upload "$TAG" -R "$R" --clobber \
+            $D/thumbnails/thumbnail-0{1,2,3,4,5}.jpg $D/thumbnails/thumbnail-contact-sheet.jpg $D/thumbnails/readability-320x180.jpg \
+            $D/metadata/youtube.md $D/metadata/youtube.json $D/metadata/YOUTUBE_TITLES.md
