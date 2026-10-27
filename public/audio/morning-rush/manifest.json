@@ -1,0 +1,264 @@
+{
+  "version": 2,
+  "hash": "5b5c2513e62d4a0c",
+  "seed": 31,
+  "voiceId": "cjVigY5qzO86Huf0OWal",
+  "modelId": "eleven_v3",
+  "file": "narration.mp3",
+  "durationSec": 20.15,
+  "segments": [
+    {
+      "id": "hook",
+      "start": 0.06,
+      "end": 1.43
+    },
+    {
+      "id": "rush",
+      "start": 1.85,
+      "end": 5.03
+    },
+    {
+      "id": "minute",
+      "start": 5.697,
+      "end": 7.47
+    },
+    {
+      "id": "launch",
+      "start": 7.82,
+      "end": 10.39
+    },
+    {
+      "id": "plan",
+      "start": 10.95,
+      "end": 15.35
+    },
+    {
+      "id": "register",
+      "start": 15.79,
+      "end": 17.91
+    },
+    {
+      "id": "link",
+      "start": 18.342,
+      "end": 19.83
+    }
+  ],
+  "words": [
+    {
+      "text": "Эртең",
+      "start": 0.06,
+      "end": 0.39,
+      "segment": "hook"
+    },
+    {
+      "text": "менен",
+      "start": 0.41,
+      "end": 0.55,
+      "segment": "hook"
+    },
+    {
+      "text": "шашып",
+      "start": 0.59,
+      "end": 0.79,
+      "segment": "hook"
+    },
+    {
+      "text": "жатасызбы?",
+      "start": 0.83,
+      "end": 1.43,
+      "segment": "hook"
+    },
+    {
+      "text": "Жумушка",
+      "start": 1.85,
+      "end": 2.417,
+      "segment": "rush"
+    },
+    {
+      "text": "үлгүрүш",
+      "start": 2.47,
+      "end": 2.63,
+      "segment": "rush"
+    },
+    {
+      "text": "керек,",
+      "start": 2.71,
+      "end": 2.95,
+      "segment": "rush"
+    },
+    {
+      "text": "балаңызды",
+      "start": 3.39,
+      "end": 3.91,
+      "segment": "rush"
+    },
+    {
+      "text": "мектепке",
+      "start": 3.95,
+      "end": 4.31,
+      "segment": "rush"
+    },
+    {
+      "text": "жеткириш",
+      "start": 4.35,
+      "end": 4.71,
+      "segment": "rush"
+    },
+    {
+      "text": "керек.",
+      "start": 4.75,
+      "end": 5.03,
+      "segment": "rush"
+    },
+    {
+      "text": "Ар",
+      "start": 5.697,
+      "end": 5.91,
+      "segment": "minute"
+    },
+    {
+      "text": "бир",
+      "start": 5.95,
+      "end": 6.07,
+      "segment": "minute"
+    },
+    {
+      "text": "мүнөт",
+      "start": 6.11,
+      "end": 6.39,
+      "segment": "minute"
+    },
+    {
+      "text": "маанилүү.",
+      "start": 6.443,
+      "end": 7.47,
+      "segment": "minute"
+    },
+    {
+      "text": "Биз",
+      "start": 7.82,
+      "end": 7.91,
+      "segment": "launch"
+    },
+    {
+      "text": "БалаГону",
+      "start": 8.03,
+      "end": 8.63,
+      "segment": "launch"
+    },
+    {
+      "text": "ишке",
+      "start": 8.71,
+      "end": 8.95,
+      "segment": "launch"
+    },
+    {
+      "text": "киргизүүгө",
+      "start": 8.99,
+      "end": 9.55,
+      "segment": "launch"
+    },
+    {
+      "text": "даярданып",
+      "start": 9.57,
+      "end": 9.91,
+      "segment": "launch"
+    },
+    {
+      "text": "жатабыз.",
+      "start": 9.95,
+      "end": 10.39,
+      "segment": "launch"
+    },
+    {
+      "text": "Үйдөн",
+      "start": 10.95,
+      "end": 11.19,
+      "segment": "plan"
+    },
+    {
+      "text": "мектепке,",
+      "start": 11.23,
+      "end": 11.67,
+      "segment": "plan"
+    },
+    {
+      "text": "мектептен",
+      "start": 12.27,
+      "end": 12.71,
+      "segment": "plan"
+    },
+    {
+      "text": "үйгө",
+      "start": 12.79,
+      "end": 13.403,
+      "segment": "plan"
+    },
+    {
+      "text": "алдын",
+      "start": 13.794,
+      "end": 14.15,
+      "segment": "plan"
+    },
+    {
+      "text": "ала",
+      "start": 14.19,
+      "end": 14.31,
+      "segment": "plan"
+    },
+    {
+      "text": "макулдашылган",
+      "start": 14.37,
+      "end": 15.03,
+      "segment": "plan"
+    },
+    {
+      "text": "убакта.",
+      "start": 15.057,
+      "end": 15.35,
+      "segment": "plan"
+    },
+    {
+      "text": "Балаңызды",
+      "start": 15.79,
+      "end": 16.71,
+      "segment": "register"
+    },
+    {
+      "text": "алдын",
+      "start": 16.817,
+      "end": 17.15,
+      "segment": "register"
+    },
+    {
+      "text": "ала",
+      "start": 17.17,
+      "end": 17.27,
+      "segment": "register"
+    },
+    {
+      "text": "каттаңыз.",
+      "start": 17.33,
+      "end": 17.91,
+      "segment": "register"
+    },
+    {
+      "text": "Профилдеги",
+      "start": 18.342,
+      "end": 18.95,
+      "segment": "link"
+    },
+    {
+      "text": "шилтемеге",
+      "start": 18.99,
+      "end": 19.39,
+      "segment": "link"
+    },
+    {
+      "text": "өтүңүз.",
+      "start": 19.43,
+      "end": 19.83,
+      "segment": "link"
+    }
+  ]
+}
