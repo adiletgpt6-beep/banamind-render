@@ -1,0 +1,257 @@
+name: BalaGo №33 «Мама на старом видео» (2D)
+
+# Тридцать третий фильм: «Мама на старом видео» (BalaGo33MomsOldVideo).
+# Собирается только эта композиция (прежние ролики здесь не рендерятся).
+#   voice  → при каждом push: реплики ElevenLabs готовыми кыргызскими
+#            голосами проекта (3 дубля новой реплики, лучший по
+#            распознаванию MMS); новые файлы сохраняются в ветку, готовые
+#            повторно не синтезируются.
+#   check  → lint/TypeScript и тесты шкалы, текстов и озвучки.
+#   render → только по ручному запуску (Run workflow, render = true):
+#            один полный рендер MP4 1080×1920 + облегчённая копия 540×960,
+#            мастеринг звука (≈ −16 LUFS, пик ≤ −1 дБTP), проверка формата,
+#            артефакт и файлы предварительного релиза
+#            balago-33-moms-old-video-preview. Так платный CI не делает
+#            одинаковых полных рендеров на каждый push.
+
+on:
+  push:
+    paths:
+      - "src/moms-old-video/**"
+      - "src/BalaGo33MomsOldVideo.tsx"
+      - "scripts/*mov*"
+      - "scripts/lib/mov-*"
+      - "public/audio/moms-old-video/**"
+      - ".github/workflows/moms-old-video.yml"
+  workflow_dispatch:
+    inputs:
+      render:
+        description: "Собрать MP4 (полный рендер)"
+        type: boolean
+        default: false
+      only:
+        description: "Синтезировать только эти реплики (через запятую), пусто — все"
+        type: string
+        default: ""
+
+concurrency:
+  group: moms-old-video-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: balago-33-moms-old-video
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-ts2d-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-ts2d-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      # Реплики: готовые (тот же хэш текста, тега, голоса, модели,
+      # настроек и seed) переиспользуются без обращения к API.
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          MOV_ONLY: ${{ github.event.inputs.only }}
+        run: node scripts/generate-mov-voice.mjs
+
+      - name: Voice QA report
+        if: always() && hashFiles('public/audio/moms-old-video/manifest.json') != ''
+        run: node scripts/mov-voice-report.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Save new voice files to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          if [ -d public/audio/moms-old-video ]; then git add public/audio/moms-old-video; fi
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save moms-old-video voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload voice files
+        if: always() && hashFiles('public/audio/moms-old-video/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-33-moms-old-video-voice
+          path: public/audio/moms-old-video/
+          retention-days: 30
+
+  check:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Tests (timeline, voice files, texts)
+        run: npm run test:moms-old-video
+
+  render:
+    needs: [voice, check]
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.render == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      # Голова ветки: в ней уже сохранённые задачей voice файлы.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests with strict voice check
+        env:
+          MOV_STRICT_VOICE: "1"
+        run: npm run test:moms-old-video
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames
+        run: npm run stills:moms-old-video
+
+      # remotion render → мастеринг звука → faststart → проверка формата
+      - name: Render MP4 (H.264/AAC, yuv420p) + loudness master
+        run: npm run render:moms-old-video
+
+      - name: Mobile copy (540×960)
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+            -vf scale=540:960:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 24 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
+            "out/$OUT-mobile.mp4"
+          node scripts/verify-mov.mjs "out/$OUT-mobile.mp4" --mobile
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-33-moms-old-video-mp4
+          path: out/balago-33-moms-old-video.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload mobile MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-33-moms-old-video-mobile-mp4
+          path: out/balago-33-moms-old-video-mobile.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-33-moms-old-video-frames
+          path: out/frames-moms-old-video/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  # Оба MP4 — файлами предварительного релиза: прямые ссылки на MP4.
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: balago-33-moms-old-video-*mp4
+          merge-multiple: true
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: balago-33-moms-old-video-preview
+        run: |
+          ls -la out
+          NOTES="BalaGo №33 «Мама на старом видео» — предварительный просмотр. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BalaGo №33 — Мама на старом видео (предпросмотр)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-mobile.mp4"
+          {
+            echo "### MP4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-mobile.mp4"
+          } >> "$GITHUB_STEP_SUMMARY"
