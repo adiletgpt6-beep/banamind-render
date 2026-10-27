@@ -1,0 +1,239 @@
+name: BalaGoHalfHour2D (2D, 120 s)
+
+# Десятый ролик в 2D-версии: «Жумуштан жарым саатка».
+#   voice  → пробы голосов (voice-samples/half-hour-2d) и реплики ролика
+#            (public/audio/half-hour-2d); новые файлы сохраняются в ветку.
+#   render → lint/TypeScript, тесты, контрольные кадры, MP4 1080×1920 и
+#            облегчённая копия 720×1280. Задача падает, если MP4 не создан
+#            или формат/длительность/звук не соответствуют требованиям.
+
+on:
+  push:
+    paths:
+      - "src/**"
+      - "scripts/**"
+      - "public/**"
+      - "voice-samples/half-hour-2d/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/half-hour-2d.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: half-hour-2d-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    outputs:
+      committed: ${{ steps.save.outputs.committed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      # Голоса с кыргызским произношением (Voice Design) и список файлов
+      # для распознавания. Сбой этого шага не останавливает сборку ролика.
+      - name: Kyrgyz voice design (ElevenLabs)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/hh2d-voice-design.mjs
+
+      # Пробы голосов мамы, сына и мужа (готовые не синтезируются повторно).
+      - name: Voice samples (mother, son, husband)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/hh2d-voice-samples.mjs
+
+      # Распознавание Meta MMS для отбора лучшего дубля реплики.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-asr.txt
+
+      - name: Install MMS speech recognition (for picking the best take)
+        run: pip install --quiet -r scripts/requirements-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      # Полная озвучка — только после выбора голосов (HH2_VOICE_CHOICE).
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/generate-hh2d-voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          for d in voice-samples/half-hour-2d public/audio/half-hour-2d; do
+            if [ -d "$d" ]; then git add "$d"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save half-hour-2d voice files"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Upload voice samples
+        if: always() && hashFiles('voice-samples/half-hour-2d/report.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-half-hour-2d-voice-samples
+          path: voice-samples/half-hour-2d/
+          retention-days: 30
+
+  # Объективный замер разборчивости кыргызской речи: Meta MMS
+  # (facebook/mms-1b-all, адаптер kir) → voice-samples/half-hour-2d/asr-mms.json
+  # (CER относительно сценария). Не проверка на слух; сборку не блокирует.
+  asr:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    continue-on-error: true
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install FFmpeg + MMS dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install --quiet -r scripts/requirements-asr.txt
+
+      - name: Recognize Kyrgyz speech (MMS)
+        run: python scripts/asr_mms.py
+
+      - name: Save recognition results to the branch
+        if: github.ref_name != 'main'
+        run: |
+          git add voice-samples/half-hour-2d/asr-mms.json 2>/dev/null || exit 0
+          if git diff --cached --quiet; then
+            echo "Новых результатов нет."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save half-hour-2d speech recognition check"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep 5
+          done
+          exit 1
+
+  render:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      # Берём голову ветки: в ней уже сохранённые задачей voice файлы.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (timeline, voice files, content)
+        env:
+          HH2_STRICT_VOICE: "1"
+        run: node --test scripts/half-hour-2d.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames
+        run: npm run stills:half-hour-2d
+
+      - name: Render MP4 (H.264/AAC)
+        run: npm run render:half-hour-2d -- --log=warn
+
+      - name: Verify MP4 (fails if missing or wrong format)
+        run: node scripts/verify-hh2d.mjs out/balago-half-hour-2d.mp4
+
+      - name: Phone copy (720×1280)
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i out/balago-half-hour-2d.mp4 \
+            -vf scale=720:1280:flags=lanczos -c:v libx264 -preset slow -crf 25 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
+            out/balago-half-hour-2d-phone.mp4
+          node scripts/verify-hh2d.mjs out/balago-half-hour-2d-phone.mp4 --phone
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-half-hour-2d-mp4
+          path: out/balago-half-hour-2d.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload phone MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-half-hour-2d-phone-mp4
+          path: out/balago-half-hour-2d-phone.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-half-hour-2d-frames
+          path: out/frames-half-hour-2d/*.png
+          if-no-files-found: warn
+          retention-days: 30

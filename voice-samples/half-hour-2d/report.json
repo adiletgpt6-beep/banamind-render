@@ -1,0 +1,1361 @@
+{
+  "version": 1,
+  "samples": [
+    {
+      "file": "mother-Sarah-m01.mp3",
+      "id": "m01",
+      "role": "mother",
+      "text": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем.",
+      "spoken": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем.",
+      "voiceName": "Sarah",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "451b12417a15d0d4",
+      "durationSec": 4.2,
+      "speechStart": 0,
+      "speechEnd": 3.92,
+      "words": [
+        {
+          "text": "Уулумду",
+          "start": 0,
+          "end": 0.56
+        },
+        {
+          "text": "мектептен",
+          "start": 0.62,
+          "end": 1.04
+        },
+        {
+          "text": "алып",
+          "start": 1.08,
+          "end": 1.24
+        },
+        {
+          "text": "келишим",
+          "start": 1.26,
+          "end": 1.6
+        },
+        {
+          "text": "керек.",
+          "start": 1.64,
+          "end": 1.92
+        },
+        {
+          "text": "Жарым",
+          "start": 2.36,
+          "end": 2.56
+        },
+        {
+          "text": "саатка",
+          "start": 2.64,
+          "end": 2.96
+        },
+        {
+          "text": "чыгып,",
+          "start": 3,
+          "end": 3.28
+        },
+        {
+          "text": "кайра",
+          "start": 3.34,
+          "end": 3.6
+        },
+        {
+          "text": "келем.",
+          "start": 3.64,
+          "end": 3.92
+        }
+      ],
+      "gainDb": -2.445,
+      "peakDb": -4.003
+    },
+    {
+      "file": "mother-Sarah-m06.mp3",
+      "id": "m06",
+      "role": "mother",
+      "text": "Сени көп күттүрүп койдум. Кечирип кой.",
+      "spoken": "Сени көп күттүрүп койдум. Кечирип кой.",
+      "voiceName": "Sarah",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "modelId": "eleven_v3",
+      "seed": 101,
+      "hash": "84dc0533d9253276",
+      "durationSec": 2.29,
+      "speechStart": 0,
+      "speechEnd": 2.08,
+      "words": [
+        {
+          "text": "Сени",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "көп",
+          "start": 0.36,
+          "end": 0.56
+        },
+        {
+          "text": "күттүрүп",
+          "start": 0.6,
+          "end": 0.933
+        },
+        {
+          "text": "койдум.",
+          "start": 0.947,
+          "end": 1.28
+        },
+        {
+          "text": "Кечирип",
+          "start": 1.4,
+          "end": 1.76
+        },
+        {
+          "text": "кой.",
+          "start": 1.8,
+          "end": 2.08
+        }
+      ],
+      "gainDb": -1.863,
+      "peakDb": -2.851
+    },
+    {
+      "file": "mother-Aria-m01.mp3",
+      "id": "m01",
+      "role": "mother",
+      "text": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем.",
+      "spoken": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "bc7e00e3f21c0133",
+      "durationSec": 4.25,
+      "speechStart": 0,
+      "speechEnd": 4,
+      "words": [
+        {
+          "text": "Уулумду",
+          "start": 0,
+          "end": 0.56
+        },
+        {
+          "text": "мектептен",
+          "start": 0.64,
+          "end": 1.2
+        },
+        {
+          "text": "алып",
+          "start": 1.24,
+          "end": 1.48
+        },
+        {
+          "text": "келишим",
+          "start": 1.5,
+          "end": 1.84
+        },
+        {
+          "text": "керек.",
+          "start": 1.86,
+          "end": 2.16
+        },
+        {
+          "text": "Жарым",
+          "start": 2.44,
+          "end": 2.72
+        },
+        {
+          "text": "саатка",
+          "start": 2.76,
+          "end": 3.12
+        },
+        {
+          "text": "чыгып,",
+          "start": 3.16,
+          "end": 3.36
+        },
+        {
+          "text": "кайра",
+          "start": 3.48,
+          "end": 3.68
+        },
+        {
+          "text": "келем.",
+          "start": 3.72,
+          "end": 4
+        }
+      ],
+      "gainDb": -3.435,
+      "peakDb": -4.063
+    },
+    {
+      "file": "mother-Aria-m06.mp3",
+      "id": "m06",
+      "role": "mother",
+      "text": "Сени көп күттүрүп койдум. Кечирип кой.",
+      "spoken": "Сени көп күттүрүп койдум. Кечирип кой.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "seed": 102,
+      "hash": "a2f65b4ce0175603",
+      "durationSec": 2.02,
+      "speechStart": 0,
+      "speechEnd": 1.76,
+      "words": [
+        {
+          "text": "Сени",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "text": "көп",
+          "start": 0.28,
+          "end": 0.4
+        },
+        {
+          "text": "күттүрүп",
+          "start": 0.44,
+          "end": 0.8
+        },
+        {
+          "text": "койдум.",
+          "start": 0.84,
+          "end": 1.12
+        },
+        {
+          "text": "Кечирип",
+          "start": 1.18,
+          "end": 1.52
+        },
+        {
+          "text": "кой.",
+          "start": 1.56,
+          "end": 1.76
+        }
+      ],
+      "gainDb": -2.724,
+      "peakDb": -3.629
+    },
+    {
+      "file": "mother-Charlotte-m01.mp3",
+      "id": "m01",
+      "role": "mother",
+      "text": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем.",
+      "spoken": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем.",
+      "voiceName": "Charlotte",
+      "voiceId": "XB0fDUnXU5powFXDhCwa",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "fbe36240fa7fb57f",
+      "durationSec": 3.92,
+      "speechStart": 0,
+      "speechEnd": 3.68,
+      "words": [
+        {
+          "text": "Уулумду",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "text": "мектептен",
+          "start": 0.44,
+          "end": 0.8
+        },
+        {
+          "text": "алып",
+          "start": 0.84,
+          "end": 1
+        },
+        {
+          "text": "келишим",
+          "start": 1.02,
+          "end": 1.28
+        },
+        {
+          "text": "керек.",
+          "start": 1.32,
+          "end": 1.6
+        },
+        {
+          "text": "Жарым",
+          "start": 2,
+          "end": 2.48
+        },
+        {
+          "text": "саатка",
+          "start": 2.52,
+          "end": 2.88
+        },
+        {
+          "text": "чыгып,",
+          "start": 2.92,
+          "end": 3.12
+        },
+        {
+          "text": "кайра",
+          "start": 3.22,
+          "end": 3.44
+        },
+        {
+          "text": "келем.",
+          "start": 3.48,
+          "end": 3.68
+        }
+      ],
+      "gainDb": 0.26,
+      "peakDb": -2.744
+    },
+    {
+      "file": "mother-Charlotte-m06.mp3",
+      "id": "m06",
+      "role": "mother",
+      "text": "Сени көп күттүрүп койдум. Кечирип кой.",
+      "spoken": "Сени көп күттүрүп койдум. Кечирип кой.",
+      "voiceName": "Charlotte",
+      "voiceId": "XB0fDUnXU5powFXDhCwa",
+      "modelId": "eleven_v3",
+      "seed": 101,
+      "hash": "99f5320d2f57d5f0",
+      "durationSec": 2.26,
+      "speechStart": 0,
+      "speechEnd": 2,
+      "words": [
+        {
+          "text": "Сени",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "text": "көп",
+          "start": 0.28,
+          "end": 0.4
+        },
+        {
+          "text": "күттүрүп",
+          "start": 0.44,
+          "end": 0.8
+        },
+        {
+          "text": "койдум.",
+          "start": 0.84,
+          "end": 1.12
+        },
+        {
+          "text": "Кечирип",
+          "start": 1.36,
+          "end": 1.759
+        },
+        {
+          "text": "кой.",
+          "start": 1.76,
+          "end": 2
+        }
+      ],
+      "gainDb": -0.922,
+      "peakDb": -3.55
+    },
+    {
+      "file": "mother-KG-mother-m01.mp3",
+      "id": "m01",
+      "role": "mother",
+      "text": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем.",
+      "spoken": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем.",
+      "voiceName": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "c814aa8e6e60838e",
+      "durationSec": 4.13,
+      "speechStart": 0,
+      "speechEnd": 3.84,
+      "words": [
+        {
+          "text": "Уулумду",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "text": "мектептен",
+          "start": 0.44,
+          "end": 0.96
+        },
+        {
+          "text": "алып",
+          "start": 1,
+          "end": 1.16
+        },
+        {
+          "text": "келишим",
+          "start": 1.18,
+          "end": 1.6
+        },
+        {
+          "text": "керек.",
+          "start": 1.62,
+          "end": 1.92
+        },
+        {
+          "text": "Жарым",
+          "start": 2.24,
+          "end": 2.4
+        },
+        {
+          "text": "саатка",
+          "start": 2.48,
+          "end": 2.88
+        },
+        {
+          "text": "чыгып,",
+          "start": 2.92,
+          "end": 3.2
+        },
+        {
+          "text": "кайра",
+          "start": 3.26,
+          "end": 3.52
+        },
+        {
+          "text": "келем.",
+          "start": 3.56,
+          "end": 3.84
+        }
+      ],
+      "gainDb": -2.71,
+      "peakDb": -4.292
+    },
+    {
+      "file": "mother-KG-mother-m06.mp3",
+      "id": "m06",
+      "role": "mother",
+      "text": "Сени көп күттүрүп койдум. Кечирип кой.",
+      "spoken": "Сени көп күттүрүп койдум. Кечирип кой.",
+      "voiceName": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "modelId": "eleven_v3",
+      "seed": 102,
+      "hash": "8e3859a335eec39c",
+      "durationSec": 2.24,
+      "speechStart": 0,
+      "speechEnd": 2.08,
+      "words": [
+        {
+          "text": "Сени",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "көп",
+          "start": 0.36,
+          "end": 0.56
+        },
+        {
+          "text": "күттүрүп",
+          "start": 0.58,
+          "end": 0.96
+        },
+        {
+          "text": "койдум.",
+          "start": 1,
+          "end": 1.28
+        },
+        {
+          "text": "Кечирип",
+          "start": 1.48,
+          "end": 1.84
+        },
+        {
+          "text": "кой.",
+          "start": 1.88,
+          "end": 2.08
+        }
+      ],
+      "gainDb": -1.693,
+      "peakDb": -3.227
+    },
+    {
+      "file": "son-Jessica-s01.mp3",
+      "id": "s01",
+      "role": "son",
+      "text": "Апа, сабак бүттү.",
+      "spoken": "Апа, сабак бүттү.",
+      "voiceName": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "d6c880053bf7ee8e",
+      "durationSec": 1.96,
+      "speechStart": 0,
+      "speechEnd": 1.64,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "text": "сабак",
+          "start": 0.6,
+          "end": 1.04
+        },
+        {
+          "text": "бүттү.",
+          "start": 1.08,
+          "end": 1.64
+        }
+      ],
+      "gainDb": -3.918,
+      "peakDb": -5.513
+    },
+    {
+      "file": "son-Jessica-s02.mp3",
+      "id": "s02",
+      "role": "son",
+      "text": "Апа, эмнеге мени дайыма эң акырында алып кетесиң?",
+      "spoken": "[sad] Апа, эмнеге мени дайыма эң акырында алып кетесиң?",
+      "voiceName": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "modelId": "eleven_v3",
+      "seed": 101,
+      "hash": "13947e0b6c076572",
+      "durationSec": 4,
+      "speechStart": 0.153,
+      "speechEnd": 3.74,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0.153,
+          "end": 0.42
+        },
+        {
+          "text": "эмнеге",
+          "start": 0.9,
+          "end": 1.62
+        },
+        {
+          "text": "мени",
+          "start": 1.66,
+          "end": 1.94
+        },
+        {
+          "text": "дайыма",
+          "start": 1.98,
+          "end": 2.42
+        },
+        {
+          "text": "эң",
+          "start": 2.46,
+          "end": 2.74
+        },
+        {
+          "text": "акырында",
+          "start": 2.767,
+          "end": 3.06
+        },
+        {
+          "text": "алып",
+          "start": 3.1,
+          "end": 3.26
+        },
+        {
+          "text": "кетесиң?",
+          "start": 3.28,
+          "end": 3.74
+        }
+      ],
+      "gainDb": 3.446,
+      "peakDb": -2.742
+    },
+    {
+      "file": "son-Laura-s01.mp3",
+      "id": "s01",
+      "role": "son",
+      "text": "Апа, сабак бүттү.",
+      "spoken": "Апа, сабак бүттү.",
+      "voiceName": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "modelId": "eleven_v3",
+      "seed": 74,
+      "hash": "383c57ac2a0a320f",
+      "durationSec": 1.587,
+      "speechStart": 0,
+      "speechEnd": 1.467,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "сабак",
+          "start": 0.52,
+          "end": 0.88
+        },
+        {
+          "text": "бүттү.",
+          "start": 0.92,
+          "end": 1.467
+        }
+      ],
+      "gainDb": 1.121,
+      "peakDb": -2.765
+    },
+    {
+      "file": "son-Laura-s02.mp3",
+      "id": "s02",
+      "role": "son",
+      "text": "Апа, эмнеге мени дайыма эң акырында алып кетесиң?",
+      "spoken": "[sad] Апа, эмнеге мени дайыма эң акырында алып кетесиң?",
+      "voiceName": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "modelId": "eleven_v3",
+      "seed": 101,
+      "hash": "38bfc1683d6c7371",
+      "durationSec": 3.607,
+      "speechStart": 0.123,
+      "speechEnd": 3.457,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0.123,
+          "end": 0.39
+        },
+        {
+          "text": "эмнеге",
+          "start": 0.75,
+          "end": 1.11
+        },
+        {
+          "text": "мени",
+          "start": 1.15,
+          "end": 1.35
+        },
+        {
+          "text": "дайыма",
+          "start": 1.39,
+          "end": 1.83
+        },
+        {
+          "text": "эң",
+          "start": 1.91,
+          "end": 2.19
+        },
+        {
+          "text": "акырында",
+          "start": 2.23,
+          "end": 2.55
+        },
+        {
+          "text": "алып",
+          "start": 2.59,
+          "end": 2.75
+        },
+        {
+          "text": "кетесиң?",
+          "start": 2.77,
+          "end": 3.457
+        }
+      ],
+      "gainDb": 2.082,
+      "peakDb": -2.856
+    },
+    {
+      "file": "son-River-s01.mp3",
+      "id": "s01",
+      "role": "son",
+      "text": "Апа, сабак бүттү.",
+      "spoken": "Апа, сабак бүттү.",
+      "voiceName": "River",
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "534d14562773ab12",
+      "durationSec": 1.697,
+      "speechStart": 0,
+      "speechEnd": 1.547,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "text": "сабак",
+          "start": 0.58,
+          "end": 0.88
+        },
+        {
+          "text": "бүттү.",
+          "start": 0.92,
+          "end": 1.547
+        }
+      ],
+      "gainDb": -2.045,
+      "peakDb": -3.532
+    },
+    {
+      "file": "son-River-s02.mp3",
+      "id": "s02",
+      "role": "son",
+      "text": "Апа, эмнеге мени дайыма эң акырында алып кетесиң?",
+      "spoken": "[sad] Апа, эмнеге мени дайыма эң акырында алып кетесиң?",
+      "voiceName": "River",
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "modelId": "eleven_v3",
+      "seed": 101,
+      "hash": "452950335fe9363a",
+      "durationSec": 3.48,
+      "speechStart": 0.117,
+      "speechEnd": 3.33,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0.117,
+          "end": 0.29
+        },
+        {
+          "text": "эмнеге",
+          "start": 0.49,
+          "end": 0.93
+        },
+        {
+          "text": "мени",
+          "start": 0.97,
+          "end": 1.17
+        },
+        {
+          "text": "дайыма",
+          "start": 1.25,
+          "end": 1.65
+        },
+        {
+          "text": "эң",
+          "start": 1.77,
+          "end": 2.09
+        },
+        {
+          "text": "акырында",
+          "start": 2.13,
+          "end": 2.45
+        },
+        {
+          "text": "алып",
+          "start": 2.49,
+          "end": 2.65
+        },
+        {
+          "text": "кетесиң?",
+          "start": 2.67,
+          "end": 3.33
+        }
+      ],
+      "gainDb": 0.333,
+      "peakDb": -3.15
+    },
+    {
+      "file": "son-KG-son-s01.mp3",
+      "id": "s01",
+      "role": "son",
+      "text": "Апа, сабак бүттү.",
+      "spoken": "Апа, сабак бүттү.",
+      "voiceName": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "bd1927e7588a619d",
+      "durationSec": 1.51,
+      "speechStart": 0,
+      "speechEnd": 1.36,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "сабак",
+          "start": 0.44,
+          "end": 0.72
+        },
+        {
+          "text": "бүттү.",
+          "start": 0.76,
+          "end": 1.36
+        }
+      ],
+      "gainDb": -3.125,
+      "peakDb": -4.341
+    },
+    {
+      "file": "son-KG-son-s02.mp3",
+      "id": "s02",
+      "role": "son",
+      "text": "Апа, эмнеге мени дайыма эң акырында алып кетесиң?",
+      "spoken": "[sad] Апа, эмнеге мени дайыма эң акырында алып кетесиң?",
+      "voiceName": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "modelId": "eleven_v3",
+      "seed": 101,
+      "hash": "ee27c3a5b6e7ff45",
+      "durationSec": 3.1,
+      "speechStart": 0.12,
+      "speechEnd": 3.02,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0.12,
+          "end": 0.3
+        },
+        {
+          "text": "эмнеге",
+          "start": 0.5,
+          "end": 0.86
+        },
+        {
+          "text": "мени",
+          "start": 0.9,
+          "end": 1.18
+        },
+        {
+          "text": "дайыма",
+          "start": 1.22,
+          "end": 1.66
+        },
+        {
+          "text": "эң",
+          "start": 1.7,
+          "end": 1.98
+        },
+        {
+          "text": "акырында",
+          "start": 2.007,
+          "end": 2.3
+        },
+        {
+          "text": "алып",
+          "start": 2.32,
+          "end": 2.42
+        },
+        {
+          "text": "кетесиң?",
+          "start": 2.44,
+          "end": 3.02
+        }
+      ],
+      "gainDb": -1.989,
+      "peakDb": -3.95
+    },
+    {
+      "file": "husband-Brian-h01.mp3",
+      "id": "h01",
+      "role": "husband",
+      "text": "Кел, анын мектепке жолун алдын ала уюштуралы.",
+      "spoken": "Кел, анын мектепке жолун алдын ала уюштуралы.",
+      "voiceName": "Brian",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "5342cfe656e5b86b",
+      "durationSec": 3.08,
+      "speechStart": 0,
+      "speechEnd": 2.8,
+      "words": [
+        {
+          "text": "Кел,",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "text": "анын",
+          "start": 0.44,
+          "end": 0.72
+        },
+        {
+          "text": "мектепке",
+          "start": 0.76,
+          "end": 1.2
+        },
+        {
+          "text": "жолун",
+          "start": 1.24,
+          "end": 1.6
+        },
+        {
+          "text": "алдын",
+          "start": 1.653,
+          "end": 1.96
+        },
+        {
+          "text": "ала",
+          "start": 1.98,
+          "end": 2.16
+        },
+        {
+          "text": "уюштуралы.",
+          "start": 2.2,
+          "end": 2.8
+        }
+      ],
+      "gainDb": 0.652,
+      "peakDb": -2.737
+    },
+    {
+      "file": "husband-Brian-h02.mp3",
+      "id": "h02",
+      "role": "husband",
+      "text": "Мына, BalaGo — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат.",
+      "spoken": "Мына, БалаГо — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат.",
+      "voiceName": "Brian",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "0cd13b698b543ec6",
+      "durationSec": 5.12,
+      "speechStart": 0,
+      "speechEnd": 4.96,
+      "words": [
+        {
+          "text": "Мына,",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "BalaGo",
+          "start": 0.5,
+          "end": 0.96
+        },
+        {
+          "text": "балдар",
+          "start": 1.4,
+          "end": 1.68
+        },
+        {
+          "text": "үчүн",
+          "start": 1.76,
+          "end": 2.08
+        },
+        {
+          "text": "такси.",
+          "start": 2.1,
+          "end": 2.4
+        },
+        {
+          "text": "Азыр",
+          "start": 2.96,
+          "end": 3.201
+        },
+        {
+          "text": "алдын",
+          "start": 3.307,
+          "end": 3.68
+        },
+        {
+          "text": "ала",
+          "start": 3.72,
+          "end": 3.84
+        },
+        {
+          "text": "каттоо",
+          "start": 3.92,
+          "end": 4.36
+        },
+        {
+          "text": "жүрүп",
+          "start": 4.38,
+          "end": 4.613
+        },
+        {
+          "text": "жатат.",
+          "start": 4.627,
+          "end": 4.96
+        }
+      ],
+      "gainDb": 1.407,
+      "peakDb": -2.71
+    },
+    {
+      "file": "husband-Chris-h01.mp3",
+      "id": "h01",
+      "role": "husband",
+      "text": "Кел, анын мектепке жолун алдын ала уюштуралы.",
+      "spoken": "Кел, анын мектепке жолун алдын ала уюштуралы.",
+      "voiceName": "Chris",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "a34a3058bd5fb313",
+      "durationSec": 2.58,
+      "speechStart": 0,
+      "speechEnd": 2.29,
+      "words": [
+        {
+          "text": "Кел,",
+          "start": 0,
+          "end": 0.21
+        },
+        {
+          "text": "анын",
+          "start": 0.41,
+          "end": 0.65
+        },
+        {
+          "text": "мектепке",
+          "start": 0.67,
+          "end": 1.01
+        },
+        {
+          "text": "жолун",
+          "start": 1.05,
+          "end": 1.33
+        },
+        {
+          "text": "алдын",
+          "start": 1.383,
+          "end": 1.65
+        },
+        {
+          "text": "ала",
+          "start": 1.69,
+          "end": 1.81
+        },
+        {
+          "text": "уюштуралы.",
+          "start": 1.85,
+          "end": 2.29
+        }
+      ],
+      "gainDb": 0.234,
+      "peakDb": -2.715
+    },
+    {
+      "file": "husband-Chris-h02.mp3",
+      "id": "h02",
+      "role": "husband",
+      "text": "Мына, BalaGo — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат.",
+      "spoken": "Мына, БалаГо — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат.",
+      "voiceName": "Chris",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "ba01c78772068819",
+      "durationSec": 4.82,
+      "speechStart": 0,
+      "speechEnd": 4.59,
+      "words": [
+        {
+          "text": "Мына,",
+          "start": 0,
+          "end": 0.19
+        },
+        {
+          "text": "BalaGo",
+          "start": 0.43,
+          "end": 1.07
+        },
+        {
+          "text": "балдар",
+          "start": 1.51,
+          "end": 1.79
+        },
+        {
+          "text": "үчүн",
+          "start": 1.87,
+          "end": 2.11
+        },
+        {
+          "text": "такси.",
+          "start": 2.13,
+          "end": 2.35
+        },
+        {
+          "text": "Азыр",
+          "start": 3.07,
+          "end": 3.31
+        },
+        {
+          "text": "алдын",
+          "start": 3.337,
+          "end": 3.55
+        },
+        {
+          "text": "ала",
+          "start": 3.59,
+          "end": 3.71
+        },
+        {
+          "text": "каттоо",
+          "start": 3.75,
+          "end": 4.07
+        },
+        {
+          "text": "жүрүп",
+          "start": 4.09,
+          "end": 4.27
+        },
+        {
+          "text": "жатат.",
+          "start": 4.31,
+          "end": 4.59
+        }
+      ],
+      "gainDb": 0.101,
+      "peakDb": -2.749
+    },
+    {
+      "file": "husband-Will-h01.mp3",
+      "id": "h01",
+      "role": "husband",
+      "text": "Кел, анын мектепке жолун алдын ала уюштуралы.",
+      "spoken": "Кел, анын мектепке жолун алдын ала уюштуралы.",
+      "voiceName": "Will",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "c445c2a2e3eef668",
+      "durationSec": 2.98,
+      "speechStart": 0,
+      "speechEnd": 2.72,
+      "words": [
+        {
+          "text": "Кел,",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "text": "анын",
+          "start": 0.54,
+          "end": 0.84
+        },
+        {
+          "text": "мектепке",
+          "start": 0.86,
+          "end": 1.2
+        },
+        {
+          "text": "жолун",
+          "start": 1.28,
+          "end": 1.6
+        },
+        {
+          "text": "алдын",
+          "start": 1.653,
+          "end": 1.96
+        },
+        {
+          "text": "ала",
+          "start": 1.98,
+          "end": 2.08
+        },
+        {
+          "text": "уюштуралы.",
+          "start": 2.16,
+          "end": 2.72
+        }
+      ],
+      "gainDb": 0.723,
+      "peakDb": -2.702
+    },
+    {
+      "file": "husband-Will-h02.mp3",
+      "id": "h02",
+      "role": "husband",
+      "text": "Мына, BalaGo — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат.",
+      "spoken": "Мына, БалаГо — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат.",
+      "voiceName": "Will",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "e933834eaa7a1959",
+      "durationSec": 4.78,
+      "speechStart": 0,
+      "speechEnd": 4.55,
+      "words": [
+        {
+          "text": "Мына,",
+          "start": 0,
+          "end": 0.23
+        },
+        {
+          "text": "BalaGo",
+          "start": 0.35,
+          "end": 0.923
+        },
+        {
+          "text": "балдар",
+          "start": 1.07,
+          "end": 1.35
+        },
+        {
+          "text": "үчүн",
+          "start": 1.43,
+          "end": 1.67
+        },
+        {
+          "text": "такси.",
+          "start": 1.69,
+          "end": 1.91
+        },
+        {
+          "text": "Азыр",
+          "start": 2.43,
+          "end": 3.03
+        },
+        {
+          "text": "алдын",
+          "start": 3.11,
+          "end": 3.47
+        },
+        {
+          "text": "ала",
+          "start": 3.49,
+          "end": 3.59
+        },
+        {
+          "text": "каттоо",
+          "start": 3.65,
+          "end": 3.99
+        },
+        {
+          "text": "жүрүп",
+          "start": 4.03,
+          "end": 4.203
+        },
+        {
+          "text": "жатат.",
+          "start": 4.217,
+          "end": 4.55
+        }
+      ],
+      "gainDb": -0.138,
+      "peakDb": -2.728
+    },
+    {
+      "file": "husband-KG-husband-h01.mp3",
+      "id": "h01",
+      "role": "husband",
+      "text": "Кел, анын мектепке жолун алдын ала уюштуралы.",
+      "spoken": "Кел, анын мектепке жолун алдын ала уюштуралы.",
+      "voiceName": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "53ba9b2d19795e85",
+      "durationSec": 2.93,
+      "speechStart": 0,
+      "speechEnd": 2.7,
+      "words": [
+        {
+          "text": "Кел,",
+          "start": 0,
+          "end": 0.22
+        },
+        {
+          "text": "анын",
+          "start": 0.42,
+          "end": 0.66
+        },
+        {
+          "text": "мектепке",
+          "start": 0.68,
+          "end": 1.1
+        },
+        {
+          "text": "жолун",
+          "start": 1.14,
+          "end": 1.42
+        },
+        {
+          "text": "алдын",
+          "start": 1.527,
+          "end": 1.9
+        },
+        {
+          "text": "ала",
+          "start": 1.94,
+          "end": 2.06
+        },
+        {
+          "text": "уюштуралы.",
+          "start": 2.1,
+          "end": 2.7
+        }
+      ],
+      "gainDb": 1.201,
+      "peakDb": -2.756
+    },
+    {
+      "file": "husband-KG-husband-h02.mp3",
+      "id": "h02",
+      "role": "husband",
+      "text": "Мына, BalaGo — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат.",
+      "spoken": "Мына, БалаГо — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат.",
+      "voiceName": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "modelId": "eleven_v3",
+      "seed": 73,
+      "hash": "ae5b206040d9fd73",
+      "durationSec": 4.93,
+      "speechStart": 0,
+      "speechEnd": 4.7,
+      "words": [
+        {
+          "text": "Мына,",
+          "start": 0,
+          "end": 0.22
+        },
+        {
+          "text": "BalaGo",
+          "start": 0.34,
+          "end": 0.7
+        },
+        {
+          "text": "балдар",
+          "start": 1.16,
+          "end": 1.5
+        },
+        {
+          "text": "үчүн",
+          "start": 1.58,
+          "end": 1.74
+        },
+        {
+          "text": "такси.",
+          "start": 1.8,
+          "end": 2.14
+        },
+        {
+          "text": "Азыр",
+          "start": 2.7,
+          "end": 3.18
+        },
+        {
+          "text": "алдын",
+          "start": 3.26,
+          "end": 3.62
+        },
+        {
+          "text": "ала",
+          "start": 3.64,
+          "end": 3.82
+        },
+        {
+          "text": "каттоо",
+          "start": 3.86,
+          "end": 4.14
+        },
+        {
+          "text": "жүрүп",
+          "start": 4.18,
+          "end": 4.38
+        },
+        {
+          "text": "жатат.",
+          "start": 4.42,
+          "end": 4.7
+        }
+      ],
+      "gainDb": 1.98,
+      "peakDb": -2.759
+    }
+  ]
+}

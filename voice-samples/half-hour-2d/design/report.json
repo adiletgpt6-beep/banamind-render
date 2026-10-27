@@ -1,0 +1,217 @@
+{
+  "roles": {
+    "mother": {
+      "hash": "1d77397acac62633",
+      "endpoint": "/v1/text-to-voice/design",
+      "description": "A warm, gentle Kyrgyz woman in her mid-thirties from Bishkek, a native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Soft, caring, slightly tired mother's voice. Clear, close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "text": "Уулумду мектептен алып келишим керек. Жарым саатка чыгып, кайра келем. Уулум, кечигип калдым. Сени көп күттүрүп койдум. Кечирип кой. Күн сайын же жумушка, же уулума кечигип жатам.",
+      "previews": [
+        {
+          "file": "mother-1.mp3",
+          "generatedVoiceId": "JOIKFycipxKGxjLn9pUq",
+          "durationSec": 13.481041666666666,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "mother-2.mp3",
+          "generatedVoiceId": "5Xx0r0RX4XWEq5vEdv8p",
+          "durationSec": 12.932458333333333,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "mother-3.mp3",
+          "generatedVoiceId": "HJ9LITOnKVWBXqgZJhfD",
+          "durationSec": 13.010833333333334,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        }
+      ]
+    },
+    "son": {
+      "hash": "7378ddf2856c6ee2",
+      "endpoint": "/v1/text-to-voice/design",
+      "description": "A young Kyrgyz woman in her early twenties with a light, bright, clear voice, a native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sincere, simple and soft. Clear, close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "text": "Апа, сабак бүттү. Апа, эмнеге мени дайыма эң акырында алып кетесиң? Мен сени көпкө күттүм. Эртең эртерээк келесиңби? Макул, апа.",
+      "previews": [
+        {
+          "file": "son-1.mp3",
+          "generatedVoiceId": "Oxj8oi9pAu19zqQOffmM",
+          "durationSec": 10.372458333333332
+        },
+        {
+          "file": "son-2.mp3",
+          "generatedVoiceId": "hrplWxj2caLHYGQTtYyZ",
+          "durationSec": 10.267958333333333
+        },
+        {
+          "file": "son-3.mp3",
+          "generatedVoiceId": "LUqqrbygfDJFxiaKzYvD",
+          "durationSec": 10.921041666666667
+        }
+      ]
+    },
+    "husband": {
+      "hash": "4241868094651f46",
+      "endpoint": "/v1/text-to-voice/design",
+      "description": "A calm, kind Kyrgyz man in his late thirties from Bishkek, a native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Low, warm, reassuring voice of a husband at home. Clear, close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "text": "Кел, анын мектепке жолун алдын ала уюштуралы. Мына, БалаГо — балдар үчүн такси. Азыр алдын ала каттоо жүрүп жатат. Тынчсызданба, бирге чечебиз.",
+      "previews": [
+        {
+          "file": "husband-1.mp3",
+          "generatedVoiceId": "hjrLtRvCE0h6VqgJeMMJ",
+          "durationSec": 9.797791666666667,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "husband-2.mp3",
+          "generatedVoiceId": "NVEGeFqcDqc5o29VoAQm",
+          "durationSec": 9.797791666666667,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "husband-3.mp3",
+          "generatedVoiceId": "SBE5skPrVSHkBgM3rTZa",
+          "durationSec": 10.032875,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        }
+      ]
+    },
+    "teacher": {
+      "hash": "578449bf17bf310c",
+      "endpoint": "/v1/text-to-voice/design",
+      "description": "A friendly Kyrgyz schoolteacher, a woman in her forties, a native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Kind, calm and reassuring. Clear, close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "text": "Апаң азыр келет. Мен сени менен чогуу күтүп турам. Бүгүн сабакта абдан жакшы иштедиң. Кел, бул жерге отура туралы.",
+      "previews": [
+        {
+          "file": "teacher-1.mp3",
+          "generatedVoiceId": "td38UrO5sPAxrQ1HlNTz",
+          "durationSec": 7.002666666666666,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "teacher-2.mp3",
+          "generatedVoiceId": "EBOfpUWl9G5ltD2PkFgy",
+          "durationSec": 7.002666666666666,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "teacher-3.mp3",
+          "generatedVoiceId": "eQKWD0LWmVMbcjodeHjt",
+          "durationSec": 7.081041666666667,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        }
+      ]
+    },
+    "boss": {
+      "hash": "4635e5f778d18eb1",
+      "endpoint": "/v1/text-to-voice/design",
+      "description": "A polite, calm Kyrgyz office manager, a man in his fifties, a native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Measured, friendly, understanding. Clear, close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "text": "Макул, бара бериңиз. Балаңызды алып келиңиз, андан кийин ишти бүтүрөбүз. Эч кабатыр болбоңуз, түшүнөм.",
+      "previews": [
+        {
+          "file": "boss-1.mp3",
+          "generatedVoiceId": "oxxAS9dQYw5qoxRFZV7e",
+          "durationSec": 5.801041666666666,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "boss-2.mp3",
+          "generatedVoiceId": "yCcjraKUNFsfIv02eS9D",
+          "durationSec": 6.5324583333333335,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "boss-3.mp3",
+          "generatedVoiceId": "tCmrYkHFbHtLuwsjDuy7",
+          "durationSec": 5.957791666666667,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        }
+      ]
+    },
+    "colleague": {
+      "hash": "44af98aae1f397b8",
+      "endpoint": "/v1/text-to-voice/design",
+      "description": "A young Kyrgyz office worker, a man in his late twenties, a native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Friendly, casual, a bit hurried. Clear, close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "text": "Айгерим, бир аз жардам берип коёсуңбу? Бул таблицаны бирге карап чыгалы. Көп убактыңды албайм, бир нече эле мүнөт.",
+      "previews": [
+        {
+          "file": "colleague-1.mp3",
+          "generatedVoiceId": "S87HaYymDP3SARzmBPgS",
+          "durationSec": 5.722666666666667,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "colleague-2.mp3",
+          "generatedVoiceId": "thlkU1SetuoRHsVWYkol",
+          "durationSec": 6.27125,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        },
+        {
+          "file": "colleague-3.mp3",
+          "generatedVoiceId": "vwwCenFrz3hrkcBxw3Zm",
+          "durationSec": 5.879416666666667,
+          "language": null,
+          "languageProb": null,
+          "kyrgyz": false,
+          "cer": null,
+          "heard": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "mother": {
+    "generatedVoiceId": "5Xx0r0RX4XWEq5vEdv8p",
+    "voiceId": "5Xx0r0RX4XWEq5vEdv8p"
+  },
+  "son": {
+    "generatedVoiceId": "Oxj8oi9pAu19zqQOffmM",
+    "voiceId": "Oxj8oi9pAu19zqQOffmM"
+  },
+  "husband": {
+    "generatedVoiceId": "NVEGeFqcDqc5o29VoAQm",
+    "voiceId": "NVEGeFqcDqc5o29VoAQm"
+  },
+  "teacher": {
+    "generatedVoiceId": "EBOfpUWl9G5ltD2PkFgy",
+    "voiceId": "EBOfpUWl9G5ltD2PkFgy"
+  },
+  "boss": {
+    "generatedVoiceId": "yCcjraKUNFsfIv02eS9D",
+    "voiceId": "yCcjraKUNFsfIv02eS9D"
+  },
+  "colleague": {
+    "generatedVoiceId": "S87HaYymDP3SARzmBPgS",
+    "voiceId": "S87HaYymDP3SARzmBPgS"
+  }
+}

@@ -1,0 +1,246 @@
+// Синтез одной реплики для BalaGoHalfHour2D (ElevenLabs eleven_v3, ky).
+// Используется и для проб голосов, и для полной озвучки: одинаковые
+// настройки → одинаковый хэш → удачная проба переиспользуется как реплика.
+//
+// • В конец добавляется страховочное слово (PAD), чтобы модель
+//   договорила последнее слово, затем оно вырезается по таймингам.
+// • Тишина по краям обрезается, громкость реплик выравнивается.
+// • Темп и высота тона НЕ меняются.
+import { createHash } from "node:crypto";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { tmpdir } from "node:os";
+import { HH2_TTS } from "../../src/half-hour-2d/script.ts";
+import { SAMPLE_RATE as SR, decodeMono, ffmpeg, writeWav } from "./audio.mjs";
+
+const TMP = join(tmpdir(), "balago-hh2d-voice");
+mkdirSync(TMP, { recursive: true });
+const API = process.env.ELEVENLABS_API_BASE?.trim() || "https://api.elevenlabs.io";
+const round = (x) => Number(x.toFixed(3));
+const isLetter = (ch) => /[\p{L}\p{N}]/u.test(ch);
+
+// Голоса, созданные Voice Design, записаны в кандидатах как "design:<роль>";
+// их voice_id берётся из voice-samples/half-hour-2d/design/voices.json.
+const DESIGNED = "voice-samples/half-hour-2d/design/voices.json";
+export const resolveVoice = (voice) => {
+  if (!voice.voiceId.startsWith("design:")) return voice;
+  const role = voice.voiceId.slice("design:".length);
+  const map = existsSync(DESIGNED) ? JSON.parse(readFileSync(DESIGNED, "utf8")) : {};
+  if (!map[role]?.voiceId) throw new Error(`Голос ${voice.name} (${voice.voiceId}) ещё не создан: нет в ${DESIGNED}`);
+  return { ...voice, voiceId: map[role].voiceId };
+};
+
+// Seed реплики: общий или свой (если реплику нужно перегенерировать).
+export const lineSeed = (line) => line.seed ?? HH2_TTS.seed;
+
+export const hh2Hash = (line, voiceId) =>
+  createHash("sha1")
+    .update(
+      JSON.stringify({
+        v: 1,
+        text: line.spoken ?? line.text,
+        tag: line.tag ?? null,
+        voiceId,
+        modelId: HH2_TTS.modelId,
+        languageCode: HH2_TTS.languageCode,
+        voiceSettings: HH2_TTS.voiceSettings,
+        seed: lineSeed(line),
+      }),
+    )
+    .digest("hex")
+    .slice(0, 16);
+
+const rmsDb = (s, from, to) => {
+  let acc = 0;
+  const a = Math.max(0, from);
+  const b = Math.min(s.length, to);
+  for (let i = a; i < b; i++) acc += s[i] * s[i];
+  return 20 * Math.log10(Math.sqrt(acc / Math.max(1, b - a)) || 1e-9);
+};
+
+const PAD = "Рахмат.";
+
+const synthesize = async (apiKey, line, voice, withTag, seed, padMode) => {
+  const body = line.spoken ?? line.text;
+  const withPad = padMode !== "none";
+  const sep = padMode === "pause" ? " ... " : " ";
+  const text = `${withTag && line.tag ? `${line.tag} ` : ""}${body}${withPad ? `${sep}${PAD}` : ""}`;
+  console.log(`→ ${line.id} [${line.role}: ${voice.name}] seed ${seed}${withTag && line.tag ? ` ${line.tag}` : ""}: «${body}»`);
+  const res = await fetch(
+    `${API}/v1/text-to-speech/${voice.voiceId}/with-timestamps?output_format=mp3_44100_128`,
+    {
+      method: "POST",
+      headers: { "xi-api-key": apiKey, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        text,
+        model_id: HH2_TTS.modelId,
+        language_code: HH2_TTS.languageCode,
+        seed,
+        voice_settings: HH2_TTS.voiceSettings,
+        apply_text_normalization: "auto",
+      }),
+    },
+  );
+  if (!res.ok) {
+    throw new Error(`ElevenLabs ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  }
+  const data = await res.json();
+  const al = data.alignment;
+  if (!al?.characters?.length) throw new Error("Нет таймингов (alignment).");
+  const starts = al.character_start_times_seconds;
+  const ends = al.character_end_times_seconds;
+  const aligned = al.characters.join("");
+  const span = (from, needle) => {
+    const i = aligned.indexOf(needle, from);
+    if (i < 0) return null;
+    let a = i;
+    let b = i + needle.length - 1;
+    while (a < b && !isLetter(aligned[a])) a++;
+    while (b > a && !isLetter(aligned[b])) b--;
+    return { a, b, next: i + needle.length };
+  };
+  const whole = span(0, body);
+  if (!whole) throw new Error(`Реплика ${line.id} не найдена в таймингах.`);
+  const words = [];
+  let wc = aligned.indexOf(body);
+  for (const w of line.text.split(/\s+/).filter((x) => [...x].some(isLetter))) {
+    const sw = w.replace("BalaGo", "БалаГо");
+    const r = span(wc, sw);
+    if (!r) continue;
+    words.push({ text: w, start: starts[r.a], end: ends[r.b] });
+    wc = r.next;
+  }
+  const pad = withPad ? span(whole.next, PAD) : null;
+  return {
+    audio: Buffer.from(data.audio_base64, "base64"),
+    start: starts[whole.a],
+    end: ends[whole.b],
+    padStart: pad ? starts[pad.a] : null,
+    words,
+  };
+};
+
+const attempt = async (apiKey, line, voice) => {
+  const raw = join(TMP, `${line.id}-${voice.name}-raw.mp3`);
+  let useTag = Boolean(line.tag);
+  const plan = [
+    [0, "pad"],
+    [1, "pad"],
+    [0, "pause"],
+    [1, "pause"],
+    [0, "none"],
+  ];
+  let best = null;
+  for (let i = 0; i < plan.length; i++) {
+    const [ds, padMode] = plan[i];
+    const seed = lineSeed(line) + ds;
+    let res = await synthesize(apiKey, line, voice, useTag, seed, padMode);
+    // Тег прозвучал вслух → длинный кусок перед речью: без тега.
+    if (useTag && res.start > 0.9) {
+      console.warn(`  ⚠ ${line.id}: речь с ${res.start.toFixed(2)} с — тег, похоже, прозвучал; без тега`);
+      useTag = false;
+      res = await synthesize(apiKey, line, voice, false, seed, padMode);
+    }
+    writeFileSync(raw, res.audio);
+    const pcm = decodeMono(raw);
+    const withPad = padMode !== "none";
+    const cutAt =
+      withPad && res.padStart !== null
+        ? Math.min(res.padStart - 0.04, res.end + 0.5)
+        : pcm.length / SR;
+    const cut = Math.min(pcm.length, Math.round(cutAt * SR));
+    const win = withPad ? 0.12 : 0.04;
+    const tail = rmsDb(pcm, cut - Math.round(win * SR), cut);
+    const after = cutAt - res.end;
+    const ok = withPad ? tail < -35 && after >= 0.08 : tail < -30 && after >= 0;
+    const cand = { ...res, pcm: pcm.slice(0, cut), seed, usedTag: useTag, tail };
+    if (ok) return cand;
+    if (!best || tail < best.tail) best = cand;
+    console.warn(`  ⚠ ${line.id}, попытка ${i + 1} (${padMode}): конец не отделён тишиной (${tail.toFixed(1)} дБ)`);
+  }
+  console.warn(`  ⚠ ${line.id}: лучшая попытка (${best.tail.toFixed(1)} дБ) с мягким затуханием`);
+  const f = Math.min(best.pcm.length, Math.round(0.06 * SR));
+  for (let i = 0; i < f; i++) best.pcm[best.pcm.length - f + i] *= 1 - i / f;
+  return best;
+};
+
+// Обрезка тишины, выравнивание громкости (речь −16,5 дБFS, пик ≤ −2,5 дБFS).
+const finish = (res, outPath, id) => {
+  const { pcm } = res;
+  const thr = Math.pow(10, -45 / 20);
+  const win = Math.round(0.01 * SR);
+  const loudAt = (i) => {
+    let m = 0;
+    for (let k = i; k < Math.min(pcm.length, i + win); k++) m = Math.max(m, Math.abs(pcm[k]));
+    return m > thr;
+  };
+  let first = 0;
+  while (first < pcm.length && !loudAt(first)) first += win;
+  let last = pcm.length - win;
+  while (last > first && !loudAt(last)) last -= win;
+  const a = Math.max(0, Math.max(first, Math.round((res.start - 0.15) * SR)) - Math.round(0.05 * SR));
+  const b = Math.min(pcm.length, Math.max(last + win, Math.round(res.end * SR)) + Math.round(0.15 * SR));
+  const out = pcm.slice(a, b);
+  const fi = Math.round(0.01 * SR);
+  const fo = Math.round(0.03 * SR);
+  for (let i = 0; i < Math.min(fi, out.length); i++) out[i] *= i / fi;
+  for (let i = 0; i < Math.min(fo, out.length); i++) out[out.length - 1 - i] *= i / fo;
+  const blk = Math.round(0.05 * SR);
+  let acc = 0;
+  let cnt = 0;
+  for (let i = 0; i + blk <= out.length; i += blk) {
+    const db = rmsDb(out, i, i + blk);
+    if (db > -40) {
+      acc += Math.pow(10, db / 10);
+      cnt++;
+    }
+  }
+  const speechDb = cnt ? 10 * Math.log10(acc / cnt) : -30;
+  const gainDb = -16.5 - speechDb;
+  const wav = join(TMP, `${id}.wav`);
+  writeWav(wav, [out]);
+  ffmpeg([
+    "-i", wav,
+    "-af", `volume=${gainDb.toFixed(2)}dB,alimiter=limit=0.75:attack=3:release=60:level=disabled`,
+    "-ar", String(SR), "-ac", "1", "-codec:a", "libmp3lame", "-b:a", "192k",
+    outPath,
+  ]);
+  const shift = a / SR;
+  const final = decodeMono(outPath);
+  let peak = 0;
+  for (const v of final) peak = Math.max(peak, Math.abs(v));
+  return {
+    durationSec: round(final.length / SR),
+    speechStart: round(Math.max(0, res.start - shift)),
+    speechEnd: round(res.end - shift),
+    words: res.words.map((w) => ({
+      text: w.text,
+      start: round(Math.max(0, w.start - shift)),
+      end: round(w.end - shift),
+    })),
+    gainDb: round(gainDb),
+    peakDb: round(20 * Math.log10(peak || 1e-9)),
+  };
+};
+
+// Синтезирует реплику голосом voice в outPath; возвращает описание файла.
+export const synthLine = async (apiKey, line, voiceIn, outPath) => {
+  const voice = resolveVoice(voiceIn);
+  const res = await attempt(apiKey, line, voice);
+  const fin = finish(res, outPath, `${line.id}-${voice.name}`);
+  console.log(
+    `  ✓ ${outPath}: ${fin.durationSec.toFixed(2)} с, речь ${fin.speechStart.toFixed(2)}–${fin.speechEnd.toFixed(2)} с, пик ${fin.peakDb} дБFS`,
+  );
+  return {
+    id: line.id,
+    role: line.role,
+    text: line.text,
+    spoken: `${res.usedTag && line.tag ? `${line.tag} ` : ""}${line.spoken ?? line.text}`,
+    voiceName: voice.name,
+    voiceId: voice.voiceId,
+    modelId: HH2_TTS.modelId,
+    seed: res.seed,
+    hash: hh2Hash(line, voice.voiceId),
+    ...fin,
+  };
+};
