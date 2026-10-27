@@ -1,0 +1,54 @@
+{
+  "campaign": "BalaGo-50",
+  "batch": "episodes-11-15",
+  "preparedAt": "2026-10-13",
+  "productionRequested": true,
+  "baseBranch": "feature/balago-50-episodes-11-15",
+  "episodes": [
+    {
+      "episode": 11,
+      "id": "BG-010",
+      "title": "Сколько стоит переключение?",
+      "state": "ready_for_production",
+      "humanReviewedFinal": false,
+      "source": "campaigns/balago-50/episodes/11-BG-010.md",
+      "task": "campaigns/balago-50/production/TASK_BG-010_EP11.md"
+    },
+    {
+      "episode": 12,
+      "id": "BG-011",
+      "title": "Ключи на холодильнике",
+      "state": "ready_for_production",
+      "humanReviewedFinal": false,
+      "source": "campaigns/balago-50/episodes/12-BG-011.md",
+      "task": "campaigns/balago-50/production/TASK_BG-011_EP12.md"
+    },
+    {
+      "episode": 13,
+      "id": "BG-012",
+      "title": "О чём поговорим сегодня?",
+      "state": "ready_for_production",
+      "humanReviewedFinal": false,
+      "source": "campaigns/balago-50/episodes/13-BG-012.md",
+      "task": "campaigns/balago-50/production/TASK_BG-012_EP13.md"
+    },
+    {
+      "episode": 14,
+      "id": "BG-013",
+      "title": "Самый длинный вторник",
+      "state": "ready_for_production",
+      "humanReviewedFinal": false,
+      "source": "campaigns/balago-50/episodes/14-BG-013.md",
+      "task": "campaigns/balago-50/production/TASK_BG-013_EP14.md"
+    },
+    {
+      "episode": 15,
+      "id": "BG-014",
+      "title": "Красные кроссовки",
+      "state": "ready_for_production",
+      "humanReviewedFinal": false,
+      "source": "campaigns/balago-50/episodes/15-BG-014.md",
+      "task": "campaigns/balago-50/production/TASK_BG-014_EP15.md"
+    }
+  ]
+}
