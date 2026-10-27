@@ -1,0 +1,74 @@
+[
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/lora-cyrillic-600-italic.woff2",
+    "sha": "cdc6babfb84def50355c6b3b12e0f6a60b8f854b",
+    "kind": "font",
+    "license_sha": "372d3cb875058b56de434648a1ef62b4ac085f52"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/lora-cyrillic-600-normal.woff2",
+    "sha": "4c06c7b604231695b732892a0defab5b1209f883",
+    "kind": "font",
+    "license_sha": "372d3cb875058b56de434648a1ef62b4ac085f52"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/lora-cyrillic-700-italic.woff2",
+    "sha": "bd744a854d317f8c51f026ecff9be1758fa7f329",
+    "kind": "font",
+    "license_sha": "372d3cb875058b56de434648a1ef62b4ac085f52"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/lora-cyrillic-700-normal.woff2",
+    "sha": "559a71283e797e3b5110905c272c55fe042a640a",
+    "kind": "font",
+    "license_sha": "372d3cb875058b56de434648a1ef62b4ac085f52"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/lora-latin-700-normal.woff2",
+    "sha": "9a6ccddced93af06dbda75fcb9e12b3e635feb72",
+    "kind": "font",
+    "license_sha": "372d3cb875058b56de434648a1ef62b4ac085f52"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/nunito-cyrillic-700-normal.woff2",
+    "sha": "c14c5160a8759a85c648b6db9bba860e6d687e87",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/nunito-cyrillic-800-normal.woff2",
+    "sha": "4e8a202415fb34c25c4038b39a1c006b5ffc00e0",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/nunito-cyrillic-900-normal.woff2",
+    "sha": "afe05baa848a11d78b56ff649369c2e345cf8f2c",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/nunito-latin-700-normal.woff2",
+    "sha": "5b423ba969e8afefa066dc42eb1bd3b5bebbb96c",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/nunito-latin-800-normal.woff2",
+    "sha": "21502e09358f34ff5107052b8fe4ea20a1d98721",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-living-line/public/assets/fonts/nunito-latin-900-normal.woff2",
+    "sha": "13ec320d7d8fb533a91291103930bb3803c3f8cc",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]

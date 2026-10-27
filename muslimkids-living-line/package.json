@@ -1,0 +1,28 @@
+{
+  "name": "muslimkids-living-line",
+  "version": "1.0.0",
+  "description": "MUSLIM KIDS — The Living Line: educational 2D line animation (Remotion)",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@remotion/cli": "4.0.532",
+    "@remotion/paths": "4.0.532",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "studio": "remotion studio",
+    "typecheck": "tsc --noEmit",
+    "voice": "node scripts/generate-voice.mjs",
+    "sfx": "node scripts/generate-sfx.mjs",
+    "stills": "node scripts/render-stills.mjs",
+    "render:preview": "remotion render MuslimKidsLivingLine001 output/previews/preview_540x960.mp4 --scale=0.5 --codec=h264 --pixel-format=yuv420p",
+    "render": "remotion render MuslimKidsLivingLine001 output/final/MuslimKids_LivingLine_Episode001.mp4 --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --audio-bitrate=192k --crf=16"
+  }
+}

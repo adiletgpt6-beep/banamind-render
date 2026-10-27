@@ -1,0 +1,31 @@
+{
+  "fps": 30,
+  "durationSec": 60,
+  "voiceStartSec": { "s1": 0.9, "s2": 6.2, "s3": 14.2, "s4": 23.3, "s5": 33.4, "s6": 44.6, "s7": 53.9 },
+  "sfx": [
+    { "id": "breath", "f": 10, "gain": -30 },
+    { "id": "whoosh", "f": 38, "gain": -27, "len": 0.75 },
+    { "id": "sunrise", "f": 100, "gain": -26 },
+    { "id": "nightfall", "f": 142, "gain": -31 },
+    { "id": "whoosh", "f": 182, "gain": -30, "len": 0.9 },
+    { "id": "sunrise", "f": 312, "gain": -31 },
+    { "id": "whoosh", "f": 346, "gain": -29, "len": 1.6 },
+    { "id": "wind", "f": 420, "gain": -33, "len": 9.5 },
+    { "id": "tink", "f": 560, "gain": -30 },
+    { "id": "drop", "f": 700, "gain": -21 },
+    { "id": "growth", "f": 752, "gain": -31, "len": 4.2 },
+    { "id": "rustle", "f": 846, "gain": -33 },
+    { "id": "whoosh", "f": 992, "gain": -29, "len": 1.5 },
+    { "id": "sparkle", "f": 1048, "gain": -33 },
+    { "id": "sparkle", "f": 1066, "gain": -34 },
+    { "id": "sparkle", "f": 1084, "gain": -34 },
+    { "id": "air", "f": 1104, "gain": -31, "len": 2.2 },
+    { "id": "air", "f": 1352, "gain": -32, "len": 3.0 },
+    { "id": "whoosh", "f": 1606, "gain": -30, "len": 0.9 },
+    { "id": "sparkle", "f": 1700, "gain": -32 },
+    { "id": "sparkle", "f": 1716, "gain": -33 },
+    { "id": "sparkle", "f": 1732, "gain": -33 },
+    { "id": "sunrise", "f": 1748, "gain": -31 },
+    { "id": "breath", "f": 1774, "gain": -30 }
+  ]
+}

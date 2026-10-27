@@ -1,0 +1,5 @@
+node_modules/
+output/previews/*.mp4
+output/final/*.mp4
+output/previews/stills/test.png
+__pycache__/
