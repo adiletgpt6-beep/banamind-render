@@ -1,0 +1,277 @@
+name: BalaGoMeeting1320 (2D, №31)
+
+# 2D-фильм №31 «13:20дагы жолугушуу» («Встреча в 13:20»), композиция
+# BalaGoMeeting1320. Собирается только эта композиция (прежние ролики
+# здесь не рендерятся).
+#   voice   → пробы голосов (один раз на конфигурацию), реплики ElevenLabs
+#             (кэш по хэшу; новая реплика — 3 дубля, лучший по MMS); новые
+#             файлы сохраняются в ветку.
+#   render  → (workflow_dispatch или «[render]» в сообщении коммита)
+#             lint/TypeScript, тесты, контрольные кадры, MP4 1080×1920,
+#             −16 LUFS (true peak ≤ −1 dBTP), проверка каждой реплики в
+#             готовом звуке, копия 540×960 (обе с faststart).
+#   publish → оба MP4 файлами предварительного релиза
+#             meeting-1320-2d-preview (прямые ссылки на MP4).
+
+on:
+  push:
+    branches-ignore: [main]
+    paths:
+      - "src/meeting-1320/**"
+      - "src/BalaGoMeeting1320.tsx"
+      - "scripts/*m1320*"
+      - "scripts/lib/m1320-*"
+      - "scripts/meeting-1320.test.mjs"
+      - "public/meeting-1320/**"
+      - ".github/workflows/meeting-1320.yml"
+  workflow_dispatch:
+    inputs:
+      render:
+        description: "Собрать MP4 (иначе только озвучка)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: meeting-1320-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: balago-31-meeting-1320-2d
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    outputs:
+      saved: ${{ steps.save.outputs.saved }}
+      complete: ${{ steps.complete.outputs.complete }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-m1320-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-m1320-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-agegender-v1
+
+      - name: Voice probes (once per configuration)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/m1320-voice-probe.mjs
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/generate-m1320-voice.mjs
+
+      - name: Voice complete?
+        id: complete
+        run: |
+          node -e "const t=require('./public/meeting-1320/voice/timeline.json'); process.stdout.write('complete='+(!t.partial)+'\n')" >> "$GITHUB_OUTPUT"
+          cat "$GITHUB_OUTPUT"
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          git add public/meeting-1320/voice voice-samples/meeting-1320 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save meeting-1320 voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "saved=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload voice files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-31-meeting-1320-2d-voice
+          path: |
+            public/meeting-1320/voice/
+            voice-samples/meeting-1320/
+          retention-days: 30
+          if-no-files-found: ignore
+
+  # Ролик собирается по запросу (workflow_dispatch или «[render]» в
+  # сообщении коммита) и только с полной озвучкой; голова ветки уже
+  # содержит файлы, сохранённые задачей voice.
+  render:
+    needs: voice
+    if: >-
+      needs.voice.outputs.complete == 'true' &&
+      ((github.event_name == 'workflow_dispatch' && inputs.render) ||
+       (github.event_name == 'push' && contains(github.event.head_commit.message, '[render]')))
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (timeline, voices, texts, contact card)
+        run: node --test scripts/meeting-1320.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames
+        run: npm run stills:meeting-1320
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-31-meeting-1320-2d-frames
+          path: out/frames-meeting-1320/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Render MP4 (H.264/AAC, yuv420p, 1080×1920)
+        run: npm run render:meeting-1320 -- --log=warn
+
+      - name: Loudness −16 LUFS + faststart + mobile copy (540×960)
+        run: |
+          node scripts/m1320-loudness.mjs "out/$OUT.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+            -vf scale=540:960:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 23 \
+            -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart \
+            "out/$OUT-mobile.mp4"
+
+      - name: Every line is audible in the exported MP4
+        run: |
+          node scripts/m1320-speech-check.mjs "out/$OUT.mp4"
+          node scripts/m1320-speech-check.mjs "out/$OUT-mobile.mp4"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-m1320-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-m1320-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-agegender-v1
+
+      - name: Every line is recognised in the exported MP4 (MMS)
+        run: |
+          set -o pipefail
+          node scripts/m1320-export-asr.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+          node scripts/m1320-export-asr.mjs "out/$OUT-mobile.mp4" | tail -1 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify MP4 files (fail if missing or wrong format)
+        run: |
+          node scripts/verify-m1320.mjs "out/$OUT.mp4"
+          node scripts/verify-m1320.mjs "out/$OUT-mobile.mp4" --mobile
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-31-meeting-1320-2d-mp4
+          path: out/balago-31-meeting-1320-2d.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload mobile MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-31-meeting-1320-2d-mobile-mp4
+          path: out/balago-31-meeting-1320-2d-mobile.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: balago-31-meeting-1320-2d-*mp4
+          merge-multiple: true
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: meeting-1320-2d-preview
+        run: |
+          ls -la out
+          NOTES="BalaGoMeeting1320 «13:20дагы жолугушуу» — предварительный просмотр. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BalaGo №31 «13:20дагы жолугушуу» — 2D" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber "out/$OUT.mp4" "out/$OUT-mobile.mp4"
+          {
+            echo "### MP4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-mobile.mp4"
+          } >> "$GITHUB_STEP_SUMMARY"

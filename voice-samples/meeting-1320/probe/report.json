@@ -1,0 +1,520 @@
+{
+  "hash": "10c240a630f00d9c",
+  "done": true,
+  "rows": [
+    {
+      "role": "narrator",
+      "who": "boss",
+      "id": "N01",
+      "file": "narrator-boss-n01.mp3",
+      "speechSec": 5.53,
+      "cer": 0.043,
+      "f0": 130.1,
+      "profile": {
+        "age": 33.1,
+        "female": 0.003,
+        "male": 0.997,
+        "child": 0
+      },
+      "heard": "директордун гүнтартибинде күн сайым бир жолуушуу бар эле саат бирден жыйырма мүнөт өткөндө",
+      "penalty": 0.043
+    },
+    {
+      "role": "narrator",
+      "who": "boss",
+      "id": "N07",
+      "file": "narrator-boss-n07.mp3",
+      "speechSec": 2.341,
+      "cer": 0,
+      "f0": 146.8,
+      "profile": {
+        "age": 38.4,
+        "female": 0.001,
+        "male": 0.999,
+        "child": 0
+      },
+      "heard": "мына аны күн сайын ким күтүп жүргөн экен",
+      "penalty": 0
+    },
+    {
+      "role": "narrator",
+      "who": "nbfather",
+      "id": "N01",
+      "file": "narrator-nbfather-n01.mp3",
+      "speechSec": 4.863,
+      "cer": 0.065,
+      "f0": 123.1,
+      "profile": {
+        "age": 27.4,
+        "female": 0.004,
+        "male": 0.996,
+        "child": 0
+      },
+      "heard": "директордун күн тартивинде күн сайым бир жолу ошуу бар эле саат бирден 2ыйырма мүлөт өткөндө",
+      "penalty": 0.065
+    },
+    {
+      "role": "narrator",
+      "who": "nbfather",
+      "id": "N07",
+      "file": "narrator-nbfather-n07.mp3",
+      "speechSec": 2.101,
+      "cer": 0.8,
+      "f0": 128,
+      "profile": {
+        "age": 25.4,
+        "female": 0.003,
+        "male": 0.997,
+        "child": 0
+      },
+      "heard": "mн aн :fk 2 %гнx",
+      "penalty": 0.8
+    },
+    {
+      "role": "narrator",
+      "who": "nbbrother",
+      "id": "N01",
+      "file": "narrator-nbbrother-n01.mp3",
+      "speechSec": 4.81,
+      "cer": 0.065,
+      "f0": 115.1,
+      "profile": {
+        "age": 25.3,
+        "female": 0.003,
+        "male": 0.997,
+        "child": 0
+      },
+      "heard": "директордын күн тартибинде күн сайын бир жыл ошу бар эле саат бирден жыйырма мүнөт өткөндө",
+      "penalty": 0.065
+    },
+    {
+      "role": "narrator",
+      "who": "nbbrother",
+      "id": "N07",
+      "file": "narrator-nbbrother-n07.mp3",
+      "speechSec": 2.021,
+      "cer": 0.05,
+      "f0": 128.5,
+      "profile": {
+        "age": 36.3,
+        "female": 0.001,
+        "male": 0.999,
+        "child": 0
+      },
+      "heard": "мына аны кынсайын ким күтүп жүргөн экен",
+      "penalty": 0.05
+    },
+    {
+      "role": "assistant",
+      "who": "colleague",
+      "id": "A01",
+      "file": "assistant-colleague-a01.mp3",
+      "speechSec": 1.56,
+      "cer": 0.143,
+      "f0": 136.2,
+      "profile": {
+        "age": 24.8,
+        "female": 0.001,
+        "male": 0.999,
+        "child": 0
+      },
+      "heard": "бул жалубушууңузду жылдырсат былобы",
+      "penalty": 0.188
+    },
+    {
+      "role": "assistant",
+      "who": "colleague",
+      "id": "A02",
+      "file": "assistant-colleague-a02.mp3",
+      "speechSec": 2,
+      "cer": 0.068,
+      "f0": 146.8,
+      "profile": {
+        "age": 27.6,
+        "female": 0.001,
+        "male": 0.999,
+        "child": 0.001
+      },
+      "heard": "эртең да ошол убактабы жолубушу кала береби",
+      "penalty": 0.068
+    },
+    {
+      "role": "assistant",
+      "who": "teacher",
+      "id": "A01",
+      "file": "assistant-teacher-a01.mp3",
+      "speechSec": 2.32,
+      "cer": 0.057,
+      "f0": 254,
+      "profile": {
+        "age": 39.4,
+        "female": 0.996,
+        "male": 0.004,
+        "child": 0
+      },
+      "heard": "бул жолгушуңузду жылдырсак болобу",
+      "penalty": 0.057
+    },
+    {
+      "role": "assistant",
+      "who": "teacher",
+      "id": "A02",
+      "file": "assistant-teacher-a02.mp3",
+      "speechSec": 3.12,
+      "cer": 0.068,
+      "f0": 216.2,
+      "profile": {
+        "age": 31.7,
+        "female": 0.997,
+        "male": 0.003,
+        "child": 0
+      },
+      "heard": "эртен да ошол убакттагы жолугушу кала береби",
+      "penalty": 0.068
+    },
+    {
+      "role": "assistant",
+      "who": "friend",
+      "id": "A01",
+      "file": "assistant-friend-a01.mp3",
+      "speechSec": 2.05,
+      "cer": 0.057,
+      "f0": 254,
+      "profile": {
+        "age": 29.1,
+        "female": 0.996,
+        "male": 0.004,
+        "child": 0
+      },
+      "heard": "бул жолуушуңузду жылдырсак болобу",
+      "penalty": 0.057
+    },
+    {
+      "role": "assistant",
+      "who": "friend",
+      "id": "A02",
+      "file": "assistant-friend-a02.mp3",
+      "speechSec": 2.64,
+      "cer": 0.114,
+      "f0": 233.6,
+      "profile": {
+        "age": 26.1,
+        "female": 0.993,
+        "male": 0.006,
+        "child": 0.001
+      },
+      "heard": "эртең да ушол уактагы жоогушу кала береби",
+      "penalty": 0.114
+    },
+    {
+      "role": "son",
+      "who": "remix2",
+      "id": "S02",
+      "file": "son-remix2-s02.mp3",
+      "speechSec": 1.853,
+      "cer": 0.059,
+      "f0": 266.7,
+      "profile": {
+        "age": 25.5,
+        "female": 0.987,
+        "male": 0.012,
+        "child": 0.001
+      },
+      "heard": "бүгүн тажрыбабыз ийгириктүү болду",
+      "penalty": 0.276
+    },
+    {
+      "role": "son",
+      "who": "remix2",
+      "id": "S03",
+      "file": "son-remix2-s03.mp3",
+      "speechSec": 3.6,
+      "cer": 0.129,
+      "f0": 275.9,
+      "profile": {
+        "age": 35.6,
+        "female": 0.959,
+        "male": 0.041,
+        "child": 0
+      },
+      "heard": "машынада баарын айтып биригургон жокмун азыр айтып берсен болобу",
+      "penalty": 0.397
+    },
+    {
+      "role": "son",
+      "who": "kgboy",
+      "id": "S02",
+      "file": "son-kgboy-s02.mp3",
+      "speechSec": 1.768,
+      "cer": 0.059,
+      "f0": 280.7,
+      "profile": {
+        "age": 25.6,
+        "female": 0.984,
+        "male": 0.014,
+        "child": 0.002
+      },
+      "heard": "бүгүн тажырыйбабыз ийгиликтүү болдо",
+      "penalty": 0.276
+    },
+    {
+      "role": "son",
+      "who": "kgboy",
+      "id": "S03",
+      "file": "son-kgboy-s03.mp3",
+      "speechSec": 3.36,
+      "cer": 0.032,
+      "f0": 275.9,
+      "profile": {
+        "age": 28.2,
+        "female": 0.979,
+        "male": 0.02,
+        "child": 0.001
+      },
+      "heard": "машинада баарын айтып үлгөргөн жокмун азыр айтып берсең болобу",
+      "penalty": 0.263
+    },
+    {
+      "role": "son",
+      "who": "kgson",
+      "id": "S02",
+      "file": "son-kgson-s02.mp3",
+      "speechSec": 1.848,
+      "cer": 0.029,
+      "f0": 320,
+      "profile": {
+        "age": 25.4,
+        "female": 0.981,
+        "male": 0.014,
+        "child": 0.005
+      },
+      "heard": "бүгүн тажрыбабыз ийгиликтүү болду",
+      "penalty": 0.244
+    },
+    {
+      "role": "son",
+      "who": "kgson",
+      "id": "S03",
+      "file": "son-kgson-s03.mp3",
+      "speechSec": 3.65,
+      "cer": 0.032,
+      "f0": 296.3,
+      "profile": {
+        "age": 25.8,
+        "female": 0.979,
+        "male": 0.018,
+        "child": 0.003
+      },
+      "heard": "машинада баарын айтып үлгөргөн жокмун азыр айтып берсең болобу",
+      "penalty": 0.25
+    },
+    {
+      "role": "father",
+      "who": "husband",
+      "id": "F01",
+      "file": "father-husband-f01.mp3",
+      "speechSec": 4.4,
+      "cer": 0.095,
+      "f0": 108.1,
+      "profile": {
+        "age": 26.6,
+        "female": 0.003,
+        "male": 0.997,
+        "child": 0
+      },
+      "heard": "кардарга саат эки жарымды сумошту ошоп очейын кайтып келгенге аракет кылам",
+      "penalty": 0.095
+    },
+    {
+      "role": "father",
+      "who": "husband",
+      "id": "F02",
+      "file": "father-husband-f02.mp3",
+      "speechSec": 0.568,
+      "cer": 0.182,
+      "f0": 100,
+      "profile": {
+        "age": 30.8,
+        "female": 0.003,
+        "male": 0.997,
+        "child": 0
+      },
+      "heard": "айты перчи",
+      "penalty": 0.182
+    }
+  ],
+  "summary": [
+    {
+      "role": "narrator",
+      "id": "boss",
+      "name": "KG-boss",
+      "voiceId": "yCcjraKUNFsfIv02eS9D",
+      "from": "№10 half-hour-2d",
+      "n": 2,
+      "penalty": 0.021,
+      "cer": 0.021,
+      "f0": 138.45,
+      "age": 35.75,
+      "female": 0.002,
+      "male": 0.998,
+      "child": 0
+    },
+    {
+      "role": "narrator",
+      "id": "nbfather",
+      "name": "NB2-father",
+      "voiceId": "xxKkhYUgtZTPTuHpktPy",
+      "from": "№11 no-backup-2d",
+      "n": 2,
+      "penalty": 0.432,
+      "cer": 0.432,
+      "f0": 125.55,
+      "age": 26.4,
+      "female": 0.004,
+      "male": 0.996,
+      "child": 0
+    },
+    {
+      "role": "narrator",
+      "id": "nbbrother",
+      "name": "NB2-brother",
+      "voiceId": "IRGPSiyjpLdMfh3zNzFo",
+      "from": "№11 no-backup-2d",
+      "n": 2,
+      "penalty": 0.058,
+      "cer": 0.058,
+      "f0": 121.8,
+      "age": 30.8,
+      "female": 0.002,
+      "male": 0.998,
+      "child": 0
+    },
+    {
+      "role": "assistant",
+      "id": "colleague",
+      "name": "KG-colleague",
+      "voiceId": "S87HaYymDP3SARzmBPgS",
+      "from": "№10 half-hour-2d",
+      "n": 2,
+      "penalty": 0.128,
+      "cer": 0.105,
+      "f0": 141.5,
+      "age": 26.2,
+      "female": 0.001,
+      "male": 0.999,
+      "child": 0.001
+    },
+    {
+      "role": "assistant",
+      "id": "teacher",
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "from": "№10 half-hour-2d",
+      "n": 2,
+      "penalty": 0.063,
+      "cer": 0.063,
+      "f0": 235.1,
+      "age": 35.55,
+      "female": 0.996,
+      "male": 0.004,
+      "child": 0
+    },
+    {
+      "role": "assistant",
+      "id": "friend",
+      "name": "KG-friend",
+      "voiceId": "YFFd51gsFa9VT4xGD15W",
+      "from": "№11 no-backup-2d",
+      "n": 2,
+      "penalty": 0.086,
+      "cer": 0.086,
+      "f0": 243.8,
+      "age": 27.6,
+      "female": 0.994,
+      "male": 0.005,
+      "child": 0.001
+    },
+    {
+      "role": "son",
+      "id": "remix2",
+      "name": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "from": "№20, №30",
+      "n": 2,
+      "penalty": 0.337,
+      "cer": 0.094,
+      "f0": 271.3,
+      "age": 30.55,
+      "female": 0.973,
+      "male": 0.027,
+      "child": 0.001
+    },
+    {
+      "role": "son",
+      "id": "kgboy",
+      "name": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "from": "№22, №24",
+      "n": 2,
+      "penalty": 0.27,
+      "cer": 0.045,
+      "f0": 278.3,
+      "age": 26.9,
+      "female": 0.982,
+      "male": 0.017,
+      "child": 0.002
+    },
+    {
+      "role": "son",
+      "id": "kgson",
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "from": "№10, №12",
+      "n": 2,
+      "penalty": 0.247,
+      "cer": 0.03,
+      "f0": 308.15,
+      "age": 25.6,
+      "female": 0.98,
+      "male": 0.016,
+      "child": 0.004
+    },
+    {
+      "role": "father",
+      "id": "husband",
+      "name": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "from": "№10–№30",
+      "n": 2,
+      "penalty": 0.139,
+      "cer": 0.139,
+      "f0": 104.05,
+      "age": 28.7,
+      "female": 0.003,
+      "male": 0.997,
+      "child": 0
+    }
+  ],
+  "failed": [],
+  "fatherF0": 104.05,
+  "picked": {
+    "narrator": {
+      "id": "boss",
+      "name": "KG-boss",
+      "voiceId": "yCcjraKUNFsfIv02eS9D",
+      "reason": "меньший средний штраф (CER + темп) среди мужских голосов, отличных от отца по F0 ≥ 8 Гц"
+    },
+    "assistant": {
+      "id": "teacher",
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "reason": "меньший средний штраф (CER + темп) среди женских голосов"
+    },
+    "son": {
+      "id": "kgson",
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "reason": "меньший средний штраф (CER + темп + профиль «ребёнок»/возраст)"
+    }
+  }
+}

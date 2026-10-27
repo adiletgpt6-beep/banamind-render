@@ -1,0 +1,242 @@
+[
+  {
+    "path": "voice-samples/meeting-1320/probe/narrator-boss-n01.mp3",
+    "heard": "директордун гүнтартибинде күн сайым бир жолуушуу бар эле саат бирден жыйырма мүнөт өткөндө",
+    "cer": 0.043,
+    "f0": 130.1,
+    "profile": {
+      "age": 33.1,
+      "female": 0.003,
+      "male": 0.997,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/narrator-boss-n07.mp3",
+    "heard": "мына аны күн сайын ким күтүп жүргөн экен",
+    "cer": 0.0,
+    "f0": 146.8,
+    "profile": {
+      "age": 38.4,
+      "female": 0.001,
+      "male": 0.999,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/narrator-nbfather-n01.mp3",
+    "heard": "директордун күн тартивинде күн сайым бир жолу ошуу бар эле саат бирден 2ыйырма мүлөт өткөндө",
+    "cer": 0.065,
+    "f0": 123.1,
+    "profile": {
+      "age": 27.4,
+      "female": 0.004,
+      "male": 0.996,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/narrator-nbfather-n07.mp3",
+    "heard": "mн aн :fk 2 %гнx",
+    "cer": 0.8,
+    "f0": 128.0,
+    "profile": {
+      "age": 25.4,
+      "female": 0.003,
+      "male": 0.997,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/narrator-nbbrother-n01.mp3",
+    "heard": "директордын күн тартибинде күн сайын бир жыл ошу бар эле саат бирден жыйырма мүнөт өткөндө",
+    "cer": 0.065,
+    "f0": 115.1,
+    "profile": {
+      "age": 25.3,
+      "female": 0.003,
+      "male": 0.997,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/narrator-nbbrother-n07.mp3",
+    "heard": "мына аны кынсайын ким күтүп жүргөн экен",
+    "cer": 0.05,
+    "f0": 128.5,
+    "profile": {
+      "age": 36.3,
+      "female": 0.001,
+      "male": 0.999,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/assistant-colleague-a01.mp3",
+    "heard": "бул жалубушууңузду жылдырсат былобы",
+    "cer": 0.143,
+    "f0": 136.2,
+    "profile": {
+      "age": 24.8,
+      "female": 0.001,
+      "male": 0.999,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/assistant-colleague-a02.mp3",
+    "heard": "эртең да ошол убактабы жолубушу кала береби",
+    "cer": 0.068,
+    "f0": 146.8,
+    "profile": {
+      "age": 27.6,
+      "female": 0.001,
+      "male": 0.999,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/assistant-teacher-a01.mp3",
+    "heard": "бул жолгушуңузду жылдырсак болобу",
+    "cer": 0.057,
+    "f0": 254.0,
+    "profile": {
+      "age": 39.4,
+      "female": 0.996,
+      "male": 0.004,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/assistant-teacher-a02.mp3",
+    "heard": "эртен да ошол убакттагы жолугушу кала береби",
+    "cer": 0.068,
+    "f0": 216.2,
+    "profile": {
+      "age": 31.7,
+      "female": 0.997,
+      "male": 0.003,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/assistant-friend-a01.mp3",
+    "heard": "бул жолуушуңузду жылдырсак болобу",
+    "cer": 0.057,
+    "f0": 254.0,
+    "profile": {
+      "age": 29.1,
+      "female": 0.996,
+      "male": 0.004,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/assistant-friend-a02.mp3",
+    "heard": "эртең да ушол уактагы жоогушу кала береби",
+    "cer": 0.114,
+    "f0": 233.6,
+    "profile": {
+      "age": 26.1,
+      "female": 0.993,
+      "male": 0.006,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/son-remix2-s02.mp3",
+    "heard": "бүгүн тажрыбабыз ийгириктүү болду",
+    "cer": 0.059,
+    "f0": 266.7,
+    "profile": {
+      "age": 25.5,
+      "female": 0.987,
+      "male": 0.012,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/son-remix2-s03.mp3",
+    "heard": "машынада баарын айтып биригургон жокмун азыр айтып берсен болобу",
+    "cer": 0.129,
+    "f0": 275.9,
+    "profile": {
+      "age": 35.6,
+      "female": 0.959,
+      "male": 0.041,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/son-kgboy-s02.mp3",
+    "heard": "бүгүн тажырыйбабыз ийгиликтүү болдо",
+    "cer": 0.059,
+    "f0": 280.7,
+    "profile": {
+      "age": 25.6,
+      "female": 0.984,
+      "male": 0.014,
+      "child": 0.002
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/son-kgboy-s03.mp3",
+    "heard": "машинада баарын айтып үлгөргөн жокмун азыр айтып берсең болобу",
+    "cer": 0.032,
+    "f0": 275.9,
+    "profile": {
+      "age": 28.2,
+      "female": 0.979,
+      "male": 0.02,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/son-kgson-s02.mp3",
+    "heard": "бүгүн тажрыбабыз ийгиликтүү болду",
+    "cer": 0.029,
+    "f0": 320.0,
+    "profile": {
+      "age": 25.4,
+      "female": 0.981,
+      "male": 0.014,
+      "child": 0.005
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/son-kgson-s03.mp3",
+    "heard": "машинада баарын айтып үлгөргөн жокмун азыр айтып берсең болобу",
+    "cer": 0.032,
+    "f0": 296.3,
+    "profile": {
+      "age": 25.8,
+      "female": 0.979,
+      "male": 0.018,
+      "child": 0.003
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/father-husband-f01.mp3",
+    "heard": "кардарга саат эки жарымды сумошту ошоп очейын кайтып келгенге аракет кылам",
+    "cer": 0.095,
+    "f0": 108.1,
+    "profile": {
+      "age": 26.6,
+      "female": 0.003,
+      "male": 0.997,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/meeting-1320/probe/father-husband-f02.mp3",
+    "heard": "айты перчи",
+    "cer": 0.182,
+    "f0": 100.0,
+    "profile": {
+      "age": 30.8,
+      "female": 0.003,
+      "male": 0.997,
+      "child": 0.0
+    }
+  }
+]

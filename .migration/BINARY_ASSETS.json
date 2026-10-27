@@ -1,0 +1,26 @@
+[
+  {
+    "path": "public/fonts/InterTight-Black.ttf",
+    "sha": "bb0436eb1482d04fdcf0df773f039c76bf42cbea",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "public/fonts/Onest-ExtraBold.ttf",
+    "sha": "109945afea664fea993a5621dd3afc1af62341d4",
+    "kind": "font",
+    "license_sha": "1d466e3f634bcf2ccc12551e863883efe5ca1877"
+  },
+  {
+    "path": "public/fonts/Onest-Medium.ttf",
+    "sha": "21c793fd7d8a1d76e15a23973e6d328286383aea",
+    "kind": "font",
+    "license_sha": "1d466e3f634bcf2ccc12551e863883efe5ca1877"
+  }
+]
