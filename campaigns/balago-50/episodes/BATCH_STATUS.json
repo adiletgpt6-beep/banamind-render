@@ -1,0 +1,82 @@
+{
+  "batch": "episodes-03-10",
+  "created": "2026-10-13",
+  "baseBranch": "feature/balago-50-episodes-03-10",
+  "basePR": 50,
+  "productionAuthorizedByUser": true,
+  "description": "Eight scripts for episodes 3–10; seven fresh Claude Code chats launch episodes 3–9 now, episode 10 prepared for eighth session.",
+  "episodes": [
+    {
+      "episode": 3,
+      "id": "BG-002",
+      "title": "Три минуты до совещания",
+      "status": "ready_for_production",
+      "deliveredForFinalReview": false,
+      "script": "campaigns/balago-50/episodes/03-BG-002.md",
+      "task": "campaigns/balago-50/production/TASK_BG-002_EP03.md"
+    },
+    {
+      "episode": 4,
+      "id": "BG-003",
+      "title": "Куда исчезает обед?",
+      "status": "ready_for_production",
+      "deliveredForFinalReview": false,
+      "script": "campaigns/balago-50/episodes/04-BG-003.md",
+      "task": "campaigns/balago-50/production/TASK_BG-003_EP04.md"
+    },
+    {
+      "episode": 5,
+      "id": "BG-004",
+      "title": "Бухгалтерия времени",
+      "status": "ready_for_production",
+      "deliveredForFinalReview": false,
+      "script": "campaigns/balago-50/episodes/05-BG-004.md",
+      "task": "campaigns/balago-50/production/TASK_BG-004_EP05.md"
+    },
+    {
+      "episode": 6,
+      "id": "BG-005",
+      "title": "Два района",
+      "status": "ready_for_production",
+      "deliveredForFinalReview": false,
+      "script": "campaigns/balago-50/episodes/06-BG-005.md",
+      "task": "campaigns/balago-50/production/TASK_BG-005_EP06.md"
+    },
+    {
+      "episode": 7,
+      "id": "BG-006",
+      "title": "Незаконченная презентация",
+      "status": "ready_for_production",
+      "deliveredForFinalReview": false,
+      "script": "campaigns/balago-50/episodes/07-BG-006.md",
+      "task": "campaigns/balago-50/production/TASK_BG-006_EP07.md"
+    },
+    {
+      "episode": 8,
+      "id": "BG-007",
+      "title": "Календарь наизнанку",
+      "status": "ready_for_production",
+      "deliveredForFinalReview": false,
+      "script": "campaigns/balago-50/episodes/08-BG-007.md",
+      "task": "campaigns/balago-50/production/TASK_BG-007_EP08.md"
+    },
+    {
+      "episode": 9,
+      "id": "BG-008",
+      "title": "Один пропущенный звонок",
+      "status": "ready_for_production",
+      "deliveredForFinalReview": false,
+      "script": "campaigns/balago-50/episodes/09-BG-008.md",
+      "task": "campaigns/balago-50/production/TASK_BG-008_EP09.md"
+    },
+    {
+      "episode": 10,
+      "id": "BG-009",
+      "title": "Пять рабочих дней",
+      "status": "ready_for_production",
+      "deliveredForFinalReview": false,
+      "script": "campaigns/balago-50/episodes/10-BG-009.md",
+      "task": "campaigns/balago-50/production/TASK_BG-009_EP10.md"
+    }
+  ]
+}

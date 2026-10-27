@@ -1,0 +1,28 @@
+// Фирменные цвета ролика: белый и светлый фон, ярко-жёлтые акценты,
+// тёмно-синие надписи. Бумага чека — тёплая белая. Машина — белая
+// легковая (не жёлтое такси).
+export const C = {
+  white: "#FFFFFF",
+  paper: "#FFFDF7",
+  paperBack: "#F7F2E6",
+  paperEdge: "#E6DCC8",
+  paperLine: "#E9E2D3",
+  table: "#F3ECE0",
+  tableGrain: "#EADFCD",
+  navy: "#14285A",
+  ink: "#24365F",
+  muted: "#5B6B8C",
+  yellow: "#FFC90E",
+  yellowDeep: "#F2B200",
+  yellowSoft: "#FFF4C2",
+  sky: "#EAF3FC",
+  blueSoft: "#E3ECF8",
+  blueZone: "#C9D9EE",
+  green: "#1F7A45",
+  greenSoft: "#E8F6EC",
+  car: "#FBFBFA",
+  carEdge: "#AEB6C2",
+  road: "#B9BDC4",
+  roadDark: "#9EA3AC",
+  stamp: "#2F4C8F",
+} as const;
