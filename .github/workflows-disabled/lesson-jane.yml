@@ -1,0 +1,388 @@
+name: BanaMind BM-032 — Джейн Эйр (банан, 30 мин, 16:9)
+
+# Литературный фильм-анализ BanaMind (не реклама BalaGo): правила BalaGo
+# о контактах/Бишкеке/кыргызской озвучке к нему не применяются.
+# Своя точка входа Remotion src/lesson-jane/index.ts, прежние ролики не трогает.
+#   voice    → озвучка ElevenLabs по репликам (тот же голос банана; готовые с тем же
+#              хэшем переиспользуются), новые файлы сохраняются в ветку.
+#   render   → «[pilot]» в сообщении коммита — только пилот 30–60 с (1 задание);
+#              иначе 8 параллельных частей; «[no render]» — без рендера.
+#   voice-qa → распознавание каждой реплики (faster-whisper) и сравнение со сценарием.
+#   assemble → склейка без пережатия, озвучка + тихий оригинальный фон по тайм-лайну,
+#              AAC + faststart, SRT, проверка ffprobe/звука/чёрных кадров,
+#              превью 960×540, контрольные кадры в ветку, приватный релиз книги.
+# Публикация на YouTube — только владельцем вручную.
+
+on:
+  push:
+    branches: ["feature/banamind-bm-032-jane-eyre-bronte"]
+    paths:
+      - "src/lesson-jane/**"
+      - "scripts/lesson-jane/**"
+      - "!scripts/lesson-jane/docs.mjs"
+      - ".github/workflows/lesson-jane.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pilot | full | voice | assemble (сборка из частей уже готового прогона run_id)"
+        default: "pilot"
+      run_id:
+        description: "для mode=assemble: id прогона с артефактами jane-part-*"
+        default: ""
+
+concurrency:
+  group: lesson-jane-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  BOOK: jane-eyre-bronte
+  TAG: book-jane-eyre-bronte
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.plan.outputs.ranges }}
+      mode: ${{ steps.plan.outputs.mode }}
+      pilot: ${{ steps.plan.outputs.pilot }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          if command -v ffmpeg >/dev/null && command -v ffprobe >/dev/null; then ffmpeg -version | head -1; exit 0; fi
+          APT="-o Acquire::Retries=5 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
+          for i in 1 2 3; do
+            if timeout 600 sudo apt-get $APT update -qq && timeout 600 sudo apt-get $APT install -y --no-install-recommends ffmpeg; then break; fi
+            echo "apt retry $i"; sleep 20
+          done
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            echo "apt failed — static ffmpeg fallback"
+            pip install --quiet static-ffmpeg && python3 -c "import static_ffmpeg; static_ffmpeg.add_paths()"
+            D=$(python3 -c "import static_ffmpeg.run as r, os; print(os.path.dirname(r.get_or_fetch_platform_executables_else_raise()[0]))")
+            sudo ln -sf "$D/ffmpeg" /usr/local/bin/ffmpeg; sudo ln -sf "$D/ffprobe" /usr/local/bin/ffprobe
+          fi
+          ffmpeg -version | head -1
+
+      - name: Script checks (quotes vs. novel, lines, questions)
+        run: node --test scripts/lesson-jane/*.test.mjs
+
+      - name: ElevenLabs quota (info)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit','next_character_count_reset_unix')} if 'tier' in d else d)"
+          node -e "import('./src/lesson-jane/script.ts').then(m=>console.log('символов в сценарии:', m.SCENES.flatMap(s=>s.lines.map(l=>l.say??l.text)).join('').length))"
+
+      - name: Voiceover (cached lines are reused; [pilot] — only the pilot lines)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          MSG: ${{ github.event.head_commit.message }}
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+        run: |
+          if [[ "$MSG" == *"[pilot]"* || "$INPUT_MODE" == "pilot" ]]; then export VOICE_LIMIT=pilot; fi
+          node scripts/lesson-jane/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always()
+        run: |
+          [ -d public/lesson-jane/voice ] && git add public/lesson-jane/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(bm-032): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Plan render
+        id: plan
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+        run: |
+          node --test scripts/lesson-jane/*.test.mjs
+          node scripts/lesson-jane/captions-check.mjs > /tmp/captions.json || (cat /tmp/captions.json; exit 1)
+          head -c 600 /tmp/captions.json
+          MODE="full"
+          if [[ "$MSG" == *"[no render]"* || "$INPUT_MODE" == "voice" ]]; then MODE="none"; fi
+          if [[ "$MSG" == *"[pilot]"* || "$INPUT_MODE" == "pilot" ]]; then MODE="pilot"; fi
+          if [[ "$INPUT_MODE" == "assemble" ]]; then MODE="assemble"; fi
+          if [ "$MODE" = "pilot" ]; then P=$(node scripts/lesson-jane/frames.mjs pilot); else P=$(node scripts/lesson-jane/frames.mjs 8); fi
+          echo "$P"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+          echo "pilot=$(echo "$P" | python3 -c 'import sys,json; print(json.load(sys.stdin).get("pilotSeconds",0))')" >> "$GITHUB_OUTPUT"
+
+  voice-qa:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          if ! command -v ffmpeg >/dev/null; then
+            for i in 1 2; do timeout 300 sudo apt-get -o Acquire::Retries=3 update -qq && timeout 300 sudo apt-get -o Acquire::Retries=3 install -y --no-install-recommends ffmpeg && break; sleep 10; done
+          fi
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            echo "apt failed — static ffmpeg fallback"
+            pip install --quiet static-ffmpeg && python3 -c "import static_ffmpeg; static_ffmpeg.add_paths()"
+            D=$(python3 -c "import static_ffmpeg.run as r, os; print(os.path.dirname(r.get_or_fetch_platform_executables_else_raise()[0]))")
+            sudo ln -sf "$D/ffmpeg" /usr/local/bin/ffmpeg; sudo ln -sf "$D/ffprobe" /usr/local/bin/ffprobe
+          fi
+          pip install --quiet faster-whisper==1.1.1
+
+      - name: Recognise every voice line and compare with the script
+        run: |
+          node -e "import('./src/lesson-jane/script.ts').then(m=>require('fs').writeFileSync('/tmp/lines.json', JSON.stringify(m.SCENES.flatMap(s=>s.lines.map(l=>({id:l.id,text:l.text}))).filter(l=>require('fs').existsSync('public/lesson-jane/voice/'+l.id+'.mp3')))))"
+          python3 scripts/lesson-jane/voice_asr.py /tmp/lines.json public/lesson-jane/voice qa-asr small
+          tail -c 3000 qa-asr/voice-asr.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save the report to the branch
+        run: |
+          DEST=books/$BOOK/video/qa-voice
+          mkdir -p "$DEST" && cp qa-asr/* "$DEST/"
+          git add "$DEST"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(bm-032): voice ASR QA report [skip ci]" || exit 0
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep 5
+          done
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.mode == 'pilot' || needs.voice.outputs.mode == 'full'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          if command -v ffmpeg >/dev/null && command -v ffprobe >/dev/null; then ffmpeg -version | head -1; exit 0; fi
+          APT="-o Acquire::Retries=5 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
+          for i in 1 2 3; do
+            if timeout 600 sudo apt-get $APT update -qq && timeout 600 sudo apt-get $APT install -y --no-install-recommends ffmpeg; then break; fi
+            echo "apt retry $i"; sleep 20
+          done
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            echo "apt failed — static ffmpeg fallback"
+            pip install --quiet static-ffmpeg && python3 -c "import static_ffmpeg; static_ffmpeg.add_paths()"
+            D=$(python3 -c "import static_ffmpeg.run as r, os; print(os.path.dirname(r.get_or_fetch_platform_executables_else_raise()[0]))")
+            sudo ln -sf "$D/ffmpeg" /usr/local/bin/ffmpeg; sudo ln -sf "$D/ffprobe" /usr/local/bin/ffprobe
+          fi
+          ffmpeg -version | head -1
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/lesson-jane/index.ts JaneLesson "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jane-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [voice, render]
+    if: always() && needs.voice.result == 'success' && (needs.render.result == 'success' || needs.voice.outputs.mode == 'assemble')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          if command -v ffmpeg >/dev/null && command -v ffprobe >/dev/null; then ffmpeg -version | head -1; exit 0; fi
+          APT="-o Acquire::Retries=5 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
+          for i in 1 2 3; do
+            if timeout 600 sudo apt-get $APT update -qq && timeout 600 sudo apt-get $APT install -y --no-install-recommends ffmpeg; then break; fi
+            echo "apt retry $i"; sleep 20
+          done
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            echo "apt failed — static ffmpeg fallback"
+            pip install --quiet static-ffmpeg && python3 -c "import static_ffmpeg; static_ffmpeg.add_paths()"
+            D=$(python3 -c "import static_ffmpeg.run as r, os; print(os.path.dirname(r.get_or_fetch_platform_executables_else_raise()[0]))")
+            sudo ln -sf "$D/ffmpeg" /usr/local/bin/ffmpeg; sudo ln -sf "$D/ffprobe" /usr/local/bin/ffprobe
+          fi
+          ffmpeg -version | head -1
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: jane-part-*
+          path: out/parts
+          merge-multiple: true
+          run-id: ${{ github.event.inputs.run_id || github.run_id }}
+          github-token: ${{ github.token }}
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart)
+        env:
+          MODE: ${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}
+          PILOT: ${{ needs.voice.outputs.pilot }}
+        run: |
+          git checkout ${{ needs.voice.outputs.sha }} -- public/lesson-jane src/lesson-jane scripts/lesson-jane
+          git reset -q  # файлы прогона нужны только для сборки — не попадают в коммит QA
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          if [ "$MODE" = "pilot" ]; then
+            node scripts/lesson-jane/mixdown.mjs out/audio.wav --pilot=$PILOT --allow-missing
+            OUT=out/pilot.mp4
+          else
+            node scripts/lesson-jane/mixdown.mjs out/audio.wav
+            OUT=out/final-youtube.mp4
+          fi
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "$OUT"
+          echo "OUT=$OUT" >> "$GITHUB_ENV"
+          node scripts/lesson-jane/srt.mjs out/final-youtube.srt
+
+      - name: Verify MP4 (ffprobe, duration, loudness, black frames)
+        env:
+          MODE: ${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}
+        run: |
+          mkdir -p qa
+          ffprobe -v error -show_streams -show_format -of json "$OUT" > qa/ffprobe.json
+          if [ "$MODE" = "pilot" ]; then node scripts/lesson-jane/verify.mjs "$OUT" --pilot | tee qa/verify.txt; else node scripts/lesson-jane/verify.mjs "$OUT" | tee qa/verify.txt; fi
+          cat qa/verify.txt >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Preview copy (960×540) and QA frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "$OUT" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 26 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "${OUT%.mp4}-preview-960x540.mp4"
+          D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT")
+          mkdir -p qa/frames
+          python3 - "$D" > /tmp/ts.txt <<'PY'
+          import sys
+          d=float(sys.argv[1]); n=12 if d<120 else 36
+          print("\n".join(f"{d*(i+0.5)/n:.2f}" for i in range(n)))
+          PY
+          for s in $(cat /tmp/ts.txt); do
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i "$OUT" -frames:v 1 -vf scale=640:-2 -q:v 4 "qa/frames/t$(printf %07.2f $s).jpg"
+          done
+          ls qa/frames | wc -l
+
+      - name: Save QA (frames, ffprobe, verify, SRT) to the branch
+        env:
+          MODE: ${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}
+        run: |
+          DEST=books/$BOOK/video/qa-$MODE
+          rm -rf "$DEST"; mkdir -p "$DEST"
+          cp -r qa/* "$DEST/"
+          cp out/final-youtube.srt "books/$BOOK/video/final-youtube.srt"
+          git checkout HEAD -- public/lesson-jane src/lesson-jane scripts/lesson-jane
+          git add "$DEST" "books/$BOOK/video/final-youtube.srt"
+          git diff --cached --name-only | grep -vE "^books/$BOOK/video/" && { echo "в коммит QA попали посторонние файлы"; exit 1; } || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(bm-032): $MODE QA frames, ffprobe and SRT [skip ci]" || exit 0
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep 5
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jane-${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}-mp4
+          path: |
+            out/*.mp4
+            out/final-youtube.srt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish private pre-release (repository access required)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MODE: ${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}
+        run: |
+          NOTES="BanaMind BM-032 «Джейн Эйр» (Шарлотта Бронте) — оригинальный анимационный фильм с бананом-ведущим (русский, 1920×1080, 30 fps, H.264/AAC). Ветка ${GITHUB_REF_NAME}, коммит ${{ needs.voice.outputs.sha }}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. Не опубликовано на YouTube; выбор и публикация — владельцем."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BM-032 · Джейн Эйр — BanaMind (30 мин)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          if [ "$MODE" = "pilot" ]; then
+            gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber out/pilot.mp4 out/pilot-preview-960x540.mp4
+          else
+            gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber out/final-youtube.mp4 out/final-youtube-preview-960x540.mp4 out/final-youtube.srt
+          fi
+          {
+            echo "### Файлы (нужен вход в GitHub с доступом к репозиторию)"
+            for f in $(ls out/*.mp4 out/*.srt); do echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$(basename $f)"; done
+          } >> "$GITHUB_STEP_SUMMARY"
