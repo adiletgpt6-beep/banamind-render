@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "edc9978273d303e3a791be3798175c199abf1f7f",
+  "source_branches": [
+    "feature/nine-year-old-employee-2d"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 3,
+  "withheld_file_counts": {
+    "private_source_or_binary": 155
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 4
+}
