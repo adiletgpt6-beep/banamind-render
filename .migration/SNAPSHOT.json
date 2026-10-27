@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "f52f888306023c8576d45278a148ac050cf6b7ff",
+  "source_branches": [
+    "ccr-42704944-32ncot"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 4,
+  "withheld_file_counts": {
+    "private_source_or_binary": 220
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
