@@ -1,0 +1,7 @@
+{
+  "issue": 76,
+  "run": 3,
+  "mode": "checks",
+  "delete": false,
+  "note": "Запрос для .github/workflows/live-source-analysis.yml: mode=analyze — черновик анализа; mode=checks — только сверка asr-checks.json в логе; delete=true — удалить черновик анализа."
+}

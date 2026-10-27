@@ -1,0 +1,26 @@
+[
+  {
+    "path": "public/assets/live/fonts/Montserrat-Black.ttf",
+    "sha": "c7676ee7763cdbb1742505e7778ff87115848071",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "public/assets/live/fonts/Montserrat-BlackItalic.ttf",
+    "sha": "1f9f63213b04c3d0e708a20cc8c9866c348cba84",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "public/assets/live/fonts/Montserrat-Bold.ttf",
+    "sha": "7aac846a87416c6859a3942b873477e9af82bce7",
+    "kind": "font",
+    "license_sha": "f435ed8b5e8e747333eee3a0382b35621430ef2b"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]
