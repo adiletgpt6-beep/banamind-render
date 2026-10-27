@@ -1,0 +1,20 @@
+{
+  "slug": "pride-and-prejudice-austen",
+  "bm": "BM-019",
+  "title": "Гордость и предубеждение",
+  "author": "Джейн Остин",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-019/part-01…06.txt — предоставленный современный русский перевод (в копии: перевод Владимир Дмитриев, редактор Ольга Бандилет, 2024); права на коммерческое использование перевода не подтверждены; карта источников — books/pride-and-prejudice-austen/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/pride-and-prejudice-austen/scripts",
+    "timeline": "scripts/lesson-pride/lib.mjs",
+    "remotionEntry": "src/lesson-pride/index.ts",
+    "composition": "PrideLesson",
+    "workflow": ".github/workflows/lesson-pride.yml",
+    "release": "book-pride-and-prejudice-austen",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-pride-and-prejudice-austen",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}
