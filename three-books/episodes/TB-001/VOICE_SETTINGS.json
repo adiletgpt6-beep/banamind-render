@@ -1,0 +1,10 @@
+{
+  "name": "George (ElevenLabs premade, eleven_multilingual_v2)",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model_id": "eleven_multilingual_v2",
+  "language_code": "ru",
+  "seed": 7,
+  "output_format": "mp3_44100_192",
+  "settings": {"stability": 0.55, "similarity_boost": 0.8, "style": 0.12, "use_speaker_boost": true, "speed": 0.96},
+  "why": "Пробы 10 доступных мужских голосов на одном тексте (films/nox/voice/pilot): George — медианная частота основного тона ~118 Гц (средний баритон), темп ~118 слов/мин при speed 0.92. Brian (105 Гц) и Callum (82 Гц) ниже нужного, Eric/Bill (~162 Гц) выше баритона. Окончательная оценка тембра на слух — за владельцем."
+}

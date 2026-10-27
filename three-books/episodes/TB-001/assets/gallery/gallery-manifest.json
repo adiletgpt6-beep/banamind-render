@@ -1,0 +1,36 @@
+{
+  "episode_id": "TB-001",
+  "revision_id": "nox-r2-no-attribution@83431a39",
+  "thumbnails": [
+    {
+      "name": "TB-001-thumbnail-01.png",
+      "label": "№1 «КУДА ВСЁ ДЕЛОСЬ?» — к названию №2",
+      "bytes": 624534,
+      "sha256": "c7118ba13d0039102ef1030e76ec836669aeb5f7d92d19d70b26439546ebfb15"
+    },
+    {
+      "name": "TB-001-thumbnail-02.png",
+      "label": "№2 «БОЛЬШЕ ≠ СПОКОЙНЕЕ» — основная пара с названием №1",
+      "bytes": 508003,
+      "sha256": "8046cd381085ec9d6fb41dcff66b4a66720428afae0195325b76ae30ec107f9e"
+    },
+    {
+      "name": "TB-001-thumbnail-03.png",
+      "label": "№3 «СКОЛЬКО ДОСТАТОЧНО?» — к названию №5",
+      "bytes": 596826,
+      "sha256": "84d2f0154f7e3ed037ac2f35b6557e203288cb5cf7ab172e99f08c263ca4f9ea"
+    },
+    {
+      "name": "TB-001-thumbnail-04.png",
+      "label": "№4 «ЦЕНА ЧУЖОГО ВЗГЛЯДА» — к названию №4",
+      "bytes": 686444,
+      "sha256": "4b1d825faa6ac6eddd915b6d1b944e072262b827e50deae5c781f4b894e5f4d9"
+    },
+    {
+      "name": "TB-001-thumbnail-05.png",
+      "label": "№5 «ЧТО ТЫ ПОКУПАЕШЬ?» — к названию №3",
+      "bytes": 544194,
+      "sha256": "fd783f69699f870c26858615de27523bf05a091af7119e78586176f2cda4b8ab"
+    }
+  ]
+}

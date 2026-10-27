@@ -1,0 +1,1809 @@
+{
+  "schema_version": 1,
+  "episode_id": "TB-001",
+  "status": "ARCHIVED_BASELINE",
+  "rule_count": 200,
+  "current_overrides": "../CURRENT_RULES.md",
+  "rules": [
+    {
+      "id": "V001",
+      "text": "В основе каждой главы должен находиться конкретный вопрос героя, на который влияет его следующее действие.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V002",
+      "text": "Строй события по причинной связи: решение → действие → последствие → новое понимание. Соседство красивых картинок эту связь не заменяет.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V003",
+      "text": "Каждая используемая мысль книги должна что-то менять в выборе Нокса; мысли, которые не влияют на историю, убирай.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V004",
+      "text": "Начальная цель героя должна быть видна без длинного объяснения: он хочет ощутимого успеха и ошибочно связывает его с одной величиной.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V005",
+      "text": "Изменение героя показывай поступком: в финале он иначе распоряжается днём и заработанным, а не только произносит правильную фразу.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V006",
+      "text": "Переплетай три книги внутри общей истории; не ставь три независимых доклада подряд.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V007",
+      "text": "Добавь собственную аналитическую ценность через сопоставление, границы применимости и авторские сценки, а не через замену оформления пересказа.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V008",
+      "text": "Хотя бы в трёх местах покажи ограничение полезного принципа: недостаточный доход, неожиданность, неработающий способ или чужие исходные условия.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V009",
+      "text": "Не обещай, что правильные мысли, одна привычка или знакомство с книгой обязательно приводят к богатству.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V010",
+      "text": "Уважай обстоятельства людей: сложная финансовая ситуация не служит поводом для насмешки и оценки личности.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V011",
+      "text": "Начинай с действия и ясной фразы о месяце работы; первые секунды не занимай логотипом и формальным приветствием.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V012",
+      "text": "Сделай исчезновение заработанного визуально объяснимым: огни распределяются по расходам, зритель видит маршрут денег.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V013",
+      "text": "В первые 25–30 секунд должен возникнуть парадокс: доход вырос, а знакомое чувство нехватки осталось.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V014",
+      "text": "Первую полезную мысль раскрой в течение первой минуты, чтобы интерес опирался на полученную ценность.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V015",
+      "text": "Представь книги кратко и естественно в ходе истории; длинные биографии авторов в начале не нужны.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": "CURRENT_RULES#3"
+    },
+    {
+      "id": "V016",
+      "text": "Обещание открытия должно совпадать с содержанием фильма: новое понимание поведения, выбора и времени.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V017",
+      "text": "Шкатулку покажи коротко как часть желания героя, а не как яркую приманку без связи с дальнейшим сюжетом.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V018",
+      "text": "Сохраняй интригу о личном смысле шкатулки, одновременно регулярно раскрывая содержательные ответы.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V019",
+      "text": "В первом кадре оставь один главный объект внимания; не заставляй зрителя одновременно читать пять подписей и разбирать три схемы.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V020",
+      "text": "Переход от начала к первой главе должен продолжать вопрос, а не обнулять темп новой заставкой.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V021",
+      "text": "Каждая двухминутная глава добавляет новый поворот, пример или связь; одного переформулированного тезиса недостаточно.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V022",
+      "text": "Примерно каждые 20–40 секунд уместно меняй способ подачи: действие, сравнение, крупный план, схема, тихий вопрос. Это ориентир, не механический таймер.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V023",
+      "text": "После поставленного маленького вопроса давай видимый ответ в разумный срок; закрытие вопроса само приносит удовольствие.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V024",
+      "text": "Повышай ставки через значение решения для Нокса: качество работы, потерянное время, возможность продолжить дело.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V025",
+      "text": "Используй несколько лёгких визуальных шуток, возникающих из поведения героя; постоянные мемы и комические звуки не нужны.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V026",
+      "text": "Важный вопрос может получить двухсекундную паузу, во время которой зритель видит содержательный кадр.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V027",
+      "text": "Если мысль уже понятна, развивай её последствием или возражением; не повторяй объяснение ради длительности.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V028",
+      "text": "После напряжённого эпизода оставляй более спокойную сцену, чтобы следующие события ощущались значимыми.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V029",
+      "text": "Не держи одновременно больше двух незакрытых смысловых вопросов: зритель должен понимать, зачем смотрит текущую сцену.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V030",
+      "text": "В середине фильма незаметно напомни, что герой уже понял и чего ещё не понимает; длинного пересказа предыдущих пятнадцати минут не делай.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V031",
+      "text": "Нокс должен узнаваться по силуэту даже в небольшом превью: профиль, уши и хвост читаются отдельно от свечения.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V032",
+      "text": "Сохраняй одни и те же пропорции персонажа в общем, среднем и крупном планах.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V033",
+      "text": "Янтарное тело, бирюзовая грудь и характерный кончик хвоста служат постоянными цветовыми опорами.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V034",
+      "text": "Эмоции меняй позой и ритмом движения; не меняй весь дизайн героя при каждом настроении.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V035",
+      "text": "Для сомнения используй остановку руки и наклон головы, для усталости — позу и замедление, для решения — ясное небольшое движение.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V036",
+      "text": "Герой должен взаимодействовать с предметами: переносить огни, чинить вещь, рисовать, проверять опору. Постоянно стоять рядом со схемой недостаточно.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V037",
+      "text": "Размещай Нокса в разных частях композиции и иногда позволяй действию происходить через его взгляд или руки.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V038",
+      "text": "Не делай героя слишком маленьким ради огромного фона: его реакция должна оставаться понятной на телефоне.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V039",
+      "text": "Второстепенные жители поддерживают основной конфликт и не открывают новые большие сюжетные ветки.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V040",
+      "text": "Повторяющийся круг у груди меняется только в важных сюжетных точках; его превращение в часы должно быть подготовлено.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "TB-001 character; adapt when reused",
+      "superseded_by": null
+    },
+    {
+      "id": "V041",
+      "text": "Главные объекты действительно состоят из видимых цветных точек; готовая плоская картинка под случайной пылью не соответствует задаче.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V042",
+      "text": "Силуэт и значимые детали получают достаточную плотность частиц, чтобы объект был узнаваем до полного формирования.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V043",
+      "text": "Сочетай частицы на поверхности и внутри формы; объём должен сохраняться при небольшом изменении ракурса.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V044",
+      "text": "Точки должны выглядеть чистыми круглыми световыми элементами без заметных квадратных границ спрайтов.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V045",
+      "text": "Глаза, кончик морды и места контакта с предметом делай ясными; чрезмерное свечение не должно их стирать.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V046",
+      "text": "Используй устойчивое распределение частиц по кадрам, чтобы зафиксированный предмет не дрожал случайным шумом.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V047",
+      "text": "Цвет конкретной частицы меняй осмысленно; постоянная случайная смена всех цветов разрушает форму и утомляет.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V048",
+      "text": "Передний, средний и дальний планы различай размером, яркостью и движением частиц, сохраняя глубину.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V049",
+      "text": "Фоновая пыль не должна соперничать с действием: в объясняющей сцене её движение почти незаметно.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V050",
+      "text": "Сначала дай предмету совершить полезное для сцены действие, потом превращай его в новый предмет; бесконечная сборка без действия быстро обесценивается.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V051",
+      "text": "Основа палитры: глубокий синий и фиолетовый фон, янтарный, бирюзовый, зелёный и отдельные розово-фиолетовые акценты.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V052",
+      "text": "Закрепи цвета за функциями внутри схемы и сохраняй соответствие между кадрами; значение дополнительно обозначай формой или текстом.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V053",
+      "text": "Чередуй тёмные пространственные сцены и редкие светлые объясняющие композиции, чтобы фильм не стал однообразным.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V054",
+      "text": "Переход к светлому фону делай постепенно; резкая белая вспышка не нужна для привлечения внимания.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V055",
+      "text": "Свечение локальное и умеренное: у точки должен оставаться читаемый центр, у объекта — контур.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V056",
+      "text": "Светлый текст на тёмном и тёмный на светлом должен читаться поверх реального кадра, а не только на отдельном макете.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V057",
+      "text": "Не кодируй правильный и ошибочный выбор исключительно зелёным и красным: используй подписи, направление и устройство сцены.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V058",
+      "text": "В тёмных сценах не теряй синие и фиолетовые детали в фоне; сохраняй разницу по светлоте.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V059",
+      "text": "Насыщенность фона уменьшай, когда в кадре яркий герой или важная цифра; одновременно сиять всем объектам не нужно.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V060",
+      "text": "Область под субтитрами должна оставаться визуально спокойной, без пересекающих буквы ярких потоков.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V061",
+      "text": "Перестрой референс под широкую композицию 16:9; вертикальный кадр с полями не является адаптацией.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V062",
+      "text": "Используй общие планы мира, средние планы действий, крупные планы реакции и чистые схемы в осмысленном чередовании.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V063",
+      "text": "Движение камеры направляет взгляд к предмету объяснения, а не просто сообщает, что сцена анимирована.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V064",
+      "text": "Для чтения цифр и сравнения сумм оставляй стабильный ракурс; не вращай таблицу вокруг героя.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V065",
+      "text": "Связывай соседние сцены общей формой: дуга времени → край сосуда, монета → счётная точка, опора → стрелка карты.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V066",
+      "text": "Превращение должно сохранять направление и смысл; случайный вихрь между любыми двумя картинками не подходит всем сценам.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V067",
+      "text": "Длительность сборки определяется сложностью узнавания: простой знак появляется быстро, важному сложному объекту можно дать больше времени.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V068",
+      "text": "Избегай постоянной тряски, вращения вокруг зрителя и агрессивных приближений: фильм должен комфортно смотреться полчаса.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V069",
+      "text": "При переходе сохраняй визуальную опору — героя, направление потока или общий предмет, чтобы пространство не терялось.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V070",
+      "text": "Проверяй частицы после видеосжатия: самые мелкие и быстро движущиеся точки могут превратиться в шум, поэтому скорректируй их размер и скорость.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V071",
+      "text": "В каждом количественном примере понятно, что означает точка: одну единицу, сто единиц или абстрактную часть; масштаб не меняется молча.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V072",
+      "text": "Проверяй арифметику и соответствие речи изображению: 700 + 200 + 100 = 1000; 3 × 100 = 300; 300 − 180 = 120.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V073",
+      "text": "Веди учёт денег героя между сценами; потраченные 180 не могут одновременно лежать в сосуде и оплачивать другую покупку.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V074",
+      "text": "Дополнительные деньги возникают из обозначенного дохода, а не из декоративного роста частиц или ничем не объяснённой доходности.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V075",
+      "text": "Если используешь диаграммы, обозначай единицы и честный масштаб; эффектная геометрия не должна искажать сравнение.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V076",
+      "text": "Убирай второстепенные числа, если они мешают главному отношению; при необходимости разделяй сложную схему на два кадра.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V077",
+      "text": "За один момент объясняй одно новое понятие и показывай необходимый минимум объектов.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V078",
+      "text": "Вымышленные расчёты обозначай короткой ненавязчивой подписью «Условный пример» при первом появлении.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V079",
+      "text": "Показывай происходящее в момент объяснения: если сохранённая часть поддерживает план, зритель должен увидеть, как именно.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V080",
+      "text": "Ограничение примера тоже получит изображение: например, разные обязательные расходы или нагрузка, превышающая запас.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V081",
+      "text": "Выбирай шрифт с качественной кириллицей, читаемыми цифрами и разрешённым коммерческим использованием.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V082",
+      "text": "Смысловая подпись обычно содержит 2–6 слов; длинный абзац принадлежит речи и файлу сценария.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V083",
+      "text": "Используй обычный регистр; сплошной капс оставляй для редких коротких акцентов.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V084",
+      "text": "Для 1080p начни проверку с размера ключевого текста примерно 48–72 px и субтитров 36–46 px, затем проверь реальную читаемость на небольшом экране.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V085",
+      "text": "Оставляй безопасные поля по краям и место снизу для интерфейса проигрывателя; важные числа не прижимай к границе.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V086",
+      "text": "Субтитры группируй по смыслу в одну-две строки; не оставляй одинокие предлоги и разорванные словосочетания.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V087",
+      "text": "Короткие встроенные акценты и полные субтитры выполняют разные задачи; не накладывай друг на друга два текста одной и той же реплики.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V088",
+      "text": "Текст появляется к моменту соответствующей фразы и остаётся достаточно долго для чтения; синхронизация подтверждается итоговой дорожкой.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V089",
+      "text": "В основной MP4 встраивай только короткие смысловые подписи. Полную русскую речь отдай отдельными SRT и VTT; при необходимости создай отдельную версию с прожжёнными субтитрами.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V090",
+      "text": "Ссылки на идеи книг показывай кратко и ненавязчиво, сохраняя полную библиографию в описании и служебной карте источников.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": "CURRENT_RULES#3"
+    },
+    {
+      "id": "V091",
+      "text": "Главные вопросы закрой до призыва подписаться; призыв не должен заменять развязку.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V092",
+      "text": "Шкатулка раскрывает подготовленный смысл времени и выбора; внезапного волшебного обогащения в финале нет.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V093",
+      "text": "Повтор начальной композиции должен показывать изменение героя через понятные различия в кадре.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V094",
+      "text": "Сделай три самостоятельные обложки с крупным силуэтом Нокса, одной сильной метафорой и коротким русским текстом.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": "CURRENT_RULES#5"
+    },
+    {
+      "id": "V095",
+      "text": "Название и обложка должны обещать именно тот конфликт, который раскрывает фильм; выдуманные суммы и громкие гарантии не использовать.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V096",
+      "text": "Не удерживай зрителя обманом: никакой важный обещанный ответ не переносится в другой ролик без завершения этой истории.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V097",
+      "text": "Используй собственные или разрешённые материалы; происхождение шрифтов, эффектов и сторонних ассетов фиксируй для владельца.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V098",
+      "text": "Проверь начало, середину, каждый стык глав, числовые сцены и финал в реальном MP4, а не только в интерактивном предпросмотре.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V099",
+      "text": "Оценку «качественно» обосновывай ясностью, оригинальностью, комфортом и выполненными проверками; не подменяй её обещанием миллионов просмотров.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "V100",
+      "text": "Итогом работы является существующий воспроизводимый 30-минутный файл с доступными сопутствующими материалами; незавершённый рендер не называй готовым фильмом.",
+      "scope": "video",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G001",
+      "text": "Голос взрослый и устойчивый, с ощущением спокойной уверенности без притязания на безошибочность.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G002",
+      "text": "Тембр тёплый, средний по высоте; чрезмерный бас и демонстративная «радиоведущая» подача быстро утомляют.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G003",
+      "text": "Создай ощущение разговора с одним внимательным человеком, а не выступления перед шумной аудиторией.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G004",
+      "text": "Сохраняй человеческую мягкость в отношении ошибок героя и слушателя.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G005",
+      "text": "Интеллектуальный интерес передавай точностью мысли и интонацией, а не позой финансового гуру.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G006",
+      "text": "Избегай интонации срочной продажи, искусственного дефицита времени и давления на зрителя.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G007",
+      "text": "Основной вариант произношения — нейтральная понятная русская речь; искусственно изображать иностранный акцент не нужно.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G008",
+      "text": "На протяжении фильма сохраняй одну узнаваемую голосовую личность и одинаковую манеру артикуляции.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G009",
+      "text": "Внутренние реплики Нокса можно обозначать лёгким изменением намерения, сохраняя тот же тембр и взрослую подачу.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G010",
+      "text": "При выборе исполнителя оценивай, хочется ли слушать его полчаса; эффектность одной глубокой фразы не определяет качество дорожки.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G011",
+      "text": "Вся повествовательная озвучка должна быть на русском; случайные английские вставки из технических заметок недопустимы.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G012",
+      "text": "Пиши сценарий сразу для живой русской речи, сохраняя естественный порядок слов и короткие разговорные связки.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G013",
+      "text": "Перед синтезом проверь ударения в финансовых и обычных словах, особенно «сре́дства», «догово́р», «проце́нты», «кварта́л».",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G014",
+      "text": "В TTS-версии последовательно используй «ё», где она нужна для правильного чтения; не рассчитывай, что модель всегда восстановит её сама.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G015",
+      "text": "Ударения и фонетические подсказки добавляй только поддерживаемым способом; в экранном тексте и субтитрах лишние знаки убери.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G016",
+      "text": "Для речи раскрывай числа словами в подходящем падеже: «триста минус сто восемьдесят», а не чтение технической записи по символам.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G017",
+      "text": "Десятичные значения, проценты и единицы проверяй отдельно; голос не должен случайно менять математический смысл.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G018",
+      "text": "Сокращения раскрывай словами либо заменяй понятным выражением; внутренние идентификаторы сцен не произносятся.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G019",
+      "text": "Составь словарь имён «Наполеон Хилл», «Морган Хаузел», «Джордж Клейсон» и названий книг; закрепи единый корректный вариант во всех фрагментах.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": "CURRENT_RULES#3"
+    },
+    {
+      "id": "G020",
+      "text": "Имя Нокс и его формы «Нокса», «Ноксу», «Ноксом» произноси одинаково чётко; не меняй его на похожие английские имена.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G021",
+      "text": "Начальный ориентир естественного темпа — 125–140 слов в минуту активной речи; смысл и удобство слухового восприятия важнее точного числа.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G022",
+      "text": "Первую фразу произнеси просто и ясно, с небольшой паузой перед объяснением, что огоньки обозначают месяц работы.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G023",
+      "text": "Меняй темп внутри абзаца по намерению: чуть живее в действии, спокойнее в выводе и при числовом примере.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G024",
+      "text": "Пауза должна помогать понять завершённую мысль или заметить изображение, а не просто украшать каждое предложение.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G025",
+      "text": "Используй пунктуацию как опору, но не делай одинаковую паузу на каждой запятой.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G026",
+      "text": "После важных вопросов дай слушателю немного времени на внутренний ответ, обычно около одной-двух секунд.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G027",
+      "text": "Для молчаливого действия предусмотрены настоящие свободные интервалы: не заполняй голосом каждую секунду фильма.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G028",
+      "text": "Длинные паузы сохраняй только при содержательном действии или эмоциональном повороте; случайные провалы удаляй.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G029",
+      "text": "Не растягивай слова и хвосты фраз ради ровного хронометража; длину меняй редактурой сценария и постановкой.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G030",
+      "text": "Темп последних пяти минут должен оставаться таким же комфортным, как в начале; не ускоряй финал из-за ошибок планирования.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G031",
+      "text": "Большинство предложений делай достаточно короткими, чтобы их смысл удерживался на слух с первого раза.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G032",
+      "text": "Одно предложение обычно проводит одну главную мысль; вложенные объяснения лучше разделить.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G033",
+      "text": "Возвращай имя героя там, где местоимения могут запутать, особенно после сравнения нескольких ситуаций.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G034",
+      "text": "Убирай слова-паразиты, формальные вступления и фразы, которые лишь объявляют будущий рассказ.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G035",
+      "text": "Сложный термин используй, когда он действительно нужен; не перегружай голос профессиональной лексикой.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G036",
+      "text": "Новое понятие сначала объясни через конкретное действие Нокса, затем при необходимости назови.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G037",
+      "text": "Особо чётко произноси отрицания и ограничения: «не гарантирует», «в этом примере», «зависит от условий».",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G038",
+      "text": "Не ставь несколько разных сумм в одну длинную фразу; между этапами расчёта нужны понятные смысловые границы.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G039",
+      "text": "Переписывай фразы, которые выглядят красиво на странице, но неудобны для произнесения.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G040",
+      "text": "Убирай мотивационные лозунги без содержания; приятный голос не должен прикрывать пустоту мысли.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G041",
+      "text": "Основное эмоциональное состояние — спокойное любопытство: рассказчик вместе со зрителем замечает происходящее.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G042",
+      "text": "Лёгкая ирония допускает улыбку в интонации, но не превращается в сарказм над человеком с небольшим доходом.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G043",
+      "text": "Когда герой ошибается, слышно сочувствие и интерес к причине, а не обвинение.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G044",
+      "text": "Не заискивай и не разговаривай со взрослым зрителем как с маленьким ребёнком.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G045",
+      "text": "В сцене риска удерживай напряжение сдержанностью; громкое устрашение здесь не требуется.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G046",
+      "text": "Небольшой успех Нокса передавай теплом и облегчением, сохраняя масштаб реального события.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G047",
+      "text": "Поломку инструмента произнеси как неприятную бытовую неожиданность, без интонации катастрофического выпуска новостей.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G048",
+      "text": "Сомнение и неопределённость должны звучать честно; не превращай любое предположение в уверенное заявление.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G049",
+      "text": "В сценах достаточности и времени дай чуть больше пространства и спокойствия, сохранив ясную артикуляцию.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G050",
+      "text": "В финале нужна тихая эмоциональная завершённость; торжественный крик и пафосное «измените свою жизнь» разрушают тон.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G051",
+      "text": "Используй доступный инструмент с правом коммерческого применения выбранного голоса; чужой узнаваемый голос без согласия не клонируй.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G052",
+      "text": "Перед полной генерацией сделай короткие пробы двух-трёх подходящих доступных голосов, если система это позволяет.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G053",
+      "text": "Для сравнения используй одинаковый текст: простое повествование, вопрос, число и эмоционально спокойный вывод.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G054",
+      "text": "Выбирай по естественности, дикции, ударениям и комфорту; короткая проба нужна для внутреннего решения и не требует обязательной остановки работы.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G055",
+      "text": "После выбора зафиксируй идентификатор голоса, модель и значимые настройки, чтобы фрагменты не расходились по тембру.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G056",
+      "text": "Синтезируй законченные смысловые абзацы, обычно по 20–50 секунд; разрезать каждую фразу на отдельный независимый запрос без причины не нужно.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G057",
+      "text": "При поддержке инструмента передавай контекст соседних фраз для плавности, исключая его повторное попадание в окончательный звук.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G058",
+      "text": "Удачные фрагменты сохраняй; исправление одного ударения не требует повторной генерации получаса.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G059",
+      "text": "Не заявляй, что голос записал реальный профессионал или известный актёр, если использован синтез.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G060",
+      "text": "Веди кэш по тексту и настройкам, чтобы повторный рендер видео не запускал TTS заново без необходимости.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G061",
+      "text": "Храни рабочие результаты синтеза в доступном несжатом или без потерь формате; избегай цепочки повторных MP3-перекодирований.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G062",
+      "text": "Для монтажа приведи дорожки к единой частоте дискретизации 48 кГц; при доступности используй PCM 24 bit.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G063",
+      "text": "В голосе не должно быть чужих реплик, двойного чтения и наложения нескольких дублей.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G064",
+      "text": "Убирай заметные цифровые призвуки, дребезг, искажение гласных и искусственные дыхательные выбросы.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G065",
+      "text": "Сибилянты обрабатывай деликатно: свист не должен раздражать, а дикция — становиться шепелявой.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G066",
+      "text": "Не применяй сильное шумоподавление к чистому синтетическому голосу, если оно создаёт водянистые артефакты.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G067",
+      "text": "Проверяй звук «с», «ш», «щ» и окончания длинных русских слов на неприятную резкость.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G068",
+      "text": "Убирай щелчки, взрывные низкочастотные удары и единичные цифровые выбросы.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G069",
+      "text": "Голос должен оставаться близким и сухим; заметный зал, длинное эхо и «космический» ревербератор не подходят.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G070",
+      "text": "Основную речь располагай по центру, не перемещай её вслед за героем между левым и правым каналом.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G071",
+      "text": "Монтажные границы не должны давать щелчки; режь в подходящих местах и проверяй каждую склейку на слух при наличии такой возможности.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G072",
+      "text": "Сохраняй небольшие естественные дыхательные и речевые промежутки; полная стерильность между каждым словом звучит неестественно.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G073",
+      "text": "Убери излишнюю тишину в начале и конце каждого синтезированного файла, сохранив режиссёрские паузы отдельно в таймлайне.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G074",
+      "text": "Очень короткие затухания допустимы для незаметного стыка, но не должны съедать согласные и окончания.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G075",
+      "text": "Настрой громкость по всему итоговому фильму: разумный ориентир около −16 LUFS integrated, с последующей проверкой на реальном материале.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G076",
+      "text": "Избегай клиппинга и межсемпловых пиков; ориентир потолка true peak — не выше −1 dBTP, лучше с небольшим запасом.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G077",
+      "text": "Сохраняй умеренную динамику, ориентировочно 5–9 LU по loudness range, если это соответствует выбранной записи; это рабочая цель, не правило YouTube.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G078",
+      "text": "Компрессор не должен создавать слышимую накачку, утомительную плотность и одинаковую громкость каждого слога.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G079",
+      "text": "Короткие эффекты под речью держи заметно тише голоса и проверяй маскировку согласных; величину снижения выбирай по фактическому звучанию.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G080",
+      "text": "Музыку не добавляй: приятная речь, тишина и редкие мягкие немелодические звуки должны сами выдерживать фильм.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G081",
+      "text": "В момент фразы о движении денег соответствующий поток в кадре действительно начинается или заканчивается.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G082",
+      "text": "Важное слово можно поддержать одной световой реакцией; подсвечивать каждое произнесённое слово не нужно.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G083",
+      "text": "Заголовок не должен заранее раскрывать следующий вывод, пока рассказчик ещё объясняет предыдущий.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G084",
+      "text": "Перед большим визуальным превращением оставь время понять исходный объект, а после — узнать новый.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G085",
+      "text": "Числа и знаки на экране проверяй по фактически произнесённой фразе; текст исходного сценария не гарантирует корректного TTS.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G086",
+      "text": "Таймкоды полных субтитров строй по окончательной озвучке после всех исправлений и монтажных пауз.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G087",
+      "text": "После синтеза сверяй доступную расшифровку с утверждённым текстом, обращая особое внимание на суммы, имена и отрицания.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G088",
+      "text": "Метки «пауза», названия эмоций, SSML-теги и идентификаторы сцен не должны звучать голосом рассказчика.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G089",
+      "text": "Не выделяй подряд каждое слово: в одной фразе обычно достаточно одного главного смыслового ударения.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G090",
+      "text": "Убедись, что начало слова не отрезано входом в сцену, а окончание не исчезает при переходе к следующей главе.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G091",
+      "text": "Проверь разборчивость на обычном небольшом динамике, насколько доступные средства позволяют воспроизвести такой сценарий прослушивания.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G092",
+      "text": "Наушники должны раскрывать чистую речь, а не неприятные шорохи, резкое дыхание и чрезмерную стереобазу эффектов.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G093",
+      "text": "Оцени комфорт на длинном отрезке, а не только на одной эффектной фразе; ровный гул и постоянное напряжение проявляются со временем.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G094",
+      "text": "Проверяй фрагменты из начала, середины и конца, а также все изменённые места; не ограничивай контроль первыми десятью секундами.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G095",
+      "text": "Автоматическая расшифровка помогает найти смысловые ошибки, но сама по себе не доказывает приятность тембра и естественность исполнения.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G096",
+      "text": "При проверке используй обычную скорость воспроизведения; ускоренное прослушивание скрывает часть проблем ритма.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G097",
+      "text": "Последние реплики, вопрос зрителю и названия источников должны иметь то же качество и тембр, что и основная история.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G098",
+      "text": "Измеренные значения громкости и длительности сохраняй в отчёте; не подставляй желаемые цифры вместо реальных результатов анализа.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G099",
+      "text": "Если среда не позволяет прослушать звук или провести определённую проверку, явно отдели измеренный факт от оценки, требующей человеческого слуха.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    },
+    {
+      "id": "G100",
+      "text": "Сдавай единую завершённую русскую дорожку без обрывов, повторов, внезапной смены голоса и необъяснимых провалов громкости на протяжении всех 30 минут.",
+      "scope": "voice",
+      "origin": "TB-001",
+      "kind": "inherited",
+      "applies_to": "baseline",
+      "superseded_by": null
+    }
+  ]
+}

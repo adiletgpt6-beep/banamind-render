@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "series_id": "TB",
+  "updated_at": "2026-10-21",
+  "repository": "adiletzainidinov/balago-video",
+  "system_branch": "docs/three-books-production-system",
+  "system_pr_url": "https://github.com/adiletzainidinov/balago-video/pull/133",
+  "current_episode_id": "TB-002",
+  "next_unallocated_id": "TB-003",
+  "episodes": [
+    {
+      "episode_id": "TB-001",
+      "path": "episodes/TB-001",
+      "status": "DELIVERED",
+      "owner_approval": "История и стиль одобрены; исправленная версия без атрибуций (nox-r2-no-attribution@83431a39) выдана и ожидает приёмки владельцем.",
+      "branch": "docs/three-books-production-system",
+      "production_branch": "ccr-431ff063-5lzbg4",
+      "production_pr_url": null,
+      "source_count": 3,
+      "source_manifest": "episodes/TB-001/SOURCE_MANIFEST.json",
+      "new_rules": null,
+      "delivery_status": "DELIVERED_VERIFIED",
+      "fingerprint": "episodes/TB-001/NOVELTY.md",
+      "production_commit": "83431a3982c0ef7bc687c62e50a90578a2733a9b",
+      "delivery": "episodes/TB-001/DELIVERY.json",
+      "release_url": "https://github.com/adiletzainidinov/balago-video/releases/tag/nox-film"
+    },
+    {
+      "episode_id": "TB-002",
+      "path": "episodes/TB-002",
+      "status": "DELIVERED",
+      "owner_approval": "Новый сюжет и производственные решения делегированы; владелец передаёт только короткий промпт без повторной отправки референса.",
+      "branch": "feature/three-books-tb-002-tiko",
+      "production_branch": "feature/three-books-tb-002-tiko",
+      "production_pr_url": "https://github.com/adiletzainidinov/balago-video/pull/137",
+      "source_count": 3,
+      "source_manifest": "episodes/TB-002/SOURCE_MANIFEST.json",
+      "new_rules": "episodes/TB-002/UPGRADES_100.json",
+      "delivery_status": "DELIVERED",
+      "delivery": "episodes/TB-002/DELIVERY.json",
+      "release_url": "https://github.com/adiletzainidinov/balago-video/releases/tag/tb-002-film",
+      "fingerprint": "episodes/TB-002/NOVELTY.md",
+      "editorial_title": "Почему у тебя не покупают",
+      "reference": "episodes/TB-002/REFERENCE.md",
+      "production_pr_number": 137,
+      "preparation_commit": "bd07f31b0ce73c94213e11d44ecc52d62a257c48",
+      "production_head_at_registration": "b2aba529a02d0cf05c564a8998b75c9d110ebfac"
+    }
+  ]
+}

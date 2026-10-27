@@ -1,0 +1,11 @@
+{
+  "name": "George (ElevenLabs premade, eleven_multilingual_v2)",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model_id": "eleven_multilingual_v2",
+  "language_code": "ru",
+  "seed": 7,
+  "output_format": "mp3_44100_192",
+  "settings": {"stability": 0.55, "similarity_boost": 0.8, "style": 0.12, "use_speaker_boost": true, "speed": 0.96},
+  "say": {},
+  "why": "Унаследовано из проведённого кастинга TB-001 (10 проб, George — средний баритон ~118 Гц). Для TB-002 сначала связный пилот B001/B030/B038/B051/B065, затем вся речь при тех же параметрах, если измерения и ASR не выявят причины менять голос."
+}

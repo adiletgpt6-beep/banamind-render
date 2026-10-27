@@ -1,0 +1,250 @@
+name: TB-002 — фильм из частиц «Почему у тебя не покупают» (RU, 16:9)
+
+# Отдельное производство выпуска TB-002 (серия three-books). Режим выбирается меткой в сообщении коммита:
+#   [tb002:voice-pilot] — пилот голоса: 5 связных блоков (ElevenLabs), сохраняются в ветку
+#   [tb002:voice]       — вся речь (кэш по хэшу; готовые блоки повторно не синтезируются)
+#   [tb002:pilot]       — внутренний пилот рендера (см. RANGES_PILOT) → артефакт, без релиза
+#   [tb002:render]      — полный фильм [0,54000) параллельными отрезками, звук, субтитры, проверка,
+#                         публикация явного списка файлов в пререлиз tb-002-film
+#   [tb002:assets]      — без рендера: дозагрузить обложки/тексты/галерею в tb-002-film
+# Документационный коммит без меток ничего не запускает. Задания [nox:*] и релиз nox-film не трогаются.
+on:
+  push:
+    paths:
+      - "src/three-books/tb002/**"
+      - "scripts/three-books/tb002/**"
+      - "public/three-books/tb002/**"
+      - ".github/workflows/three-books-tb002.yml"
+
+concurrency:
+  # only labelled runs share a queue; plain documentation pushes never displace a pending production run
+  group: tb002-${{ github.ref }}-${{ contains(github.event.head_commit.message, '[tb002:') && 'work' || github.sha }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  voice:
+    if: contains(github.event.head_commit.message, '[tb002:voice]') || contains(github.event.head_commit.message, '[tb002:voice-pilot]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install --quiet numpy faster-whisper
+      - name: Character quota (before)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 scripts/three-books/tb002/quota.py || true
+      - name: Narration (cached blocks are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          if [[ "$MSG" == *"[tb002:voice-pilot]"* ]]; then python3 scripts/three-books/tb002/voice.py --pilot
+          else python3 scripts/three-books/tb002/voice.py; fi
+      - name: Character quota (after)
+        if: always()
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 scripts/three-books/tb002/quota.py || true
+      - name: Save narration to the branch
+        if: always()
+        run: |
+          git add src/three-books/tb002/voice || true
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(tb002): narration blocks [skip ci]"
+            for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
+          fi
+      - name: Whisper check of the narration (local model in CI)
+        if: success()
+        run: python3 scripts/three-books/tb002/asr.py src/three-books/tb002/voice/blocks/asr.json src/three-books/tb002/voice/blocks/B*.mp3
+      - name: Save ASR results
+        if: always()
+        run: |
+          git add src/three-books/tb002/voice || true
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(tb002): whisper check [skip ci]"
+            for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
+          fi
+
+  plan:
+    if: contains(github.event.head_commit.message, '[tb002:render]') || contains(github.event.head_commit.message, '[tb002:pilot]')
+    runs-on: ubuntu-latest
+    outputs:
+      ranges: ${{ steps.p.outputs.ranges }}
+      mode: ${{ steps.p.outputs.mode }}
+    steps:
+      - id: p
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          if [[ "$MSG" == *"[tb002:render]"* ]]; then
+            echo "mode=full" >> "$GITHUB_OUTPUT"
+            python3 -c "import json;print('ranges='+json.dumps([f'{a}-{a+3000}' for a in range(0,54000,3000)]))" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=pilot" >> "$GITHUB_OUTPUT"
+            echo 'ranges=["0-1800","23400-24900"]' >> "$GITHUB_OUTPUT"
+          fi
+
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        range: ${{ fromJSON(needs.plan.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Tools (FFmpeg, Mesa EGL software GL, Python)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg libegl1 libegl-mesa0 libgl1-mesa-dri
+          pip install --quiet -r src/three-books/tb002/requirements.txt
+      - name: Render frames [${{ matrix.range }})
+        run: |
+          A=$(echo "${{ matrix.range }}" | cut -d- -f1); B=$(echo "${{ matrix.range }}" | cut -d- -f2)
+          mkdir -p out/parts
+          OUT="$GITHUB_WORKSPACE/out/parts/part-$(printf %06d $A).mp4"
+          cd src/three-books/tb002/engine
+          python3 render.py --from $A --to $B --out "$OUT" --crf 17 --preset medium
+          n=$(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 "$OUT")
+          echo "frames in part: $n (expected $((B-A)))"
+          [ "$n" = "$((B-A))" ] || { echo "::error::frame count mismatch"; exit 1; }
+          sha256sum "$OUT" | tee "$OUT.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tb002-part-${{ matrix.range }}
+          path: out/parts/*
+          if-no-files-found: error
+          retention-days: 7
+
+  assemble:
+    needs: [plan, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    env:
+      MODE: ${{ needs.plan.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg libegl1 libegl-mesa0 libgl1-mesa-dri
+          pip install --quiet -r src/three-books/tb002/requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: tb002-part-*
+          path: out/parts
+          merge-multiple: true
+      - name: Concat video (no re-encode), mix audio, subtitles, texts; mux AAC + faststart
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^out\/parts\//file '/; s/$/'/" > out/parts/list.txt
+          cat out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          mkdir -p out/rel out/audio
+          python3 scripts/three-books/tb002/mix.py out/audio
+          python3 scripts/three-books/tb002/subs.py out/rel
+          python3 scripts/three-books/tb002/export.py out/rel
+          if [ "$MODE" = pilot ]; then OUTF=TB002_pilot_RU.mp4; FR=$(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 out/video.mp4); DUR=$(python3 -c "print($FR/30)");
+          else OUTF=TB002_30min_RU_1920x1080.mp4; FR=54000; DUR=1800; fi
+          echo "OUTF=$OUTF" >> "$GITHUB_ENV"; echo "FR=$FR" >> "$GITHUB_ENV"
+          if [ "$MODE" = pilot ]; then
+            ffmpeg -hide_banner -loglevel error -y -i out/audio/mix.wav -af "aselect='between(t,0,60)+between(t,780,830)',asetpts=N/SR/TB" out/audio/pilot.wav
+            AUD=out/audio/pilot.wav
+          else AUD=out/audio/mix.wav; fi
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i "$AUD" -map 0:v:0 -map 1:a:0 -map_metadata -1 \
+            -metadata title="Почему у тебя не покупают" -metadata language=rus \
+            -c:v copy -c:a aac -b:a 224k -ar 48000 -t $DUR -movflags +faststart "out/rel/$OUTF"
+          cp out/audio/TB002_narration_RU.wav out/rel/
+          cp out/audio/audio_report.json out/rel/TB002_audio_report.json
+      - name: Verify MP4
+        run: python3 scripts/three-books/tb002/verify.py "out/rel/$OUTF" --frames $FR --json out/rel/TB002_verify.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Preview copy (960×540), check frames, viewer-safety scan
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/rel/$OUTF" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 24 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -map_metadata -1 -metadata title="Почему у тебя не покупают" -movflags +faststart out/rel/TB002_preview_960x540.mp4
+          mkdir -p out/frames
+          if [ "$MODE" = full ]; then TS="2 30 95 160 250 300 380 420 500 600 700 790 800 880 960 1030 1100 1200 1280 1340 1400 1480 1560 1640 1720 1790"; else TS="1 10 25 40 55 62 70 80 95"; fi
+          for s in $TS; do ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/rel/$OUTF" -frames:v 1 -vf scale=480:-2 "out/frames/t$(printf %07.1f $s).jpg"; done
+          ffmpeg -hide_banner -loglevel error -y -pattern_type glob -i 'out/frames/*.jpg' -vf tile=4x7 -frames:v 1 out/rel/TB002_check_frames.jpg || true
+          python3 scripts/three-books/tb002/check_viewer.py out/rel/*
+          (cd out/rel && sha256sum * > TB002_SHA256SUMS.txt)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tb002-${{ env.MODE }}-docs
+          path: |
+            out/rel/*.json
+            out/rel/*.srt
+            out/rel/*.vtt
+            out/rel/*.txt
+            out/rel/TB002_check_frames.jpg
+          retention-days: 30
+      - name: Publish pre-release (explicit allowlist)
+        if: env.MODE == 'full'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          R="$GITHUB_REPOSITORY"; TAG=tb-002-film
+          TITLE="Почему у тебя не покупают (30:00, RU, 1920×1080)"
+          NOTES="Авторский анимационный фильм из цветных частиц. 1920×1080, 30 fps, H.264/AAC 48 кГц. Коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${R}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$R" >/dev/null 2>&1; then gh release edit "$TAG" -R "$R" --title "$TITLE" --notes "$NOTES" --prerelease
+          else gh release create "$TAG" -R "$R" --title "$TITLE" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"; fi
+          files=""
+          for f in TB002_30min_RU_1920x1080.mp4 TB002_preview_960x540.mp4 TB002_narration_RU.wav TB002_subtitles_RU.srt \
+                   TB002_subtitles_RU.vtt TB002_transcript_RU.txt TB002_script_RU.txt TB002_youtube_RU.txt \
+                   TB002_verify.json TB002_audio_report.json TB002_check_frames.jpg TB002_SHA256SUMS.txt; do
+            [ -f "out/rel/$f" ] && files="$files out/rel/$f"
+          done
+          for f in public/three-books/tb002/TB002_thumbnail_0{1,2,3,4,5}.png public/three-books/tb002/TB002_thumbnails_contact_sheet.jpg \
+                   public/three-books/tb002/TB002_thumbnails_320x180.jpg public/three-books/tb002/index.html public/three-books/tb002/TB002_QA_public.md; do
+            [ -f "$f" ] && files="$files $f"
+          done
+          gh release upload "$TAG" -R "$R" --clobber $files
+          { echo "### $TITLE"; for f in $files; do echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/$(basename $f)"; done; } >> "$GITHUB_STEP_SUMMARY"
+
+  assets:
+    if: contains(github.event.head_commit.message, '[tb002:assets]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Tools
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Upload thumbnails, gallery and public QA (no render)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          R="$GITHUB_REPOSITORY"; TAG=tb-002-film
+          gh release view "$TAG" -R "$R" >/dev/null 2>&1 || gh release create "$TAG" -R "$R" --title "Почему у тебя не покупают (30:00, RU, 1920×1080)" --notes "Пререлиз выпуска TB-002." --prerelease --target "$GITHUB_SHA"
+          files=""
+          for f in public/three-books/tb002/TB002_thumbnail_0{1,2,3,4,5}.png public/three-books/tb002/TB002_thumbnails_contact_sheet.jpg \
+                   public/three-books/tb002/TB002_thumbnails_320x180.jpg public/three-books/tb002/index.html public/three-books/tb002/TB002_QA_public.md; do
+            [ -f "$f" ] && files="$files $f"
+          done
+          python3 scripts/three-books/tb002/check_viewer.py $files
+          gh release upload "$TAG" -R "$R" --clobber $files
+          gh release view "$TAG" -R "$R" --json assets -q '.assets[] | "\(.name)\t\(.size)"' | tee -a "$GITHUB_STEP_SUMMARY"
