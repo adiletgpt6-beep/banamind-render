@@ -1,0 +1,17 @@
+{
+  "enabled": false,
+  "outDir": "voice-samples/trip-questions",
+  "model": "eleven_v3",
+  "seed": 51,
+  "voiceSettings": { "stability": 0.5, "similarity_boost": 0.8 },
+  "sharedLanguages": [],
+  "sampleText": "Биринчи: баланы ким жеткирет? Айдоочу менен таанышып, тажрыйбасын сураңыз. Үчүнчү: пландар өзгөрсө, кантип байланышасыз? Үйдүн дареги, мектеп, алып кетүү жана кайтуу убактысы.",
+  "candidates": [{ "name": "Eric", "id": "cjVigY5qzO86Huf0OWal" }],
+  "variants": [
+    { "id": "founder-settings" },
+    {
+      "id": "curious-tag",
+      "text": "[curious] Биринчи: баланы ким жеткирет? Айдоочу менен таанышып, тажрыйбасын сураңыз. Үчүнчү: пландар өзгөрсө, кантип байланышасыз? Үйдүн дареги, мектеп, алып кетүү жана кайтуу убактысы."
+    }
+  ]
+}

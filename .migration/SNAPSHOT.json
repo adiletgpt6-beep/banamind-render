@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "1595cc7f62b1b891c2700b6d17f3887bff823f9c",
+  "source_branches": [
+    "feature/third-b-meeting-2d"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 3,
+  "withheld_file_counts": {
+    "private_source_or_binary": 158
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 4
+}

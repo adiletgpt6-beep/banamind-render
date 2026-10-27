@@ -1,0 +1,201 @@
+{
+  "hash": "fe1195067d79461a",
+  "done": true,
+  "texts": {
+    "narrator": "Айжан дизайн студиясын жетектейт. Бүгүн ал кардарларга жаңы долбоорун көрсөтмөк. Презентация, эсептөөлөр, материалдардын үлгүлөрү — баары даяр.",
+    "client": "Кечиресиз... Сиз азыр үчүнчү Бэ класстасызбы? Сонун көрнөк экен! Эми сиз даярдаган долбоорду көрөлү. Ушул вариантты тандайлы. Бизге жакты.",
+    "daughter": "Апа, бүгүн сабакта көрнөк тарттык. Мына, карачы, бул биздин класс. Апа, сүрөтүм тоскоол болгон жокпу? Апа, кабинетиңе да көрнөк жасап берейинби? Макул."
+  },
+  "previews": [
+    {
+      "file": "daughter-KG-daughter.mp3",
+      "role": "daughter",
+      "source": "saved",
+      "name": "KG-daughter",
+      "from": "№12 two-schedules-2d",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "cer": 0.035,
+      "f0": 280.7,
+      "profile": {
+        "age": 22.4,
+        "female": 0.97,
+        "male": 0.011,
+        "child": 0.019
+      },
+      "heard": "апа бугун сабакта көрнөк тарттык мына карачы бул биздин класс апа сүрөтүм тоскол болгон жокпу апа кабинетиңе да көрнөк жасап береймби макул"
+    },
+    {
+      "file": "daughter-NB2-daughter.mp3",
+      "role": "daughter",
+      "source": "saved",
+      "name": "NB2-daughter",
+      "from": "№11 no-backup-2d",
+      "voiceId": "gtJEwH1YEkKKie4gBpH7",
+      "cer": 0.028,
+      "f0": 285.7,
+      "profile": {
+        "age": 23.7,
+        "female": 0.979,
+        "male": 0.013,
+        "child": 0.008
+      },
+      "heard": "апа бүгүн салакта көрнөк тарттык мына карачы бул биздин класс апа сүрөтүм тоскоу болгон жокпу апа кабинетиңе да көрнөк жасап берейнби макул"
+    },
+    {
+      "file": "daughter-NB2-friend.mp3",
+      "role": "daughter",
+      "source": "saved",
+      "name": "NB2-friend",
+      "from": "№11 no-backup-2d",
+      "voiceId": "YFFd51gsFa9VT4xGD15W",
+      "cer": 0.071,
+      "f0": 246.2,
+      "profile": {
+        "age": 32.3,
+        "female": 0.993,
+        "male": 0.007,
+        "child": 0
+      },
+      "heard": "апа бүгүн сабакта корнөк тарттык мына караче бул бизден класс апа суретүм тосколу болгон жокпу апа кабинетиңе да корнөк жасап береймби макул"
+    },
+    {
+      "file": "client-KG-boss.mp3",
+      "role": "client",
+      "source": "saved",
+      "name": "KG-boss",
+      "from": "№10 half-hour-2d",
+      "voiceId": "yCcjraKUNFsfIv02eS9D",
+      "cer": 0.046,
+      "f0": 140.4,
+      "profile": {
+        "age": 24.9,
+        "female": 0.002,
+        "male": 0.998,
+        "child": 0
+      },
+      "heard": "кечиресиз сиз азыр үчүнчү бе класстасызбы сону көрүнөк экен эми сиз даярдабан долборду көрөлү ушул вариантты тандайла бизге жакты"
+    },
+    {
+      "file": "client-NB2-brother.mp3",
+      "role": "client",
+      "source": "saved",
+      "name": "NB2-brother",
+      "from": "№11 no-backup-2d",
+      "voiceId": "IRGPSiyjpLdMfh3zNzFo",
+      "cer": 0.062,
+      "f0": 150.9,
+      "profile": {
+        "age": 26.9,
+        "female": 0.002,
+        "male": 0.998,
+        "child": 0
+      },
+      "heard": "кечиресиз сиз азыр үчүнчү бей кластасызбы сонун көрүнөгү экен эми сиз даярдаган долборду көрөлү ушул вариантты тандайлы бизге жапты"
+    },
+    {
+      "file": "client-NB2-father.mp3",
+      "role": "client",
+      "source": "saved",
+      "name": "NB2-father",
+      "from": "№11 no-backup-2d",
+      "voiceId": "xxKkhYUgtZTPTuHpktPy",
+      "cer": 0.031,
+      "f0": 123.1,
+      "profile": {
+        "age": 19.6,
+        "female": 0.014,
+        "male": 0.985,
+        "child": 0
+      },
+      "heard": "кечиресиз сиз азыр үчүнчү бей кластасызбы сонун көрнөк экен эми сиз даярдаган долборду көрөлү ушул вариантты тандайлы бизге жакты"
+    },
+    {
+      "file": "narrator-KG-teacher.mp3",
+      "role": "narrator",
+      "source": "saved",
+      "name": "KG-teacher",
+      "from": "№10 half-hour-2d",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "cer": 0.037,
+      "f0": 219.2,
+      "profile": {
+        "age": 39.4,
+        "female": 0.996,
+        "male": 0.003,
+        "child": 0
+      },
+      "heard": "айжан дизайн студиясын жетектейт бүгүн алы кардарларга жаңы долборун көрсетмек презентация эсептөөлөр материалдардын үлгүлөри баары даяр"
+    },
+    {
+      "file": "daughter-g2-1.mp3",
+      "role": "daughter",
+      "source": "design",
+      "design": "g2",
+      "description": "A Kyrgyz voice actress with a light, youthful, slightly thin mezzo voice who voices young cartoon heroines. A native speaker of the Kyrgyz language with authentic Kyrgyz pronunciation. Gentle, curious, plain everyday speech, no singing quality, no squeak, not mature. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "generatedVoiceId": "LvBEEYy0H2fZIt1MDrm0",
+      "cer": 0.078,
+      "f0": 363.6,
+      "profile": {
+        "age": 26.3,
+        "female": 0.965,
+        "male": 0.025,
+        "child": 0.011
+      },
+      "heard": "апа бүгүн сабакта көрнөк тарттык мына карачи бул биздиң класс апа сүрөтүм тосколу болгон жокпу апа кабинетиңе да көрнөк жасап берейнби"
+    },
+    {
+      "file": "daughter-g2-2.mp3",
+      "role": "daughter",
+      "source": "design",
+      "design": "g2",
+      "description": "A Kyrgyz voice actress with a light, youthful, slightly thin mezzo voice who voices young cartoon heroines. A native speaker of the Kyrgyz language with authentic Kyrgyz pronunciation. Gentle, curious, plain everyday speech, no singing quality, no squeak, not mature. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "generatedVoiceId": "MbGQWEerObIm83RU2paA",
+      "cer": 0.035,
+      "f0": 262.3,
+      "profile": {
+        "age": 28.2,
+        "female": 0.988,
+        "male": 0.011,
+        "child": 0.001
+      },
+      "heard": "апа бүгүн сабакта көрнөк тарттык мына карачы бул биздин класс апа сүрөтүм тосколу болгон жокпу апа кабинетине да көрнөк жасап береймби макул"
+    },
+    {
+      "file": "daughter-g2-3.mp3",
+      "role": "daughter",
+      "source": "design",
+      "design": "g2",
+      "description": "A Kyrgyz voice actress with a light, youthful, slightly thin mezzo voice who voices young cartoon heroines. A native speaker of the Kyrgyz language with authentic Kyrgyz pronunciation. Gentle, curious, plain everyday speech, no singing quality, no squeak, not mature. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "generatedVoiceId": "NGV8LJqWADVM8EnTYY5T",
+      "cer": 0.078,
+      "f0": 313.7,
+      "profile": {
+        "age": 33.4,
+        "female": 0.983,
+        "male": 0.015,
+        "child": 0.002
+      },
+      "heard": "апа бүгүн сабакта корнөк тартык мына карайчы бул биздин класс апа сүрөтүн тоскол болгон жокпу апа кабинетиңе да корнук жасап берейнбиаул"
+    }
+  ],
+  "errors": [
+    {
+      "id": "g1",
+      "error": "403 /v1/text-to-voice/design: {\"detail\":{\"type\":\"authorization_error\",\"code\":\"forbidden\",\"message\":\"Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.\",\"status\":\"blocked_generation\",\"request_id\":\"0aa0e94f93dc4ec70a595aa1feee4311\"}}"
+    }
+  ],
+  "picked": {
+    "daughter": {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "file": "daughter-KG-daughter.mp3",
+      "reason": "Слепая оценка (gpt-audio-1.5, без подсказки роли): 4 из 4 — «ребёнок ≈ 9 лет»; «взрослая, изображающая ребёнка» — 2 из 5 во всех 3 повторах, «писк» 2–3 из 5. CER MMS 0,035, F0 ≈ 281 Гц. Сохранённый голос проекта (№12). Профиль audeering относит его к взрослой женщине, как и всех кандидатов (известное ограничение для детских голосов)."
+    },
+    "client": {
+      "name": "NB2-brother",
+      "voiceId": "IRGPSiyjpLdMfh3zNzFo",
+      "file": "client-NB2-brother.mp3",
+      "reason": "Слепая оценка: ≈ 35 лет, теплота 4/3/4, деловитость 3/4/3, естественность 4. F0 ≈ 151 Гц — заметнее всех отличается от папы (KG-husband ≈ 110 Гц); NB2-father (123 Гц) слишком близок к папе. CER MMS 0,062 (у каждой реплики — лучший из 3 дублей)."
+    }
+  }
+}
