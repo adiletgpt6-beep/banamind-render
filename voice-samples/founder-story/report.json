@@ -1,0 +1,23 @@
+{
+  "configHash": "db6d1846b5ff5c91",
+  "models": null,
+  "accountVoices": [],
+  "sharedVoices": [],
+  "samples": [
+    {
+      "tag": "Eric-founder",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "error": "POST /v1/speech-to-text → 401: {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"8f1168d374eba1e943a798339ec28b0f\"}}"
+    },
+    {
+      "tag": "Brian-founder",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "error": "POST /v1/speech-to-text → 401: {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"2098b9f89b8e6b8e5a8d03f177ae2b96\"}}"
+    },
+    {
+      "tag": "George-founder",
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+      "error": "POST /v1/speech-to-text → 401: {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"c191fa34e5400a5fd64438028981b3dd\"}}"
+    }
+  ]
+}

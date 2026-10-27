@@ -1,0 +1,122 @@
+[
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/narrator-KG-husband-N01.mp3",
+    "heard": "апасы уулунун бөлмөсүнөн жыйырма беш конверт тапты ар биринде класташынын аты жазылган ал эми жакынкы майрамга дагы бир нече ай бар эле",
+    "cer": 0.007,
+    "f0": 107.4,
+    "profile": {
+      "age": 23.2,
+      "female": 0.002,
+      "male": 0.998,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/narrator-KG-teacher-N01.mp3",
+    "heard": "апасы уулунун бөлмөсүнөн 2ыйырма беш конверт тапты ар биринде класташынын аты жазылган ал эми жакынкы майрамга дагы бир нече айбар эле",
+    "cer": 0.022,
+    "f0": 238.8,
+    "profile": {
+      "age": 36.0,
+      "female": 0.995,
+      "male": 0.005,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/mother-KG-mother-M01.mp3",
+    "heard": "баарым бир жакка чакырып жатасыңбы",
+    "cer": 0.029,
+    "f0": 246.2,
+    "profile": {
+      "age": 43.5,
+      "female": 0.996,
+      "male": 0.004,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/mother-KG-mother-M04.mp3",
+    "heard": "биз азырынча кандай кылсак болорун карап жатабыз сага эмне маанелүү экенин айтып берчи",
+    "cer": 0.012,
+    "f0": 207.8,
+    "profile": {
+      "age": 34.3,
+      "female": 0.995,
+      "male": 0.005,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/son-KG-boy_a2-3-C01.mp3",
+    "heard": "жок бул эсилике",
+    "cer": 0.176,
+    "f0": 285.7,
+    "profile": {
+      "age": 36.8,
+      "female": 0.984,
+      "male": 0.015,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/son-KG-boy_a2-3-C02.mp3",
+    "heard": "башка мектеп жөнүндө сүрөшкөн сыморда баарына ырахмат айтып калайм дегем",
+    "cer": 0.137,
+    "f0": 260.2,
+    "profile": {
+      "age": 32.7,
+      "female": 0.981,
+      "male": 0.018,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/son-KG-boy_a2-3-C06.mp3",
+    "heard": "оо ба ал көптөн бери көргусу кели жүргөн",
+    "cer": 0.1,
+    "f0": 266.7,
+    "profile": {
+      "age": 39.1,
+      "female": 0.976,
+      "male": 0.023,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/son-KG-son_v7_remix-2-C01.mp3",
+    "heard": "жок бу эстеликке",
+    "cer": 0.059,
+    "f0": 197.5,
+    "profile": {
+      "age": 35.7,
+      "female": 0.993,
+      "male": 0.006,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/son-KG-son_v7_remix-2-C02.mp3",
+    "heard": "башка мектеп жөнүндө сүйлөшкөн суборда баарына рахмат айтып калайым дегем",
+    "cer": 0.082,
+    "f0": 273.5,
+    "profile": {
+      "age": 34.5,
+      "female": 0.965,
+      "male": 0.034,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/twenty-five-envelopes-2d/probe/son-KG-son_v7_remix-2-C06.mp3",
+    "heard": "оо ба ал көптүн бери көргүсү белип жүргөн",
+    "cer": 0.075,
+    "f0": 258.1,
+    "profile": {
+      "age": 40.8,
+      "female": 0.98,
+      "male": 0.019,
+      "child": 0.001
+    }
+  }
+]

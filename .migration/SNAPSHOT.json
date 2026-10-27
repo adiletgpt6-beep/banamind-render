@@ -1,0 +1,25 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "70ce8f0c3fc60a0bb0e8673a495e0d55187e206c",
+  "source_branches": [
+    "claude/balago-29-twenty-five-envelopes-quc238"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 3,
+  "withheld_file_counts": {
+    "private_source_or_binary": 150
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 4,
+  "continuation_date": "2026-10-27",
+  "continuation_exclusions": [
+    {
+      "path": "public/fonts/Caveat-Variable.ttf",
+      "mode": "100644",
+      "sha": "f84acf2ce2d1b3329b194749530dbaec047e6df6",
+      "binary": true,
+      "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+    }
+  ]
+}

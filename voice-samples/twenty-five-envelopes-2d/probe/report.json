@@ -1,0 +1,186 @@
+{
+  "hash": "421e80bfd4be6e4b",
+  "done": true,
+  "samples": [
+    {
+      "role": "narrator",
+      "voice": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "id": "N01",
+      "file": "narrator-KG-husband-N01.mp3",
+      "text": "Апасы уулунун бөлмөсүнөн жыйырма беш конверт тапты. Ар биринде классташынын аты жазылган. Ал эми жакынкы майрамга дагы бир нече ай бар эле.",
+      "speechSec": 8.97,
+      "heard": "апасы уулунун бөлмөсүнөн жыйырма беш конверт тапты ар биринде класташынын аты жазылган ал эми жакынкы майрамга дагы бир нече ай бар эле",
+      "cer": 0.007,
+      "f0": 107.4,
+      "profile": {
+        "age": 23.2,
+        "female": 0.002,
+        "male": 0.998,
+        "child": 0
+      }
+    },
+    {
+      "role": "narrator",
+      "voice": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "id": "N01",
+      "file": "narrator-KG-teacher-N01.mp3",
+      "text": "Апасы уулунун бөлмөсүнөн жыйырма беш конверт тапты. Ар биринде классташынын аты жазылган. Ал эми жакынкы майрамга дагы бир нече ай бар эле.",
+      "speechSec": 9.69,
+      "heard": "апасы уулунун бөлмөсүнөн 2ыйырма беш конверт тапты ар биринде класташынын аты жазылган ал эми жакынкы майрамга дагы бир нече айбар эле",
+      "cer": 0.022,
+      "f0": 238.8,
+      "profile": {
+        "age": 36,
+        "female": 0.995,
+        "male": 0.005,
+        "child": 0
+      }
+    },
+    {
+      "role": "mother",
+      "voice": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "id": "M01",
+      "file": "mother-KG-mother-M01.mp3",
+      "text": "Баарын бир жакка чакырып жатасыңбы?",
+      "speechSec": 1.85,
+      "heard": "баарым бир жакка чакырып жатасыңбы",
+      "cer": 0.029,
+      "f0": 246.2,
+      "profile": {
+        "age": 43.5,
+        "female": 0.996,
+        "male": 0.004,
+        "child": 0
+      }
+    },
+    {
+      "role": "mother",
+      "voice": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "id": "M04",
+      "file": "mother-KG-mother-M04.mp3",
+      "text": "Биз азырынча кандай кылсак болорун карап жатабыз. Сага эмне маанилүү экенин айтып берчи.",
+      "speechSec": 5.29,
+      "heard": "биз азырынча кандай кылсак болорун карап жатабыз сага эмне маанелүү экенин айтып берчи",
+      "cer": 0.012,
+      "f0": 207.8,
+      "profile": {
+        "age": 34.3,
+        "female": 0.995,
+        "male": 0.005,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "id": "C01",
+      "file": "son-KG-boy_a2-3-C01.mp3",
+      "text": "Жок. Бул — эстеликке.",
+      "speechSec": 1.28,
+      "heard": "жок бул эсилике",
+      "cer": 0.176,
+      "f0": 285.7,
+      "profile": {
+        "age": 36.8,
+        "female": 0.984,
+        "male": 0.015,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "id": "C02",
+      "file": "son-KG-boy_a2-3-C02.mp3",
+      "text": "Башка мектеп жөнүндө сүйлөшкөнсүңөр да. Баарына рахмат айтып калайын дегем.",
+      "speechSec": 3.76,
+      "heard": "башка мектеп жөнүндө сүрөшкөн сыморда баарына ырахмат айтып калайм дегем",
+      "cer": 0.137,
+      "f0": 260.2,
+      "profile": {
+        "age": 32.7,
+        "female": 0.981,
+        "male": 0.018,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "id": "C06",
+      "file": "son-KG-boy_a2-3-C06.mp3",
+      "text": "Ооба. Ал көптөн бери көргүсү келип жүргөн.",
+      "speechSec": 2.33,
+      "heard": "оо ба ал көптөн бери көргусу кели жүргөн",
+      "cer": 0.1,
+      "f0": 266.7,
+      "profile": {
+        "age": 39.1,
+        "female": 0.976,
+        "male": 0.023,
+        "child": 0.001
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "id": "C01",
+      "file": "son-KG-son_v7_remix-2-C01.mp3",
+      "text": "Жок. Бул — эстеликке.",
+      "speechSec": 1.76,
+      "heard": "жок бу эстеликке",
+      "cer": 0.059,
+      "f0": 197.5,
+      "profile": {
+        "age": 35.7,
+        "female": 0.993,
+        "male": 0.006,
+        "child": 0.001
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "id": "C02",
+      "file": "son-KG-son_v7_remix-2-C02.mp3",
+      "text": "Башка мектеп жөнүндө сүйлөшкөнсүңөр да. Баарына рахмат айтып калайын дегем.",
+      "speechSec": 4.16,
+      "heard": "башка мектеп жөнүндө сүйлөшкөн суборда баарына рахмат айтып калайым дегем",
+      "cer": 0.082,
+      "f0": 273.5,
+      "profile": {
+        "age": 34.5,
+        "female": 0.965,
+        "male": 0.034,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "id": "C06",
+      "file": "son-KG-son_v7_remix-2-C06.mp3",
+      "text": "Ооба. Ал көптөн бери көргүсү келип жүргөн.",
+      "speechSec": 2.33,
+      "heard": "оо ба ал көптүн бери көргүсү белип жүргөн",
+      "cer": 0.075,
+      "f0": 258.1,
+      "profile": {
+        "age": 40.8,
+        "female": 0.98,
+        "male": 0.019,
+        "child": 0.001
+      }
+    }
+  ]
+}
