@@ -1,0 +1,2 @@
+// Список видов сцен (для тестов без загрузки React-компонентов).
+export const VISUALS_LIST = ["coldArgue", "bigQuestion", "bookIntro", "bookParts", "workshop", "phrase", "helmets", "letter", "hoover", "compare", "fatherForgets", "dotsQ", "ribbons", "coins", "roses", "fishing", "hotel", "rule", "partTitle", "nurse", "nameStory", "nameTrick", "dinner", "coat", "listenEar", "boats", "postOffice", "banquet", "rex", "duo", "sunWind", "yesSteps", "sketches", "bonfire", "jars", "chalk", "butAnd", "josephine", "questions", "faceSave", "cards", "finale", "practice", "outro"];

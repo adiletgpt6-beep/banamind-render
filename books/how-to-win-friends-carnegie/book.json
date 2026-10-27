@@ -1,0 +1,20 @@
+{
+  "slug": "how-to-win-friends-carnegie",
+  "bm": "BM-025",
+  "title": "Как завоёвывать друзей и оказывать влияние на людей",
+  "author": "Дейл Карнеги",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-025/part-01…05.txt — основной текст пересмотренной редакции 1981 г. (перевод ООО «Попурри», 1998): введение, девять советов, 4 части / 30 глав; карта источников — books/how-to-win-friends-carnegie/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/how-to-win-friends-carnegie/scripts",
+    "timeline": "scripts/lesson-carnegie/lib.mjs",
+    "remotionEntry": "src/lesson-carnegie/index.ts",
+    "composition": "CarnegieLesson",
+    "workflow": ".github/workflows/lesson-carnegie.yml",
+    "release": "book-how-to-win-friends-carnegie",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-how-to-win-friends-carnegie",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}
