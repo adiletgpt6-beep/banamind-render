@@ -1,0 +1,102 @@
+{
+  "slug": "lider-bez-titula",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 154,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 160,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 173,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 127,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 154,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 17,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 100
+      },
+      {
+        "pair": "1-3",
+        "diff": 99.1
+      },
+      {
+        "pair": "1-4",
+        "diff": 59.7
+      },
+      {
+        "pair": "1-5",
+        "diff": 69.6
+      },
+      {
+        "pair": "2-3",
+        "diff": 55.9
+      },
+      {
+        "pair": "2-4",
+        "diff": 87.5
+      },
+      {
+        "pair": "2-5",
+        "diff": 81.2
+      },
+      {
+        "pair": "3-4",
+        "diff": 88.2
+      },
+      {
+        "pair": "3-5",
+        "diff": 82.5
+      },
+      {
+        "pair": "4-5",
+        "diff": 66.4
+      }
+    ],
+    "min": 55.9,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}

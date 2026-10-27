@@ -1,0 +1,122 @@
+name: Books — обложки, метаданные и YouTube-видео (BanaMind)
+
+# Канал BanaMind (не реклама BalaGo). Для каждой книги books/<slug>/book.json:
+#   1. пять обложек 1280×720 (src/thumbnails → books/<slug>/thumbnails/), лист сравнения,
+#      лист 320×180, проверки размера/формата/орфографии/различия;
+#   2. YouTube-метаданные (5 названий, описание, теги, главы по тайм-лайну фильма);
+#   3. релиз book-<slug>: final-youtube.mp4 — копия уже готового рендера из релиза урока
+#      (без повторного рендера; повторно не загружается, если размер не изменился),
+#      обложки, листы, метаданные.
+# Финальную обложку выбирает владелец канала: здесь только рекомендация.
+
+on:
+  push:
+    paths:
+      - "books/**"
+      - "src/books/**"
+      - "src/thumbnails/**"
+      - "src/banana-host/**"
+      - "src/banamind/**"
+      - "scripts/books/**"
+      - "public/fonts/channel/**"
+      - ".github/workflows/book-assets.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: book-assets-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  books:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg and Hunspell (ru)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg hunspell hunspell-ru
+
+      - name: Thumbnails and metadata
+        run: |
+          for f in books/*/book.json; do
+            slug=$(basename "$(dirname "$f")")
+            echo "::group::$slug"
+            node scripts/books/thumbnails.mjs "$slug"
+            node scripts/books/youtube-meta.mjs "$slug"
+            echo "::endgroup::"
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: book-thumbnails
+          path: |
+            books/*/thumbnails/*.jpg
+            books/*/thumbnails/checks.json
+            books/*/metadata/youtube.*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          R="$GITHUB_REPOSITORY"
+          for f in books/*/book.json; do
+            slug=$(basename "$(dirname "$f")")
+            title=$(jq -r .title "$f")
+            TAG=$(jq -r .release "$f")
+            SRC_TAG=$(jq -r .lesson.release "$f")
+            SRC=$(jq -r .lesson.asset "$f")
+            NOTES="«${title}» — канал BanaMind: YouTube-видео 1920×1080 30 fps H.264/AAC (копия рендера из релиза ${SRC_TAG}), пять обложек 1280×720 на выбор, лист сравнения, метаданные. Рекомендуемая обложка — №$(jq -r .recommended "books/$slug/thumbnails.json"); финальный выбор — за владельцем канала. Коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${R}/actions/runs/${GITHUB_RUN_ID}."
+            if gh release view "$TAG" -R "$R" >/dev/null 2>&1; then
+              gh release edit "$TAG" -R "$R" --title "${title} — BanaMind (YouTube)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+            else
+              gh release create "$TAG" -R "$R" --title "${title} — BanaMind (YouTube)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+            fi
+
+            # Видео: без повторного рендера, только копия готового файла.
+            src_size=$(gh release view "$SRC_TAG" -R "$R" --json assets -q ".assets[] | select(.name==\"$SRC\") | .size")
+            dst_size=$(gh release view "$TAG" -R "$R" --json assets -q '.assets[] | select(.name=="final-youtube.mp4") | .size')
+            if [ -z "$src_size" ]; then
+              echo "::error::в релизе $SRC_TAG нет $SRC"; exit 1
+            fi
+            if [ "$src_size" != "$dst_size" ]; then
+              mkdir -p out/books/$slug
+              gh release download "$SRC_TAG" -R "$R" -p "$SRC" -O "out/books/$slug/final-youtube.mp4" --clobber
+              v=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,r_frame_rate -of csv=p=0 "out/books/$slug/final-youtube.mp4")
+              a=$(ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of csv=p=0 "out/books/$slug/final-youtube.mp4")
+              echo "video: $v; audio: $a"
+              [ "$v" = "h264,1920,1080,30/1" ] && [ "$a" = "aac" ] || { echo "::error::видео не 1920×1080 30 fps H.264/AAC"; exit 1; }
+              gh release upload "$TAG" -R "$R" --clobber "out/books/$slug/final-youtube.mp4"
+            else
+              echo "final-youtube.mp4 уже в релизе ($dst_size байт) — пропуск"
+            fi
+
+            gh release upload "$TAG" -R "$R" --clobber \
+              books/$slug/thumbnails/thumbnail-0{1,2,3,4,5}.jpg \
+              books/$slug/thumbnails/comparison-sheet.jpg books/$slug/thumbnails/readability-320x180.jpg \
+              books/$slug/metadata/youtube.md books/$slug/metadata/youtube.json
+            # лист всех пяти обложек под постоянным именем серии BanaMind 500 (если есть)
+            if [ -f "books/$slug/thumbnails/thumbnail-contact-sheet.jpg" ]; then
+              gh release upload "$TAG" -R "$R" --clobber "books/$slug/thumbnails/thumbnail-contact-sheet.jpg"
+            fi
+            {
+              echo "### ${title}"
+              for n in 01 02 03 04 05; do echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/thumbnail-$n.jpg"; done
+              echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/comparison-sheet.jpg"
+              echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/final-youtube.mp4"
+            } >> "$GITHUB_STEP_SUMMARY"
+          done
