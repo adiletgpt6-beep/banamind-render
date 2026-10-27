@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "a710e7471cdd7ab057fa1c339f27d851f605237a",
+  "source_branches": [
+    "feature/two-schedules-2d"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 2,
+  "withheld_file_counts": {
+    "private_source_or_binary": 110
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
