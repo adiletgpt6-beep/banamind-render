@@ -1,0 +1,102 @@
+{
+  "slug": "seven-habits-covey",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 159,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 199,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 180,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 142,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 179,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 31,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 53.1
+      },
+      {
+        "pair": "1-3",
+        "diff": 53.9
+      },
+      {
+        "pair": "1-4",
+        "diff": 64.8
+      },
+      {
+        "pair": "1-5",
+        "diff": 67.7
+      },
+      {
+        "pair": "2-3",
+        "diff": 73.2
+      },
+      {
+        "pair": "2-4",
+        "diff": 72.6
+      },
+      {
+        "pair": "2-5",
+        "diff": 58.2
+      },
+      {
+        "pair": "3-4",
+        "diff": 72.7
+      },
+      {
+        "pair": "3-5",
+        "diff": 85.8
+      },
+      {
+        "pair": "4-5",
+        "diff": 70.9
+      }
+    ],
+    "min": 53.1,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}

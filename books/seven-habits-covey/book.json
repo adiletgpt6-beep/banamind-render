@@ -1,0 +1,20 @@
+{
+  "slug": "seven-habits-covey",
+  "bm": "BM-022",
+  "title": "7 навыков высокоэффективных людей",
+  "author": "Стивен Р. Кови",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-022/part-01…21.txt — русский перевод книги (строки 43–2854 исходного TXT, без отзывов и издательского послесловия); карта источников — books/seven-habits-covey/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/seven-habits-covey/scripts",
+    "timeline": "scripts/lesson-covey/lib.mjs",
+    "remotionEntry": "src/lesson-covey/index.ts",
+    "composition": "CoveyLesson",
+    "workflow": ".github/workflows/lesson-covey.yml",
+    "release": "book-seven-habits-covey",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-seven-habits-covey",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:04" }
+}
