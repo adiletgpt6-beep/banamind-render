@@ -1,0 +1,274 @@
+name: Finance Horse (YouTube 16:9)
+
+# Отдельный канал о личных финансах (не BalaGo): ведущий — лошадка.
+# Своя точка входа Remotion src/finance/index.ts, прежние композиции не трогает.
+#   prepare → расшифровка исходника (если её ещё нет) и английская озвучка
+#             ElevenLabs по репликам (готовые реплики с тем же хэшем
+#             переиспользуются); новые файлы сохраняются в ветку.
+#   render  → TypeScript, тесты, контрольные кадры, MP4 1920×1080 30 fps
+#             H.264/AAC + faststart, облегчённая копия 960×540; проверка формата.
+#   publish → оба MP4 файлами предварительного релиза finance-horse-preview.
+
+on:
+  push:
+    paths:
+      - "finance/**"
+      - "src/finance/**"
+      - "scripts/finance/**"
+      - "public/finance/**"
+      - ".github/workflows/finance-horse.yml"
+  workflow_dispatch:
+    inputs:
+      langs:
+        description: 'Языки рендера, JSON: ["ru"], ["en"] или ["en","ru"]'
+        required: false
+        default: '["ru"]'
+
+concurrency:
+  group: finance-horse-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    outputs:
+      voiced: ${{ steps.state.outputs.voiced }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      # У ключа ElevenLabs нет права speech_to_text → открытая модель Whisper.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Transcribe source (only if missing)
+        if: hashFiles('finance/source/transcript-ru.json') == ''
+        run: |
+          pip install --quiet "faster-whisper==1.1.1" requests
+          python scripts/finance/asr_whisper.py
+          cat finance/source/transcript-ru-gaps.txt
+
+      - name: Re-transcribe chunk boundaries (only if missing)
+        if: hashFiles('finance/source/transcript-ru-boundaries.txt') == ''
+        continue-on-error: true
+        run: |
+          pip install --quiet "faster-whisper==1.1.1" requests
+          python scripts/finance/asr_windows.py
+          cat finance/source/transcript-ru-boundaries.txt
+
+      # Выдержки из открытых текстов AAOIFI для отчёта о проверке сценария.
+      - name: AAOIFI excerpts (only if missing)
+        if: hashFiles('finance/research/aaoifi-excerpts.md') == ''
+        continue-on-error: true
+        run: |
+          sudo apt-get install -y --no-install-recommends poppler-utils >/dev/null
+          pip install --quiet requests
+          python scripts/finance/aaoifi_research.py
+
+      # Подбор русского голоса (один раз): образцы + оценка Whisper.
+      - name: Russian voice probe (only if missing)
+        if: hashFiles('voice-samples/finance-ru/probe.json') == ''
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          node scripts/finance/voice_probe_ru.mjs
+          pip install --quiet "faster-whisper==1.1.1" requests
+          python scripts/finance/voice_probe_ru.py
+
+      - name: Voiceover EN + RU (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          node scripts/finance/voice.mjs en
+          node scripts/finance/voice.mjs ru
+
+      # Обратное распознавание озвучки (произношение, обрезанные окончания);
+      # проверяются только новые или изменённые реплики.
+      - name: Voice QA (Whisper back-check)
+        continue-on-error: true
+        run: |
+          pip install --quiet "faster-whisper==1.1.1" requests num2words
+          python scripts/finance/voice_qa.py en
+          python scripts/finance/voice_qa.py ru
+
+      - name: Save new files to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          for d in finance/source finance/research public/finance voice-samples/finance-ru; do [ -e "$d" ] && git add "$d"; done; true
+          if git diff --cached --quiet; then
+            echo "Новых файлов нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(finance): save transcript / voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: State
+        id: state
+        run: |
+          if [ -f public/finance/voice/manifest.json ] && [ -f public/finance/voice-ru/manifest.json ]; then
+            echo "voiced=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "voiced=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  # Рендер по языкам. По push — русская версия (английская уже выпущена);
+  # вручную (Run workflow) можно указать ["en","ru"].
+  render:
+    needs: prepare
+    if: needs.prepare.outputs.voiced == 'true' && !contains(github.event.head_commit.message, '[no render]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        lang: ${{ fromJSON(github.event.inputs.langs || '["ru"]') }}
+    env:
+      LANG_ID: ${{ matrix.lang }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript
+        run: npx tsc
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (script, numbers, subtitles, timeline, Russian version)
+        run: node --test scripts/finance/*.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Names
+        run: |
+          if [ "$LANG_ID" = ru ]; then OUT=finance-horse-money-system-ru; SCRIPT=script.ru.md; SUBS=subtitles.ru; else OUT=finance-horse-money-system; SCRIPT=script.md; SUBS=subtitles.en; fi
+          { echo "OUT=$OUT"; echo "SCRIPT=$SCRIPT"; echo "SUBS=$SUBS"; } >> "$GITHUB_ENV"
+
+      - name: Render check frames
+        run: node scripts/finance/stills.mjs --lang=$LANG_ID
+
+      - name: Render MP4 (1920×1080, 30 fps, H.264/AAC, yuv420p)
+        run: bash scripts/finance/render.sh "out/$OUT.mp4" "$LANG_ID"
+
+      - name: Mobile preview copy (960×540)
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+            -vf scale=960:540:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 25 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-preview-960x540.mp4"
+
+      - name: Verify MP4
+        run: |
+          node scripts/finance/export-script.mjs "$LANG_ID"
+          node scripts/finance/verify.mjs "out/$OUT.mp4" "$LANG_ID"
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: finance-horse-mp4-${{ matrix.lang }}
+          path: |
+            out/${{ env.OUT }}.mp4
+            out/${{ env.OUT }}-preview-960x540.mp4
+            finance/episode-01/${{ env.SCRIPT }}
+            finance/episode-01/${{ env.SUBS }}.srt
+            finance/episode-01/${{ env.SUBS }}.vtt
+          if-no-files-found: error
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: finance-horse-frames-${{ matrix.lang }}
+          path: out/finance-frames/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        lang: ${{ fromJSON(github.event.inputs.langs || '["ru"]') }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      # артефакт хранит пути от корня репозитория: out/*.mp4 и finance/episode-01/*
+      - uses: actions/download-artifact@v4
+        with:
+          name: finance-horse-mp4-${{ matrix.lang }}
+          path: .
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LANG_ID: ${{ matrix.lang }}
+        run: |
+          if [ "$LANG_ID" = ru ]; then
+            TAG=finance-horse-ru-preview; OUT=finance-horse-money-system-ru; SCRIPT=script.ru.md; SUBS=subtitles.ru
+            TITLE="Finance Horse — выпуск 1, русская версия (превью)"
+          else
+            TAG=finance-horse-preview; OUT=finance-horse-money-system; SCRIPT=script.md; SUBS=subtitles.en
+            TITLE="Finance Horse — Episode 1 (preview)"
+          fi
+          ls -la out
+          NOTES="Finance Horse — личные финансы, выпуск 1, язык ${LANG_ID} (1920×1080, 30 fps). Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. Не публиковать на YouTube автоматически."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "$TITLE" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-preview-960x540.mp4" \
+            "finance/episode-01/$SCRIPT" "finance/episode-01/$SUBS.srt" "finance/episode-01/$SUBS.vtt"
+          {
+            echo "### MP4 ($LANG_ID)"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-preview-960x540.mp4"
+          } >> "$GITHUB_STEP_SUMMARY"

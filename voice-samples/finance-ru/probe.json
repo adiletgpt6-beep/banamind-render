@@ -1,0 +1,26 @@
+{
+ "text": "Вы зарабатываете деньги каждый месяц. Почему же кажется, что каждый раз вы начинаете с нуля? Алекс получает на руки четыре тысячи долларов, а тратит три тысячи двести.",
+ "listingError": "401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission voices_read to execute this operation.\",\"status\":\"missing_permissions\",\"request",
+ "results": [
+  {
+   "name": "Eric (premade)",
+   "voiceId": "cjVigY5qzO86Huf0OWal",
+   "source": "premade",
+   "model": "eleven_multilingual_v2",
+   "file": "cjVigY5qzO86Huf0OWal-eleven_multilingual_v2.mp3",
+   "heard": "Вы зарабатываете деньги каждый месяц. Почему же кажется, что каждый раз вы начинаете с нуля? Алекс получает на руки 4000 долларов, а тратит 3200.",
+   "wer": 0.0,
+   "dur": 10.63
+  },
+  {
+   "name": "Eric (premade)",
+   "voiceId": "cjVigY5qzO86Huf0OWal",
+   "source": "premade",
+   "model": "eleven_v3",
+   "file": "cjVigY5qzO86Huf0OWal-eleven_v3.mp3",
+   "heard": "Вы зарабатываете деньги каждый месяц. Почему же кажется, что каждый раз вы начинаете с нуля? Алекс получает на руки 4 тысячи долларов, а тратит 3 тысячи 200.",
+   "wer": 0.091,
+   "dur": 12.04
+  }
+ ]
+}

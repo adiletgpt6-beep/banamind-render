@@ -1,0 +1,491 @@
+{
+ "model": "large-v3-turbo",
+ "lines": [
+  {
+   "id": "h1",
+   "hash": "10e33d78b5db0f4c",
+   "wer": 0.0,
+   "heard": "you earn money every month. So why does it still feel like you're starting from zero?"
+  },
+  {
+   "id": "h2",
+   "hash": "056e95bd03fcfea5",
+   "wer": 0.0,
+   "heard": "Payday comes, the bills go out, and by the end of the month, the account looks almost the same as before."
+  },
+  {
+   "id": "h3",
+   "hash": "1a50b9b57f75d900",
+   "wer": 0.0,
+   "heard": "Today, let's fix that with a simple system, not a trick, a system."
+  },
+  {
+   "id": "p1",
+   "hash": "31a343dea052ee5b",
+   "wer": 0.0,
+   "heard": "By the end of this episode, you'll know five things."
+  },
+  {
+   "id": "p2",
+   "hash": "29465f104b4eaeaa",
+   "wer": 0.0,
+   "heard": "where you actually stand, what one hour of your work is really worth, where your money flows, what you're aiming for, and how to grow your income in honest ways."
+  },
+  {
+   "id": "p3",
+   "hash": "8d87ee9445b1e1f6",
+   "wer": 0.0,
+   "heard": "One quick note about this channel. We leave out interest-based debt and savings, gambling, and get-rich-quick schemes. We stick to real work, real activity, and clear numbers."
+  },
+  {
+   "id": "a1",
+   "hash": "f8ef468c4f2b0262",
+   "wer": 0.0,
+   "heard": "Let's follow one example the whole way through. Meet Alex."
+  },
+  {
+   "id": "a2",
+   "hash": "0b498411c6003f44",
+   "wer": 0.0,
+   "heard": "Alex has a regular job. Take-home pay, the money that actually lands in the account after taxes and deductions, is $4,000 a month."
+  },
+  {
+   "id": "a3",
+   "hash": "a3de533a2d007e44",
+   "wer": 0.0,
+   "heard": "These are teaching numbers, not average salaries. Swap in your own as we go."
+  },
+  {
+   "id": "s1",
+   "hash": "7ea637ff6de38ac5",
+   "wer": 0.0,
+   "heard": "Step 1. Be honest about where you stand right now."
+  },
+  {
+   "id": "s2",
+   "hash": "2832b5090a316ce5",
+   "wer": 0.0,
+   "heard": "not where you hope to be, not where your friends seem to be, where you are."
+  },
+  {
+   "id": "s3",
+   "hash": "8bd9a194c4ee7f66",
+   "wer": 0.0,
+   "heard": "Alex opens last month's statement and sorts every expense into groups."
+  },
+  {
+   "id": "b1",
+   "hash": "e5ef1303bac1d702",
+   "wer": 0.0,
+   "heard": "$4,000 comes in. Then it splits."
+  },
+  {
+   "id": "b2",
+   "hash": "197331608459b4f8",
+   "wer": 0.0,
+   "heard": "Rent, groceries, transportation, utilities, and phone, health, and insurance. These are the essentials. $2,600."
+  },
+  {
+   "id": "b3",
+   "hash": "690ec97c1b04fc97",
+   "wer": 0.0,
+   "heard": "then dining out and delivery, subscriptions, shopping, and fun. Another $600."
+  },
+  {
+   "id": "b4",
+   "hash": "f381dff3365252d3",
+   "wer": 0.0,
+   "heard": "Total spending, $3,200."
+  },
+  {
+   "id": "e1",
+   "hash": "21888fe9668934de",
+   "wer": 0.0,
+   "heard": "So what's left?"
+  },
+  {
+   "id": "e2",
+   "hash": "14d7c8480422b14b",
+   "wer": 0.0,
+   "heard": "$4,000 minus $3,200 equals $800."
+  },
+  {
+   "id": "e3",
+   "hash": "4715986854cb0fd5",
+   "wer": 0.0,
+   "heard": "That $800 is not a number to feel guilty or proud about. It's your starting point. And now you can see it."
+  },
+  {
+   "id": "w1",
+   "hash": "66a37d7461351b0e",
+   "wer": 0.0,
+   "heard": "Step two, find out what one hour of your work is really worth."
+  },
+  {
+   "id": "w2",
+   "hash": "001ecd0b2c9ca0fb",
+   "wer": 0.0,
+   "heard": "Alex is paid for about 40 hours a week. But work takes more than that. The commute, getting ready, those late emails."
+  },
+  {
+   "id": "w3",
+   "hash": "3abd6bb0922b0a2f",
+   "wer": 0.0,
+   "heard": "Add it all up, and Alex gives about 200 hours a month to work."
+  },
+  {
+   "id": "w4",
+   "hash": "e3ba4df41c3c168d",
+   "wer": 0.0,
+   "heard": "$4,000 divided by 200 hours, about $20 for each hour."
+  },
+  {
+   "id": "m1",
+   "hash": "2ebd4b42d46d29cf",
+   "wer": 0.0,
+   "heard": "This simple math can flip how you compare jobs."
+  },
+  {
+   "id": "m2",
+   "hash": "214baa3c6ac0dc6d",
+   "wer": 0.0,
+   "heard": "Job A pays $4,500 a month, but really takes 250 hours. That's $18 an hour. Job B pays $4,000 for 160 hours. That's $25 an hour."
+  },
+  {
+   "id": "m3",
+   "hash": "4e47c5e44b3bf8b4",
+   "wer": 0.0,
+   "heard": "The bigger paycheck isn't always the better hour."
+  },
+  {
+   "id": "u1",
+   "hash": "3f6c972eded67d88",
+   "wer": 0.0,
+   "heard": "This is not what Alex is worth as a person. Your value isn't an hourly rate."
+  },
+  {
+   "id": "u2",
+   "hash": "4cd990c53ff19be5",
+   "wer": 0.0,
+   "heard": "It's a tool for decisions. A $120 pair of sneakers costs Alex about six hours of work. Food delivery three times a week at about $20 each? That's roughly three hours every week."
+  },
+  {
+   "id": "u3",
+   "hash": "307e63eec16204cc",
+   "wer": 0.0,
+   "heard": "Sometimes that's worth it. Sometimes it's not. Now the choice is clear."
+  },
+  {
+   "id": "u4",
+   "hash": "f20a66178a222e70",
+   "wer": 0.0,
+   "heard": "Try it yourself. Your monthly take-home pay, divided by all the hours work really takes."
+  },
+  {
+   "id": "q1",
+   "hash": "6063707b829a88b6",
+   "wer": 0.0,
+   "heard": "Step three, understand where income can come from."
+  },
+  {
+   "id": "q2",
+   "hash": "0d5ad93efef84627",
+   "wer": 0.0,
+   "heard": "Here's a simple map. Think of it as a sketch, not a law of success."
+  },
+  {
+   "id": "q3",
+   "hash": "085af028246a69e7",
+   "wer": 0.0,
+   "heard": "One, a job, you trade time and skill for a paycheck."
+  },
+  {
+   "id": "q4",
+   "hash": "7ceaf48f5f673d33",
+   "wer": 0.0,
+   "heard": "2. Self-Employed You sell your own service like design, repairs, or tutoring. You keep more control, but you also handle clients, costs, and slow months."
+  },
+  {
+   "id": "q5",
+   "hash": "21fab714fb291bb4",
+   "wer": 0.0,
+   "heard": "3. A business. You build a system and a team so the work doesn't depend only on your own hours."
+  },
+  {
+   "id": "q6",
+   "hash": "927b957ffff41f15",
+   "wer": 0.0,
+   "heard": "4. Owning productive assets. Part of a real business, a property you rent out, or creative work that people buy again and again."
+  },
+  {
+   "id": "q7",
+   "hash": "7c4f7ee82edf1fd2",
+   "wer": 0.0,
+   "heard": "None of these boxes is better by default. A great job can be a strong foundation, and every extra source takes time, money, and real risk to build."
+  },
+  {
+   "id": "x1",
+   "hash": "92763bb9b426135c",
+   "wer": 0.0,
+   "heard": "Now, three words people often mix up. Assets, liabilities, and cash flow."
+  },
+  {
+   "id": "x2",
+   "hash": "6fcd7ec379db7620",
+   "wer": 0.0,
+   "heard": "An asset is something you own that has value. Savings, tools, a car, a home."
+  },
+  {
+   "id": "x3",
+   "hash": "4b1d8f5c7ad0fb9d",
+   "wer": 0.0,
+   "heard": "A liability is something you owe to someone else, like an unpaid bill or a debt."
+  },
+  {
+   "id": "x4",
+   "hash": "f5d095b016541d95",
+   "wer": 0.0,
+   "heard": "And cash flow is simply money moving in or out each month."
+  },
+  {
+   "id": "x5",
+   "hash": "8f7a71b117b4d6e2",
+   "wer": 0.0,
+   "heard": "Imagine someone who owns a house outright. It's an asset. It still has costs. Property tax, insurance, repairs. Those costs are cash going out. They don't turn the house into a liability."
+  },
+  {
+   "id": "x6",
+   "hash": "178100bfa862150f",
+   "wer": 0.0,
+   "heard": "And if they rent out a spare room, that rent is cash coming in. Three separate things. Keep them separate, and the picture gets clear."
+  },
+  {
+   "id": "c1",
+   "hash": "7dfec04e7851d38e",
+   "wer": 0.0,
+   "heard": "Let's watch how money moves. There are three common patterns."
+  },
+  {
+   "id": "c2",
+   "hash": "d47d2a27cf9a9a89",
+   "wer": 0.0,
+   "heard": "Pattern 1, money comes in, and all of it goes straight out to expenses. Every month resets to zero."
+  },
+  {
+   "id": "c3",
+   "hash": "3e1bde68a81d8efb",
+   "wer": 0.0,
+   "heard": "Pattern 2. Money comes in, and a big part goes to payments for things bought with borrowed money. Next month's paycheck is already spoken for before it arrives."
+  },
+  {
+   "id": "c4",
+   "hash": "2ebdc860bdc9719e",
+   "wer": 0.0,
+   "heard": "Pattern three, money comes in, expenses are covered, and a planned part stays. It builds a reserve, funds goals and skills, and over time can go into real productive activity."
+  },
+  {
+   "id": "c5",
+   "hash": "7323526daf3cae22",
+   "wer": 0.0,
+   "heard": "Same paycheck. Very different direction."
+  },
+  {
+   "id": "l1",
+   "hash": "5e45e2ed99b2186a",
+   "wer": 0.0,
+   "heard": "So where does money slip away before you even notice?"
+  },
+  {
+   "id": "l2",
+   "hash": "6165203b7b0afe4f",
+   "wer": 0.0,
+   "heard": "First, deductions. Alex's gross pay is higher than $4,000 because taxes and deductions come out first. Paying taxes honestly is part of the deal, so read your pay stub and know the difference between gross and take home."
+  },
+  {
+   "id": "l3",
+   "hash": "0a567327b54741a7",
+   "wer": 0.0,
+   "heard": "Second, charges. Late fees, overdraft fees, and interest on borrowed money. On this channel, we avoid interest-based debt, and simply paying bills on time removes a lot of these charges."
+  },
+  {
+   "id": "l4",
+   "hash": "9af4eef8f4cc3743",
+   "wer": 0.0,
+   "heard": "Third, small automatic spending, subscriptions you forgot, delivery fees, impulse buys."
+  },
+  {
+   "id": "t1",
+   "hash": "c00d4d70fc855896",
+   "wer": 0.0,
+   "heard": "Here's the rule that holds everything together. Spend less than you earn. Clearly less."
+  },
+  {
+   "id": "t2",
+   "hash": "af3f2d68699a3d35",
+   "wer": 0.0,
+   "heard": "But this isn't about cutting until life gets gray. The essentials stay. Rest, family, and small joys stay too."
+  },
+  {
+   "id": "t3",
+   "hash": "fcf88aa5c915a83c",
+   "wer": 0.0,
+   "heard": "Alex just looks for leaks. Delivery goes from $300 to $200. Two unused subscriptions get canceled from $90 to $40."
+  },
+  {
+   "id": "t4",
+   "hash": "a359245af74e66d2",
+   "wer": 0.0,
+   "heard": "spending drops from $3,200 to $3,050. The leftover grows from $800 to $950, and life didn't get worse."
+  },
+  {
+   "id": "g1",
+   "hash": "a105cf1121b73090",
+   "wer": 0.0,
+   "heard": "Step 4. Decide what that money is for. A goal without a number is just a wish."
+  },
+  {
+   "id": "g5",
+   "hash": "757f2394902ecd08",
+   "wer": 0.0,
+   "heard": "A good goal is specific, measurable, realistic, meaningful to you, and has a deadline. I want to be rich fails every test. Build a $7,800 reserve in 13 months passes."
+  },
+  {
+   "id": "g2",
+   "hash": "d778caaa24f7e050",
+   "wer": 0.031,
+   "heard": "Alex splits the $950 on purpose, $600 to a reserve, $250 to a skills fund, and $100 for giving in small joys."
+  },
+  {
+   "id": "g3",
+   "hash": "5e711d96a4da6b60",
+   "wer": 0.0,
+   "heard": "The reserve is a cushion for surprises, like a car repair or a few slow months. Alex's target, three months of essentials. That's $7,800."
+  },
+  {
+   "id": "g4",
+   "hash": "a3630ab4ef8b8bc9",
+   "wer": 0.0,
+   "heard": "At $600 a month, that takes 13 months. No promised returns, no tricks, just steady deposits you can watch grow."
+  },
+  {
+   "id": "r1",
+   "hash": "3ecc34cf974a298c",
+   "wer": 0.0,
+   "heard": "Step 5. Grow your income starting with the value of your hour."
+  },
+  {
+   "id": "r2",
+   "hash": "fb53e6fd5f8581a8",
+   "wer": 0.0,
+   "heard": "Ask yourself one question. Doing roughly what I do now, or something close to it, how could one hour of my work be worth more?"
+  },
+  {
+   "id": "r3",
+   "hash": "d2aec7341fda190d",
+   "wer": 0.0,
+   "heard": "Maybe a certification, a stronger skill your team needs, taking on harder problems, or asking for a raise with clear results in hand."
+  },
+  {
+   "id": "r4",
+   "hash": "acce83c9e146b9ae",
+   "wer": 0.0,
+   "heard": "Alex puts the skills fund into a course, and over time, aims for a role that pays more. It may take a while, and nothing is guaranteed. But a skill is something you always carry."
+  },
+  {
+   "id": "v1",
+   "hash": "7f8c5697e666e9b1",
+   "wer": 0.0,
+   "heard": "Another way to grow is real, productive activity. Let's look at it honestly."
+  },
+  {
+   "id": "v2",
+   "hash": "0314c414ce469dbb",
+   "wer": 0.0,
+   "heard": "Say Alex starts a small weekend service, tuning bikes for neighbors."
+  },
+  {
+   "id": "v3",
+   "hash": "bf3ad8b6ec51bf8d",
+   "wer": 0.071,
+   "heard": "In one month, revenue is $600. Tools, parts, and ads cost $250. Profit, $350. And that's before tax is on it."
+  },
+  {
+   "id": "v4",
+   "hash": "c0a83330c8f9b790",
+   "wer": 0.0,
+   "heard": "The next month, revenue is $300 and costs are $200. Profit just $100."
+  },
+  {
+   "id": "v5",
+   "hash": "003f343bb8d798db",
+   "wer": 0.0,
+   "heard": "That's the honest picture. Real profit goes up and down. There's no promised rate, and you can lose money too."
+  },
+  {
+   "id": "v6",
+   "hash": "f50623c9fa081a80",
+   "wer": 0.0,
+   "heard": "And if you ever put money into someone else's business as a partner, a fair deal shares the actual profit, and the losses too. Not a fixed, guaranteed payout on the money you put in."
+  },
+  {
+   "id": "k1",
+   "hash": "82f90619f1dfc905",
+   "wer": 0.0,
+   "heard": "One more idea. Scaling. An hour of work that serves one person can only be sold once."
+  },
+  {
+   "id": "k2",
+   "hash": "7ffc3e43714303f2",
+   "wer": 0.0,
+   "heard": "But a guide, a design, a course, or a tool you build once can be useful to many people. A business can scale too, like a second location of a coffee shop that already works."
+  },
+  {
+   "id": "k3",
+   "hash": "55927fee14f0580c",
+   "wer": 0.074,
+   "heard": "It still takes time, money, and effort up front, and it might not work out. But it's one way your income stops, depending only on your own hours."
+  },
+  {
+   "id": "z1",
+   "hash": "af5497f377535651",
+   "wer": 0.0,
+   "heard": "Let's put it all together."
+  },
+  {
+   "id": "z2",
+   "hash": "220125176ef61d66",
+   "wer": 0.0,
+   "heard": "Know where you stand. Know the price of your hour. Watch where money flows. Give every dollar a goal and grow your income in honest ways."
+  },
+  {
+   "id": "d1",
+   "hash": "1a5d5bf70a81fdc4",
+   "wer": 0.0,
+   "heard": "Here's your move for today. It takes about 20 minutes."
+  },
+  {
+   "id": "d2",
+   "hash": "2eedc2b30a32da27",
+   "wer": 0.0,
+   "heard": "Write down your monthly take-home pay. List last month's spending in groups. Subtract to find your leftover. Then divide your pay by the real hours your work takes."
+  },
+  {
+   "id": "d3",
+   "hash": "27ea9c52c7de2d16",
+   "wer": 0.0,
+   "heard": "Pick one goal, give it a number, and make the first small transfer. Even a small one counts."
+  },
+  {
+   "id": "o1",
+   "hash": "9986553c4eaa595d",
+   "wer": 0.0,
+   "heard": "If this helped, subscribe for the next episode. We'll keep building this system one clear step at a time."
+  },
+  {
+   "id": "o2",
+   "hash": "26157b71f54bfe65",
+   "wer": 0.0,
+   "heard": "See you there."
+  }
+ ]
+}

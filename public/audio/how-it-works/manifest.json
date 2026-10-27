@@ -1,0 +1,270 @@
+{
+  "version": 2,
+  "hash": "ba515817c261039f",
+  "seed": 21,
+  "voiceId": "cjVigY5qzO86Huf0OWal",
+  "modelId": "eleven_v3",
+  "file": "narration.mp3",
+  "durationSec": 22.13,
+  "segments": [
+    {
+      "id": "intro",
+      "start": 0,
+      "end": 1.17
+    },
+    {
+      "id": "simple",
+      "start": 1.71,
+      "end": 3.41
+    },
+    {
+      "id": "step1",
+      "start": 4.09,
+      "end": 8.05
+    },
+    {
+      "id": "step2",
+      "start": 8.45,
+      "end": 12.93
+    },
+    {
+      "id": "step3",
+      "start": 13.73,
+      "end": 17.33
+    },
+    {
+      "id": "slogan",
+      "start": 18.362,
+      "end": 19.65
+    },
+    {
+      "id": "cta",
+      "start": 19.89,
+      "end": 21.89
+    }
+  ],
+  "words": [
+    {
+      "text": "БалаГо",
+      "start": 0,
+      "end": 0.37,
+      "segment": "intro"
+    },
+    {
+      "text": "кантип",
+      "start": 0.41,
+      "end": 0.69,
+      "segment": "intro"
+    },
+    {
+      "text": "иштейт?",
+      "start": 0.73,
+      "end": 1.17,
+      "segment": "intro"
+    },
+    {
+      "text": "Баары",
+      "start": 1.71,
+      "end": 2.13,
+      "segment": "simple"
+    },
+    {
+      "text": "жөнөкөй",
+      "start": 2.17,
+      "end": 2.61,
+      "segment": "simple"
+    },
+    {
+      "text": "үч",
+      "start": 3.01,
+      "end": 3.09,
+      "segment": "simple"
+    },
+    {
+      "text": "кадам.",
+      "start": 3.13,
+      "end": 3.41,
+      "segment": "simple"
+    },
+    {
+      "text": "Биринчи",
+      "start": 4.09,
+      "end": 4.45,
+      "segment": "step1"
+    },
+    {
+      "text": "кадам",
+      "start": 4.49,
+      "end": 4.77,
+      "segment": "step1"
+    },
+    {
+      "text": "балаңызды",
+      "start": 5.45,
+      "end": 5.97,
+      "segment": "step1"
+    },
+    {
+      "text": "профилдеги",
+      "start": 6.018,
+      "end": 6.61,
+      "segment": "step1"
+    },
+    {
+      "text": "шилтеме",
+      "start": 6.65,
+      "end": 7.01,
+      "segment": "step1"
+    },
+    {
+      "text": "аркылуу",
+      "start": 7.063,
+      "end": 7.41,
+      "segment": "step1"
+    },
+    {
+      "text": "каттаңыз.",
+      "start": 7.45,
+      "end": 8.05,
+      "segment": "step1"
+    },
+    {
+      "text": "Экинчи",
+      "start": 8.45,
+      "end": 9.01,
+      "segment": "step2"
+    },
+    {
+      "text": "кадам",
+      "start": 9.07,
+      "end": 9.33,
+      "segment": "step2"
+    },
+    {
+      "text": "белгиленген",
+      "start": 10.01,
+      "end": 10.53,
+      "segment": "step2"
+    },
+    {
+      "text": "убакта",
+      "start": 10.583,
+      "end": 11.01,
+      "segment": "step2"
+    },
+    {
+      "text": "үйдөн",
+      "start": 11.09,
+      "end": 11.383,
+      "segment": "step2"
+    },
+    {
+      "text": "алып,",
+      "start": 11.397,
+      "end": 11.65,
+      "segment": "step2"
+    },
+    {
+      "text": "мектепке",
+      "start": 11.81,
+      "end": 12.29,
+      "segment": "step2"
+    },
+    {
+      "text": "жеткиребиз.",
+      "start": 12.33,
+      "end": 12.93,
+      "segment": "step2"
+    },
+    {
+      "text": "Үчүнчү",
+      "start": 13.73,
+      "end": 14.077,
+      "segment": "step3"
+    },
+    {
+      "text": "кадам",
+      "start": 14.09,
+      "end": 14.29,
+      "segment": "step3"
+    },
+    {
+      "text": "сабактан",
+      "start": 14.89,
+      "end": 15.41,
+      "segment": "step3"
+    },
+    {
+      "text": "кийин",
+      "start": 15.45,
+      "end": 15.65,
+      "segment": "step3"
+    },
+    {
+      "text": "кайра",
+      "start": 15.77,
+      "end": 16.21,
+      "segment": "step3"
+    },
+    {
+      "text": "үйүнө",
+      "start": 16.53,
+      "end": 16.743,
+      "segment": "step3"
+    },
+    {
+      "text": "алып",
+      "start": 16.757,
+      "end": 16.93,
+      "segment": "step3"
+    },
+    {
+      "text": "келебиз.",
+      "start": 16.97,
+      "end": 17.33,
+      "segment": "step3"
+    },
+    {
+      "text": "БалаГо",
+      "start": 18.362,
+      "end": 18.69,
+      "segment": "slogan"
+    },
+    {
+      "text": "менен",
+      "start": 18.73,
+      "end": 18.93,
+      "segment": "slogan"
+    },
+    {
+      "text": "жолго",
+      "start": 18.97,
+      "end": 19.17,
+      "segment": "slogan"
+    },
+    {
+      "text": "чыгалы!",
+      "start": 19.25,
+      "end": 19.65,
+      "segment": "slogan"
+    },
+    {
+      "text": "Каттоо",
+      "start": 19.89,
+      "end": 20.53,
+      "segment": "cta"
+    },
+    {
+      "text": "шилтемеси",
+      "start": 20.57,
+      "end": 21.17,
+      "segment": "cta"
+    },
+    {
+      "text": "профилде.",
+      "start": 21.266,
+      "end": 21.89,
+      "segment": "cta"
+    }
+  ]
+}
