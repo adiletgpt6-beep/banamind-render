@@ -1,0 +1,148 @@
+name: BanaMind BM-017 — пилот «И тогда никого не осталось» (private)
+
+# Канал BanaMind (не реклама BalaGo). Только ПИЛОТ 45–60 с — полный фильм не рендерится,
+# пока владелец не решит вопрос прав (books/and-then-there-were-none-christie/SOURCE_RIGHTS_AUDIT.md).
+#   1. озвучка ElevenLabs (тот же голос банана), новые файлы сохраняются в ветку;
+#   2. рендер 1920×1080 30 fps H.264, звук по тайм-лайну, AAC, SRT;
+#   3. проверка ffprobe, кадры, облегчённая копия 960×540;
+#   4. приватный пререлиз bm-017-pilot (репозиторий private): пилот, SRT, 5 обложек, контакт-лист.
+# На YouTube ничего не публикуется.
+
+on:
+  push:
+    branches:
+      - "feature/banamind-bm-017-*"
+    paths:
+      - "src/books/and-then-there-were-none-christie/**"
+      - "scripts/books/film/**"
+      - ".github/workflows/bm-017-pilot.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: bm-017-pilot-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  FILM: src/books/and-then-there-were-none-christie/film/film.ts
+  OUT: bm-017-pilot
+  VOICE_DIR: public/books/and-then-there-were-none-christie/voice
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: ElevenLabs quota (info)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit')} if 'tier' in d else d)"
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/books/film/voice.mjs "$FILM"
+
+      - name: Save new voice files to the branch
+        run: |
+          git add "$VOICE_DIR"
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(bm-017): save pilot voice files [skip ci]"
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+              sleep 5
+            done
+          fi
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render pilot (muted, H.264)
+        run: |
+          mkdir -p out
+          npx remotion render src/books/and-then-there-were-none-christie/film/index.ts ChristiePilot out/video.mp4 \
+            --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+
+      - name: Mix audio, mux, SRT
+        run: |
+          node scripts/books/film/mixdown.mjs "$FILM" out/audio.wav
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "out/$OUT.mp4"
+          node scripts/books/film/srt.mjs "$FILM" "out/$OUT.srt"
+
+      - name: Verify MP4
+        run: |
+          F="out/$OUT.mp4"
+          v=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,r_frame_rate -of csv=p=0 "$F")
+          a=$(ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of csv=p=0 "$F")
+          d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$F")
+          vol=$(ffmpeg -hide_banner -nostats -i "$F" -af volumedetect -f null - 2>&1 | grep -o "mean_volume: [-0-9.]* dB")
+          echo "video=$v audio=$a duration=$d $vol" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "$v" = "h264,1920,1080,30/1" ] && [ "$a" = "aac" ] || { echo "::error::не 1920×1080 30 fps H.264/AAC"; exit 1; }
+          python3 -c "import sys; d=float('$d'); sys.exit(0 if 30 <= d <= 75 else 1)" || { echo "::error::длительность пилота $d с"; exit 1; }
+
+      - name: Preview copy and frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 26 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-preview-960x540.mp4"
+          mkdir -p out/frames
+          for s in 3 12 22 32 42 52; do
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/$OUT.mp4" -frames:v 1 -vf scale=960:-2 "out/frames/t$(printf %03d $s).jpg" || true
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bm-017-pilot
+          path: |
+            out/${{ env.OUT }}.mp4
+            out/${{ env.OUT }}-preview-960x540.mp4
+            out/${{ env.OUT }}.srt
+            out/frames/*.jpg
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Private prerelease (no YouTube)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=bm-017-pilot
+          D=books/and-then-there-were-none-christie/thumbnails
+          NOTES="BM-017 «И тогда никого не осталось» — ПИЛОТ BanaMind (private, не для публикации): 1920×1080 30 fps H.264/AAC, SRT, пять обложек 1280×720 и контакт-лист. Права на публичный выпуск не проверены (SOURCE_RIGHTS_AUDIT.md). Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$(git rev-parse HEAD)"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BM-017 — пилот (private)" --notes "$NOTES" --prerelease --target "$(git rev-parse HEAD)"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-preview-960x540.mp4" "out/$OUT.srt" \
+            $D/thumbnail-0{1,2,3,4,5}.jpg $D/thumbnail-contact-sheet.jpg $D/readability-320x180.jpg
+          {
+            echo "### Файлы (вход в GitHub обязателен — репозиторий private)"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.srt"
+            for n in 01 02 03 04 05; do echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/thumbnail-$n.jpg"; done
+          } >> "$GITHUB_STEP_SUMMARY"
