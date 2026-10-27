@@ -1,0 +1,27 @@
+{
+  "slug": "james-clear-atomic-habits",
+  "title": "Атомные привычки",
+  "author": "Джеймс Клир",
+  "collection": "Как приобрести хорошие привычки и избавиться от плохих",
+  "channel": "BanaMind",
+  "bm": "BM-008",
+  "source": "Только TXT владельца канала (721 581 байт, 3 013 строк, SHA-256 ebda6310…4104); карта источников — books/james-clear-atomic-habits/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/james-clear-atomic-habits",
+    "timeline": "scripts/lesson-habits/lib.mjs",
+    "remotionEntry": "src/lesson-habits/index.ts",
+    "composition": "HabitsLesson",
+    "workflow": ".github/workflows/lesson-habits.yml",
+    "release": "book-james-clear-atomic-habits",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-james-clear-atomic-habits",
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "codec": "h264",
+    "audio": "aac",
+    "duration": "30:00"
+  }
+}

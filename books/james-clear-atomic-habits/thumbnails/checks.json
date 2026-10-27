@@ -1,0 +1,102 @@
+{
+  "slug": "james-clear-atomic-habits",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 159,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 152,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 178,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 131,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 144,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 22,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 123.3
+      },
+      {
+        "pair": "1-3",
+        "diff": 114.8
+      },
+      {
+        "pair": "1-4",
+        "diff": 84.3
+      },
+      {
+        "pair": "1-5",
+        "diff": 90.4
+      },
+      {
+        "pair": "2-3",
+        "diff": 66.5
+      },
+      {
+        "pair": "2-4",
+        "diff": 89.6
+      },
+      {
+        "pair": "2-5",
+        "diff": 75.8
+      },
+      {
+        "pair": "3-4",
+        "diff": 83.2
+      },
+      {
+        "pair": "3-5",
+        "diff": 83
+      },
+      {
+        "pair": "4-5",
+        "diff": 61.6
+      }
+    ],
+    "min": 61.6,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
