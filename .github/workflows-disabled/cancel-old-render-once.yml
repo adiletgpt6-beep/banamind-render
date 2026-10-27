@@ -1,0 +1,35 @@
+name: Cancel old BalaGo render
+
+on:
+  push:
+    branches:
+      - docs/live-cancel-run-38464139695
+    paths:
+      - .github/workflows/cancel-old-render-once.yml
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  cancel-old-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Cancel requested in-progress render
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          status="$(gh api "repos/${GH_REPO}/actions/runs/38464139695" --jq '.status')"
+          echo "Original run status: $status"
+          if [[ "$status" == "in_progress" || "$status" == "queued" || "$status" == "waiting" || "$status" == "pending" ]]; then
+            gh api --method POST "repos/${GH_REPO}/actions/runs/38464139695/force-cancel" >/dev/null
+            echo "Force-cancellation requested for run 38464139695"
+          else
+            echo "No cancellation needed; run has already finished."
+          fi
+
+# A dedicated one-off workflow to save unnecessary rendering minutes.
