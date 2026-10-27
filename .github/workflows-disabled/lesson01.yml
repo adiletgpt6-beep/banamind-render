@@ -1,0 +1,78 @@
+name: Lesson01WhoBuiltTheHouse (урок 1, 16:9)
+
+# «Урок 1. Аллах — наш Создатель. Анимация 1: Кто построил домик?»
+#   voice → лаборатория голосов (если src/lesson01/voices.json lab: true)
+#           и озвучка 40 реплик ElevenLabs (готовые реплики не синтезируются);
+#           новые файлы сохраняются в ветку.
+# Видео (8400+ кадров 1920×1080) рендерится локально:
+#   npm run render:lesson01 → out/lesson-01-who-built-the-house-16x9.mp4
+
+on:
+  push:
+    paths:
+      - "src/lesson01/**"
+      - "scripts/*lesson01*"
+      - ".github/workflows/lesson01.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: lesson01-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Voice lab (samples of candidate voices)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson01-voice-lab.mjs
+
+      - name: Voiceover (cached lines are reused)
+        if: hashFiles('scripts/lesson01-voice.mjs') != ''
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson01-voice.mjs
+
+      - name: Save new voice files to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          if [ -d public/audio/lesson01 ]; then git add public/audio/lesson01; fi
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save lesson01 voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1

@@ -1,0 +1,5 @@
+# Распознавание русской речи для проверки озвучки ролика 80-1-4
+# (scripts/lesson80-1-4-asr.py): Whisper large-v3 через faster-whisper на CPU.
+faster-whisper==1.1.1
+numpy
+requests

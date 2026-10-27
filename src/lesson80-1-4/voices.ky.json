@@ -1,0 +1,94 @@
+{
+  "note": "Кыргызская версия ролика 80-1-4. Дети — те же голоса, что в русской версии и в кыргызских роликах проекта (KG-son, KG-daughter, KG-teacher — созданы ElevenLabs Voice Design как голоса носителей кыргызского языка). Учитель — кыргызский мужской голос проекта KG-husband или голос учителя из русских фильмов: выбор по пробам (compare) — распознавание MMS (kir) и основной тон.",
+  "stage": "samples",
+  "samples": [
+    "80-1-4-004",
+    "80-1-4-008",
+    "80-1-4-024",
+    "80-1-4-025",
+    "80-1-4-026",
+    "80-1-4-027",
+    "80-1-4-028",
+    "80-1-4-029",
+    "80-1-4-043"
+  ],
+  "stageNote": "samples — пробные реплики до массового синтеза (реплики детей разного характера, три объяснения учителя с «Ыхлас» и «Бир», общий ответ); all — все 47 реплик.",
+  "roles": {
+    "teacher": {
+      "name": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "note": "кыргызский мужской голос проекта (спокойный, низкий, ≈110 Гц; ролики №10, №12)"
+    },
+    "yusuf": {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "note": "тот же голос, что в русской версии; создан как голос носителя кыргызского языка (детского голоса нет — светлый молодой голос)"
+    },
+    "amir": {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "note": "тот же голос, что в русской версии; создан как голос носителя кыргызского языка (детского голоса нет — светлый молодой голос)"
+    },
+    "bilal": {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "note": "тот же голос, что в русской версии; создан как голос носителя кыргызского языка (детского голоса нет — светлый молодой голос)"
+    }
+  },
+  "compare": [
+    {
+      "role": "teacher",
+      "name": "Lesson-teacher-Muhammad",
+      "voiceId": "XVcmL7hz5xYLHLu3OJhR",
+      "takes": 2
+    }
+  ],
+  "compareLines": [
+    "80-1-4-025",
+    "80-1-4-027",
+    "80-1-4-029"
+  ],
+  "group": [
+    {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM"
+    },
+    {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b"
+    },
+    {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy"
+    },
+    {
+      "name": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p"
+    },
+    {
+      "name": "Alice",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2"
+    },
+    {
+      "name": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
+    }
+  ],
+  "tts": {
+    "modelId": "eleven_v3",
+    "languageCode": "ky",
+    "seed": 301,
+    "takes": 3,
+    "voiceSettings": {
+      "stability": 0.5,
+      "similarity_boost": 0.8
+    }
+  },
+  "pick": {},
+  "pickNote": "Выбор дублей — scripts/lesson80-1-4-pick.mjs --lang=ky по распознаванию MMS (kir) каждого дубля и чистоте разреза перед страховочным «Жакшы». Не указано — дубль 0.",
+  "takesFor": {},
+  "groupTakes": 2,
+  "groupNote": "Общий ответ: по groupTakes дублей каждым голосом group; в смесь идёт дубль groupPick[имя голоса]; голос, у которого все дубли искажают слова, в смесь не идёт (groupSkip).",
+  "groupPick": {},
+  "groupSkip": []
+}

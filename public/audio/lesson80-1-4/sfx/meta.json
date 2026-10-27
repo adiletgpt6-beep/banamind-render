@@ -1,0 +1,198 @@
+{
+  "sampleRate": 48000,
+  "note": "duration, impact (main contact) in seconds inside the file; peakDb/rmsDb of the whole file",
+  "files": {
+    "pour.wav": {
+      "duration": 5.216,
+      "peakDb": -23.8,
+      "rmsDb": -40.9,
+      "flow": 4.646,
+      "impact": 0.22,
+      "thinFrom": 4.516,
+      "flowEnd": 4.916,
+      "steadyRmsDb": -40
+    },
+    "drip-1.wav": {
+      "duration": 0.3,
+      "peakDb": -20.5,
+      "rmsDb": -49.6,
+      "impact": 0.02,
+      "size": 1
+    },
+    "drip-2.wav": {
+      "duration": 0.3,
+      "peakDb": -25,
+      "rmsDb": -52.1,
+      "impact": 0.02,
+      "size": 0.7
+    },
+    "drips.wav": {
+      "duration": 0.7,
+      "peakDb": -24,
+      "rmsDb": -54.7,
+      "impact": [
+        0.02,
+        0.3
+      ]
+    },
+    "can-lift.wav": {
+      "duration": 0.5,
+      "peakDb": -27,
+      "rmsDb": -48.9,
+      "impact": 0.085
+    },
+    "can-place.wav": {
+      "duration": 0.6,
+      "peakDb": -21,
+      "rmsDb": -47,
+      "impact": 0.03,
+      "edge": 0.02
+    },
+    "tray-slide.wav": {
+      "duration": 1.25,
+      "peakDb": -22.2,
+      "rmsDb": -44,
+      "motionStart": 0,
+      "motionDur": 1,
+      "breakaway": 0.1318
+    },
+    "tray-slide-back.wav": {
+      "duration": 1.45,
+      "peakDb": -20.9,
+      "rmsDb": -43.8,
+      "motionStart": 0,
+      "motionDur": 1.2,
+      "breakaway": 0.1581
+    },
+    "card-pick.wav": {
+      "duration": 0.3,
+      "peakDb": -25,
+      "rmsDb": -46.8,
+      "impact": 0.078,
+      "rubFrom": 0.012
+    },
+    "card-pick-1.wav": {
+      "duration": 0.3,
+      "peakDb": -25.5,
+      "rmsDb": -50,
+      "impact": 0.069,
+      "rubFrom": 0.012
+    },
+    "card-pick-2.wav": {
+      "duration": 0.3,
+      "peakDb": -26.5,
+      "rmsDb": -50.9,
+      "impact": 0.0878,
+      "rubFrom": 0.012
+    },
+    "card-pick-3.wav": {
+      "duration": 0.3,
+      "peakDb": -25,
+      "rmsDb": -49.6,
+      "impact": 0.078,
+      "rubFrom": 0.012
+    },
+    "card-place.wav": {
+      "duration": 0.35,
+      "peakDb": -23,
+      "rmsDb": -49.4,
+      "impact": 0.06,
+      "rubFrom": 0.01
+    },
+    "card-place-1.wav": {
+      "duration": 0.35,
+      "peakDb": -25,
+      "rmsDb": -51,
+      "impact": 0.06,
+      "rubFrom": 0.004
+    },
+    "card-place-2.wav": {
+      "duration": 0.35,
+      "peakDb": -26.5,
+      "rmsDb": -52.2,
+      "impact": 0.06,
+      "rubFrom": 0.0165
+    },
+    "card-place-3.wav": {
+      "duration": 0.35,
+      "peakDb": -25.5,
+      "rmsDb": -52.1,
+      "impact": 0.06,
+      "rubFrom": 0.01
+    },
+    "card-out-1.wav": {
+      "duration": 0.35,
+      "peakDb": -26,
+      "rmsDb": -48.8,
+      "impact": 0.15,
+      "rubFrom": 0.012
+    },
+    "card-out-2.wav": {
+      "duration": 0.35,
+      "peakDb": -26.5,
+      "rmsDb": -49.9,
+      "impact": 0.1334,
+      "rubFrom": 0.012
+    },
+    "card-out-3.wav": {
+      "duration": 0.35,
+      "peakDb": -25.5,
+      "rmsDb": -46.8,
+      "impact": 0.1666,
+      "rubFrom": 0.012
+    },
+    "card-out.wav": {
+      "duration": 0.35,
+      "peakDb": -26,
+      "rmsDb": -48.8,
+      "impact": 0.15,
+      "rubFrom": 0.012
+    },
+    "card-on-stack-1.wav": {
+      "duration": 0.25,
+      "peakDb": -26,
+      "rmsDb": -48.6,
+      "impact": 0.02
+    },
+    "card-on-stack-2.wav": {
+      "duration": 0.25,
+      "peakDb": -26.5,
+      "rmsDb": -50.2,
+      "impact": 0.02
+    },
+    "card-on-stack-3.wav": {
+      "duration": 0.25,
+      "peakDb": -25.5,
+      "rmsDb": -49.7,
+      "impact": 0.02
+    },
+    "card-on-stack.wav": {
+      "duration": 0.25,
+      "peakDb": -26,
+      "rmsDb": -48.6,
+      "impact": 0.02
+    },
+    "cards-stack.wav": {
+      "duration": 0.5,
+      "peakDb": -25,
+      "rmsDb": -52.5,
+      "impact": 0.14
+    },
+    "cloth-1.wav": {
+      "duration": 0.95,
+      "peakDb": -26,
+      "rmsDb": -43
+    },
+    "cloth-2.wav": {
+      "duration": 0.9,
+      "peakDb": -26,
+      "rmsDb": -44.8
+    },
+    "soil-touch.wav": {
+      "duration": 0.3,
+      "peakDb": -26,
+      "rmsDb": -45.2,
+      "impact": 0.02
+    }
+  }
+}

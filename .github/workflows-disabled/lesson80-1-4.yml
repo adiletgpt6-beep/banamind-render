@@ -1,0 +1,145 @@
+name: Lesson80-1-4-OneCreator (lesson-80, 80-1-4, 16:9)
+
+# «Урок 1. Аллах — наш Создатель. Мини-фильм 4: Один Создатель»
+#   voice → озвучка 47 реплик ElevenLabs (готовые дубли не синтезируются);
+#           новые файлы сохраняются в ветку.
+#   asr   → проверка каждого дубля и каждой готовой реплики распознаванием
+#           (Whisper large-v3 на CPU, 4 параллельные части);
+#   save-asr → сводит части в docs/lesson80-1-4/voice-asr.json и сохраняет в ветку.
+# Видео (≈8400 кадров 1920×1080) рендерится локально:
+#   npm run render:80-1-4 → out/lesson-80-1-4-one-creator-16x9.mp4
+
+on:
+  push:
+    paths:
+      - "src/lesson80-1-4/script.ts"
+      - "src/lesson80-1-4/voices.json"
+      - "scripts/lesson80-1-4-voice.mjs"
+      - "scripts/lesson80-1-4-asr.py"
+      - "scripts/requirements-80-1-4-asr.txt"
+      - "public/audio/lesson80-1-4/manifest.json"
+      - ".github/workflows/lesson80-1-4.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: lesson80-1-4-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Voiceover (cached takes are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson80-1-4-voice.mjs
+
+      - name: Save new voice files to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          if [ -d public/audio/lesson80-1-4 ]; then git add public/audio/lesson80-1-4; fi
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat | tail -3
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save lesson 80-1-4 voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+  # Проверка распознаванием: OpenAI недоступно (нет кредитов), у ключа
+  # ElevenLabs нет права speech_to_text — работает открытая модель Whisper
+  # large-v3 (faster-whisper, CPU). ≈20 с на запись, поэтому работа делится на
+  # 4 параллельные части; уже распознанное не пересчитывается.
+  asr:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ASR (faster-whisper) and FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q -r scripts/requirements-80-1-4-asr.txt
+
+      - name: Recognise takes and built lines (part ${{ matrix.shard }} of 4)
+        timeout-minutes: 65
+        run: python3 scripts/lesson80-1-4-asr.py docs/lesson80-1-4/voice-asr.json --shard ${{ matrix.shard }}/4 --part asr-part-${{ matrix.shard }}.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: asr-part-${{ matrix.shard }}
+          path: asr-part-${{ matrix.shard }}.json
+          if-no-files-found: ignore
+          retention-days: 3
+
+  save-asr:
+    needs: asr
+    if: always() && github.ref_name != 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: asr-part-*
+          merge-multiple: true
+          path: asr-parts
+
+      - name: Merge recognition results and save to the branch
+        run: |
+          python3 scripts/lesson80-1-4-asr.py docs/lesson80-1-4/voice-asr.json --merge asr-parts/*.json
+          git add docs/lesson80-1-4/voice-asr.json
+          if git diff --cached --quiet; then
+            echo "Новых результатов распознавания нет."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save lesson 80-1-4 voice recognition check"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1

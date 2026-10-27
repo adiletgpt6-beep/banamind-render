@@ -1,0 +1,92 @@
+{
+  "note": "Голоса ролика 80-1-4 — те же, что в первых трёх фильмах урока 1 (src/lesson01/voices.json, src/lesson80-1-2/voices.json, src/lesson80-1-3/voices.json): преемственность героев. Детские голоса — временные голоса серии (см. docs/lesson80-1-4/README.md).",
+  "stage": "all",
+  "samples": [
+    "80-1-4-004",
+    "80-1-4-008",
+    "80-1-4-024",
+    "80-1-4-026",
+    "80-1-4-027",
+    "80-1-4-029",
+    "80-1-4-043"
+  ],
+  "stageNote": "samples — пробные реплики до массового синтеза (эмоциональная реплика Юсуфа, «Ну? Расти!», вдумчивый вопрос Амира, вопрос Билала, два объяснения Мухаммада с «Аль-Ихляс» и «Един», групповой ответ); all — все 47 реплик.",
+  "roles": {
+    "teacher": {
+      "name": "Lesson-teacher-Muhammad",
+      "voiceId": "XVcmL7hz5xYLHLu3OJhR",
+      "note": "ElevenLabs Voice Design: спокойный тёплый мужчина ~32 лет, русский язык"
+    },
+    "yusuf": {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "note": "ВРЕМЕННО: самый светлый молодой голос проекта (≈300 Гц); детского голоса нет"
+    },
+    "amir": {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "note": "ВРЕМЕННО: молодой высокий голос (≈260 Гц); детского голоса нет"
+    },
+    "bilal": {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "note": "ВРЕМЕННО: спокойный высокий голос (≈220 Гц); детского голоса нет"
+    }
+  },
+  "group": [
+    {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM"
+    },
+    {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b"
+    },
+    {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy"
+    },
+    {
+      "name": "Alice",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2"
+    },
+    {
+      "name": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9"
+    },
+    {
+      "name": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
+    }
+  ],
+  "tts": {
+    "modelId": "eleven_v3",
+    "languageCode": "ru",
+    "seed": 101,
+    "takes": 3,
+    "voiceSettings": {
+      "stability": 0.5,
+      "similarity_boost": 0.8
+    }
+  },
+  "pick": {
+    "80-1-4-017": 1,
+    "80-1-4-018": 1,
+    "80-1-4-027": 2,
+    "80-1-4-042": 1
+  },
+  "pickNote": "Выбор дублей — по распознаванию каждого дубля (scripts/lesson80-1-4-takes-qa.py). Не указано — дубль 0.",
+  "takesFor": {},
+  "groupTakes": 2,
+  "groupNote": "Групповой ответ: по groupTakes дублей каждым голосом group; в смесь идёт дубль groupPick[имя голоса] (по умолчанию 0). В пробах KG-daughter произнесла «Алла», Jessica — только «Один»; у каждого голоса есть второй дубль получают второй дубль.",
+  "groupPick": {
+    "KG-son": 0,
+    "KG-daughter": 0,
+    "KG-teacher": 0,
+    "Alice": 0,
+    "Jessica": 0,
+    "Laura": 1
+  },
+  "sampleReport": "Пробы (out/lesson80-1-4-takes-qa.json, gpt-4o-transcribe + слепое прослушивание gpt-audio-1.5): учитель — мужчина ~35–40 лет, естественность 4–5, «Аль-Ихляс» и «Един» произносятся верно (дубли 1–2); Амир и Билал — вопросительная интонация во всех дублях; Юсуф: 004 дубли 1–2 точные, 008 дубль 0 — восклицание, дубль 1 звучит вопросом, дубль 2 искажён. Детские роли слепое прослушивание по-прежнему слышит как взрослые голоса (~25–35 лет) — ограничение всей серии. Проверены и голоса OpenAI gpt-4o-mini-tts с указанием «голос мальчика 4/8 лет» (8 голосов): все слышатся взрослыми (25–35 лет), часть искажает текст — улучшения нет.",
+  "groupSkip": []
+}
