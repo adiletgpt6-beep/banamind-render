@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "17e01d06e15f9621d233c272900a96f83cc07f57",
+  "source_branches": [
+    "feature/balago-50-episodes-03-10"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 2,
+  "withheld_file_counts": {
+    "private_source_or_binary": 110
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
