@@ -1,0 +1,20 @@
+{
+  "slug": "war-and-peace-tolstoy",
+  "bm": "BM-030",
+  "title": "Война и мир",
+  "author": "Лев Николаевич Толстой",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-030/part-01…63.txt — полный текст романа с примечаниями (приватный source pack, SHA-256 проверен); карта источников — books/war-and-peace-tolstoy/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/war-and-peace-tolstoy/scripts",
+    "timeline": "scripts/lesson-war/lib.mjs",
+    "remotionEntry": "src/books/war-and-peace-tolstoy/film/index.ts",
+    "composition": "WarLesson",
+    "workflow": ".github/workflows/lesson-war.yml",
+    "release": "book-war-and-peace-tolstoy",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-war-and-peace-tolstoy",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}
