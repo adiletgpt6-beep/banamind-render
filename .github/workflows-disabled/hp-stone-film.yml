@@ -1,0 +1,377 @@
+name: BanaMind BM-031 — Гарри Поттер и философский камень (разбор, банан, 30 мин, 16:9)
+
+# Оригинальный аналитический фильм BanaMind по первому роману Дж. К. Роулинг (не реклама BalaGo): правила BalaGo
+# о контактах/Бишкеке/кыргызской озвучке к нему не применяются.
+# Своя точка входа Remotion src/books/harry-potter-philosophers-stone/film/index.ts, прежние ролики не трогает.
+#   voice    → озвучка ElevenLabs по репликам (тот же голос банана; готовые с тем же
+#              хэшем переиспользуются), новые файлы сохраняются в ветку.
+#   render   → «[pilot]» в сообщении коммита — озвучка пилотных сцен и пилот 30–60 с;
+#              «[full]» — полная озвучка и 8 параллельных частей; без метки — только проверки.
+#   voice-qa → распознавание каждой реплики (faster-whisper) и сравнение со сценарием.
+#   assemble → склейка без пережатия, озвучка + тихий оригинальный фон по тайм-лайну,
+#              AAC + faststart, SRT, проверка ffprobe/звука/чёрных кадров,
+#              превью 960×540, контрольные кадры в ветку, приватный релиз книги.
+# Публикация на YouTube — только владельцем вручную.
+
+on:
+  push:
+    branches: ["claude/banamind-bm-031-production-uvwe0p"]
+    paths:
+      - "src/books/harry-potter-philosophers-stone/film/**"
+      - "scripts/hp-stone/**"
+      - "!scripts/hp-stone/docs.mjs"
+      - ".github/workflows/hp-stone-film.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pilot | full | voice | assemble (сборка из частей уже готового прогона run_id)"
+        default: "pilot"
+      run_id:
+        description: "для mode=assemble: id прогона с артефактами hp-part-*"
+        default: ""
+
+concurrency:
+  group: hp-stone-film-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  BOOK: harry-potter-philosophers-stone
+  TAG: book-harry-potter-philosophers-stone
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.plan.outputs.ranges }}
+      mode: ${{ steps.plan.outputs.mode }}
+      pilot: ${{ steps.plan.outputs.pilot }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          # статическая сборка ffmpeg (apt на раннерах временами висит); apt — запасной путь с таймаутом
+          if ! command -v ffmpeg >/dev/null; then
+            ( cd /tmp && curl -fsSL --retry 3 -o ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz \
+              && tar xJf ff.tar.xz && sudo cp ffmpeg-master-*/bin/ffmpeg ffmpeg-master-*/bin/ffprobe /usr/local/bin/ ) \
+              || (sudo timeout 600 apt-get update -qq && sudo timeout 900 apt-get install -y --no-install-recommends ffmpeg)
+          fi
+          ffmpeg -version | head -1
+
+      - name: Script checks (numbers and quotes vs. book, lines, questions)
+        run: node --test scripts/hp-stone/*.test.mjs
+
+      - name: ElevenLabs quota (info)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit','next_character_count_reset_unix')} if 'tier' in d else d)"
+          node -e "import('./src/books/harry-potter-philosophers-stone/film/script.ts').then(m=>console.log('символов в сценарии:', m.SCENES.flatMap(s=>s.lines.map(l=>l.say??l.text)).join('').length))"
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          MSG: ${{ github.event.head_commit.message }}
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+        run: |
+          # бюджет: без метки «[pilot]»/«[full]» (или mode) синтез не запускается;
+          # в пилоте озвучиваются только реплики пилотных сцен
+          if [[ "$MSG" == *"[pilot]"* || "$INPUT_MODE" == "pilot" ]]; then export VOICE_ONLY=pilot
+          elif [[ "$MSG" != *"[full]"* && "$INPUT_MODE" != "full" && "$INPUT_MODE" != "voice" ]]; then echo "без метки — озвучка не синтезируется"; exit 0; fi
+          node scripts/hp-stone/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always()
+        run: |
+          [ -d public/hp-stone/voice ] && git add public/hp-stone/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(bm-031): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Plan render
+        id: plan
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+        run: |
+          node --test scripts/hp-stone/*.test.mjs
+          node scripts/hp-stone/captions-check.mjs > /tmp/captions.json || (cat /tmp/captions.json; exit 1)
+          head -c 600 /tmp/captions.json
+          # по умолчанию — только проверки; рендер по явной метке «[pilot]» / «[full]»
+          MODE="none"
+          if [[ "$MSG" == *"[full]"* || "$INPUT_MODE" == "full" ]]; then MODE="full"; fi
+          if [[ "$MSG" == *"[pilot]"* || "$INPUT_MODE" == "pilot" ]]; then MODE="pilot"; fi
+          if [[ "$MSG" == *"[no render]"* || "$INPUT_MODE" == "voice" ]]; then MODE="none"; fi
+          if [[ "$INPUT_MODE" == "assemble" ]]; then MODE="assemble"; fi
+          if [ "$MODE" = "pilot" ]; then P=$(node scripts/hp-stone/frames.mjs pilot); else P=$(node scripts/hp-stone/frames.mjs 8); fi
+          echo "$P"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+          echo "pilot=$(echo "$P" | python3 -c 'import sys,json; print(json.load(sys.stdin).get("pilotSeconds",0))')" >> "$GITHUB_OUTPUT"
+
+  voice-qa:
+    needs: voice
+    if: needs.voice.outputs.mode == 'pilot' || needs.voice.outputs.mode == 'full' || github.event.inputs.mode == 'voice'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          # статическая сборка ffmpeg (apt на раннерах временами висит); apt — запасной путь с таймаутом
+          if ! command -v ffmpeg >/dev/null; then
+            ( cd /tmp && curl -fsSL --retry 3 -o ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz \
+              && tar xJf ff.tar.xz && sudo cp ffmpeg-master-*/bin/ffmpeg ffmpeg-master-*/bin/ffprobe /usr/local/bin/ ) \
+              || (sudo timeout 600 apt-get update -qq && sudo timeout 900 apt-get install -y --no-install-recommends ffmpeg)
+          fi
+          ffmpeg -version | head -1
+          pip install --quiet faster-whisper==1.1.1
+
+      - name: Recognise every voice line and compare with the script
+        run: |
+          node -e "import('./src/books/harry-potter-philosophers-stone/film/script.ts').then(m=>require('fs').writeFileSync('/tmp/lines.json', JSON.stringify(m.SCENES.flatMap(s=>s.lines.map(l=>({id:l.id,text:l.text}))))))"
+          python3 scripts/hp-stone/voice_asr.py /tmp/lines.json public/hp-stone/voice qa-asr small
+          tail -c 3000 qa-asr/voice-asr.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save the report to the branch
+        run: |
+          DEST=books/$BOOK/video/qa-voice
+          mkdir -p "$DEST" && cp qa-asr/* "$DEST/"
+          git add "$DEST"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(bm-031): voice ASR QA report [skip ci]" || exit 0
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep 5
+          done
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.mode == 'pilot' || needs.voice.outputs.mode == 'full'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          # статическая сборка ffmpeg (apt на раннерах временами висит); apt — запасной путь с таймаутом
+          if ! command -v ffmpeg >/dev/null; then
+            ( cd /tmp && curl -fsSL --retry 3 -o ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz \
+              && tar xJf ff.tar.xz && sudo cp ffmpeg-master-*/bin/ffmpeg ffmpeg-master-*/bin/ffprobe /usr/local/bin/ ) \
+              || (sudo timeout 600 apt-get update -qq && sudo timeout 900 apt-get install -y --no-install-recommends ffmpeg)
+          fi
+          ffmpeg -version | head -1
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/books/harry-potter-philosophers-stone/film/index.ts PotterStoneFilm "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hp-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [voice, render]
+    if: always() && needs.voice.result == 'success' && (needs.render.result == 'success' || needs.voice.outputs.mode == 'assemble')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          # статическая сборка ffmpeg (apt на раннерах временами висит); apt — запасной путь с таймаутом
+          if ! command -v ffmpeg >/dev/null; then
+            ( cd /tmp && curl -fsSL --retry 3 -o ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz \
+              && tar xJf ff.tar.xz && sudo cp ffmpeg-master-*/bin/ffmpeg ffmpeg-master-*/bin/ffprobe /usr/local/bin/ ) \
+              || (sudo timeout 600 apt-get update -qq && sudo timeout 900 apt-get install -y --no-install-recommends ffmpeg)
+          fi
+          ffmpeg -version | head -1
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: hp-part-*
+          path: out/parts
+          merge-multiple: true
+          run-id: ${{ github.event.inputs.run_id || github.run_id }}
+          github-token: ${{ github.token }}
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart)
+        env:
+          MODE: ${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}
+          PILOT: ${{ needs.voice.outputs.pilot }}
+        run: |
+          git checkout ${{ needs.voice.outputs.sha }} -- public/hp-stone src/books/harry-potter-philosophers-stone scripts/hp-stone
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          if [ "$MODE" = "pilot" ]; then
+            node scripts/hp-stone/mixdown.mjs out/audio.wav --pilot=$PILOT
+            OUT=out/pilot.mp4
+          else
+            node scripts/hp-stone/mixdown.mjs out/audio.wav
+            OUT=out/final-youtube.mp4
+          fi
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "$OUT"
+          echo "OUT=$OUT" >> "$GITHUB_ENV"
+          node scripts/hp-stone/srt.mjs out/final-youtube.srt
+
+      - name: Verify MP4 (ffprobe, duration, loudness, black frames)
+        env:
+          MODE: ${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}
+        run: |
+          mkdir -p qa
+          ffprobe -v error -show_streams -show_format -of json "$OUT" > qa/ffprobe.json
+          if [ "$MODE" = "pilot" ]; then node scripts/hp-stone/verify.mjs "$OUT" --pilot | tee qa/verify.txt; else node scripts/hp-stone/verify.mjs "$OUT" | tee qa/verify.txt; fi
+          cat qa/verify.txt >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Preview copy (960×540) and QA frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "$OUT" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 26 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "${OUT%.mp4}-preview-960x540.mp4"
+          D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT")
+          mkdir -p qa/frames
+          python3 - "$D" > /tmp/ts.txt <<'PY'
+          import sys
+          d=float(sys.argv[1]); n=12 if d<120 else 36
+          print("\n".join(f"{d*(i+0.5)/n:.2f}" for i in range(n)))
+          PY
+          for s in $(cat /tmp/ts.txt); do
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i "$OUT" -frames:v 1 -vf scale=640:-2 -q:v 4 "qa/frames/t$(printf %07.2f $s).jpg"
+          done
+          ls qa/frames | wc -l
+
+      - name: Save QA (frames, ffprobe, verify, SRT) to the branch
+        env:
+          MODE: ${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}
+        run: |
+          DEST=books/$BOOK/video/qa-$MODE
+          rm -rf "$DEST"; mkdir -p "$DEST"
+          cp -r qa/* "$DEST/"
+          cp out/final-youtube.srt "books/$BOOK/video/final-youtube.srt"
+          git add "$DEST" "books/$BOOK/video/final-youtube.srt"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(bm-031): $MODE QA frames, ffprobe and SRT [skip ci]" || exit 0
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep 5
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hp-stone-${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}-mp4
+          path: |
+            out/*.mp4
+            out/final-youtube.srt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish private pre-release (repository access required)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MODE: ${{ needs.voice.outputs.mode == 'assemble' && 'full' || needs.voice.outputs.mode }}
+        run: |
+          NOTES="BanaMind BM-031 «Гарри Поттер и философский камень» (Дж. К. Роулинг, первый роман, народный перевод) — оригинальный аналитический фильм-разбор с бананом-ведущим (русский, 1920×1080, 30 fps, H.264/AAC). Ветка ${GITHUB_REF_NAME}, коммит ${{ needs.voice.outputs.sha }}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. Не опубликовано на YouTube; права на публикацию не подтверждены, выбор и публикация — владельцем."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BM-031 · Гарри Поттер и философский камень — разбор BanaMind (30 мин)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          if [ "$MODE" = "pilot" ]; then
+            gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber out/pilot.mp4 out/pilot-preview-960x540.mp4
+          else
+            gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber out/final-youtube.mp4 out/final-youtube-preview-960x540.mp4 out/final-youtube.srt
+          fi
+          # обложки, лист и метаданные книги — в тот же приватный релиз (оригинальные JPG)
+          T=books/$BOOK/thumbnails
+          if [ -f "$T/thumbnail-05.jpg" ]; then
+            gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber $T/thumbnail-0{1,2,3,4,5}.jpg $T/thumbnail-contact-sheet.jpg $T/readability-320x180.jpg \
+              books/$BOOK/metadata/youtube.md books/$BOOK/metadata/youtube.json
+          fi
+          {
+            echo "### Файлы (нужен вход в GitHub с доступом к репозиторию)"
+            for f in $(ls out/*.mp4 out/*.srt books/$BOOK/thumbnails/thumbnail-0*.jpg 2>/dev/null); do echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$(basename $f)"; done
+          } >> "$GITHUB_STEP_SUMMARY"

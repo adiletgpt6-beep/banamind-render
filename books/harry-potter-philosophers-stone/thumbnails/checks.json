@@ -1,0 +1,102 @@
+{
+  "slug": "harry-potter-philosophers-stone",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 169,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 170,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 150,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 117,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 238,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 29,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 44.8
+      },
+      {
+        "pair": "1-3",
+        "diff": 49.9
+      },
+      {
+        "pair": "1-4",
+        "diff": 55.8
+      },
+      {
+        "pair": "1-5",
+        "diff": 47.5
+      },
+      {
+        "pair": "2-3",
+        "diff": 42.5
+      },
+      {
+        "pair": "2-4",
+        "diff": 60.2
+      },
+      {
+        "pair": "2-5",
+        "diff": 47.9
+      },
+      {
+        "pair": "3-4",
+        "diff": 56
+      },
+      {
+        "pair": "3-5",
+        "diff": 42.8
+      },
+      {
+        "pair": "4-5",
+        "diff": 49.4
+      }
+    ],
+    "min": 42.5,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "harry-potter-philosophers-stone",
+  "bm": "BM-031",
+  "title": "Гарри Поттер и философский камень",
+  "author": "Дж. К. Роулинг",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-031/part-01…25.txt — полный первый роман (17 глав), русский народный перевод, переводчик не установлен; карта источника — books/harry-potter-philosophers-stone/scripts/SOURCE_MAP.md и source-map/",
+  "lesson": {
+    "dir": "books/harry-potter-philosophers-stone/scripts",
+    "timeline": "scripts/hp-stone/lib.mjs",
+    "remotionEntry": "src/books/harry-potter-philosophers-stone/film/index.ts",
+    "composition": "PotterStoneFilm",
+    "workflow": ".github/workflows/hp-stone-film.yml",
+    "release": "book-harry-potter-philosophers-stone",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-harry-potter-philosophers-stone",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}
