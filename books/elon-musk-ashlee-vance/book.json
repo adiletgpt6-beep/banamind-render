@@ -1,0 +1,20 @@
+{
+  "slug": "elon-musk-ashlee-vance",
+  "bm": "BM-029",
+  "title": "Илон Маск: цена невозможного",
+  "author": "Эшли Вэнс",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-029/part-01…16.txt — «Илон Маск. Tesla, SpaceX и дорога в будущее», полный текст русского перевода (11 глав, эпилог, 3 приложения, благодарности; историческая рамка — до начала 2015 года); карта источников — books/elon-musk-ashlee-vance/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/elon-musk-ashlee-vance/scripts",
+    "timeline": "scripts/lesson-musk/lib.mjs",
+    "remotionEntry": "src/lesson-musk/index.ts",
+    "composition": "MuskLesson",
+    "workflow": ".github/workflows/lesson-musk.yml",
+    "release": "book-elon-musk-ashlee-vance",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-elon-musk-ashlee-vance",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}
