@@ -1,8 +1,8 @@
 {
   "source_refs_match_archive_plan": true,
   "source_branch_count": 223,
-  "published_branch_count": 183,
-  "snapshot_trees_verified": 178,
+  "published_branch_count": 189,
+  "snapshot_trees_verified": 181,
   "checksums": "Git blob and recursive Git tree SHA-1",
   "source_refs_sha256": "7ce72958f6410c5ba78ac394fab671e48ac01ca87621ac32d80f2e44c2a9ecb2",
   "actions_runs_observed": 0,
@@ -18,5 +18,9 @@
       "books/500-series/HANDOFF.md": "4b6b8b7a9a88cad51f4a2c6a2707f29f9e527bfb"
     }
   },
-  "scope": "Checks cover sanitized branch snapshots, not unexported original Git history."
+  "scope": "Checks cover sanitized branch snapshots, not unexported original Git history.",
+  "actions_repository": "adiletgpt6-beep/banamind-render",
+  "remaining_branch_names": 34,
+  "local_runtime_status": "unavailable",
+  "verification_state": "Published snapshots verified; remaining work paused before metadata privacy review."
 }

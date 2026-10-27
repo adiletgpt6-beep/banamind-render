@@ -62,12 +62,25 @@ def recover():
             for f in p['files']:
                 if f['path']=='.migration/SNAPSHOT.json':
                     meta=read(CACHE/'publish-blobs'/f['sha']);meta['continuation_date']='2026-10-27';meta.setdefault('continuation_exclusions',[]).extend(removed);f['sha']=put(meta)
+
+        deferred=[]
+        for f in p['files']:
+            bp=CACHE/'publish-blobs'/f['sha']
+            if f.get('binary') or not f['path'].endswith('.json') or not bp.exists() or bp.stat().st_size<=400000: continue
+            if (head in progress and f['path'] not in actual) or (head not in progress and f['sha'] not in available):
+                json.loads(bp.read_text())
+                deferred.append({**f,'reason':'large_generated_json_transfer_unavailable','size_bytes':bp.stat().st_size})
+        if deferred:
+            p['original_expected_tree']=value['expected_tree'];paths={f['path'] for f in deferred};p['files']=[f for f in p['files'] if f['path'] not in paths]
+            for f in p['files']:
+                if f['path']=='.migration/SNAPSHOT.json':
+                    meta=read(CACHE/'publish-blobs'/f['sha']);meta['continuation_date']='2026-10-27';meta.setdefault('continuation_exclusions',[]).extend(deferred);f['sha']=put(meta)
         p['expected_tree']=tree_sha(p['files'])
         assert not any(f['path'].startswith('.github/workflows/') for f in p['files'])
         if head in progress:
             assert p['expected_tree']==progress[head]['tree'],(head,p['expected_tree'],progress[head]['tree'])
             verified+=1
-        if excluded or removed: exclusions.append({'source_head':head,'branches':p['branches'],'original_expected_tree':value['expected_tree'],'files':excluded+removed,'published_expected_tree':p['expected_tree']})
+        if excluded or removed or deferred: exclusions.append({'source_head':head,'branches':p['branches'],'original_expected_tree':value['expected_tree'],'files':excluded+removed+deferred,'published_expected_tree':p['expected_tree']})
         plans[head]=p
     write(STATE/'safe-publish-plan.json',plans);write(STATE/'available-shas.json',sorted(available));write(STATE/'additional-exclusions.json',exclusions)
     print(json.dumps({'restored_plans':len(plans),'verified_published_trees':verified,'pending_snapshots':len(plans)-len(progress),'available_blobs':len(available),'additional_exclusion_plans':len(exclusions)}))
@@ -79,8 +92,7 @@ def prepare():
     target=min(pending,key=priority);target_map={f['path']:f for f in target['files']}
     def cost(head):
         base={f['path']:f for f in plans[head]['files']};return len(set(base)-set(target_map))+sum(1 for path,f in target_map.items() if path not in base or base[path]['sha']!=f['sha'] or base[path]['mode']!=f['mode'])
-    base_head=min(progress,key=cost);base={f['path']:f for f in plans[base_head]['files']};entries=[];new=[]
-    for path in sorted(set(base)-set(target_map)): entries.append({'path':path,'mode':base[path]['mode'],'type':'blob','sha':None})
+    base_head=None;base={};entries=[];new=[]
     for path,f in target_map.items():
         if path in base and base[path]['sha']==f['sha'] and base[path]['mode']==f['mode']: continue
         e={'path':path,'mode':f['mode'],'type':'blob'}
@@ -90,14 +102,14 @@ def prepare():
         entries.append(e)
     pages=[];batch=[];size=0
     for e in entries:
-        length=len(json.dumps(e,ensure_ascii=False))
-        if batch and (len(batch)>=200 or size+length>2000000): pages.append(batch);batch=[];size=0
+        length=len(json.dumps(e,ensure_ascii=False).encode())
+        if batch and (len(batch)>=350 or size+length>240000): pages.append(batch);batch=[];size=0
         batch.append(e);size+=length
     if batch: pages.append(batch)
     sizes=[]
     for i,page in enumerate(pages):
         raw=json.dumps(page,ensure_ascii=False);(STATE/('page-%d.json'%i)).write_text(raw);sizes.append({'index':i,'chars':len(raw),'entries':len(page)})
-    job={'head':target['head'],'branches':target['branches'],'expected_tree':target['expected_tree'],'base_tree':progress[base_head]['tree'],'base_source_head':base_head,'pages':sizes,'new_shas':new,'delta_count':len(entries),'file_count':len(target['files']),'checkpoint':read(STATE/('work-'+target['head']+'.json'),{})}
+    job={'head':target['head'],'branches':target['branches'],'expected_tree':target['expected_tree'],'base_tree':None,'base_source_head':None,'build_mode':'new_tree_from_scratch_no_deletions','pages':sizes,'new_shas':new,'delta_count':len(entries),'file_count':len(target['files']),'checkpoint':read(STATE/('work-'+target['head']+'.json'),{})}
     write(STATE/'current-job.json',job);print(json.dumps({k:v for k,v in job.items() if k!='new_shas'}))
 def part():
     page,offset,limit=map(int,sys.argv[2:5]);raw=(STATE/('page-%d.json'%page)).read_text();print(json.dumps({'part':raw[offset:offset+limit],'next_offset':min(len(raw),offset+limit),'total':len(raw)},ensure_ascii=False))
@@ -105,4 +117,18 @@ def checkpoint():
     head,key,value=sys.argv[2:5];assert re.fullmatch('[0-9a-f]{40}',head);p=STATE/('work-'+head+'.json');d=read(p,{});d[key]=value;write(p,d);print(json.dumps({'saved':key}))
 def record():
     head,commit,tree=sys.argv[2:5];job=read(STATE/'current-job.json');assert head==job['head'] and tree==job['expected_tree'];p=read(STATE/'progress.json');p[head]={'head':head,'commit':commit,'tree':tree,'branches':job['branches']};write(STATE/'progress.json',p);available=set(read(STATE/'available-shas.json'));available.update(job['new_shas']);write(STATE/'available-shas.json',sorted(available));print(json.dumps({'snapshots':len(p),'branches':sum(len(v['branches']) for v in p.values()),'available_blobs':len(available)}))
-if __name__=='__main__': {'recover':recover,'next':prepare,'part':part,'checkpoint':checkpoint,'record':record}[sys.argv[1]]()
+
+def restore_progress():
+    old=read(CACHE/'publish-progress.json');bybranch={b:v for v in old.values() for b in v['branches']};plans=read(CACHE/'publish-plan.json');source={b:h for h,p in plans.items() for b in p['branches']};out={};extra=[]
+    for line in git('for-each-ref','--format=%(refname:short) %(objectname)','refs/heads').decode().splitlines():
+        branch,commit=line.split()
+        if branch not in source: extra.append(branch);continue
+        if branch=='main':head=bybranch[branch]['head'];commit=bybranch[branch]['commit'];tree=bybranch[branch]['tree']
+        else:
+            msg=git('show','-s','--format=%B',commit).decode();m=re.search(r'Source: adiletzainidinov/balago-video@([0-9a-f]{40})',msg)
+            head=m.group(1) if m else bybranch[branch]['head'];tree=git('rev-parse',commit+'^{tree}').decode().strip()
+        assert head==source[branch],branch
+        v=out.setdefault(head,{'head':head,'commit':commit,'tree':tree,'branches':[]});assert v['commit']==commit and v['tree']==tree;v['branches'].append(branch)
+    write(STATE/'progress.json',out);print(json.dumps({'snapshots':len(out),'branches':sum(len(v['branches']) for v in out.values()),'extra_target_branches_preserved':extra}))
+
+if __name__=='__main__': {'restore-progress':restore_progress,'recover':recover,'next':prepare,'part':part,'checkpoint':checkpoint,'record':record}[sys.argv[1]]()

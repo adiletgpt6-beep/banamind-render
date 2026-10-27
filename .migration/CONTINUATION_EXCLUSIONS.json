@@ -805,9 +805,16 @@
         "mode": "100644",
         "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
         "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "public/lesson-covey/voice/manifest.json",
+        "mode": "100644",
+        "sha": "ea273a5dc597936a955921faf5ae6a3b4e915641",
+        "reason": "large_generated_json_transfer_unavailable",
+        "size_bytes": 1077229
       }
     ],
-    "published_expected_tree": "85153913c0ee502bc8a6cbc69202b1ccc1624bcf"
+    "published_expected_tree": "27e1ccec187a02167ac60daab75814ec47b09c6f"
   },
   {
     "source_head": "75869abbe7d477de62b4423e6cbd998e3f3c15b8",
@@ -840,9 +847,16 @@
         "mode": "100644",
         "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
         "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "public/lesson-carnegie/voice/manifest.json",
+        "mode": "100644",
+        "sha": "69937cd7068ab1e2e45fa0b1f381f19fbd70e63b",
+        "reason": "large_generated_json_transfer_unavailable",
+        "size_bytes": 1064995
       }
     ],
-    "published_expected_tree": "6ab9f1924235ee77cd7cbec1acafcd436a0c905d"
+    "published_expected_tree": "57937e0ee7fbcb178d183bc21384bbbe7f7299f7"
   },
   {
     "source_head": "8a4fdf025631f3ae1033f89a9b6eb20fe98a68ee",
@@ -875,9 +889,16 @@
         "mode": "100644",
         "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
         "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "public/lesson-berger/voice/manifest.json",
+        "mode": "100644",
+        "sha": "01f13fbfd9ff2b1bcd81a30a6c593d0b6b63bb61",
+        "reason": "large_generated_json_transfer_unavailable",
+        "size_bytes": 1069940
       }
     ],
-    "published_expected_tree": "571d0b6105c9abb3800b959d5e29eadf28ad5073"
+    "published_expected_tree": "2b02ad3e0f3a8379bc4a6b6ddc5157bfdee1d442"
   },
   {
     "source_head": "ab7e02fdbbb2eb571e2882054438611d315e085c",
