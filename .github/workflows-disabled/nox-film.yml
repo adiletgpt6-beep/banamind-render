@@ -1,0 +1,245 @@
+name: NOX — 30-минутный фильм из частиц (RU, 16:9)
+
+# Отдельный авторский проект «Нокс — цена бесконечного „ещё“» (не реклама BalaGo:
+# правила BalaGo о кыргызской озвучке, Бишкеке и WhatsApp к нему не применяются).
+# Режим выбирается меткой в сообщении коммита:
+#   [nox:casting] — пробы голосов ElevenLabs + Whisper, F0 → films/nox/voice/pilot/
+#   [nox:voice]   — озвучка всех блоков сценария (кэш по хэшу) + проверка Whisper → films/nox/voice/blocks/
+#   [nox:pilot]   — внутренний пилот: первые 90 с фильма (рендер + звук) → пререлиз nox-film-pilot
+#   [nox:render]  — полный фильм: 15 глав параллельно (по 3600 кадров), склейка без перекодирования,
+#                   сведение звука, субтитры, проверка MP4 → пререлиз nox-film (MP4 для скачивания)
+#   [nox:assets]  — без рендера: дозагрузить films/nox/release/* (обложки, контакт-лист, тексты) в nox-film
+on:
+  push:
+    paths:
+      - "films/nox/**"
+      - ".github/workflows/nox-film.yml"
+
+concurrency:
+  group: nox-film-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  casting:
+    if: contains(github.event.head_commit.message, '[nox:casting]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install --quiet numpy
+      - name: Voice casting (skipped when samples already exist)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: '[ -f films/nox/voice/pilot/pilot.json ] || python3 films/nox/tools/voice_pilot.py'
+      - name: Whisper check of the samples
+        run: |
+          pip install --quiet faster-whisper
+          python3 films/nox/tools/asr.py films/nox/voice/pilot/asr.json films/nox/voice/pilot/*.mp3
+      - name: Save results to the branch
+        if: always()
+        run: |
+          git add films/nox/voice/pilot || true
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(nox): voice casting results [skip ci]"
+            for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
+          fi
+
+  voice:
+    if: contains(github.event.head_commit.message, '[nox:voice]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install --quiet numpy faster-whisper
+      - name: Narration (cached blocks are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 films/nox/tools/voice.py
+      - name: Save narration to the branch
+        if: always()
+        run: |
+          git add films/nox/voice || true
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(nox): narration blocks [skip ci]"
+            for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
+          fi
+      - name: Whisper check (narration + casting samples)
+        run: |
+          python3 films/nox/tools/asr.py films/nox/voice/blocks/asr.json films/nox/voice/blocks/*.mp3
+          python3 films/nox/tools/asr.py films/nox/voice/pilot/asr.json films/nox/voice/pilot/*.mp3
+      - name: Save ASR results
+        if: always()
+        run: |
+          git add films/nox/voice || true
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(nox): whisper check [skip ci]"
+            for i in 1 2 3; do git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
+          fi
+
+  plan:
+    if: contains(github.event.head_commit.message, '[nox:render]') || contains(github.event.head_commit.message, '[nox:pilot]')
+    runs-on: ubuntu-latest
+    outputs:
+      ranges: ${{ steps.p.outputs.ranges }}
+      mode: ${{ steps.p.outputs.mode }}
+    steps:
+      - id: p
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          if [[ "$MSG" == *"[nox:render]"* ]]; then
+            echo "mode=full" >> "$GITHUB_OUTPUT"
+            echo 'ranges=["0-3600","3600-7200","7200-10800","10800-14400","14400-18000","18000-21600","21600-25200","25200-28800","28800-32400","32400-36000","36000-39600","39600-43200","43200-46800","46800-50400","50400-54000"]' >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=pilot" >> "$GITHUB_OUTPUT"
+            echo 'ranges=["0-1350","1350-2700"]' >> "$GITHUB_OUTPUT"
+          fi
+
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.plan.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Tools (FFmpeg, Mesa EGL software GL, Python)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg libegl1 libegl-mesa0 libgl1-mesa-dri
+          pip install --quiet -r films/nox/requirements.txt
+      - name: Render frames ${{ matrix.range }}
+        run: |
+          A=$(echo "${{ matrix.range }}" | cut -d- -f1); B=$(echo "${{ matrix.range }}" | cut -d- -f2)
+          mkdir -p out/parts
+          cd films/nox/engine
+          python3 render.py --from $A --to $B --out "$GITHUB_WORKSPACE/out/parts/part-$(printf %06d $A).mp4" --crf 17 --preset medium
+          n=$(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 "$GITHUB_WORKSPACE/out/parts/part-$(printf %06d $A).mp4")
+          echo "frames in part: $n (expected $((B-A)))"
+          [ "$n" = "$((B-A))" ] || { echo "::error::frame count mismatch"; exit 1; }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nox-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 5
+
+  assemble:
+    needs: [plan, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    env:
+      MODE: ${{ needs.plan.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg libegl1 libegl-mesa0 libgl1-mesa-dri
+          pip install --quiet -r films/nox/requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: nox-part-*
+          path: out/parts
+          merge-multiple: true
+      - name: Concat video (no re-encode), mix audio, mux AAC + faststart
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^out\/parts\//file '/; s/$/'/" > out/parts/list.txt
+          cat out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          python3 films/nox/tools/mix.py out/audio
+          python3 films/nox/tools/subs.py out/rel
+          if [ "$MODE" = pilot ]; then OUTF=NOX_pilot_90s_RU.mp4; DUR=90; FR=2700; else OUTF=NOX_finance_30min_RU.mp4; DUR=1800; FR=54000; fi
+          echo "OUTF=$OUTF" >> "$GITHUB_ENV"; echo "FR=$FR" >> "$GITHUB_ENV"
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio/mix.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 224k -ar 48000 -t $DUR -movflags +faststart "out/rel/$OUTF"
+          cp out/audio/NOX_narration_RU.wav out/rel/
+          cp out/audio/audio_report.json out/rel/
+      - name: Verify MP4
+        run: python3 films/nox/tools/verify.py "out/rel/$OUTF" --frames $FR --json out/rel/verify.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Preview copy (960×540) and check frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/rel/$OUTF" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 25 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/rel/${OUTF%.mp4}_preview_960x540.mp4"
+          mkdir -p out/frames
+          if [ "$MODE" = full ]; then TS="2 20 45 119.5 120.5 240 360 480 600 720 840 900 960 1080 1200 1320 1440 1560 1680 1740 1785 1799"; else TS="1 5 12 20 28 45 60 75 88"; fi
+          for s in $TS; do ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/rel/$OUTF" -frames:v 1 -vf scale=640:-2 "out/frames/t$(printf %07.1f $s).jpg"; done
+          ffmpeg -hide_banner -loglevel error -y -pattern_type glob -i 'out/frames/*.jpg' -vf tile=4x6 -frames:v 1 out/rel/check-frames.jpg || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nox-${{ env.MODE }}-docs
+          path: |
+            out/rel/*.json
+            out/rel/*.srt
+            out/rel/*.vtt
+            out/rel/*.txt
+            out/rel/check-frames.jpg
+            out/frames/*.jpg
+          retention-days: 30
+      - name: Publish pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          R="$GITHUB_REPOSITORY"
+          if [ "$MODE" = full ]; then TAG=nox-film; TITLE="НОКС — цена бесконечного «ещё» (30:00, RU, 1920×1080)"; else TAG=nox-film-pilot; TITLE="НОКС — внутренний пилот 90 с"; fi
+          NOTES="Авторский анимационный фильм из частиц. 1920×1080, 30 fps, H.264/AAC 48 кГц. Коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${R}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$R" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$R" --title "$TITLE" --notes "$NOTES" --prerelease
+          else
+            gh release create "$TAG" -R "$R" --title "$TITLE" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          files=$(ls out/rel/*.mp4 out/rel/*.srt out/rel/*.vtt out/rel/*.txt out/rel/*.json out/rel/check-frames.jpg 2>/dev/null)
+          [ "$MODE" = full ] && files="$files out/rel/NOX_narration_RU.wav"
+          for f in films/nox/release/*; do [ -f "$f" ] && files="$files $f"; done
+          gh release upload "$TAG" -R "$R" --clobber $files
+          { echo "### $TITLE"; for f in $files; do echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/$(basename $f)"; done; } >> "$GITHUB_STEP_SUMMARY"
+
+  assets:
+    if: contains(github.event.head_commit.message, '[nox:assets]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Upload release assets (no render)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload nox-film -R "$GITHUB_REPOSITORY" --clobber films/nox/release/*
+          gh release view nox-film -R "$GITHUB_REPOSITORY" --json assets -q '.assets[] | "\(.name)\t\(.size)"' | tee -a "$GITHUB_STEP_SUMMARY"

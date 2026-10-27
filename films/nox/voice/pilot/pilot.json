@@ -1,0 +1,166 @@
+{
+ "subscription_error": "GET /v1/user/subscription: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission user_read to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"abcd526016ba3c69bc6099c1ca2ce3b7\"}}",
+ "voices_error": "GET /v1/voices: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission voices_read to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"3e74bd2fa1fad49fa2023cfd43ab3ac3\"}}",
+ "account_voices": [
+  {
+   "name": "Eric",
+   "id": "cjVigY5qzO86Huf0OWal",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "George",
+   "id": "JBFqnCBsd6RMkjVDRZzb",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "Brian",
+   "id": "nPczCjzI2devNBz1zQrb",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "Daniel",
+   "id": "onwK4e9ZLuTAKqWW03F9",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "Bill",
+   "id": "pqHfZKP75CvOlQylNhV4",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "Chris",
+   "id": "iP95p4xoKVk53GoZ742B",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "Roger",
+   "id": "CwhRBWXzGAHq8TQ4Fs17",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "Will",
+   "id": "bIHbv24MWmeRgasZH58o",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "Liam",
+   "id": "TX3LPaxmHKxFdv7VOQHJ",
+   "category": "premade",
+   "labels": null
+  },
+  {
+   "name": "Callum",
+   "id": "N2lVS1w4EtoT3dr4eOWO",
+   "category": "premade",
+   "labels": null
+  }
+ ],
+ "text": "Это восемьсот огоньков. Месяц работы Нокса. К последнему вечеру не остаётся ни одного. Если эту вещь никто не увидит, Нокс всё ещё её захочет? Триста минус сто восемьдесят — остаётся сто двадцать. Цель помогает двигаться. А чувство достаточности напоминает, ради какой жизни всё это затевалось.",
+ "settings": {
+  "stability": 0.55,
+  "similarity_boost": 0.8,
+  "style": 0.15,
+  "use_speaker_boost": true,
+  "speed": 0.92
+ },
+ "results": [
+  {
+   "name": "Eric",
+   "id": "cjVigY5qzO86Huf0OWal",
+   "file": "films/nox/voice/pilot/Eric.mp3",
+   "duration": 23.01,
+   "f0_median_hz": 161.6,
+   "words_per_min": 117.3,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"9398c55de5abfff5fc5613e502f6a86f\"}}"
+  },
+  {
+   "name": "George",
+   "id": "JBFqnCBsd6RMkjVDRZzb",
+   "file": "films/nox/voice/pilot/George.mp3",
+   "duration": 22.99,
+   "f0_median_hz": 118.5,
+   "words_per_min": 117.5,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"773cb7e5f552a7c179bdb54c3c25b397\"}}"
+  },
+  {
+   "name": "Brian",
+   "id": "nPczCjzI2devNBz1zQrb",
+   "file": "films/nox/voice/pilot/Brian.mp3",
+   "duration": 22.83,
+   "f0_median_hz": 104.6,
+   "words_per_min": 118.3,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"852d0ebbaaaf0273136dad2384f54598\"}}"
+  },
+  {
+   "name": "Daniel",
+   "id": "onwK4e9ZLuTAKqWW03F9",
+   "file": "films/nox/voice/pilot/Daniel.mp3",
+   "duration": 23.72,
+   "f0_median_hz": 139.1,
+   "words_per_min": 113.8,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"e88c3180b83ed92307fe4c7c235a43b9\"}}"
+  },
+  {
+   "name": "Bill",
+   "id": "pqHfZKP75CvOlQylNhV4",
+   "file": "films/nox/voice/pilot/Bill.mp3",
+   "duration": 23.72,
+   "f0_median_hz": 163.3,
+   "words_per_min": 113.8,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"69fbb1cc17091ae3a0b67ad45b20b4b9\"}}"
+  },
+  {
+   "name": "Chris",
+   "id": "iP95p4xoKVk53GoZ742B",
+   "file": "films/nox/voice/pilot/Chris.mp3",
+   "duration": 23.72,
+   "f0_median_hz": 130.1,
+   "words_per_min": 113.8,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"06f82a0a225bbf80695a0f20880ad16c\"}}"
+  },
+  {
+   "name": "Roger",
+   "id": "CwhRBWXzGAHq8TQ4Fs17",
+   "file": "films/nox/voice/pilot/Roger.mp3",
+   "duration": 22.52,
+   "f0_median_hz": 109.6,
+   "words_per_min": 119.9,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"24547edafa8475e949d83db4c3d8a909\"}}"
+  },
+  {
+   "name": "Will",
+   "id": "bIHbv24MWmeRgasZH58o",
+   "file": "films/nox/voice/pilot/Will.mp3",
+   "duration": 23.72,
+   "f0_median_hz": 111.1,
+   "words_per_min": 113.8,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"1c37f8684ddce01fd50ed6058eb638e6\"}}"
+  },
+  {
+   "name": "Liam",
+   "id": "TX3LPaxmHKxFdv7VOQHJ",
+   "file": "films/nox/voice/pilot/Liam.mp3",
+   "duration": 21.92,
+   "f0_median_hz": 123.1,
+   "words_per_min": 123.2,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"e563e6da00c5c98c73805d2a531a34e8\"}}"
+  },
+  {
+   "name": "Callum",
+   "id": "N2lVS1w4EtoT3dr4eOWO",
+   "file": "films/nox/voice/pilot/Callum.mp3",
+   "duration": 23.72,
+   "f0_median_hz": 81.6,
+   "words_per_min": 113.8,
+   "transcript": "STT error POST /v1/speech-to-text: HTTP 401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission speech_to_text to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"7237d166bc105af5b24aaea82df6e33c\"}}"
+  }
+ ]
+}

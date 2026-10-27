@@ -1,0 +1,1034 @@
+{
+ "fps": 30,
+ "frames": 54000,
+ "duration": 1800.0,
+ "estimated": false,
+ "chapters": [
+  {
+   "id": "CH01",
+   "title": "Куда исчез месяц?",
+   "start": 0.0,
+   "frames": [
+    0,
+    3599
+   ]
+  },
+  {
+   "id": "CH02",
+   "title": "Больше заработал — что изменилось?",
+   "start": 120.0,
+   "frames": [
+    3600,
+    7199
+   ]
+  },
+  {
+   "id": "CH03",
+   "title": "Один огонёк из десяти",
+   "start": 240.0,
+   "frames": [
+    7200,
+    10799
+   ]
+  },
+  {
+   "id": "CH04",
+   "title": "То, чего не видно",
+   "start": 360.0,
+   "frames": [
+    10800,
+    14399
+   ]
+  },
+  {
+   "id": "CH05",
+   "title": "Цель, у которой есть следующий шаг",
+   "start": 480.0,
+   "frames": [
+    14400,
+    17999
+   ]
+  },
+  {
+   "id": "CH06",
+   "title": "Полка знаний и работающий навык",
+   "start": 600.0,
+   "frames": [
+    18000,
+    21599
+   ]
+  },
+  {
+   "id": "CH07",
+   "title": "Где остановится слово «ещё»?",
+   "start": 720.0,
+   "frames": [
+    21600,
+    25199
+   ]
+  },
+  {
+   "id": "CH08",
+   "title": "Запас, который казался лишним",
+   "start": 840.0,
+   "frames": [
+    25200,
+    28799
+   ]
+  },
+  {
+   "id": "CH09",
+   "title": "Настойчивость и упрямство",
+   "start": 960.0,
+   "frames": [
+    28800,
+    32399
+   ]
+  },
+  {
+   "id": "CH10",
+   "title": "Время, которое не видно в первый день",
+   "start": 1080.0,
+   "frames": [
+    32400,
+    35999
+   ]
+  },
+  {
+   "id": "CH11",
+   "title": "Разные люди — разные условия",
+   "start": 1200.0,
+   "frames": [
+    36000,
+    39599
+   ]
+  },
+  {
+   "id": "CH12",
+   "title": "Обещание, слишком красивое для вопросов",
+   "start": 1320.0,
+   "frames": [
+    39600,
+    43199
+   ]
+  },
+  {
+   "id": "CH13",
+   "title": "Три ориентира — одна система",
+   "start": 1440.0,
+   "frames": [
+    43200,
+    46799
+   ]
+  },
+  {
+   "id": "CH14",
+   "title": "Одна обычная неделя",
+   "start": 1560.0,
+   "frames": [
+    46800,
+    50399
+   ]
+  },
+  {
+   "id": "CH15",
+   "title": "Что Нокс хотел купить на самом деле",
+   "start": 1680.0,
+   "frames": [
+    50400,
+    53999
+   ]
+  }
+ ],
+ "blocks": [
+  {
+   "id": "CH01-A",
+   "start": 0.35,
+   "end": 11.31,
+   "frame_start": 10,
+   "frame_end": 339
+  },
+  {
+   "id": "CH01-B",
+   "start": 12.51,
+   "end": 20.823,
+   "frame_start": 375,
+   "frame_end": 624
+  },
+  {
+   "id": "CH01-C",
+   "start": 30.197,
+   "end": 44.315,
+   "frame_start": 905,
+   "frame_end": 1329
+  },
+  {
+   "id": "CH01-D",
+   "start": 45.115,
+   "end": 53.846,
+   "frame_start": 1353,
+   "frame_end": 1615
+  },
+  {
+   "id": "CH01-E",
+   "start": 60.876,
+   "end": 75.783,
+   "frame_start": 1826,
+   "frame_end": 2273
+  },
+  {
+   "id": "CH01-F",
+   "start": 81.642,
+   "end": 103.05,
+   "frame_start": 2449,
+   "frame_end": 3091
+  },
+  {
+   "id": "CH01-G",
+   "start": 103.65,
+   "end": 113.495,
+   "frame_start": 3109,
+   "frame_end": 3404
+  },
+  {
+   "id": "CH01-H",
+   "start": 114.295,
+   "end": 118.8,
+   "frame_start": 3428,
+   "frame_end": 3564
+  },
+  {
+   "id": "CH02-A",
+   "start": 120.9,
+   "end": 133.021,
+   "frame_start": 3627,
+   "frame_end": 3990
+  },
+  {
+   "id": "CH02-B",
+   "start": 134.021,
+   "end": 145.445,
+   "frame_start": 4020,
+   "frame_end": 4363
+  },
+  {
+   "id": "CH02-B2",
+   "start": 157.354,
+   "end": 167.757,
+   "frame_start": 4720,
+   "frame_end": 5032
+  },
+  {
+   "id": "CH02-C",
+   "start": 168.757,
+   "end": 183.804,
+   "frame_start": 5062,
+   "frame_end": 5514
+  },
+  {
+   "id": "CH02-D",
+   "start": 184.804,
+   "end": 201.058,
+   "frame_start": 5544,
+   "frame_end": 6031
+  },
+  {
+   "id": "CH02-E",
+   "start": 209.565,
+   "end": 224.565,
+   "frame_start": 6286,
+   "frame_end": 6736
+  },
+  {
+   "id": "CH02-F",
+   "start": 225.565,
+   "end": 238.8,
+   "frame_start": 6766,
+   "frame_end": 7163
+  },
+  {
+   "id": "CH03-A",
+   "start": 240.9,
+   "end": 248.795,
+   "frame_start": 7227,
+   "frame_end": 7463
+  },
+  {
+   "id": "CH03-B",
+   "start": 249.795,
+   "end": 261.359,
+   "frame_start": 7493,
+   "frame_end": 7840
+  },
+  {
+   "id": "CH03-C",
+   "start": 270.269,
+   "end": 286.941,
+   "frame_start": 8108,
+   "frame_end": 8608
+  },
+  {
+   "id": "CH03-C2",
+   "start": 287.941,
+   "end": 301.501,
+   "frame_start": 8638,
+   "frame_end": 9045
+  },
+  {
+   "id": "CH03-D",
+   "start": 302.501,
+   "end": 308.306,
+   "frame_start": 9075,
+   "frame_end": 9249
+  },
+  {
+   "id": "CH03-E",
+   "start": 315.943,
+   "end": 331.407,
+   "frame_start": 9478,
+   "frame_end": 9942
+  },
+  {
+   "id": "CH03-F",
+   "start": 332.607,
+   "end": 345.006,
+   "frame_start": 9978,
+   "frame_end": 10350
+  },
+  {
+   "id": "CH03-G",
+   "start": 351.37,
+   "end": 358.8,
+   "frame_start": 10541,
+   "frame_end": 10764
+  },
+  {
+   "id": "CH04-A",
+   "start": 360.9,
+   "end": 370.467,
+   "frame_start": 10827,
+   "frame_end": 11114
+  },
+  {
+   "id": "CH04-B",
+   "start": 371.467,
+   "end": 380.616,
+   "frame_start": 11144,
+   "frame_end": 11418
+  },
+  {
+   "id": "CH04-C",
+   "start": 385.326,
+   "end": 394.707,
+   "frame_start": 11559,
+   "frame_end": 11841
+  },
+  {
+   "id": "CH04-D",
+   "start": 395.707,
+   "end": 404.484,
+   "frame_start": 11871,
+   "frame_end": 12134
+  },
+  {
+   "id": "CH04-D2",
+   "start": 408.605,
+   "end": 424.163,
+   "frame_start": 12258,
+   "frame_end": 12724
+  },
+  {
+   "id": "CH04-E",
+   "start": 425.163,
+   "end": 435.008,
+   "frame_start": 12754,
+   "frame_end": 13050
+  },
+  {
+   "id": "CH04-F",
+   "start": 437.208,
+   "end": 450.629,
+   "frame_start": 13116,
+   "frame_end": 13518
+  },
+  {
+   "id": "CH04-F2",
+   "start": 454.162,
+   "end": 466.84,
+   "frame_start": 13624,
+   "frame_end": 14005
+  },
+  {
+   "id": "CH04-G",
+   "start": 467.84,
+   "end": 478.8,
+   "frame_start": 14035,
+   "frame_end": 14363
+  },
+  {
+   "id": "CH05-A",
+   "start": 480.9,
+   "end": 489.166,
+   "frame_start": 14427,
+   "frame_end": 14674
+  },
+  {
+   "id": "CH05-B",
+   "start": 496.67,
+   "end": 508.141,
+   "frame_start": 14900,
+   "frame_end": 15244
+  },
+  {
+   "id": "CH05-C",
+   "start": 509.141,
+   "end": 516.479,
+   "frame_start": 15274,
+   "frame_end": 15494
+  },
+  {
+   "id": "CH05-D",
+   "start": 523.983,
+   "end": 538.751,
+   "frame_start": 15719,
+   "frame_end": 16162
+  },
+  {
+   "id": "CH05-E",
+   "start": 539.751,
+   "end": 545.602,
+   "frame_start": 16192,
+   "frame_end": 16368
+  },
+  {
+   "id": "CH05-E2",
+   "start": 555.608,
+   "end": 571.769,
+   "frame_start": 16668,
+   "frame_end": 17153
+  },
+  {
+   "id": "CH05-F",
+   "start": 572.769,
+   "end": 585.958,
+   "frame_start": 17183,
+   "frame_end": 17578
+  },
+  {
+   "id": "CH05-G",
+   "start": 586.958,
+   "end": 598.8,
+   "frame_start": 17608,
+   "frame_end": 17964
+  },
+  {
+   "id": "CH06-A",
+   "start": 600.9,
+   "end": 608.423,
+   "frame_start": 18027,
+   "frame_end": 18252
+  },
+  {
+   "id": "CH06-B",
+   "start": 614.972,
+   "end": 623.192,
+   "frame_start": 18449,
+   "frame_end": 18695
+  },
+  {
+   "id": "CH06-C",
+   "start": 624.392,
+   "end": 635.909,
+   "frame_start": 18731,
+   "frame_end": 19077
+  },
+  {
+   "id": "CH06-D",
+   "start": 636.909,
+   "end": 660.222,
+   "frame_start": 19107,
+   "frame_end": 19806
+  },
+  {
+   "id": "CH06-E",
+   "start": 668.08,
+   "end": 686.702,
+   "frame_start": 20042,
+   "frame_end": 20601
+  },
+  {
+   "id": "CH06-F",
+   "start": 687.702,
+   "end": 697.176,
+   "frame_start": 20631,
+   "frame_end": 20915
+  },
+  {
+   "id": "CH06-G",
+   "start": 707.654,
+   "end": 718.8,
+   "frame_start": 21229,
+   "frame_end": 21563
+  },
+  {
+   "id": "CH07-A",
+   "start": 720.9,
+   "end": 729.863,
+   "frame_start": 21627,
+   "frame_end": 21895
+  },
+  {
+   "id": "CH07-B",
+   "start": 735.486,
+   "end": 745.61,
+   "frame_start": 22064,
+   "frame_end": 22368
+  },
+  {
+   "id": "CH07-C",
+   "start": 753.482,
+   "end": 771.082,
+   "frame_start": 22604,
+   "frame_end": 23132
+  },
+  {
+   "id": "CH07-D",
+   "start": 772.082,
+   "end": 786.757,
+   "frame_start": 23162,
+   "frame_end": 23602
+  },
+  {
+   "id": "CH07-E",
+   "start": 787.957,
+   "end": 801.843,
+   "frame_start": 23638,
+   "frame_end": 24055
+  },
+  {
+   "id": "CH07-F",
+   "start": 809.715,
+   "end": 815.288,
+   "frame_start": 24291,
+   "frame_end": 24458
+  },
+  {
+   "id": "CH07-G",
+   "start": 822.035,
+   "end": 838.8,
+   "frame_start": 24661,
+   "frame_end": 25164
+  },
+  {
+   "id": "CH08-A",
+   "start": 840.9,
+   "end": 849.445,
+   "frame_start": 25227,
+   "frame_end": 25483
+  },
+  {
+   "id": "CH08-B",
+   "start": 855.511,
+   "end": 862.338,
+   "frame_start": 25665,
+   "frame_end": 25870
+  },
+  {
+   "id": "CH08-C",
+   "start": 863.338,
+   "end": 887.301,
+   "frame_start": 25900,
+   "frame_end": 26619
+  },
+  {
+   "id": "CH08-D",
+   "start": 888.701,
+   "end": 896.642,
+   "frame_start": 26661,
+   "frame_end": 26899
+  },
+  {
+   "id": "CH08-D2",
+   "start": 901.697,
+   "end": 918.694,
+   "frame_start": 27050,
+   "frame_end": 27560
+  },
+  {
+   "id": "CH08-E",
+   "start": 919.694,
+   "end": 936.273,
+   "frame_start": 27590,
+   "frame_end": 28088
+  },
+  {
+   "id": "CH08-F",
+   "start": 937.273,
+   "end": 948.326,
+   "frame_start": 28118,
+   "frame_end": 28449
+  },
+  {
+   "id": "CH08-G",
+   "start": 949.326,
+   "end": 958.8,
+   "frame_start": 28479,
+   "frame_end": 28764
+  },
+  {
+   "id": "CH09-A",
+   "start": 960.9,
+   "end": 971.674,
+   "frame_start": 28827,
+   "frame_end": 29150
+  },
+  {
+   "id": "CH09-B",
+   "start": 972.674,
+   "end": 986.42,
+   "frame_start": 29180,
+   "frame_end": 29592
+  },
+  {
+   "id": "CH09-B2",
+   "start": 994.363,
+   "end": 1004.719,
+   "frame_start": 29830,
+   "frame_end": 30141
+  },
+  {
+   "id": "CH09-C",
+   "start": 1005.719,
+   "end": 1016.307,
+   "frame_start": 30171,
+   "frame_end": 30489
+  },
+  {
+   "id": "CH09-D",
+   "start": 1017.307,
+   "end": 1027.245,
+   "frame_start": 30519,
+   "frame_end": 30817
+  },
+  {
+   "id": "CH09-E",
+   "start": 1035.187,
+   "end": 1048.237,
+   "frame_start": 31055,
+   "frame_end": 31447
+  },
+  {
+   "id": "CH09-F",
+   "start": 1055.045,
+   "end": 1064.797,
+   "frame_start": 31651,
+   "frame_end": 31943
+  },
+  {
+   "id": "CH09-G",
+   "start": 1065.797,
+   "end": 1078.8,
+   "frame_start": 31973,
+   "frame_end": 32363
+  },
+  {
+   "id": "CH10-A",
+   "start": 1080.9,
+   "end": 1090.513,
+   "frame_start": 32427,
+   "frame_end": 32715
+  },
+  {
+   "id": "CH10-B",
+   "start": 1094.168,
+   "end": 1117.759,
+   "frame_start": 32825,
+   "frame_end": 33532
+  },
+  {
+   "id": "CH10-C",
+   "start": 1118.959,
+   "end": 1127.411,
+   "frame_start": 33568,
+   "frame_end": 33822
+  },
+  {
+   "id": "CH10-D",
+   "start": 1131.065,
+   "end": 1148.852,
+   "frame_start": 33931,
+   "frame_end": 34465
+  },
+  {
+   "id": "CH10-D2",
+   "start": 1150.052,
+   "end": 1163.241,
+   "frame_start": 34501,
+   "frame_end": 34897
+  },
+  {
+   "id": "CH10-E",
+   "start": 1166.287,
+   "end": 1176.086,
+   "frame_start": 34988,
+   "frame_end": 35282
+  },
+  {
+   "id": "CH10-F",
+   "start": 1179.131,
+   "end": 1191.995,
+   "frame_start": 35373,
+   "frame_end": 35759
+  },
+  {
+   "id": "CH10-G",
+   "start": 1192.995,
+   "end": 1198.8,
+   "frame_start": 35789,
+   "frame_end": 35964
+  },
+  {
+   "id": "CH11-A",
+   "start": 1200.9,
+   "end": 1217.897,
+   "frame_start": 36027,
+   "frame_end": 36536
+  },
+  {
+   "id": "CH11-B",
+   "start": 1224.274,
+   "end": 1234.537,
+   "frame_start": 36728,
+   "frame_end": 37036
+  },
+  {
+   "id": "CH11-C",
+   "start": 1235.737,
+   "end": 1248.183,
+   "frame_start": 37072,
+   "frame_end": 37445
+  },
+  {
+   "id": "CH11-D",
+   "start": 1257.112,
+   "end": 1271.787,
+   "frame_start": 37713,
+   "frame_end": 38153
+  },
+  {
+   "id": "CH11-E",
+   "start": 1272.787,
+   "end": 1282.493,
+   "frame_start": 38183,
+   "frame_end": 38474
+  },
+  {
+   "id": "CH11-F",
+   "start": 1291.421,
+   "end": 1309.719,
+   "frame_start": 38742,
+   "frame_end": 39291
+  },
+  {
+   "id": "CH11-G",
+   "start": 1310.719,
+   "end": 1318.8,
+   "frame_start": 39321,
+   "frame_end": 39564
+  },
+  {
+   "id": "CH12-A",
+   "start": 1320.9,
+   "end": 1329.724,
+   "frame_start": 39627,
+   "frame_end": 39891
+  },
+  {
+   "id": "CH12-B",
+   "start": 1336.525,
+   "end": 1343.723,
+   "frame_start": 40095,
+   "frame_end": 40311
+  },
+  {
+   "id": "CH12-C",
+   "start": 1344.723,
+   "end": 1363.996,
+   "frame_start": 40341,
+   "frame_end": 40919
+  },
+  {
+   "id": "CH12-D",
+   "start": 1371.931,
+   "end": 1379.454,
+   "frame_start": 41157,
+   "frame_end": 41383
+  },
+  {
+   "id": "CH12-E",
+   "start": 1387.388,
+   "end": 1406.382,
+   "frame_start": 41621,
+   "frame_end": 42191
+  },
+  {
+   "id": "CH12-F",
+   "start": 1407.382,
+   "end": 1422.846,
+   "frame_start": 42221,
+   "frame_end": 42685
+  },
+  {
+   "id": "CH12-G",
+   "start": 1423.846,
+   "end": 1438.8,
+   "frame_start": 42715,
+   "frame_end": 43164
+  },
+  {
+   "id": "CH13-A",
+   "start": 1440.9,
+   "end": 1445.916,
+   "frame_start": 43227,
+   "frame_end": 43377
+  },
+  {
+   "id": "CH13-B",
+   "start": 1451.528,
+   "end": 1462.209,
+   "frame_start": 43545,
+   "frame_end": 43866
+  },
+  {
+   "id": "CH13-C",
+   "start": 1463.409,
+   "end": 1475.158,
+   "frame_start": 43902,
+   "frame_end": 44254
+  },
+  {
+   "id": "CH13-D",
+   "start": 1483.015,
+   "end": 1494.671,
+   "frame_start": 44490,
+   "frame_end": 44840
+  },
+  {
+   "id": "CH13-E",
+   "start": 1495.671,
+   "end": 1505.609,
+   "frame_start": 44870,
+   "frame_end": 45168
+  },
+  {
+   "id": "CH13-E2",
+   "start": 1506.609,
+   "end": 1527.832,
+   "frame_start": 45198,
+   "frame_end": 45834
+  },
+  {
+   "id": "CH13-F",
+   "start": 1534.566,
+   "end": 1539.674,
+   "frame_start": 46036,
+   "frame_end": 46190
+  },
+  {
+   "id": "CH13-G",
+   "start": 1545.286,
+   "end": 1558.8,
+   "frame_start": 46358,
+   "frame_end": 46764
+  },
+  {
+   "id": "CH14-A",
+   "start": 1560.9,
+   "end": 1565.683,
+   "frame_start": 46827,
+   "frame_end": 46970
+  },
+  {
+   "id": "CH14-B",
+   "start": 1568.316,
+   "end": 1574.864,
+   "frame_start": 47049,
+   "frame_end": 47245
+  },
+  {
+   "id": "CH14-C",
+   "start": 1577.497,
+   "end": 1588.55,
+   "frame_start": 47324,
+   "frame_end": 47656
+  },
+  {
+   "id": "CH14-D",
+   "start": 1591.183,
+   "end": 1596.895,
+   "frame_start": 47735,
+   "frame_end": 47906
+  },
+  {
+   "id": "CH14-E",
+   "start": 1599.527,
+   "end": 1608.351,
+   "frame_start": 47985,
+   "frame_end": 48250
+  },
+  {
+   "id": "CH14-F",
+   "start": 1610.984,
+   "end": 1622.455,
+   "frame_start": 48329,
+   "frame_end": 48673
+  },
+  {
+   "id": "CH14-G",
+   "start": 1625.088,
+   "end": 1629.778,
+   "frame_start": 48752,
+   "frame_end": 48893
+  },
+  {
+   "id": "CH14-G2",
+   "start": 1633.464,
+   "end": 1643.867,
+   "frame_start": 49003,
+   "frame_end": 49316
+  },
+  {
+   "id": "CH14-G3",
+   "start": 1644.867,
+   "end": 1654.619,
+   "frame_start": 49346,
+   "frame_end": 49638
+  },
+  {
+   "id": "CH14-H",
+   "start": 1657.252,
+   "end": 1678.8,
+   "frame_start": 49717,
+   "frame_end": 50364
+  },
+  {
+   "id": "CH15-A",
+   "start": 1680.9,
+   "end": 1697.433,
+   "frame_start": 50427,
+   "frame_end": 50922
+  },
+  {
+   "id": "CH15-B",
+   "start": 1713.489,
+   "end": 1730.718,
+   "frame_start": 51404,
+   "frame_end": 51921
+  },
+  {
+   "id": "CH15-C",
+   "start": 1731.918,
+   "end": 1751.191,
+   "frame_start": 51957,
+   "frame_end": 52535
+  },
+  {
+   "id": "CH15-D",
+   "start": 1764.954,
+   "end": 1779.954,
+   "frame_start": 52948,
+   "frame_end": 53398
+  },
+  {
+   "id": "CH15-E",
+   "start": 1780.954,
+   "end": 1789.22,
+   "frame_start": 53428,
+   "frame_end": 53676
+  },
+  {
+   "id": "CH15-F",
+   "start": 1790.62,
+   "end": 1797.4,
+   "frame_start": 53718,
+   "frame_end": 53922
+  }
+ ],
+ "speech_per_chapter": [
+  {
+   "chapter": "CH01",
+   "speech": 92.79,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH02",
+   "speech": 93.48,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH03",
+   "speech": 90.79,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH04",
+   "speech": 99.34,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH05",
+   "speech": 88.89,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH06",
+   "speech": 89.81,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH07",
+   "speech": 87.59,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH08",
+   "speech": 101.38,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH09",
+   "speech": 91.21,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH10",
+   "speech": 101.1,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH11",
+   "speech": 90.47,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH12",
+   "speech": 92.23,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH13",
+   "speech": 88.89,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH14",
+   "speech": 94.78,
+   "overflow": 0
+  },
+  {
+   "chapter": "CH15",
+   "speech": 83.08,
+   "overflow": 0
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "path": "films/nox/fonts/Inter-Medium.otf",
+    "sha": "f44f89adaccfb2d08cef973d7e60a9ccf785376d",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "films/nox/fonts/Inter-SemiBold.otf",
+    "sha": "52c84550ba03fa5543f14c5cb215b9b2c72946cb",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "films/nox/fonts/InterDisplay-Bold.otf",
+    "sha": "e2e71046a4d2d00a400e7fc114e41e75142e3ef8",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "films/nox/fonts/InterDisplay-ExtraBold.otf",
+    "sha": "8e1f17966d4f4b7589d2ed3a675ab4a9374d68e7",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]
