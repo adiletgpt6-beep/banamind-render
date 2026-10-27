@@ -1,0 +1,724 @@
+{
+  "version": 1,
+  "video": "BalaGoBG023",
+  "voice": "KG-teacher",
+  "lines": [
+    {
+      "id": "l1-hook",
+      "role": "narrator",
+      "text": "BalaGo'до эмне үчүн үч-төрт баладан турган топ каралат?",
+      "spoken": "БалаГодо эмне үчүн үч-төрт баладан турган топ каралат?",
+      "tag": null,
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "modelId": "eleven_v3",
+      "seed": 2312,
+      "durationSec": 3.9,
+      "speechStart": 0,
+      "speechEnd": 3.58,
+      "words": [
+        {
+          "text": "БалаГодо",
+          "start": 0,
+          "end": 0.62
+        },
+        {
+          "text": "эмне",
+          "start": 0.66,
+          "end": 0.94
+        },
+        {
+          "text": "үчүн",
+          "start": 1.1,
+          "end": 1.34
+        },
+        {
+          "text": "үч-төрт",
+          "start": 1.58,
+          "end": 1.98
+        },
+        {
+          "text": "баладан",
+          "start": 2.02,
+          "end": 2.38
+        },
+        {
+          "text": "турган",
+          "start": 2.46,
+          "end": 2.86
+        },
+        {
+          "text": "топ",
+          "start": 2.94,
+          "end": 3.18
+        },
+        {
+          "text": "каралат?",
+          "start": 3.22,
+          "end": 3.58
+        }
+      ],
+      "gainDb": 0.043,
+      "peakDb": -3.723,
+      "hash": "2b923c0dd14614dc",
+      "file": "l1-hook.mp3",
+      "asrCer": 0.019,
+      "asrHeard": "балагоду эмне үчүн үч төрт баладан турган топ каралат",
+      "takes": [
+        {
+          "seed": 2301,
+          "cer": 0.038,
+          "speechSec": 3.52
+        },
+        {
+          "seed": 2312,
+          "cer": 0.019,
+          "speechSec": 3.58
+        }
+      ]
+    },
+    {
+      "id": "l2-map",
+      "role": "narrator",
+      "text": "Баары бир жакка жана бир убакта эле бара бербейт. Үйдүн, мектептин дареги менен убактысы туура келиши керек.",
+      "spoken": "Баары бир жакка жана бир убакта эле бара бербейт. Үйдүн, мектептин дареги менен убактысы туура келиши керек.",
+      "tag": null,
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "modelId": "eleven_v3",
+      "seed": 2302,
+      "durationSec": 7.22,
+      "speechStart": 0,
+      "speechEnd": 6.96,
+      "words": [
+        {
+          "text": "Баары",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "text": "бир",
+          "start": 0.44,
+          "end": 0.56
+        },
+        {
+          "text": "жакка",
+          "start": 0.64,
+          "end": 1.04
+        },
+        {
+          "text": "жана",
+          "start": 1.16,
+          "end": 1.44
+        },
+        {
+          "text": "бир",
+          "start": 1.52,
+          "end": 1.76
+        },
+        {
+          "text": "убакта",
+          "start": 1.787,
+          "end": 2.08
+        },
+        {
+          "text": "эле",
+          "start": 2.12,
+          "end": 2.4
+        },
+        {
+          "text": "бара",
+          "start": 2.44,
+          "end": 2.64
+        },
+        {
+          "text": "бербейт.",
+          "start": 2.7,
+          "end": 3.2
+        },
+        {
+          "text": "Үйдүн,",
+          "start": 3.44,
+          "end": 3.84
+        },
+        {
+          "text": "мектептин",
+          "start": 3.96,
+          "end": 4.48
+        },
+        {
+          "text": "дареги",
+          "start": 4.52,
+          "end": 4.88
+        },
+        {
+          "text": "менен",
+          "start": 4.92,
+          "end": 5.2
+        },
+        {
+          "text": "убактысы",
+          "start": 5.253,
+          "end": 5.84
+        },
+        {
+          "text": "туура",
+          "start": 5.92,
+          "end": 6.24
+        },
+        {
+          "text": "келиши",
+          "start": 6.32,
+          "end": 6.64
+        },
+        {
+          "text": "керек.",
+          "start": 6.68,
+          "end": 6.96
+        }
+      ],
+      "gainDb": 0.373,
+      "peakDb": -4.572,
+      "hash": "f4668ddf249c4752",
+      "file": "l2-map.mp3",
+      "asrCer": 0.01,
+      "asrHeard": "баары бир жака жана бир убакта эле бара бербейт үйдүн мектептин дареги менен убактысы туура келиши керек",
+      "takes": [
+        {
+          "seed": 2302,
+          "cer": 0.01,
+          "speechSec": 6.96
+        },
+        {
+          "seed": 2313,
+          "cer": 0.048,
+          "speechSec": 7.2
+        }
+      ]
+    },
+    {
+      "id": "l3-group",
+      "role": "narrator",
+      "text": "Ошондуктан ылайыктуу каттам үчүн чакан топ алдын ала түзүлөт.",
+      "spoken": "Ошондуктан ылайыктуу каттам үчүн чакан топ алдын ала түзүлөт.",
+      "tag": null,
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "modelId": "eleven_v3",
+      "seed": 2314,
+      "durationSec": 4.16,
+      "speechStart": 0,
+      "speechEnd": 3.92,
+      "words": [
+        {
+          "text": "Ошондуктан",
+          "start": 0,
+          "end": 0.56
+        },
+        {
+          "text": "ылайыктуу",
+          "start": 0.64,
+          "end": 1.12
+        },
+        {
+          "text": "каттам",
+          "start": 1.18,
+          "end": 1.52
+        },
+        {
+          "text": "үчүн",
+          "start": 1.68,
+          "end": 1.84
+        },
+        {
+          "text": "чакан",
+          "start": 2.08,
+          "end": 2.64
+        },
+        {
+          "text": "топ",
+          "start": 2.7,
+          "end": 2.88
+        },
+        {
+          "text": "алдын",
+          "start": 2.933,
+          "end": 3.2
+        },
+        {
+          "text": "ала",
+          "start": 3.24,
+          "end": 3.36
+        },
+        {
+          "text": "түзүлөт.",
+          "start": 3.44,
+          "end": 3.92
+        }
+      ],
+      "gainDb": 0.792,
+      "peakDb": -3.403,
+      "hash": "92cb11f4df007a1a",
+      "file": "l3-group.mp3",
+      "asrCer": 0.017,
+      "asrHeard": "ошондуктан ылайыктуу каттам үчүн чакан топ алдынала түзүлөт",
+      "takes": [
+        {
+          "seed": 2303,
+          "cer": 0.067,
+          "speechSec": 4.24
+        },
+        {
+          "seed": 2314,
+          "cer": 0.017,
+          "speechSec": 3.92
+        }
+      ]
+    },
+    {
+      "id": "l4-seats",
+      "role": "narrator",
+      "text": "Балдардын саны унаадагы коопсуз орундарга жана иш жүзүндөгү шарттарга жараша аныкталат.",
+      "spoken": "Балдардын саны унаадагы коопсуз орундарга жана иш жүзүндөгү шарттарга жараша аныкталат.",
+      "tag": null,
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "modelId": "eleven_v3",
+      "seed": 2304,
+      "durationSec": 6.27,
+      "speechStart": 0,
+      "speechEnd": 6.06,
+      "words": [
+        {
+          "text": "Балдардын",
+          "start": 0,
+          "end": 0.54
+        },
+        {
+          "text": "саны",
+          "start": 0.58,
+          "end": 0.94
+        },
+        {
+          "text": "унаадагы",
+          "start": 1.06,
+          "end": 1.74
+        },
+        {
+          "text": "коопсуз",
+          "start": 1.82,
+          "end": 2.38
+        },
+        {
+          "text": "орундарга",
+          "start": 2.42,
+          "end": 2.86
+        },
+        {
+          "text": "жана",
+          "start": 2.94,
+          "end": 3.26
+        },
+        {
+          "text": "иш",
+          "start": 3.5,
+          "end": 3.82
+        },
+        {
+          "text": "жүзүндөгү",
+          "start": 3.86,
+          "end": 4.58
+        },
+        {
+          "text": "шарттарга",
+          "start": 4.64,
+          "end": 5.1
+        },
+        {
+          "text": "жараша",
+          "start": 5.14,
+          "end": 5.5
+        },
+        {
+          "text": "аныкталат.",
+          "start": 5.54,
+          "end": 6.06
+        }
+      ],
+      "gainDb": -0.755,
+      "peakDb": -3.959,
+      "hash": "beecee5ef8dbdb6f",
+      "file": "l4-seats.mp3",
+      "asrCer": 0,
+      "asrHeard": "балдардын саны унаадагы коопсуз орундарга жана иш жүзүндөгү шарттарга жараша аныкталат",
+      "takes": [
+        {
+          "seed": 2304,
+          "cer": 0,
+          "speechSec": 6.06
+        },
+        {
+          "seed": 2315,
+          "cer": 0.012,
+          "speechSec": 5.82
+        }
+      ]
+    },
+    {
+      "id": "l5-trial",
+      "role": "narrator",
+      "text": "Топ даяр болгондон кийин биринчи толук сыноо сапары акысыз болот. Улантууну ата-эне өзү чечет.",
+      "spoken": "Топ даяр болгондон кийин биринчи толук сыноо сапары акысыз болот. Улантууну ата-эне өзү чечет.",
+      "tag": null,
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "modelId": "eleven_v3",
+      "seed": 2316,
+      "durationSec": 7.05,
+      "speechStart": 0,
+      "speechEnd": 6.85,
+      "words": [
+        {
+          "text": "Топ",
+          "start": 0,
+          "end": 0.13
+        },
+        {
+          "text": "даяр",
+          "start": 0.21,
+          "end": 0.57
+        },
+        {
+          "text": "болгондон",
+          "start": 0.6,
+          "end": 1.01
+        },
+        {
+          "text": "кийин",
+          "start": 1.09,
+          "end": 1.33
+        },
+        {
+          "text": "биринчи",
+          "start": 1.45,
+          "end": 1.97
+        },
+        {
+          "text": "толук",
+          "start": 2.05,
+          "end": 2.37
+        },
+        {
+          "text": "сыноо",
+          "start": 2.423,
+          "end": 2.77
+        },
+        {
+          "text": "сапары",
+          "start": 2.81,
+          "end": 3.25
+        },
+        {
+          "text": "акысыз",
+          "start": 3.357,
+          "end": 3.81
+        },
+        {
+          "text": "болот.",
+          "start": 3.85,
+          "end": 4.13
+        },
+        {
+          "text": "Улантууну",
+          "start": 4.49,
+          "end": 5.25
+        },
+        {
+          "text": "ата-эне",
+          "start": 5.37,
+          "end": 5.97
+        },
+        {
+          "text": "өзү",
+          "start": 6.13,
+          "end": 6.41
+        },
+        {
+          "text": "чечет.",
+          "start": 6.43,
+          "end": 6.85
+        }
+      ],
+      "gainDb": 0.41,
+      "peakDb": -3.795,
+      "hash": "97d8cff286102a20",
+      "file": "l5-trial.mp3",
+      "asrCer": 0.011,
+      "asrHeard": "топ даяр болгондон кийин биринчи толук сыноо сапары акысыз болот улантууну атай эне өзү чечет",
+      "takes": [
+        {
+          "seed": 2305,
+          "cer": 0.043,
+          "speechSec": 6.69
+        },
+        {
+          "seed": 2316,
+          "cer": 0.011,
+          "speechSec": 6.85
+        }
+      ]
+    },
+    {
+      "id": "c1-city",
+      "role": "narrator",
+      "text": "BalaGo — Бишкектеги балдар үчүн такси.",
+      "spoken": "БалаГо — Бишкектеги балдар үчүн такси.",
+      "tag": null,
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "modelId": "eleven_v3",
+      "seed": 2317,
+      "durationSec": 2.94,
+      "speechStart": 0,
+      "speechEnd": 2.64,
+      "words": [
+        {
+          "text": "БалаГо",
+          "start": 0,
+          "end": 0.48
+        },
+        {
+          "text": "Бишкектеги",
+          "start": 0.84,
+          "end": 1.44
+        },
+        {
+          "text": "балдар",
+          "start": 1.5,
+          "end": 1.84
+        },
+        {
+          "text": "үчүн",
+          "start": 2,
+          "end": 2.16
+        },
+        {
+          "text": "такси.",
+          "start": 2.22,
+          "end": 2.64
+        }
+      ],
+      "gainDb": 1.423,
+      "peakDb": -3.708,
+      "hash": "f5ccf53ce76dcf15",
+      "file": "c1-city.mp3",
+      "asrCer": 0,
+      "asrHeard": "балаго бишкектеги балдар үчүн такси",
+      "takes": [
+        {
+          "seed": 2306,
+          "cer": 0.086,
+          "speechSec": 2.64
+        },
+        {
+          "seed": 2317,
+          "cer": 0,
+          "speechSec": 2.64
+        }
+      ]
+    },
+    {
+      "id": "c2-contacts",
+      "role": "narrator",
+      "text": "Профилдеги шилтемеге өтүп, балаңызды каттаңыз же WhatsApp аркылуу 0998 08 38 28 номерине жазыңыз.",
+      "spoken": "Профилдеги шилтемеге өтүп, балаңызды каттаңыз же вотсап аркылуу нөл тогуз жүз токсон сегиз, нөл сегиз, отуз сегиз, жыйырма сегиз номерине жазыңыз.",
+      "tag": null,
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "modelId": "eleven_v3",
+      "seed": 2307,
+      "durationSec": 11.17,
+      "speechStart": 0,
+      "speechEnd": 10.95,
+      "words": [
+        {
+          "text": "Профилдеги",
+          "start": 0,
+          "end": 0.55
+        },
+        {
+          "text": "шилтемеге",
+          "start": 0.59,
+          "end": 1.19
+        },
+        {
+          "text": "өтүп,",
+          "start": 1.27,
+          "end": 1.59
+        },
+        {
+          "text": "балаңызды",
+          "start": 1.73,
+          "end": 2.23
+        },
+        {
+          "text": "каттаңыз",
+          "start": 2.27,
+          "end": 2.95
+        },
+        {
+          "text": "же",
+          "start": 3.11,
+          "end": 3.43
+        },
+        {
+          "text": "вотсап",
+          "start": 3.53,
+          "end": 4.07
+        },
+        {
+          "text": "аркылуу",
+          "start": 4.123,
+          "end": 4.55
+        },
+        {
+          "text": "нөл",
+          "start": 4.79,
+          "end": 5.11
+        },
+        {
+          "text": "тогуз",
+          "start": 5.23,
+          "end": 5.51
+        },
+        {
+          "text": "жүз",
+          "start": 5.55,
+          "end": 5.777
+        },
+        {
+          "text": "токсон",
+          "start": 5.803,
+          "end": 6.07
+        },
+        {
+          "text": "сегиз,",
+          "start": 6.15,
+          "end": 6.39
+        },
+        {
+          "text": "нөл",
+          "start": 6.83,
+          "end": 6.95
+        },
+        {
+          "text": "сегиз,",
+          "start": 7.03,
+          "end": 7.35
+        },
+        {
+          "text": "отуз",
+          "start": 7.75,
+          "end": 7.99
+        },
+        {
+          "text": "сегиз,",
+          "start": 8.07,
+          "end": 8.39
+        },
+        {
+          "text": "жыйырма",
+          "start": 8.83,
+          "end": 9.19
+        },
+        {
+          "text": "сегиз",
+          "start": 9.27,
+          "end": 9.51
+        },
+        {
+          "text": "номерине",
+          "start": 9.59,
+          "end": 10.23
+        },
+        {
+          "text": "жазыңыз.",
+          "start": 10.35,
+          "end": 10.95
+        }
+      ],
+      "gainDb": 1.16,
+      "peakDb": -2.764,
+      "hash": "df68c2c0fdec4e69",
+      "file": "c2-contacts.mp3",
+      "asrCer": 0.284,
+      "asrHeard": "прохиллеги шилтемеге өтүп балаңызды каттаңыз дже воцабаркылу 998 0л 8из отуз сегиз 2ыйырма сегиз номерине жазыңыз",
+      "takes": [
+        {
+          "seed": 2307,
+          "cer": 0.284,
+          "speechSec": 10.95
+        },
+        {
+          "seed": 2318,
+          "cer": 0.298,
+          "speechSec": 10.47
+        }
+      ]
+    },
+    {
+      "id": "c3-go",
+      "role": "narrator",
+      "text": "BalaGo менен жолго чыгалы!",
+      "spoken": "БалаГо менен жолго чыгалы!",
+      "tag": null,
+      "voiceName": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "modelId": "eleven_v3",
+      "seed": 2319,
+      "durationSec": 1.72,
+      "speechStart": 0,
+      "speechEnd": 1.52,
+      "words": [
+        {
+          "text": "БалаГо",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "text": "менен",
+          "start": 0.44,
+          "end": 0.72
+        },
+        {
+          "text": "жолго",
+          "start": 0.76,
+          "end": 1.04
+        },
+        {
+          "text": "чыгалы!",
+          "start": 1.12,
+          "end": 1.52
+        }
+      ],
+      "gainDb": -1.745,
+      "peakDb": -6.24,
+      "hash": "c2800249b14d99d2",
+      "file": "c3-go.mp3",
+      "asrCer": 0.08,
+      "asrHeard": "балагө менен жолго чыг алы",
+      "takes": [
+        {
+          "seed": 2308,
+          "cer": 0.32,
+          "speechSec": 1.6
+        },
+        {
+          "seed": 2319,
+          "cer": 0.08,
+          "speechSec": 1.52
+        }
+      ]
+    }
+  ]
+}
