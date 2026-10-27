@@ -1,0 +1,239 @@
+name: BalaGoNoBackup2D (2D, 120 s)
+
+# Одиннадцатый ролик в 2D: «Бүгүн алмаштыра турган киши жок».
+#   voice  → пробы голосов Voice Design (семья и собеседники), выбор по
+#            замерам MMS (разборчивость) и основному тону, реплики ролика
+#            (не более 2 дублей, технический выбор по MMS); новые файлы сохраняются в ветку.
+#   render → lint/TypeScript, тесты, контрольные кадры, MP4 1080×1920 и
+#            облегчённая копия 720×1280 — только этой композиции. Задача
+#            падает, если MP4 не создан или формат/длительность/звук не те.
+
+on:
+  push:
+    paths:
+      - "src/**"
+      - "scripts/**"
+      - "public/**"
+      - "voice-samples/no-backup-2d/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/no-backup-2d.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: no-backup-2d-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Разово: кандидаты естественных звуков (Wikimedia Commons, свободные
+      # лицензии) — в отдельную ветку nb2d-foley-candidates для выбора.
+      # После выбора в репозитории есть foley/SOURCES.json и шаг пропускается.
+      - name: Foley candidates (one-off, free licenses)
+        if: hashFiles('public/audio/no-backup-2d/foley/SOURCES.json') == '' && github.ref_name != 'main'
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+          node scripts/fetch-nb2d-foley.mjs /tmp/foley
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch --depth 1 origin "$GITHUB_SHA"
+          git worktree add --detach /tmp/fc "$GITHUB_SHA"
+          cd /tmp/fc && git checkout --orphan nb2d-foley-candidates && git rm -rq --cached . && rm -rf ./*
+          cp /tmp/foley/* . && git add -A && git commit -qm "chore: foley candidates for no-backup-2d (Wikimedia Commons, free licenses)"
+          git push -f origin HEAD:refs/heads/nb2d-foley-candidates
+
+      # При правках монтажа готовые MP3 не требуют ни TTS, ни загрузки
+      # модели MMS. Строгая проверка каждой реплики остаётся в render.
+      - name: Check saved voiceover
+        id: cached_voice
+        run: |
+          node --input-type=module <<'JS'
+          import { appendFileSync, existsSync, readFileSync } from "node:fs";
+          import { NB2_LINES, NB2_VIDEO } from "./src/no-backup-2d/script.ts";
+          import { checkNb2Timing } from "./src/no-backup-2d/timing.ts";
+          import { nb2Hash, voiceOfRole } from "./scripts/lib/nb2d-tts.mjs";
+          import { voiceManifestProblems } from "./scripts/lib/voice-mix-qc.mjs";
+          const dir = "public/" + NB2_VIDEO.voiceDir;
+          let manifest = null;
+          try { manifest = JSON.parse(readFileSync(dir + "/manifest.json", "utf8")); } catch {}
+          const problems = voiceManifestProblems(manifest, NB2_LINES, {
+            kind: "nb2d", hasFile: file => existsSync(dir + "/" + file),
+            hashForLine: line => {
+              const voice = voiceOfRole(line.role);
+              return voice ? nb2Hash(line, voice.voiceId) : null;
+            },
+          });
+          if (!problems.length) problems.push(...checkNb2Timing(manifest.lines));
+          const complete = problems.length === 0;
+          appendFileSync(process.env.GITHUB_OUTPUT, `complete=${complete}\n`);
+          console.log(complete ? `Все ${NB2_LINES.length} сохранённых реплик актуальны; повторная генерация не нужна.` : problems.join("\n"));
+          JS
+
+      - name: Install FFmpeg
+        if: steps.cached_voice.outputs.complete != 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        if: steps.cached_voice.outputs.complete != 'true'
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-nb2d-asr.txt
+
+      - name: Install MMS speech recognition
+        if: steps.cached_voice.outputs.complete != 'true'
+        run: pip install --quiet -r scripts/requirements-nb2d-asr.txt
+
+      - name: Cache MMS model
+        if: steps.cached_voice.outputs.complete != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      # Пробы голосов: варианты Voice Design, замер MMS и основного тона,
+      # выбор и создание голосов (повторно не выполняется).
+      - name: Voice samples (Voice Design) and choice
+        if: steps.cached_voice.outputs.complete != 'true'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/nb2d-voice-design.mjs
+
+      # Реплики: готовые (тот же хэш) переиспользуются.
+      - name: Voiceover (cached lines are reused)
+        if: steps.cached_voice.outputs.complete != 'true'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/generate-nb2d-voice.mjs
+
+      - name: Save new voice files to the branch
+        if: always() && steps.cached_voice.outputs.complete != 'true' && github.ref_name != 'main'
+        run: |
+          for d in voice-samples/no-backup-2d public/audio/no-backup-2d; do
+            if [ -d "$d" ]; then git add "$d"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save no-backup-2d voice files"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload voice samples
+        if: always() && hashFiles('voice-samples/no-backup-2d/design/report.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-no-backup-2d-voice-samples
+          path: |
+            voice-samples/no-backup-2d/
+            public/audio/no-backup-2d/
+          retention-days: 30
+
+  render:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      # Голова ветки: в ней уже сохранённые задачей voice файлы.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (timeline, voice files, texts)
+        env:
+          NB2_STRICT_VOICE: "1"
+        run: node --test scripts/no-backup-2d.test.mjs scripts/voice-mix-qc.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames
+        run: npm run stills:no-backup-2d
+
+      - name: Render MP4 (H.264/AAC)
+        run: npm run render:no-backup-2d -- --log=warn
+
+      - name: Verify MP4 (fails if missing or wrong format)
+        run: node scripts/verify-nb2d.mjs out/balago-no-backup-2d.mp4
+
+      - name: Phone copy (720×1280)
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i out/balago-no-backup-2d.mp4 \
+            -vf scale=720:1280:flags=lanczos -c:v libx264 -preset slow -crf 25 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
+            out/balago-no-backup-2d-phone.mp4
+          node scripts/verify-nb2d.mjs out/balago-no-backup-2d-phone.mp4 --phone
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-no-backup-2d-mp4
+          path: out/balago-no-backup-2d.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload phone MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-no-backup-2d-phone-mp4
+          path: out/balago-no-backup-2d-phone.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-no-backup-2d-frames
+          path: out/frames-no-backup-2d/*.png
+          if-no-files-found: warn
+          retention-days: 30

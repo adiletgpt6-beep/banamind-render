@@ -1,0 +1,93 @@
+{
+  "note": "Естественные записи для no-backup-2d. Не генерируются scripts/nb2d-sfx.mjs и не перезаписываются им. Нужна атрибуция CC BY 4.0 для Gravity Sound.",
+  "files": [
+    {
+      "file": "step-1.mp3",
+      "title": "Step Indoors (Gravity Sound).mp3",
+      "source": "https://commons.wikimedia.org/wiki/File:Step_Indoors_(Gravity_Sound).mp3",
+      "artist": "Gravity Sound",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "\"step indoors\" by Gravity Sound, CC BY 4.0, via Wikimedia Commons",
+      "edit": "0.10–0.50 s, mono, пик −3 dBFS",
+      "use": "шаги (вариант 1)"
+    },
+    {
+      "file": "step-2.mp3",
+      "title": "Walking in sandals (Gravity Sound).wav",
+      "source": "https://commons.wikimedia.org/wiki/File:Walking_in_sandals_(Gravity_Sound).wav",
+      "artist": "Gravity Sound",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "\"walking in sandals\" by Gravity Sound, CC BY 4.0, via Wikimedia Commons",
+      "edit": "2.48–2.82 s, mono, пик −3 dBFS",
+      "use": "шаги (вариант 2)"
+    },
+    {
+      "file": "step-3.mp3",
+      "title": "Walking in sandals (Gravity Sound).wav",
+      "source": "https://commons.wikimedia.org/wiki/File:Walking_in_sandals_(Gravity_Sound).wav",
+      "artist": "Gravity Sound",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "\"walking in sandals\" by Gravity Sound, CC BY 4.0, via Wikimedia Commons",
+      "edit": "3.68–4.02 s, mono, пик −3 dBFS",
+      "use": "шаги (вариант 3)"
+    },
+    {
+      "file": "belt-click.mp3",
+      "title": "Clicking (Gravity Sound).wav",
+      "source": "https://commons.wikimedia.org/wiki/File:Clicking_(Gravity_Sound).wav",
+      "artist": "Gravity Sound",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "\"clicking\" by Gravity Sound, CC BY 4.0, via Wikimedia Commons",
+      "edit": "0.44–0.76 s, mono, пик −3 dBFS",
+      "use": "мягкий щелчок ремня"
+    },
+    {
+      "file": "keys.mp3",
+      "title": "Keys shaking (Gravity Sound).wav",
+      "source": "https://commons.wikimedia.org/wiki/File:Keys_shaking_(Gravity_Sound).wav",
+      "artist": "Gravity Sound",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "\"keys shaking\" by Gravity Sound, CC BY 4.0, via Wikimedia Commons",
+      "edit": "1.72–2.62 s, mono, пик −3 dBFS",
+      "use": "ключи в прихожей"
+    },
+    {
+      "file": "door-close.mp3",
+      "title": "Close door 2 (Gravity Sound).wav",
+      "source": "https://commons.wikimedia.org/wiki/File:Close_door_2_(Gravity_Sound).wav",
+      "artist": "Gravity Sound",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "\"close door 2\" by Gravity Sound, CC BY 4.0, via Wikimedia Commons",
+      "edit": "0.06–1.00 s, mono, пик −3 dBFS",
+      "use": "закрытие двери подъезда/квартиры"
+    },
+    {
+      "file": "door-handle.mp3",
+      "title": "Tight door lock (Gravity Sound).wav",
+      "source": "https://commons.wikimedia.org/wiki/File:Tight_door_lock_(Gravity_Sound).wav",
+      "artist": "Gravity Sound",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "\"tight door lock\" by Gravity Sound, CC BY 4.0, via Wikimedia Commons",
+      "edit": "0.26–0.71 s, mono, пик −3 dBFS",
+      "use": "ручка двери офиса"
+    },
+    {
+      "file": "amb-yard.mp3",
+      "title": "Bird sings in the morning with cars in the background.ogg",
+      "source": "https://commons.wikimedia.org/wiki/File:Bird_sings_in_the_morning_with_cars_in_the_background.ogg",
+      "artist": "ezwa (pdsounds.org)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "attribution": "ezwa, public domain, via Wikimedia Commons",
+      "edit": "0–12 s, mono, −26 LUFS, фейды",
+      "use": "утренний двор, школьный двор"
+    }
+  ]
+}

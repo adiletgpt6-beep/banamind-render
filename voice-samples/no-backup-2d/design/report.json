@@ -1,0 +1,236 @@
+{
+  "roles": {
+    "mother": {
+      "hash": "64cc343d72a2e3ec",
+      "description": "A warm, calm Kyrgyz woman in her early thirties from Bishkek, a native speaker of the Kyrgyz language with authentic Kyrgyz pronunciation. Warm intimate everyday dialogue, gently lower medium register, varied sentence rhythm, soft breath and clear endings, never reciting. A caring mother speaking to her own family. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "text": "Макул, бирөөнөн сурап көрөйүн. Жүр, кызым. Өзүм жеткирип коём. Бир аз кечигем. Кызымды мектепке жеткирип жатам. Албетте барасың, кызым. Мектепке алып барып, кайра үйгө жеткиреби?",
+      "previews": [
+        {
+          "file": "mother-1.mp3",
+          "generatedVoiceId": "w0ro0PWgTy7iSIVksfb8",
+          "durationSec": 12.357791666666667,
+          "cer": 0.048,
+          "heard": "маакбул бирөүнөн сурак көрөйүн жүр кызым өзүм жеткирип боюм бир аз кечигем кызымды мектепке жеткирип жатам албетте барасың кызым мектепте алып барып кайра үүгө жеткиреби",
+          "f0": 258.1
+        },
+        {
+          "file": "mother-2.mp3",
+          "generatedVoiceId": "ei5c7iXAqfOo6yS6kPjX",
+          "durationSec": 12.044291666666666,
+          "cer": 0.036,
+          "heard": "макул биреүнөн сурак көрөйүн жүр кызым өзүм жеткирип коён бир аз кечигем кызымды мектепке жеткирип жатам албетте барасын кызын мектепке алып барып кайра үйгө жеткиреби",
+          "f0": 213.3
+        },
+        {
+          "file": "mother-3.mp3",
+          "generatedVoiceId": "mBtkLPpkpWLWlFHGYnHS",
+          "durationSec": 12.827958333333333,
+          "cer": 0.072,
+          "heard": "макол бирөөнө сурап көрөйүм жүр кызым өзүм жеткирип коём бир аз кечегем кызымды мектепке жеткирип жатам албетте барасын кызым мектепке алпар пайра үйгө жеткиребе",
+          "f0": 235.3
+        }
+      ]
+    },
+    "father": {
+      "hash": "d5d505c21e61a782",
+      "description": "A calm, kind Kyrgyz man in his mid-thirties from Bishkek, a native speaker of the Kyrgyz language with authentic Kyrgyz pronunciation. Warm, low and supportive voice, slightly concerned. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "text": "Мени жумушка бир саат эрте чакырып калышты. Кечирип кой, бүгүн жардам бере албайм. БалаГо кызматына алдын ала катталсакчы? Ооба, үйдөн мектепке, мектептен үйгө.",
+      "previews": [
+        {
+          "file": "father-1.mp3",
+          "generatedVoiceId": "qDYigZdY3PENoWwTUKLs",
+          "durationSec": 10.267958333333333,
+          "cer": 0.092,
+          "heard": "мени жумушка бир саат эрте чакырып каалышты кечирккой бүгүн жардам бере абайм балабок кызматына алдынала акаталсапчы оба үйдөн меттепке меттептен үйгө",
+          "f0": 118.5
+        },
+        {
+          "file": "father-2.mp3",
+          "generatedVoiceId": "xxKkhYUgtZTPTuHpktPy",
+          "durationSec": 11.312875,
+          "cer": 0.052,
+          "heard": "мени жумушка бир саат эрте чакырып калышты дечиркой бүгүн жардам бере албайм балаго кызматына алдынала катаалсакча оба үйдөн мектепке мектептен үйгө",
+          "f0": 112.7
+        },
+        {
+          "file": "father-3.mp3",
+          "generatedVoiceId": "rldC71MN72ackNa2erGw",
+          "durationSec": 10.921041666666667,
+          "cer": 0.105,
+          "heard": "менин жумышка бир саат эрте чахырыкка алышты кечирик кой бүгүн жардам ере албайм балабо кызматына алдыналахаттаалсакчы оа үйдөн мектепке мектептен үйгө",
+          "f0": 124
+        }
+      ]
+    },
+    "daughter": {
+      "hash": "c6eb4a6d0b63588b",
+      "description": "A young Kyrgyz woman in her early twenties with a very light, high, bright and soft voice, a native speaker of the Kyrgyz language with authentic Kyrgyz pronunciation. Gentle, curious, simple and sincere. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "text": "Апа, мени бүгүн ким жеткирет? Апа, эртең мектепке барамбы? Мен сумкамды даярдап койдум. Бүгүн сабакта сүрөт тартабыз. Рахмат, апа!",
+      "previews": [
+        {
+          "file": "daughter-1.mp3",
+          "generatedVoiceId": "gtJEwH1YEkKKie4gBpH7",
+          "durationSec": 11.156125,
+          "cer": 0.016,
+          "heard": "апа мени бугун ким жеткирет апа эртең мектепке барамбы мен сумкамды даярдап койдум бүгүн сабакта сүрөт тартабыз рахмат апа",
+          "f0": 275.9
+        },
+        {
+          "file": "daughter-2.mp3",
+          "generatedVoiceId": "N36Ezqs4K5DnMt65TMmB",
+          "durationSec": 9.092458333333333,
+          "cer": 0.008,
+          "heard": "апа мени бүгүн ким жеткирет апа эртең мектепке барамбы мен сумкамда даярдап койдум бүгүн сабакта сүрөт тартабыз рахмат апа",
+          "f0": 246.2
+        },
+        {
+          "file": "daughter-3.mp3",
+          "generatedVoiceId": "xjLGSDc1Prd37rS1lXOs",
+          "durationSec": 11.312875,
+          "cer": 0.025,
+          "heard": "апа мени бүгүн ким жеткирет апа эртей мектепке барамбы мен сумкамды даярдап койдум бүгүн сагыкта сүрөт тартабыз рахмат апа",
+          "f0": 250
+        }
+      ]
+    },
+    "grandmother": {
+      "hash": "95b9833c150351d0",
+      "description": "A Kyrgyz woman in her late fifties from Bishkek, native Kyrgyz pronunciation, a warm mature lower female voice, gentle concern and clear everyday speech. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "text": "Кызым, эртең менен дарыгерге жазылгам. Болбосо жардам берет элем. Айзадага салам айт. Үйгө келгенде чогуу чай ичебиз.",
+      "previews": [
+        {
+          "file": "grandmother-1.mp3",
+          "generatedVoiceId": "Tgqeq8b5xRDg8nK9IJPv",
+          "durationSec": 8.047583333333334,
+          "cer": 0.098,
+          "heard": "кызым эртең менен дары керге жазылгам бул болсо жардам бирет элем айзадага саламайт үйгө белгенде чогуча ичебиз",
+          "f0": 192.8
+        },
+        {
+          "file": "grandmother-2.mp3",
+          "generatedVoiceId": "jtf9zSU4jjuhSUq73D9J",
+          "durationSec": 8.909625,
+          "cer": 0.179,
+          "heard": "кызым эртин мине дар герге жазылгам бул бусу жардам бирет елем айза дага саламайт үйгө келгенде чокоча эчейбиз",
+          "f0": 163.3
+        },
+        {
+          "file": "grandmother-3.mp3",
+          "generatedVoiceId": "h6EyYcKbbWbAqs2IDjPs",
+          "durationSec": 8.909625,
+          "cer": 0.125,
+          "heard": "кызым эртем менен дар керге жазылгам бул бусу жардам берет елем айзадага саламайт үйгө кергенде чогууча аычебиз",
+          "f0": 183.9
+        }
+      ]
+    },
+    "brother": {
+      "hash": "a363a959c8e78609",
+      "description": "A Kyrgyz man in his late twenties, native Kyrgyz pronunciation, an easygoing medium male voice, explaining his night shift kindly and practically. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "text": "Бүгүн түнкү нөөмөттөмүн. Эртең менен жетише албайм. Кечинде бош болсом, силерге кирип кетем. Айзада сабактарына даярданып жатабы?",
+      "previews": [
+        {
+          "file": "brother-1.mp3",
+          "generatedVoiceId": "IRGPSiyjpLdMfh3zNzFo",
+          "durationSec": 7.159416666666667,
+          "cer": 0.048,
+          "heard": "бүгүн түнкүнө өмүттөмүн эртең менен жетиш албайм кечинде бош болсом силерге кирип бетем айзада сабактарына даырданып жатабы",
+          "f0": 122.1
+        },
+        {
+          "file": "brother-2.mp3",
+          "generatedVoiceId": "dRZlstU0akMrAuQnP79P",
+          "durationSec": 7.55125,
+          "cer": 0.032,
+          "heard": "бүгүн түнкүнөмөттөмүн эртең менен жетиш албайм кечинде бош болсом силерге кирип кетем айза да сабактарына даярданып жатабы",
+          "f0": 113.5
+        },
+        {
+          "file": "brother-3.mp3",
+          "generatedVoiceId": "lvoEGoqgGOG8hV3ifUY5",
+          "durationSec": 7.812458333333334,
+          "cer": 0.105,
+          "heard": "бүгүн түмкүнү эметтемин эртең менен жетши албайм кечинде бош болсом силерге кирик етем айзада сабактарына даярданп жатабы",
+          "f0": 115.9
+        }
+      ]
+    },
+    "friend": {
+      "hash": "2213f92e2f6930fb",
+      "description": "A Kyrgyz woman in her early thirties, native Kyrgyz pronunciation, an open friendly bright female voice, conversational and willing to help, distinct from the mother. Clear close-mic studio recording, no background noise, natural relaxed conversational pace, not theatrical, not announcer-like.",
+      "text": "Болот, бирок бизге алып келишиң керек. Биз башка тараптабыз. Эртең менен жолго эртерээк чыгабыз. Кечинде сүйлөшөбүз.",
+      "previews": [
+        {
+          "file": "friend-1.mp3",
+          "generatedVoiceId": "4RQQRCZUj9R7JCcdkkjb",
+          "durationSec": 7.707958333333333,
+          "cer": 0.036,
+          "heard": "бол от бирок бизге алып келишим керек биз башка тараптабыз эртең менен жолго эртереэк чыгагыз кечинде сүйлөшөбүз",
+          "f0": 262.3
+        },
+        {
+          "file": "friend-2.mp3",
+          "generatedVoiceId": "YFFd51gsFa9VT4xGD15W",
+          "durationSec": 7.3945,
+          "cer": 0.018,
+          "heard": "болот бирок бизге алып келишин керек биз башка тараптабыз эртең менен жолго эртереэк чыгабыз кечинде сүйлөшөбүз",
+          "f0": 238.8
+        },
+        {
+          "file": "friend-3.mp3",
+          "generatedVoiceId": "uy3pCUUft0qQYCSFeKYI",
+          "durationSec": 7.707958333333333,
+          "cer": 0.045,
+          "heard": "бул от бирок бизге алып керишин керек биз башка тараптабыз эртең менен жолго эртереэк чыгабыз кечинде сүйлөшөбүз",
+          "f0": 262.3
+        }
+      ]
+    }
+  },
+  "picks": {
+    "mother": {
+      "file": "mother-2.mp3",
+      "generatedVoiceId": "ei5c7iXAqfOo6yS6kPjX",
+      "cer": 0.036,
+      "f0": 213.3
+    },
+    "father": {
+      "file": "father-2.mp3",
+      "generatedVoiceId": "xxKkhYUgtZTPTuHpktPy",
+      "cer": 0.052,
+      "f0": 112.7
+    },
+    "grandmother": {
+      "file": "grandmother-3.mp3",
+      "generatedVoiceId": "h6EyYcKbbWbAqs2IDjPs",
+      "cer": 0.125,
+      "f0": 183.9
+    },
+    "brother": {
+      "file": "brother-1.mp3",
+      "generatedVoiceId": "IRGPSiyjpLdMfh3zNzFo",
+      "cer": 0.048,
+      "f0": 122.1
+    },
+    "friend": {
+      "file": "friend-2.mp3",
+      "generatedVoiceId": "YFFd51gsFa9VT4xGD15W",
+      "cer": 0.018,
+      "f0": 238.8
+    },
+    "daughter": {
+      "generatedVoiceId": "gtJEwH1YEkKKie4gBpH7",
+      "voiceId": "gtJEwH1YEkKKie4gBpH7",
+      "file": "daughter-1.mp3",
+      "cer": 0.016,
+      "f0": 275.9,
+      "source": "existing",
+      "description": "Сохранённый голос актрисы BalaGo NB2 daughter"
+    },
+    "colleague": {
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "source": "existing",
+      "description": "Сохранённый голос KG-teacher (half-hour-2d)"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "father": {
+    "generatedVoiceId": "xxKkhYUgtZTPTuHpktPy",
+    "voiceId": "xxKkhYUgtZTPTuHpktPy",
+    "file": "father-2.mp3",
+    "cer": 0.052,
+    "f0": 112.7
+  },
+  "mother": {
+    "generatedVoiceId": "ei5c7iXAqfOo6yS6kPjX",
+    "voiceId": "ei5c7iXAqfOo6yS6kPjX",
+    "file": "mother-2.mp3",
+    "cer": 0.036,
+    "f0": 213.3
+  },
+  "daughter": {
+    "generatedVoiceId": "gtJEwH1YEkKKie4gBpH7",
+    "voiceId": "gtJEwH1YEkKKie4gBpH7",
+    "file": "daughter-1.mp3",
+    "cer": 0.016,
+    "f0": 275.9
+  },
+  "grandmother": {
+    "generatedVoiceId": "h6EyYcKbbWbAqs2IDjPs",
+    "voiceId": "h6EyYcKbbWbAqs2IDjPs",
+    "file": "grandmother-3.mp3",
+    "cer": 0.125,
+    "f0": 183.9
+  },
+  "brother": {
+    "generatedVoiceId": "IRGPSiyjpLdMfh3zNzFo",
+    "voiceId": "IRGPSiyjpLdMfh3zNzFo",
+    "file": "brother-1.mp3",
+    "cer": 0.048,
+    "f0": 122.1
+  },
+  "friend": {
+    "generatedVoiceId": "YFFd51gsFa9VT4xGD15W",
+    "voiceId": "YFFd51gsFa9VT4xGD15W",
+    "file": "friend-2.mp3",
+    "cer": 0.018,
+    "f0": 238.8
+  },
+  "colleague": {
+    "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+    "source": "existing: KG-teacher (voice-samples/half-hour-2d), спокойный деловой женский голос"
+  }
+}
