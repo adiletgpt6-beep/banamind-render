@@ -1,0 +1,186 @@
+{
+  "hash": "4cfdf6e46ca7b827",
+  "done": true,
+  "samples": [
+    {
+      "role": "narrator",
+      "voice": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "id": "N01",
+      "file": "narrator-KG-teacher-N01.mp3",
+      "text": "Апасы чемоданын ачты. Иш кагаздары салынган папканы ичине салып, кайра столго койду.",
+      "speechSec": 6,
+      "heard": "апасы чымаданан ачты ишкагаздары салынган пакканы ичене салып кайра столго койду",
+      "cer": 0.074,
+      "f0": 228.6,
+      "profile": {
+        "age": 37.5,
+        "female": 0.995,
+        "male": 0.005,
+        "child": 0
+      }
+    },
+    {
+      "role": "narrator",
+      "voice": "KG-friend",
+      "voiceId": "YFFd51gsFa9VT4xGD15W",
+      "id": "N01",
+      "file": "narrator-KG-friend-N01.mp3",
+      "text": "Апасы чемоданын ачты. Иш кагаздары салынган папканы ичине салып, кайра столго койду.",
+      "speechSec": 5.74,
+      "heard": "апасы чымаданын ачты иш кагаздары салынган папканы ичине салып кайрастолго койду",
+      "cer": 0.037,
+      "f0": 219.2,
+      "profile": {
+        "age": 29.3,
+        "female": 0.989,
+        "male": 0.011,
+        "child": 0.001
+      }
+    },
+    {
+      "role": "mother",
+      "voice": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "id": "M01",
+      "file": "mother-KG-mother-M01.mp3",
+      "text": "Мен али кете элекмин.",
+      "speechSec": 1.13,
+      "heard": "мен али кетеликмин",
+      "cer": 0.15,
+      "f0": 231.9,
+      "profile": {
+        "age": 26.3,
+        "female": 0.988,
+        "male": 0.012,
+        "child": 0
+      }
+    },
+    {
+      "role": "father",
+      "voice": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "id": "P01",
+      "file": "father-KG-husband-P01.mp3",
+      "text": "Баяндамага өзүң даярдандың да.",
+      "speechSec": 1.86,
+      "heard": "баяндамага өзумндаярдандыңды",
+      "cer": 0.172,
+      "f0": 112.7,
+      "profile": {
+        "age": 34.5,
+        "female": 0.001,
+        "male": 0.999,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "id": "C01",
+      "file": "son-KG-boy_a2-3-C01.mp3",
+      "text": "Апа, командировкадан келип калдыңбы?",
+      "speechSec": 1.94,
+      "heard": "апа командировкадан керип калдымбы",
+      "cer": 0.059,
+      "f0": 275.9,
+      "profile": {
+        "age": 34.1,
+        "female": 0.961,
+        "male": 0.039,
+        "child": 0.001
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "id": "C04",
+      "file": "son-KG-boy_a2-3-C04.mp3",
+      "text": "Эми аларга эмне айтып бергениңди мага да көрсөтчү.",
+      "speechSec": 2.85,
+      "heard": "эми аларга эмне айтып бергениңди мага да көрсөтчү",
+      "cer": 0,
+      "f0": 301.9,
+      "profile": {
+        "age": 39.2,
+        "female": 0.989,
+        "male": 0.011,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "id": "C01",
+      "file": "son-KG-son_v7_remix-2-C01.mp3",
+      "text": "Апа, командировкадан келип калдыңбы?",
+      "speechSec": 1.86,
+      "heard": "апа коммандировкадан келип калдымбы",
+      "cer": 0.059,
+      "f0": 258.1,
+      "profile": {
+        "age": 32.2,
+        "female": 0.944,
+        "male": 0.055,
+        "child": 0.001
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "id": "C04",
+      "file": "son-KG-son_v7_remix-2-C04.mp3",
+      "text": "Эми аларга эмне айтып бергениңди мага да көрсөтчү.",
+      "speechSec": 2.85,
+      "heard": "эми аларга эмне айтып бергениңди мага да көрсөтчү",
+      "cer": 0,
+      "f0": 271.2,
+      "profile": {
+        "age": 44.2,
+        "female": 0.991,
+        "male": 0.009,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "id": "C01",
+      "file": "son-KG-son-C01.mp3",
+      "text": "Апа, командировкадан келип калдыңбы?",
+      "speechSec": 2.21,
+      "heard": "апа командировкадан келип калдыңбы",
+      "cer": 0,
+      "f0": 372.1,
+      "profile": {
+        "age": 23.7,
+        "female": 0.958,
+        "male": 0.029,
+        "child": 0.013
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "id": "C04",
+      "file": "son-KG-son-C04.mp3",
+      "text": "Эми аларга эмне айтып бергениңди мага да көрсөтчү.",
+      "speechSec": 2.94,
+      "heard": "эми аларга эмне айтып бергениңди мага да көрсетжи",
+      "cer": 0.061,
+      "f0": 340.4,
+      "profile": {
+        "age": 23.9,
+        "female": 0.969,
+        "male": 0.023,
+        "child": 0.009
+      }
+    }
+  ]
+}
