@@ -1,0 +1,5 @@
+node_modules
+output/final/*.mp4
+output/final/*.bak
+output/previews/*.mp4
+output/**/*.bak

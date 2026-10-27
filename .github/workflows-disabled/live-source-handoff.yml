@@ -1,0 +1,136 @@
+name: BalaGo LIVE — secure R2 source for Claude Code
+
+# Бережный перенос исходника LIVE-NNN из приватного Cloudflare R2 в
+# приватный Actions Artifact (1 день). НЕ запускает AI, ASR, Remotion и рендер.
+# Путь к исходнику получается только из доверенной GitHub Issue LIVE-NNN,
+# а не из недоверенного текста комментария.
+#
+# Старт:
+#  - владелец пишет точно /prepare-source в карточке LIVE-NNN, ИЛИ
+#  - Actions → Run workflow → номер карточки (например 76).
+# Claude Code: gh run download <RUN_ID> -n LIVE-005-source-private -D /tmp/live005
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Номер карточки LIVE-NNN (например 76 для LIVE-005)"
+        required: true
+        type: string
+        default: "76"
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: live-source-handoff-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: false
+
+jobs:
+  handoff:
+    # Из комментариев разрешена только точная команда самого владельца.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issue_comment' &&
+      github.event.comment.user.login == 'adiletzainidinov' &&
+      github.event.comment.body == '/prepare-source' &&
+      !github.event.issue.pull_request)
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/balago-studio/package-lock.json
+
+      - name: Прочитать и проверить карточку LIVE в GitHub
+        id: locate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+          const n = Number(process.env.ISSUE_NUMBER);
+          if (!Number.isSafeInteger(n) || n < 1) throw new Error("Неверный номер карточки");
+          const u = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/issues/${n}`;
+          const res = await fetch(u, {
+            headers: {
+              Authorization: `Bearer ${process.env.GH_TOKEN}`,
+              Accept: "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+            },
+          });
+          if (!res.ok) throw new Error(`GitHub Issue #${n}: HTTP ${res.status}`);
+          const issue = await res.json();
+          if (issue.pull_request) throw new Error("Нужна карточка Issue, не PR");
+          const title = /^LIVE-(\d{3})(?:\s|$)/.exec(issue.title ?? "");
+          const source = /Ключ объекта:\s*`(live\/raw\/[0-9a-f-]{36}\/source\.(mp4|mov))`/.exec(issue.body ?? "");
+          if (!title || !source) throw new Error("В Issue не найден валидный LIVE-NNN и приватный исходник R2");
+          const id = `LIVE-${title[1]}`;
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,
+            `live_id=${id}\nobject_key=${source[1]}\nfile_name=source.${source[2]}\nissue_number=${n}\n`);
+          console.log(`Проверено: ${id}; ключ приватного источника взят из Issue #${n}.`);
+          NODE
+
+      - name: Проверить доступность R2 секретов (не печатать значения)
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          for key in R2_ACCOUNT_ID R2_BUCKET_NAME R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY; do
+            if [ -z "${!key}" ]; then
+              echo "::error::Отсутствует секрет $key"
+              exit 1
+            fi
+          done
+
+      - name: Скачать приватный исходник во временную папку runner
+        working-directory: apps/balago-studio
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          SOURCE_KEY: ${{ steps.locate.outputs.object_key }}
+          SOURCE_FILE: ${{ steps.locate.outputs.file_name }}
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-audit --no-fund
+          node scripts/fetch-source.mjs "$SOURCE_KEY" "$RUNNER_TEMP/live-source/$SOURCE_FILE"
+          test -s "$RUNNER_TEMP/live-source/$SOURCE_FILE"
+
+      - name: Сохранить только приватный исходник (без релиза и коммита)
+        id: artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.locate.outputs.live_id }}-source-private
+          path: ${{ runner.temp }}/live-source/source.*
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
+
+      - name: Записать защищённую ссылку и подсказку в LIVE Issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ steps.locate.outputs.issue_number }}
+          LIVE: ${{ steps.locate.outputs.live_id }}
+          ARTIFACT_URL: ${{ steps.artifact.outputs.artifact-url }}
+          ARTIFACT_NAME: ${{ steps.locate.outputs.live_id }}-source-private
+        run: |
+          {
+            echo "### ✅ $LIVE: исходник безопасно получен из R2"
+            echo "- [Закрытый Actions Artifact (доступ только к приватному репозиторию)]($ARTIFACT_URL)"
+            echo "- Срок хранения 1 день; исходник не публиковался и не коммитился."
+            echo "- Для Claude Code (в терминале): gh run download $GITHUB_RUN_ID -n $ARTIFACT_NAME -D /tmp/balago-$LIVE"
+            echo "- Дальше — анализ речи и монтажа, отдельная композиция и только превью 540×960. **Рендер не запускался.**"
+          } > "$RUNNER_TEMP/live-handoff-comment.md"
+          cat "$RUNNER_TEMP/live-handoff-comment.md" >> "$GITHUB_STEP_SUMMARY"
+          gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/live-handoff-comment.md"
