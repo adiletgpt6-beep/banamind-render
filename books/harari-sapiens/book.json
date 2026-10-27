@@ -1,0 +1,20 @@
+{
+  "slug": "harari-sapiens",
+  "title": "Sapiens. Краткая история человечества",
+  "author": "Юваль Ной Харари",
+  "collection": "перевод с английского Любови Сумм",
+  "channel": "BanaMind",
+  "source": "Только TXT владельца (FB2 → TXT, SHA-256 debb2653…ecf6f4); карта источников — books/harari-sapiens/source/SOURCE_MAP.md. Текст книги в репозиторий не загружается.",
+  "lesson": {
+    "dir": "books/harari-sapiens",
+    "timeline": "scripts/lesson-sapiens/lib.mjs",
+    "remotionEntry": "src/lesson-sapiens/index.ts",
+    "composition": "SapiensLesson",
+    "workflow": ".github/workflows/lesson-sapiens.yml",
+    "release": "lesson-sapiens-bm013",
+    "asset": "sapiens_bm013_30min.mp4"
+  },
+  "release": "book-harari-sapiens",
+  "rights": "PUBLICATION_RIGHTS_UNVERIFIED — приватный предпросмотр; публичная публикация и монетизация заблокированы до проверки прав.",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "≈30:00" }
+}
