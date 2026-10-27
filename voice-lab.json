@@ -1,0 +1,14 @@
+{
+  "outDir": "voice-samples/founder-story",
+  "model": "eleven_v3",
+  "seed": 41,
+  "voiceSettings": { "stability": 0.5, "similarity_boost": 0.8 },
+  "sharedLanguages": [],
+  "sampleText": "[warm] Мен Адилетмин. Төрт жылдан бери такси айдайм. Балдарга араб тилин окуткам. БалаГонун идеясы ушул муктаждыктан жаралды.",
+  "candidates": [
+    { "name": "Eric", "id": "cjVigY5qzO86Huf0OWal" },
+    { "name": "Brian", "id": "nPczCjzI2devNBz1zQrb" },
+    { "name": "George", "id": "JBFqnCBsd6RMkjVDRZzb" }
+  ],
+  "variants": [{ "id": "founder" }]
+}
