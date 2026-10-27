@@ -1,0 +1,102 @@
+{
+  "slug": "22-laws-of-marketing",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 153,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 135,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 151,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 151,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 137,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 22,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 67.6
+      },
+      {
+        "pair": "1-3",
+        "diff": 75
+      },
+      {
+        "pair": "1-4",
+        "diff": 71.1
+      },
+      {
+        "pair": "1-5",
+        "diff": 85.4
+      },
+      {
+        "pair": "2-3",
+        "diff": 74.8
+      },
+      {
+        "pair": "2-4",
+        "diff": 82.1
+      },
+      {
+        "pair": "2-5",
+        "diff": 63.6
+      },
+      {
+        "pair": "3-4",
+        "diff": 85.9
+      },
+      {
+        "pair": "3-5",
+        "diff": 92.7
+      },
+      {
+        "pair": "4-5",
+        "diff": 90.6
+      }
+    ],
+    "min": 63.6,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
