@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "9c05c22b91f935b4cf37f4f98753b3fc2d511f50",
+  "source_branches": [
+    "feature/trip-questions-60s"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 1,
+  "withheld_file_counts": {
+    "private_source_or_binary": 27
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
