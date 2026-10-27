@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "bbf73523e05fab034e85774ce0e6f24335777adf",
+  "source_branches": [
+    "claude/audio-review-analyzer-rgg1fw"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 2,
+  "withheld_file_counts": {
+    "private_source_or_binary": 110
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
