@@ -1,0 +1,283 @@
+name: BanaMind BM-036 — Десятая монета (фильм 30 мин, 16:9)
+
+# Оригинальный анимационный обзор книги с бананом-ведущим (BanaMind, не реклама BalaGo):
+# правила BalaGo о контактах/Бишкеке/кыргызской озвучке к нему не применяются.
+# Своя точка входа Remotion src/books/richest-man-in-babylon-clason/film/index.ts, другие книги не трогает.
+#
+# Запуск — только явной меткой в ЗАГОЛОВКЕ коммита (первая строка) (экономия минут и квоты озвучки):
+#   [pilot] → озвучка только сцен пилота, рендер Bm036Pilot (30–75 с), релиз bm036-pilot.mp4
+#   [full]  → озвучка всего сценария (готовые реплики с тем же хэшем переиспользуются),
+#             рендер 8 частями, сборка final-youtube.mp4 + SRT, проверка, превью 960×540
+#   [voice] → только озвучка (без рендера)
+#   [assets] → без озвучки и рендера: в релиз — thumbnail-contact-sheet.jpg и документы
+#             (SCRIPT, STORYBOARD, SOURCE_MAP, COVERAGE, BRIEF, IMPROVEMENTS_100, QA)
+# Файлы — в приватный pre-release book-richest-man-in-babylon-clason (репозиторий приватный,
+# нужен вход в GitHub). На YouTube ничего не публикуется.
+
+on:
+  push:
+    paths:
+      - "src/books/richest-man-in-babylon-clason/**"
+      - "src/banana-host/**"
+      - "src/banamind/**"
+      - "scripts/books/bm036/**"
+      - "public/bm036/**"
+      - "books/richest-man-in-babylon-clason/scripts/**"
+      - ".github/workflows/bm036-film.yml"
+
+concurrency:
+  group: bm036-film-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  RELEASE: book-richest-man-in-babylon-clason
+
+jobs:
+  voice:
+    if: contains(github.event.head_commit.message, '[pilot]') || contains(github.event.head_commit.message, '[full]') || contains(github.event.head_commit.message, '[voice]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.plan.outputs.ranges }}
+      render: ${{ steps.plan.outputs.render }}
+      scope: ${{ steps.scope.outputs.scope }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Scope
+        id: scope
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          MSG=$(printf '%s\n' "$MSG" | head -n1) # метка — только в заголовке коммита
+          if [[ "$MSG" == *"[full]"* ]]; then S=full; elif [[ "$MSG" == *"[pilot]"* ]]; then S=pilot; else S=voice; fi
+          echo "scope=$S" >> "$GITHUB_OUTPUT"; echo "scope=$S"
+
+      - name: ElevenLabs quota (info)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit','next_character_count_reset_unix')} if 'tier' in d else d)" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          VOICE_SCOPE: ${{ steps.scope.outputs.scope == 'pilot' && 'pilot' || 'full' }}
+        run: node scripts/books/bm036/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          [ -d public/bm036/voice ] && git add public/bm036/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(bm036): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Tests and render plan
+        id: plan
+        env:
+          BM036_SCOPE: ${{ steps.scope.outputs.scope == 'pilot' && 'pilot' || 'full' }}
+        run: |
+          node --test scripts/books/bm036/*.test.mjs
+          N=8; [ "$BM036_SCOPE" = pilot ] && N=1
+          P=$(node scripts/books/bm036/frames.mjs $N)
+          echo "$P" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+          if [ "${{ steps.scope.outputs.scope }}" = voice ]; then echo "render=false" >> "$GITHUB_OUTPUT"; else echo "render=true" >> "$GITHUB_OUTPUT"; fi
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.render == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        env:
+          COMP: ${{ needs.voice.outputs.scope == 'pilot' && 'Bm036Pilot' || 'Bm036Film' }}
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/books/richest-man-in-babylon-clason/film/index.ts "$COMP" "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bm036-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    permissions:
+      contents: write
+    env:
+      BM036_SCOPE: ${{ needs.voice.outputs.scope == 'pilot' && 'pilot' || 'full' }}
+      OUT: ${{ needs.voice.outputs.scope == 'pilot' && 'bm036-pilot' || 'final-youtube' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: bm036-part-*
+          path: out/parts
+          merge-multiple: true
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart), SRT
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          node scripts/books/bm036/mixdown.mjs out/audio.wav
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -af loudnorm=I=-16:TP=-1.5:LRA=11 -shortest -movflags +faststart "out/$OUT.mp4"
+          node scripts/books/bm036/srt.mjs "out/$OUT.srt"
+
+      - name: Verify MP4
+        run: node scripts/books/bm036/verify.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Preview copy (960×540) and check frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 26 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-preview-960x540.mp4"
+          # тестовый пилот: первые 60 с (вступление и первая схема) отдельным файлом, 1920×1080
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -t 60 -c:v libx264 -preset medium -crf 18 \
+            -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart "out/$OUT-pilot-60s.mp4"
+          mkdir -p out/frames
+          D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "out/$OUT.mp4")
+          for k in 1 2 3 4 5 6 7 8 9 10 11; do
+            s=$(python3 -c "print(round($D*$k/12,1))")
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/$OUT.mp4" -frames:v 1 -vf scale=960:-2 "out/frames/$OUT-$(printf %02d $k).jpg"
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bm036-${{ env.OUT }}
+          path: |
+            out/${{ env.OUT }}.mp4
+            out/${{ env.OUT }}-preview-960x540.mp4
+            out/${{ env.OUT }}-pilot-60s.mp4
+            out/${{ env.OUT }}.srt
+            out/frames/*.jpg
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Private pre-release (owner-only, repository is private)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NOTES="BanaMind BM-036 «Десятая монета» — оригинальный анимационный фильм (русский, 1920×1080, 30 fps, H.264/AAC). ЧАСТНЫЙ QA, не для публикации: на YouTube ничего не публикуется автоматически. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$RELEASE" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$RELEASE" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease
+          else
+            gh release create "$RELEASE" -R "$GITHUB_REPOSITORY" --title "BanaMind BM-036 — Десятая монета (частный QA)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber "out/$OUT.mp4" "out/$OUT-preview-960x540.mp4" "out/$OUT-pilot-60s.mp4" "out/$OUT.srt" out/frames/*.jpg
+          {
+            echo "### Файлы (приватный репозиторий — нужен вход в GitHub)"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$RELEASE/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$RELEASE/$OUT-preview-960x540.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$RELEASE/$OUT.srt"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  assets:
+    if: contains(github.event.head_commit.message, '[assets]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload contact sheet and production docs to the private pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          D=books/richest-man-in-babylon-clason
+          gh release view "$RELEASE" -R "$GITHUB_REPOSITORY" >/dev/null
+          gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber \
+            $D/thumbnails/thumbnail-0*.jpg $D/thumbnails/thumbnail-contact-sheet.jpg $D/thumbnails/readability-320x180.jpg \
+            $D/scripts/SCRIPT.md $D/scripts/STORYBOARD.md $D/scripts/SOURCE_MAP.md $D/scripts/COVERAGE.md \
+            $D/scripts/BRIEF.md $D/scripts/IMPROVEMENTS_100.md $D/QA.md $D/metadata/YOUTUBE_TITLES.md
+          {
+            echo "### Документы и лист обложек (приватный репозиторий — нужен вход в GitHub)"
+            for f in thumbnail-01.jpg thumbnail-02.jpg thumbnail-03.jpg thumbnail-04.jpg thumbnail-05.jpg thumbnail-contact-sheet.jpg SCRIPT.md SOURCE_MAP.md QA.md; do
+              echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$RELEASE/$f"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
