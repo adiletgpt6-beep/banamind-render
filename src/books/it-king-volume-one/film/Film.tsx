@@ -1,0 +1,62 @@
+// Фильм BM-020 целиком: фон, сцены точечной графики по тайм-лайну озвучки,
+// банан-ведущий, подпись главы и анимированные титры BanaMind.
+// Без таймеров, прогресс-баров и рабочего UI в кадре.
+import React from "react";
+import { AbsoluteFill, interpolate, Sequence, useCurrentFrame } from "remotion";
+import "../../../banamind/fonts";
+import { BanaMindAnimatedCaptions } from "../../../banamind/captions";
+import { Background } from "./components/Background";
+import { ChapterTag } from "./components/ChapterTag";
+import { Host } from "./components/Host";
+import { IT_CAPTIONS, type Cue } from "./captions";
+import { FPS } from "./theme";
+import type { Timeline, TimedScene } from "./timeline";
+import type { HostSpot, Scene } from "./types";
+import { VISUALS } from "./visuals";
+import { clamp01, easeInOut } from "./visuals/dots";
+
+// куда сдвигать титры, чтобы не закрывать банана
+const SUB_SHIFT: Record<HostSpot, number> = { center: 0, close: 0, left: 190, right: -190, corner: 110, off: 0, peek: -260 };
+
+const SceneView: React.FC<{ sc: Scene; ts: TimedScene }> = ({ sc, ts }) => {
+  const t = useCurrentFrame() / FPS;
+  const dur = ts.to - ts.from;
+  const V = VISUALS[sc.visual.kind];
+  if (!V) throw new Error(`Нет визуала ${sc.visual.kind}`);
+  const inK = interpolate(t, [0, 0.6], [0, 1], { extrapolateRight: "clamp", easing: easeInOut });
+  const outK = interpolate(t, [dur - 0.45, dur], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: easeInOut });
+  const k = clamp01(Math.min(inK, outK));
+  const beats = ts.lines.map((l) => l.speechFrom - ts.from);
+  const ends = ts.lines.map((l) => l.speechTo - ts.from);
+  return (
+    <AbsoluteFill style={{ opacity: k }}>
+      <svg viewBox="0 0 1920 1080" width={1920} height={1080}>
+        <V t={t} dur={dur} beats={beats} ends={ends} p={{ ...sc.visual, host: sc.host }} />
+      </svg>
+    </AbsoluteFill>
+  );
+};
+
+export const Film: React.FC<{ tl: Timeline; scenes: Scene[]; cues: Cue[] }> = ({ tl, scenes, cues }) => {
+  const t = useCurrentFrame() / FPS;
+  let si = 0;
+  while (si + 1 < tl.scenes.length && tl.scenes[si + 1].from <= t) si++;
+  const sc = scenes[si];
+  // подпись главы держится, пока не сменится текст
+  let tagFrom = si;
+  while (tagFrom > 0 && scenes[tagFrom - 1].tag === sc.tag) tagFrom--;
+  const sceneOfLine = (id: string) => tl.scenes.find((s) => s.lines.some((l) => l.id === id))?.id ?? "";
+  return (
+    <AbsoluteFill>
+      <Background />
+      {tl.scenes.map((ts, i) => (
+        <Sequence key={ts.id} from={Math.round(ts.from * FPS)} durationInFrames={Math.max(1, Math.round((ts.to - ts.from) * FPS))} layout="none">
+          <SceneView sc={scenes[i]} ts={ts} />
+        </Sequence>
+      ))}
+      <Host tl={tl} scenes={scenes} />
+      <ChapterTag text={sc.tag} since={tl.scenes[tagFrom].from} />
+      <BanaMindAnimatedCaptions cues={cues} shift={SUB_SHIFT[sc.host]} bottom={(c) => IT_CAPTIONS.lowScenes?.[sceneOfLine(c.lineId)]} accent={IT_CAPTIONS.accent} />
+    </AbsoluteFill>
+  );
+};

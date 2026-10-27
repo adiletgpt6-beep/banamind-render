@@ -1,0 +1,61 @@
+name: BalaGoLive04 — transcribe (MMS)
+
+# Черновая расшифровка живой речи четвёртого живого ролика с таймкодами
+# (Meta MMS, кыргызский адаптер) — основа для ручной сверки субтитров
+# в src/live04/transcript.ts. Исходники — из GitHub Release по GITHUB_TOKEN.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/live04/asr*.py"
+      - "scripts/live04/asr-checks.json"
+      - ".github/workflows/live04-transcribe.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  asr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Sources from Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/live04/fetch-sources.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-ts2d-asr.txt
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-ts2d-asr.txt
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+      - name: Transcribe (raw and cleaned voice)
+        run: |
+          mkdir -p out/live04-asr
+          SRC=public/live04/src/1000211283.mp4
+          ffmpeg -loglevel error -y -i "$SRC" -vn -ac 1 -ar 16000 out/live04-asr/raw.wav
+          ffmpeg -loglevel error -y -i "$SRC" -vn -ac 1 -ar 16000 -af "highpass=f=90,afftdn=nr=10:nf=-40,loudnorm=I=-18:TP=-2" out/live04-asr/clean.wav
+          python scripts/live04/asr.py out/live04-asr/raw.wav out/live04-asr/raw.json | tee out/live04-asr/raw.txt
+          python scripts/live04/asr.py out/live04-asr/clean.wav out/live04-asr/clean.json | tee out/live04-asr/clean.txt
+          python scripts/live04/asr_check.py out/live04-asr/raw.wav scripts/live04/asr-checks.json | tee out/live04-asr/checks.txt
+          { echo '```'; cat out/live04-asr/raw.txt out/live04-asr/checks.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balago-live04-asr
+          path: out/live04-asr/*.json
+          retention-days: 30

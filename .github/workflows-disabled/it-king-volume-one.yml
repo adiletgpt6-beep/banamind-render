@@ -1,0 +1,308 @@
+name: BanaMind BM-020 — «Оно», том 1 (банан, 16:9)
+
+# Аналитический фильм BanaMind по предоставленному первому тому «Оно» (не реклама
+# BalaGo): правила BalaGo о контактах/Бишкеке/кыргызской озвучке не применяются.
+# Своя точка входа Remotion src/books/it-king-volume-one/film/index.ts.
+# Запуск — только явным тегом в сообщении коммита (дорогие шаги не стартуют случайно):
+#   [it-pilot] → озвучка реплик пилота + рендер ItPilot (30–60 с) + релиз-пилот
+#   [it-voice] → озвучка всех реплик (сохраняется в ветку), без рендера
+#   [it-full]  → озвучка (готовые с тем же хэшем переиспользуются) + 8 частей кадров
+#                + сборка final-youtube.mp4/SRT + проверки + приватный релиз
+#   workflow_dispatch: mode = pilot | voice | full
+# Видео/обложки не публикуются на YouTube и не делаются публичными: репозиторий приватный,
+# ассеты релиза открываются только с доступом к репозиторию.
+
+on:
+  push:
+    branches:
+      - feature/banamind-bm-020-it-king-volume-one
+    paths:
+      - "src/books/it-king-volume-one/**"
+      - "scripts/it-king/**"
+      - "public/it-king/**"
+      - ".github/workflows/it-king-volume-one.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pilot | voice | full | publish"
+        required: true
+        default: pilot
+      run_id:
+        description: "publish: ID прогона с готовым артефактом it-king-final-youtube"
+        required: false
+
+concurrency:
+  group: it-king-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  RELEASE: book-it-king-volume-one
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.m.outputs.mode }}
+    steps:
+      - id: m
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+          INPUT: ${{ github.event.inputs.mode }}
+        run: |
+          mode=none
+          if [ -n "$INPUT" ]; then mode="$INPUT";
+          elif [[ "$MSG" == *"[it-full]"* ]]; then mode=full;
+          elif [[ "$MSG" == *"[it-voice]"* ]]; then mode=voice;
+          elif [[ "$MSG" == *"[it-pilot]"* ]]; then mode=pilot; fi
+          echo "mode=$mode" | tee -a "$GITHUB_OUTPUT"
+
+  voice:
+    needs: plan
+    if: needs.plan.outputs.mode != 'none' && needs.plan.outputs.mode != 'publish'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.chunks.outputs.ranges }}
+    env:
+      PILOT: ${{ needs.plan.outputs.mode == 'pilot' && '1' || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: ElevenLabs quota (info)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit','next_character_count_reset_unix')} if 'tier' in d else d)"
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/it-king/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always()
+        run: |
+          git add public/it-king/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(bm-020): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Tests and render plan
+        id: chunks
+        run: |
+          node --test scripts/it-king/*.test.mjs
+          node scripts/it-king/captions-check.mjs | tail -20
+          N=$([ "$PILOT" = 1 ] && echo 1 || echo 8)
+          P=$(node scripts/it-king/frames.mjs $N)
+          echo "$P"
+          echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: [plan, voice]
+    if: needs.plan.outputs.mode == 'pilot' || needs.plan.outputs.mode == 'full'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # системный FFmpeg для кадров не нужен (Remotion использует свой компоновщик);
+      # apt-get на раннерах иногда зависает на десятки минут
+      - run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        env:
+          COMP: ${{ needs.plan.outputs.mode == 'pilot' && 'ItPilot' || 'ItVolumeOne' }}
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/books/it-king-volume-one/film/index.ts "$COMP" "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: it-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [plan, voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    env:
+      PILOT: ${{ needs.plan.outputs.mode == 'pilot' && '1' || '0' }}
+      OUT: ${{ needs.plan.outputs.mode == 'pilot' && 'pilot-it-volume-one' || 'final-youtube' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: it-part-*
+          path: out/parts
+          merge-multiple: true
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart), SRT
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          node scripts/it-king/mixdown.mjs out/audio.wav
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "out/$OUT.mp4"
+          node scripts/it-king/srt.mjs "out/$OUT.srt"
+          node scripts/it-king/export-docs.mjs out/docs
+
+      - name: Verify MP4
+        run: node scripts/it-king/verify.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Preview copy and check frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 26 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-preview-960x540.mp4"
+          mkdir -p out/frames
+          D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "out/$OUT.mp4")
+          for f in 0.05 0.2 0.35 0.5 0.65 0.8 0.95; do
+            s=$(python3 -c "print(round($D*$f,2))")
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/$OUT.mp4" -frames:v 1 -vf scale=960:-2 "out/frames/$OUT-$f.jpg"
+          done
+          # проверка разборчивости в 640×360 (уменьшенные кадры)
+          for f in out/frames/*.jpg; do ffmpeg -hide_banner -loglevel error -y -i "$f" -vf scale=640:360 "${f%.jpg}-640x360.jpg"; done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: it-king-${{ env.OUT }}
+          path: |
+            out/${{ env.OUT }}.mp4
+            out/${{ env.OUT }}-preview-960x540.mp4
+            out/${{ env.OUT }}.srt
+            out/frames/*.jpg
+            out/docs/*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Private release (prerelease, repository access required)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NOTES="BanaMind BM-020 — Стивен Кинг «Оно», ПЕРВЫЙ ТОМ (главы 1–9, две интерлюдии): самостоятельный аналитический разбор, русский, 1920×1080, 30 fps, H.264/AAC. Не публиковать без подтверждения прав. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if ! gh release view "$RELEASE" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$RELEASE" -R "$GITHUB_REPOSITORY" --title "BanaMind BM-020 — «Оно», том 1 (приватно)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          else
+            gh release edit "$RELEASE" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease
+          fi
+          gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber "out/$OUT.mp4" "out/$OUT-preview-960x540.mp4" "out/$OUT.srt"
+          # обложки (оригиналы 1280×720), контакт-лист, проверка 320×180, метаданные YouTube
+          T=books/it-king-volume-one/thumbnails
+          gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber $T/thumbnail-0{1,2,3,4,5}.jpg $T/thumbnail-contact-sheet.jpg \
+            $T/readability-320x180.jpg books/it-king-volume-one/metadata/youtube.md
+          {
+            echo "### Файлы (нужен доступ к приватному репозиторию)"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$RELEASE/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$RELEASE/$OUT-preview-960x540.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$RELEASE/$OUT.srt"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # publish: без повторного рендера — готовый артефакт прошлого прогона → приватный релиз
+  publish:
+    needs: plan
+    if: needs.plan.outputs.mode == 'publish'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: it-king-final-youtube
+          path: out
+          run-id: ${{ github.event.inputs.run_id }}
+          github-token: ${{ github.token }}
+
+      - name: Check MP4 (ffprobe, если есть на раннере)
+        continue-on-error: true
+        run: |
+          ls -la out
+          ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate:format=duration,size -of compact out/final-youtube.mp4
+
+      - name: Private release (prerelease, repository access required)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SRC_RUN: ${{ github.event.inputs.run_id }}
+        run: |
+          NOTES="BanaMind BM-020 — Стивен Кинг «Оно», ПЕРВЫЙ ТОМ (главы 1–9, две интерлюдии): самостоятельный аналитический разбор, русский, 1920×1080, 30 fps, H.264/AAC. Рендер прогона ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${SRC_RUN}. Не публиковать без подтверждения прав."
+          if ! gh release view "$RELEASE" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$RELEASE" -R "$GITHUB_REPOSITORY" --title "BanaMind BM-020 — «Оно», том 1 (приватно)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release edit "$RELEASE" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease
+          fi
+          T=books/it-king-volume-one/thumbnails
+          gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber out/final-youtube.mp4 out/final-youtube-preview-960x540.mp4 out/final-youtube.srt \
+            $T/thumbnail-0{1,2,3,4,5}.jpg $T/thumbnail-contact-sheet.jpg $T/readability-320x180.jpg
+          gh release view "$RELEASE" -R "$GITHUB_REPOSITORY" --json assets -q '.assets[] | "\(.name) \(.size)"' | tee -a "$GITHUB_STEP_SUMMARY"

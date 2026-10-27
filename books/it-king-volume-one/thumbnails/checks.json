@@ -1,0 +1,102 @@
+{
+  "slug": "it-king-volume-one",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 175,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 201,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 166,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 104,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 252,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 14,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 45.1
+      },
+      {
+        "pair": "1-3",
+        "diff": 25
+      },
+      {
+        "pair": "1-4",
+        "diff": 41.1
+      },
+      {
+        "pair": "1-5",
+        "diff": 47.4
+      },
+      {
+        "pair": "2-3",
+        "diff": 45.7
+      },
+      {
+        "pair": "2-4",
+        "diff": 41.4
+      },
+      {
+        "pair": "2-5",
+        "diff": 42.3
+      },
+      {
+        "pair": "3-4",
+        "diff": 41.7
+      },
+      {
+        "pair": "3-5",
+        "diff": 48.2
+      },
+      {
+        "pair": "4-5",
+        "diff": 44.9
+      }
+    ],
+    "min": 25,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
