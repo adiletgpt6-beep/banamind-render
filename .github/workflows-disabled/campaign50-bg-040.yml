@@ -1,0 +1,256 @@
+name: BalaGo-50 BG-040 (выпуск №40, «Убакыттын да баасы бар»)
+
+# Собирается ТОЛЬКО композиция BalaGoBG040 (точка входа
+# src/campaign50/bg-040/index.ts). Прежние ролики и соседние выпуски здесь
+# не рендерятся; общий render.yml игнорирует пути campaign50 (paths-ignore).
+# Этап — scripts/campaign50/bg-040/stage.json:
+#   "preview" → озвучка + облегчённый MP4 540×960 и контрольные кадры;
+#   "final"   → озвучка (из кэша) + оригинал 1080×1920/30 fps H.264/AAC
+#               и мобильная копия 540×960, обе с faststart.
+#   voice   → реплики ElevenLabs готовыми кыргызскими голосами проекта
+#             (3 дубля новой реплики, лучший по распознаванию MMS);
+#             готовые реплики (тот же хэш) не синтезируются повторно,
+#             новые файлы сохраняются в ветку.
+#   render  → lint/TypeScript, тесты, кадры, MP4; задача падает, если MP4
+#             не создан или формат/длительность/звук не те.
+#   publish → MP4 файлами предварительного релиза campaign50-bg-040-preview
+#             (прямые ссылки на MP4, не ZIP).
+
+on:
+  push:
+    paths:
+      - "src/campaign50/bg-040/**"
+      - "scripts/campaign50/bg-040/**"
+      - "public/audio/campaign50/bg-040/**"
+      - "public/assets/campaign50/bg-040/**"
+      - ".github/workflows/campaign50-bg-040.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: campaign50-bg-040-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: balago-bg-040
+  ENTRY: src/campaign50/bg-040/index.ts
+  TAG: campaign50-bg-040-preview
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    outputs:
+      stage: ${{ steps.stage.outputs.stage }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Stage
+        id: stage
+        run: |
+          STAGE=$(node -e 'console.log(JSON.parse(require("fs").readFileSync("scripts/campaign50/bg-040/stage.json","utf8")).stage)')
+          case "$STAGE" in preview|final) ;; *) echo "::error::неизвестный этап $STAGE"; exit 1 ;; esac
+          echo "stage=$STAGE" >> "$GITHUB_OUTPUT"
+          echo "Этап: $STAGE" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Voice cache check (no API call)
+        id: need
+        run: |
+          set +e
+          node scripts/campaign50/bg-040/voice.mjs --check
+          code=$?
+          set -e
+          if [ "$code" = "0" ]; then echo "synth=false" >> "$GITHUB_OUTPUT"; elif [ "$code" = "2" ]; then echo "synth=true" >> "$GITHUB_OUTPUT"; else exit "$code"; fi
+
+      - name: Install FFmpeg
+        if: steps.need.outputs.synth == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        if: steps.need.outputs.synth == 'true'
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-ts2d-asr.txt
+
+      - name: Install MMS speech recognition
+        if: steps.need.outputs.synth == 'true'
+        run: pip install --quiet -r scripts/requirements-ts2d-asr.txt
+
+      - name: Cache MMS model
+        if: steps.need.outputs.synth == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      - name: Voiceover (cached lines are reused)
+        if: steps.need.outputs.synth == 'true'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/campaign50/bg-040/voice.mjs
+
+      - name: Save new voice files to the branch
+        if: always() && steps.need.outputs.synth == 'true' && github.ref_name != 'main'
+        run: |
+          git add public/audio/campaign50/bg-040
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(bg-040): save voice files [skip ci]"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload voice files
+        if: always() && hashFiles('public/audio/campaign50/bg-040/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-bg-040-voice
+          path: public/audio/campaign50/bg-040/
+          retention-days: 30
+
+  render:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    outputs:
+      sha: ${{ steps.head.outputs.sha }}
+    steps:
+      # Голова ветки: в ней уже сохранённые задачей voice файлы.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Rendered commit
+        id: head
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npx eslint src/campaign50/bg-040 && npx tsc
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (texts, timeline, voice files)
+        env:
+          BG40_STRICT_VOICE: "1"
+        run: node --test scripts/campaign50/bg-040/bg040.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: |
+          for i in 1 2 3; do npx remotion browser ensure && exit 0; sleep 10; done
+          exit 1
+
+      - name: Render check frames (0/25/50/75/100 %, every scene)
+        run: node scripts/campaign50/bg-040/stills.mjs --scale=0.5 --sheet
+
+      - name: Render preview MP4 540×960
+        if: needs.voice.outputs.stage == 'preview'
+        run: |
+          npx remotion render "$ENTRY" BalaGoBG040 "out/$OUT-raw.mp4" --scale=0.5 --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --crf=22 --log=warn
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT-raw.mp4" -c copy -movflags +faststart "out/$OUT-preview-540x960.mp4"
+          rm "out/$OUT-raw.mp4"
+          node scripts/campaign50/bg-040/verify.mjs "out/$OUT-preview-540x960.mp4" --mobile
+
+      - name: Render final MP4 1080×1920 + mobile copy
+        if: needs.voice.outputs.stage == 'final'
+        run: |
+          npx remotion render "$ENTRY" BalaGoBG040 "out/$OUT-raw.mp4" --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --crf=18 --audio-bitrate=192k --log=warn
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT-raw.mp4" -c copy -movflags +faststart "out/$OUT.mp4"
+          rm "out/$OUT-raw.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+            -vf scale=540:960:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 24 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
+            "out/$OUT-mobile.mp4"
+          node scripts/campaign50/bg-040/verify.mjs "out/$OUT.mp4"
+          node scripts/campaign50/bg-040/verify.mjs "out/$OUT-mobile.mp4" --mobile
+
+      - name: List MP4
+        run: |
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+          sha256sum out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-bg-040-mp4
+          path: out/*.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-bg-040-frames
+          path: out/frames-bg-040/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  # MP4 — файлами предварительного релиза: прямые ссылки на MP4.
+  publish:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: balago-bg-040-mp4
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ needs.render.outputs.sha }}
+          STAGE: ${{ needs.voice.outputs.stage }}
+        run: |
+          ls -la out
+          NOTES="BalaGo-50 №40 / BG-040 «Убакыттын да баасы бар» — этап ${STAGE}, на просмотр владельцу (не принят). Ветка ${GITHUB_REF_NAME}, коммит ${SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          # Релиз пересоздаётся на отрендеренном коммите: тег указывает на
+          # него, а файлы прошлого этапа (например, превью) не остаются рядом
+          # с актуальными. Прямые ссылки (тег + имя файла) не меняются.
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release delete "$TAG" -R "$GITHUB_REPOSITORY" --cleanup-tag -y
+          fi
+          gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BalaGo-50 №40 BG-040 — Убакыттын да баасы бар (на просмотр)" --notes "$NOTES" --prerelease --target "$SHA" out/*.mp4
+          {
+            echo "### MP4 (${STAGE})"
+            for f in out/*.mp4; do echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$(basename "$f")"; done
+          } >> "$GITHUB_STEP_SUMMARY"
