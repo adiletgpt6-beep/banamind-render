@@ -1,0 +1,27 @@
+{
+  "id": "LIVE-NNN",
+  "title": "",
+  "status": "recorded",
+  "card": "",
+  "sources": {
+    "release": "",
+    "manifest": ""
+  },
+  "concept": {
+    "direction": "",
+    "idea": "",
+    "techniques": [],
+    "cta": "",
+    "city": ""
+  },
+  "versions": [
+    {
+      "version": "v1",
+      "composition": "",
+      "stage": "preview",
+      "previewTag": "",
+      "revision": 1,
+      "prepare": []
+    }
+  ]
+}

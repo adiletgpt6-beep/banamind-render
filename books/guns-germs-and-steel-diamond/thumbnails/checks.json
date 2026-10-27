@@ -1,0 +1,102 @@
+{
+  "slug": "guns-germs-and-steel-diamond",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 154,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 134,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 152,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 148,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 161,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 26,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 45.5
+      },
+      {
+        "pair": "1-3",
+        "diff": 107.6
+      },
+      {
+        "pair": "1-4",
+        "diff": 38.7
+      },
+      {
+        "pair": "1-5",
+        "diff": 119.9
+      },
+      {
+        "pair": "2-3",
+        "diff": 108.9
+      },
+      {
+        "pair": "2-4",
+        "diff": 37.1
+      },
+      {
+        "pair": "2-5",
+        "diff": 117.3
+      },
+      {
+        "pair": "3-4",
+        "diff": 109.2
+      },
+      {
+        "pair": "3-5",
+        "diff": 61.6
+      },
+      {
+        "pair": "4-5",
+        "diff": 116.3
+      }
+    ],
+    "min": 37.1,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
