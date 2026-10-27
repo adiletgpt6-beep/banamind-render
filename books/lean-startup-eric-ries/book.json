@@ -1,0 +1,26 @@
+{
+  "slug": "lean-startup-eric-ries",
+  "title": "Бизнес с нуля",
+  "author": "Эрик Рис",
+  "collection": "BanaMind BM-024",
+  "channel": "BanaMind",
+  "source": "Только файл владельца books/500-series/sources/BM-024 (русский перевод, строки L68–L1262); карта источника — books/lean-startup-eric-ries/scripts/",
+  "lesson": {
+    "dir": "books/lean-startup-eric-ries/scripts",
+    "timeline": "scripts/books/lsr/lib.mjs",
+    "remotionEntry": "src/books/lean-startup-eric-ries/film/index.ts",
+    "composition": "LsrFilm",
+    "workflow": ".github/workflows/lsr-film.yml",
+    "release": "book-lean-startup-eric-ries",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-lean-startup-eric-ries",
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "codec": "h264",
+    "audio": "aac",
+    "duration": "30:00"
+  }
+}
