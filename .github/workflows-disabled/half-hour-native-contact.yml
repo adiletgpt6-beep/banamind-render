@@ -1,0 +1,36 @@
+name: Half-hour native contact sheets
+on:
+  push:
+    branches: [feature/work-half-hour]
+    paths: [.github/workflows/half-hour-native-contact.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  contact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+      - uses: actions/download-artifact@v4
+        with:
+          name: half-hour-polish-review
+          run-id: 37234741549
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: out/previous-review
+      - name: Label actual native frames and movements
+        env:
+          HH_PREVIOUS_TAG: 0a64
+        run: |
+          python3 -m py_compile scripts/half-hour-contact-review.py scripts/verify-half-hour-audio.py scripts/assemble-half-hour.py
+          node --check scripts/render-half-hour-final.mjs
+          python3 scripts/half-hour-contact-review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: half-hour-native-contacts-0a64
+          path: out/contact-review/*.jpg
+          retention-days: 30
+# Review uses exact video frame count, excluding AAC container padding.

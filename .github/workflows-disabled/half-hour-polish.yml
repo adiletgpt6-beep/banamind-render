@@ -1,0 +1,153 @@
+name: Half-hour 3D review
+on:
+  push:
+    branches: [codex/half-hour-polish, feature/work-half-hour]
+    paths:
+      - src/half-hour/**
+      - src/BalaGoHalfHour.tsx
+      - scripts/generate-hh-voice.mjs
+      - scripts/render-half-hour-polish.mjs
+      - .github/workflows/half-hour-polish.yml
+      - public/assets/half-hour/**
+  workflow_dispatch:
+concurrency:
+  group: half-hour-polish-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: write
+  actions: read
+jobs:
+  polish:
+    if: github.event_name != 'push' || !contains(github.event.head_commit.message, '[hh-final-render]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      HH_FULL_RENDER: 'false'
+      HH_REVIEW_FRAMES: '0,1,2,8,11,16,18,24,26,32,36,39,46,57.5,65.5,66.4,67,71,74,77,80,85.6,89,91.5,93.5,97,102,106,108.3,111,113.2,117'
+      HH_REVIEW_CLIPS: ''
+      HH_STILLS_ONLY: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: npm run lint
+      - name: Reuse or generate Kyrgyz dialogue
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/generate-hh-voice.mjs
+      - run: npm run test:half-hour
+      - name: Save paid narration
+        if: always() && github.ref_name != 'main'
+        run: |
+          git add public/audio/half-hour
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore: save Kyrgyz dialogue for polished 3D film'
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+      - run: npx remotion browser ensure
+      - uses: actions/download-artifact@v4
+        with:
+          name: half-hour-polish-review
+          run-id: 37231796688
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: out/previous-review
+      - name: Check release helper syntax
+        run: python3 -m py_compile scripts/publish-half-hour-release.py
+      - name: Verify actual head orientations
+        run: |
+          CPU_TIMES=65,65.5,66,66.2,66.33,66.4,66.5,67,68,71 CPU_OUT=out/camera-math node scripts/cpu/export.mjs
+          CPU_RANGE=2730,2849 CPU_OUT=out/gaze-math node scripts/cpu/export.mjs
+          python3 - <<'PY'
+          import json, math
+          from pathlib import Path
+          result = []
+          for p in sorted(Path("out/camera-math").glob("frame-*.json")):
+              f = json.loads(p.read_text())
+              row = {"time": f["time"], "characters": f["characters"], "camera": f["camera"]}
+              if f["time"] < 68.2:
+                  mom = next(c for c in f["characters"] if c["root"][2] > 3.8 and 0 <= c["root"][0] <= 0.5)
+                  assert mom["frontDot"] > 0.25, row
+              result.append(row)
+          Path("out/camera-orientation.json").write_text(json.dumps(result, indent=2))
+          print("HH_CAMERA_ORIENTATION", json.dumps(result))
+          previous = None
+          max_step = 0
+          for p in sorted(Path("out/gaze-math").glob("frame-*.json")):
+              f = json.loads(p.read_text())
+              head = f["characters"][0]
+              assert head["frontDot"] > 0.35, (f["time"], head)
+              if previous:
+                  dot = sum(a*b for a,b in zip(previous, head["forward"]))
+                  max_step = max(max_step, math.degrees(math.acos(max(-1, min(1, dot)))))
+              previous = head["forward"]
+          assert max_step < 5, ("Fast gaze change", max_step)
+          print("HH_GAZE_MAX_STEP_DEGREES", max_step)
+          PY
+      - name: Render review frames and motion
+        run: node scripts/render-half-hour-polish.mjs
+      - name: Build labelled native review sheets
+        if: always()
+        run: python3 scripts/half-hour-contact-review.py
+      - name: Prepare phone copy
+        if: env.HH_FULL_RENDER == 'true'
+        run: |
+          ffmpeg -v error -i out/balago-half-hour-polished.mp4 -vf scale=540:960 -c:v libx264 -crf 27 -preset medium -c:a aac -b:a 128k -movflags +faststart out/balago-half-hour-polished-small.mp4
+          ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate:format=duration -of default=nw=1 out/balago-half-hour-polished.mp4
+          ffmpeg -hide_banner -nostats -i out/balago-half-hour-polished.mp4 -vn -af ebur128=peak=true -f null - 2>&1 | tail -12
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: half-hour-polish-review
+          path: |
+            out/polish-frames
+            out/polish-opening.mp4
+            out/polish-teacher.mp4
+            out/polish-pickup.mp4
+            out/polish-phone.mp4
+            out/polish-walk.mp4
+            out/polish-seat.mp4
+            out/polish-fatigue.mp4
+            out/polish-transfer.mp4
+            out/polish-colleague.mp4
+            out/polish-arrival.mp4
+            out/contact-review
+            out/camera-orientation.json
+            public/audio/half-hour
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: half-hour-source-assets
+          path: |
+            public/models
+            public/fonts
+            public/assets/logo.png
+            public/assets/half-hour/bishkek-panorama-v2.png
+            public/audio/half-hour
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: half-hour-soundscape
+          path: |
+            public/audio/music-story-*.mp3
+            public/audio/sfx-*.mp3
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: env.HH_FULL_RENDER == 'true'
+        with:
+          name: half-hour-polished-full
+          path: out/balago-half-hour-polished.mp4
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: env.HH_FULL_RENDER == 'true'
+        with:
+          name: half-hour-polished-phone
+          path: out/balago-half-hour-polished-small.mp4
+          retention-days: 30

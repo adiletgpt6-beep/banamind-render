@@ -1,0 +1,170 @@
+{
+  "cfgHash": "85ff4d35ad8ab0d0",
+  "library": [
+    {
+      "query": "boy",
+      "error": "401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission voices_read to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"8018ca60cfaf2f877bf67cd18beea3df\"}}"
+    },
+    {
+      "query": "kid",
+      "error": "401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission voices_read to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"30c9975f250db35e7bf67cd18beeaf1b\"}}"
+    },
+    {
+      "query": "child",
+      "error": "401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission voices_read to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"ba0eaac5d8a9cacb7bf67cd18beea55e\"}}"
+    },
+    {
+      "query": "young boy",
+      "error": "401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission voices_read to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"f52aa70380725b567bf67cd18beea10a\"}}"
+    }
+  ],
+  "samples": [
+    {
+      "voice": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "source": "premade",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-Jessica-1.mp3"
+    },
+    {
+      "voice": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "source": "premade",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-Jessica-2.mp3"
+    },
+    {
+      "voice": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "source": "premade",
+      "text": "Мен өзүм күтүп турдум. Сенин телефонуң өчүк беле?",
+      "file": "son-Jessica-3.mp3"
+    },
+    {
+      "voice": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "source": "premade",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-Laura-1.mp3"
+    },
+    {
+      "voice": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "source": "premade",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-Laura-2.mp3"
+    },
+    {
+      "voice": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "source": "premade",
+      "text": "Мен өзүм күтүп турдум. Сенин телефонуң өчүк беле?",
+      "file": "son-Laura-3.mp3"
+    },
+    {
+      "voice": "Charlotte",
+      "voiceId": "XB0fDUnXU5powFXDhCwa",
+      "source": "premade",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-Charlotte-1.mp3"
+    },
+    {
+      "voice": "Charlotte",
+      "voiceId": "XB0fDUnXU5powFXDhCwa",
+      "source": "premade",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-Charlotte-2.mp3"
+    },
+    {
+      "voice": "Charlotte",
+      "voiceId": "XB0fDUnXU5powFXDhCwa",
+      "source": "premade",
+      "text": "Мен өзүм күтүп турдум. Сенин телефонуң өчүк беле?",
+      "file": "son-Charlotte-3.mp3"
+    },
+    {
+      "voice": "River",
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "source": "premade",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-River-1.mp3"
+    },
+    {
+      "voice": "River",
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "source": "premade",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-River-2.mp3"
+    },
+    {
+      "voice": "River",
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "source": "premade",
+      "text": "Мен өзүм күтүп турдум. Сенин телефонуң өчүк беле?",
+      "file": "son-River-3.mp3"
+    },
+    {
+      "voice": "Lily",
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "source": "premade",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-Lily-1.mp3"
+    },
+    {
+      "voice": "Lily",
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "source": "premade",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-Lily-2.mp3"
+    },
+    {
+      "voice": "Lily",
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "source": "premade",
+      "text": "Мен өзүм күтүп турдум. Сенин телефонуң өчүк беле?",
+      "file": "son-Lily-3.mp3"
+    },
+    {
+      "voice": "Charlie",
+      "voiceId": "IKne3meq5aSn9XLyUdCD",
+      "source": "premade",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-Charlie-1.mp3"
+    },
+    {
+      "voice": "Charlie",
+      "voiceId": "IKne3meq5aSn9XLyUdCD",
+      "source": "premade",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-Charlie-2.mp3"
+    },
+    {
+      "voice": "Charlie",
+      "voiceId": "IKne3meq5aSn9XLyUdCD",
+      "source": "premade",
+      "text": "Мен өзүм күтүп турдум. Сенин телефонуң өчүк беле?",
+      "file": "son-Charlie-3.mp3"
+    },
+    {
+      "voice": "Will",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "source": "premade",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-Will-1.mp3"
+    },
+    {
+      "voice": "Will",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "source": "premade",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-Will-2.mp3"
+    },
+    {
+      "voice": "Will",
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "source": "premade",
+      "text": "Мен өзүм күтүп турдум. Сенин телефонуң өчүк беле?",
+      "file": "son-Will-3.mp3"
+    }
+  ]
+}

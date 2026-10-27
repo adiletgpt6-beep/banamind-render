@@ -1,0 +1,84 @@
+{
+  "takes": [
+    {
+      "id": "m03",
+      "seed": 101,
+      "tag": null,
+      "text": "Гүлзат эже, рахмат. Кечиресиз, кечигип калдым.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m03-s101.mp3"
+    },
+    {
+      "id": "m03",
+      "seed": 202,
+      "tag": null,
+      "text": "Гүлзат эже, рахмат. Кечиресиз, кечигип калдым.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m03-s202.mp3"
+    },
+    {
+      "id": "m03",
+      "seed": 303,
+      "tag": null,
+      "text": "Гүлзат эже, рахмат. Кечиресиз, кечигип калдым.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m03-s303.mp3"
+    },
+    {
+      "id": "m03",
+      "seed": 404,
+      "tag": null,
+      "text": "Гүлзат эже, рахмат. Кечиресиз, кечигип калдым.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m03-s404.mp3"
+    },
+    {
+      "id": "m06",
+      "seed": 101,
+      "tag": null,
+      "text": "Күн сайын же жумушка, же уулума кечигип жатам.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m06-s101.mp3"
+    },
+    {
+      "id": "m06",
+      "seed": 202,
+      "tag": null,
+      "text": "Күн сайын же жумушка, же уулума кечигип жатам.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m06-s202.mp3"
+    },
+    {
+      "id": "m06",
+      "seed": 303,
+      "tag": null,
+      "text": "Күн сайын же жумушка, же уулума кечигип жатам.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m06-s303.mp3"
+    },
+    {
+      "id": "m06",
+      "seed": 404,
+      "tag": null,
+      "text": "Күн сайын же жумушка, же уулума кечигип жатам.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m06-s404.mp3"
+    },
+    {
+      "id": "m03",
+      "seed": 101,
+      "tag": "pause",
+      "text": "Гүлзат эже... рахмат. Кечиресиз, кечигип калдым.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m03-s101-pause.mp3"
+    },
+    {
+      "id": "m03",
+      "seed": 202,
+      "tag": "pause",
+      "text": "Гүлзат эже... рахмат. Кечиресиз, кечигип калдым.",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "file": "m03-s202-pause.mp3"
+    }
+  ]
+}

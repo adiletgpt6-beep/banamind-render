@@ -1,0 +1,590 @@
+{
+  "video": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "nb_read_frames": "3600"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "nb_read_frames": "5625"
+      }
+    ],
+    "format": {
+      "duration": "120.000000"
+    }
+  },
+  "mobile": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 540,
+        "height": 960,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "nb_read_frames": "3600"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "nb_read_frames": "5625"
+      }
+    ],
+    "format": {
+      "duration": "120.000000"
+    }
+  },
+  "audio": {
+    "input_i": "-21.69",
+    "input_tp": "-5.52",
+    "input_lra": "13.80",
+    "input_thresh": "-32.56",
+    "output_i": "-17.93",
+    "output_tp": "-1.50",
+    "output_lra": "9.90",
+    "output_thresh": "-28.44",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.07",
+    "master_gain_db": 3.0199999999999996,
+    "final_integrated_expected": -18.67,
+    "final_peak_expected": -2.5
+  },
+  "final_audio": {
+    "input_i": "-18.69",
+    "input_tp": "-2.50",
+    "input_lra": "13.80",
+    "input_thresh": "-29.55",
+    "output_i": "-17.94",
+    "output_tp": "-1.50",
+    "output_lra": "9.90",
+    "output_thresh": "-28.45",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.06"
+  },
+  "mobile_audio": {
+    "input_i": "-18.70",
+    "input_tp": "-2.42",
+    "input_lra": "13.80",
+    "input_thresh": "-29.57",
+    "output_i": "-17.94",
+    "output_tp": "-1.50",
+    "output_lra": "9.90",
+    "output_thresh": "-28.44",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.06"
+  },
+  "dialogue_checks": {
+    "lines": [
+      {
+        "id": "m01",
+        "start_sec": 3.6,
+        "waveform_correlation": 0.9990077271135347,
+        "tail_correlation": 0.9971845553134774,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 7.4399999999999995,
+        "file_end_sec": 7.73
+      },
+      {
+        "id": "b01",
+        "start_sec": 9.4,
+        "waveform_correlation": 0.9984457865127042,
+        "tail_correlation": 0.9947181889893049,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 10.68,
+        "file_end_sec": 10.940000000000001
+      },
+      {
+        "id": "c01",
+        "start_sec": 16.4,
+        "waveform_correlation": 0.9990363989312505,
+        "tail_correlation": 0.9933222168827749,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 17.93,
+        "file_end_sec": 18.189999999999998
+      },
+      {
+        "id": "m02",
+        "start_sec": 22.6,
+        "waveform_correlation": 0.9988448948642225,
+        "tail_correlation": 0.9977056552540045,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 24.68,
+        "file_end_sec": 24.98
+      },
+      {
+        "id": "s01",
+        "start_sec": 35.6,
+        "waveform_correlation": 0.9989737355005517,
+        "tail_correlation": 0.9992380285491986,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 36.92,
+        "file_end_sec": 37.04
+      },
+      {
+        "id": "t01",
+        "start_sec": 41.7,
+        "waveform_correlation": 0.9989747767878256,
+        "tail_correlation": 0.9978517762433363,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 44.74,
+        "file_end_sec": 44.940250000000006
+      },
+      {
+        "id": "m03",
+        "start_sec": 66.36666666666666,
+        "waveform_correlation": 0.9989148732204206,
+        "tail_correlation": 0.998278976842558,
+        "alignment_shift_ms": 0.3125,
+        "speech_end_sec": 70.65,
+        "file_end_sec": 70.76666666666667
+      },
+      {
+        "id": "t02",
+        "start_sec": 70.93333333333334,
+        "waveform_correlation": 0.9987054656364405,
+        "tail_correlation": 0.9975127326073361,
+        "alignment_shift_ms": 33.645833333333336,
+        "speech_end_sec": 71.91,
+        "file_end_sec": 72.09333333333333
+      },
+      {
+        "id": "s02",
+        "start_sec": 72.16666666666667,
+        "waveform_correlation": 0.9987719711397046,
+        "tail_correlation": 0.98691347087597,
+        "alignment_shift_ms": 0.3125,
+        "speech_end_sec": 75.147,
+        "file_end_sec": 75.27666666666667
+      },
+      {
+        "id": "m04",
+        "start_sec": 76.3,
+        "waveform_correlation": 0.9986234953789651,
+        "tail_correlation": 0.9964379205197466,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 77.58,
+        "file_end_sec": 77.88
+      },
+      {
+        "id": "m05",
+        "start_sec": 78.5,
+        "waveform_correlation": 0.9990035267368939,
+        "tail_correlation": 0.9966129377477976,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 80.74,
+        "file_end_sec": 80.98
+      },
+      {
+        "id": "m06",
+        "start_sec": 95.66666666666667,
+        "waveform_correlation": 0.9976946888644451,
+        "tail_correlation": 0.9893883657500371,
+        "alignment_shift_ms": 0.3333333333333333,
+        "speech_end_sec": 99.15,
+        "file_end_sec": 99.16666666666667
+      },
+      {
+        "id": "h01",
+        "start_sec": 99.9,
+        "waveform_correlation": 0.9968182847679259,
+        "tail_correlation": 0.9952912962556287,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 102.60000000000001,
+        "file_end_sec": 102.83000000000001
+      },
+      {
+        "id": "h02",
+        "start_sec": 103.4,
+        "waveform_correlation": 0.9968382828035864,
+        "tail_correlation": 0.9946660978666024,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 108.10000000000001,
+        "file_end_sec": 108.33000000000001
+      },
+      {
+        "id": "m07",
+        "start_sec": 109.2,
+        "waveform_correlation": 0.997062005749913,
+        "tail_correlation": 0.9824912125423935,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 112.32000000000001,
+        "file_end_sec": 112.64
+      }
+    ],
+    "sample_peak": 0.7500658631324768,
+    "decoded_seconds": 120.0,
+    "source_channels": 2,
+    "clipping_check_passed": true,
+    "last_speech_end_sec": 112.32000000000001,
+    "method": "Source-channel PCM peak check; equal-weight mono waveform correlation at 48 kHz against all 15 original MP3s, including tails",
+    "pronunciation_confirmed_by_listening": false
+  },
+  "mobile_dialogue_checks": {
+    "lines": [
+      {
+        "id": "m01",
+        "start_sec": 3.6,
+        "waveform_correlation": 0.9988718098012578,
+        "tail_correlation": 0.9970170166887374,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 7.4399999999999995,
+        "file_end_sec": 7.73
+      },
+      {
+        "id": "b01",
+        "start_sec": 9.4,
+        "waveform_correlation": 0.9983364775665895,
+        "tail_correlation": 0.994370439611599,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 10.68,
+        "file_end_sec": 10.940000000000001
+      },
+      {
+        "id": "c01",
+        "start_sec": 16.4,
+        "waveform_correlation": 0.9989853655680386,
+        "tail_correlation": 0.9933338495221471,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 17.93,
+        "file_end_sec": 18.189999999999998
+      },
+      {
+        "id": "m02",
+        "start_sec": 22.6,
+        "waveform_correlation": 0.9987767812341963,
+        "tail_correlation": 0.9969492759087007,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 24.68,
+        "file_end_sec": 24.98
+      },
+      {
+        "id": "s01",
+        "start_sec": 35.6,
+        "waveform_correlation": 0.9987766297032529,
+        "tail_correlation": 0.9990351410644023,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 36.92,
+        "file_end_sec": 37.04
+      },
+      {
+        "id": "t01",
+        "start_sec": 41.7,
+        "waveform_correlation": 0.9988994612111262,
+        "tail_correlation": 0.9977524302697767,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 44.74,
+        "file_end_sec": 44.940250000000006
+      },
+      {
+        "id": "m03",
+        "start_sec": 66.36666666666666,
+        "waveform_correlation": 0.9987130012744971,
+        "tail_correlation": 0.9981036242351753,
+        "alignment_shift_ms": 0.3125,
+        "speech_end_sec": 70.65,
+        "file_end_sec": 70.76666666666667
+      },
+      {
+        "id": "t02",
+        "start_sec": 70.93333333333334,
+        "waveform_correlation": 0.9986149745389841,
+        "tail_correlation": 0.9974346440347763,
+        "alignment_shift_ms": 33.645833333333336,
+        "speech_end_sec": 71.91,
+        "file_end_sec": 72.09333333333333
+      },
+      {
+        "id": "s02",
+        "start_sec": 72.16666666666667,
+        "waveform_correlation": 0.9987093126875541,
+        "tail_correlation": 0.9810825927045134,
+        "alignment_shift_ms": 0.3125,
+        "speech_end_sec": 75.147,
+        "file_end_sec": 75.27666666666667
+      },
+      {
+        "id": "m04",
+        "start_sec": 76.3,
+        "waveform_correlation": 0.9982639984644814,
+        "tail_correlation": 0.9963184774811229,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 77.58,
+        "file_end_sec": 77.88
+      },
+      {
+        "id": "m05",
+        "start_sec": 78.5,
+        "waveform_correlation": 0.9988448614568988,
+        "tail_correlation": 0.9964462382687176,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 80.74,
+        "file_end_sec": 80.98
+      },
+      {
+        "id": "m06",
+        "start_sec": 95.66666666666667,
+        "waveform_correlation": 0.9975595326397032,
+        "tail_correlation": 0.9889705132053018,
+        "alignment_shift_ms": 0.3333333333333333,
+        "speech_end_sec": 99.15,
+        "file_end_sec": 99.16666666666667
+      },
+      {
+        "id": "h01",
+        "start_sec": 99.9,
+        "waveform_correlation": 0.9963968858931622,
+        "tail_correlation": 0.9951133858223984,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 102.60000000000001,
+        "file_end_sec": 102.83000000000001
+      },
+      {
+        "id": "h02",
+        "start_sec": 103.4,
+        "waveform_correlation": 0.9967069562072413,
+        "tail_correlation": 0.9946719452235905,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 108.10000000000001,
+        "file_end_sec": 108.33000000000001
+      },
+      {
+        "id": "m07",
+        "start_sec": 109.2,
+        "waveform_correlation": 0.9969196258907436,
+        "tail_correlation": 0.9824986204422053,
+        "alignment_shift_ms": 0.0,
+        "speech_end_sec": 112.32000000000001,
+        "file_end_sec": 112.64
+      }
+    ],
+    "sample_peak": 0.7564761638641357,
+    "decoded_seconds": 120.0,
+    "source_channels": 2,
+    "clipping_check_passed": true,
+    "last_speech_end_sec": 112.32000000000001,
+    "method": "Source-channel PCM peak check; equal-weight mono waveform correlation at 48 kHz against all 15 original MP3s, including tails",
+    "pronunciation_confirmed_by_listening": false
+  },
+  "aac_peak_adjustments": {
+    "full": [
+      {
+        "gain_db": 3.0199999999999996,
+        "levels": {
+          "input_i": "-18.69",
+          "input_tp": "-2.50",
+          "input_lra": "13.80",
+          "input_thresh": "-29.55",
+          "output_i": "-17.98",
+          "output_tp": "-2.00",
+          "output_lra": "9.90",
+          "output_thresh": "-28.47",
+          "normalization_type": "dynamic",
+          "target_offset": "-0.02"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "gain_db": 3.0199999999999996,
+        "levels": {
+          "input_i": "-18.70",
+          "input_tp": "-2.42",
+          "input_lra": "13.80",
+          "input_thresh": "-29.57",
+          "output_i": "-17.98",
+          "output_tp": "-2.00",
+          "output_lra": "9.90",
+          "output_thresh": "-28.46",
+          "normalization_type": "dynamic",
+          "target_offset": "-0.02"
+        }
+      }
+    ]
+  },
+  "sha256": {
+    "BalaGo_10_3D.mp4": "10b983bbf6fdeb61ec319cde187b3e85da5ef87047b1be9f8931637c8de305e9",
+    "BalaGo_10_3D_mobile.mp4": "a6f270927156a90396bb9fb5669df24a17c0cf25d44433ec92e426c0854a84d2"
+  },
+  "provenance": [
+    {
+      "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "part": "0",
+      "composition": "BalaGoHalfHour",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 3600,
+      "frameRange": [
+        0,
+        449
+      ],
+      "inputProps": {
+        "audioOnly": false,
+        "visualOnly": true,
+        "renderScale": 1
+      },
+      "createdAt": "2026-10-06T05:10:06.786Z"
+    },
+    {
+      "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "part": "1",
+      "composition": "BalaGoHalfHour",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 3600,
+      "frameRange": [
+        450,
+        899
+      ],
+      "inputProps": {
+        "audioOnly": false,
+        "visualOnly": true,
+        "renderScale": 1
+      },
+      "createdAt": "2026-10-06T05:01:21.600Z"
+    },
+    {
+      "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "part": "2",
+      "composition": "BalaGoHalfHour",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 3600,
+      "frameRange": [
+        900,
+        1349
+      ],
+      "inputProps": {
+        "audioOnly": false,
+        "visualOnly": true,
+        "renderScale": 1
+      },
+      "createdAt": "2026-10-06T05:08:54.576Z"
+    },
+    {
+      "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "part": "3",
+      "composition": "BalaGoHalfHour",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 3600,
+      "frameRange": [
+        1350,
+        1799
+      ],
+      "inputProps": {
+        "audioOnly": false,
+        "visualOnly": true,
+        "renderScale": 1
+      },
+      "createdAt": "2026-10-06T05:08:05.637Z"
+    },
+    {
+      "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "part": "4",
+      "composition": "BalaGoHalfHour",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 3600,
+      "frameRange": [
+        1800,
+        2249
+      ],
+      "inputProps": {
+        "audioOnly": false,
+        "visualOnly": true,
+        "renderScale": 1
+      },
+      "createdAt": "2026-10-06T05:05:37.922Z"
+    },
+    {
+      "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "part": "5",
+      "composition": "BalaGoHalfHour",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 3600,
+      "frameRange": [
+        2250,
+        2699
+      ],
+      "inputProps": {
+        "audioOnly": false,
+        "visualOnly": true,
+        "renderScale": 1
+      },
+      "createdAt": "2026-10-06T05:17:18.611Z"
+    },
+    {
+      "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "part": "6",
+      "composition": "BalaGoHalfHour",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 3600,
+      "frameRange": [
+        2700,
+        3149
+      ],
+      "inputProps": {
+        "audioOnly": false,
+        "visualOnly": true,
+        "renderScale": 1
+      },
+      "createdAt": "2026-10-06T05:02:45.181Z"
+    },
+    {
+      "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+      "part": "7",
+      "composition": "BalaGoHalfHour",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 3600,
+      "frameRange": [
+        3150,
+        3599
+      ],
+      "inputProps": {
+        "audioOnly": false,
+        "visualOnly": true,
+        "renderScale": 1
+      },
+      "createdAt": "2026-10-06T05:02:14.202Z"
+    }
+  ],
+  "audio_provenance": {
+    "commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+    "part": "audio",
+    "composition": "BalaGoHalfHour",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationInFrames": 3600,
+    "frameRange": [
+      0,
+      3599
+    ],
+    "inputProps": {
+      "audioOnly": true,
+      "visualOnly": false,
+      "renderScale": 1
+    },
+    "createdAt": "2026-10-06T04:25:24.546Z"
+  },
+  "assembly_commit": "2702eb8eec326a8cc0557a6e32e698102088582c",
+  "render_commit": "2702eb8eec326a8cc0557a6e32e698102088582c"
+}

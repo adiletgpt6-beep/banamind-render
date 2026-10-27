@@ -1,0 +1,19 @@
+{
+  "composition": "BalaGoHalfHour",
+  "reviewed_visual_commit": "f4c9179b4742d69f4b19fcde85cfa1a7cdc950c7",
+  "final_motion_review_commit": "acd76e6ff21ab39b3fc2e0bdac8ec51145841ef4",
+  "review_runs": [],
+  "parts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "reuse_run": "",
+  "requestedAt": "2026-10-06T01:15:55.000Z",
+  "review_note": "Native Remotion stills (SwiftShader, renderScale 0.5/1) reviewed locally for faces, hair, blink, seating, apology and phone shots"
+}

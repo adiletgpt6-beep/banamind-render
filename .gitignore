@@ -1,0 +1,32 @@
+node_modules
+dist
+build
+.DS_Store
+.env
+
+# Готовые видео и кадры не храним в Git.
+out
+*.mp4
+*.mov
+tools/characters/.cache/
+
+# Public copy: private inputs and production outputs stay outside Git
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+**/source-text/
+**/source_text/
+books/**/sources/
+.private/
+**/*.pdf
+**/*.epub
+**/*.fb2
+**/*.zip
+**/*.mp3
+**/*.mp4
+**/*.wav
+**/*.m4a
+**/*.b64
+**/*.part[0-9]*

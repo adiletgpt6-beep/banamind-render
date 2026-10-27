@@ -1,0 +1,60 @@
+{
+  "cfgHash": "7bba91cb1029c214",
+  "models": {
+    "error": "401 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission models_read to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"711a6b5dd80723d7b5aa8186c6de69d2\"}}"
+  },
+  "design": {
+    "ok": false,
+    "error": "403 {\"detail\":{\"type\":\"authorization_error\",\"code\":\"forbidden\",\"message\":\"Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.\",\"status\":\"blocked_generation\",\"request_id\":\"092ec8c2676f04a9b5aa8186c6de6206\"}}"
+  },
+  "samples": [
+    {
+      "voice": "Sarah",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "text": "Уулумду мектептен алып келишим керек. Тез эле кайтып келем.",
+      "file": "mother-Sarah-1.mp3"
+    },
+    {
+      "voice": "Sarah",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "text": "Кечирип кой, уулум. Сени күттүрүп койдум.",
+      "file": "mother-Sarah-2.mp3"
+    },
+    {
+      "voice": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "text": "Уулумду мектептен алып келишим керек. Тез эле кайтып келем.",
+      "file": "mother-Aria-1.mp3"
+    },
+    {
+      "voice": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "text": "Кечирип кой, уулум. Сени күттүрүп койдум.",
+      "file": "mother-Aria-2.mp3"
+    },
+    {
+      "voice": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-Jessica-1.mp3"
+    },
+    {
+      "voice": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-Jessica-2.mp3"
+    },
+    {
+      "voice": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "text": "Апа, сабак бүттү.",
+      "file": "son-Laura-1.mp3"
+    },
+    {
+      "voice": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "text": "Апа, эмне үчүн сен дайыма эң акыркы келесиң?",
+      "file": "son-Laura-2.mp3"
+    }
+  ]
+}

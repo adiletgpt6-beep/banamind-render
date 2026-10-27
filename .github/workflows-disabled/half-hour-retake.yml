@@ -1,0 +1,35 @@
+name: Half-hour voice retakes
+on:
+  push:
+    branches: [feature/work-half-hour]
+    paths: [.github/half-hour-retake-request.json, scripts/hh-retake-probe.mjs]
+  workflow_dispatch:
+concurrency:
+  group: half-hour-retake-${{ github.ref }}
+permissions:
+  contents: write
+jobs:
+  retake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Generate requested takes only
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/hh-retake-probe.mjs
+      - name: Save takes for listening
+        run: |
+          git add voice-samples/half-hour-retake
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore: save requested half-hour voice retakes'
+            git pull --no-rebase --no-edit origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
