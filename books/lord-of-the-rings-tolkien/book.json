@@ -1,0 +1,26 @@
+{
+  "slug": "lord-of-the-rings-tolkien",
+  "title": "Властелин колец",
+  "author": "Джон Р. Р. Толкин",
+  "channel": "BanaMind",
+  "bm": "BM-018",
+  "source": "Только TXT владельца books/500-series/sources/BM-018/part-01…12.txt (русский перевод, переводчик не указан; права на публикацию не подтверждены — см. scripts/EDITORIAL_RIGHTS_AUDIT.md)",
+  "lesson": {
+    "dir": "books/lord-of-the-rings-tolkien/scripts",
+    "timeline": "scripts/lotr/lib.mjs",
+    "remotionEntry": "src/books/lord-of-the-rings-tolkien/film/index.ts",
+    "composition": "LotrFilm",
+    "workflow": ".github/workflows/lotr-film.yml",
+    "release": "book-lord-of-the-rings-tolkien",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-lord-of-the-rings-tolkien",
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "codec": "h264",
+    "audio": "aac",
+    "duration": "30:00"
+  }
+}
