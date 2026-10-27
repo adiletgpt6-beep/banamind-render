@@ -1,0 +1,142 @@
+name: Live videos (LIVE-NNN)
+
+# Производство живых видео BalaGo по заданиям live-videos/tasks/LIVE-NNN.
+# Рендерит ТОЛЬКО выбранное задание (или задания, чьи task.json изменились
+# в этом push) — старые композиции и 2D-ролики здесь не пересобираются.
+#   stage "preview" → превью 540×960, 30 fps (сначала — облегчённое превью);
+#   stage "final"   → оригинал 1080×1920, 30 fps, H.264/AAC + превью.
+# Файлы публикуются в предварительный релиз previewTag версии задания;
+# у каждой версии свой тег, прежние версии не перезаписываются.
+
+on:
+  push:
+    paths:
+      - "live-videos/tasks/**/task.json"
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "Задание, например LIVE-004"
+        required: true
+      version:
+        description: "Версия (пусто — последняя)"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.pick.outputs.matrix }}
+      count: ${{ steps.pick.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Check tasks (limits, tags, compositions)
+        run: node scripts/live-videos/check.mjs
+      - id: pick
+        name: Pick task(s)
+        run: node scripts/live-videos/task-info.mjs "${{ github.event.inputs.task }}" "${{ github.event.inputs.version }}" "${{ github.event.before }}"
+
+  render:
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        job: ${{ fromJson(needs.plan.outputs.matrix) }}
+    concurrency:
+      group: live-videos-${{ matrix.job.id }}-${{ matrix.job.version }}
+      cancel-in-progress: false
+    env:
+      OUT: ${{ matrix.job.out }}
+      COMP: ${{ matrix.job.composition }}
+      STAGE: ${{ matrix.job.stage }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint + TypeScript
+        run: npm run lint
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Prepare sources from private R2 or GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          # Для LIVE-NNN из BalaGo Video Studio. Секреты только в раннере;
+          # R2-исходник не включается в git или публичный Release.
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: ${{ matrix.job.prepare }}
+      - name: Task tests
+        env:
+          LIVE04_STRICT_VOICE: "1"
+        run: ${{ matrix.job.tests }}
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+      - name: Bundle
+        run: npm run bundle
+      - name: Check frames
+        run: node scripts/live-videos/stills.mjs "$COMP" "out/frames-$OUT"
+      - name: Render
+        run: |
+          COMMON="--codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --log=warn"
+          if [ "$STAGE" = "final" ]; then
+            npx remotion render build "$COMP" "out/$OUT-raw.mp4" $COMMON
+            ffmpeg -hide_banner -loglevel error -y -i "out/$OUT-raw.mp4" -c copy -movflags +faststart "out/$OUT.mp4"
+            ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+              -vf scale=540:960:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 23 \
+              -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-preview-540x960.mp4"
+          else
+            # облегчённое превью: рендер сразу в 540×960 (в 4 раза меньше пикселей)
+            npx remotion render build "$COMP" "out/$OUT-raw.mp4" $COMMON --scale=0.5 --crf=23
+            ffmpeg -hide_banner -loglevel error -y -i "out/$OUT-raw.mp4" -c copy -movflags +faststart "out/$OUT-preview-540x960.mp4"
+          fi
+          rm -f "out/$OUT-raw.mp4"
+          cp "out/frames-$OUT/contact-sheet.jpg" "out/$OUT-frames.jpg"
+      - name: Verify MP4
+        run: |
+          node scripts/live-videos/verify.mjs "out/$OUT-preview-540x960.mp4" --mobile
+          if [ "$STAGE" = "final" ]; then node scripts/live-videos/verify.mjs "out/$OUT.mp4"; fi
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Upload files
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.job.out }}
+          path: |
+            out/${{ matrix.job.out }}*.mp4
+            out/${{ matrix.job.out }}-frames.jpg
+          if-no-files-found: error
+          retention-days: 30
+      - name: Publish to its own preview release (older versions untouched)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ matrix.job.previewTag }}
+        run: |
+          NOTES="${{ matrix.job.id }} ${{ matrix.job.version }} ($STAGE) — композиция $COMP. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BalaGo ${{ matrix.job.id }} ${{ matrix.job.version }}" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          FILES="out/$OUT-preview-540x960.mp4 out/$OUT-frames.jpg"
+          if [ "$STAGE" = "final" ]; then FILES="out/$OUT.mp4 $FILES"; fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber $FILES
+          for f in $FILES; do echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$(basename $f)" >> "$GITHUB_STEP_SUMMARY"; done

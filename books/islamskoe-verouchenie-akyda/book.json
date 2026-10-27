@@ -1,0 +1,21 @@
+{
+  "slug": "islamskoe-verouchenie-akyda",
+  "title": "Исламское вероучение (Акыда)",
+  "author": "проф. Ахмед Саим Кылавуз",
+  "collection": "İslam Akaidi ve Kelama Giriş (Стамбул, 1985); русский перевод А. Разоренова, ИГ «САД», Москва, 2010",
+  "channel": "BanaMind",
+  "task": "BM-003",
+  "source": "Только TXT владельца (907 043 байт, SHA256 79a94ebf…81f3): books/500-series/tasks/BM-003/source-text/; бриф, карта источников и сценарий — books/islamskoe-verouchenie-akyda/",
+  "rights": "Права на публичную/коммерческую публикацию русского перевода («Все права защищены») НЕ подтверждены: закрытый производственный прототип, без загрузки на YouTube до решения владельца.",
+  "lesson": {
+    "dir": "books/islamskoe-verouchenie-akyda",
+    "timeline": "scripts/books/akyda/lib.mjs",
+    "remotionEntry": "src/books/islamskoe-verouchenie-akyda/index.ts",
+    "composition": "AkydaFilm",
+    "workflow": ".github/workflows/book-akyda.yml",
+    "release": "book-akyda-film",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-islamskoe-verouchenie-akyda",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}
