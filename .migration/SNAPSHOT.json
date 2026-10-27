@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "a91d4b3ccf8020d1d67679d7b3beeca3b6c94e01",
+  "source_branches": [
+    "feature/voiceover-audio"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 1,
+  "withheld_file_counts": {
+    "private_source_or_binary": 8
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
