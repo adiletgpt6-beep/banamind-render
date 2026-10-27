@@ -1,0 +1,20 @@
+{
+  "slug": "steve-jobs-isaacson",
+  "title": "Стив Джобс",
+  "author": "Уолтер Айзексон",
+  "collection": "перевод Ю. В. Полещук, А. Цырульниковой, А. А. Чередниченко, Д. А. Горяниной",
+  "channel": "BanaMind",
+  "source": "Только TXT владельца (FB2 → TXT, SHA-256 453bccb3…e23e377); карта источников — books/steve-jobs-isaacson/source/SOURCE_MAP.md. Текст книги в репозиторий не загружается.",
+  "lesson": {
+    "dir": "books/steve-jobs-isaacson",
+    "timeline": "scripts/lesson-jobs/lib.mjs",
+    "remotionEntry": "src/lesson-jobs/index.ts",
+    "composition": "JobsLesson",
+    "workflow": ".github/workflows/lesson-jobs.yml",
+    "release": "lesson-jobs-bm015",
+    "asset": "jobs_bm015_30min.mp4"
+  },
+  "release": "book-steve-jobs-isaacson",
+  "rights": "PUBLICATION_RIGHTS_UNVERIFIED — приватный предпросмотр; публичная публикация и монетизация заблокированы до проверки прав.",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:08" }
+}

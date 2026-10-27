@@ -1,0 +1,82 @@
+// Реестр анимированных схем фильма: kind из сценария → компонент.
+import type React from "react";
+import { DesignStudio, Grid2x2, ImacReveal, ReturnSteps, SinkingShip, SupplyChain, ThinkDifferent } from "./back";
+import { NextCube, OrgChart, PixarLab, SalesDrop, SecondAct, SugarWater, TinToy } from "./exile";
+import { CreditSplit, GarageWork, Homebrew, ProductLayers, StartCapital, ThreeRules } from "./garage";
+import { Adoption, Arcade, AtariDispute, BlueBox, BookIntro, Calligraphy, ClaimLegend, FenceScene, HundredButtons, PhoneCall, TwoQuestions, TwoSteves } from "./intro";
+import { BinaryWorld, BootTime, DistortionField, IpoShares, LisaStory, MacDesign, MacLaunch, MacTeam, MouseUpgrade, PirateFlag, XeroxVisit } from "./mac";
+import { Antenna, GorillaGlass, MultitouchOrigin, PhoneThreat, Redesign, TabletApps, ThreeInOne } from "./phone";
+import { CalendarWait, CreditMap, FamilyRoom, Goodbye, Handover, Industries, LastButton, NoFilter, Secrecy, ThreeQuestions, ThreeStories } from "./price";
+import { DigitalHub, FatherDispute, MusicStore, PlayerBuild, StorePrototype, WindowsDebate } from "./system";
+import type { VisualProps } from "./kit";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const VISUALS: Record<string, React.FC<VisualProps<any>>> = {
+  hundredButtons: HundredButtons,
+  twoQuestions: TwoQuestions,
+  bookIntro: BookIntro,
+  claimLegend: ClaimLegend,
+  adoption: Adoption,
+  fenceScene: FenceScene,
+  phoneCall: PhoneCall,
+  twoSteves: TwoSteves,
+  blueBox: BlueBox,
+  calligraphy: Calligraphy,
+  arcade: Arcade,
+  atariDispute: AtariDispute,
+  homebrew: Homebrew,
+  startCapital: StartCapital,
+  garageWork: GarageWork,
+  productLayers: ProductLayers,
+  threeRules: ThreeRules,
+  creditSplit: CreditSplit,
+  xeroxVisit: XeroxVisit,
+  mouseUpgrade: MouseUpgrade,
+  macTeam: MacTeam,
+  macDesign: MacDesign,
+  distortionField: DistortionField,
+  bootTime: BootTime,
+  binaryWorld: BinaryWorld,
+  lisaStory: LisaStory,
+  ipoShares: IpoShares,
+  pirateFlag: PirateFlag,
+  macLaunch: MacLaunch,
+  sugarWater: SugarWater,
+  salesDrop: SalesDrop,
+  orgChart: OrgChart,
+  nextCube: NextCube,
+  secondAct: SecondAct,
+  pixarLab: PixarLab,
+  tinToy: TinToy,
+  sinkingShip: SinkingShip,
+  returnSteps: ReturnSteps,
+  grid2x2: Grid2x2,
+  thinkDifferent: ThinkDifferent,
+  designStudio: DesignStudio,
+  imacReveal: ImacReveal,
+  supplyChain: SupplyChain,
+  digitalHub: DigitalHub,
+  storePrototype: StorePrototype,
+  playerBuild: PlayerBuild,
+  fatherDispute: FatherDispute,
+  musicStore: MusicStore,
+  windowsDebate: WindowsDebate,
+  phoneThreat: PhoneThreat,
+  multitouchOrigin: MultitouchOrigin,
+  gorillaGlass: GorillaGlass,
+  redesign: Redesign,
+  threeInOne: ThreeInOne,
+  tabletApps: TabletApps,
+  antenna: Antenna,
+  calendarWait: CalendarWait,
+  threeStories: ThreeStories,
+  secrecy: Secrecy,
+  familyRoom: FamilyRoom,
+  noFilter: NoFilter,
+  handover: Handover,
+  industries: Industries,
+  creditMap: CreditMap,
+  threeQuestions: ThreeQuestions,
+  lastButton: LastButton,
+  goodbye: Goodbye,
+};

@@ -1,0 +1,102 @@
+{
+  "slug": "steve-jobs-isaacson",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 120,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 118,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 129,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 137,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 130,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 23,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 116.7
+      },
+      {
+        "pair": "1-3",
+        "diff": 94.9
+      },
+      {
+        "pair": "1-4",
+        "diff": 107.4
+      },
+      {
+        "pair": "1-5",
+        "diff": 127.5
+      },
+      {
+        "pair": "2-3",
+        "diff": 70.3
+      },
+      {
+        "pair": "2-4",
+        "diff": 62.1
+      },
+      {
+        "pair": "2-5",
+        "diff": 62.3
+      },
+      {
+        "pair": "3-4",
+        "diff": 74.4
+      },
+      {
+        "pair": "3-5",
+        "diff": 84.8
+      },
+      {
+        "pair": "4-5",
+        "diff": 59
+      }
+    ],
+    "min": 59,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}

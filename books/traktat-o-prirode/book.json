@@ -1,0 +1,19 @@
+{
+  "slug": "traktat-o-prirode",
+  "title": "Трактат о природе",
+  "author": "Бадиуззаман Саид Нурси",
+  "collection": "Рисале-и Нур",
+  "channel": "BanaMind",
+  "source": "Только прикреплённая аудиокнига «Трактат о природе» (73:09); расшифровка и карта источников — lessons/traktat-banan/",
+  "lesson": {
+    "dir": "lessons/traktat-banan",
+    "timeline": "scripts/lesson-traktat/lib.mjs",
+    "remotionEntry": "src/lesson-traktat/index.ts",
+    "composition": "TraktatLesson",
+    "workflow": ".github/workflows/lesson-traktat.yml",
+    "release": "lesson-traktat-banan",
+    "asset": "lesson_traktat_banan_30min.mp4"
+  },
+  "release": "book-traktat-o-prirode",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "29:52" }
+}
