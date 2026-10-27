@@ -1,0 +1,80 @@
+[
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/manrope-cyrillic-300-normal.woff2",
+    "sha": "46f8ef525ae969ba5ca0557b74d5d09992a83dd3",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/manrope-cyrillic-500-normal.woff2",
+    "sha": "6ebd90470c345477060664f89bf9e19ce7461bef",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/manrope-cyrillic-700-normal.woff2",
+    "sha": "3156c54e0589f82a92cd07adc7aa05d2fa1856d8",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/manrope-cyrillic-800-normal.woff2",
+    "sha": "f05b200bc099f2f8f1266a78f53b24202780cf01",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/manrope-latin-300-normal.woff2",
+    "sha": "bf07ee0041e585141f0cdaad544a3a9654150485",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/manrope-latin-500-normal.woff2",
+    "sha": "70447ee806d968d45a5e480cf1e7ca13528fe733",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/manrope-latin-700-normal.woff2",
+    "sha": "84f7af5467eeeb99fdfb08ff0c8c78b5c10bbf75",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/manrope-latin-800-normal.woff2",
+    "sha": "b5cd4008060e69767a803dc33cd355e8de16a280",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/pt-serif-cyrillic-400-normal.woff2",
+    "sha": "64eb86e867070f6faf9ea8c846e56a6f4469d0a4",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/pt-serif-cyrillic-700-normal.woff2",
+    "sha": "9a82657113fe405ce726574147b6fc0f568f0e44",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/pt-serif-latin-400-normal.woff2",
+    "sha": "02448bcb689398e4bef03d2506a511f47a5e599f",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "muslimkids-mirror-dimensions/public/assets/fonts/pt-serif-latin-700-normal.woff2",
+    "sha": "b7aaf513910ae7665d25d2cb0fc08433c6de9a12",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]
