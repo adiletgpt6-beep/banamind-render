@@ -1,0 +1,68 @@
+[
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "public/fonts/channel/oswald-cyrillic-700-normal.woff2",
+    "sha": "ebc171dca733cc0352fcd44a038ca9d67fb5e039",
+    "kind": "font",
+    "license_sha": "76a02175dbde6453b8527c9163b904c1a2567c7c"
+  },
+  {
+    "path": "public/fonts/channel/oswald-latin-700-normal.woff2",
+    "sha": "e1290c1e8c19d93f1f30030b4c1e9782f3d5d8ac",
+    "kind": "font",
+    "license_sha": "76a02175dbde6453b8527c9163b904c1a2567c7c"
+  },
+  {
+    "path": "public/fonts/channel/pt-serif-cyrillic-700-normal.woff2",
+    "sha": "9a82657113fe405ce726574147b6fc0f568f0e44",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "public/fonts/channel/pt-serif-latin-700-normal.woff2",
+    "sha": "b7aaf513910ae7665d25d2cb0fc08433c6de9a12",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "public/fonts/channel/rubik-cyrillic-800-normal.woff2",
+    "sha": "b82177a9a89bed35e8ebdf9b00652f4059ae1514",
+    "kind": "font",
+    "license_sha": "b25d078b7bea26d8f632da3ad8fc582bc46c2656"
+  },
+  {
+    "path": "public/fonts/channel/rubik-cyrillic-900-normal.woff2",
+    "sha": "efac43c82e6ac1556aca292edcc719073e543d73",
+    "kind": "font",
+    "license_sha": "b25d078b7bea26d8f632da3ad8fc582bc46c2656"
+  },
+  {
+    "path": "public/fonts/channel/rubik-latin-800-normal.woff2",
+    "sha": "5436ce030ecee561e66b1075b3d6e713fc34e893",
+    "kind": "font",
+    "license_sha": "b25d078b7bea26d8f632da3ad8fc582bc46c2656"
+  },
+  {
+    "path": "public/fonts/channel/rubik-latin-900-normal.woff2",
+    "sha": "30f8d395ee6cf7c7c2b56e4ecb114d90c9e333e0",
+    "kind": "font",
+    "license_sha": "b25d078b7bea26d8f632da3ad8fc582bc46c2656"
+  },
+  {
+    "path": "public/fonts/channel/russo-one-cyrillic-400-normal.woff2",
+    "sha": "49420b1b85c3a63823c573532b7e20ab051ce259",
+    "kind": "font",
+    "license_sha": "ebf4db3282112442563304a82209cdeaa9ac9ba0"
+  },
+  {
+    "path": "public/fonts/channel/russo-one-latin-400-normal.woff2",
+    "sha": "1f5ec021f2fff1bdf185ab1fb80cdd5e4c3c050c",
+    "kind": "font",
+    "license_sha": "ebf4db3282112442563304a82209cdeaa9ac9ba0"
+  }
+]
