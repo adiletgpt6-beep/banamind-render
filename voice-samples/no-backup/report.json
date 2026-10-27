@@ -1,0 +1,101 @@
+{
+  "cfgHash": "61fd2a5fc364bf70",
+  "design": {
+    "ok": true,
+    "previews": 3,
+    "voice": {
+      "name": "Designed grandma",
+      "voiceId": "eKOiDGHjEfoAaKmqlqU7"
+    }
+  },
+  "samples": [
+    {
+      "role": "mother",
+      "label": "Мама",
+      "voice": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "text": "Макул, азыр бир жолун табабыз. Мен жеткирем, кызым.",
+      "file": "mother-Aria.mp3"
+    },
+    {
+      "role": "mother",
+      "label": "Мама",
+      "voice": "Sarah",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "text": "Макул, азыр бир жолун табабыз. Мен жеткирем, кызым.",
+      "file": "mother-Sarah.mp3"
+    },
+    {
+      "role": "mother",
+      "voice": "Matilda",
+      "voiceId": "XrExE9yKIg1WjnStdHDv",
+      "text": "Макул, азыр бир жолун табабыз. Мен жеткирем, кызым.",
+      "error": "404 {\"detail\":{\"type\":\"not_found\",\"code\":\"voice_not_found\",\"message\":\"A voice with voice_id 'XrExE9yKIg1WjnStdHDv' was not found.\",\"status\":\"voice_not_found\",\"request_id\":\"f9453a72bab2706088ae4e4047fc4d81\"}}"
+    },
+    {
+      "role": "father",
+      "label": "Папа",
+      "voice": "Brian",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "text": "Кызым, бүгүн жумушка эртерээк барышым керек болуп калды.",
+      "file": "father-Brian.mp3"
+    },
+    {
+      "role": "father",
+      "label": "Папа",
+      "voice": "Chris",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
+      "text": "Кызым, бүгүн жумушка эртерээк барышым керек болуп калды.",
+      "file": "father-Chris.mp3"
+    },
+    {
+      "role": "daughter",
+      "label": "Дочка",
+      "voice": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "text": "Ата, бүгүн мени мектепке сен жеткиресиңби?",
+      "file": "daughter-Jessica.mp3"
+    },
+    {
+      "role": "daughter",
+      "label": "Дочка",
+      "voice": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "text": "Ата, бүгүн мени мектепке сен жеткиресиңби?",
+      "file": "daughter-Laura.mp3"
+    },
+    {
+      "role": "daughter",
+      "label": "Дочка",
+      "voice": "Lily",
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "text": "Ата, бүгүн мени мектепке сен жеткиресиңби?",
+      "file": "daughter-Lily.mp3"
+    },
+    {
+      "role": "grandma",
+      "label": "Бабушка",
+      "voice": "Designed grandma",
+      "voiceId": "eKOiDGHjEfoAaKmqlqU7",
+      "text": "Кызым, бүгүн эртең менен дарыгерге жазылып койгом.",
+      "file": "grandma-Designedgrandma.mp3"
+    },
+    {
+      "role": "grandma",
+      "label": "Бабушка",
+      "voice": "Lily",
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "text": "Кызым, бүгүн эртең менен дарыгерге жазылып койгом.",
+      "file": "grandma-Lily.mp3"
+    },
+    {
+      "role": "grandma",
+      "label": "Бабушка",
+      "voice": "Alice",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "text": "Кызым, бүгүн эртең менен дарыгерге жазылып койгом.",
+      "file": "grandma-Alice.mp3"
+    }
+  ],
+  "file": "probes.mp4"
+}

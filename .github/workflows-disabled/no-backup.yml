@@ -1,0 +1,174 @@
+name: BalaGoNoBackup (3D, 120 s)
+
+# Ролик №11 «Бүгүн жеткире турган киши жок» — отдельный workflow, чтобы не
+# менять общий render.yml. Шаги: проверки → пробы голосов → озвучка
+# (кэш в Git) → 3D-рендер → проверка MP4 → артефакт balago-no-backup-mp4.
+# Нет моделей, нет MP4 или неверный формат — задача падает (зелёный статус
+# означает, что видео действительно создано).
+
+on:
+  push:
+    paths:
+      - ".github/workflows/no-backup.yml"
+      - "src/no-backup/**"
+      - "src/BalaGoNoBackup.tsx"
+      - "src/Root.tsx"
+      - "public/audio/no-backup/**"
+      - "public/models/**"
+      - "scripts/generate-nb-voice.mjs"
+      - "scripts/nb-voice-probe.mjs"
+      - "scripts/nb-stills.mjs"
+      - "scripts/no-backup.test.mjs"
+      - "package.json"
+      - "package-lock.json"
+  workflow_dispatch:
+    inputs:
+      scale:
+        description: "Масштаб рендера (1 — финал 1080×1920, 0.5 — черновик 540×960)"
+        default: "1"
+
+concurrency:
+  group: no-backup-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  no-backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      SCALE: ${{ github.event.inputs.scale || '1' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Timeline and text checks
+        run: npm run test:no-backup
+
+      # Пробы голосов (мама, папа, дочка, бабушка) — один раз; результат
+      # сохраняется в Git (voice-samples/no-backup/probes.mp4 + report.json).
+      - name: Voice probes
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/nb-voice-probe.mjs
+
+      # Сохранённые в Git реплики повторно не синтезируются (кредиты не
+      # тратятся); изменённые — только они.
+      - name: Voices (ElevenLabs, eleven_v3, ky)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          set -o pipefail
+          node scripts/generate-nb-voice.mjs 2>&1 | tee voice.log
+          if grep -q "⚠" voice.log; then
+            echo "### ⚠️ Озвучка no-backup" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            grep "⚠" voice.log >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Voice must exist
+        run: |
+          test -s public/audio/no-backup/manifest.json || { echo "::error::Нет озвучки (manifest.json)"; exit 1; }
+          npm run test:no-backup
+
+      # Новые реплики и пробы сразу сохраняются в рабочую ветку (не main).
+      - name: Save new voice lines
+        if: always() && github.ref_name != 'main'
+        run: |
+          [ -d public/audio/no-backup ] && git add public/audio/no-backup
+          [ -d voice-samples/no-backup ] && git add voice-samples/no-backup
+          if git diff --cached --quiet; then
+            echo "Реплики уже сохранены."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save no-backup voice lines"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: 3D models must exist
+        run: |
+          for m in mom mom_out husband girl grandma colleague; do
+            test -s "public/models/$m.glb" || { echo "::error::Нет модели public/models/$m.glb"; exit 1; }
+          done
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      # Concurrency 2: на 4 vCPU рендер упирается в процессор (SwiftShader),
+      # 3–4 вкладки не быстрее, но расходуют больше памяти.
+      - name: Render MP4 (H.264/AAC)
+        run: |
+          mkdir -p out
+          npx remotion render src/index.ts BalaGoNoBackup out/balago-no-backup.mp4 \
+            --codec=h264 --pixel-format=yuv420p --color-space=bt709 --gl=swangle \
+            --concurrency=2 --scale="$SCALE" --log=info 2>&1 | grep -v -E "^\s*$" | tail -n 400
+
+      - name: Inspect video and audio
+        run: |
+          f=out/balago-no-backup.mp4
+          test -s "$f" || { echo "::error::MP4 не создан: $f"; exit 1; }
+          W=$(awk -v s="$SCALE" 'BEGIN{printf "%d", 1080*s}')
+          H=$(awk -v s="$SCALE" 'BEGIN{printf "%d", 1920*s}')
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,r_frame_rate -of csv=p=0 "$f" | tee v.txt
+          grep -qx "h264,$W,$H,30/1" v.txt || { echo "::error::Неверный формат видео (ожидается h264,$W,$H,30/1)"; exit 1; }
+          ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of csv=p=0 "$f" | grep -qx "aac" || { echo "::error::Нет дорожки AAC"; exit 1; }
+          dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+          nb=$(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 "$f")
+          echo "Длительность: $dur с, кадров: $nb"
+          [ "$nb" = "3600" ] || { echo "::error::Кадров $nb ≠ 3600"; exit 1; }
+          awk -v d="$dur" 'BEGIN { if (d < 119.95 || d > 120.1) { print "Длительность " d " ≠ 120 с"; exit 1 } }'
+          ffmpeg -hide_banner -nostats -i "$f" -vn -af ebur128=peak=true -f null - 2>&1 | tail -12 | tee loudness.log
+          I=$(awk '/I:/ {print $2}' loudness.log | tail -1)
+          tp=$(grep -A1 "True peak" loudness.log | grep -oE -- "-?[0-9.]+ dBFS" | head -1 | grep -oE -- "-?[0-9.]+")
+          echo "### 🔊 balago-no-backup.mp4: ${I} LUFS, true peak ${tp} dBFS" >> "$GITHUB_STEP_SUMMARY"
+          awk -v p="$tp" 'BEGIN { if (p > -1.0) { print "Пик выше −1 дБTP (клиппинг)"; exit 1 } }'
+          awk -v i="$I" 'BEGIN { if (i < -24) { print "Слишком тихо — голос не слышен?"; exit 1 } }'
+          mkdir -p out/frames-no-backup
+          for s in 1 4 8 11 13 15 18 23 27 30 34 40 44 46 49 53 57 60 62 64 66 68 70 73 76 79 82 84 87 90 93 96 101 104 107 109 111 113 117; do
+            ffmpeg -v error -ss "$s" -i "$f" -frames:v 1 -vf scale=360:-2 "out/frames-no-backup/t$(printf %03d $s).jpg"
+          done
+          ffmpeg -v error -i "$f" -vf scale=540:960 -c:v libx264 -crf 27 -preset slow -c:a aac -b:a 96k -movflags +faststart out/balago-no-backup-phone.mp4
+          ls -la out
+
+      - name: Upload video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-no-backup-mp4
+          path: |
+            out/balago-no-backup.mp4
+            out/balago-no-backup-phone.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload frames, voice and probes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-no-backup-check
+          path: |
+            out/frames-no-backup/
+            public/audio/no-backup/
+            voice-samples/no-backup/
+          if-no-files-found: warn
+          retention-days: 30
