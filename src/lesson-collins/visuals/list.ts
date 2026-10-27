@@ -1,0 +1,2 @@
+// Список видов сцен (для тестов без загрузки React-компонентов).
+export const VISUALS_LIST = ["twoWheels","bigQuestion","engine","bookCard","duo","phrase","criteria","ladder","endBars","pairs","stats","limits","shift","pyramid","windowMirror","relay","compare","rule","bus","dotGrid","genius","fourTools","quoteStack","stockdale","hedgeFox","cornerMap","threeCircles","denominator","cycle","matrix","freeFrame","tyrantCurve","twoLists","crawlWalkRun","booster","bigWheel","yearLine","threeQuestions","outro"];

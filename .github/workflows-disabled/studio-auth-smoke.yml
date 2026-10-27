@@ -1,0 +1,82 @@
+name: BalaGo Studio — Claude Max auth smoke test
+
+# Manual diagnostic only. No video download, R2, commits or render.
+# This checks the complete token, then authenticates using the Claude CLI
+# directly to distinguish a bad token from a claude-code-action SDK issue.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  auth:
+    if: github.actor == 'adiletzainidinov'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Check token integrity without printing the token
+        env:
+          TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$TOKEN" ]]; then
+            echo "::error::CLAUDE_CODE_OAUTH_TOKEN is missing"
+            exit 1
+          fi
+          if [[ "$TOKEN" != sk-ant-oat01-* ]]; then
+            echo "::error::OAuth token has unexpected prefix. Generate with claude setup-token, not the browser callback URL."
+            exit 1
+          fi
+          length="${#TOKEN}"
+          echo "OAuth token length: $length characters (content hidden)."
+          if (( length < 100 )); then
+            echo "::error::Token appears truncated: copying from a mobile terminal often loses the wrapped second line."
+            exit 1
+          fi
+          if [[ "$TOKEN" == *$'\n'* || "$TOKEN" == *$'\r'* || "$TOKEN" == *' '* ]]; then
+            echo "::error::Token contains whitespace or a line break; copy only the whole unwrapped token."
+            exit 1
+          fi
+          echo "OAuth secret structure looks plausible; next step tests the server."
+
+      - name: Install Claude Code official CLI
+        run: |
+          set -euo pipefail
+          curl -fsSL https://claude.ai/install.sh | bash >/dev/null
+          "$HOME/.local/bin/claude" --version
+
+      - name: One-turn direct CLI authentication test (no API key)
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ""
+          ANTHROPIC_AUTH_TOKEN: ""
+        run: |
+          set -euo pipefail
+          status=0
+          timeout 100s "$HOME/.local/bin/claude" -p \
+            "This is an auth-only smoke test; no tools. Reply exactly BALAGO_AUTH_OK." \
+            --max-turns 1 --allowedTools Read --output-format json \
+            > "$RUNNER_TEMP/balago-oauth-result.json" || status=$?
+          if (( status != 0 )); then
+            echo "::error::Direct Claude CLI exited with status $status; no API key was used."
+            exit 1
+          fi
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+          const path = process.env.RUNNER_TEMP + "/balago-oauth-result.json";
+          let response;
+          try { response = JSON.parse(fs.readFileSync(path, "utf8")); }
+          catch { console.error("::error::Claude did not return valid JSON."); process.exit(1); }
+          if (response.is_error || response.result?.trim() !== "BALAGO_AUTH_OK") {
+            const text = response.result || "";
+            const reason = /logged in|401|authentication/i.test(text)
+              ? "OAuth token rejected (401 / Not logged in)"
+              : /limit|usage|429/i.test(text)
+                ? "Claude subscription usage/limit reached"
+                : "Claude did not complete a successful one-turn response";
+            console.error("::error::" + reason);
+            process.exit(1);
+          }
+          console.log("BALAGO_AUTH_OK: Direct Claude CLI authenticated successfully.");
+          NODE
