@@ -1,0 +1,16 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "0a782b8af63aa37980d2a760c11b246148d0f96b",
+  "source_branches": [
+    "claude/bg-037-episode-37-nyj34v",
+    "feature/bg-037-episode-37"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 3,
+  "withheld_file_counts": {
+    "private_source_or_binary": 117
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
