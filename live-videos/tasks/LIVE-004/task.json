@@ -1,0 +1,119 @@
+{
+  "id": "LIVE-004",
+  "title": "А если встреча затянулась? (живое видео №4)",
+  "sources": {
+    "release": "balago-live04-sources",
+    "manifest": "scripts/live04/sources.json"
+  },
+  "versions": [
+    {
+      "version": "v1",
+      "composition": "BalaGoLive04Motion",
+      "stage": "final",
+      "previewTag": "live04-motion-preview",
+      "note": "Насыщенный motion-монтаж (PR #68). Не перерендеривается: собирался прежним workflow live04-motion.yml.",
+      "legacy": true
+    },
+    {
+      "version": "v2",
+      "composition": "BalaGoLive04MotionV2",
+      "stage": "preview",
+      "previewTag": "live-004-v2-preview",
+      "revision": 1,
+      "plan": "src/live-videos/live004/plan.ts",
+      "prepare": [
+        "node scripts/live04/fetch-sources.mjs",
+        "node scripts/live04/prepare-voice.mjs"
+      ],
+      "requires": [
+        "public/audio/live04/brand.json",
+        "public/audio/live04/brand.mp3"
+      ],
+      "legacy": true,
+      "note": "Опубликован до уточнения правил живого CTA (бренд-озвучка и контакты в финале). Не перерендеривается, заменён v3."
+    },
+    {
+      "version": "v3",
+      "composition": "BalaGoLive04MotionV3",
+      "stage": "preview",
+      "previewTag": "live-004-v3-preview",
+      "revision": 1,
+      "plan": "src/live-videos/live004/plan-v3.ts",
+      "prepare": [
+        "node scripts/live04/fetch-sources.mjs",
+        "node scripts/live04/prepare-voice.mjs"
+      ],
+      "tests": [
+        "node --test scripts/live-videos/live004.test.mjs"
+      ],
+      "legacy": true,
+      "note": "Не утверждён владельцем 14.10.2026: слишком просто и тускло. Не перерендеривается, заменён v4."
+    },
+    {
+      "version": "v4",
+      "composition": "BalaGoLive04MotionV4",
+      "stage": "preview",
+      "previewTag": "live-004-v4-preview",
+      "revision": 1,
+      "plan": "src/live-videos/live004/v4/plan-v4.ts",
+      "prepare": [
+        "node scripts/live04/fetch-sources.mjs",
+        "node scripts/live04/prepare-voice.mjs"
+      ],
+      "tests": [
+        "node --test scripts/live-videos/live004-v4.test.mjs"
+      ],
+      "legacy": true,
+      "note": "Одобренное направление (14.10.2026); полируется в v5. Не перерендеривается."
+    },
+    {
+      "version": "v5",
+      "composition": "BalaGoLive04MotionV5",
+      "stage": "preview",
+      "previewTag": "live-004-v5-preview",
+      "revision": 1,
+      "plan": "src/live-videos/live004/v5/plan-v5.ts",
+      "prepare": [
+        "node scripts/live04/fetch-sources.mjs",
+        "node scripts/live04/prepare-voice.mjs"
+      ],
+      "tests": [
+        "node --test scripts/live-videos/live004-v5.test.mjs"
+      ],
+      "legacy": true,
+      "note": "Монтаж одобрен (14.10.2026); субтитры заменены в v6. Не перерендеривается."
+    },
+    {
+      "version": "v6",
+      "composition": "BalaGoLive04MotionV6",
+      "stage": "final",
+      "previewTag": "live-004-v6-preview",
+      "revision": 1,
+      "plan": "src/live-videos/live004/v6/plan-v6.ts",
+      "prepare": [
+        "node scripts/live04/fetch-sources.mjs",
+        "node scripts/live04/prepare-voice.mjs"
+      ],
+      "tests": [
+        "node --test scripts/live-videos/live004-v6.test.mjs"
+      ],
+      "note": "Одобрено владельцем 14.10.2026 после просмотра v6; запущен финальный Full HD рендер 1080×1920 / 30fps."
+    }
+  ],
+  "status": "approved",
+  "card": "live/tasks/LIVE-004-REVISION.md",
+  "concept": {
+    "direction": "Reels-микс: инфографика + динамичный разговор",
+    "idea": "Отвезти ребёнка в школу — это не 20 минут, а остановленная работа пять дней в неделю; BalaGo берёт ежедневный маршрут ҮЙ → МЕКТЕП → ҮЙ.",
+    "techniques": [
+      "цветокоррекция каждого плана",
+      "плавные приближения на «эмес», «темпке», «беш күн», финале",
+      "секундомер, шаги, шкала темпа, неделя, логотип, маршрут",
+      "шапка @balago.kg со стрелкой по жесту вверх",
+      "WhatsApp 0998 08 38 28 под рукой",
+      "естественный финал"
+    ],
+    "cta": "произнесён автором; без второй озвучки — только визуализация по словам и жестам",
+    "city": "в речи нет — «Бишкек • Балдар үчүн такси» у логотипа BalaGo и в шапке маршрута"
+  }
+}

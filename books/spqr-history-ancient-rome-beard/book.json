@@ -1,0 +1,19 @@
+{
+  "slug": "spqr-history-ancient-rome-beard",
+  "id": "BM-040",
+  "title": "Кого Рим считал своим?",
+  "internalSource": "Мэри Бирд, «SPQR. История Древнего Рима» (2015; рус. изд. 2017) — только внутренний учёт; в голосе, кадре, названиях и обложках не используется",
+  "channel": "BanaMind",
+  "source": "books/500-series/sources/BM-040/ (42 TXT + хронология + 14 изображений, 57/57 SHA-256)",
+  "lesson": {
+    "dir": "books/spqr-history-ancient-rome-beard/scripts",
+    "timeline": "scripts/lesson-spqr/lib.mjs",
+    "remotionEntry": "src/books/spqr-history-ancient-rome-beard/film/index.ts",
+    "composition": "SpqrLesson",
+    "workflow": ".github/workflows/lesson-spqr.yml",
+    "release": "book-spqr-history-ancient-rome-beard",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-spqr-history-ancient-rome-beard",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "29:30–30:30 (по озвучке)" }
+}
