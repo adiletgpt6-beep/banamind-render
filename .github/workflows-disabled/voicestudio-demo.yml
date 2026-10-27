@@ -1,0 +1,275 @@
+name: VoiceStudioDemo60s (VoiceStudio + Claude Code, 60 s)
+
+# Минутный анимационный ролик о VoiceStudio. Собирается только эта композиция.
+#   voice   → VoiceStudio 0.5.6 (бэкенд) + движок VoxCPM2 (Apache-2.0).
+#             Озвучка только через MCP VoiceStudio: Voice Design → профиль →
+#             сцены, проверка распознаванием (VoiceStudio transcribe).
+#             Готовая озвучка сохраняется в ветку; если сценарий и голос не
+#             менялись, повторно не синтезируется.
+#   render  → lint/TypeScript, MP4 1080×1920 30 fps H.264/AAC (faststart),
+#             проверки ffprobe, контрольные кадры, превью 540×960.
+#   publish → MP4 файлами предварительного релиза voicestudio-demo-60s.
+
+on:
+  push:
+    paths:
+      - "src/voicestudio-demo/**"
+      - "voicestudio-demo/**"
+      - "public/voicestudio-demo/**"
+      - ".github/workflows/voicestudio-demo.yml"
+  workflow_dispatch:
+    inputs:
+      redesign:
+        description: "Создать голос заново"
+        type: boolean
+        default: false
+
+concurrency:
+  group: voicestudio-demo-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  VS_TAG: v0.5.6
+  OUT: voicestudio-demo-60s
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Is the voiceover up to date?
+        id: need
+        run: |
+          if [ "${{ inputs.redesign }}" != "true" ] && python3 - <<'PY'
+          import hashlib, json, sys, pathlib
+          cfg = json.load(open("voicestudio-demo/script.json"))
+          keep = {"voice": cfg["voice"], "scenes": [[s["id"], s["tts"]] for s in cfg["scenes"]]}
+          h = hashlib.sha256(json.dumps(keep, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:16]
+          p = pathlib.Path("voicestudio-demo/audio/provenance.json")
+          t = json.load(open("src/voicestudio-demo/timing.json"))
+          ok = p.exists() and json.load(open(p)).get("engine") == "voxcpm2" and json.load(open(p)).get("script_hash") == h and not t["estimated"]
+          sys.exit(0 if ok else 1)
+          PY
+          then echo "run=false" >> "$GITHUB_OUTPUT"; echo "Озвучка актуальна."; else echo "run=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Free disk space
+        if: steps.need.outputs.run == 'true'
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/boost
+          df -h /
+
+      - name: Install FFmpeg
+        if: steps.need.outputs.run == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: astral-sh/setup-uv@v6
+        if: steps.need.outputs.run == 'true'
+
+      - name: Install VoiceStudio ${{ env.VS_TAG }} + VoxCPM2 engine
+        if: steps.need.outputs.run == 'true'
+        run: |
+          git clone --depth 1 --branch "$VS_TAG" https://github.com/debpalash/VoiceStudio.git "$RUNNER_TEMP/vs"
+          cd "$RUNNER_TEMP/vs"
+          uv sync --no-sources
+          uv pip install --python .venv/bin/python "voxcpm>=2.0.3"
+          .venv/bin/python -c "import voxcpm, torch; print('voxcpm', voxcpm.__version__ if hasattr(voxcpm,'__version__') else 'ok', 'torch', torch.__version__)"
+          df -h /
+
+      - name: Cache model weights
+        if: steps.need.outputs.run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-voxcpm2-whisper-small-audioseal-v1
+
+      - name: Licenses of the model and its components (saved as evidence)
+        if: steps.need.outputs.run == 'true'
+        run: |
+          mkdir -p voicestudio-demo/licenses
+          cd voicestudio-demo/licenses
+          for repo in openbmb/VoxCPM2 facebook/audioseal Systran/faster-whisper-small; do
+            f=$(echo "$repo" | tr '/' '_')
+            curl -fsSL "https://huggingface.co/api/models/$repo" -o "$f.model-info.json" || true
+            curl -fsSL "https://huggingface.co/$repo/raw/main/README.md" -o "$f.README.md" || true
+            curl -fsSL "https://huggingface.co/$repo/raw/main/LICENSE" -o "$f.LICENSE" || rm -f "$f.LICENSE"
+            python3 -c "import json,sys; d=json.load(open('$f.model-info.json')); print('$repo', 'license:', (d.get('cardData') or {}).get('license'), [t for t in d.get('tags',[]) if t.startswith('license')])" | tee -a summary.txt || true
+          done
+          curl -fsSL https://raw.githubusercontent.com/OpenBMB/VoxCPM/main/LICENSE -o OpenBMB_VoxCPM.LICENSE
+          cp "$RUNNER_TEMP/vs/LICENSE-NOTICE.md" VoiceStudio.LICENSE-NOTICE.md
+          rm -f *.model-info.json
+          cat summary.txt
+
+      - name: Download VoxCPM2 weights
+        if: steps.need.outputs.run == 'true'
+        run: |
+          cd "$RUNNER_TEMP/vs"
+          .venv/bin/python -c "
+          from huggingface_hub import snapshot_download
+          p = snapshot_download('openbmb/VoxCPM2'); print(p)
+          import os; print(sum(os.path.getsize(os.path.join(r,f)) for r,_,fs in os.walk(p) for f in fs)/1e9, 'GB')"
+
+      - name: Start VoiceStudio backend (127.0.0.1:3900, engine voxcpm2)
+        if: steps.need.outputs.run == 'true'
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/vs-out"
+          cd "$RUNNER_TEMP/vs"
+          OMNIVOICE_ANALYTICS_DISABLED=1 \
+          OMNIVOICE_DATA_DIR="$RUNNER_TEMP/vs-data" \
+          OMNIVOICE_TTS_BACKEND=voxcpm2 \
+          OMNIVOICE_ASR_BACKEND=faster-whisper \
+          ASR_MODEL_FASTER=Systran/faster-whisper-small \
+          OMNIVOICE_MCP_OUTPUT_MODE=both \
+          OMNIVOICE_MCP_BASE_PATH="$GITHUB_WORKSPACE/vs-out" \
+          OMNIVOICE_CPU_GENERATE_TIMEOUT_S=5400 \
+          OMNIVOICE_GENERATE_TIMEOUT_S=5400 \
+          OMNIVOICE_ASR_TRANSCRIBE_TIMEOUT_S=1200 \
+          nohup uv run --no-sources uvicorn main:app --app-dir backend --host 127.0.0.1 --port 3900 > "$RUNNER_TEMP/backend.log" 2>&1 &
+          timeout 600 bash -c 'until curl -s localhost:3900/health | grep -q "\"ok\""; do sleep 5; done'
+          curl -s localhost:3900/health; echo
+          curl -s localhost:3900/engines/tts | python3 -c "import json,sys; d=json.load(sys.stdin); print('active', d['active']); print([ (b['id'], b['available']) for b in d['backends'] if b['id']=='voxcpm2'])"
+
+      - name: MCP tools check (list_voices, generate_speech, check_health)
+        if: steps.need.outputs.run == 'true'
+        run: |
+          "$RUNNER_TEMP/vs/.venv/bin/python" voicestudio-demo/scripts/mcp_call.py tools
+          "$RUNNER_TEMP/vs/.venv/bin/python" voicestudio-demo/scripts/mcp_call.py call check_health
+
+      - name: Voiceover through VoiceStudio MCP (design → profile → scenes → QC)
+        if: steps.need.outputs.run == 'true'
+        env:
+          VOICESTUDIO_MCP_BASE: ${{ github.workspace }}/vs-out
+          REDESIGN: ${{ inputs.redesign && '1' || '0' }}
+        run: |
+          "$RUNNER_TEMP/vs/.venv/bin/python" voicestudio-demo/scripts/generate_voice.py
+          cat output/script.txt
+
+      - name: Backend log
+        if: always() && steps.need.outputs.run == 'true'
+        run: tail -n 200 "$RUNNER_TEMP/backend.log" || true
+
+      - name: Save voiceover to the branch
+        if: steps.need.outputs.run == 'true' && github.ref_name != 'main'
+        run: |
+          git add voicestudio-demo/audio voicestudio-demo/voice-profile.json voicestudio-demo/licenses \
+            public/voicestudio-demo/voiceover.wav src/voicestudio-demo/timing.json output/voiceover.wav output/script.txt
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(voicestudio-demo): VoiceStudio VoxCPM2 voiceover"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload voice files
+        if: always() && steps.need.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: voicestudio-demo-voice
+          path: |
+            voicestudio-demo/audio/
+            output/voiceover.wav
+            output/script.txt
+          retention-days: 30
+
+  render:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      # Голова ветки: в ней уже сохранённая задачей voice озвучка.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript (this video)
+        run: npx eslint src/voicestudio-demo src/Root.tsx && npx tsc
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render + QC (1080×1920, 30 fps, H.264/AAC, FitGuard, ffprobe)
+        run: voicestudio-demo/scripts/render_and_check.sh
+
+      - name: Mobile preview copy (540×960)
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "output/$OUT.mp4" \
+            -vf scale=540:960:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 24 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "output/$OUT-preview-540x960.mp4"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voicestudio-demo-mp4
+          path: |
+            output/voicestudio-demo-60s.mp4
+            output/voicestudio-demo-60s-preview-540x960.mp4
+            output/preview.jpg
+            output/voiceover.wav
+            output/script.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: voicestudio-demo-frames
+          path: output/frames/
+          if-no-files-found: warn
+          retention-days: 30
+
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: voicestudio-demo-mp4
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: voicestudio-demo-60s
+        run: |
+          ls -la out
+          NOTES="VoiceStudio + Claude Code — 60 с, 1080×1920, 30 fps, H.264/AAC. Озвучка: VoiceStudio 0.5.6, VoxCPM2 (Apache-2.0). Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "VoiceStudio + Claude Code — 60 с" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-preview-540x960.mp4" out/preview.jpg out/voiceover.wav out/script.txt
+          {
+            echo "### MP4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-preview-540x960.mp4"
+          } >> "$GITHUB_STEP_SUMMARY"

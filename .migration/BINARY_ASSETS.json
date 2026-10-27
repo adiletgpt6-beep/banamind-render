@@ -1,0 +1,92 @@
+[
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/jetbrains-mono-cyrillic-500-normal.woff2",
+    "sha": "15807651ce7a3cb042a11ed9233601f9a8e69bd0",
+    "kind": "font",
+    "license_sha": "8f7ed671137e7a27c646ead86f45d5cb4875f459"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/jetbrains-mono-cyrillic-700-normal.woff2",
+    "sha": "739217c4fa676dc63e2af233ff4fa73fde626a83",
+    "kind": "font",
+    "license_sha": "8f7ed671137e7a27c646ead86f45d5cb4875f459"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/jetbrains-mono-latin-500-normal.woff2",
+    "sha": "be878e68fa71bc1f08894c0882d07adbe485ef99",
+    "kind": "font",
+    "license_sha": "8f7ed671137e7a27c646ead86f45d5cb4875f459"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/jetbrains-mono-latin-700-normal.woff2",
+    "sha": "3a4e333fc9316f9989e16af6788bf1fc788c7084",
+    "kind": "font",
+    "license_sha": "8f7ed671137e7a27c646ead86f45d5cb4875f459"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/manrope-cyrillic-600-normal.woff2",
+    "sha": "6b4ac495a9d792145ca2f5566f4b2af121f13f07",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/manrope-cyrillic-700-normal.woff2",
+    "sha": "3156c54e0589f82a92cd07adc7aa05d2fa1856d8",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/manrope-cyrillic-800-normal.woff2",
+    "sha": "f05b200bc099f2f8f1266a78f53b24202780cf01",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/manrope-latin-600-normal.woff2",
+    "sha": "7cc09a3b3795fb158589fb2d332b022c6fbab0f5",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/manrope-latin-700-normal.woff2",
+    "sha": "84f7af5467eeeb99fdfb08ff0c8c78b5c10bbf75",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/manrope-latin-800-normal.woff2",
+    "sha": "b5cd4008060e69767a803dc33cd355e8de16a280",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/unbounded-cyrillic-800-normal.woff2",
+    "sha": "4d85d018b54af4de8a692d7509966e4f9602443a",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/unbounded-cyrillic-900-normal.woff2",
+    "sha": "31d05e5b0b07d9d6347dd579d574a53003d7c4d8",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/unbounded-latin-800-normal.woff2",
+    "sha": "120231501a47cf9cac03829c878b5b2eac0c9e03",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "public/voicestudio-demo/fonts/unbounded-latin-900-normal.woff2",
+    "sha": "8eae110d5a919c1cf536cfd0024693f1eccaa480",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  }
+]
