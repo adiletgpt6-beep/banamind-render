@@ -1,0 +1,34 @@
+{
+  "name": "muslimkids-infinite-wonder",
+  "version": "1.0.0",
+  "description": "Muslim Kids — Experiment 013 «Бесконечное чудо» (Remotion + Three.js)",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "typecheck": "tsc",
+    "textures": "node scripts/export_land.mjs output/land-50m.geojson && python3 scripts/make_textures.py",
+    "voice": "python3 scripts/generate_voice.py",
+    "sfx": "python3 scripts/make_sfx.py",
+    "stills": "node scripts/render-stills.mjs",
+    "render": "remotion render MuslimKidsInfiniteWonder013 output/final/MuslimKids_InfiniteWonder_013.mp4 --gl=swangle --concurrency=2",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@react-three/fiber": "9.3.0",
+    "@remotion/cli": "4.0.532",
+    "@remotion/three": "4.0.532",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.532",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/three": "0.180.0",
+    "topojson-client": "3.1.0",
+    "typescript": "5.9.3",
+    "world-atlas": "2.0.2"
+  }
+}

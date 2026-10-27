@@ -1,0 +1,10 @@
+node_modules
+output/land-50m.geojson
+output/frames
+output/tests/*.mp4
+output/previews/*.mp4
+public/audio/voice/*.raw.wav
+output/tests/*.log
+output/final/control
+output/final/parts
+output/final/render.log
