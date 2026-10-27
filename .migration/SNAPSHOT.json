@@ -1,0 +1,15 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "b9796f1de53d1285ed8d0f240b531775a2490cb8",
+  "source_branches": [
+    "feature/morning-story"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 1,
+  "withheld_file_counts": {
+    "private_source_or_binary": 68
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 1
+}
