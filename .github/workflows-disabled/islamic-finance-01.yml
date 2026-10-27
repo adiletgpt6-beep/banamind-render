@@ -1,0 +1,150 @@
+name: IslamicFinanceShort01 (30 s, English)
+
+# Finance series, video 1: "What if banks couldn't charge interest?" (murabaha).
+# Builds only this composition. Narration: ElevenLabs when ELEVENLABS_API_KEY
+# is set (premium); otherwise the committed draft narration is used as is.
+#   render  → lint/TypeScript, tests, check frames, contact sheet, captions,
+#             MP4 1080×1920 H.264/AAC (faststart). Fails if the MP4 is missing
+#             or has the wrong format/duration/audio.
+
+on:
+  push:
+    paths:
+      - "src/islamic-finance-01/**"
+      - "src/Root.tsx"
+      - "scripts/if01_phones.py"
+      - "scripts/*if01*"
+      - "scripts/lib/audio.mjs"
+      - "public/audio/islamic-finance-01/**"
+      - "public/audio/music-finance-light.mp3"
+      - "public/fonts/InterVariable.ttf"
+      - ".github/workflows/islamic-finance-01.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: islamic-finance-01-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: islamic-finance-short-01
+  OUT_V2: islamic-finance-horse-v2
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg + ImageMagick
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg imagemagick
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      # Premium narration (only when the secret is configured; the committed
+      # draft narration is used otherwise and nothing is re-synthesized).
+      - name: Narration (ElevenLabs)
+        if: env.ELEVENLABS_API_KEY != ''
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: npm run audio:voice:if01
+
+      - name: Tests (storyboard, script, narration timing)
+        run: npm run test:if01
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Check frames + contact sheet
+        run: |
+          npm run stills:if01
+          montage out/frames-islamic-finance-01/*.png -tile 5x -geometry 270x480+6+6 -background '#222' -label '%f' -pointsize 16 -fill white "out/$OUT-contact-sheet.png"
+
+      - name: Captions (SRT + word timings)
+        run: npm run captions:if01
+
+      - name: Render MP4 (H.264/AAC, yuv420p)
+        run: npm run render:if01 -- --log=warn
+
+      # V2: the same video with the animated horse presenter (lip-synced).
+      - name: Horse presenter — character preview + check frames
+        run: |
+          npm run preview:horse -- --log=error
+          npm run stills:horse-v2
+          montage out/frames-islamic-finance-horse-v2/*.png -tile 5x -geometry 270x480+6+6 -background '#222' -label '%f' -pointsize 16 -fill white "out/$OUT_V2-contact-sheet.png"
+
+      - name: Render horse V2 MP4
+        run: npm run render:horse-v2 -- --log=warn
+
+      - name: Faststart
+        run: |
+          for f in "$OUT" "$OUT_V2"; do
+            ffmpeg -hide_banner -loglevel error -y -i "out/$f.mp4" -c copy -movflags +faststart "out/$f-fs.mp4"
+            mv "out/$f-fs.mp4" "out/$f.mp4"
+          done
+
+      - name: Verify MP4s (fail if missing or wrong format)
+        run: |
+          node scripts/verify-if01.mjs "out/$OUT.mp4"
+          node scripts/verify-if01.mjs "out/$OUT_V2.mp4"
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: islamic-finance-short-01-mp4
+          path: out/islamic-finance-short-01.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload horse V2 MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: islamic-finance-horse-v2-mp4
+          path: out/islamic-finance-horse-v2.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload horse V2 extras (character preview, frames, contact sheet)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: islamic-finance-horse-v2-extras
+          path: |
+            out/finance-horse-preview.png
+            out/islamic-finance-horse-v2-contact-sheet.png
+            out/frames-islamic-finance-horse-v2/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload captions, script, narration and contact sheet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: islamic-finance-short-01-extras
+          path: |
+            out/islamic-finance-short-01.srt
+            out/islamic-finance-short-01.words.json
+            out/islamic-finance-short-01.script.txt
+            out/islamic-finance-short-01-contact-sheet.png
+            out/frames-islamic-finance-01/*.png
+            public/audio/islamic-finance-01/
+          if-no-files-found: warn
+          retention-days: 30

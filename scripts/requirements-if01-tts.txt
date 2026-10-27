@@ -1,0 +1,8 @@
+# Local draft narration for IslamicFinanceShort01 (scripts/if01_tts.py):
+# Kokoro-82M via ONNX + PocketSphinx forced alignment. CPU only.
+# Model files (not on PyPI): kokoro-v1.0.onnx and voices-v1.0.bin from
+# https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.0
+kokoro-onnx
+soundfile
+pocketsphinx
+numpy

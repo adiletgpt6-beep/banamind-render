@@ -1,0 +1,398 @@
+{
+  "version": 1,
+  "video": "IslamicFinanceShort01",
+  "provider": "kokoro-onnx",
+  "draft": true,
+  "voice": "am_michael",
+  "file": "narration.mp3",
+  "durationSec": 30,
+  "peakDb": -2.137,
+  "speechDb": -17,
+  "lines": [
+    {
+      "id": "l1",
+      "scene": "hook",
+      "text": "What if banks couldn't charge interest?",
+      "start": 0.3,
+      "end": 2.343,
+      "aligner": "pocketsphinx",
+      "words": [
+        {
+          "text": "What",
+          "start": 0.3,
+          "end": 0.48
+        },
+        {
+          "text": "if",
+          "start": 0.48,
+          "end": 0.58
+        },
+        {
+          "text": "banks",
+          "start": 0.58,
+          "end": 0.96
+        },
+        {
+          "text": "couldn't",
+          "start": 0.96,
+          "end": 1.2
+        },
+        {
+          "text": "charge",
+          "start": 1.2,
+          "end": 1.66
+        },
+        {
+          "text": "interest?",
+          "start": 1.66,
+          "end": 2.36
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "scene": "rule",
+      "text": "In Islamic finance, riba is prohibited.",
+      "start": 3.2,
+      "end": 6.056,
+      "aligner": "pocketsphinx",
+      "words": [
+        {
+          "text": "In",
+          "start": 3.2,
+          "end": 3.33
+        },
+        {
+          "text": "Islamic",
+          "start": 3.33,
+          "end": 3.83
+        },
+        {
+          "text": "finance,",
+          "start": 3.83,
+          "end": 4.48
+        },
+        {
+          "text": "riba",
+          "start": 4.78,
+          "end": 5.21
+        },
+        {
+          "text": "is",
+          "start": 5.21,
+          "end": 5.33
+        },
+        {
+          "text": "prohibited.",
+          "start": 5.33,
+          "end": 6.07
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "scene": "question",
+      "text": "So how does financing work?",
+      "start": 6.7,
+      "end": 8.433,
+      "aligner": "pocketsphinx",
+      "words": [
+        {
+          "text": "So",
+          "start": 6.7,
+          "end": 6.89
+        },
+        {
+          "text": "how",
+          "start": 6.89,
+          "end": 7.08
+        },
+        {
+          "text": "does",
+          "start": 7.08,
+          "end": 7.3
+        },
+        {
+          "text": "financing",
+          "start": 7.3,
+          "end": 8
+        },
+        {
+          "text": "work?",
+          "start": 8,
+          "end": 8.44
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "scene": "car",
+      "text": "Let's say a car costs twenty thousand dollars.",
+      "start": 9.2,
+      "end": 11.755,
+      "aligner": "pocketsphinx",
+      "words": [
+        {
+          "text": "Let's",
+          "start": 9.2,
+          "end": 9.4
+        },
+        {
+          "text": "say",
+          "start": 9.4,
+          "end": 9.54
+        },
+        {
+          "text": "a",
+          "start": 9.54,
+          "end": 9.58
+        },
+        {
+          "text": "car",
+          "start": 9.58,
+          "end": 9.99
+        },
+        {
+          "text": "costs",
+          "start": 9.99,
+          "end": 10.39
+        },
+        {
+          "text": "twenty",
+          "start": 10.39,
+          "end": 10.74
+        },
+        {
+          "text": "thousand",
+          "start": 10.74,
+          "end": 11.17
+        },
+        {
+          "text": "dollars.",
+          "start": 11.17,
+          "end": 11.78
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "scene": "deal",
+      "text": "In one model, a financier buys it, then resells it to you for an agreed twenty-two thousand, paid in installments.",
+      "start": 13.1,
+      "end": 20.867,
+      "aligner": "pocketsphinx",
+      "words": [
+        {
+          "text": "In",
+          "start": 13.1,
+          "end": 13.257
+        },
+        {
+          "text": "one",
+          "start": 13.257,
+          "end": 13.437
+        },
+        {
+          "text": "model,",
+          "start": 13.437,
+          "end": 14.117
+        },
+        {
+          "text": "a",
+          "start": 14.117,
+          "end": 14.167
+        },
+        {
+          "text": "financier",
+          "start": 14.167,
+          "end": 14.937
+        },
+        {
+          "text": "buys",
+          "start": 14.937,
+          "end": 15.407
+        },
+        {
+          "text": "it,",
+          "start": 15.407,
+          "end": 15.547
+        },
+        {
+          "text": "then",
+          "start": 15.957,
+          "end": 16.197
+        },
+        {
+          "text": "resells",
+          "start": 16.197,
+          "end": 16.797
+        },
+        {
+          "text": "it",
+          "start": 16.797,
+          "end": 16.897
+        },
+        {
+          "text": "to",
+          "start": 16.897,
+          "end": 17.027
+        },
+        {
+          "text": "you",
+          "start": 17.027,
+          "end": 17.287
+        },
+        {
+          "text": "for",
+          "start": 17.287,
+          "end": 17.487
+        },
+        {
+          "text": "an",
+          "start": 17.487,
+          "end": 17.567
+        },
+        {
+          "text": "agreed",
+          "start": 17.567,
+          "end": 17.957
+        },
+        {
+          "text": "twenty-two",
+          "start": 17.957,
+          "end": 18.557
+        },
+        {
+          "text": "thousand,",
+          "start": 18.557,
+          "end": 19.217
+        },
+        {
+          "text": "paid",
+          "start": 19.567,
+          "end": 19.877
+        },
+        {
+          "text": "in",
+          "start": 19.877,
+          "end": 19.987
+        },
+        {
+          "text": "installments.",
+          "start": 19.987,
+          "end": 20.887
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "scene": "name",
+      "text": "It's called murabaha.",
+      "start": 22.2,
+      "end": 23.535,
+      "aligner": "pocketsphinx",
+      "words": [
+        {
+          "text": "It's",
+          "start": 22.2,
+          "end": 22.392
+        },
+        {
+          "text": "called",
+          "start": 22.392,
+          "end": 22.722
+        },
+        {
+          "text": "murabaha.",
+          "start": 22.722,
+          "end": 23.552
+        }
+      ]
+    },
+    {
+      "id": "l7",
+      "scene": "takeaway",
+      "text": "Not free money — a different kind of contract.",
+      "start": 24.6,
+      "end": 27.276,
+      "aligner": "pocketsphinx",
+      "words": [
+        {
+          "text": "Not",
+          "start": 24.6,
+          "end": 24.903
+        },
+        {
+          "text": "free",
+          "start": 24.903,
+          "end": 25.153
+        },
+        {
+          "text": "money",
+          "start": 25.153,
+          "end": 25.553
+        },
+        {
+          "text": "a",
+          "start": 25.793,
+          "end": 25.853
+        },
+        {
+          "text": "different",
+          "start": 25.853,
+          "end": 26.193
+        },
+        {
+          "text": "kind",
+          "start": 26.193,
+          "end": 26.373
+        },
+        {
+          "text": "of",
+          "start": 26.373,
+          "end": 26.453
+        },
+        {
+          "text": "contract.",
+          "start": 26.453,
+          "end": 27.293
+        }
+      ]
+    },
+    {
+      "id": "l8",
+      "scene": "cta",
+      "text": "Follow for more finance explained.",
+      "start": 27.576,
+      "end": 29.694,
+      "aligner": "pocketsphinx",
+      "words": [
+        {
+          "text": "Follow",
+          "start": 27.576,
+          "end": 27.976
+        },
+        {
+          "text": "for",
+          "start": 27.976,
+          "end": 28.126
+        },
+        {
+          "text": "more",
+          "start": 28.126,
+          "end": 28.346
+        },
+        {
+          "text": "finance",
+          "start": 28.346,
+          "end": 28.926
+        },
+        {
+          "text": "explained.",
+          "start": 28.926,
+          "end": 29.716
+        }
+      ]
+    }
+  ]
+}
