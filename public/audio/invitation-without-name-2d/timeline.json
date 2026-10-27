@@ -1,0 +1,463 @@
+{
+  "video": "BalaGoInvitationWithoutName2D",
+  "partial": false,
+  "fps": 30,
+  "frames": 5108,
+  "durationSec": 170.267,
+  "contactFromFrame": 4958,
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "1. Күтүлбөгөн сөз",
+      "fromFrame": 0,
+      "toFrame": 208,
+      "from": 0,
+      "to": 6.933
+    },
+    {
+      "id": "blank",
+      "title": "2. Бош сап",
+      "fromFrame": 208,
+      "toFrame": 484,
+      "from": 6.933,
+      "to": 16.133
+    },
+    {
+      "id": "careers",
+      "title": "3. Кесиптер күнү",
+      "fromFrame": 484,
+      "toFrame": 696,
+      "from": 16.133,
+      "to": 23.2
+    },
+    {
+      "id": "proud",
+      "title": "4. Атасы — инженер",
+      "fromFrame": 696,
+      "toFrame": 1007,
+      "from": 23.2,
+      "to": 33.567
+    },
+    {
+      "id": "route",
+      "title": "5. Күнүмдүк жол",
+      "fromFrame": 1007,
+      "toFrame": 1217,
+      "from": 33.567,
+      "to": 40.567
+    },
+    {
+      "id": "backpack",
+      "title": "6. Апасы кагазды тапты",
+      "fromFrame": 1217,
+      "toFrame": 1429,
+      "from": 40.567,
+      "to": 47.633
+    },
+    {
+      "id": "ask",
+      "title": "7. Бир деңгээлде",
+      "fromFrame": 1429,
+      "toFrame": 1732,
+      "from": 47.633,
+      "to": 57.733
+    },
+    {
+      "id": "why",
+      "title": "8. Эмне үчүн сурабады",
+      "fromFrame": 1732,
+      "toFrame": 2062,
+      "from": 57.733,
+      "to": 68.733
+    },
+    {
+      "id": "name",
+      "title": "9. Ысым жазылды",
+      "fromFrame": 2062,
+      "toFrame": 2278,
+      "from": 68.733,
+      "to": 75.933
+    },
+    {
+      "id": "idea",
+      "title": "10. Көпүрө",
+      "fromFrame": 2278,
+      "toFrame": 2514,
+      "from": 75.933,
+      "to": 83.8
+    },
+    {
+      "id": "test",
+      "title": "11. Эки тажрыйба",
+      "fromFrame": 2514,
+      "toFrame": 2919,
+      "from": 83.8,
+      "to": 97.3
+    },
+    {
+      "id": "list",
+      "title": "12. Тизме",
+      "fromFrame": 2919,
+      "toFrame": 3054,
+      "from": 97.3,
+      "to": 101.8
+    },
+    {
+      "id": "class",
+      "title": "13. Атасы келди",
+      "fromFrame": 3054,
+      "toFrame": 3495,
+      "from": 101.8,
+      "to": 116.5
+    },
+    {
+      "id": "demo",
+      "title": "14. Класста сыноо",
+      "fromFrame": 3495,
+      "toFrame": 3812,
+      "from": 116.5,
+      "to": 127.067
+    },
+    {
+      "id": "photo",
+      "title": "15. Эстелик сүрөт",
+      "fromFrame": 3812,
+      "toFrame": 3920,
+      "from": 127.067,
+      "to": 130.667
+    },
+    {
+      "id": "parents",
+      "title": "16. Ата-эне кеңешет",
+      "fromFrame": 3920,
+      "toFrame": 4335,
+      "from": 130.667,
+      "to": 144.5
+    },
+    {
+      "id": "balago",
+      "title": "17. BalaGo: алдын ала өтүнмө",
+      "fromFrame": 4335,
+      "toFrame": 4639,
+      "from": 144.5,
+      "to": 154.633
+    },
+    {
+      "id": "bedtime",
+      "title": "18. Аты жазылган чакыруу",
+      "fromFrame": 4639,
+      "toFrame": 4958,
+      "from": 154.633,
+      "to": 165.267
+    },
+    {
+      "id": "contact",
+      "title": "19. Байланыш",
+      "fromFrame": 4958,
+      "toFrame": 5108,
+      "from": 165.267,
+      "to": 170.267
+    }
+  ],
+  "segments": [
+    {
+      "id": "T01",
+      "role": "teacher",
+      "mode": "live",
+      "scene": "hook",
+      "text": "Уулуңуз сиздин келишиңизди аябай каалаган.",
+      "file": "t01.mp3",
+      "voice": "KG-friend",
+      "durationSec": 2.84,
+      "from": 0.7,
+      "to": 3.196,
+      "action": "учительница у кабинета 203 обращается к папе"
+    },
+    {
+      "id": "F01",
+      "role": "father",
+      "mode": "live",
+      "scene": "hook",
+      "text": "Эмнеге мага айткан жок?",
+      "file": "f01.mp3",
+      "voice": "KG-husband",
+      "durationSec": 1.45,
+      "from": 4.196,
+      "to": 5.403,
+      "action": "взгляд папы меняется; крупно — удивление"
+    },
+    {
+      "id": "N01",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "blank",
+      "text": "Бирок чакыруу кагазы бир жума бою сумкасында жатты. Аты-жөнү жазыла турган сап бош эле.",
+      "file": "n01.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 6.45,
+      "from": 8.433,
+      "to": 14.523,
+      "action": "строки приглашения по очереди; пустая строка гостя; «Бир жума»"
+    },
+    {
+      "id": "N02",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "careers",
+      "text": "Мектепте кесиптер күнү өтмөк. Ата-энелер балдарга өз иши тууралуу айтып беришмек.",
+      "file": "n02.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 5.57,
+      "from": 16.733,
+      "to": 22.083,
+      "action": "доска «КЕСИПТЕР КҮНҮ», предметы профессий; учительница раздаёт листы"
+    },
+    {
+      "id": "N03",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "proud",
+      "text": "Атасы — инженер. Эмир анын чиймелерин кызыгуу менен карачу.",
+      "file": "n03.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 4.68,
+      "from": 23.8,
+      "to": 28.13,
+      "action": "папа над чертежом; Эмир рассматривает линии"
+    },
+    {
+      "id": "S01",
+      "role": "son",
+      "mode": "live",
+      "scene": "proud",
+      "text": "Менин атам чыныгы имараттарды долбоорлойт!",
+      "file": "s01.mp3",
+      "voice": "KG-boy a2-3",
+      "durationSec": 2.63,
+      "from": 29.53,
+      "to": 31.858,
+      "action": "Эмир с двумя одноклассниками; дети реагируют"
+    },
+    {
+      "id": "N04",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "route",
+      "text": "Күн сайын ал уулун мектептен алып, кайра жумушка кайтып барчу.",
+      "file": "n04.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 4.26,
+      "from": 34.367,
+      "to": 38.367,
+      "action": "карандаш отложен → машина у школы → снова за чертежом; линия Кеңсе → Мектеп → Үй → Кеңсе"
+    },
+    {
+      "id": "N05",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "backpack",
+      "text": "Үйдө апасы сумкадан бырышып калган чакыруу кагазын тапты.",
+      "file": "n05.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 4.02,
+      "from": 41.267,
+      "to": 45.007,
+      "action": "молния открыта, рука в рюкзаке, лист на столе"
+    },
+    {
+      "id": "F02",
+      "role": "father",
+      "mode": "live",
+      "scene": "ask",
+      "text": "Менин келишимди кааладың беле?",
+      "file": "f02.mp3",
+      "voice": "KG-husband",
+      "durationSec": 1.91,
+      "from": 51.233,
+      "to": 52.843,
+      "action": "папа подходит, отодвигает стул, садится рядом"
+    },
+    {
+      "id": "F03",
+      "role": "father",
+      "mode": "live",
+      "scene": "ask",
+      "text": "Анда эмнеге чакырууну бербедиң?",
+      "file": "f03.mp3",
+      "voice": "KG-husband",
+      "durationSec": 2.21,
+      "from": 54.843,
+      "to": 56.723,
+      "action": "сын молча кивает"
+    },
+    {
+      "id": "S02",
+      "role": "son",
+      "mode": "live",
+      "scene": "why",
+      "text": "Сен мени мектептен алып кетиш үчүн күн сайын жумуштан чыгасың. Анан кайра жумушка кайтасың. Дагы бир жолу сурансам... ашыкча болуп калат го деп ойлодум.",
+      "file": "s02.mp3",
+      "voice": "KG-boy a2-3",
+      "durationSec": 8.74,
+      "from": 59.533,
+      "to": 68.013,
+      "action": "сын смотрит на лист, затем на папу; общий → крупный сына → реакция папы"
+    },
+    {
+      "id": "F04",
+      "role": "father",
+      "mode": "live",
+      "scene": "idea",
+      "text": "Классыңа эмне көрсөтөбүз?",
+      "file": "f04.mp3",
+      "voice": "KG-husband",
+      "durationSec": 1.621,
+      "from": 77.233,
+      "to": 78.521,
+      "action": "папа придвигает заполненное приглашение к сыну"
+    },
+    {
+      "id": "S03",
+      "role": "son",
+      "mode": "live",
+      "scene": "idea",
+      "text": "Көпүрө! Кагаздан көпүрө жасасак болобу?",
+      "file": "s03.mp3",
+      "voice": "KG-boy a2-3",
+      "durationSec": 2.96,
+      "from": 79.521,
+      "to": 82.177,
+      "action": "сын выпрямляется, берёт чистый лист; линия пролёта"
+    },
+    {
+      "id": "N06",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "test",
+      "text": "Ошол кечте алар ар кандай көпүрөлөрдү жасап көрүштү. Бирөө ийилип калды. Экинчиси оюнчук машинаны көтөрдү.",
+      "file": "n06.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 8.14,
+      "from": 85,
+      "to": 92.896,
+      "action": "плоский лист прогибается; сгибают второй; машинка проезжает"
+    },
+    {
+      "id": "N07",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "class",
+      "text": "Эртеси Эмир классташтарына атасын тааныштырды.",
+      "file": "n07.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 3.64,
+      "from": 103.4,
+      "to": 106.76,
+      "action": "учительница встречает папу; Эмир показывает, куда поставить модель"
+    },
+    {
+      "id": "F05",
+      "role": "father",
+      "mode": "live",
+      "scene": "class",
+      "text": "Инженерлер имараттарды, жолдорду, көпүрөлөрдү долбоорлошот. Бүгүн кагаздан жасалган көпүрөбүздү сынайбыз.",
+      "file": "f05.mp3",
+      "voice": "KG-husband",
+      "durationSec": 7.41,
+      "from": 107.96,
+      "to": 115.08,
+      "action": "папа показывает на чертёж, затем на мост"
+    },
+    {
+      "id": "N08",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "demo",
+      "text": "Кечээги тажрыйба класста да ийгиликтүү өттү.",
+      "file": "n08.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 3.347,
+      "from": 122.1,
+      "to": 125.255,
+      "action": "после проезда машинки и аплодисментов"
+    },
+    {
+      "id": "M01",
+      "role": "mother",
+      "mode": "live",
+      "scene": "parents",
+      "text": "Мектепке барып-келүүнү алдын ала уюштуралы. Ошондо жумушубузду да жеңилирээк пландайбыз.",
+      "file": "m01.mp3",
+      "voice": "KG-mother",
+      "durationSec": 6.83,
+      "from": 132.067,
+      "to": 138.667,
+      "action": "родители за столом: фото, телефон, расписание"
+    },
+    {
+      "id": "F06",
+      "role": "father",
+      "mode": "live",
+      "scene": "parents",
+      "text": "Макул. Маршрут менен убактысын сүйлөшүп алалы.",
+      "file": "f06.mp3",
+      "voice": "KG-husband",
+      "durationSec": 2.97,
+      "from": 139.467,
+      "to": 142.187,
+      "action": "папа соглашается; мама открывает поиск"
+    },
+    {
+      "id": "N09",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "balago",
+      "text": "Алар BalaGo'ну таап, мектепке барып-келүү убактысын сүйлөшүү үчүн алдын ала өтүнмө калтырышты.",
+      "file": "n09.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 7.02,
+      "from": 145.5,
+      "to": 152.22,
+      "action": "поиск → карточка BalaGo → страница → форма → «Жөнөтүү» → «Өтүнмө жөнөтүлдү»"
+    },
+    {
+      "id": "F07",
+      "role": "father",
+      "mode": "live",
+      "scene": "bedtime",
+      "text": "Сактап коёсуңбу?",
+      "file": "f07.mp3",
+      "voice": "KG-husband",
+      "durationSec": 1.25,
+      "from": 157.833,
+      "to": 158.601,
+      "action": "папа подходит к столу сына, видит приглашение и фото"
+    },
+    {
+      "id": "S04",
+      "role": "son",
+      "mode": "live",
+      "scene": "bedtime",
+      "text": "Албетте. Бул жерде сенин атың жазылган да.",
+      "file": "s04.mp3",
+      "voice": "KG-boy a2-3",
+      "durationSec": 2.66,
+      "from": 159.401,
+      "to": 161.861,
+      "action": "сын отвечает; папа смотрит на имя и на сына"
+    },
+    {
+      "id": "N10",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "contact",
+      "text": "BalaGo — балдар үчүн такси.",
+      "file": "n10.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 2.11,
+      "from": 165.867,
+      "to": 167.707,
+      "action": "контактная карточка BalaGo"
+    }
+  ]
+}
