@@ -1,0 +1,92 @@
+[
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/manrope-cyrillic-500-normal.woff2",
+    "sha": "6ebd90470c345477060664f89bf9e19ce7461bef",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/manrope-cyrillic-600-normal.woff2",
+    "sha": "6b4ac495a9d792145ca2f5566f4b2af121f13f07",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/manrope-cyrillic-700-normal.woff2",
+    "sha": "3156c54e0589f82a92cd07adc7aa05d2fa1856d8",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/manrope-cyrillic-800-normal.woff2",
+    "sha": "f05b200bc099f2f8f1266a78f53b24202780cf01",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/manrope-latin-500-normal.woff2",
+    "sha": "70447ee806d968d45a5e480cf1e7ca13528fe733",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/manrope-latin-600-normal.woff2",
+    "sha": "7cc09a3b3795fb158589fb2d332b022c6fbab0f5",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/manrope-latin-700-normal.woff2",
+    "sha": "84f7af5467eeeb99fdfb08ff0c8c78b5c10bbf75",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/manrope-latin-800-normal.woff2",
+    "sha": "b5cd4008060e69767a803dc33cd355e8de16a280",
+    "kind": "font",
+    "license_sha": "e271172a9ed0cddc895aabb6509f1c7d880b492d"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/unbounded-cyrillic-500-normal.woff2",
+    "sha": "e08b3ca7a899dfa5750f0a6f415387c268f5a7d1",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/unbounded-cyrillic-600-normal.woff2",
+    "sha": "9b8091c56ca0cfbd9b7577951fc0bd64d54cde1d",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/unbounded-cyrillic-700-normal.woff2",
+    "sha": "06016a1a197d5d6968d7266d19d85a06580eb395",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/unbounded-latin-500-normal.woff2",
+    "sha": "8bd744fe8c0fcb0746342d2c3be20443474476fe",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/unbounded-latin-600-normal.woff2",
+    "sha": "c72dfceaac4b580a302930d93223b6b88a89a8d3",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "muslimkids-layers-of-reality/public/fonts/unbounded-latin-700-normal.woff2",
+    "sha": "662dce43e40f8a498bc520f43c26dc5cfb95a4b6",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]

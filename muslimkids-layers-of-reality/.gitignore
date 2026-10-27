@@ -1,0 +1,9 @@
+node_modules/
+scripts/.cache/
+output/**
+!output/previews/
+!output/previews/qa/
+!output/previews/qa/**
+!output/final/
+output/final/*
+!output/final/.gitkeep

@@ -1,0 +1,146 @@
+{
+ "fps": 30,
+ "durationInFrames": 1800,
+ "scenes": [
+  {
+   "id": "earth",
+   "nominalStart": 0.0,
+   "voiceStart": 0.55,
+   "voiceEnd": 5.362
+  },
+  {
+   "id": "earthLayers",
+   "nominalStart": 6.0,
+   "voiceStart": 6.35,
+   "voiceEnd": 12.057
+  },
+  {
+   "id": "mountains",
+   "nominalStart": 15.0,
+   "voiceStart": 15.35,
+   "voiceEnd": 22.013
+  },
+  {
+   "id": "leaf",
+   "nominalStart": 25.0,
+   "voiceStart": 25.35,
+   "voiceEnd": 32.806
+  },
+  {
+   "id": "grand",
+   "nominalStart": 35.0,
+   "voiceStart": 35.35,
+   "voiceEnd": 42.165
+  },
+  {
+   "id": "quran",
+   "nominalStart": 44.6,
+   "voiceStart": 44.95,
+   "voiceEnd": 49.52
+  },
+  {
+   "id": "ending",
+   "nominalStart": 53.2,
+   "voiceStart": 53.55,
+   "voiceEnd": 57.397
+  }
+ ],
+ "sentences": [
+  {
+   "scene": "earth",
+   "text": "Ты когда-нибудь задумывался, что скрывается внутри знакомых вещей?",
+   "start": 0.55,
+   "end": 4.242
+  },
+  {
+   "scene": "earth",
+   "text": "Посмотри!",
+   "start": 4.622,
+   "end": 5.362
+  },
+  {
+   "scene": "earthLayers",
+   "text": "Земля вращается: поэтому день сменяет ночь.",
+   "start": 6.35,
+   "end": 9.384
+  },
+  {
+   "scene": "earthLayers",
+   "text": "А внутри у планеты есть разные слои!",
+   "start": 9.764,
+   "end": 12.057
+  },
+  {
+   "scene": "mountains",
+   "text": "Теперь взгляни на горы!",
+   "start": 15.35,
+   "end": 16.783
+  },
+  {
+   "scene": "mountains",
+   "text": "Мы видим их вершины.",
+   "start": 17.163,
+   "end": 18.623
+  },
+  {
+   "scene": "mountains",
+   "text": "Но под поверхностью тоже скрываются горные породы.",
+   "start": 19.003,
+   "end": 22.013
+  },
+  {
+   "scene": "leaf",
+   "text": "А теперь — маленький листочек.",
+   "start": 25.35,
+   "end": 27.272
+  },
+  {
+   "scene": "leaf",
+   "text": "Снаружи он зелёный.",
+   "start": 27.652,
+   "end": 28.963
+  },
+  {
+   "scene": "leaf",
+   "text": "Но внутри него есть прожилки и множество крошечных клеток!",
+   "start": 29.343,
+   "end": 32.806
+  },
+  {
+   "scene": "grand",
+   "text": "В суре Аль-Имран говорится:",
+   "start": 35.35,
+   "end": 36.91
+  },
+  {
+   "scene": "grand",
+   "text": "в сотворении небес и земли, в смене ночи и дня есть знамения для обладающих разумом.",
+   "start": 37.29,
+   "end": 42.165
+  },
+  {
+   "scene": "quran",
+   "text": "И верующие говорят:",
+   "start": 44.95,
+   "end": 46.365
+  },
+  {
+   "scene": "quran",
+   "text": "Господь наш! Ты не сотворил это понапрасну.",
+   "start": 46.745,
+   "end": 49.52
+  },
+  {
+   "scene": "ending",
+   "text": "А что удивительного заметишь сегодня ты?",
+   "start": 53.55,
+   "end": 55.904
+  },
+  {
+   "scene": "ending",
+   "text": "Посмотри вокруг!",
+   "start": 56.284,
+   "end": 57.397
+  }
+ ]
+}
