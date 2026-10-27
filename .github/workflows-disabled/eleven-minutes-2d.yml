@@ -1,0 +1,261 @@
+name: BalaGoElevenMinutes2D (2D, 120 s)
+
+# 2D-ролик «Он бир мүнөт» («Одиннадцать минут»), BalaGoElevenMinutes2D.
+# Собирается только эта композиция (прежние ролики здесь не рендерятся).
+#   voice   → реплики ElevenLabs готовыми кыргызскими голосами проекта
+#             (3 дубля новой реплики, лучший по распознаванию MMS);
+#             новые файлы сохраняются в ветку, готовые не синтезируются.
+#   render  → lint/TypeScript, тесты, контрольные кадры, MP4 1080×1920,
+#             громкость −14 LUFS (true peak ≤ −1,5 dBTP), проверка каждой
+#             реплики в готовом звуке, облегчённая копия 540×960 (обе с
+#             faststart). Задача падает, если формат/длительность/звук не те.
+#   publish → оба MP4 как файлы предварительного релиза
+#             eleven-minutes-2d-preview (прямые ссылки на MP4, не ZIP).
+
+on:
+  push:
+    paths:
+      - "src/eleven-minutes-2d/**"
+      - "src/BalaGoElevenMinutes2D.tsx"
+      - "scripts/*em2d*"
+      - "scripts/lib/em2d-*"
+      - "scripts/eleven-minutes-2d.test.mjs"
+      - "public/audio/eleven-minutes-2d/**"
+      - ".github/workflows/eleven-minutes-2d.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: eleven-minutes-2d-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: balago-eleven-minutes-2d
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    outputs:
+      saved: ${{ steps.save.outputs.saved }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-em2d-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-em2d-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      # Реплики: готовые (тот же хэш текста, тега, голоса, модели,
+      # настроек и seed) переиспользуются без обращения к API.
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/generate-em2d-voice.mjs
+
+      # Звуки быта, которых нет среди общих эффектов (детерминированный синтез).
+      - name: Sound effects
+        run: |
+          if [ ! -f public/audio/eleven-minutes-2d/sfx/tick.mp3 ]; then node scripts/em2d-sfx.mjs; fi
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          if [ -d public/audio/eleven-minutes-2d ]; then git add public/audio/eleven-minutes-2d; fi
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save eleven-minutes-2d voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "saved=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Upload voice files
+        if: always() && hashFiles('public/audio/eleven-minutes-2d/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-eleven-minutes-2d-voice
+          path: public/audio/eleven-minutes-2d/
+          retention-days: 30
+
+  render:
+    needs: voice
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      # Голова ветки: в ней уже сохранённые задачей voice файлы.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (timeline, voice files, texts)
+        env:
+          EM2_STRICT_VOICE: "1"
+        run: node --test scripts/eleven-minutes-2d.test.mjs scripts/em2d-manifest.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames
+        run: npm run stills:eleven-minutes-2d
+
+      - name: Render MP4 (H.264/AAC, yuv420p)
+        run: npm run render:eleven-minutes-2d -- --log=warn
+
+      - name: Loudness −14 LUFS + faststart + mobile copy (540×960)
+        run: |
+          node scripts/em2d-loudness.mjs "out/$OUT.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+            -vf scale=540:960:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 24 \
+            -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart \
+            "out/$OUT-mobile.mp4"
+
+      - name: Every line is audible in the exported MP4
+        run: |
+          node scripts/em2d-speech-check.mjs "out/$OUT.mp4"
+          node scripts/em2d-speech-check.mjs "out/$OUT-mobile.mp4"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-em2d-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-em2d-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      # «Прослушивание» экспорта: каждая реплика распознаётся из готового звука.
+      - name: Every line is recognised in the exported MP4 (MMS)
+        run: |
+          node scripts/em2d-export-asr.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+          node scripts/em2d-export-asr.mjs "out/$OUT-mobile.mp4" | tail -1 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify MP4 files (fail if missing or wrong format)
+        run: |
+          node scripts/verify-em2d.mjs "out/$OUT.mp4"
+          node scripts/verify-em2d.mjs "out/$OUT-mobile.mp4" --mobile
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-eleven-minutes-2d-mp4
+          path: out/balago-eleven-minutes-2d.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload mobile MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-eleven-minutes-2d-mobile-mp4
+          path: out/balago-eleven-minutes-2d-mobile.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-eleven-minutes-2d-frames
+          path: out/frames-eleven-minutes-2d/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  # Оба MP4 — файлами предварительного релиза: прямые ссылки на MP4.
+  # (render собирает голову ветки — уже с сохранёнными задачей voice файлами.)
+  publish:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: balago-eleven-minutes-2d-*mp4
+          merge-multiple: true
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: eleven-minutes-2d-preview
+        run: |
+          ls -la out
+          NOTES="BalaGoElevenMinutes2D — предварительный просмотр. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BalaGo «Он бир мүнөт» — 2D" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-mobile.mp4"
+          {
+            echo "### MP4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-mobile.mp4"
+          } >> "$GITHUB_STEP_SUMMARY"
