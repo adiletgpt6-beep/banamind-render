@@ -1,0 +1,310 @@
+name: BanaMind BM-006 — «Атлант расправил плечи» (фрагмент, 30 мин, 16:9)
+
+# Аналитический разбор ознакомительного фрагмента (часть I) с бананом-ведущим.
+# Канал BanaMind, не реклама BalaGo. Своя точка входа src/lesson-atlas/index.ts,
+# другие фильмы не трогает.
+#   voice    → озвучка ElevenLabs по репликам (тот же голос, что в BM-001; готовые
+#              файлы с тем же хэшем переиспользуются), новые файлы — в ветку.
+#   render   → параллельные части кадров (без звука), 1920×1080 30 fps.
+#              «[pilot]» в сообщении коммита — только первые 60 с (пилот);
+#              «[no render]» — только озвучка и тесты.
+#   assemble → склейка без пережатия, звук по тайм-лайну, AAC + faststart, SRT,
+#              проверки формата/длительности/звука/чёрных кадров, превью 960×540,
+#              SCRIPT.md с таймкодами, релизы lesson-atlas-fragment и
+#              book-ayn-rand-atlas-shrugged-fragment (final-youtube.mp4/.srt).
+
+on:
+  push:
+    paths:
+      - "src/lesson-atlas/**"
+      - "scripts/lesson-atlas/**"
+      - ".github/workflows/lesson-atlas.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "full | pilot | voice"
+        required: true
+        default: "full"
+
+concurrency:
+  group: lesson-atlas-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  OUT: atlas_fragment_banamind_30min
+  PARTS: 10
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.plan.outputs.ranges }}
+      render: ${{ steps.plan.outputs.render }}
+      pilot: ${{ steps.plan.outputs.pilot }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: ElevenLabs quota (info)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit','next_character_count_reset_unix')} if 'tier' in d else d)"
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson-atlas/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          [ -d public/lesson-atlas/voice ] && git add public/lesson-atlas/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(BM-006): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Tests and render plan
+        id: plan
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+          MODE: ${{ github.event.inputs.mode }}
+        run: |
+          node --test scripts/lesson-atlas/*.test.mjs
+          node scripts/lesson-atlas/captions-check.mjs
+          P=$(node scripts/lesson-atlas/frames.mjs "$PARTS")
+          echo "$P"
+          pilot=false
+          render=true
+          if [[ "$MSG" == *"[pilot]"* || "$MODE" == "pilot" ]]; then pilot=true; fi
+          if [[ "$MSG" == *"[no render]"* || "$MODE" == "voice" ]]; then render=false; fi
+          if [ "$pilot" = true ]; then
+            echo 'ranges=["0-899","900-1799"]' >> "$GITHUB_OUTPUT"
+          else
+            echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+          fi
+          echo "pilot=$pilot" >> "$GITHUB_OUTPUT"
+          echo "render=$render" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.render == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/lesson-atlas/index.ts AtlasLesson "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: atlas-part-*
+          path: out/parts
+          merge-multiple: true
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart)
+        env:
+          PILOT: ${{ needs.voice.outputs.pilot }}
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          cat out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          node scripts/lesson-atlas/mixdown.mjs out/audio.wav
+          if [ "$PILOT" = true ]; then
+            ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+              -c:v copy -c:a aac -b:a 192k -ar 48000 -t 60 -movflags +faststart "out/$OUT-pilot-60s.mp4"
+          else
+            ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+              -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "out/$OUT.mp4"
+          fi
+          node scripts/lesson-atlas/srt.mjs "out/$OUT.srt"
+          node scripts/lesson-atlas/export-docs.mjs
+
+      - name: Verify MP4
+        env:
+          PILOT: ${{ needs.voice.outputs.pilot }}
+        run: |
+          if [ "$PILOT" = true ]; then
+            ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate:format=duration -of compact "out/$OUT-pilot-60s.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            node scripts/lesson-atlas/verify.mjs "out/$OUT.mp4" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Preview copy (960×540) and check frames
+        if: needs.voice.outputs.pilot != 'true'
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 26 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-preview-960x540.mp4"
+          mkdir -p out/frames
+          for s in 5 300 600 900 1200 1500 1790; do
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/$OUT.mp4" -frames:v 1 -vf scale=960:-2 "out/frames/t$(printf %04d $s).jpg"
+          done
+
+      - name: Save SCRIPT.md and SRT with real timecodes to the branch
+        if: needs.voice.outputs.pilot != 'true' && github.ref_name != 'main'
+        run: |
+          cp "out/$OUT.srt" books/ayn-rand-atlas-shrugged-fragment/final-youtube.srt
+          git add books/ayn-rand-atlas-shrugged-fragment/SCRIPT.md books/ayn-rand-atlas-shrugged-fragment/final-youtube.srt
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(BM-006): SCRIPT.md and SRT with final timecodes [skip ci]"
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+              sleep 5
+            done
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-mp4
+          path: |
+            out/${{ env.OUT }}*.mp4
+            out/${{ env.OUT }}.srt
+            out/frames/*.jpg
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PILOT: ${{ needs.voice.outputs.pilot }}
+        run: |
+          TAG=lesson-atlas-fragment
+          R="$GITHUB_REPOSITORY"
+          D=books/ayn-rand-atlas-shrugged-fragment
+          NOTES="BanaMind BM-006: «Атлант расправил плечи» Айн Рэнд — аналитический разбор ТОЛЬКО ознакомительного фрагмента (часть I, главы I–IX), не всего романа. 2D-анимация с бананом-ведущим, русский, 1920×1080, 30 fps, H.264/AAC. Закрытый рабочий прототип: публикация — только после проверки прав. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${R}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$R" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$R" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          else
+            gh release create "$TAG" -R "$R" --title "BM-006 · «Атлант расправил плечи» — разбор фрагмента (BanaMind)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          if [ "$PILOT" = true ]; then
+            gh release upload "$TAG" -R "$R" --clobber "out/$OUT-pilot-60s.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/$OUT-pilot-60s.mp4" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          cp "$D/SCRIPT.md" out/SCRIPT.md
+          cp "$D/SOURCE_MAP.md" out/SOURCE_MAP.md
+          cp "$D/BRIEF.md" out/BRIEF.md
+          gh release upload "$TAG" -R "$R" --clobber \
+            "out/$OUT.mp4" "out/$OUT-preview-960x540.mp4" "out/$OUT.srt" out/SCRIPT.md out/SOURCE_MAP.md out/BRIEF.md
+          {
+            echo "### Файлы"
+            echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/$OUT-preview-960x540.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/$OUT.srt"
+            echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/SCRIPT.md"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Update BanaMind book release (final-youtube.mp4 + SRT)
+        if: needs.voice.outputs.pilot != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BOOK=book-ayn-rand-atlas-shrugged-fragment
+          R="$GITHUB_REPOSITORY"
+          if ! gh release view "$BOOK" -R "$R" >/dev/null 2>&1; then
+            gh release create "$BOOK" -R "$R" --title "Атлант расправил плечи (фрагмент) — BanaMind (YouTube)" \
+              --notes "BM-006: YouTube-пакет. Только разбор ознакомительного фрагмента первой части. Закрытый прототип, не публиковать до проверки прав." \
+              --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          mkdir -p out/book
+          ln -f "out/$OUT.mp4" out/book/final-youtube.mp4
+          cp "out/$OUT.srt" out/book/final-youtube.srt
+          cp out/SCRIPT.md out/book/SCRIPT.md
+          gh release upload "$BOOK" -R "$R" --clobber out/book/final-youtube.mp4 out/book/final-youtube.srt out/book/SCRIPT.md

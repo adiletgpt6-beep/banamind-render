@@ -1,0 +1,20 @@
+{
+  "slug": "ayn-rand-atlas-shrugged-fragment",
+  "title": "Атлант расправил плечи (фрагмент, часть I)",
+  "author": "Айн Рэнд",
+  "collection": "ознакомительный фрагмент: часть I, главы I–IX",
+  "channel": "BanaMind",
+  "source": "Только присланный TXT ознакомительного фрагмента (SHA256 67bcbe81…a78da, 9 125 строк); карта — books/ayn-rand-atlas-shrugged-fragment/SOURCE_MAP.md. Не весь роман.",
+  "lesson": {
+    "dir": "books/ayn-rand-atlas-shrugged-fragment",
+    "timeline": "scripts/lesson-atlas/lib.mjs",
+    "remotionEntry": "src/lesson-atlas/index.ts",
+    "composition": "AtlasLesson",
+    "workflow": ".github/workflows/lesson-atlas.yml",
+    "release": "lesson-atlas-fragment",
+    "asset": "atlas_fragment_banamind_30min.mp4"
+  },
+  "release": "book-ayn-rand-atlas-shrugged-fragment",
+  "rights": "Закрытый прототип. Роман и перевод охраняются; публикация — только после проверки прав владельцем.",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "≈30:00" }
+}

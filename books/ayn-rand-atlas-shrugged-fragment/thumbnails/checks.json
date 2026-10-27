@@ -1,0 +1,102 @@
+{
+  "slug": "ayn-rand-atlas-shrugged-fragment",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 179,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 168,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 167,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 150,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 221,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 28,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 97.9
+      },
+      {
+        "pair": "1-3",
+        "diff": 106.3
+      },
+      {
+        "pair": "1-4",
+        "diff": 91.6
+      },
+      {
+        "pair": "1-5",
+        "diff": 56.3
+      },
+      {
+        "pair": "2-3",
+        "diff": 59
+      },
+      {
+        "pair": "2-4",
+        "diff": 61.3
+      },
+      {
+        "pair": "2-5",
+        "diff": 84.8
+      },
+      {
+        "pair": "3-4",
+        "diff": 60.6
+      },
+      {
+        "pair": "3-5",
+        "diff": 86.9
+      },
+      {
+        "pair": "4-5",
+        "diff": 79.5
+      }
+    ],
+    "min": 56.3,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
