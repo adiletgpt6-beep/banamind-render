@@ -1,0 +1,392 @@
+{
+  "video": "BalaGoTwoSundays2D",
+  "partial": false,
+  "fps": 30,
+  "frames": 5394,
+  "durationSec": 179.8,
+  "contactFromFrame": 5244,
+  "scenes": [
+    {
+      "id": "calendar",
+      "title": "1. Эки жекшемби",
+      "fromFrame": 0,
+      "toFrame": 259,
+      "from": 0,
+      "to": 8.633
+    },
+    {
+      "id": "special",
+      "title": "2. Атайын ушинтип жаздым",
+      "fromFrame": 259,
+      "toFrame": 683,
+      "from": 8.633,
+      "to": 22.767
+    },
+    {
+      "id": "morning",
+      "title": "3. Адаттагы таң",
+      "fromFrame": 683,
+      "toFrame": 1047,
+      "from": 22.767,
+      "to": 34.9
+    },
+    {
+      "id": "office",
+      "title": "4. Жумуш күнүнүн ортосу",
+      "fromFrame": 1047,
+      "toFrame": 1437,
+      "from": 34.9,
+      "to": 47.9
+    },
+    {
+      "id": "grandma",
+      "title": "5. Эки багыт",
+      "fromFrame": 1437,
+      "toFrame": 1758,
+      "from": 47.9,
+      "to": 58.6
+    },
+    {
+      "id": "wednesday",
+      "title": "6. Башка шаршемби",
+      "fromFrame": 1758,
+      "toFrame": 2172,
+      "from": 58.6,
+      "to": 72.4
+    },
+    {
+      "id": "meeting",
+      "title": "7. Жолугушуу үзүлбөйт",
+      "fromFrame": 2172,
+      "toFrame": 2482,
+      "from": 72.4,
+      "to": 82.733
+    },
+    {
+      "id": "dinner",
+      "title": "8. Дасторкондо үчөө",
+      "fromFrame": 2482,
+      "toFrame": 2906,
+      "from": 82.733,
+      "to": 96.867
+    },
+    {
+      "id": "why",
+      "title": "9. Эмне үчүн жекшемби",
+      "fromFrame": 2906,
+      "toFrame": 3326,
+      "from": 96.867,
+      "to": 110.867
+    },
+    {
+      "id": "showDad",
+      "title": "10. Атасына көрсөттү",
+      "fromFrame": 3326,
+      "toFrame": 3626,
+      "from": 110.867,
+      "to": 120.867
+    },
+    {
+      "id": "memory",
+      "title": "11. Кадимки кеч — майрам",
+      "fromFrame": 3626,
+      "toFrame": 3984,
+      "from": 120.867,
+      "to": 132.8
+    },
+    {
+      "id": "search",
+      "title": "12. BalaGo'ну өздөрү табышат",
+      "fromFrame": 3984,
+      "toFrame": 4635,
+      "from": 132.8,
+      "to": 154.5
+    },
+    {
+      "id": "shared",
+      "title": "13. Календарь жалпы болот",
+      "fromFrame": 4635,
+      "toFrame": 4924,
+      "from": 154.5,
+      "to": 164.133
+    },
+    {
+      "id": "fridge",
+      "title": "14. Оюнду ким тандайт?",
+      "fromFrame": 4924,
+      "toFrame": 5244,
+      "from": 164.133,
+      "to": 174.8
+    },
+    {
+      "id": "contact",
+      "title": "15. Байланыш",
+      "fromFrame": 5244,
+      "toFrame": 5394,
+      "from": 174.8,
+      "to": 179.8
+    }
+  ],
+  "segments": [
+    {
+      "id": "N01",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "calendar",
+      "text": "Кыздын календарында эки жекшемби бар эле. Бири — өз ордунда. Экинчиси — аптанын ортосунда.",
+      "file": "n01.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 6.73,
+      "from": 0.9,
+      "to": 7.233,
+      "action": "крупно «Жекшемби» → «Биздин жекшемби»; отъезд: семь клеток сверху, рука дорисовывает луч"
+    },
+    {
+      "id": "N02",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "special",
+      "text": "Апасы кыздын үстөлүндөгү сүрөттү көрдү. Жети күн. Бирок шаршембинин ордуна «Биздин жекшемби» деп жазылыптыр.",
+      "file": "n02.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 7.97,
+      "from": 9.333,
+      "to": 17.053,
+      "action": "мама подходит к столу дочки, присаживается; через плечо — третья клетка"
+    },
+    {
+      "id": "M01",
+      "role": "mother",
+      "mode": "live",
+      "scene": "special",
+      "text": "Күндөрдү чаташтырып алдыңбы?",
+      "file": "m01.mp3",
+      "voice": "KG-mother",
+      "durationSec": 1.99,
+      "from": 17.653,
+      "to": 19.343,
+      "action": "мама спрашивает, глядя на лист"
+    },
+    {
+      "id": "D01",
+      "role": "daughter",
+      "mode": "live",
+      "scene": "special",
+      "text": "Жок. Атайын ушинтип жаздым.",
+      "file": "d01.mp3",
+      "voice": "KG-girl g4-1",
+      "durationSec": 1.88,
+      "from": 19.843,
+      "to": 21.443,
+      "action": "дочка придерживает лист, отвечает уверенно"
+    },
+    {
+      "id": "N03",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "morning",
+      "text": "Адатта алардын таңы шашылыш өтчү. Апасы жумушка даярданып, кызын мектепке жеткирчү.",
+      "file": "n03.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 6.47,
+      "from": 23.567,
+      "to": 29.887,
+      "action": "сумка закрывается; лямка рюкзака; дверь машины, ремень"
+    },
+    {
+      "id": "N04",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "office",
+      "text": "Сабак бүткөндө кайра жумуштан чыгып, кызын үйгө алып келчү.",
+      "file": "n04.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 3.92,
+      "from": 37.9,
+      "to": 41.62,
+      "action": "мама с коллегами; часы; сохраняет документ; крышка ноутбука; у школы"
+    },
+    {
+      "id": "N05",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "grandma",
+      "text": "Кыз чоң энесинин жанында калчу. Апасы болсо кеңсеге кайтып, иштерин бүтүрчү.",
+      "file": "n05.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 6.03,
+      "from": 49.3,
+      "to": 55.18,
+      "action": "бабушка встречает дочку; мама возвращается к блокноту"
+    },
+    {
+      "id": "N06",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "wednesday",
+      "text": "Атасы да кеңседе иштечү. Бирок шаршемби күндөрү үйдөн иштечү. Ал кызын мектепке жеткирип, сабактан кийин алып келүүгө алдын ала убакыт бөлчү.",
+      "file": "n06.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 9.75,
+      "from": 59.4,
+      "to": 69,
+      "action": "папа в офисе; «Шаршемби» → блок расписания; ключи; встреча у школы"
+    },
+    {
+      "id": "N07",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "meeting",
+      "text": "Ошол күнү апасы жолугушууларын шашпай өткөрүп, үйгө адаттагыдан эрте келчү.",
+      "file": "n07.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 5.61,
+      "from": 73.8,
+      "to": 79.12,
+      "action": "мама спокойно слушает коллегу, отметка, выключает лампу"
+    },
+    {
+      "id": "N08",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "dinner",
+      "text": "Кечинде баары чогуу тамак даярдашчу. Кызы идиштерди койчу. Атасы жашылча туурачу. Апасы мектептеги жаңылыктарды сурачу.",
+      "file": "n08.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 9.85,
+      "from": 83.733,
+      "to": 93.261,
+      "action": "приборы сверху; кухня: папа режет, мама миска, дочка сервирует"
+    },
+    {
+      "id": "M02",
+      "role": "mother",
+      "mode": "live",
+      "scene": "why",
+      "text": "Ошон үчүн жекшемби деп жаздыңбы?",
+      "file": "m02.mp3",
+      "voice": "KG-mother",
+      "durationSec": 2.45,
+      "from": 98.467,
+      "to": 100.403,
+      "action": "тот же детский стол; мама спрашивает"
+    },
+    {
+      "id": "D02",
+      "role": "daughter",
+      "mode": "live",
+      "scene": "why",
+      "text": "Ооба. Сиз «Даярданып жатканда айтып бер» дебейсиз. Атам да үйдө болот. Биз дасторкондун жанында көпкө отура алабыз.",
+      "file": "d02.mp3",
+      "voice": "KG-girl g4-1",
+      "durationSec": 6.96,
+      "from": 101.203,
+      "to": 107.923,
+      "action": "дочка отвечает с паузами; касается фигуры папы; смотрит на маму"
+    },
+    {
+      "id": "N09",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "showDad",
+      "text": "Кийин апасы календарды күйөөсүнө көрсөттү. Экөө өткөн шаршембини эстешти.",
+      "file": "n09.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 5.55,
+      "from": 112.467,
+      "to": 117.755,
+      "action": "мама кладёт календарь перед папой; он отодвигает чашку"
+    },
+    {
+      "id": "N10",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "memory",
+      "text": "Кадимки кечки тамак. Сабактагы күлкүлүү окуя. Бир аз чогуу ойногон убакыт. Кызы үчүн бул кеч майрамдай болуптур.",
+      "file": "n10.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 9,
+      "from": 121.667,
+      "to": 130.395,
+      "action": "рисунок дочки; улыбки; настольная игра сверху; снова лист в руках"
+    },
+    {
+      "id": "N11",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "search",
+      "text": "Экөө калган күндөрдөгү мектеп каттамын да уюштурууну чечишти. BalaGo кызматын таап, каттамды сүйлөшүү үчүн алдын ала өтүнмө жөнөтүштү.",
+      "file": "n11.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 9.99,
+      "from": 133.8,
+      "to": 143.64,
+      "action": "телефон: поиск «BalaGo» → школьные поездки → заявка"
+    },
+    {
+      "id": "F01",
+      "role": "father",
+      "mode": "live",
+      "scene": "search",
+      "text": "Шаршемби менде калсын. Калган күндөрдү сүйлөшүп көрөлү.",
+      "file": "f01.mp3",
+      "voice": "KG-husband",
+      "durationSec": 3.803,
+      "from": 144.64,
+      "to": 148.293,
+      "action": "папа говорит до отправки; среда — поездка папы"
+    },
+    {
+      "id": "N12",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "shared",
+      "text": "Кийинки жолу чогуу тамактанып отурганда, кызы календарды кайра алып келди.",
+      "file": "n12.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 4.85,
+      "from": 155.3,
+      "to": 159.85,
+      "action": "следующий ужин; дочка приносит календарь"
+    },
+    {
+      "id": "D03",
+      "role": "daughter",
+      "mode": "live",
+      "scene": "shared",
+      "text": "Бул жерге пландарыбызды да жазалычы.",
+      "file": "d03.mp3",
+      "voice": "KG-girl g4-1",
+      "durationSec": 2.16,
+      "from": 160.85,
+      "to": 162.71,
+      "action": "дочка предлагает, смотрит на обоих"
+    },
+    {
+      "id": "F02",
+      "role": "father",
+      "mode": "live",
+      "scene": "fridge",
+      "text": "Шаршембидеги оюнду ким тандайт?",
+      "file": "f02.mp3",
+      "voice": "KG-husband",
+      "durationSec": 2.22,
+      "from": 168.333,
+      "to": 170.181,
+      "action": "лист на холодильнике двумя магнитами; папа дописывает «Оюн», спрашивает"
+    },
+    {
+      "id": "N13",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "contact",
+      "text": "BalaGo — балдар үчүн такси.",
+      "file": "n13.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 2.07,
+      "from": 175.6,
+      "to": 177.36,
+      "action": "контактная карточка BalaGo"
+    }
+  ]
+}

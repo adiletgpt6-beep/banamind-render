@@ -1,0 +1,252 @@
+{
+  "hash": "eac546e4ea32008c",
+  "done": true,
+  "text": "Жок. Атайын ушинтип жаздым. Ооба. Сен, даярданып жатканда айтып бер, дебейсиң. Атам да үйдө болот. Биз дасторкондун жанында көпкө отура алабыз. Бул жерге пландарыбызды да жазалычы.",
+  "previews": [
+    {
+      "file": "base-1.mp3",
+      "design": "base",
+      "source": "existing",
+      "description": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "cer": 0.047,
+      "f0": 258.1,
+      "profile": {
+        "age": 24.2,
+        "female": 0.981,
+        "male": 0.012,
+        "child": 0.007
+      },
+      "heard": "жок атайын ушинтип жаздым ооба сен даярданып жатканда айтып бер дебейсиң атамда үйдө боот биз да сторкондун жанында көпкө отур алабыз бул жерге пандарыбызды да жазалууча"
+    },
+    {
+      "file": "base-2.mp3",
+      "design": "base",
+      "source": "existing",
+      "description": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "cer": 0.047,
+      "f0": 262.3,
+      "profile": {
+        "age": 22.3,
+        "female": 0.871,
+        "male": 0.015,
+        "child": 0.115
+      },
+      "heard": "жок атайын ушинтип жаздым ооба сен да арданып жатканда айтып бер дебейсиң атам да үйдө олот биз асторкондун жанында көпкө отур алабыз бул жерге пландарыбызды да жаза очу"
+    },
+    {
+      "file": "g3-1.mp3",
+      "design": "g3",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a light airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "r9Sq5Z2usM0DsPobSMEX",
+      "cer": 0.088,
+      "f0": 326.5,
+      "profile": {
+        "age": 28.6,
+        "female": 0.965,
+        "male": 0.03,
+        "child": 0.004
+      },
+      "heard": "жок атайын ушун тип жаздым ооба сен даярдам жапканда айтып бер дебейсиң атамда үйде болат биз дастор кондун жанында көккө отуралабыз бул жерге пландарыбызды да жаза ылчы"
+    },
+    {
+      "file": "g3-2.mp3",
+      "design": "g3",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a light airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "50hcPvtWRl4jCVmurQGu",
+      "cer": 0.076,
+      "f0": 235.3,
+      "profile": {
+        "age": 31.5,
+        "female": 0.988,
+        "male": 0.012,
+        "child": 0
+      },
+      "heard": "жок атайын ушун тип жаздым ова сен даярдам жатканда айтып бербебийсиң атамда үйдө болот биз да сторкондун жанында көпкө отур алабыз бул жерге пландарыбызды да жазалычы"
+    },
+    {
+      "file": "g3-3.mp3",
+      "design": "g3",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a light airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "QQVGYTKXX3nZlTFUG9lp",
+      "cer": 0.064,
+      "f0": 307.7,
+      "profile": {
+        "age": 29.8,
+        "female": 0.978,
+        "male": 0.021,
+        "child": 0.001
+      },
+      "heard": "жок атайын ушун тид жаздым – ооба сен даярдам жотканда йтип бер дебейсиң атам да үйдө болот биз дасторкондун жанында көккө отура алабыз бул жерге пландарыбызды да жазалычэ"
+    },
+    {
+      "file": "g4-1.mp3",
+      "design": "g4",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for voicing small animated characters, with a very light, high, airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "4q3KVinKK1sxbDaHp5Le",
+      "cer": 0.058,
+      "f0": 333.3,
+      "profile": {
+        "age": 28.5,
+        "female": 0.969,
+        "male": 0.024,
+        "child": 0.007
+      },
+      "heard": "жок атайын ушинтип жаздым – ооба сен даярданып жатканды айтып бердебейсең атамда үйдопот биз дасторкондун жанында көккө отура алабыз бул жерге пландарыбызды да жазалчы"
+    },
+    {
+      "file": "g4-2.mp3",
+      "design": "g4",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for voicing small animated characters, with a very light, high, airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "Ox9vrNiydKk5bFAosBPd",
+      "cer": 0.029,
+      "f0": 266.7,
+      "profile": {
+        "age": 31.1,
+        "female": 0.991,
+        "male": 0.008,
+        "child": 0.001
+      },
+      "heard": "жок атайын ушинтип жаздым оба сен даярданып жатканда айтып бердебейсиң атамда үйдө болот биз дасторкондун жанында көпкө отуралабыз бул жерге пландарыбызды да жазалычы"
+    },
+    {
+      "file": "g4-3.mp3",
+      "design": "g4",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for voicing small animated characters, with a very light, high, airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "6fPKPgvNq88MonlcliLX",
+      "cer": 0.111,
+      "f0": 320,
+      "profile": {
+        "age": 30.2,
+        "female": 0.98,
+        "male": 0.018,
+        "child": 0.001
+      },
+      "heard": "жок атайын ушун түт жаздым – оба сен даардан тужатканда айтып берде бейсиң атам да видоот биз дасторкондун жанында көпкө отур алабыз бул жерге пландарыбызды да жазалучы"
+    },
+    {
+      "file": "g5-1.mp3",
+      "design": "g5",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a high, thin, clear head voice and a playful, curious, energetic delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "A6Djt3xnVf4oOTd7aXDK",
+      "cer": 0.105,
+      "f0": 285.7,
+      "profile": {
+        "age": 31.9,
+        "female": 0.958,
+        "male": 0.041,
+        "child": 0.001
+      },
+      "heard": "жок атайын ушун тит жаздым – оова сен даярдам жатканы айтып берди бейсиң атам да үйде болот биз дастор кондун жанында копко отур алабыз бул жерге пландарыбызды да жазалчы"
+    },
+    {
+      "file": "g5-2.mp3",
+      "design": "g5",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a high, thin, clear head voice and a playful, curious, energetic delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "LW2kSwYxwgouwbxH2k4L",
+      "cer": 0.082,
+      "f0": 246.2,
+      "profile": {
+        "age": 37.9,
+        "female": 0.992,
+        "male": 0.008,
+        "child": 0
+      },
+      "heard": "жок атайын ушунтип жаздым – ооа сен даярдан жатканда айтып бердебийсиң атамда ыйдо болот биз дасторкондун жанында көпкө отур алабыз бул жерге пландарыбызды да жазалыт же"
+    },
+    {
+      "file": "g5-3.mp3",
+      "design": "g5",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a high, thin, clear head voice and a playful, curious, energetic delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical.",
+      "generatedVoiceId": "s6vWlxN2kBOIQubojBS6",
+      "cer": 0.111,
+      "f0": 290.9,
+      "profile": {
+        "age": 36.6,
+        "female": 0.983,
+        "male": 0.017,
+        "child": 0
+      },
+      "heard": "жок атайын ушинтип жаздым – уа сен даярдан четканды айтып берди эйсиң атанда үйдө болот биз дастар кондун жанында көпкө отур алабыз бул жерге пландарыбызды да жазаылчы"
+    },
+    {
+      "file": "g6-1.mp3",
+      "design": "g6",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a light airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical. Take two.",
+      "generatedVoiceId": "9nx2stZkXGbLl3im8PN3",
+      "cer": 0.07,
+      "f0": 320,
+      "profile": {
+        "age": 26.4,
+        "female": 0.977,
+        "male": 0.021,
+        "child": 0.002
+      },
+      "heard": "жок атайын ушунтүп жаздым оо ба сен даярданып жатканда айтып бердебейсиң атанда үйдө болат биз дасторкондон жанында көпкө отуралабыз бул жерге пландарыбызды да жазаылыче"
+    },
+    {
+      "file": "g6-2.mp3",
+      "design": "g6",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a light airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical. Take two.",
+      "generatedVoiceId": "YaUkNCkM2iV80JWKZPr4",
+      "cer": 0.047,
+      "f0": 238.8,
+      "profile": {
+        "age": 29.7,
+        "female": 0.988,
+        "male": 0.011,
+        "child": 0
+      },
+      "heard": "жок атайын үшүнтип жаздым оба сен даярданып жатканда айтып бердебейсиң атамда үйдө болот биз дасторкондун жанында көккө отуралабыз бул жерге пландарыбызды да жазалычы"
+    },
+    {
+      "file": "g6-3.mp3",
+      "design": "g6",
+      "source": "design",
+      "description": "A Kyrgyz dubbing actress known for lively animated characters, with a light airy soprano and a quick, bright, unpolished delivery. A native speaker of the Kyrgyz language with an authentic Kyrgyz accent. Sounds natural and unaffected, not a news presenter, not seductive. Clear close-mic studio recording, no background noise, natural conversational pace, not theatrical. Take two.",
+      "generatedVoiceId": "qDKS1pg5M6BlUtHOSrgu",
+      "cer": 0.129,
+      "f0": 290.9,
+      "profile": {
+        "age": 30.1,
+        "female": 0.983,
+        "male": 0.016,
+        "child": 0
+      },
+      "heard": "жок атайын ушын тит жаздым ооа сен даярдам чатканда айтып бердебисиң атамда йдо от биз дастуркондун жанында көпкө отур алабыз бул жерге пландарыбызда да жазаылчы"
+    }
+  ],
+  "errors": [
+    {
+      "id": "g1",
+      "error": "403 /v1/text-to-voice/design: {\"detail\":{\"type\":\"authorization_error\",\"code\":\"forbidden\",\"message\":\"Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.\",\"status\":\"blocked_generation\",\"request_id\":\"2af83d15d81c41f2f3441304457e7c1a\"}}"
+    },
+    {
+      "id": "g2",
+      "error": "403 /v1/text-to-voice/design: {\"detail\":{\"type\":\"authorization_error\",\"code\":\"forbidden\",\"message\":\"Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.\",\"status\":\"blocked_generation\",\"request_id\":\"c125f12b031c1583f3441304457e79c1\"}}"
+    },
+    {
+      "id": "remix",
+      "error": "403 /v1/text-to-voice/AeboPz5CtE7qRUVvW93b/remix: {\"detail\":{\"type\":\"authorization_error\",\"code\":\"forbidden\",\"message\":\"Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.\",\"status\":\"blocked_generation\",\"request_id\":\"dde0ae3cbfd73b98f3441304457e782a\"}}"
+    }
+  ],
+  "picked": {
+    "generatedVoiceId": "4q3KVinKK1sxbDaHp5Le",
+    "voiceId": "4q3KVinKK1sxbDaHp5Le",
+    "name": "KG-girl g4-1",
+    "file": "g4-1.mp3",
+    "reason": "Слепое прослушивание (gpt-audio-1.5, 4 оценки без подсказки о роли): 4 из 4 — «девочка-подросток» 15–16 лет, ни одной оценки «взрослая» или «мужчина»; прежний KG-daughter — от «подростка» до «взрослой женщины» и «мужчины». F0 ≈ 333 Гц, CER MMS 0,058. Детские описания Voice Design сервис блокирует; голос создан из описания взрослой актрисы дубляжа."
+  }
+}
