@@ -1,0 +1,70 @@
+{
+  "note": "Голоса ролика 80-1-2 — те же, что в первом фильме урока 1 (src/lesson01/voices.json): преемственность героев. Детские голоса — временные (см. docs/lesson80-1-2/README.md).",
+  "roles": {
+    "teacher": {
+      "name": "Lesson-teacher-Muhammad",
+      "voiceId": "XVcmL7hz5xYLHLu3OJhR",
+      "note": "ElevenLabs Voice Design: спокойный тёплый мужчина ~32 лет, русский язык"
+    },
+    "yusuf": {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "note": "ВРЕМЕННО: самый светлый молодой голос проекта (≈300 Гц); детского голоса нет"
+    },
+    "amir": {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "note": "ВРЕМЕННО: молодой высокий голос (≈260 Гц); детского голоса нет"
+    },
+    "bilal": {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "note": "ВРЕМЕННО: спокойный высокий голос (≈220 Гц); детского голоса нет"
+    }
+  },
+  "group": [
+    {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM"
+    },
+    {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b"
+    },
+    {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy"
+    },
+    {
+      "name": "Alice",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2"
+    },
+    {
+      "name": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9"
+    },
+    {
+      "name": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
+    }
+  ],
+  "tts": {
+    "modelId": "eleven_v3",
+    "languageCode": "ru",
+    "seed": 101,
+    "takes": 2,
+    "voiceSettings": {
+      "stability": 0.5,
+      "similarity_boost": 0.8
+    }
+  },
+  "pick": {
+    "80-1-2-005": 1,
+    "80-1-2-013": 1,
+    "80-1-2-023": 1,
+    "80-1-2-032": 1,
+    "80-1-2-033": 1,
+    "80-1-2-043": 1
+  },
+  "pickNote": "Выбор дублей по распознаванию всех дублей (scripts/lesson80-1-2-voice-qa.py, gpt-4o-transcribe): точный текст и нужная интонация. 033 дубль 0 теряет «Да.», 023 — «яблоням», 043 — «за воду»; 042 дубль 1 звучит вопросом. Не указано — дубль 0."
+}

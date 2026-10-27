@@ -1,0 +1,203 @@
+{
+  "lab": false,
+  "labPlan": {
+    "accountVoices": [],
+    "maxPreviews": 60,
+    "maxSharedSamples": 14,
+    "sharedForSamples": "all",
+    "sharedQueries": [],
+    "texts": {
+      "teacher": "Вот с этого вопроса и начнём. Ассаляму алейкум, ребята! Сегодня будем думать и искать ответы.",
+      "yusuf": "Ого! А кто построил этот домик? Я себя не создавал.",
+      "amir": "Когда мы пришли, он уже стоял. А мир мог сделать сам себя?",
+      "bilal": "Если домика не было, он ничего не мог делать. А Аллаха кто создал?",
+      "kids": "Ва алейкум ассалям! Аллах!"
+    },
+    "design": [],
+    "round": 3,
+    "knownVoices": [
+      {
+        "name": "KG-husband",
+        "id": "NVEGeFqcDqc5o29VoAQm",
+        "roles": [
+          "teacher"
+        ]
+      },
+      {
+        "name": "Daniel",
+        "id": "onwK4e9ZLuTAKqWW03F9",
+        "roles": [
+          "teacher"
+        ]
+      },
+      {
+        "name": "George",
+        "id": "JBFqnCBsd6RMkjVDRZzb",
+        "roles": [
+          "teacher"
+        ]
+      },
+      {
+        "name": "KG-teacher",
+        "id": "EBOfpUWl9G5ltD2PkFgy",
+        "roles": [
+          "bilal",
+          "amir"
+        ]
+      },
+      {
+        "name": "KG-mother",
+        "id": "5Xx0r0RX4XWEq5vEdv8p",
+        "roles": [
+          "bilal"
+        ]
+      },
+      {
+        "name": "Lily",
+        "id": "pFZP5JQG7iQjIQuC4Bp3",
+        "roles": [
+          "bilal",
+          "amir",
+          "yusuf"
+        ]
+      },
+      {
+        "name": "Matilda",
+        "id": "XrExE9yKIg1WjnStdHDv",
+        "roles": [
+          "bilal",
+          "amir"
+        ]
+      },
+      {
+        "name": "Alice",
+        "id": "Xb7hH8MSUJpSbSDYk0k2",
+        "roles": [
+          "bilal",
+          "amir"
+        ]
+      },
+      {
+        "name": "Laura",
+        "id": "FGY2WhTYpPnrIDTdsKH5",
+        "roles": [
+          "yusuf",
+          "amir"
+        ]
+      },
+      {
+        "name": "Jessica",
+        "id": "cgSgspJ2msm6clMCkdW9",
+        "roles": [
+          "yusuf",
+          "amir"
+        ]
+      },
+      {
+        "name": "River",
+        "id": "SAz9YHcvj6GT2YYXdXww",
+        "roles": [
+          "bilal"
+        ]
+      },
+      {
+        "name": "Liam",
+        "id": "TX3LPaxmHKxFdv7VOQHJ",
+        "roles": [
+          "bilal"
+        ]
+      },
+      {
+        "name": "KG-son",
+        "id": "Oxj8oi9pAu19zqQOffmM",
+        "roles": [
+          "kids"
+        ]
+      },
+      {
+        "name": "KG-daughter",
+        "id": "AeboPz5CtE7qRUVvW93b",
+        "roles": [
+          "kids"
+        ]
+      }
+    ],
+    "saveDesign": [
+      {
+        "generatedVoiceId": "XVcmL7hz5xYLHLu3OJhR",
+        "name": "Lesson-teacher-Muhammad",
+        "description": "Calm warm Russian-speaking man around 32, kind teacher talking to children, natural conversational Russian, soft clear diction."
+      }
+    ]
+  },
+  "roles": {
+    "teacher": {
+      "name": "Lesson-teacher-Muhammad",
+      "voiceId": "XVcmL7hz5xYLHLu3OJhR",
+      "note": "ElevenLabs Voice Design: спокойный тёплый мужчина ~32 лет, русский язык"
+    },
+    "yusuf": {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "note": "ВРЕМЕННО: самый светлый молодой голос проекта (≈300 Гц); детского голоса нет"
+    },
+    "amir": {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "note": "ВРЕМЕННО: молодой высокий голос (≈260 Гц); детского голоса нет"
+    },
+    "bilal": {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "note": "ВРЕМЕННО: спокойный высокий голос (≈220 Гц); детского голоса нет"
+    }
+  },
+  "group": [
+    {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM"
+    },
+    {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b"
+    },
+    {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy"
+    },
+    {
+      "name": "Alice",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2"
+    },
+    {
+      "name": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9"
+    },
+    {
+      "name": "Laura",
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
+    }
+  ],
+  "tts": {
+    "modelId": "eleven_v3",
+    "languageCode": "ru",
+    "seed": 101,
+    "takes": 2,
+    "voiceSettings": {
+      "stability": 0.5,
+      "similarity_boost": 0.8
+    }
+  },
+  "pick": {
+    "L05": 1,
+    "L06": 1,
+    "L13": 1,
+    "L21": 1,
+    "L23": 1,
+    "L24": 1,
+    "L27": 1,
+    "L34": 1,
+    "L38": 1
+  },
+  "pickNote": "Выбор дублей по распознаванию (scripts/lesson01_voice_qa.py): меньше ошибок, нужная интонация (вопрос/утверждение), конец отделён тишиной. Не указано — дубль 0."
+}

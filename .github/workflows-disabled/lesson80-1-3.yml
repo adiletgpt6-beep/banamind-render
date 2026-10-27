@@ -1,0 +1,85 @@
+name: Lesson80-1-3-WhatIfICantSee (lesson-80, 80-1-3, 16:9)
+
+# «Урок 1. Аллах — наш Создатель. Мини-фильм 3: А если я не вижу?»
+#   voice → озвучка 42 реплик ElevenLabs (готовые дубли не синтезируются),
+#           распознавание дублей и файлов реплик (локальный Whisper, кэш по хэшу);
+#           новые файлы сохраняются в ветку.
+# Видео (≈7400 кадров 1920×1080) рендерится локально:
+#   npm run render:80-1-3 → out/lesson-80-1-3-what-if-i-cant-see-16x9.mp4
+
+on:
+  push:
+    paths:
+      - "src/lesson80-1-3/script.ts"
+      - "src/lesson80-1-3/edition.ts"
+      - "src/lesson80-1-3/voices.json"
+      - "scripts/lesson80-1-3-voice.mjs"
+      - "scripts/lesson80-1-3-stt-qa.mjs"
+      - "scripts/lesson80-1-3-asr.py"
+      - "public/audio/lesson80-1-3/*.mp3"
+      - ".github/workflows/lesson80-1-3.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: lesson80-1-3-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Voiceover (cached takes are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson80-1-3-voice.mjs
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache Whisper model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-medium-ct2
+
+      - name: Speech recognition of takes and line files (local Whisper, cached)
+        if: always()
+        run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg)
+          pip install --quiet faster-whisper numpy
+          python3 scripts/lesson80-1-3-asr.py --model medium --takes
+
+      - name: Save new voice files to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          if [ -d public/audio/lesson80-1-3 ]; then git add public/audio/lesson80-1-3; fi
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat | tail -3
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save lesson 80-1-3 voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1

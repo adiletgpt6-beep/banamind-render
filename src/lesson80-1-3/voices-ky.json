@@ -1,0 +1,44 @@
+{
+  "note": "Кыргызская версия ролика 80-1-3: голоса детей — кыргызские голоса проекта, те же, что в русской версии (KG-son, KG-daughter, KG-teacher). Голос учителя выбирается по распознаванию (MMS) из двух кандидатов: голос серии Lesson-teacher-Muhammad (создан для русского) и кыргызский мужской голос проекта KG-husband.",
+  "stage": "all",
+  "stageNote": "all — все 42 реплики; trials — роль озвучивается всеми голосами-кандидатами, пока голос не выбран.",
+  "roles": {
+    "teacher": {
+      "name": "Lesson-teacher-Muhammad",
+      "voiceId": "XVcmL7hz5xYLHLu3OJhR",
+      "note": "ElevenLabs Voice Design: спокойный тёплый мужчина ~32 лет (голос учителя серии); выбор для кыргызского — по распознаванию"
+    },
+    "yusuf": {
+      "name": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "note": "кыргызский голос проекта: самый светлый молодой голос (≈300 Гц); детского голоса нет"
+    },
+    "amir": {
+      "name": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "note": "кыргызский голос проекта: молодой высокий голос (≈260 Гц); детского голоса нет"
+    },
+    "bilal": {
+      "name": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "note": "кыргызский голос проекта: спокойный высокий голос (≈220 Гц); детского голоса нет"
+    }
+  },
+  "trials": {
+    "teacher": [
+      { "name": "Lesson-teacher-Muhammad", "voiceId": "XVcmL7hz5xYLHLu3OJhR" },
+      { "name": "KG-husband", "voiceId": "NVEGeFqcDqc5o29VoAQm" }
+    ]
+  },
+  "tts": {
+    "modelId": "eleven_v3",
+    "languageCode": "ky",
+    "seed": 101,
+    "takes": 3,
+    "voiceSettings": {
+      "stability": 0.5,
+      "similarity_boost": 0.8
+    }
+  },
+  "pick": {}
+}

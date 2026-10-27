@@ -1,0 +1,157 @@
+{
+  "labHash": "669e48c75462",
+  "account": [],
+  "shared": [],
+  "samples": [
+    {
+      "src": "known",
+      "name": "KG-husband",
+      "id": "NVEGeFqcDqc5o29VoAQm",
+      "role": "teacher",
+      "text": "Вот с этого вопроса и начнём. Ассаляму алейкум, ребята! Сегодня будем думать и искать ответы.",
+      "file": "public/audio/lesson01/lab/samples/known-kg-husband-teacher.mp3"
+    },
+    {
+      "src": "known",
+      "name": "Daniel",
+      "id": "onwK4e9ZLuTAKqWW03F9",
+      "role": "teacher",
+      "text": "Вот с этого вопроса и начнём. Ассаляму алейкум, ребята! Сегодня будем думать и искать ответы.",
+      "file": "public/audio/lesson01/lab/samples/known-daniel-teacher.mp3"
+    },
+    {
+      "src": "known",
+      "name": "George",
+      "id": "JBFqnCBsd6RMkjVDRZzb",
+      "role": "teacher",
+      "text": "Вот с этого вопроса и начнём. Ассаляму алейкум, ребята! Сегодня будем думать и искать ответы.",
+      "file": "public/audio/lesson01/lab/samples/known-george-teacher.mp3"
+    },
+    {
+      "src": "known",
+      "name": "KG-teacher",
+      "id": "EBOfpUWl9G5ltD2PkFgy",
+      "role": "amir",
+      "text": "Когда мы пришли, он уже стоял. А мир мог сделать сам себя?",
+      "file": "public/audio/lesson01/lab/samples/known-kg-teacher-amir.mp3"
+    },
+    {
+      "src": "known",
+      "name": "KG-teacher",
+      "id": "EBOfpUWl9G5ltD2PkFgy",
+      "role": "bilal",
+      "text": "Если домика не было, он ничего не мог делать. А Аллаха кто создал?",
+      "file": "public/audio/lesson01/lab/samples/known-kg-teacher-bilal.mp3"
+    },
+    {
+      "src": "known",
+      "name": "KG-mother",
+      "id": "5Xx0r0RX4XWEq5vEdv8p",
+      "role": "bilal",
+      "text": "Если домика не было, он ничего не мог делать. А Аллаха кто создал?",
+      "file": "public/audio/lesson01/lab/samples/known-kg-mother-bilal.mp3"
+    },
+    {
+      "src": "known",
+      "name": "Alice",
+      "id": "Xb7hH8MSUJpSbSDYk0k2",
+      "role": "amir",
+      "text": "Когда мы пришли, он уже стоял. А мир мог сделать сам себя?",
+      "file": "public/audio/lesson01/lab/samples/known-alice-amir.mp3"
+    },
+    {
+      "src": "known",
+      "name": "Alice",
+      "id": "Xb7hH8MSUJpSbSDYk0k2",
+      "role": "bilal",
+      "text": "Если домика не было, он ничего не мог делать. А Аллаха кто создал?",
+      "file": "public/audio/lesson01/lab/samples/known-alice-bilal.mp3"
+    },
+    {
+      "src": "known",
+      "name": "Laura",
+      "id": "FGY2WhTYpPnrIDTdsKH5",
+      "role": "yusuf",
+      "text": "Ого! А кто построил этот домик? Я себя не создавал.",
+      "file": "public/audio/lesson01/lab/samples/known-laura-yusuf.mp3"
+    },
+    {
+      "src": "known",
+      "name": "Laura",
+      "id": "FGY2WhTYpPnrIDTdsKH5",
+      "role": "amir",
+      "text": "Когда мы пришли, он уже стоял. А мир мог сделать сам себя?",
+      "file": "public/audio/lesson01/lab/samples/known-laura-amir.mp3"
+    },
+    {
+      "src": "known",
+      "name": "Jessica",
+      "id": "cgSgspJ2msm6clMCkdW9",
+      "role": "yusuf",
+      "text": "Ого! А кто построил этот домик? Я себя не создавал.",
+      "file": "public/audio/lesson01/lab/samples/known-jessica-yusuf.mp3"
+    },
+    {
+      "src": "known",
+      "name": "Jessica",
+      "id": "cgSgspJ2msm6clMCkdW9",
+      "role": "amir",
+      "text": "Когда мы пришли, он уже стоял. А мир мог сделать сам себя?",
+      "file": "public/audio/lesson01/lab/samples/known-jessica-amir.mp3"
+    },
+    {
+      "src": "known",
+      "name": "River",
+      "id": "SAz9YHcvj6GT2YYXdXww",
+      "role": "bilal",
+      "text": "Если домика не было, он ничего не мог делать. А Аллаха кто создал?",
+      "file": "public/audio/lesson01/lab/samples/known-river-bilal.mp3"
+    },
+    {
+      "src": "known",
+      "name": "Liam",
+      "id": "TX3LPaxmHKxFdv7VOQHJ",
+      "role": "bilal",
+      "text": "Если домика не было, он ничего не мог делать. А Аллаха кто создал?",
+      "file": "public/audio/lesson01/lab/samples/known-liam-bilal.mp3"
+    },
+    {
+      "src": "known",
+      "name": "KG-son",
+      "id": "Oxj8oi9pAu19zqQOffmM",
+      "role": "kids",
+      "text": "Ва алейкум ассалям! Аллах!",
+      "file": "public/audio/lesson01/lab/samples/known-kg-son-kids.mp3"
+    },
+    {
+      "src": "known",
+      "name": "KG-daughter",
+      "id": "AeboPz5CtE7qRUVvW93b",
+      "role": "kids",
+      "text": "Ва алейкум ассалям! Аллах!",
+      "file": "public/audio/lesson01/lab/samples/known-kg-daughter-kids.mp3"
+    },
+    {
+      "src": "saved",
+      "name": "Lesson-teacher-Muhammad",
+      "id": "XVcmL7hz5xYLHLu3OJhR",
+      "role": "teacher",
+      "file": "public/audio/lesson01/lab/samples/saved-lesson-teacher-muhammad-teacher.mp3"
+    }
+  ],
+  "design": [],
+  "errors": [
+    "GET /v1/user/subscription → 401: {\"detail\":{\"type\":\"authentication_error\",\"code\":\"unauthorized\",\"message\":\"The API key you used is missing the permission user_read to execute this operation.\",\"status\":\"missing_permissions\",\"request_id\":\"071b7032b530dbb538ee117ad4b0debe\"}}",
+    "Lily/yusuf: POST /v1/text-to-speech/pFZP5JQG7iQjIQuC4Bp3 → 404: {\"detail\":{\"type\":\"not_found\",\"code\":\"voice_not_found\",\"message\":\"A voice with voice_id 'pFZP5JQG7iQjIQuC4Bp3' was not found.\",\"status\":\"voice_not_found\",\"request_id\":\"af827c1ee635044338ee117ad4b0dd24\"}}",
+    "Lily/amir: POST /v1/text-to-speech/pFZP5JQG7iQjIQuC4Bp3 → 404: {\"detail\":{\"type\":\"not_found\",\"code\":\"voice_not_found\",\"message\":\"A voice with voice_id 'pFZP5JQG7iQjIQuC4Bp3' was not found.\",\"status\":\"voice_not_found\",\"request_id\":\"782246d2b8f647cb38ee117ad4b0d1ab\"}}",
+    "Lily/bilal: POST /v1/text-to-speech/pFZP5JQG7iQjIQuC4Bp3 → 404: {\"detail\":{\"type\":\"not_found\",\"code\":\"voice_not_found\",\"message\":\"A voice with voice_id 'pFZP5JQG7iQjIQuC4Bp3' was not found.\",\"status\":\"voice_not_found\",\"request_id\":\"ea5707635c50b41838ee117ad4b0d5f6\"}}",
+    "Matilda/amir: POST /v1/text-to-speech/XrExE9yKIg1WjnStdHDv → 404: {\"detail\":{\"type\":\"not_found\",\"code\":\"voice_not_found\",\"message\":\"A voice with voice_id 'XrExE9yKIg1WjnStdHDv' was not found.\",\"status\":\"voice_not_found\",\"request_id\":\"5a6689e6710a4fa638ee117ad4b0d29b\"}}",
+    "Matilda/bilal: POST /v1/text-to-speech/XrExE9yKIg1WjnStdHDv → 404: {\"detail\":{\"type\":\"not_found\",\"code\":\"voice_not_found\",\"message\":\"A voice with voice_id 'XrExE9yKIg1WjnStdHDv' was not found.\",\"status\":\"voice_not_found\",\"request_id\":\"f1990a3a1519cf0838ee117ad4b0d722\"}}"
+  ],
+  "saved": [
+    {
+      "name": "Lesson-teacher-Muhammad",
+      "voiceId": "XVcmL7hz5xYLHLu3OJhR"
+    }
+  ]
+}
