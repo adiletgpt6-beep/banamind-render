@@ -1,0 +1,19 @@
+{
+  "slug": "marcus-aurelius-meditations",
+  "bm": "BM-012",
+  "title": "Наедине с собой",
+  "author": "Марк Аврелий",
+  "collection": "",
+  "channel": "BanaMind",
+  "source": "Только TXT владельца (SHA-256 f3c482f7…7e862, русское издание АСТ 2019: перевод, предисловие Л. Д. Урусова, очерк С. А. Котляревского); карта источников — books/marcus-aurelius-meditations/source/SOURCE_MAP.md. Текст книги в репозитории не хранится.",
+  "lesson": {
+    "timeline": "scripts/lesson-meditations/lib.mjs",
+    "remotionEntry": "src/lesson-meditations/index.ts",
+    "composition": "MeditationsLesson",
+    "workflow": ".github/workflows/lesson-meditations.yml",
+    "release": "book-marcus-aurelius-meditations",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-marcus-aurelius-meditations",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac" }
+}
