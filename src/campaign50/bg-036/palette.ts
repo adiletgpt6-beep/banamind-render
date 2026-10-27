@@ -1,0 +1,28 @@
+// Фирменные цвета ролика: белый и светлый фон, ярко-жёлтая бумажная лента,
+// тёмно-синие надписи. Машина — белая легковая (не жёлтое такси).
+export const C = {
+  desk: "#F7F3EA", // светлый раскройный коврик
+  deskGrid: "rgba(70,96,150,0.10)",
+  deskGridBold: "rgba(70,96,150,0.18)",
+  paper: "#FFFDF7",
+  navy: "#14285A",
+  ink: "#24365F",
+  muted: "#5B6B8C",
+  yellow: "#FFC90E",
+  yellowCell: "#FFD43B",
+  yellowDeep: "#E9A800",
+  yellowSoft: "#FFF4C2",
+  white: "#FFFFFF",
+  sky: "#EAF3FC",
+  green: "#2E8B57",
+  greenSoft: "#E8F6EC",
+  red: "#D9534F",
+  car: "#FBFBFA",
+  carLine: "#AEB6C2",
+  skin: "#E8B38E",
+  skinShade: "#D49A74",
+  nail: "#F3CFB8",
+  sleeve: "#6F8FC9",
+  sleeveShade: "#5875B0",
+  shadow: "rgba(40,48,70,0.22)",
+} as const;
