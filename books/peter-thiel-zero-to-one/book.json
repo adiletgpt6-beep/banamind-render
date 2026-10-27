@@ -1,0 +1,19 @@
+{
+  "slug": "peter-thiel-zero-to-one",
+  "bm": "BM-010",
+  "title": "От нуля к единице",
+  "author": "Питер Тиль, Блейк Мастерс",
+  "collection": "Как создать стартап, который изменит будущее",
+  "channel": "BanaMind",
+  "source": "Только TXT владельца (SHA-256 b9b983f4…c6b8f4); карта источников — books/peter-thiel-zero-to-one/SOURCE_MAP.md. Текст книги в репозитории не хранится.",
+  "lesson": {
+    "timeline": "scripts/lesson-zero-to-one/lib.mjs",
+    "remotionEntry": "src/lesson-zero-to-one/index.ts",
+    "composition": "ZeroToOneLesson",
+    "workflow": ".github/workflows/lesson-zero-to-one.yml",
+    "release": "book-peter-thiel-zero-to-one",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-peter-thiel-zero-to-one",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac" }
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "peter-thiel-zero-to-one",
+  "files": [
+    {
+      "file": "thumbnail-01.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 183,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-02.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 187,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-03.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 143,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-04.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 161,
+      "ok": true
+    },
+    {
+      "file": "thumbnail-05.jpg",
+      "width": 1280,
+      "height": 720,
+      "codec": "jpeg",
+      "pix_fmt": "yuvj444p",
+      "kb": 103,
+      "ok": true
+    }
+  ],
+  "spelling": {
+    "checked": 20,
+    "unknown": []
+  },
+  "distinct": {
+    "pairs": [
+      {
+        "pair": "1-2",
+        "diff": 68.6
+      },
+      {
+        "pair": "1-3",
+        "diff": 80.7
+      },
+      {
+        "pair": "1-4",
+        "diff": 88.6
+      },
+      {
+        "pair": "1-5",
+        "diff": 58.4
+      },
+      {
+        "pair": "2-3",
+        "diff": 76.8
+      },
+      {
+        "pair": "2-4",
+        "diff": 68.3
+      },
+      {
+        "pair": "2-5",
+        "diff": 69.7
+      },
+      {
+        "pair": "3-4",
+        "diff": 87.7
+      },
+      {
+        "pair": "3-5",
+        "diff": 100.9
+      },
+      {
+        "pair": "4-5",
+        "diff": 81.9
+      }
+    ],
+    "min": 58.4,
+    "threshold": 25,
+    "ok": true
+  },
+  "ok": true
+}
