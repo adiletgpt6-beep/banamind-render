@@ -1,0 +1,244 @@
+name: BalaGo35ProgrammersHardestTask (фильм №35)
+
+# «Программисттин эң татаал тапшырмасы». Собирается только эта композиция.
+#   voice   → пробы голосов (voice-samples/programmers-hardest-task, один раз
+#             на набор настроек) и озвучка реплик ElevenLabs: новые реплики —
+#             3 дубля, лучший по распознаванию MMS; готовые не синтезируются.
+#             Новые файлы сохраняются в ветку.
+#   render  → lint/TypeScript, тесты, контрольные кадры, MP4 1080×1920 и
+#             лёгкая копия 540×960 (обе с faststart), проверка формата,
+#             длительности, громкости. Только при полной озвучке.
+#   publish → оба MP4 файлами предварительного релиза
+#             programmers-hardest-task-preview.
+
+on:
+  push:
+    paths:
+      - "src/programmers-hardest-task/**"
+      - "src/BalaGo35ProgrammersHardestTask.tsx"
+      - "scripts/*pht*"
+      - "scripts/lib/pht-*"
+      - "scripts/programmers-hardest-task.test.mjs"
+      - "public/audio/programmers-hardest-task/**"
+      - ".github/workflows/programmers-hardest-task.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: programmers-hardest-task-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: balago-35-programmers-hardest-task
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    outputs:
+      voiced: ${{ steps.check.outputs.voiced }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-ts2d-asr.txt
+
+      - name: Install MMS speech recognition
+        run: pip install --quiet -r scripts/requirements-ts2d-asr.txt
+
+      - name: Cache MMS model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      - name: Voice samples (once per settings)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/pht-voice-lab.mjs
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/generate-pht-voice.mjs
+
+      - name: Sound effects
+        run: node scripts/pht-sfx.mjs
+
+      - name: Save new voice files to the branch
+        if: always() && github.ref_name != 'main'
+        run: |
+          for d in public/audio/programmers-hardest-task voice-samples/programmers-hardest-task; do
+            if [ -d "$d" ]; then git add "$d"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: save programmers-hardest-task voice files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: Check voiceover is complete
+        id: check
+        run: |
+          if [ -f src/BalaGo35ProgrammersHardestTask.tsx ] && node -e 'const m=require("./public/audio/programmers-hardest-task/manifest.json"); process.exit(m.partial||!m.lines?.length?1:0)' 2>/dev/null; then
+            echo "voiced=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "voiced=false" >> "$GITHUB_OUTPUT"
+            echo "Полной озвучки или композиции ещё нет — рендер пропущен." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload voice files and samples
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-35-voice
+          path: |
+            public/audio/programmers-hardest-task/
+            voice-samples/programmers-hardest-task/
+          if-no-files-found: ignore
+          retention-days: 30
+
+  render:
+    needs: voice
+    # Промежуточные коммиты с «[skip render]» в сообщении рендер не запускают.
+    if: needs.voice.outputs.voiced == 'true' && !contains(github.event.head_commit.message, '[skip render]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      # Голова ветки: в ней уже сохранённые задачей voice файлы.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (timeline, voice files, texts)
+        env:
+          PHT_STRICT_VOICE: "1"
+        run: node --test scripts/programmers-hardest-task.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames
+        run: npm run stills:programmers-hardest-task
+
+      - name: Render MP4 (H.264/AAC, yuv420p)
+        run: npm run render:programmers-hardest-task -- --log=warn
+
+      - name: Loudness master (−15 LUFS, TP ≤ −1.5) + faststart, mobile copy (540×960), SRT
+        run: |
+          node scripts/pht-master.mjs "out/$OUT.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+            -vf scale=540:960:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 24 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
+            "out/$OUT-mobile.mp4"
+          node scripts/pht-srt.mjs "out/$OUT.srt"
+
+      - name: Verify MP4 files (fail if missing or wrong format)
+        run: |
+          node scripts/verify-pht.mjs "out/$OUT.mp4"
+          node scripts/verify-pht.mjs "out/$OUT-mobile.mp4" --mobile
+          ls -la out/*.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4 + SRT
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-35-mp4
+          path: |
+            out/balago-35-programmers-hardest-task.mp4
+            out/balago-35-programmers-hardest-task-mobile.mp4
+            out/balago-35-programmers-hardest-task.srt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-35-frames
+          path: out/frames-programmers-hardest-task/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  publish:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: balago-35-mp4
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: programmers-hardest-task-preview
+        run: |
+          ls -la out
+          NOTES="BalaGo №35 «Программисттин эң татаал тапшырмасы» — предварительный просмотр. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BalaGo №35 — Программисттин эң татаал тапшырмасы (предпросмотр)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber \
+            "out/$OUT.mp4" "out/$OUT-mobile.mp4" "out/$OUT.srt"
+          {
+            echo "### MP4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-mobile.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.srt"
+          } >> "$GITHUB_STEP_SUMMARY"
