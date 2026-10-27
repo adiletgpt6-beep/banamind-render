@@ -1,0 +1,392 @@
+{
+  "video": "BalaGoChessTournament2D",
+  "partial": false,
+  "fps": 30,
+  "frames": 5144,
+  "durationSec": 171.467,
+  "contactFromFrame": 4994,
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "1. Баш тартуу жана такта",
+      "fromFrame": 0,
+      "toFrame": 259,
+      "from": 0,
+      "to": 8.633
+    },
+    {
+      "id": "club",
+      "title": "2. Ал шахматты жакшы көрөт",
+      "fromFrame": 259,
+      "toFrame": 664,
+      "from": 8.633,
+      "to": 22.133
+    },
+    {
+      "id": "offer",
+      "title": "3. Турнир",
+      "fromFrame": 664,
+      "toFrame": 971,
+      "from": 22.133,
+      "to": 32.367
+    },
+    {
+      "id": "routine",
+      "title": "4. Кадимки күн",
+      "fromFrame": 971,
+      "toFrame": 1325,
+      "from": 32.367,
+      "to": 44.167
+    },
+    {
+      "id": "time",
+      "title": "5. Жаңы убакыт",
+      "fromFrame": 1325,
+      "toFrame": 1745,
+      "from": 44.167,
+      "to": 58.167
+    },
+    {
+      "id": "message",
+      "title": "6. Машыктыруучунун билдирүүсү",
+      "fromFrame": 1745,
+      "toFrame": 1991,
+      "from": 58.167,
+      "to": 66.367
+    },
+    {
+      "id": "dinner",
+      "title": "7. Кечки тамак",
+      "fromFrame": 1991,
+      "toFrame": 2261,
+      "from": 66.367,
+      "to": 75.367
+    },
+    {
+      "id": "light",
+      "title": "8. Бөлмөдөгү жарык",
+      "fromFrame": 2261,
+      "toFrame": 2586,
+      "from": 75.367,
+      "to": 86.2
+    },
+    {
+      "id": "reason",
+      "title": "9. Чыныгы себеп",
+      "fromFrame": 2586,
+      "toFrame": 3126,
+      "from": 86.2,
+      "to": 104.2
+    },
+    {
+      "id": "heard",
+      "title": "10. Атасы угат",
+      "fromFrame": 3126,
+      "toFrame": 3450,
+      "from": 104.2,
+      "to": 115
+    },
+    {
+      "id": "calendars",
+      "title": "11. Эки календарь, бир жадыбал",
+      "fromFrame": 3450,
+      "toFrame": 3867,
+      "from": 115,
+      "to": 128.9
+    },
+    {
+      "id": "search",
+      "title": "12. BalaGo: алдын ала өтүнмө",
+      "fromFrame": 3867,
+      "toFrame": 4254,
+      "from": 128.9,
+      "to": 141.8
+    },
+    {
+      "id": "coach",
+      "title": "13. Машыктыруучуга жазышат",
+      "fromFrame": 4254,
+      "toFrame": 4587,
+      "from": 141.8,
+      "to": 152.9
+    },
+    {
+      "id": "move",
+      "title": "14. Ата, эми сенин жүрүшүң",
+      "fromFrame": 4587,
+      "toFrame": 4994,
+      "from": 152.9,
+      "to": 166.467
+    },
+    {
+      "id": "contact",
+      "title": "15. Байланыш",
+      "fromFrame": 4994,
+      "toFrame": 5144,
+      "from": 166.467,
+      "to": 171.467
+    }
+  ],
+  "segments": [
+    {
+      "id": "N01",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "hook",
+      "text": "Кызы турнирге катышуудан баш тартты. Бирок кечинде кайра эле шахмат маселесин чечип отурган.",
+      "file": "n01.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 7.02,
+      "from": 0.9,
+      "to": 7.63,
+      "action": "сообщение тренера на телефоне → доска под лампой, рука берёт ферзя и возвращает, глаза"
+    },
+    {
+      "id": "N02",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "club",
+      "text": "Ал бир нече айдан бери мектептеги шахмат ийримине барып жүргөн. Жаңы жүрүштөрдү табууну, партияларды талдоону жакшы көрчү. Кээде атасын да жеңчү.",
+      "file": "n02.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 11.142,
+      "from": 9.833,
+      "to": 20.625,
+      "action": "«Бир нече күн мурун»; кружок, тетрадь, дома папа признаёт ход дочки"
+    },
+    {
+      "id": "N03",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "offer",
+      "text": "Машыктыруучу турнирге даярданууну сунуштады. Кошумча машыгуулар сабактан кийин өтүп, адаттагыдан кеч бүтмөк.",
+      "file": "n03.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 7.76,
+      "from": 22.833,
+      "to": 30.353,
+      "action": "тренер кладёт расписание; «Аяктоо: 15:00»; девочка берёт лист"
+    },
+    {
+      "id": "N04",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "routine",
+      "text": "Атасы инженер, апасы бөлүм жетекчиси эле. Атасы түшкү тыныгууда кызын мектептен алып, чоң энесине жеткирип, кайра кеңсеге кайтчу.",
+      "file": "n04.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 9.58,
+      "from": 32.867,
+      "to": 42.147,
+      "action": "чертёж папы, совещание мамы, папа закрывает папку; машина; бабушка; папа снова за столом"
+    },
+    {
+      "id": "D01",
+      "role": "daughter",
+      "mode": "live",
+      "scene": "time",
+      "text": "Ата, машыгуу саат үчтө бүтөт экен. Мени ошондо алып кете аласыңбы?",
+      "file": "d01.mp3",
+      "voice": "KG-daughter",
+      "durationSec": 3.9,
+      "from": 45.367,
+      "to": 48.897,
+      "action": "дочка показывает лист, указывает на 15:00"
+    },
+    {
+      "id": "F01",
+      "role": "father",
+      "mode": "live",
+      "scene": "time",
+      "text": "Үчтө дээрлик күн сайын жолугушууларым бар. Сени кантип алып кетерибизди ойлонуш керек.",
+      "file": "f01.mp3",
+      "voice": "KG-husband",
+      "durationSec": 5.41,
+      "from": 50.197,
+      "to": 55.237,
+      "action": "папа открывает календарь: встречи в 15:00"
+    },
+    {
+      "id": "N05",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "message",
+      "text": "Бир нече күндөн кийин машыктыруучу жазды: кызы турнирге катышпоону чечиптир.",
+      "file": "n05.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 5.03,
+      "from": 59.767,
+      "to": 64.547,
+      "action": "«Бир нече күндөн кийин»; телефон мамы, сообщение «Машыктыруучу»"
+    },
+    {
+      "id": "M01",
+      "role": "mother",
+      "mode": "live",
+      "scene": "dinner",
+      "text": "Кызым, турнирге катышпайм деп чечтиңби?",
+      "file": "m01.mp3",
+      "voice": "KG-mother",
+      "durationSec": 2.99,
+      "from": 67.567,
+      "to": 70.217,
+      "action": "ужин, мама спрашивает"
+    },
+    {
+      "id": "D02",
+      "role": "daughter",
+      "mode": "live",
+      "scene": "dinner",
+      "text": "Мага эми шахмат анча жакпай калды.",
+      "file": "d02.mp3",
+      "voice": "KG-daughter",
+      "durationSec": 2.25,
+      "from": 71.217,
+      "to": 73.147,
+      "action": "дочка смотрит на ложку"
+    },
+    {
+      "id": "N06",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "light",
+      "text": "Кечинде атасы кызын кайрадан шахмат тактасынын алдында көрдү.",
+      "file": "n06.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 4.43,
+      "from": 76.367,
+      "to": 80.575,
+      "action": "коридор, свет из комнаты, дочка у доски"
+    },
+    {
+      "id": "F02",
+      "role": "father",
+      "mode": "live",
+      "scene": "reason",
+      "text": "Мага да көрсөтөсүңбү?",
+      "file": "f02.mp3",
+      "voice": "KG-husband",
+      "durationSec": 1.39,
+      "from": 89.9,
+      "to": 90.98,
+      "action": "папа подходит и садится напротив"
+    },
+    {
+      "id": "F03",
+      "role": "father",
+      "mode": "live",
+      "scene": "reason",
+      "text": "Турнирге катышкың келет, туурабы?",
+      "file": "f03.mp3",
+      "voice": "KG-husband",
+      "durationSec": 1.97,
+      "from": 94.18,
+      "to": 95.73,
+      "action": "тетрадь повернута к папе, думают вместе"
+    },
+    {
+      "id": "D03",
+      "role": "daughter",
+      "mode": "live",
+      "scene": "reason",
+      "text": "Ооба. Бирок анда мени кечирээк алып кетиш керек болот. Сенин жолугушууларың бар дедиң. Апамдын да иши бар.",
+      "file": "d03.mp3",
+      "voice": "KG-daughter",
+      "durationSec": 5.52,
+      "from": 97.03,
+      "to": 102.37,
+      "action": "кивает, затем смотрит на папу; папа слушает"
+    },
+    {
+      "id": "F04",
+      "role": "father",
+      "mode": "live",
+      "scene": "heard",
+      "text": "Биз сени кантип алып кетерибизди ойлонуп жатканбыз. Машыгуулар канча жолу болорун айтып берчи.",
+      "file": "f04.mp3",
+      "voice": "KG-husband",
+      "durationSec": 5.3,
+      "from": 105.2,
+      "to": 110.168,
+      "action": "папа чуть наклоняется к дочке"
+    },
+    {
+      "id": "M02",
+      "role": "mother",
+      "mode": "live",
+      "scene": "calendars",
+      "text": "Бул күндөрү экөөбүздүн жумушубуз кандай экенин карап көрөлү.",
+      "file": "m02.mp3",
+      "voice": "KG-mother",
+      "durationSec": 3.82,
+      "from": 118,
+      "to": 121.7,
+      "action": "папа приносит лист, кладёт между ними и садится рядом с мамой"
+    },
+    {
+      "id": "F05",
+      "role": "father",
+      "mode": "live",
+      "scene": "calendars",
+      "text": "Мектептен үйгө жеткирүүнүн башка жолдорун да карап көрөлү.",
+      "file": "f05.mp3",
+      "voice": "KG-husband",
+      "durationSec": 3.23,
+      "from": 124.3,
+      "to": 127.38,
+      "action": "после двух календарей (15:00); мама открывает поиск, папа смотрит"
+    },
+    {
+      "id": "N07",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "search",
+      "text": "Алар мектептен үйгө жеткирүүнүн жолдорун издеп, BalaGoну табышты. Кошумча сабактан кийинки маршрутту сүйлөшүү үчүн алдын ала өтүнмө калтырышты.",
+      "file": "n07.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 9.82,
+      "from": 129.7,
+      "to": 139.2,
+      "action": "поиск → BalaGo → страница → форма → «Жөнөтүү» → «Өтүнмө жөнөтүлдү»"
+    },
+    {
+      "id": "N08",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "coach",
+      "text": "Апасы машыктыруучуга жазды: кызы катышкысы келет, эми жолду уюштурууну такташат.",
+      "file": "n08.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 6.24,
+      "from": 142.6,
+      "to": 148.6,
+      "action": "сообщение тренеру; вставка: дочка ставит ладью"
+    },
+    {
+      "id": "D04",
+      "role": "daughter",
+      "mode": "live",
+      "scene": "move",
+      "text": "Бул маселени өзүм түздүм. Ата, эми сенин жүрүшүң.",
+      "file": "d04.mp3",
+      "voice": "KG-daughter",
+      "durationSec": 3.15,
+      "from": 155.3,
+      "to": 158.244,
+      "action": "родители входят; новая позиция; приглашение"
+    },
+    {
+      "id": "N09",
+      "role": "narrator",
+      "mode": "narration",
+      "scene": "contact",
+      "text": "BalaGo — балдар үчүн такси.",
+      "file": "n09.mp3",
+      "voice": "KG-teacher",
+      "durationSec": 2.18,
+      "from": 167.167,
+      "to": 169.087,
+      "action": "контактная карточка BalaGo"
+    }
+  ]
+}
