@@ -1,0 +1,60 @@
+// Реестр анимированных схем: kind из сценария → компонент.
+import type React from "react";
+import { TwoFates, Teaser, BookIntro, CoinSkip, FormulaVsFeelings, TinyDot, TwoLenses, Newbies, MemoryQuestion, Funnel, MirrorFunnel, CoinFlip, GoodBadMeter } from "./a";
+import { EnoughParty, RiskScales, EndlessLadder, Priceless, IceAge, BuffettBars, Eights, SteadyPath, TwoTasks, Survival, Barbell, ArtCollector, TailsChart } from "./b";
+import { TimeWheel, FreedomStairs, SiversJar, Elders, CarParadox, Iceberg, SavingsTap, FlexOptions, RobotVsBanana, RearMirror, SafetyBridge, FieldMice } from "./c";
+import { LifeStages, SunkBag, ParkTicket, TwoGames, NewsVsProgress, StoryClouds, Puzzle, Recap, Independence, WeekPlan, Goodbye } from "./d";
+import type { VisualProps } from "./kit";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const VISUALS: Record<string, React.FC<VisualProps<any>>> = {
+  twoFates: TwoFates,
+  teaser: Teaser,
+  bookIntro: BookIntro,
+  coinSkip: CoinSkip,
+  formulaVsFeelings: FormulaVsFeelings,
+  tinyDot: TinyDot,
+  twoLenses: TwoLenses,
+  newbies: Newbies,
+  memoryQuestion: MemoryQuestion,
+  funnel: Funnel,
+  mirrorFunnel: MirrorFunnel,
+  coinFlip: CoinFlip,
+  goodBadMeter: GoodBadMeter,
+  enoughParty: EnoughParty,
+  riskScales: RiskScales,
+  endlessLadder: EndlessLadder,
+  priceless: Priceless,
+  iceAge: IceAge,
+  buffettBars: BuffettBars,
+  eights: Eights,
+  steadyPath: SteadyPath,
+  twoTasks: TwoTasks,
+  survival: Survival,
+  barbell: Barbell,
+  artCollector: ArtCollector,
+  tailsChart: TailsChart,
+  timeWheel: TimeWheel,
+  freedomStairs: FreedomStairs,
+  siversJar: SiversJar,
+  elders: Elders,
+  carParadox: CarParadox,
+  iceberg: Iceberg,
+  savingsTap: SavingsTap,
+  flexOptions: FlexOptions,
+  robotVsBanana: RobotVsBanana,
+  rearMirror: RearMirror,
+  safetyBridge: SafetyBridge,
+  fieldMice: FieldMice,
+  lifeStages: LifeStages,
+  sunkBag: SunkBag,
+  parkTicket: ParkTicket,
+  twoGames: TwoGames,
+  newsVsProgress: NewsVsProgress,
+  storyClouds: StoryClouds,
+  puzzle: Puzzle,
+  recap: Recap,
+  independence: Independence,
+  weekPlan: WeekPlan,
+  goodbye: Goodbye,
+};

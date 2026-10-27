@@ -1,0 +1,256 @@
+name: BanaMind BM-009 — Психология денег (банан, 30 мин, 16:9)
+
+# Анимационное объяснение книги Моргана Хаузела «Психология денег» (канал BanaMind,
+# не реклама BalaGo). Своя точка входа Remotion src/lesson-money/index.ts;
+# фильмы других книг и ролики BalaGo не трогает.
+#   voice    → озвучка ElevenLabs по репликам (готовые с тем же хэшем переиспользуются),
+#              новые файлы сохраняются в ветку; тесты сценария и титров.
+#   render   → пилот (первые 60 с, один прогон) или 8 параллельных частей полного фильма.
+#   assemble → склейка без пережатия, дорожка речи по тайм-лайну, AAC + faststart,
+#              SRT, проверка формата/длительности/звука, превью 960×540,
+#              приватный релиз book-morgan-housel-psychology-of-money (нужен вход в GitHub).
+# Режим: в сообщении коммита «[no render]» — только озвучка; «[pilot]» — пилот 60 с;
+# иначе — полный фильм. Ручной запуск — workflow_dispatch с mode.
+
+on:
+  push:
+    paths:
+      - "src/lesson-money/**"
+      - "scripts/lesson-money/**"
+      - "public/lesson-money/**"
+      - ".github/workflows/lesson-money.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pilot | full | voice"
+        default: "pilot"
+
+concurrency:
+  group: lesson-money-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  TAG: book-morgan-housel-psychology-of-money
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.plan.outputs.ranges }}
+      mode: ${{ steps.plan.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: ElevenLabs quota (info)
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit','next_character_count_reset_unix')} if 'tier' in d else d)"
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/lesson-money/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          [ -d public/lesson-money/voice ] && git add public/lesson-money/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(BM-009): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Tests and render plan
+        id: plan
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+          INPUT: ${{ github.event.inputs.mode }}
+        run: |
+          node --test scripts/lesson-money/*.test.mjs
+          node scripts/lesson-money/captions-check.mjs > /dev/null
+          mode=full
+          if [ -n "$INPUT" ]; then mode="$INPUT";
+          elif [[ "$MSG" == *"[no render]"* ]]; then mode=voice;
+          elif [[ "$MSG" == *"[pilot]"* ]]; then mode=pilot; fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          if [ "$mode" = pilot ]; then
+            echo 'ranges=["0-1799"]' >> "$GITHUB_OUTPUT"
+          else
+            P=$(node scripts/lesson-money/frames.mjs 8)
+            echo "$P"
+            echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+          fi
+          echo "mode: $mode" >> "$GITHUB_STEP_SUMMARY"
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.mode == 'pilot' || needs.voice.outputs.mode == 'full'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/lesson-money/index.ts MoneyLesson "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: money-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    env:
+      MODE: ${{ needs.voice.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: money-part-*
+          path: out/parts
+          merge-multiple: true
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart)
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          node scripts/lesson-money/mixdown.mjs out/audio.wav
+          if [ "$MODE" = pilot ]; then OUTF=pilot-60s.mp4; else OUTF=final-youtube.mp4; fi
+          echo "OUTF=$OUTF" >> "$GITHUB_ENV"
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "out/$OUTF"
+          node scripts/lesson-money/srt.mjs out/final-youtube.srt
+          node scripts/lesson-money/export-docs.mjs
+
+      - name: Verify MP4
+        run: |
+          if [ "$MODE" = pilot ]; then
+            ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate -show_entries format=duration -of compact "out/$OUTF" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            node scripts/lesson-money/verify.mjs "out/$OUTF" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Preview copy (960×540) and check frames
+        run: |
+          mkdir -p out/frames
+          if [ "$MODE" = full ]; then
+            ffmpeg -hide_banner -loglevel error -y -i "out/$OUTF" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 27 \
+              -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart out/preview-960x540.mp4
+            for s in 5 120 300 480 600 780 900 1080 1200 1380 1500 1650 1780; do
+              ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/$OUTF" -frames:v 1 -vf scale=960:-2 "out/frames/t$(printf %04d $s).jpg"
+            done
+          else
+            for s in 3 15 30 45 58; do
+              ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/$OUTF" -frames:v 1 -vf scale=960:-2 "out/frames/t$(printf %04d $s).jpg"
+            done
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: money-${{ env.MODE }}
+          path: |
+            out/*.mp4
+            out/final-youtube.srt
+            out/frames/*.jpg
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish private release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NOTES="BanaMind BM-009: Морган Хаузел — «Психология денег», анимационное объяснение с бананом (русский, 1920×1080, 30 fps, H.264/AAC). Образовательный разбор, не инвестиционная рекомендация. Не для автоматической публикации: права на книгу/перевод не подтверждены. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "Психология денег — BanaMind (BM-009)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          FILES="out/$OUTF out/final-youtube.srt books/morgan-housel-psychology-of-money/scripts/SCRIPT.md books/morgan-housel-psychology-of-money/scripts/SCRIPT.html"
+          [ "$MODE" = full ] && FILES="$FILES out/preview-960x540.mp4"
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber $FILES
+          for f in $FILES; do echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$(basename $f)"; done >> "$GITHUB_STEP_SUMMARY"

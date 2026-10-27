@@ -1,0 +1,20 @@
+{
+  "slug": "morgan-housel-psychology-of-money",
+  "title": "Психология денег",
+  "author": "Морган Хаузел",
+  "collection": "Вечные уроки богатства, жадности и счастья",
+  "channel": "BanaMind",
+  "bm": "BM-009",
+  "source": "Только TXT владельца канала (624 942 байта, SHA-256 885c854b…d64c); карта источников — books/morgan-housel-psychology-of-money/scripts/SOURCE_MAP.md",
+  "lesson": {
+    "dir": "books/morgan-housel-psychology-of-money",
+    "timeline": "scripts/lesson-money/lib.mjs",
+    "remotionEntry": "src/lesson-money/index.ts",
+    "composition": "MoneyLesson",
+    "workflow": ".github/workflows/lesson-money.yml",
+    "release": "book-morgan-housel-psychology-of-money",
+    "asset": "final-youtube.mp4"
+  },
+  "release": "book-morgan-housel-psychology-of-money",
+  "video": { "width": 1920, "height": 1080, "fps": 30, "codec": "h264", "audio": "aac", "duration": "30:00" }
+}
