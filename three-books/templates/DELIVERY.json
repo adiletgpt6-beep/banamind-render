@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "episode_id": "TB-NNN",
+  "revision_id": null,
+  "status": "NOT_READY",
+  "video": {
+    "master": null,
+    "preview": null,
+    "watch_url": null,
+    "download_url": null
+  },
+  "audio": null,
+  "subtitles": {
+    "srt": null,
+    "vtt": null
+  },
+  "script": null,
+  "youtube_metadata": null,
+  "thumbnails": [],
+  "contact_sheet": null,
+  "gallery_url": null,
+  "qa_report": null,
+  "checked_at": null
+}

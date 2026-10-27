@@ -1,0 +1,18 @@
+{
+ "why": "Internal pilot (PRODUCTION.md): the cold open with the return to Monday; Tai's own answer and the talk about the right to decide (S21, B029–B030); the short financial branch with two separate scenarios (S32, B045). Frames on the measured timeline.",
+ "ranges": [
+  [
+   0,
+   2100
+  ],
+  [
+   23250,
+   24930
+  ],
+  [
+   37480,
+   38440
+  ]
+ ],
+ "result": "Rendered locally 2026-10-21 (same engine, preset veryfast): 2100+1680+960 frames, H.264 1920x1080 30 fps + AAC, full decode without errors, mix -16.0 LUFS. Checked stills: opening, Tai's answer, both separate scenarios (6 and an empty field for 0)."
+}

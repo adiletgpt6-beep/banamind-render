@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "episode_id": "TB-001",
+  "revision_id": "nox-r2-no-attribution@83431a39",
+  "status": "DELIVERED",
+  "production": {
+    "branch": "ccr-431ff063-5lzbg4",
+    "render_commit": "83431a3982c0ef7bc687c62e50a90578a2733a9b",
+    "assets_commit": "283b46aa",
+    "render_run": "https://github.com/adiletzainidinov/balago-video/actions/runs/39404508538",
+    "assets_run": "https://github.com/adiletzainidinov/balago-video/actions/runs/39517790792",
+    "release_page": "https://github.com/adiletzainidinov/balago-video/releases/tag/nox-film"
+  },
+  "video": {
+    "master": "NOX_finance_30min_RU.mp4 — 1920×1080, 30 fps, H.264 High/AAC 48 кГц, 1800.000 с, 54 000 кадров, 616 990 216 байт",
+    "preview": "NOX_finance_30min_RU_preview_960x540.mp4 — 960×540, 30 fps, 1800 с, 79 798 696 байт",
+    "watch_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_finance_30min_RU_preview_960x540.mp4",
+    "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_finance_30min_RU.mp4"
+  },
+  "audio": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_narration_RU.wav",
+  "subtitles": {
+    "srt": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_subtitles_RU.srt",
+    "vtt": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_subtitles_RU.vtt"
+  },
+  "transcript": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_transcript_RU.txt",
+  "script": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_script_RU.md",
+  "youtube_metadata": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_youtube_RU.txt",
+  "thumbnails": [
+    {
+      "path": "assets/gallery/TB-001-thumbnail-01.png",
+      "label": "№1 «КУДА ВСЁ ДЕЛОСЬ?» — к названию №2",
+      "view_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_01.png",
+      "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_01.png"
+    },
+    {
+      "path": "assets/gallery/TB-001-thumbnail-02.png",
+      "label": "№2 «БОЛЬШЕ ≠ СПОКОЙНЕЕ» — основная пара с названием №1",
+      "view_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_02.png",
+      "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_02.png"
+    },
+    {
+      "path": "assets/gallery/TB-001-thumbnail-03.png",
+      "label": "№3 «СКОЛЬКО ДОСТАТОЧНО?» — к названию №5",
+      "view_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_03.png",
+      "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_03.png"
+    },
+    {
+      "path": "assets/gallery/TB-001-thumbnail-04.png",
+      "label": "№4 «ЦЕНА ЧУЖОГО ВЗГЛЯДА» — к названию №4",
+      "view_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_04.png",
+      "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_04.png"
+    },
+    {
+      "path": "assets/gallery/TB-001-thumbnail-05.png",
+      "label": "№5 «ЧТО ТЫ ПОКУПАЕШЬ?» — к названию №3",
+      "view_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_05.png",
+      "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnail_05.png"
+    }
+  ],
+  "contact_sheet": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnails_contact_sheet.jpg",
+  "readability_sheet": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/NOX_thumbnails_320x180.jpg",
+  "gallery_url": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/index.html",
+  "qa_report": "QA.md",
+  "verify_json": "https://github.com/adiletzainidinov/balago-video/releases/download/nox-film/verify.json",
+  "access_note": "Репозиторий приватный: для ссылок нужен вход в GitHub. Ссылки релиза отдают файл на скачивание; превью MP4 открывается в браузере/плеере после загрузки.",
+  "checked_at": "2026-10-20"
+}

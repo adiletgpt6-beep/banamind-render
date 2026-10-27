@@ -1,0 +1,20 @@
+{
+  "name": "George (ElevenLabs premade, eleven_multilingual_v2)",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model_id": "eleven_multilingual_v2",
+  "language_code": "ru",
+  "seed": 7,
+  "output_format": "mp3_44100_192",
+  "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.8,
+    "style": 0.12,
+    "use_speaker_boost": true,
+    "speed": 0.96
+  },
+  "say": {
+    "панно": "панно́",
+    "Панно": "Панно́"
+  },
+  "why": "Унаследовано из кастинга TB-001 и закреплённых настроек TB-002 (9e47374, src/three-books/tb002/voice/voice_settings.json). Для TB-003 сначала связный пилот B001–B003, B029, B042, B045, B062, затем вся речь при тех же параметрах, если измерения и ASR не выявят причины менять голос. Пилот: по выравниванию ElevenLabs в B001 «Панно» прозвучало с ударением на первый слог (гласная «а» 116 мс, конечная «о» 34 мс; Whisper услышал «Панна»), поэтому в отправляемом тексте слово помечено знаком ударения «панно́». Зрительские тексты без ударений."
+}

@@ -1,0 +1,182 @@
+{
+ "episode_id": "TB-003",
+ "revision_id": "7e5638f",
+ "status": "DELIVERED",
+ "release": "https://github.com/adiletzainidinov/balago-video/releases/tag/tb-003-film",
+ "release_tag": "tb-003-film",
+ "run": "https://github.com/adiletzainidinov/balago-video/actions/runs/39636840683",
+ "access": "приватный репозиторий: для ссылок нужен вход в GitHub владельца",
+ "video": {
+  "file": "TB003_30min_RU_1920x1080.mp4",
+  "bytes": 740585170,
+  "sha256": "27151aa23a119095ec58765dad832bbac6fd6910ae0fa206727a08788c585a15",
+  "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_30min_RU_1920x1080.mp4",
+  "watch_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_preview_960x540.mp4",
+  "width": 1920,
+  "height": 1080,
+  "fps": "30/1",
+  "frames": 54000,
+  "duration_s": 1800.0,
+  "codec": "H.264 High yuv420p bt709 / AAC 48 kHz stereo",
+  "faststart": true,
+  "decode_errors": 0,
+  "black_intervals": 0,
+  "loudness": {
+   "integrated_lufs": -16.0,
+   "lra_lu": 3.0,
+   "true_peak_dbfs": -1.5
+  },
+  "freeze_hints_s": [
+   286.667,
+   346.133,
+   1332.23,
+   1602,
+   1718.47,
+   1725.1,
+   1757.3
+  ]
+ },
+ "preview": {
+  "file": "TB003_preview_960x540.mp4",
+  "bytes": 85280569,
+  "sha256": "c1152eb2aa1c83f0823e11ab68004c89f10fb3522557a1a47cd5b43c7a152d04",
+  "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_preview_960x540.mp4",
+  "width": 960,
+  "height": 540
+ },
+ "narration": {
+  "file": "TB003_narration_RU.wav",
+  "bytes": 259200102,
+  "sha256": "156a0e08ce9deaf8625aafeac8c5cb096dab4a614300a3e4514ec9da000c24b1",
+  "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_narration_RU.wav"
+ },
+ "subtitles": [
+  {
+   "file": "TB003_subtitles_RU.srt",
+   "bytes": 60900,
+   "sha256": "0a71375e90fbca9234cea4ddc4bf5fed26d01b842ec47fd9d9bfa22572fe16a3",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_subtitles_RU.srt"
+  },
+  {
+   "file": "TB003_subtitles_RU.vtt",
+   "bytes": 60921,
+   "sha256": "e194bfeb7da1c30d4d01724edc33e6ee5eb0bf03bd0bd4c26ed05cab80a90f9c",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_subtitles_RU.vtt"
+  }
+ ],
+ "texts": [
+  {
+   "file": "TB003_script_RU.txt",
+   "bytes": 45254,
+   "sha256": "4b9eac2018a4aa428bcb1f20bf5ad876d80792c95a55bf5882f5ce7d9a84605a",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_script_RU.txt"
+  },
+  {
+   "file": "TB003_transcript_RU.txt",
+   "bytes": 46023,
+   "sha256": "5722305b0dd40372edce0ba12ab2c48c9c61171ce97bcc5ac8eeba578a511a85",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_transcript_RU.txt"
+  },
+  {
+   "file": "TB003_youtube_RU.txt",
+   "bytes": 2044,
+   "sha256": "da618c70b0f7c945da7a9885409946ff0ec4524ff5f5c94edf2ba25dbecc7834",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_youtube_RU.txt"
+  }
+ ],
+ "thumbnails": [
+  {
+   "file": "TB003_thumbnail_01.png",
+   "bytes": 658989,
+   "sha256": "ccccb65680535cd01fcbb5a480f287e6b666600b819ba2f7cc6e61591a9f97dc",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_thumbnail_01.png"
+  },
+  {
+   "file": "TB003_thumbnail_02.png",
+   "bytes": 416616,
+   "sha256": "4945655b5cb2ee07ead72c92814b08dc2b30a1d33d294735fa366f07e2dd62d5",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_thumbnail_02.png"
+  },
+  {
+   "file": "TB003_thumbnail_03.png",
+   "bytes": 415592,
+   "sha256": "5ee4b4e0fc41b92cfbda635003894a8eee3c24dcf60858c974a97b2472dc7ba0",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_thumbnail_03.png"
+  },
+  {
+   "file": "TB003_thumbnail_04.png",
+   "bytes": 319020,
+   "sha256": "591058dfcc15094124008a56dde370165b30a817fc7d07bf8b8e46e2e7ff2fd5",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_thumbnail_04.png"
+  },
+  {
+   "file": "TB003_thumbnail_05.png",
+   "bytes": 491345,
+   "sha256": "f77a2c4d03750b71291d66f6f23455ac4d15f60025b88853e255a89fbc204ada",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_thumbnail_05.png"
+  }
+ ],
+ "sheets": [
+  {
+   "file": "TB003_thumbnails_contact_sheet.jpg",
+   "bytes": 713334,
+   "sha256": "0339bcb72e21e84cffb67922c3307b8027a7d8e5500a8fd161ac5731b97a08da",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_thumbnails_contact_sheet.jpg"
+  },
+  {
+   "file": "TB003_thumbnails_320x180.jpg",
+   "bytes": 89027,
+   "sha256": "9c15cba41d90cbc0989aa6aec84b22d23ffb2f1c4246c5961fa3463d9bb874fa",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_thumbnails_320x180.jpg"
+  }
+ ],
+ "gallery": {
+  "file": "index.html",
+  "bytes": 4061,
+  "sha256": "708ce31e3669f45387c496c2a75d1b5761d00e51a542b5e2fd326f31f7946799",
+  "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/index.html"
+ },
+ "checks": [
+  {
+   "file": "TB003_verify.json",
+   "bytes": 1149,
+   "sha256": "cffc469dc4875a9332fc488c223d0a4c8cc751164182ef01ff4540680fa3811b",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_verify.json"
+  },
+  {
+   "file": "TB003_audio_report.json",
+   "bytes": 4951,
+   "sha256": "164dcab349c169f16d6e4737c95926312a8d83e380ec0424fa123f42ffc140cc",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_audio_report.json"
+  },
+  {
+   "file": "TB003_check_frames.jpg",
+   "bytes": 191728,
+   "sha256": "fb16a032e395c200c6e7e4b844db4f43a8e673b77592c42b01cefa56e9650c23",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_check_frames.jpg"
+  },
+  {
+   "file": "TB003_SHA256SUMS.txt",
+   "bytes": 980,
+   "sha256": "b77dbbaa11c517dafd8be120cd8602bd43198fa66aad72d38eac1e85873f9e0e",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_SHA256SUMS.txt"
+  },
+  {
+   "file": "TB003_QA_public.md",
+   "bytes": 1392,
+   "sha256": "e293bd3c07bbd85e99ea1d83a9c35340f176085d908f14995cbb50e139f0d03c",
+   "download_url": "https://github.com/adiletzainidinov/balago-video/releases/download/tb-003-film/TB003_QA_public.md"
+  }
+ ],
+ "titles": [
+  "Ты создал своё дело — или вторую работу?",
+  "Почему без тебя всё останавливается",
+  "Он стал незаменимым. И попал в ловушку",
+  "Почему большая выручка ещё не означает свободу",
+  "Он перестал ждать уверенности — и сделал следующий шаг"
+ ],
+ "chapters": "см. TIMELINE.json / TB003_youtube_RU.txt (00:00, 01:08, 04:26, 07:55, 11:35, 15:49, 19:15, 23:22, 27:30)",
+ "viewer_allowlist_check": "check_viewer.py: OK (книги, индексы, карты, части оригиналов в релиз не входят)",
+ "youtube": "не публиковалось",
+ "not_verified_here": "Прямое скачивание файлов релиза из среды Claude закрыто прокси (404/403); проверки выполнены в CI тем же прогоном. Прослушивание человеком не выполнялось."
+}
