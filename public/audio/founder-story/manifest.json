@@ -1,0 +1,632 @@
+{
+  "version": 2,
+  "hash": "da60d0c836be19bd",
+  "seed": 41,
+  "voiceId": "cjVigY5qzO86Huf0OWal",
+  "modelId": "eleven_v3",
+  "file": "narration.mp3",
+  "durationSec": 46.53,
+  "segments": [
+    {
+      "id": "family1",
+      "start": 0.05,
+      "end": 1.65
+    },
+    {
+      "id": "family2",
+      "start": 2.17,
+      "end": 5.41
+    },
+    {
+      "id": "busy1",
+      "start": 6.01,
+      "end": 7.81
+    },
+    {
+      "id": "busy2",
+      "start": 8.29,
+      "end": 9.89
+    },
+    {
+      "id": "child",
+      "start": 10.43,
+      "end": 11.89
+    },
+    {
+      "id": "trust",
+      "start": 12.157,
+      "end": 14.77
+    },
+    {
+      "id": "name",
+      "start": 15.21,
+      "end": 16.45
+    },
+    {
+      "id": "taxi",
+      "start": 17.05,
+      "end": 18.61
+    },
+    {
+      "id": "arabic",
+      "start": 18.97,
+      "end": 20.69
+    },
+    {
+      "id": "idea1",
+      "start": 21.23,
+      "end": 23.97
+    },
+    {
+      "id": "idea2",
+      "start": 24.45,
+      "end": 28.69
+    },
+    {
+      "id": "route1",
+      "start": 29.57,
+      "end": 32.21
+    },
+    {
+      "id": "route2",
+      "start": 32.65,
+      "end": 35.41
+    },
+    {
+      "id": "prep",
+      "start": 35.97,
+      "end": 38.69
+    },
+    {
+      "id": "open",
+      "start": 39.117,
+      "end": 40.37
+    },
+    {
+      "id": "link",
+      "start": 41.306,
+      "end": 43.33
+    },
+    {
+      "id": "whatsapp",
+      "start": 43.61,
+      "end": 46.21
+    }
+  ],
+  "words": [
+    {
+      "text": "Үй-бүлөбүздө",
+      "start": 0.05,
+      "end": 0.69,
+      "segment": "family1"
+    },
+    {
+      "text": "төрт",
+      "start": 0.73,
+      "end": 0.93,
+      "segment": "family1"
+    },
+    {
+      "text": "чоң",
+      "start": 0.97,
+      "end": 1.25,
+      "segment": "family1"
+    },
+    {
+      "text": "киши",
+      "start": 1.277,
+      "end": 1.41,
+      "segment": "family1"
+    },
+    {
+      "text": "бар.",
+      "start": 1.47,
+      "end": 1.65,
+      "segment": "family1"
+    },
+    {
+      "text": "Бирок",
+      "start": 2.17,
+      "end": 2.45,
+      "segment": "family2"
+    },
+    {
+      "text": "кээде",
+      "start": 2.47,
+      "end": 2.69,
+      "segment": "family2"
+    },
+    {
+      "text": "баланы",
+      "start": 2.73,
+      "end": 3.01,
+      "segment": "family2"
+    },
+    {
+      "text": "мектепке",
+      "start": 3.07,
+      "end": 3.41,
+      "segment": "family2"
+    },
+    {
+      "text": "жеткирүүгө",
+      "start": 3.45,
+      "end": 4.09,
+      "segment": "family2"
+    },
+    {
+      "text": "эч",
+      "start": 4.15,
+      "end": 4.29,
+      "segment": "family2"
+    },
+    {
+      "text": "кимдин",
+      "start": 4.33,
+      "end": 4.61,
+      "segment": "family2"
+    },
+    {
+      "text": "убактысы",
+      "start": 4.637,
+      "end": 5.09,
+      "segment": "family2"
+    },
+    {
+      "text": "жок.",
+      "start": 5.13,
+      "end": 5.41,
+      "segment": "family2"
+    },
+    {
+      "text": "Бирөө",
+      "start": 6.01,
+      "end": 6.27,
+      "segment": "busy1"
+    },
+    {
+      "text": "жумушта,",
+      "start": 6.28,
+      "end": 6.77,
+      "segment": "busy1"
+    },
+    {
+      "text": "бирөө",
+      "start": 7.13,
+      "end": 7.37,
+      "segment": "busy1"
+    },
+    {
+      "text": "жолдо.",
+      "start": 7.39,
+      "end": 7.81,
+      "segment": "busy1"
+    },
+    {
+      "text": "Баарынын",
+      "start": 8.29,
+      "end": 9.17,
+      "segment": "busy2"
+    },
+    {
+      "text": "өз",
+      "start": 9.25,
+      "end": 9.41,
+      "segment": "busy2"
+    },
+    {
+      "text": "иши",
+      "start": 9.45,
+      "end": 9.65,
+      "segment": "busy2"
+    },
+    {
+      "text": "бар.",
+      "start": 9.71,
+      "end": 9.89,
+      "segment": "busy2"
+    },
+    {
+      "text": "А",
+      "start": 10.43,
+      "end": 10.61,
+      "segment": "child"
+    },
+    {
+      "text": "бала",
+      "start": 10.65,
+      "end": 10.85,
+      "segment": "child"
+    },
+    {
+      "text": "мектепке",
+      "start": 10.89,
+      "end": 11.25,
+      "segment": "child"
+    },
+    {
+      "text": "барышы",
+      "start": 11.29,
+      "end": 11.57,
+      "segment": "child"
+    },
+    {
+      "text": "керек.",
+      "start": 11.61,
+      "end": 11.89,
+      "segment": "child"
+    },
+    {
+      "text": "Мындай",
+      "start": 12.157,
+      "end": 12.69,
+      "segment": "trust"
+    },
+    {
+      "text": "учурда…",
+      "start": 12.743,
+      "end": 13.25,
+      "segment": "trust"
+    },
+    {
+      "text": "кимге",
+      "start": 13.53,
+      "end": 13.97,
+      "segment": "trust"
+    },
+    {
+      "text": "ишенсе",
+      "start": 14.05,
+      "end": 14.45,
+      "segment": "trust"
+    },
+    {
+      "text": "болот?",
+      "start": 14.47,
+      "end": 14.77,
+      "segment": "trust"
+    },
+    {
+      "text": "Мен",
+      "start": 15.21,
+      "end": 15.73,
+      "segment": "name"
+    },
+    {
+      "text": "Адилетмин.",
+      "start": 15.837,
+      "end": 16.45,
+      "segment": "name"
+    },
+    {
+      "text": "Төрт",
+      "start": 17.05,
+      "end": 17.37,
+      "segment": "taxi"
+    },
+    {
+      "text": "жылдан",
+      "start": 17.39,
+      "end": 17.65,
+      "segment": "taxi"
+    },
+    {
+      "text": "бери",
+      "start": 17.69,
+      "end": 17.89,
+      "segment": "taxi"
+    },
+    {
+      "text": "такси",
+      "start": 17.95,
+      "end": 18.29,
+      "segment": "taxi"
+    },
+    {
+      "text": "айдайм.",
+      "start": 18.31,
+      "end": 18.61,
+      "segment": "taxi"
+    },
+    {
+      "text": "Балдарга",
+      "start": 18.97,
+      "end": 19.65,
+      "segment": "arabic"
+    },
+    {
+      "text": "араб",
+      "start": 19.73,
+      "end": 19.97,
+      "segment": "arabic"
+    },
+    {
+      "text": "тилин",
+      "start": 20.01,
+      "end": 20.21,
+      "segment": "arabic"
+    },
+    {
+      "text": "окуткам.",
+      "start": 20.25,
+      "end": 20.69,
+      "segment": "arabic"
+    },
+    {
+      "text": "БалаГонун",
+      "start": 21.23,
+      "end": 21.81,
+      "segment": "idea1"
+    },
+    {
+      "text": "идеясы",
+      "start": 21.87,
+      "end": 22.37,
+      "segment": "idea1"
+    },
+    {
+      "text": "ушул",
+      "start": 22.49,
+      "end": 22.77,
+      "segment": "idea1"
+    },
+    {
+      "text": "муктаждыктан",
+      "start": 22.81,
+      "end": 23.49,
+      "segment": "idea1"
+    },
+    {
+      "text": "жаралды.",
+      "start": 23.53,
+      "end": 23.97,
+      "segment": "idea1"
+    },
+    {
+      "text": "Ата-энеге",
+      "start": 24.45,
+      "end": 25.25,
+      "segment": "idea2"
+    },
+    {
+      "text": "жардам",
+      "start": 25.29,
+      "end": 25.57,
+      "segment": "idea2"
+    },
+    {
+      "text": "берип,",
+      "start": 25.59,
+      "end": 25.81,
+      "segment": "idea2"
+    },
+    {
+      "text": "баланын",
+      "start": 26.25,
+      "end": 26.61,
+      "segment": "idea2"
+    },
+    {
+      "text": "күнүмдүк",
+      "start": 26.65,
+      "end": 27.01,
+      "segment": "idea2"
+    },
+    {
+      "text": "жолун",
+      "start": 27.05,
+      "end": 27.41,
+      "segment": "idea2"
+    },
+    {
+      "text": "алдын",
+      "start": 27.49,
+      "end": 27.77,
+      "segment": "idea2"
+    },
+    {
+      "text": "ала",
+      "start": 27.79,
+      "end": 27.89,
+      "segment": "idea2"
+    },
+    {
+      "text": "пландаштыруу.",
+      "start": 27.954,
+      "end": 28.69,
+      "segment": "idea2"
+    },
+    {
+      "text": "Үйдөн",
+      "start": 29.57,
+      "end": 29.81,
+      "segment": "route1"
+    },
+    {
+      "text": "мектепке,",
+      "start": 29.87,
+      "end": 30.29,
+      "segment": "route1"
+    },
+    {
+      "text": "сабактан",
+      "start": 30.65,
+      "end": 31.17,
+      "segment": "route1"
+    },
+    {
+      "text": "кийин",
+      "start": 31.21,
+      "end": 31.49,
+      "segment": "route1"
+    },
+    {
+      "text": "кайра",
+      "start": 31.53,
+      "end": 31.81,
+      "segment": "route1"
+    },
+    {
+      "text": "үйгө.",
+      "start": 31.89,
+      "end": 32.21,
+      "segment": "route1"
+    },
+    {
+      "text": "Убакыт",
+      "start": 32.65,
+      "end": 33.25,
+      "segment": "route2"
+    },
+    {
+      "text": "менен",
+      "start": 33.29,
+      "end": 33.49,
+      "segment": "route2"
+    },
+    {
+      "text": "маршрутту",
+      "start": 33.554,
+      "end": 34.13,
+      "segment": "route2"
+    },
+    {
+      "text": "алдын",
+      "start": 34.237,
+      "end": 34.53,
+      "segment": "route2"
+    },
+    {
+      "text": "ала",
+      "start": 34.57,
+      "end": 34.69,
+      "segment": "route2"
+    },
+    {
+      "text": "макулдашуу.",
+      "start": 34.75,
+      "end": 35.41,
+      "segment": "route2"
+    },
+    {
+      "text": "Азыр",
+      "start": 35.97,
+      "end": 36.61,
+      "segment": "prep"
+    },
+    {
+      "text": "БалаГону",
+      "start": 36.65,
+      "end": 37.09,
+      "segment": "prep"
+    },
+    {
+      "text": "ишке",
+      "start": 37.13,
+      "end": 37.33,
+      "segment": "prep"
+    },
+    {
+      "text": "киргизүүгө",
+      "start": 37.37,
+      "end": 37.85,
+      "segment": "prep"
+    },
+    {
+      "text": "даярданып",
+      "start": 37.87,
+      "end": 38.29,
+      "segment": "prep"
+    },
+    {
+      "text": "жатам.",
+      "start": 38.33,
+      "end": 38.69,
+      "segment": "prep"
+    },
+    {
+      "text": "Алдын",
+      "start": 39.117,
+      "end": 39.45,
+      "segment": "open"
+    },
+    {
+      "text": "ала",
+      "start": 39.47,
+      "end": 39.65,
+      "segment": "open"
+    },
+    {
+      "text": "каттоо",
+      "start": 39.69,
+      "end": 39.97,
+      "segment": "open"
+    },
+    {
+      "text": "ачык.",
+      "start": 40.05,
+      "end": 40.37,
+      "segment": "open"
+    },
+    {
+      "text": "Каттоо",
+      "start": 41.306,
+      "end": 41.49,
+      "segment": "link"
+    },
+    {
+      "text": "үчүн",
+      "start": 41.57,
+      "end": 41.73,
+      "segment": "link"
+    },
+    {
+      "text": "профилдеги",
+      "start": 41.794,
+      "end": 42.37,
+      "segment": "link"
+    },
+    {
+      "text": "шилтемеге",
+      "start": 42.41,
+      "end": 42.85,
+      "segment": "link"
+    },
+    {
+      "text": "өтүңүз.",
+      "start": 42.89,
+      "end": 43.33,
+      "segment": "link"
+    },
+    {
+      "text": "Же",
+      "start": 43.61,
+      "end": 43.89,
+      "segment": "whatsapp"
+    },
+    {
+      "text": "экрандагы",
+      "start": 43.97,
+      "end": 44.61,
+      "segment": "whatsapp"
+    },
+    {
+      "text": "номерге",
+      "start": 44.637,
+      "end": 45.01,
+      "segment": "whatsapp"
+    },
+    {
+      "text": "вотсаптан",
+      "start": 45.09,
+      "end": 45.65,
+      "segment": "whatsapp"
+    },
+    {
+      "text": "жазыңыз.",
+      "start": 45.69,
+      "end": 46.21,
+      "segment": "whatsapp"
+    }
+  ]
+}
