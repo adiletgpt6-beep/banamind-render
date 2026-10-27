@@ -1,0 +1,18 @@
+{
+  "campaign": "BalaGo-50",
+  "batch": "episode-26",
+  "preparedAt": "2026-10-15",
+  "baseBranch": "feature/balago-50-episodes-16-25",
+  "documentationBranch": "feature/balago-50-episode-26-script",
+  "episode": 26,
+  "bgId": "BG-025",
+  "titleKy": "Арыздан кийин эмне болот?",
+  "status": "draft",
+  "productionRequested": true,
+  "explicitScenarioApproval": false,
+  "rendered": false,
+  "humanReviewedFinal": false,
+  "script": "campaigns/balago-50/episodes/26-BG-025.md",
+  "task": "campaigns/balago-50/production/TASK_BG-025_EP26.md",
+  "notes": "Do not update shared STATUS.json or prior batch status. Paid production only after explicit approval."
+}
