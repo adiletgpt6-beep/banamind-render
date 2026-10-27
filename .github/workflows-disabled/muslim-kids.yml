@@ -1,0 +1,176 @@
+name: Muslim Kids — «Посмотри на небо!» (Аль-Имран 190–191)
+
+# Отдельный образовательный ролик Muslim Kids (не реклама BalaGo): правила
+# BalaGo о контактах, Бишкеке и кыргызской озвучке к нему не применяются.
+# Своя точка входа Remotion src/muslim-kids/index.ts, прежние ролики не трогает.
+#   voice  → озвучка ElevenLabs по репликам (готовые с тем же хэшем
+#            переиспользуются), новые файлы сохраняются в ветку; проверка Whisper.
+#   render → 1080×1920, 30 fps, H.264/AAC, faststart; проверка MP4, превью
+#            540×960, кадры; релиз muslim-kids-ali-imran-190-191.
+# «[no render]» в сообщении коммита — только озвучка.
+
+on:
+  push:
+    paths:
+      - "src/muslim-kids/**"
+      - "scripts/muslim-kids/**"
+      - "public/muslim-kids/**"
+      - ".github/workflows/muslim-kids.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: muslim-kids-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  OUT: muslim-kids-ali-imran-190-191
+  COMP: MuslimKidsAliImran190191
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      render: ${{ steps.plan.outputs.render }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Voiceover (cached lines are reused)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/muslim-kids/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: github.ref_name != 'main'
+        run: |
+          git add public/muslim-kids/ali-imran/voice
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(muslim-kids): save voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check voice with Whisper (report)
+        continue-on-error: true
+        env:
+          ASR_STRICT_LINES: s6b
+        run: |
+          pip install -q faster-whisper==1.1.1 requests
+          python -I scripts/muslim-kids/asr_check.py public/muslim-kids/ali-imran/voice
+
+      - name: Plan
+        id: plan
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          node scripts/muslim-kids/timeline.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+          if [[ "$MSG" == *"[no render]"* ]]; then echo "render=false" >> "$GITHUB_OUTPUT"; else echo "render=true" >> "$GITHUB_OUTPUT"; fi
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.render == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha || github.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render 1080×1920 30 fps H.264/AAC
+        run: |
+          mkdir -p out
+          npx remotion render src/muslim-kids/index.ts "$COMP" out/render.mp4 \
+            --codec=h264 --crf=15 --x264-preset=slow --pixel-format=yuv420p --color-space=bt709 \
+            --audio-codec=aac --audio-bitrate=192k --concurrency=100% --log=warn
+          # faststart без повторного сжатия
+          ffmpeg -hide_banner -loglevel error -y -i out/render.mp4 -c copy -movflags +faststart "out/$OUT.mp4"
+
+      - name: Verify MP4
+        run: node scripts/muslim-kids/verify.mjs "out/$OUT.mp4" "$(node scripts/muslim-kids/timeline.mjs --seconds)" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Preview 540×960 and key frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf scale=540:960:flags=lanczos -c:v libx264 -preset medium -crf 24 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-preview-540x960.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf "fps=1/2,scale=216:-1,tile=8x4" -frames:v 1 "out/$OUT-frames.jpg"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: muslim-kids-ali-imran-mp4
+          path: |
+            out/${{ env.OUT }}.mp4
+            out/${{ env.OUT }}-preview-540x960.mp4
+            out/${{ env.OUT }}-frames.jpg
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish release
+        if: github.ref_name != 'main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=muslim-kids-ali-imran-190-191
+          SHA="${{ needs.voice.outputs.sha || github.sha }}"
+          NOTES="Muslim Kids — «Посмотри на небо!» (сура «Аль-Имран», 3:190–191). Русский, 1080×1920, 30 fps, H.264/AAC. Ветка ${GITHUB_REF_NAME}, коммит ${SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "Muslim Kids — Посмотри на небо! (Аль-Имран 190–191)" --notes "$NOTES" --prerelease --target "$SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber "out/$OUT.mp4" "out/$OUT-preview-540x960.mp4" "out/$OUT-frames.jpg"
+          {
+            echo "### Файлы"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4"
+            echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT-preview-540x960.mp4"
+          } >> "$GITHUB_STEP_SUMMARY"

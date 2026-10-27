@@ -1,0 +1,92 @@
+[
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "public/muslim-kids/fonts/amiri-arabic-400-normal.woff2",
+    "sha": "5b9bb35848697c227d56a101ff1087833e0079c4",
+    "kind": "font",
+    "license_sha": "bc87351e07b9b427266496293cbe570507b209ef"
+  },
+  {
+    "path": "public/muslim-kids/fonts/amiri-arabic-700-normal.woff2",
+    "sha": "9d24c6f582ede2b50731df0d76d847a4de35a088",
+    "kind": "font",
+    "license_sha": "bc87351e07b9b427266496293cbe570507b209ef"
+  },
+  {
+    "path": "public/muslim-kids/fonts/inter-cyrillic-400-normal.woff2",
+    "sha": "264c128df8fb993615ba2f99dd83294928a7864d",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/muslim-kids/fonts/inter-cyrillic-500-normal.woff2",
+    "sha": "84e49542b071c5fdb3f9207234fdf0596019ef35",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/muslim-kids/fonts/inter-cyrillic-600-normal.woff2",
+    "sha": "bb0502c7fbb89f04c12cc6a960449dcd1da44151",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/muslim-kids/fonts/inter-cyrillic-700-normal.woff2",
+    "sha": "7ec481fba46d8304dcc4ee8c52041aef4a4c8f9f",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/muslim-kids/fonts/inter-cyrillic-800-normal.woff2",
+    "sha": "d09e18f70502524146a31b37d347c606e26456c7",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/muslim-kids/fonts/inter-latin-400-normal.woff2",
+    "sha": "33002f12853a3d37d7b7eba39623fae3bca94a3b",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/muslim-kids/fonts/inter-latin-500-normal.woff2",
+    "sha": "03aaea1ce7dcce7ccef4cf7fc116a904d50aa204",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/muslim-kids/fonts/inter-latin-600-normal.woff2",
+    "sha": "fb50a02b2af82000d87d8c8b8161aa254b3b1593",
+    "kind": "font",
+    "license_sha": "b350194781e5fdde128f95ece3df466a8eb294f9"
+  },
+  {
+    "path": "public/muslim-kids/fonts/unbounded-cyrillic-500-normal.woff2",
+    "sha": "bc6c44d977d657f5d96b4694736f548126423d73",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "public/muslim-kids/fonts/unbounded-cyrillic-700-normal.woff2",
+    "sha": "90ee61865c5f4c04c89fce7b33ef5882cfec5b77",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "public/muslim-kids/fonts/unbounded-latin-500-normal.woff2",
+    "sha": "6f6baee394ec04159980e845db326238c379acc5",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  },
+  {
+    "path": "public/muslim-kids/fonts/unbounded-latin-700-normal.woff2",
+    "sha": "1ce0c7bc59a57ca1abbc249bea849225de83789d",
+    "kind": "font",
+    "license_sha": "1c7db28325aa3a1e8bd8978ef1d760daf3bb357b"
+  }
+]

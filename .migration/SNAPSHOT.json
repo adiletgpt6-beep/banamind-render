@@ -1,0 +1,56 @@
+{
+  "source_repository": "adiletzainidinov/balago-video",
+  "source_head": "65cca13a2e20321c5499345d6a75da8e85f19f3e",
+  "source_branches": [
+    "ccr-d9a09636-crxqp4"
+  ],
+  "kind": "sanitized_snapshot",
+  "original_git_history_imported": false,
+  "workflow_files_archived": 10,
+  "withheld_file_counts": {
+    "private_source_or_binary": 147
+  },
+  "private_audio_video_and_book_sources_imported": false,
+  "reviewed_binary_assets": 15,
+  "continuation_date": "2026-10-27",
+  "continuation_exclusions": [
+    {
+      "path": "public/muslim-kids/fonts/inter-latin-700-normal.woff2",
+      "mode": "100644",
+      "sha": "12b51d7709cff88edbe49b94412d240b90126ee3",
+      "binary": true,
+      "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+    },
+    {
+      "path": "public/muslim-kids/fonts/inter-latin-800-normal.woff2",
+      "mode": "100644",
+      "sha": "882bd182fd97118a5106fe865dd9974b6f786eca",
+      "binary": true,
+      "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+    },
+    {
+      "path": "apps/balago-studio/tests/auth.test.ts",
+      "mode": "100644",
+      "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+      "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+    },
+    {
+      "path": "apps/balago-studio/tests/github.test.ts",
+      "mode": "100644",
+      "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+      "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+    },
+    {
+      "path": "apps/balago-studio/tests/helpers.ts",
+      "mode": "100644",
+      "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+      "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+    },
+    {
+      "path": "apps/balago-studio/tests/storage.test.ts",
+      "mode": "100644",
+      "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+      "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+    }
+  ]
+}
