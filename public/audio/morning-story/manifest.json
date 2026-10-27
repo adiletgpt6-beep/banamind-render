@@ -1,0 +1,1992 @@
+{
+  "version": 1,
+  "kind": "story",
+  "video": "BalaGoMorningStory",
+  "lines": [
+    {
+      "id": "n01",
+      "scene": "s01Morning",
+      "role": "narrator",
+      "character": "Рассказчик — тёплый естественный мужской голос",
+      "text": "Көп үй-бүлөдө эртең менен баары алдын ала белгилүү болот. Ата-эне жумушка даярданат, бала мектепке камынат. Бул үй-бүлөдө кызын мектепке көбүнчө атасы жеткирет.",
+      "spoken": "[warm] Көп үй-бүлөдө эртең менен баары алдын ала белгилүү болот. Ата-эне жумушка даярданат, бала мектепке камынат. Бул үй-бүлөдө кызын мектепке көбүнчө атасы жеткирет.",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "8ccbd6c267a5f1f9",
+      "file": "n01.mp3",
+      "durationSec": 10.97,
+      "speechStart": 0.14,
+      "speechEnd": 10.72,
+      "words": [
+        {
+          "text": "Көп",
+          "start": 0.14,
+          "end": 0.293
+        },
+        {
+          "text": "үй-бүлөдө",
+          "start": 0.32,
+          "end": 1
+        },
+        {
+          "text": "эртең",
+          "start": 1.06,
+          "end": 1.467
+        },
+        {
+          "text": "менен",
+          "start": 1.48,
+          "end": 1.68
+        },
+        {
+          "text": "баары",
+          "start": 1.76,
+          "end": 2.08
+        },
+        {
+          "text": "алдын",
+          "start": 2.133,
+          "end": 2.36
+        },
+        {
+          "text": "ала",
+          "start": 2.38,
+          "end": 2.56
+        },
+        {
+          "text": "белгилүү",
+          "start": 2.62,
+          "end": 3.14
+        },
+        {
+          "text": "болот.",
+          "start": 3.155,
+          "end": 3.36
+        },
+        {
+          "text": "Ата-эне",
+          "start": 3.8,
+          "end": 4.16
+        },
+        {
+          "text": "жумушка",
+          "start": 4.2,
+          "end": 4.56
+        },
+        {
+          "text": "даярданат,",
+          "start": 4.6,
+          "end": 5.12
+        },
+        {
+          "text": "бала",
+          "start": 5.4,
+          "end": 5.68
+        },
+        {
+          "text": "мектепке",
+          "start": 5.72,
+          "end": 6.16
+        },
+        {
+          "text": "камынат.",
+          "start": 6.22,
+          "end": 6.72
+        },
+        {
+          "text": "Бул",
+          "start": 7.26,
+          "end": 7.52
+        },
+        {
+          "text": "үй-бүлөдө",
+          "start": 7.6,
+          "end": 8.2
+        },
+        {
+          "text": "кызын",
+          "start": 8.3,
+          "end": 8.64
+        },
+        {
+          "text": "мектепке",
+          "start": 8.68,
+          "end": 9.12
+        },
+        {
+          "text": "көбүнчө",
+          "start": 9.16,
+          "end": 9.6
+        },
+        {
+          "text": "атасы",
+          "start": 9.707,
+          "end": 10.16
+        },
+        {
+          "text": "жеткирет.",
+          "start": 10.2,
+          "end": 10.72
+        }
+      ],
+      "timelineStartSec": 2.2,
+      "timelineEndSec": 12.767
+    },
+    {
+      "id": "f01",
+      "scene": "s02Plan",
+      "role": "father",
+      "character": "Отец — спокойный низкий мужской голос",
+      "text": "Бүгүн кызды мектепке сен жеткирип коё аласыңбы? Менин шашылыш ишим чыгып калды.",
+      "spoken": "[apologetic] Бүгүн кызды мектепке сен жеткирип коё аласыңбы? Менин шашылыш ишим чыгып калды.",
+      "voiceName": "Brian",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "4a200dd0d73c1b9b",
+      "file": "f01.mp3",
+      "durationSec": 4.64,
+      "speechStart": 0.14,
+      "speechEnd": 4.48,
+      "words": [
+        {
+          "text": "Бүгүн",
+          "start": 0.14,
+          "end": 0.32
+        },
+        {
+          "text": "кызды",
+          "start": 0.36,
+          "end": 0.64
+        },
+        {
+          "text": "мектепке",
+          "start": 0.68,
+          "end": 1.12
+        },
+        {
+          "text": "сен",
+          "start": 1.16,
+          "end": 1.28
+        },
+        {
+          "text": "жеткирип",
+          "start": 1.36,
+          "end": 1.68
+        },
+        {
+          "text": "коё",
+          "start": 1.733,
+          "end": 1.88
+        },
+        {
+          "text": "аласыңбы?",
+          "start": 1.9,
+          "end": 2.32
+        },
+        {
+          "text": "Менин",
+          "start": 2.78,
+          "end": 3.04
+        },
+        {
+          "text": "шашылыш",
+          "start": 3.08,
+          "end": 3.52
+        },
+        {
+          "text": "ишим",
+          "start": 3.6,
+          "end": 3.84
+        },
+        {
+          "text": "чыгып",
+          "start": 3.88,
+          "end": 4.08
+        },
+        {
+          "text": "калды.",
+          "start": 4.14,
+          "end": 4.48
+        }
+      ],
+      "timelineStartSec": 15.2,
+      "timelineEndSec": 19.533
+    },
+    {
+      "id": "m01",
+      "scene": "s02Plan",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Эмнеге муну кечээ айткан жоксуң? Мен да жумушка кечигишим мүмкүн да.",
+      "spoken": "[surprised] Эмнеге муну кечээ айткан жоксуң? Мен да жумушка кечигишим мүмкүн да.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 52,
+      "hash": "7e11def89821321d",
+      "file": "m01.mp3",
+      "durationSec": 3.79,
+      "speechStart": 0.09,
+      "speechEnd": 3.63,
+      "words": [
+        {
+          "text": "Эмнеге",
+          "start": 0.09,
+          "end": 0.35
+        },
+        {
+          "text": "муну",
+          "start": 0.39,
+          "end": 0.55
+        },
+        {
+          "text": "кечээ",
+          "start": 0.57,
+          "end": 0.83
+        },
+        {
+          "text": "айткан",
+          "start": 0.85,
+          "end": 1.15
+        },
+        {
+          "text": "жоксуң?",
+          "start": 1.19,
+          "end": 1.59
+        },
+        {
+          "text": "Мен",
+          "start": 1.75,
+          "end": 1.95
+        },
+        {
+          "text": "да",
+          "start": 2.003,
+          "end": 2.11
+        },
+        {
+          "text": "жумушка",
+          "start": 2.15,
+          "end": 2.51
+        },
+        {
+          "text": "кечигишим",
+          "start": 2.55,
+          "end": 2.99
+        },
+        {
+          "text": "мүмкүн",
+          "start": 3.03,
+          "end": 3.523
+        },
+        {
+          "text": "да.",
+          "start": 3.559,
+          "end": 3.63
+        }
+      ],
+      "timelineStartSec": 20.033,
+      "timelineEndSec": 23.567
+    },
+    {
+      "id": "f02",
+      "scene": "s02Plan",
+      "role": "father",
+      "character": "Отец — спокойный низкий мужской голос",
+      "text": "Кечирип койчу. Эсимден чыгып кетиптир.",
+      "spoken": "[apologetic] Кечирип койчу. Эсимден чыгып кетиптир.",
+      "voiceName": "Brian",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 52,
+      "hash": "7102c60d2a9e4bbe",
+      "file": "f02.mp3",
+      "durationSec": 2.6,
+      "speechStart": 0.06,
+      "speechEnd": 2.31,
+      "words": [
+        {
+          "text": "Кечирип",
+          "start": 0.06,
+          "end": 0.39
+        },
+        {
+          "text": "койчу.",
+          "start": 0.43,
+          "end": 0.87
+        },
+        {
+          "text": "Эсимден",
+          "start": 1.17,
+          "end": 1.59
+        },
+        {
+          "text": "чыгып",
+          "start": 1.63,
+          "end": 1.83
+        },
+        {
+          "text": "кетиптир.",
+          "start": 1.91,
+          "end": 2.31
+        }
+      ],
+      "timelineStartSec": 24.033,
+      "timelineEndSec": 26.267
+    },
+    {
+      "id": "n02",
+      "scene": "s03Order",
+      "role": "narrator",
+      "character": "Рассказчик — тёплый естественный мужской голос",
+      "text": "Пландын күтүүсүз өзгөрүшү эми апанын мойнуна түшөт. Ал жумушка да барышы керек. Кызын мектепке да кечиктирбеши керек.",
+      "spoken": "Пландын күтүүсүз өзгөрүшү эми апанын мойнуна түшөт. Ал жумушка да барышы керек. Кызын мектепке да кечиктирбеши керек.",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "c70070ac3afceb2c",
+      "file": "n02.mp3",
+      "durationSec": 8.05,
+      "speechStart": 0,
+      "speechEnd": 7.84,
+      "words": [
+        {
+          "text": "Пландын",
+          "start": 0,
+          "end": 0.48
+        },
+        {
+          "text": "күтүүсүз",
+          "start": 0.52,
+          "end": 1.04
+        },
+        {
+          "text": "өзгөрүшү",
+          "start": 1.08,
+          "end": 1.52
+        },
+        {
+          "text": "эми",
+          "start": 1.88,
+          "end": 2.16
+        },
+        {
+          "text": "апанын",
+          "start": 2.24,
+          "end": 2.72
+        },
+        {
+          "text": "мойнуна",
+          "start": 2.76,
+          "end": 3.12
+        },
+        {
+          "text": "түшөт.",
+          "start": 3.16,
+          "end": 3.52
+        },
+        {
+          "text": "Ал",
+          "start": 4.24,
+          "end": 4.4
+        },
+        {
+          "text": "жумушка",
+          "start": 4.44,
+          "end": 4.8
+        },
+        {
+          "text": "да",
+          "start": 4.827,
+          "end": 4.88
+        },
+        {
+          "text": "барышы",
+          "start": 4.92,
+          "end": 5.2
+        },
+        {
+          "text": "керек.",
+          "start": 5.24,
+          "end": 5.52
+        },
+        {
+          "text": "Кызын",
+          "start": 5.84,
+          "end": 6.16
+        },
+        {
+          "text": "мектепке",
+          "start": 6.2,
+          "end": 6.64
+        },
+        {
+          "text": "да",
+          "start": 6.693,
+          "end": 6.8
+        },
+        {
+          "text": "кечиктирбеши",
+          "start": 6.84,
+          "end": 7.44
+        },
+        {
+          "text": "керек.",
+          "start": 7.48,
+          "end": 7.84
+        }
+      ],
+      "timelineStartSec": 30.267,
+      "timelineEndSec": 38.133
+    },
+    {
+      "id": "m02",
+      "scene": "s04First",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Эмнеге дагы эле ошол жерде турат?..",
+      "spoken": "[worried] Эмнеге дагы эле ошол жерде турат?..",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "3d2e54ed49eb8a39",
+      "file": "m02.mp3",
+      "durationSec": 2.04,
+      "speechStart": 0.027,
+      "speechEnd": 1.8,
+      "words": [
+        {
+          "text": "Эмнеге",
+          "start": 0.027,
+          "end": 0.44
+        },
+        {
+          "text": "дагы",
+          "start": 0.48,
+          "end": 0.68
+        },
+        {
+          "text": "эле",
+          "start": 0.72,
+          "end": 0.84
+        },
+        {
+          "text": "ошол",
+          "start": 0.88,
+          "end": 1.08
+        },
+        {
+          "text": "жерде",
+          "start": 1.16,
+          "end": 1.4
+        },
+        {
+          "text": "турат?..",
+          "start": 1.44,
+          "end": 1.8
+        }
+      ],
+      "timelineStartSec": 43.267,
+      "timelineEndSec": 45.067
+    },
+    {
+      "id": "m03",
+      "scene": "s04First",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Мен жумушка кечигип жатам го...",
+      "spoken": "[anxious] Мен жумушка кечигип жатам го...",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "303d6573cd3649ef",
+      "file": "m03.mp3",
+      "durationSec": 2.25,
+      "speechStart": 0.15,
+      "speechEnd": 1.76,
+      "words": [
+        {
+          "text": "Мен",
+          "start": 0.15,
+          "end": 0.4
+        },
+        {
+          "text": "жумушка",
+          "start": 0.48,
+          "end": 0.88
+        },
+        {
+          "text": "кечигип",
+          "start": 0.92,
+          "end": 1.2
+        },
+        {
+          "text": "жатам",
+          "start": 1.24,
+          "end": 1.52
+        },
+        {
+          "text": "го...",
+          "start": 1.56,
+          "end": 1.76
+        }
+      ],
+      "timelineStartSec": 48.667,
+      "timelineEndSec": 50.267
+    },
+    {
+      "id": "d01",
+      "scene": "s05Second",
+      "role": "daughter",
+      "character": "Дочь — молодой мягкий голос (без изменения высоты)",
+      "text": "Апа, мектепке кечигип калбайбызбы?",
+      "spoken": "[softly] Апа, мектепке кечигип калбайбызбы?",
+      "voiceName": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "8901696080906a51",
+      "file": "d01.mp3",
+      "durationSec": 2.51,
+      "speechStart": 0.02,
+      "speechEnd": 2.22,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0.02,
+          "end": 0.38
+        },
+        {
+          "text": "мектепке",
+          "start": 0.66,
+          "end": 1.1
+        },
+        {
+          "text": "кечигип",
+          "start": 1.14,
+          "end": 1.5
+        },
+        {
+          "text": "калбайбызбы?",
+          "start": 1.54,
+          "end": 2.22
+        }
+      ],
+      "timelineStartSec": 55.667,
+      "timelineEndSec": 57.867
+    },
+    {
+      "id": "m04",
+      "scene": "s05Second",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Жок, кызым. Азыр келет. Даяр болуп туралы.",
+      "spoken": "[reassuring] Жок, кызым. Азыр келет. Даяр болуп туралы.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "143bbe9c4c310a67",
+      "file": "m04.mp3",
+      "durationSec": 2.588,
+      "speechStart": 0.2,
+      "speechEnd": 2.328,
+      "words": [
+        {
+          "text": "Жок,",
+          "start": 0.2,
+          "end": 0.248
+        },
+        {
+          "text": "кызым.",
+          "start": 0.308,
+          "end": 0.568
+        },
+        {
+          "text": "Азыр",
+          "start": 0.728,
+          "end": 0.968
+        },
+        {
+          "text": "келет.",
+          "start": 1.008,
+          "end": 1.368
+        },
+        {
+          "text": "Даяр",
+          "start": 1.568,
+          "end": 1.848
+        },
+        {
+          "text": "болуп",
+          "start": 1.868,
+          "end": 2.008
+        },
+        {
+          "text": "туралы.",
+          "start": 2.048,
+          "end": 2.328
+        }
+      ],
+      "timelineStartSec": 58.467,
+      "timelineEndSec": 60.6
+    },
+    {
+      "id": "m05",
+      "scene": "s06Traffic",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Саламатсызбы. Мүмкүн болсо бир аз тезирээк келе аласызбы? Биз мектепке кечигип жатабыз.",
+      "spoken": "Саламатсызбы. Мүмкүн болсо бир аз тезирээк келе аласызбы? Биз мектепке кечигип жатабыз.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "f126a8f3550d6f33",
+      "file": "m05.mp3",
+      "durationSec": 4.8,
+      "speechStart": 0,
+      "speechEnd": 4.56,
+      "words": [
+        {
+          "text": "Саламатсызбы.",
+          "start": 0,
+          "end": 0.72
+        },
+        {
+          "text": "Мүмкүн",
+          "start": 0.84,
+          "end": 1.227
+        },
+        {
+          "text": "болсо",
+          "start": 1.24,
+          "end": 1.44
+        },
+        {
+          "text": "бир",
+          "start": 1.48,
+          "end": 1.6
+        },
+        {
+          "text": "аз",
+          "start": 1.64,
+          "end": 1.759
+        },
+        {
+          "text": "тезирээк",
+          "start": 1.76,
+          "end": 2.16
+        },
+        {
+          "text": "келе",
+          "start": 2.18,
+          "end": 2.24
+        },
+        {
+          "text": "аласызбы?",
+          "start": 2.28,
+          "end": 2.88
+        },
+        {
+          "text": "Биз",
+          "start": 3,
+          "end": 3.2
+        },
+        {
+          "text": "мектепке",
+          "start": 3.24,
+          "end": 3.6
+        },
+        {
+          "text": "кечигип",
+          "start": 3.68,
+          "end": 4
+        },
+        {
+          "text": "жатабыз.",
+          "start": 4.04,
+          "end": 4.56
+        }
+      ],
+      "timelineStartSec": 65.867,
+      "timelineEndSec": 70.433
+    },
+    {
+      "id": "t01",
+      "scene": "s06Traffic",
+      "role": "driver",
+      "character": "Таксист — взрослый мужской голос, немного уставший",
+      "text": "Саламатсызбы. Келе жатам. Бирок алдымда чоң тыгын болуп жатат. Жол бошосо эле жетем.",
+      "spoken": "[tired] Саламатсызбы. Келе жатам. Бирок алдымда чоң тыгын болуп жатат. Жол бошосо эле жетем.",
+      "voiceName": "Callum",
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 52,
+      "hash": "a87d85abaed5681e",
+      "file": "t01.mp3",
+      "durationSec": 6.46,
+      "speechStart": 0.07,
+      "speechEnd": 6.32,
+      "words": [
+        {
+          "text": "Саламатсызбы.",
+          "start": 0.07,
+          "end": 0.8
+        },
+        {
+          "text": "Келе",
+          "start": 1.1,
+          "end": 1.36
+        },
+        {
+          "text": "жатам.",
+          "start": 1.4,
+          "end": 1.76
+        },
+        {
+          "text": "Бирок",
+          "start": 2.18,
+          "end": 2.56
+        },
+        {
+          "text": "алдымда",
+          "start": 2.613,
+          "end": 3.12
+        },
+        {
+          "text": "чоң",
+          "start": 3.24,
+          "end": 3.64
+        },
+        {
+          "text": "тыгын",
+          "start": 3.653,
+          "end": 3.92
+        },
+        {
+          "text": "болуп",
+          "start": 3.94,
+          "end": 4.08
+        },
+        {
+          "text": "жатат.",
+          "start": 4.12,
+          "end": 4.48
+        },
+        {
+          "text": "Жол",
+          "start": 5.02,
+          "end": 5.28
+        },
+        {
+          "text": "бошосо",
+          "start": 5.32,
+          "end": 5.72
+        },
+        {
+          "text": "эле",
+          "start": 5.74,
+          "end": 5.92
+        },
+        {
+          "text": "жетем.",
+          "start": 5.96,
+          "end": 6.32
+        }
+      ],
+      "timelineStartSec": 70.933,
+      "timelineEndSec": 77.2
+    },
+    {
+      "id": "m06",
+      "scene": "s06Traffic",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Макул... күтүп турабыз.",
+      "spoken": "[tired] Макул... күтүп турабыз.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "5960b74f1283e587",
+      "file": "m06.mp3",
+      "durationSec": 2.195,
+      "speechStart": 0.2,
+      "speechEnd": 1.875,
+      "words": [
+        {
+          "text": "Макул...",
+          "start": 0.2,
+          "end": 0.595
+        },
+        {
+          "text": "күтүп",
+          "start": 0.835,
+          "end": 1.235
+        },
+        {
+          "text": "турабыз.",
+          "start": 1.262,
+          "end": 1.875
+        }
+      ],
+      "timelineStartSec": 77.633,
+      "timelineEndSec": 79.3
+    },
+    {
+      "id": "m07",
+      "scene": "s07Ride",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Саламатсызбы.",
+      "spoken": "Саламатсызбы.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 52,
+      "hash": "ab51ceb39ba84335",
+      "file": "m07.mp3",
+      "durationSec": 1.3,
+      "speechStart": 0,
+      "speechEnd": 0.8,
+      "words": [
+        {
+          "text": "Саламатсызбы.",
+          "start": 0,
+          "end": 0.8
+        }
+      ],
+      "timelineStartSec": 83.1,
+      "timelineEndSec": 83.9
+    },
+    {
+      "id": "t02",
+      "scene": "s07Ride",
+      "role": "driver",
+      "character": "Таксист — взрослый мужской голос, немного уставший",
+      "text": "Саламатсызбы.",
+      "spoken": "[tired] Саламатсызбы.",
+      "voiceName": "Callum",
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "6b7051dc69473e1e",
+      "file": "t02.mp3",
+      "durationSec": 1.4,
+      "speechStart": 0.087,
+      "speechEnd": 0.9,
+      "words": [
+        {
+          "text": "Саламатсызбы.",
+          "start": 0.087,
+          "end": 0.9
+        }
+      ],
+      "timelineStartSec": 84.267,
+      "timelineEndSec": 85.067
+    },
+    {
+      "id": "n03",
+      "scene": "s07Ride",
+      "role": "narrator",
+      "character": "Рассказчик — тёплый естественный мужской голос",
+      "text": "Эч ким атайын кечиктирген жок. Бирок шаардагы бир эле күтүүсүз өзгөрүү бүт таңкы планды бузуп койду.",
+      "spoken": "Эч ким атайын кечиктирген жок. Бирок шаардагы бир эле күтүүсүз өзгөрүү бүт таңкы планды бузуп койду.",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "d4cf5010931c3c72",
+      "file": "n03.mp3",
+      "durationSec": 6.84,
+      "speechStart": 0,
+      "speechEnd": 6.48,
+      "words": [
+        {
+          "text": "Эч",
+          "start": 0,
+          "end": 0.16
+        },
+        {
+          "text": "ким",
+          "start": 0.2,
+          "end": 0.32
+        },
+        {
+          "text": "атайын",
+          "start": 0.373,
+          "end": 0.64
+        },
+        {
+          "text": "кечиктирген",
+          "start": 0.68,
+          "end": 1.12
+        },
+        {
+          "text": "жок.",
+          "start": 1.16,
+          "end": 1.36
+        },
+        {
+          "text": "Бирок",
+          "start": 1.68,
+          "end": 2.08
+        },
+        {
+          "text": "шаардагы",
+          "start": 2.16,
+          "end": 2.72
+        },
+        {
+          "text": "бир",
+          "start": 2.76,
+          "end": 2.879
+        },
+        {
+          "text": "эле",
+          "start": 2.88,
+          "end": 3.04
+        },
+        {
+          "text": "күтүүсүз",
+          "start": 3.08,
+          "end": 3.52
+        },
+        {
+          "text": "өзгөрүү",
+          "start": 3.6,
+          "end": 4.44
+        },
+        {
+          "text": "бүт",
+          "start": 4.5,
+          "end": 4.72
+        },
+        {
+          "text": "таңкы",
+          "start": 4.773,
+          "end": 5.12
+        },
+        {
+          "text": "планды",
+          "start": 5.147,
+          "end": 5.52
+        },
+        {
+          "text": "бузуп",
+          "start": 5.68,
+          "end": 6.16
+        },
+        {
+          "text": "койду.",
+          "start": 6.2,
+          "end": 6.48
+        }
+      ],
+      "timelineStartSec": 87.267,
+      "timelineEndSec": 93.767
+    },
+    {
+      "id": "e01",
+      "scene": "s08School",
+      "role": "teacher",
+      "character": "Учитель — спокойный уверенный женский голос",
+      "text": "Кутман таң. Сабак башталып калды. Кийинкиде кечикпегенге аракет кылалы, макулбу?",
+      "spoken": "[calm] Кутман таң. Сабак башталып калды. Кийинкиде кечикпегенге аракет кылалы, макулбу?",
+      "voiceName": "Alice",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "d34383a22e21546f",
+      "file": "e01.mp3",
+      "durationSec": 4.92,
+      "speechStart": 0.046,
+      "speechEnd": 4.63,
+      "words": [
+        {
+          "text": "Кутман",
+          "start": 0.046,
+          "end": 0.23
+        },
+        {
+          "text": "таң.",
+          "start": 0.31,
+          "end": 0.63
+        },
+        {
+          "text": "Сабак",
+          "start": 0.75,
+          "end": 0.95
+        },
+        {
+          "text": "башталып",
+          "start": 1.03,
+          "end": 1.43
+        },
+        {
+          "text": "калды.",
+          "start": 1.47,
+          "end": 1.75
+        },
+        {
+          "text": "Кийинкиде",
+          "start": 2.19,
+          "end": 2.63
+        },
+        {
+          "text": "кечикпегенге",
+          "start": 2.67,
+          "end": 3.35
+        },
+        {
+          "text": "аракет",
+          "start": 3.39,
+          "end": 3.67
+        },
+        {
+          "text": "кылалы,",
+          "start": 3.71,
+          "end": 4.07
+        },
+        {
+          "text": "макулбу?",
+          "start": 4.19,
+          "end": 4.63
+        }
+      ],
+      "timelineStartSec": 98.1,
+      "timelineEndSec": 102.7
+    },
+    {
+      "id": "m08",
+      "scene": "s08School",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Макул, кечиресиз.",
+      "spoken": "[embarrassed] Макул, кечиресиз.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "6fe0106f8a3f472c",
+      "file": "m08.mp3",
+      "durationSec": 1.236,
+      "speechStart": 0.2,
+      "speechEnd": 1.036,
+      "words": [
+        {
+          "text": "Макул,",
+          "start": 0.2,
+          "end": 0.316
+        },
+        {
+          "text": "кечиресиз.",
+          "start": 0.436,
+          "end": 1.036
+        }
+      ],
+      "timelineStartSec": 103.133,
+      "timelineEndSec": 104
+    },
+    {
+      "id": "d02",
+      "scene": "s08School",
+      "role": "daughter",
+      "character": "Дочь — молодой мягкий голос (без изменения высоты)",
+      "text": "Апа, кош болуңуз.",
+      "spoken": "[warm] Апа, кош болуңуз.",
+      "voiceName": "Jessica",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "2a6d103f56429c47",
+      "file": "d02.mp3",
+      "durationSec": 1.621,
+      "speechStart": 0.14,
+      "speechEnd": 1.36,
+      "words": [
+        {
+          "text": "Апа,",
+          "start": 0.14,
+          "end": 0.4
+        },
+        {
+          "text": "кош",
+          "start": 0.56,
+          "end": 0.8
+        },
+        {
+          "text": "болуңуз.",
+          "start": 0.84,
+          "end": 1.36
+        }
+      ],
+      "timelineStartSec": 104.7,
+      "timelineEndSec": 105.9
+    },
+    {
+      "id": "m09",
+      "scene": "s08School",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Жакшы оку, кызым.",
+      "spoken": "[warm] Жакшы оку, кызым.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "c84254e768e4b429",
+      "file": "m09.mp3",
+      "durationSec": 1.3,
+      "speechStart": 0.14,
+      "speechEnd": 1.06,
+      "words": [
+        {
+          "text": "Жакшы",
+          "start": 0.14,
+          "end": 0.42
+        },
+        {
+          "text": "оку,",
+          "start": 0.46,
+          "end": 0.66
+        },
+        {
+          "text": "кызым.",
+          "start": 0.72,
+          "end": 1.06
+        }
+      ],
+      "timelineStartSec": 106.267,
+      "timelineEndSec": 107.167
+    },
+    {
+      "id": "b01",
+      "scene": "s09Office",
+      "role": "boss",
+      "character": "Руководитель — короткий деловой мужской голос",
+      "text": "Бүгүн кечигип калдыңыз. Кийинкиде убакытты карап келели.",
+      "spoken": "Бүгүн кечигип калдыңыз. Кийинкиде убакытты карап келели.",
+      "voiceName": "Daniel",
+      "voiceId": "onwK4e9ZLuTAKqWW03F9",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "85f1709029e34fdb",
+      "file": "b01.mp3",
+      "durationSec": 4.35,
+      "speechStart": 0,
+      "speechEnd": 4.08,
+      "words": [
+        {
+          "text": "Бүгүн",
+          "start": 0,
+          "end": 0.347
+        },
+        {
+          "text": "кечигип",
+          "start": 0.373,
+          "end": 0.8
+        },
+        {
+          "text": "калдыңыз.",
+          "start": 0.84,
+          "end": 1.36
+        },
+        {
+          "text": "Кийинкиде",
+          "start": 1.96,
+          "end": 2.72
+        },
+        {
+          "text": "убакытты",
+          "start": 2.827,
+          "end": 3.36
+        },
+        {
+          "text": "карап",
+          "start": 3.387,
+          "end": 3.68
+        },
+        {
+          "text": "келели.",
+          "start": 3.72,
+          "end": 4.08
+        }
+      ],
+      "timelineStartSec": 111.367,
+      "timelineEndSec": 115.467
+    },
+    {
+      "id": "m10",
+      "scene": "s09Office",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Ооба, кечирип коюңуз.",
+      "spoken": "[tired] Ооба, кечирип коюңуз.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "2ebe63edb1ae0c4f",
+      "file": "m10.mp3",
+      "durationSec": 2.24,
+      "speechStart": 0.12,
+      "speechEnd": 1.74,
+      "words": [
+        {
+          "text": "Ооба,",
+          "start": 0.12,
+          "end": 0.46
+        },
+        {
+          "text": "кечирип",
+          "start": 0.74,
+          "end": 1.1
+        },
+        {
+          "text": "коюңуз.",
+          "start": 1.153,
+          "end": 1.74
+        }
+      ],
+      "timelineStartSec": 115.9,
+      "timelineEndSec": 117.533
+    },
+    {
+      "id": "n04",
+      "scene": "s09Office",
+      "role": "narrator",
+      "character": "Рассказчик — тёплый естественный мужской голос",
+      "text": "Бир эле таң. Бирок канча шашылыш чечим, канча күтүүгө кеткен убакыт, канча нерв...",
+      "spoken": "[thoughtful] Бир эле таң. Бирок канча шашылыш чечим, канча күтүүгө кеткен убакыт, канча нерв...",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "d55c80a75d7af965",
+      "file": "n04.mp3",
+      "durationSec": 6.91,
+      "speechStart": 0.057,
+      "speechEnd": 6.63,
+      "words": [
+        {
+          "text": "Бир",
+          "start": 0.057,
+          "end": 0.15
+        },
+        {
+          "text": "эле",
+          "start": 0.19,
+          "end": 0.31
+        },
+        {
+          "text": "таң.",
+          "start": 0.39,
+          "end": 0.923
+        },
+        {
+          "text": "Бирок",
+          "start": 1.363,
+          "end": 1.67
+        },
+        {
+          "text": "канча",
+          "start": 1.73,
+          "end": 1.99
+        },
+        {
+          "text": "шашылыш",
+          "start": 2.07,
+          "end": 2.47
+        },
+        {
+          "text": "чечим,",
+          "start": 2.55,
+          "end": 3.03
+        },
+        {
+          "text": "канча",
+          "start": 3.49,
+          "end": 3.83
+        },
+        {
+          "text": "күтүүгө",
+          "start": 3.87,
+          "end": 4.27
+        },
+        {
+          "text": "кеткен",
+          "start": 4.29,
+          "end": 4.63
+        },
+        {
+          "text": "убакыт,",
+          "start": 4.683,
+          "end": 5.11
+        },
+        {
+          "text": "канча",
+          "start": 5.65,
+          "end": 5.99
+        },
+        {
+          "text": "нерв...",
+          "start": 6.118,
+          "end": 6.63
+        }
+      ],
+      "timelineStartSec": 119.533,
+      "timelineEndSec": 126.1
+    },
+    {
+      "id": "n05",
+      "scene": "s10Idea",
+      "role": "narrator",
+      "character": "Рассказчик — тёплый естественный мужской голос",
+      "text": "Ошондо ал бир нерсени түшүндү: баланын мектепке жолун ар бир эртең менен кайрадан чечүүнүн ордуна, аны алдын ала уюштурууга болот.",
+      "spoken": "[warm] Ошондо ал бир нерсени түшүндү: баланын мектепке жолун ар бир эртең менен кайрадан чечүүнүн ордуна, аны алдын ала уюштурууга болот.",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "a4d8877023230a9d",
+      "file": "n05.mp3",
+      "durationSec": 8.8,
+      "speechStart": 0.09,
+      "speechEnd": 8.51,
+      "words": [
+        {
+          "text": "Ошондо",
+          "start": 0.09,
+          "end": 0.35
+        },
+        {
+          "text": "ал",
+          "start": 0.403,
+          "end": 0.51
+        },
+        {
+          "text": "бир",
+          "start": 0.55,
+          "end": 0.67
+        },
+        {
+          "text": "нерсени",
+          "start": 0.73,
+          "end": 1.15
+        },
+        {
+          "text": "түшүндү:",
+          "start": 1.19,
+          "end": 1.71
+        },
+        {
+          "text": "баланын",
+          "start": 2.06,
+          "end": 2.51
+        },
+        {
+          "text": "мектепке",
+          "start": 2.57,
+          "end": 2.91
+        },
+        {
+          "text": "жолун",
+          "start": 2.99,
+          "end": 3.47
+        },
+        {
+          "text": "ар",
+          "start": 3.55,
+          "end": 3.71
+        },
+        {
+          "text": "бир",
+          "start": 3.75,
+          "end": 3.87
+        },
+        {
+          "text": "эртең",
+          "start": 3.91,
+          "end": 4.297
+        },
+        {
+          "text": "менен",
+          "start": 4.31,
+          "end": 4.51
+        },
+        {
+          "text": "кайрадан",
+          "start": 4.55,
+          "end": 4.91
+        },
+        {
+          "text": "чечүүнүн",
+          "start": 4.99,
+          "end": 5.47
+        },
+        {
+          "text": "ордуна,",
+          "start": 5.523,
+          "end": 5.87
+        },
+        {
+          "text": "аны",
+          "start": 6.27,
+          "end": 6.83
+        },
+        {
+          "text": "алдын",
+          "start": 6.91,
+          "end": 7.23
+        },
+        {
+          "text": "ала",
+          "start": 7.27,
+          "end": 7.47
+        },
+        {
+          "text": "уюштурууга",
+          "start": 7.59,
+          "end": 8.19
+        },
+        {
+          "text": "болот.",
+          "start": 8.23,
+          "end": 8.51
+        }
+      ],
+      "timelineStartSec": 131.1,
+      "timelineEndSec": 139.533
+    },
+    {
+      "id": "m11",
+      "scene": "s11Call",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Саламатсызбы. Кызымды мектепке жеткирүү боюнча алдын ала маалымат алсам деп чалып жатам.",
+      "spoken": "Саламатсызбы. Кызымды мектепке жеткирүү боюнча алдын ала маалымат алсам деп чалып жатам.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "dbfe7fed92966ddd",
+      "file": "m11.mp3",
+      "durationSec": 5.04,
+      "speechStart": 0,
+      "speechEnd": 4.96,
+      "words": [
+        {
+          "text": "Саламатсызбы.",
+          "start": 0,
+          "end": 0.8
+        },
+        {
+          "text": "Кызымды",
+          "start": 1.08,
+          "end": 1.44
+        },
+        {
+          "text": "мектепке",
+          "start": 1.48,
+          "end": 1.92
+        },
+        {
+          "text": "жеткирүү",
+          "start": 1.96,
+          "end": 2.46
+        },
+        {
+          "text": "боюнча",
+          "start": 2.47,
+          "end": 2.8
+        },
+        {
+          "text": "алдын",
+          "start": 2.88,
+          "end": 3.24
+        },
+        {
+          "text": "ала",
+          "start": 3.26,
+          "end": 3.44
+        },
+        {
+          "text": "маалымат",
+          "start": 3.493,
+          "end": 3.92
+        },
+        {
+          "text": "алсам",
+          "start": 3.947,
+          "end": 4.16
+        },
+        {
+          "text": "деп",
+          "start": 4.22,
+          "end": 4.4
+        },
+        {
+          "text": "чалып",
+          "start": 4.44,
+          "end": 4.64
+        },
+        {
+          "text": "жатам.",
+          "start": 4.68,
+          "end": 4.96
+        }
+      ],
+      "timelineStartSec": 142.933,
+      "timelineEndSec": 147.867
+    },
+    {
+      "id": "g01",
+      "scene": "s11Call",
+      "role": "balago",
+      "character": "Представитель BalaGo — тёплый спокойный женский голос",
+      "text": "Саламатсызбы. Албетте. BalaGo азыр ишке кирүүгө даярданып жатат жана алдын ала каттоо жүрүп жатат. Балаңыздын маршруту менен убактысын калтырсаңыз болот.",
+      "spoken": "[warm] Саламатсызбы. Албетте. БалаГо азыр ишке кирүүгө даярданып жатат жана алдын ала каттоо жүрүп жатат. Балаңыздын маршруту менен убактысын калтырсаңыз болот.",
+      "voiceName": "Sarah",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "91633b4a8c7849ee",
+      "file": "g01.mp3",
+      "durationSec": 9.98,
+      "speechStart": 0.067,
+      "speechEnd": 9.68,
+      "words": [
+        {
+          "text": "Саламатсызбы.",
+          "start": 0.067,
+          "end": 0.72
+        },
+        {
+          "text": "Албетте.",
+          "start": 0.933,
+          "end": 1.44
+        },
+        {
+          "text": "BalaGo",
+          "start": 1.8,
+          "end": 2.32
+        },
+        {
+          "text": "азыр",
+          "start": 2.36,
+          "end": 2.64
+        },
+        {
+          "text": "ишке",
+          "start": 2.68,
+          "end": 2.96
+        },
+        {
+          "text": "кирүүгө",
+          "start": 3,
+          "end": 3.4
+        },
+        {
+          "text": "даярданып",
+          "start": 3.42,
+          "end": 3.84
+        },
+        {
+          "text": "жатат",
+          "start": 3.88,
+          "end": 4.24
+        },
+        {
+          "text": "жана",
+          "start": 4.4,
+          "end": 4.88
+        },
+        {
+          "text": "алдын",
+          "start": 4.933,
+          "end": 5.16
+        },
+        {
+          "text": "ала",
+          "start": 5.18,
+          "end": 5.36
+        },
+        {
+          "text": "каттоо",
+          "start": 5.4,
+          "end": 5.72
+        },
+        {
+          "text": "жүрүп",
+          "start": 5.74,
+          "end": 5.973
+        },
+        {
+          "text": "жатат.",
+          "start": 5.987,
+          "end": 6.32
+        },
+        {
+          "text": "Балаңыздын",
+          "start": 6.92,
+          "end": 7.44
+        },
+        {
+          "text": "маршруту",
+          "start": 7.488,
+          "end": 7.92
+        },
+        {
+          "text": "менен",
+          "start": 7.96,
+          "end": 8.24
+        },
+        {
+          "text": "убактысын",
+          "start": 8.293,
+          "end": 8.8
+        },
+        {
+          "text": "калтырсаңыз",
+          "start": 8.84,
+          "end": 9.36
+        },
+        {
+          "text": "болот.",
+          "start": 9.4,
+          "end": 9.68
+        }
+      ],
+      "timelineStartSec": 148.367,
+      "timelineEndSec": 158
+    },
+    {
+      "id": "m12",
+      "scene": "s11Call",
+      "role": "mother",
+      "character": "Мама — тёплый женский голос 30–40 лет",
+      "text": "Жакшы экен. Анда алдын ала катталып коёюн.",
+      "spoken": "[relieved] Жакшы экен. Анда алдын ала катталып коёюн.",
+      "voiceName": "Aria",
+      "voiceId": "9BWtsMINqrJLrRacOk9x",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "cde2bbebccdbfcd6",
+      "file": "m12.mp3",
+      "durationSec": 2.53,
+      "speechStart": 0.1,
+      "speechEnd": 2.27,
+      "words": [
+        {
+          "text": "Жакшы",
+          "start": 0.1,
+          "end": 0.377
+        },
+        {
+          "text": "экен.",
+          "start": 0.394,
+          "end": 0.59
+        },
+        {
+          "text": "Анда",
+          "start": 0.803,
+          "end": 0.99
+        },
+        {
+          "text": "алдын",
+          "start": 1.043,
+          "end": 1.27
+        },
+        {
+          "text": "ала",
+          "start": 1.29,
+          "end": 1.39
+        },
+        {
+          "text": "катталып",
+          "start": 1.45,
+          "end": 1.87
+        },
+        {
+          "text": "коёюн.",
+          "start": 1.897,
+          "end": 2.27
+        }
+      ],
+      "timelineStartSec": 158.5,
+      "timelineEndSec": 160.667
+    },
+    {
+      "id": "g02",
+      "scene": "s11Call",
+      "role": "balago",
+      "character": "Представитель BalaGo — тёплый спокойный женский голос",
+      "text": "Макул. Маалыматыңызды калтырыңыз, сиз менен байланышабыз.",
+      "spoken": "[warm] Макул. Маалыматыңызды калтырыңыз, сиз менен байланышабыз.",
+      "voiceName": "Sarah",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "aa0724ade7643938",
+      "file": "g02.mp3",
+      "durationSec": 3.8,
+      "speechStart": 0.19,
+      "speechEnd": 3.53,
+      "words": [
+        {
+          "text": "Макул.",
+          "start": 0.19,
+          "end": 0.49
+        },
+        {
+          "text": "Маалыматыңызды",
+          "start": 0.81,
+          "end": 1.61
+        },
+        {
+          "text": "калтырыңыз,",
+          "start": 1.65,
+          "end": 2.17
+        },
+        {
+          "text": "сиз",
+          "start": 2.29,
+          "end": 2.41
+        },
+        {
+          "text": "менен",
+          "start": 2.45,
+          "end": 2.65
+        },
+        {
+          "text": "байланышабыз.",
+          "start": 2.69,
+          "end": 3.53
+        }
+      ],
+      "timelineStartSec": 161.1,
+      "timelineEndSec": 164.467
+    },
+    {
+      "id": "n06",
+      "scene": "s12Final",
+      "role": "narrator",
+      "character": "Рассказчик — тёплый естественный мужской голос",
+      "text": "Ата-энеге — убакыт. Балага — алдын ала уюштурулган жол. BalaGo — балдар үчүн такси. Алдын ала каттоо жүрүп жатат.",
+      "spoken": "[warm] Ата-энеге — убакыт. Балага — алдын ала уюштурулган жол. БалаГо — балдар үчүн такси. Алдын ала каттоо жүрүп жатат.",
+      "voiceName": "Eric",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "modelId": "eleven_v3",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8
+      },
+      "seed": 51,
+      "hash": "ac6f777f4be08bba",
+      "file": "n06.mp3",
+      "durationSec": 9.19,
+      "speechStart": 0.05,
+      "speechEnd": 8.94,
+      "words": [
+        {
+          "text": "Ата-энеге",
+          "start": 0.05,
+          "end": 0.5
+        },
+        {
+          "text": "убакыт.",
+          "start": 0.593,
+          "end": 0.94
+        },
+        {
+          "text": "Балага",
+          "start": 1.3,
+          "end": 1.98
+        },
+        {
+          "text": "алдын",
+          "start": 2.593,
+          "end": 2.86
+        },
+        {
+          "text": "ала",
+          "start": 2.9,
+          "end": 3.02
+        },
+        {
+          "text": "уюштурулган",
+          "start": 3.06,
+          "end": 3.66
+        },
+        {
+          "text": "жол.",
+          "start": 3.74,
+          "end": 4.06
+        },
+        {
+          "text": "BalaGo",
+          "start": 4.66,
+          "end": 5.58
+        },
+        {
+          "text": "балдар",
+          "start": 5.86,
+          "end": 6.22
+        },
+        {
+          "text": "үчүн",
+          "start": 6.299,
+          "end": 6.593
+        },
+        {
+          "text": "такси.",
+          "start": 6.62,
+          "end": 6.86
+        },
+        {
+          "text": "Алдын",
+          "start": 7.153,
+          "end": 7.78
+        },
+        {
+          "text": "ала",
+          "start": 7.8,
+          "end": 7.9
+        },
+        {
+          "text": "каттоо",
+          "start": 7.98,
+          "end": 8.38
+        },
+        {
+          "text": "жүрүп",
+          "start": 8.42,
+          "end": 8.62
+        },
+        {
+          "text": "жатат.",
+          "start": 8.66,
+          "end": 8.94
+        }
+      ],
+      "timelineStartSec": 167.867,
+      "timelineEndSec": 176.733
+    }
+  ]
+}

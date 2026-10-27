@@ -1,0 +1,265 @@
+name: BanaMind BM-030 — «Война и мир» Л. Н. Толстого (банан, 30 мин, 16:9)
+
+# Фильм-разбор книги для канала BanaMind (не реклама BalaGo): правила BalaGo
+# о контактах/Бишкеке/кыргызской озвучке к нему не применяются.
+# Своя точка входа Remotion src/lesson-tolstoy/index.ts, другие фильмы не трогает.
+# Платные шаги запускаются только по метке в сообщении коммита:
+#   [tolstoy pilot] → озвучка сцен вступления + пилотный рендер (≈ 1 мин);
+#   [tolstoy full]  → озвучка всех реплик (готовые с тем же хэшем переиспользуются),
+#                     8 параллельных частей кадров, сборка, проверки, релиз.
+# Без метки — только тесты сценария и титров (без расходов на TTS и рендер).
+# Релиз приватного репозитория (prerelease): скачивание требует входа в GitHub.
+
+on:
+  push:
+    paths:
+      - "src/lesson-tolstoy/**"
+      - "scripts/lesson-tolstoy/**"
+      - "public/lesson-tolstoy/**"
+      - "src/banana-host/**"
+      - "src/banamind/**"
+      - ".github/workflows/lesson-tolstoy.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pilot | full | test"
+        default: test
+
+concurrency:
+  group: lesson-tolstoy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: tolstoy_bm030_30min
+  PILOT_SCENES: i01,i02,i03
+  PILOT_UNTIL: i03
+  TAG: lesson-tolstoy-bm030
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.save.outputs.sha }}
+      ranges: ${{ steps.plan.outputs.ranges }}
+      mode: ${{ steps.mode.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Mode
+        id: mode
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+          INPUT: ${{ github.event.inputs.mode }}
+        run: |
+          m=test
+          [[ "$MSG" == *"[tolstoy pilot]"* ]] && m=pilot
+          [[ "$MSG" == *"[tolstoy full]"* ]] && m=full
+          [ -n "$INPUT" ] && m="$INPUT"
+          echo "mode=$m" | tee -a "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        if: steps.mode.outputs.mode != 'test'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: ElevenLabs quota (info)
+        if: steps.mode.outputs.mode != 'test'
+        continue-on-error: true
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          curl -sS -H "xi-api-key: $ELEVENLABS_API_KEY" https://api.elevenlabs.io/v1/user/subscription \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print({k: d.get(k) for k in ('tier','character_count','character_limit','next_character_count_reset_unix')} if 'tier' in d else d)"
+
+      - name: Voiceover (cached lines are reused)
+        if: steps.mode.outputs.mode != 'test'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if [ "${{ steps.mode.outputs.mode }}" = pilot ]; then export VOICE_ONLY="$PILOT_SCENES"; fi
+          node scripts/lesson-tolstoy/voice.mjs
+
+      - name: Save new voice files to the branch
+        id: save
+        if: always() && github.ref_name != 'main'
+        run: |
+          [ -d public/lesson-tolstoy/voice ] && git add public/lesson-tolstoy/voice
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat | tail -3
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(BM-030): save Tolstoy voice files [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then ok=1; break; fi
+              sleep 5
+            done
+            [ "$ok" = 1 ] || exit 1
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Tests and render plan
+        id: plan
+        run: |
+          node --test scripts/lesson-tolstoy/*.test.mjs
+          node scripts/lesson-tolstoy/captions-check.mjs
+          if [ "${{ steps.mode.outputs.mode }}" = pilot ]; then P=$(node scripts/lesson-tolstoy/frames.mjs until "$PILOT_UNTIL"); else P=$(node scripts/lesson-tolstoy/frames.mjs 8); fi
+          echo "$P"
+          echo "ranges=$(echo "$P" | python3 -c 'import sys,json; print(json.dumps(json.load(sys.stdin)["ranges"]))')" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.mode == 'pilot' || needs.voice.outputs.mode == 'full'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: true
+      matrix:
+        range: ${{ fromJSON(needs.voice.outputs.ranges) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render frames ${{ matrix.range }} (muted, H.264)
+        run: |
+          mkdir -p out/parts
+          N=$(echo "${{ matrix.range }}" | cut -d- -f1)
+          npx remotion render src/lesson-tolstoy/index.ts TolstoyLesson "out/parts/part-$(printf %06d "$N").mp4" \
+            --frames=${{ matrix.range }} --muted --codec=h264 --pixel-format=yuv420p --color-space=bt709 \
+            --crf=18 --x264-preset=medium --concurrency=100% --log=warn
+          ls -la out/parts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tolstoy-part-${{ strategy.job-index }}
+          path: out/parts/*.mp4
+          if-no-files-found: error
+          retention-days: 3
+
+  assemble:
+    needs: [voice, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.voice.outputs.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: tolstoy-part-*
+          path: out/parts
+          merge-multiple: true
+
+      - name: Concat video, mix audio, mux (AAC 192k, faststart)
+        env:
+          MODE: ${{ needs.voice.outputs.mode }}
+        run: |
+          ls out/parts/*.mp4 | sort | sed "s/^/file '/; s/$/'/; s/out\/parts\///" > out/parts/list.txt
+          ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i out/parts/list.txt -c copy out/video.mp4
+          NAME="$OUT"; EXTRA=""
+          if [ "$MODE" = pilot ]; then NAME="${OUT}-pilot"; EXTRA="--allow-missing"; fi
+          node scripts/lesson-tolstoy/mixdown.mjs out/audio.wav $EXTRA
+          ffmpeg -hide_banner -loglevel error -y -i out/video.mp4 -i out/audio.wav -map 0:v:0 -map 1:a:0 \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "out/$NAME.mp4"
+          node scripts/lesson-tolstoy/srt.mjs "out/$NAME.srt"
+          echo "NAME=$NAME" >> "$GITHUB_ENV"
+
+      - name: Verify MP4
+        run: |
+          if [ "${{ needs.voice.outputs.mode }}" = pilot ]; then A=--any-duration; else A=""; fi
+          node scripts/lesson-tolstoy/verify.mjs "out/$NAME.mp4" $A | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Preview copy (960×540) and check frames
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$NAME.mp4" -vf scale=960:540:flags=lanczos -c:v libx264 -preset medium -crf 26 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$NAME-preview-960x540.mp4"
+          mkdir -p out/frames
+          D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "out/$NAME.mp4" | cut -d. -f1)
+          for p in 2 10 25 40 50 60 75 90 98; do
+            s=$((D * p / 100))
+            ffmpeg -hide_banner -loglevel error -y -ss $s -i "out/$NAME.mp4" -frames:v 1 -vf scale=960:-2 "out/frames/t$(printf %04d $s).jpg"
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tolstoy-${{ needs.voice.outputs.mode }}-mp4
+          path: |
+            out/${{ env.NAME }}.mp4
+            out/${{ env.NAME }}-preview-960x540.mp4
+            out/${{ env.NAME }}.srt
+            out/frames/*.jpg
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish private prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          R="$GITHUB_REPOSITORY"
+          NOTES="BanaMind BM-030: «Война и мир» Л. Н. Толстого — оригинальный фильм-разбор «Масштаб выбора» с бананом-ведущим (русский, 1920×1080, 30 fps, H.264/AAC). Приватный предпросмотр, не публиковать автоматически. Ветка ${GITHUB_REF_NAME}, коммит ${{ needs.voice.outputs.sha }}, прогон ${GITHUB_SERVER_URL}/${R}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$R" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$R" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          else
+            gh release create "$TAG" -R "$R" --title "BM-030 War and Peace — BanaMind (приватный предпросмотр)" --notes "$NOTES" --prerelease --target "${{ needs.voice.outputs.sha }}"
+          fi
+          gh release upload "$TAG" -R "$R" --clobber "out/$NAME.mp4" "out/$NAME-preview-960x540.mp4" "out/$NAME.srt"
+          if [ "${{ needs.voice.outputs.mode }}" = full ]; then
+            mkdir -p out/book
+            ln -f "out/$NAME.mp4" out/book/final-youtube.mp4
+            cp "out/$NAME.srt" out/book/final-youtube.srt
+            gh release upload "$TAG" -R "$R" --clobber out/book/final-youtube.mp4 out/book/final-youtube.srt
+          fi
+          {
+            echo "### Файлы (приватный репозиторий — нужен вход в GitHub)"
+            for f in "$NAME.mp4" "$NAME-preview-960x540.mp4" "$NAME.srt"; do echo "- ${GITHUB_SERVER_URL}/${R}/releases/download/$TAG/$f"; done
+          } >> "$GITHUB_STEP_SUMMARY"
