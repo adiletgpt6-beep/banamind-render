@@ -1,0 +1,2807 @@
+[
+  {
+    "source_head": "25b422f1e6a1b7db30f557b1c7e8d29d6f3c80e0",
+    "branches": [
+      "ccr-05ace312-9bpcuh"
+    ],
+    "original_expected_tree": "2f91ed673a0c8c118698575aec2f8a9d3ca8127a",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "4f13add3851cd928ea8d60fbb50dbe488783d005"
+  },
+  {
+    "source_head": "5f3f97276bdc3e8c854b4614eb71f57e7211c81e",
+    "branches": [
+      "ccr-5eea4ddb-244j53"
+    ],
+    "original_expected_tree": "d8e421175d722c74817621bb581b055e9a99b98c",
+    "files": [
+      {
+        "path": "muslimkids-yasin-color-universe/public/fonts/Unbounded.ttf",
+        "mode": "100644",
+        "sha": "e3c064ddfa3acdd3af2e0f06cd2f2288cc4fcae3",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "e083ec2b4ceaddc77cb548f5213b39394f70576a"
+  },
+  {
+    "source_head": "5d9f3545335ade846c11d92a38f140ce981bcc39",
+    "branches": [
+      "ccr-40bdb443-7306bs"
+    ],
+    "original_expected_tree": "445e6f87ceca7d8da2fc99bd105cb82cd13e5309",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "eeb8b545a52d644fc3079714bc3fab0833570184"
+  },
+  {
+    "source_head": "ce71bf9c4f003c628d6b73d00de3ebcf274f85a8",
+    "branches": [
+      "ccr-76bad4cf-8ukwwb"
+    ],
+    "original_expected_tree": "301ed7e5202a21b0a2e742ab875b09811dabfc2f",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "65b89a9d09be8ff2810d1e7e6c2a493a58ce1439"
+  },
+  {
+    "source_head": "47dc33f7219918251fceb5c52614a99498499c46",
+    "branches": [
+      "ccr-78af08c0-wgw1r3"
+    ],
+    "original_expected_tree": "dbac3a889a2f9760f5410b8bc109b6195da2e160",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "1dadde11af131de575c984272d3380bbdbfda470"
+  },
+  {
+    "source_head": "283b46aa3e1087b5d379e6274af53645e3fd6619",
+    "branches": [
+      "ccr-431ff063-5lzbg4"
+    ],
+    "original_expected_tree": "152e0d68929673a37831bb19f516ab83bae0bfe4",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "89928f1510d1e03c99b619d8f03aa1386b25fd98"
+  },
+  {
+    "source_head": "ce576c2aca48fe791e900660da2fbd6f4d5c2843",
+    "branches": [
+      "ccr-688d17ec-qln2oy"
+    ],
+    "original_expected_tree": "9fdbea34df7b8663ccb2629d15f2ff208c2bc508",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "1b0503043fac0afb28e0beed801de8ad518b051e"
+  },
+  {
+    "source_head": "3e0228e63a1a75d94379c99e3f8699d752ed8098",
+    "branches": [
+      "ccr-48778e7d-zh468a"
+    ],
+    "original_expected_tree": "4f0fb462edf962c91a996d21bc666270dd7b60b1",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "7ddc5b68e9a1c6b62f9913c0ce08a602f119f0b9"
+  },
+  {
+    "source_head": "9c5a70e578960ff9dec7354847e33396b5e43630",
+    "branches": [
+      "ccr-baf3b523-5pnkb5"
+    ],
+    "original_expected_tree": "42b5b2ef4472ed44c201ff14e4cc3a88f05662a1",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "5e092171b6499610797bff7f3519d7597e4f480b"
+  },
+  {
+    "source_head": "1bf599deef02710a507b6652cf4ba068fbda639f",
+    "branches": [
+      "ccr-bd1ae82c-7u966t"
+    ],
+    "original_expected_tree": "2335bb6417326a7c0486c6e1a644c3b0f636a008",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "b7b16ee50a363aa528fb175f532ee69e17ec0de6"
+  },
+  {
+    "source_head": "bf5adb84776ac5f85a3ca4ca3d1b8521c4b2a81c",
+    "branches": [
+      "ccr-c5b00ecd-hdz8or"
+    ],
+    "original_expected_tree": "bafaf145b0dfed1e74b85c9158db1f64aea45dba",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "c340ddf4daca91935c9a6e1fd5082c013ae350da"
+  },
+  {
+    "source_head": "09e67307bb8836a46d44b472691e98c23bf0e321",
+    "branches": [
+      "ccr-cca3a6bd-qb7004"
+    ],
+    "original_expected_tree": "94c9deea6cf42f5554b9ac76ab5d723fdf205909",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "f97de004407c448ae31242ac3b83d111d0350d94"
+  },
+  {
+    "source_head": "65cca13a2e20321c5499345d6a75da8e85f19f3e",
+    "branches": [
+      "ccr-d9a09636-crxqp4"
+    ],
+    "original_expected_tree": "3628c0ba1fc8394a0f0e909c51bfab90e9d5a4de",
+    "files": [
+      {
+        "path": "public/muslim-kids/fonts/inter-latin-700-normal.woff2",
+        "mode": "100644",
+        "sha": "12b51d7709cff88edbe49b94412d240b90126ee3",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "public/muslim-kids/fonts/inter-latin-800-normal.woff2",
+        "mode": "100644",
+        "sha": "882bd182fd97118a5106fe865dd9974b6f786eca",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "a87bb2b50a2ba985c08900d8a27fb1dac2d22947"
+  },
+  {
+    "source_head": "17efbe0ec2370d1a6550b9793107170af269dbfe",
+    "branches": [
+      "ccr-da013216-1tuhh2"
+    ],
+    "original_expected_tree": "ba98e726817848f48813cc27eb622d78b1064ef0",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "5fc1a4683affb4e82d5e5092b861821aacff99fa"
+  },
+  {
+    "source_head": "a67605acdb37ffcd3f6038132f76129889e32e19",
+    "branches": [
+      "ccr-e10c4814-hjeu4w"
+    ],
+    "original_expected_tree": "739b23263e4aa69f1b21f1c97fc724bf1c15ba3d",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "1de5ecc94931320598d1e4f02fa8508d7179fd7f"
+  },
+  {
+    "source_head": "fb651b19d00a3cb589488bf28602c7b994855c24",
+    "branches": [
+      "ccr-f10418e4-op0q83"
+    ],
+    "original_expected_tree": "93c7b7fb7f3cf277e6fb0c83c64cbe8faa1e26bc",
+    "files": [
+      {
+        "path": "muslimkids-living-line/public/assets/fonts/lora-latin-600-italic.woff2",
+        "mode": "100644",
+        "sha": "f08fef656f0a79821a46481acdfd18f294ec573d",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "muslimkids-living-line/public/assets/fonts/lora-latin-600-normal.woff2",
+        "mode": "100644",
+        "sha": "479b6982b65b5afe467e32d52ef9f2dd93d44775",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "muslimkids-living-line/public/assets/fonts/lora-latin-700-italic.woff2",
+        "mode": "100644",
+        "sha": "e7147af9e51fc4396a063d53d9767604f33f2cab",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "827ecba61b1dab382c3c54538924f4001ae4e942"
+  },
+  {
+    "source_head": "38139513f4c97390cf43287a2287fde80297078c",
+    "branches": [
+      "ccr-ffd2c6fe-scdz66"
+    ],
+    "original_expected_tree": "6a9618ae3bc340ce656f9bc08eaefe2313d653a5",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "7f02f5ab22094bb86c595da7e70d953edd49499e"
+  },
+  {
+    "source_head": "70ce8f0c3fc60a0bb0e8673a495e0d55187e206c",
+    "branches": [
+      "claude/balago-29-twenty-five-envelopes-quc238"
+    ],
+    "original_expected_tree": "cb90b3e058e5a0f6894dcc83a9f7578fc1f1a510",
+    "files": [
+      {
+        "path": "public/fonts/Caveat-Variable.ttf",
+        "mode": "100644",
+        "sha": "f84acf2ce2d1b3329b194749530dbaec047e6df6",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      }
+    ],
+    "published_expected_tree": "183ef41028fb3550ed300edca7eeb60c68b70f3e"
+  },
+  {
+    "source_head": "417d08e241596e5188daf571819009efbc829f19",
+    "branches": [
+      "claude/banamind-bm-027-guns-germs-steel-cuh8z3",
+      "feature/banamind-bm-027-guns-germs-and-steel"
+    ],
+    "original_expected_tree": "bdf453d9312690860046b086a9c37a7b089c8af2",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "de1899ab769880d9dc3365931d9d72a800d07744"
+  },
+  {
+    "source_head": "0154e91cb3dd4bcf449d0edc907b0526fed181a0",
+    "branches": [
+      "claude/banamind-bm-030-animation-buqj94"
+    ],
+    "original_expected_tree": "11ef80b7eda6f24ce075e8a9594b38ae0588625f",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "ad6e653b085e6d2598cbb9d80ca4524206570c09"
+  },
+  {
+    "source_head": "ab4a591a046944297622479ce2700f8a3bf531ac",
+    "branches": [
+      "claude/banamind-bm-030-war-peace-6awnth"
+    ],
+    "original_expected_tree": "de23ec550775638d4bc851dcab7e40a2d2f22caf",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "ac0bbcb7671330cba50f6f653eae02f9232d40d6"
+  },
+  {
+    "source_head": "ef6af89ec02878427dc188a1f6d65cfc42d5dbda",
+    "branches": [
+      "claude/banamind-bm-031-production-uvwe0p",
+      "feature/banamind-bm-031-harry-potter-philosophers-stone"
+    ],
+    "original_expected_tree": "3f68bd14602c8a0096fd970cdf0229d335ffe4c7",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "ef8811db5a7593ad06fa5962e65c5a14539bfe57"
+  },
+  {
+    "source_head": "7dd422681e5a7a56d66291119efa2f6f4125a53d",
+    "branches": [
+      "claude/bm-022-seven-habits-film-8mrfpk",
+      "feature/banamind-bm-022-seven-habits-covey"
+    ],
+    "original_expected_tree": "bc3f981029f5f2a5fca6a13cb443c2a01a88646a",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "85153913c0ee502bc8a6cbc69202b1ccc1624bcf"
+  },
+  {
+    "source_head": "75869abbe7d477de62b4423e6cbd998e3f3c15b8",
+    "branches": [
+      "claude/bm-025-win-friends-hpamvi",
+      "feature/banamind-bm-025-how-to-win-friends-carnegie"
+    ],
+    "original_expected_tree": "8348135c38bbc6418e7ca496fb5d1bcd28a91867",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "6ab9f1924235ee77cd7cbec1acafcd436a0c905d"
+  },
+  {
+    "source_head": "8a4fdf025631f3ae1033f89a9b6eb20fe98a68ee",
+    "branches": [
+      "claude/bm-038-contagious-film-zedqlk",
+      "feature/banamind-bm-038-contagious-berger"
+    ],
+    "original_expected_tree": "7ed35e5ba45c803aa203d07f65f9dce4c32a8638",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "571d0b6105c9abb3800b959d5e29eadf28ad5073"
+  },
+  {
+    "source_head": "ab7e02fdbbb2eb571e2882054438611d315e085c",
+    "branches": [
+      "claude/crystal-knowledge-animation-phv8jt"
+    ],
+    "original_expected_tree": "732472bed1aff295471dd0e0cc0f1e0e5a4652fa",
+    "files": [
+      {
+        "path": "muslimkids-crystal-knowledge/public/fonts/lora-latin-500-italic.woff2",
+        "mode": "100644",
+        "sha": "caa605b022773775aee3956af977cddd9b199da2",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "muslimkids-crystal-knowledge/public/fonts/lora-latin-500-normal.woff2",
+        "mode": "100644",
+        "sha": "b2702af808e7ecd61de0c9f2d38728067093b0ee",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "muslimkids-crystal-knowledge/public/fonts/lora-latin-600-italic.woff2",
+        "mode": "100644",
+        "sha": "f08fef656f0a79821a46481acdfd18f294ec573d",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "muslimkids-crystal-knowledge/public/fonts/lora-latin-600-normal.woff2",
+        "mode": "100644",
+        "sha": "479b6982b65b5afe467e32d52ef9f2dd93d44775",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "361865e2d3bdef7b72d1caf5a1bb72d549ec22d0"
+  },
+  {
+    "source_head": "b49c172916eb323fcc41215eb8981eace455d70b",
+    "branches": [
+      "claude/magnetic-universe-animation-42s8ol"
+    ],
+    "original_expected_tree": "4aeb586bbe0a1583750cf638ac4fdb88cbf341a2",
+    "files": [
+      {
+        "path": "muslimkids-magnetic-universe/public/assets/fonts/lora-latin-500-italic.woff2",
+        "mode": "100644",
+        "sha": "fd79fe1ee02312a7a767ef43cabdf8f5987531bb",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "eec1c1c28a3d5624ef17919e3df76f9a438758dc"
+  },
+  {
+    "source_head": "e612acdb33b55454f27a30ee789c7af8f4e263eb",
+    "branches": [
+      "claude/muslim-kids-living-matter-ve21dc"
+    ],
+    "original_expected_tree": "1b710fb76691eb071af4769afe77bce8eadd8635",
+    "files": [
+      {
+        "path": "muslimkids-living-matter/public/fonts/lora-latin-600-italic.woff2",
+        "mode": "100644",
+        "sha": "acb7e2bb1b65858f18f4634a8e723aa8c0801658",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "01c7b5680e20e46d6cd8ef4871951145cbc7784b"
+  },
+  {
+    "source_head": "aa2d24215452536d2ecf684944c6970e35dc0c3e",
+    "branches": [
+      "claude/tb-004-video-production-jx7c3n",
+      "feature/three-books-tb-004-vey"
+    ],
+    "original_expected_tree": "770739b1c7491d97122911f5ef86e44eafc51619",
+    "files": [
+      {
+        "path": "three-books/episodes/TB-002/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "1fecfd254c55a4622c7a8193d69ae3c41a519309",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "three-books/episodes/TB-003/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "3934be27f6463019af81b97dd8473abc9b9f3c76",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "three-books/episodes/TB-004/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "3c349d0c215092e5fd1e8c7152948ec270d973e2",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "c1c47c3610b906bee6b1bc198f1127ba47ca7219"
+  },
+  {
+    "source_head": "ff511519d86285d439ef1016ec4d72658e1be258",
+    "branches": [
+      "claude/windows-of-wonder-animation-tk92fn"
+    ],
+    "original_expected_tree": "da5c2eefa17285cf91ad1458fdad477cd6506334",
+    "files": [
+      {
+        "path": "muslimkids-windows-of-wonder/public/fonts/inter-latin-600-normal.woff2",
+        "mode": "100644",
+        "sha": "d1897949fda5c7fc5f04622df43a3fcba5b89d84",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "muslimkids-windows-of-wonder/public/fonts/inter-latin-800-normal.woff2",
+        "mode": "100644",
+        "sha": "74a16d45945264434aa7409e79549c626ebcdfb1",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "muslimkids-windows-of-wonder/public/fonts/lora-latin-600-normal.woff2",
+        "mode": "100644",
+        "sha": "479b6982b65b5afe467e32d52ef9f2dd93d44775",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "b205e9f6c9790d1126d7caf9c1285f688f31894f"
+  },
+  {
+    "source_head": "49be81b14a158618f947062e8476a85eca741e35",
+    "branches": [
+      "docs/three-books-production-system"
+    ],
+    "original_expected_tree": "989fe403530a0009cd2f708a3a7a36e7d9fac730",
+    "files": [
+      {
+        "path": "three-books/episodes/TB-002/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "1fecfd254c55a4622c7a8193d69ae3c41a519309",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "three-books/episodes/TB-003/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "3934be27f6463019af81b97dd8473abc9b9f3c76",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "three-books/episodes/TB-004/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "3c349d0c215092e5fd1e8c7152948ec270d973e2",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "three-books/episodes/TB-005/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "8ade7f61fae9a4f5ccb906c1eaac67b32fb638f9",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "827c50e6aee18ee5a1a146d101c79ed8ee929cc2"
+  },
+  {
+    "source_head": "4a8fc9b0934a3c0091e01f777b8f4f891f7bd089",
+    "branches": [
+      "feat/balago-video-studio-mvp"
+    ],
+    "original_expected_tree": "34c476aac95d4fa22c18d4897f12d614f7317a98",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "a1f42fcc4a63936360c525c1db875263421c6123"
+  },
+  {
+    "source_head": "737908a9b0f50d8e6ab915c0df9c4bcb7a252fee",
+    "branches": [
+      "feat/studio-auto-claude-live006"
+    ],
+    "original_expected_tree": "71be5f586e92ea7d2fbd0bc21c5750c95f1ed87a",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "bf710517b190e54f036e625f9c16e276dcddce3a"
+  },
+  {
+    "source_head": "e6a3c44c66ef12ecaa73dd30f921476266922818",
+    "branches": [
+      "feature/banamind-bm-002-ibn-khisham"
+    ],
+    "original_expected_tree": "6893d2536001cd76bc717de2e79b4603c10e18ef",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "16dc979e85c05390fa3aae59073207f88ba843fe"
+  },
+  {
+    "source_head": "0807e927cc5b98a74f08d35f78dd19946cd09a37",
+    "branches": [
+      "feature/banamind-bm-003-akaida"
+    ],
+    "original_expected_tree": "69bd6068ae74f05abe0bb6febb610ce3f46f1ade",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "5dbd8034e1493d94b87ea9e41c362a8d1d177b75"
+  },
+  {
+    "source_head": "7393125e3045ff74c12a5723c4c5e2135eb2a9fa",
+    "branches": [
+      "feature/banamind-bm-004-kahneman"
+    ],
+    "original_expected_tree": "ce23fb8e02bb781b0d2c4ec3f82e0d70f68a58ee",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "68480fc2ceb8d80d90ebf5254e7dc6ae857d208d"
+  },
+  {
+    "source_head": "fc4638f754ad83d3803615a531683b848ef370ac",
+    "branches": [
+      "feature/banamind-bm-005-robert-greene"
+    ],
+    "original_expected_tree": "b40f59f958aee0a3595049995b936be3108c7a1f",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "afd5b1a7c84bfe7b3b75af07b1043c99a88e83bb"
+  },
+  {
+    "source_head": "fea27244cef9a445229850c4b105fe27e61ab423",
+    "branches": [
+      "feature/banamind-bm-006-ayn-rand"
+    ],
+    "original_expected_tree": "d3327975be01f6d97522ac5173e4e42438a69c3e",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "29cad5c99a9843a49765c14a66fa86aa18112ff7"
+  },
+  {
+    "source_head": "49b1d1fe49f3beecf21979af046878091c371c9b",
+    "branches": [
+      "feature/banamind-bm-007-robin-sharma"
+    ],
+    "original_expected_tree": "6cc46df274dfe2e6fbaeae68dad106e2a2427600",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "40d270f636774deebb7d3036c30bf9dc4cf8f7d5"
+  },
+  {
+    "source_head": "3cdcbd550008792f647a71bc2953db80e254c85e",
+    "branches": [
+      "feature/banamind-bm-008-atomic-habits"
+    ],
+    "original_expected_tree": "19f1a45a0e897fdb107a93858971dd93df59f745",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "64ffdea1d667bf110ee03cad3aef3899cd9f4515"
+  },
+  {
+    "source_head": "1ce7362c1ab9127ed616ea88172e09125995d886",
+    "branches": [
+      "feature/banamind-bm-009-psychology-of-money"
+    ],
+    "original_expected_tree": "3e4f8b513121ee9cafcce97aec378a40d763033a",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "d44bb1a0f7870044b434e6f5ebf1419e7128258b"
+  },
+  {
+    "source_head": "28ac350683938b0d2b4cda79ac940fbbfc838f23",
+    "branches": [
+      "feature/banamind-bm-010-zero-to-one"
+    ],
+    "original_expected_tree": "4d0ee6cab27130ea5db9b1cae24c9bc9a60a5f7a",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "10afc45136cf69517ef3e9d47dd7bcad50fc26b7"
+  },
+  {
+    "source_head": "8f965fa1fff7427e6a0a17d40733b8c554a078d4",
+    "branches": [
+      "feature/banamind-bm-011-22-laws-of-marketing"
+    ],
+    "original_expected_tree": "6379247fe1e77d9706770f30a0760bc86abab0e3",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "06780f62eca3fe2e91c6697c83ebdc749eb64872"
+  },
+  {
+    "source_head": "ea7de8fed6f6d61b32ed2bce014ffdbeb39d0b01",
+    "branches": [
+      "feature/banamind-bm-012-marcus-aurelius-meditations"
+    ],
+    "original_expected_tree": "fe667eacf6b7dce2a6dd0ffe72b9a0a8949bbf10",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "53b6f405e39c3caef2ad460382205bfe14ac555f"
+  },
+  {
+    "source_head": "4650acc3a2d857f0619f22402b3f718e7c427238",
+    "branches": [
+      "feature/banamind-bm-013-sapiens-history-humankind"
+    ],
+    "original_expected_tree": "04040839afe08ef932162c401184b286d44ff92c",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "cfa76a0db3ccd035932f9786bf7f2ceca2c708ef"
+  },
+  {
+    "source_head": "b5a3fa7483d51624668f28b875d59efd4be5d0c4",
+    "branches": [
+      "feature/banamind-bm-014-hawking-brief-history-time"
+    ],
+    "original_expected_tree": "b85ac03afdf587aea44b29fdf554f46caf1b4e58",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "3e3b5fd838334702ad594642ef2b4e67bd974307"
+  },
+  {
+    "source_head": "01403b431b710d512816f06c34852337cb2924ca",
+    "branches": [
+      "feature/banamind-bm-015-steve-jobs-isaacson"
+    ],
+    "original_expected_tree": "601cb151c139f8207490c8f7c9d02317b7abaa76",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "30cb4a598f377aafb9adf7386111bb6a1cf37325"
+  },
+  {
+    "source_head": "cf5bfbf1ecc9fc3989d68692607ab3c451b4d25b",
+    "branches": [
+      "feature/banamind-bm-016-crime-and-punishment"
+    ],
+    "original_expected_tree": "53605a1ca472195449f29dd8e4d5bfca4c730f4f",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "5b773b2d84b296f54db19cea7112d9caf73af62c"
+  },
+  {
+    "source_head": "aac969ebb3ca3d60a88590d025889712a4692ce9",
+    "branches": [
+      "feature/banamind-bm-017-and-then-there-were-none"
+    ],
+    "original_expected_tree": "b752578641389b236077eb18ea1196edcb01616a",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "85595531e7abea54ab5a4dd1141dc51180542d2e"
+  },
+  {
+    "source_head": "3c74c8d78aff80505aa6bb6c73b97f7711ea72e2",
+    "branches": [
+      "feature/banamind-bm-018-lord-of-the-rings"
+    ],
+    "original_expected_tree": "1904a1127bc888bfd85d021e22013100b9a78384",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "a2cbc6aafa4a89903a69dd78281fc9666462ff0d"
+  },
+  {
+    "source_head": "831a5976a593a1bd7c5f4b01611cac39b9002a81",
+    "branches": [
+      "feature/banamind-bm-019-pride-and-prejudice"
+    ],
+    "original_expected_tree": "afc2eef0eb3c0ba9320ea124ef6e88e30d48142c",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "410e5794ced286990cd733477f9ddde0733e4f61"
+  },
+  {
+    "source_head": "977a9b83e99d755ebd623b22b9459eaf03f869da",
+    "branches": [
+      "feature/banamind-bm-020-it-king-volume-one"
+    ],
+    "original_expected_tree": "6a9f4fbb1ee21aedfba509a8e824ff7d6a402afc",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "c97d49405274bb5f15f33a0ad25c4ed4275f0614"
+  },
+  {
+    "source_head": "5ff4bc901aa63d458ec3a50a3110875afa55d3a1",
+    "branches": [
+      "feature/banamind-bm-021-influence-cialdini"
+    ],
+    "original_expected_tree": "afdc70111ee8c22d9a4d6ac6f6e38b17d4e80558",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "8605726fa24240177a973c5e2aeb969530ed4dc3"
+  },
+  {
+    "source_head": "2f109c2cd72ba29475ae4c317b88d428536612d5",
+    "branches": [
+      "feature/banamind-bm-023-rich-dad-poor-dad"
+    ],
+    "original_expected_tree": "fd66048f87c42b83f327cde4c01b6e6656705b19",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "13e04fbbbb51688d0067d599b4d5bc0dd753bdcf"
+  },
+  {
+    "source_head": "d33c5b1d9026e6ef376fde99612ae8b0c2dc51ed",
+    "branches": [
+      "feature/banamind-bm-024-lean-startup-ries"
+    ],
+    "original_expected_tree": "b5cdb8503eb5470595bed6123eb90dbb462c48f8",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "6bef47a95d3e2a6bfa2cd283a2d3ea37b43ea6fa"
+  },
+  {
+    "source_head": "e15af14b1b6c73c6714cf03a25820347e7520b18",
+    "branches": [
+      "feature/banamind-bm-026-seneca-letters-lucilius"
+    ],
+    "original_expected_tree": "53ff23cdfcf1212f0c6e9bbedb13e086dce0cf0b",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "12d9b8f1ec89641f8abbb9c8c153c38283bb6c75"
+  },
+  {
+    "source_head": "d0a174ff84364c9b5bbac0cabf81f00d9d4c5152",
+    "branches": [
+      "feature/banamind-bm-028-cosmos-carl-sagan"
+    ],
+    "original_expected_tree": "13e498f2672a781cd6f4fbebb7b7208717f329e6",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "034d040d9e61c781b6047f982aca4b21d88b696f"
+  },
+  {
+    "source_head": "f575c2f77dd93b09380d33d2469c9de3947f0680",
+    "branches": [
+      "feature/banamind-bm-029-elon-musk-vance"
+    ],
+    "original_expected_tree": "f90ce7e6aaadc2955e27dd01ebd6e8bef55bf572",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "c840a7148f0a479e54838ea4543d4de6fa9d29a4"
+  },
+  {
+    "source_head": "60e30ef87fae1f85e52d53e12f65c63a4158ff6e",
+    "branches": [
+      "feature/banamind-bm-030-war-and-peace-tolstoy"
+    ],
+    "original_expected_tree": "c12a12bd2d6b5a18aef56f89629742e4b8c38e78",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "3c756a8b19f2e92e4f31c3f2dd30b4fecf150970"
+  },
+  {
+    "source_head": "b24bdc770c7c4726547798ef1c4129bcd19a2f07",
+    "branches": [
+      "feature/banamind-bm-032-jane-eyre-bronte"
+    ],
+    "original_expected_tree": "456f776b08d1de12de572a0a39857159299c0f14",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "1e3c614ab70c3f6934ef5cc56ce2b6edafdadc68"
+  },
+  {
+    "source_head": "4116e23f9f696da4889f84c5de1b38adee0ce3ae",
+    "branches": [
+      "feature/banamind-bm-033-dracula-stoker"
+    ],
+    "original_expected_tree": "7d2f90a96b32ed17d788cf5a5777ab5a975428fa",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "8c2bbaf52d1200105b393eef0e8ed84f3398e02e"
+  },
+  {
+    "source_head": "e2a1b9f3b37a5403c1473c954492026777ff13a3",
+    "branches": [
+      "feature/banamind-bm-034-games-people-play-berne"
+    ],
+    "original_expected_tree": "b262f2c6f1e9ba1d020d7812168b5c88dd1b8501",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "57c365ca43063026a67b0c284f0d38b7e9b0a110"
+  },
+  {
+    "source_head": "344f15305fa0890ed1f57ea01c8461634b8befb4",
+    "branches": [
+      "feature/banamind-bm-035-power-of-habit-duhigg"
+    ],
+    "original_expected_tree": "d551e7bf69cf3eff737eef350615a111ca95a585",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "77353073dc75c951faffcb8954b8fe70c94af38d"
+  },
+  {
+    "source_head": "f86194a2d89a652b1a85afcf5227d15256b1f39c",
+    "branches": [
+      "feature/banamind-bm-036-richest-man-in-babylon-clason"
+    ],
+    "original_expected_tree": "e167ccc8fb408d4f29e0c0a9d1b0c7a7f3a1dfd8",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "97dbbb2a82804648929481620b449b4ed9a9e42b"
+  },
+  {
+    "source_head": "3522f0302ae89ca67a2ae08b10a610522650fe4f",
+    "branches": [
+      "feature/banamind-bm-037-good-to-great-collins"
+    ],
+    "original_expected_tree": "7d6bf7a39e222549e4693b42702a6ff3e3c28766",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "d0570754b16cb1770dbc087902ff31df05339fd9"
+  },
+  {
+    "source_head": "0dc6e7ec48e1444905876961240863f5c226539d",
+    "branches": [
+      "feature/banamind-bm-039-plato-republic"
+    ],
+    "original_expected_tree": "658dd3fe2db4039fe084211088dcfc4007d3f83a",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "a2ccb1502791f1244c0544373698b6abdc0968db"
+  },
+  {
+    "source_head": "38f3d25915eb5d7915eb10cec8a71f7dfdca57eb",
+    "branches": [
+      "feature/banamind-bm-040-spqr-ancient-rome-beard"
+    ],
+    "original_expected_tree": "7002a38b20a06fc1076a7c9a4375c3267b268522",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "1707f4d200b7e6e86d7da06ad3d71e96bd741777"
+  },
+  {
+    "source_head": "c1bab2507f20bcf3fe199b0405ee05bcd1558343",
+    "branches": [
+      "feature/banamind-bm-041-selfish-gene-dawkins"
+    ],
+    "original_expected_tree": "b96a0652a72a7d5e79ab4ea83d53b23a9e10c751",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "0f8f5aef0339513592690e6ff2df7f623ecaef7f"
+  },
+  {
+    "source_head": "e373ff3355d6756ea9c28c899af87e73214f4152",
+    "branches": [
+      "feature/banamind-bm-042-long-walk-to-freedom-mandela"
+    ],
+    "original_expected_tree": "f4f816c250363f8a82d34f4e8469f7a9ce775d08",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "f586ca014fd43c13da37763fd60d5351a8015399"
+  },
+  {
+    "source_head": "869d8b10d309ef899f4fd8aec1a0431e23ea87e3",
+    "branches": [
+      "feature/banamind-bm-043-hound-of-the-baskervilles"
+    ],
+    "original_expected_tree": "d187b7b92e7e533108c57ef38f15fe0ba5a81559",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "8153de87707a6254a84134cdb273da069868df43"
+  },
+  {
+    "source_head": "58c41e4bef8e41f2f949dc8e08719b00bbff26f8",
+    "branches": [
+      "feature/banamind-bm-044-martian-andy-weir"
+    ],
+    "original_expected_tree": "c59a8ad28d9254010a540675e7d61e51a1211819",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "cf1c817c9d41825f6bc64b77b2a97b88bf4360ca"
+  },
+  {
+    "source_head": "e6352dda2d505438cf59353414d08f758af0c848",
+    "branches": [
+      "feature/bg-040-episode-40"
+    ],
+    "original_expected_tree": "48c61251c9f00d8873d69a70e9846b308a82bca8",
+    "files": [
+      {
+        "path": "public/assets/campaign50/bg-040/fonts/Caveat-Variable.ttf",
+        "mode": "100644",
+        "sha": "f84acf2ce2d1b3329b194749530dbaec047e6df6",
+        "binary": true,
+        "reason": "font_not_uploaded_in_previous_session; no_binary_retry"
+      }
+    ],
+    "published_expected_tree": "2b5d9fa4a0c5a797f0ec09758fa4d6f0bca40493"
+  },
+  {
+    "source_head": "2f07e9ffa37ef2ba5564711ff2840e27a76b019e",
+    "branches": [
+      "feature/no-backup-2d"
+    ],
+    "original_expected_tree": "194ca1c71139313fa786960a674ab02eaa2a1937",
+    "files": [
+      {
+        "path": "scripts/no-backup-2d.test.mjs",
+        "mode": "100644",
+        "sha": "157128a58838dad67267a9afcc27c588874a0a2b",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "e3a9fbfe0b3d4048db00b54bf5a47f1e9ea49ace"
+  },
+  {
+    "source_head": "c98e27c6e9090c4d041906fb2a23e88e523b5292",
+    "branches": [
+      "feature/three-books-tb-002-tiko"
+    ],
+    "original_expected_tree": "1d18c411e5e56b58d1ac2fd057f8d1b6f8253e18",
+    "files": [
+      {
+        "path": "three-books/episodes/TB-002/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "1fecfd254c55a4622c7a8193d69ae3c41a519309",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "fda6b941a537446441e43d3bf9958107638b99e6"
+  },
+  {
+    "source_head": "990ec5c838d91e4a0400508b7bf733cd373f946f",
+    "branches": [
+      "feature/three-books-tb-003-rin"
+    ],
+    "original_expected_tree": "63cd2952e50cb811ca14c986162757f4e0328387",
+    "files": [
+      {
+        "path": "three-books/episodes/TB-002/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "1fecfd254c55a4622c7a8193d69ae3c41a519309",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "three-books/episodes/TB-003/PRIVATE_LEXICON.json",
+        "mode": "100644",
+        "sha": "3934be27f6463019af81b97dd8473abc9b9f3c76",
+        "reason": "explicitly_private_lexicon"
+      },
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "7f6c05ace6939a47958dbdac4bdf5d564d66b9ee"
+  },
+  {
+    "source_head": "3684c5b1750b5a91874460eb5f9e2f182cfd2c42",
+    "branches": [
+      "fix/studio-auth-smoke-tools-args"
+    ],
+    "original_expected_tree": "e722b1a047f55ab3f6188e8bfd566ba029160382",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "c023d5eebab4d4f19709607d1d03b9ee1524f4ed"
+  },
+  {
+    "source_head": "2a4f90f4962842985cd9efd96b9da71ebb5748a9",
+    "branches": [
+      "fix/studio-claude-auth-smoke-115"
+    ],
+    "original_expected_tree": "caaebb5412d71eab8bae34942fd8fddafb36c86a",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "d54de6b995543537196f81d86499ea12c60b1153"
+  },
+  {
+    "source_head": "3d2f76990aeeb732e30105523989cf2b17fae2ee",
+    "branches": [
+      "fix/studio-cli-oauth-diagnostic"
+    ],
+    "original_expected_tree": "2328c113d9a4d448d25c46955d70a7b22d0da15e",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "fe3abbbf419a090e174feb0aade825fe709cfc09"
+  },
+  {
+    "source_head": "ad3785242e6729c91e0ae7670e8dd6ed4fe5c7a8",
+    "branches": [
+      "fix/studio-retry-live006-asr-pyav"
+    ],
+    "original_expected_tree": "2190334ff44c06e2dd3f97207ae8fef0b680463f",
+    "files": [
+      {
+        "path": "apps/balago-studio/tests/auth.test.ts",
+        "mode": "100644",
+        "sha": "9390f26f40afe48088a99d1c364dde89ce9fde16",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/github.test.ts",
+        "mode": "100644",
+        "sha": "6eb3ad794b351ee6650b865d2b8ce6c36b600e69",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/helpers.ts",
+        "mode": "100644",
+        "sha": "851a42618b03ff611f975c6be44bcc8b42cb58f3",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      },
+      {
+        "path": "apps/balago-studio/tests/storage.test.ts",
+        "mode": "100644",
+        "sha": "b2fb5a1f65a00f341274d8bbd8f187f2d21444ad",
+        "reason": "credential_like_test_fixture_omitted_after_automatic_review_rejection"
+      }
+    ],
+    "published_expected_tree": "92afbd8fd4a3dc9556a5dcc55884e17f5680c6bb"
+  }
+]

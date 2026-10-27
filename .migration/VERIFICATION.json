@@ -1,0 +1,22 @@
+{
+  "source_refs_match_archive_plan": true,
+  "source_branch_count": 223,
+  "published_branch_count": 183,
+  "snapshot_trees_verified": 178,
+  "checksums": "Git blob and recursive Git tree SHA-1",
+  "source_refs_sha256": "7ce72958f6410c5ba78ac394fab671e48ac01ca87621ac32d80f2e44c2a9ecb2",
+  "actions_runs_observed": 0,
+  "active_workflow_paths_in_publication_plans": 0,
+  "main_build": {
+    "head": "33d1c8ce90c1c33be1aa7bbac7e5a7f64215dfb9",
+    "command": "npm run typecheck && npm run build",
+    "exit_code": 0,
+    "scope": "Root main only; TypeScript and Remotion bundle. No video render. Verified in this conversation before temporary workspace cleanup.",
+    "subsequent_changes": "Migration documentation only.",
+    "registry_git_sha": {
+      "books/500-series/REGISTRY.csv": "6a5e5df554b0052c0a6c62380ba6db22c9fa31fd",
+      "books/500-series/HANDOFF.md": "4b6b8b7a9a88cad51f4a2c6a2707f29f9e527bfb"
+    }
+  },
+  "scope": "Checks cover sanitized branch snapshots, not unexported original Git history."
+}

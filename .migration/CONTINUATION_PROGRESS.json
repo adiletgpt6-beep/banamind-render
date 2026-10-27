@@ -1,0 +1,1339 @@
+{
+  "schema_version": 1,
+  "status": "in_progress",
+  "source_repository": "adiletzainidinov/balago-video",
+  "target_repository": "adiletgpt6-beep/banamind-render",
+  "source_branch_count": 223,
+  "published_branch_count": 183,
+  "verified_snapshot_count": 178,
+  "original_git_history_imported": false,
+  "workflow_destination": ".github/workflows-disabled/",
+  "active_workflow_paths": 0,
+  "render_tts_paid_api_invocations": 0,
+  "mapping": [
+    {
+      "branch": "ccr-02af52fb-c49qt7",
+      "source_head": "bb41cc52eb4438add3a72c3f8cb318679d18a79d",
+      "snapshot_commit": "eaed9d6c257dcb82fdf4ed290837e7c46882c751",
+      "snapshot_tree": "18228ea89102d7276d071396c635dd0a95f4f89d",
+      "original_archive_tree": "18228ea89102d7276d071396c635dd0a95f4f89d"
+    },
+    {
+      "branch": "ccr-05ace312-9bpcuh",
+      "source_head": "25b422f1e6a1b7db30f557b1c7e8d29d6f3c80e0",
+      "snapshot_commit": "2f520e61063ea313e3ec420094431cbd02429398",
+      "snapshot_tree": "4f13add3851cd928ea8d60fbb50dbe488783d005",
+      "original_archive_tree": "2f91ed673a0c8c118698575aec2f8a9d3ca8127a"
+    },
+    {
+      "branch": "ccr-07c0677a-db534r",
+      "source_head": "81c2a514997f13e8288c7168477feab0db76a668",
+      "snapshot_commit": "e684ca2778a322f2bb599c4dea471dfe3a31c91f",
+      "snapshot_tree": "47098c0bbde1dbb842fa744f788a1e1ecb1ad1dc",
+      "original_archive_tree": "47098c0bbde1dbb842fa744f788a1e1ecb1ad1dc"
+    },
+    {
+      "branch": "ccr-09793426-cn12m9",
+      "source_head": "397d148a8a5aa5b5f61f61b6dc32682d9ba14bbe",
+      "snapshot_commit": "6a8cd145fbfb4471235d7729f5ba53ed15916e5f",
+      "snapshot_tree": "73dac348e6f7fb5b322481553ffb2e7c6c6cabef",
+      "original_archive_tree": "73dac348e6f7fb5b322481553ffb2e7c6c6cabef"
+    },
+    {
+      "branch": "ccr-10669cd3-nxv3kk",
+      "source_head": "091e44ec497dcbba339fd1c95e546cfbb3e91fe1",
+      "snapshot_commit": "e5342e55b12598ab8eac0fc8e4c9659c393e4e46",
+      "snapshot_tree": "c662e4993cc3a780c2cddaeff13c17d1d2fe09ae",
+      "original_archive_tree": "c662e4993cc3a780c2cddaeff13c17d1d2fe09ae"
+    },
+    {
+      "branch": "ccr-1552cd7c-gmcu4j",
+      "source_head": "024ca4b82dabdb96b3e4c6926bb4287024d3e4a7",
+      "snapshot_commit": "607396c4ffdd2b8ec17c010c08a23a4e5bd9fa7d",
+      "snapshot_tree": "f79d19d831474fd802079eb45b9235988ed60d39",
+      "original_archive_tree": "f79d19d831474fd802079eb45b9235988ed60d39"
+    },
+    {
+      "branch": "ccr-169526b2-0idi8u",
+      "source_head": "edb497c4a887c3f440fc79ce165c1729ebf3191a",
+      "snapshot_commit": "63b4fe8562fa1a2e5d015b33009ae47939d5e2e6",
+      "snapshot_tree": "899bcd90ade11ac5fd0846ad900d531cbc92a1d6",
+      "original_archive_tree": "899bcd90ade11ac5fd0846ad900d531cbc92a1d6"
+    },
+    {
+      "branch": "ccr-22cec22b-fstu10",
+      "source_head": "8e4cbd0d44199f5af870ea4b8881d0f553ee05f9",
+      "snapshot_commit": "29ae88ec96177e0f35e06e4444a8d943d9fe30b8",
+      "snapshot_tree": "a93a1ced6bf0025eaa92f02e1dc912f5e56077a9",
+      "original_archive_tree": "a93a1ced6bf0025eaa92f02e1dc912f5e56077a9"
+    },
+    {
+      "branch": "ccr-26ffbc1d-p5w0zs",
+      "source_head": "116a3f18a77432417d5dd862422b82050ba0f73d",
+      "snapshot_commit": "e015cb969757a5434872916786a298820fb61a4d",
+      "snapshot_tree": "36fa30c39ec974837a4919b702d69feab18ee798",
+      "original_archive_tree": "36fa30c39ec974837a4919b702d69feab18ee798"
+    },
+    {
+      "branch": "ccr-291071da-bb390s",
+      "source_head": "a09c3b5e7bc8ee7f57c38316aa9598f944a66c18",
+      "snapshot_commit": "5a003457586ba7dc6aab4d07a8c6927d4c3f81ec",
+      "snapshot_tree": "fb3a6d08e883b4ecc6e86aba1ff5a4f2b3599578",
+      "original_archive_tree": "fb3a6d08e883b4ecc6e86aba1ff5a4f2b3599578"
+    },
+    {
+      "branch": "ccr-2cd5811f-nmpumx",
+      "source_head": "163084677673c03c4d88c49f34fd5f3cade1d9b3",
+      "snapshot_commit": "b7292df4bce7988e018e02cb5efac7dfc6ddd631",
+      "snapshot_tree": "80b6b566a16aee136998a8e6eb89278b6a3e14b3",
+      "original_archive_tree": "80b6b566a16aee136998a8e6eb89278b6a3e14b3"
+    },
+    {
+      "branch": "ccr-34cc45b5-0trsov",
+      "source_head": "211bd8d6b9c0f8607858c19b31e2e3c79a10e8bc",
+      "snapshot_commit": "9748c61959d088277034266ce213e400e0921e1e",
+      "snapshot_tree": "2ec577972282ebfa55d85a34cd43f8304de41a2c",
+      "original_archive_tree": "2ec577972282ebfa55d85a34cd43f8304de41a2c"
+    },
+    {
+      "branch": "ccr-3c89ba1b-55ai0l",
+      "source_head": "5fa74fef8c404ca24101dab98db0fe30511ceefb",
+      "snapshot_commit": "96b6c4a1d9f4f26c41068bfc33ff51e5273e5e3c",
+      "snapshot_tree": "05df82c185d4889913bfabe4e118335190080bad",
+      "original_archive_tree": "05df82c185d4889913bfabe4e118335190080bad"
+    },
+    {
+      "branch": "ccr-40bdb443-7306bs",
+      "source_head": "5d9f3545335ade846c11d92a38f140ce981bcc39",
+      "snapshot_commit": "a6e492ee5ef473b880819000c574022c075650a2",
+      "snapshot_tree": "eeb8b545a52d644fc3079714bc3fab0833570184",
+      "original_archive_tree": "445e6f87ceca7d8da2fc99bd105cb82cd13e5309"
+    },
+    {
+      "branch": "ccr-42704944-32ncot",
+      "source_head": "f52f888306023c8576d45278a148ac050cf6b7ff",
+      "snapshot_commit": "6074b8e6cdaa23ca34375b925aadf5d50ac1db3d",
+      "snapshot_tree": "417ea148a34beaf6c196223efaf73f6e8ae2c1b4",
+      "original_archive_tree": "417ea148a34beaf6c196223efaf73f6e8ae2c1b4"
+    },
+    {
+      "branch": "ccr-431ff063-5lzbg4",
+      "source_head": "283b46aa3e1087b5d379e6274af53645e3fd6619",
+      "snapshot_commit": "bc1f2f1b42af3baf7f8fd2183c1f06e51087f390",
+      "snapshot_tree": "89928f1510d1e03c99b619d8f03aa1386b25fd98",
+      "original_archive_tree": "152e0d68929673a37831bb19f516ab83bae0bfe4"
+    },
+    {
+      "branch": "ccr-45e8aeba-jnj1q5",
+      "source_head": "a2e34a0d5e1cf78a3ea98b95fc7c0f5c5b2bf2af",
+      "snapshot_commit": "bdc1524701312058dc301d8aada306c6de167363",
+      "snapshot_tree": "d2066a5a868684088f345b27a3b52aae3d9ca4a8",
+      "original_archive_tree": "d2066a5a868684088f345b27a3b52aae3d9ca4a8"
+    },
+    {
+      "branch": "ccr-48778e7d-zh468a",
+      "source_head": "3e0228e63a1a75d94379c99e3f8699d752ed8098",
+      "snapshot_commit": "8e773ddec32a0cae7149cb325289003c13f375e7",
+      "snapshot_tree": "7ddc5b68e9a1c6b62f9913c0ce08a602f119f0b9",
+      "original_archive_tree": "4f0fb462edf962c91a996d21bc666270dd7b60b1"
+    },
+    {
+      "branch": "ccr-489fc45a-hz01z0",
+      "source_head": "6c267e92f061299419bd365b1a4e02e4aa68b802",
+      "snapshot_commit": "f00e7a0fe028177a178a513f12d3c1ff94ed610f",
+      "snapshot_tree": "cae9a4b179d0353c2d1e8c80124b8a40185d683b",
+      "original_archive_tree": "cae9a4b179d0353c2d1e8c80124b8a40185d683b"
+    },
+    {
+      "branch": "ccr-4f103c15-3srmjy",
+      "source_head": "739bf55d793b858327e11e5f51bf7e2d11d5b6d9",
+      "snapshot_commit": "76d9d76e44dce57a6c26da4f7b34ea1daad32c1e",
+      "snapshot_tree": "2a58d311b8312e1b60630a92bb0c94446132235b",
+      "original_archive_tree": "2a58d311b8312e1b60630a92bb0c94446132235b"
+    },
+    {
+      "branch": "ccr-57e055c6-h9s31k",
+      "source_head": "c9330399c66946920fa48a1e87c4ea585b4c5242",
+      "snapshot_commit": "b7d06b73300becf62df31d6614bae083402ed299",
+      "snapshot_tree": "f57118d1b85567422ad068f16721cabd78f351fc",
+      "original_archive_tree": "f57118d1b85567422ad068f16721cabd78f351fc"
+    },
+    {
+      "branch": "ccr-5eea4ddb-244j53",
+      "source_head": "5f3f97276bdc3e8c854b4614eb71f57e7211c81e",
+      "snapshot_commit": "a1ee01546187d8e69747d4b97e6edc664d202ec2",
+      "snapshot_tree": "e083ec2b4ceaddc77cb548f5213b39394f70576a",
+      "original_archive_tree": "d8e421175d722c74817621bb581b055e9a99b98c"
+    },
+    {
+      "branch": "ccr-62c106e3-zfw40t",
+      "source_head": "8772233a685151b6e3570dc2021299ce9505bc82",
+      "snapshot_commit": "8f2cdb551b1ad1b22bd09517dc0afd27cbcbf53d",
+      "snapshot_tree": "79264c0ac8850c4d00204c2c69bdba3c2c564df2",
+      "original_archive_tree": "79264c0ac8850c4d00204c2c69bdba3c2c564df2"
+    },
+    {
+      "branch": "ccr-688d17ec-qln2oy",
+      "source_head": "ce576c2aca48fe791e900660da2fbd6f4d5c2843",
+      "snapshot_commit": "9eebebb784518853e4adbb3b60b54083c48e0f2d",
+      "snapshot_tree": "1b0503043fac0afb28e0beed801de8ad518b051e",
+      "original_archive_tree": "9fdbea34df7b8663ccb2629d15f2ff208c2bc508"
+    },
+    {
+      "branch": "ccr-76bad4cf-8ukwwb",
+      "source_head": "ce71bf9c4f003c628d6b73d00de3ebcf274f85a8",
+      "snapshot_commit": "cc87bf34d1bba150e6e1a116daea9a46dbdc6722",
+      "snapshot_tree": "65b89a9d09be8ff2810d1e7e6c2a493a58ce1439",
+      "original_archive_tree": "301ed7e5202a21b0a2e742ab875b09811dabfc2f"
+    },
+    {
+      "branch": "ccr-78af08c0-wgw1r3",
+      "source_head": "47dc33f7219918251fceb5c52614a99498499c46",
+      "snapshot_commit": "e61583fb51cc00c813cfe47f5e390ee97459361f",
+      "snapshot_tree": "1dadde11af131de575c984272d3380bbdbfda470",
+      "original_archive_tree": "dbac3a889a2f9760f5410b8bc109b6195da2e160"
+    },
+    {
+      "branch": "ccr-79579e90-n6jhcb",
+      "source_head": "5a1790971a0371320fc3173d79619bde4b521964",
+      "snapshot_commit": "a0c18eacad7ac59339d61d49d70f36ffe6a2f0c5",
+      "snapshot_tree": "4b8d3cae4147c62ec75b94c9acf16e5a7f4cce9c",
+      "original_archive_tree": "4b8d3cae4147c62ec75b94c9acf16e5a7f4cce9c"
+    },
+    {
+      "branch": "ccr-7a274e88-qxkgo4",
+      "source_head": "ee91a7340981c025ef3b5b59d84d0d675a81be6d",
+      "snapshot_commit": "77c3f0f5a377904b0fd3de0dc461bcfc08720ad7",
+      "snapshot_tree": "7674b3a158a6b949c1f3c09c098675909e29158a",
+      "original_archive_tree": "7674b3a158a6b949c1f3c09c098675909e29158a"
+    },
+    {
+      "branch": "ccr-7ee5f49a-ktqok1",
+      "source_head": "935c5d23a6474266ae0ee453d00ca8afd30105bc",
+      "snapshot_commit": "1fd86b119493385228bf3a5557336168df819ff4",
+      "snapshot_tree": "3d3fb15f714c60d6469315f84c280f7be432709c",
+      "original_archive_tree": "3d3fb15f714c60d6469315f84c280f7be432709c"
+    },
+    {
+      "branch": "ccr-7f75ac6f-n6xyq8",
+      "source_head": "54fef428cc9451f1fb61e86e040b21a95c4f6de3",
+      "snapshot_commit": "1d733cfc2454da2c4b6777eb4db400ff248310b1",
+      "snapshot_tree": "d14fa81bb5f407e84b91a8e529a8e15df292ed57",
+      "original_archive_tree": "d14fa81bb5f407e84b91a8e529a8e15df292ed57"
+    },
+    {
+      "branch": "ccr-7fce4eba-56pf5w",
+      "source_head": "a77a7f3eddd0ee3db1bb51e96b25add69e6bc2ff",
+      "snapshot_commit": "8744e0e7d28880c6661c706e147367f914fd595f",
+      "snapshot_tree": "46867bfc98f25de3150716095198590e5177714e",
+      "original_archive_tree": "46867bfc98f25de3150716095198590e5177714e"
+    },
+    {
+      "branch": "ccr-7fde52ef-jr0k0g",
+      "source_head": "68317f3a57fdb49a10b9b4ec380e1ae53f415173",
+      "snapshot_commit": "9066dbc923804dd1c0fd11dc203ffb4704f70aeb",
+      "snapshot_tree": "74eaae043a104f54d508d6032a304800663c22ec",
+      "original_archive_tree": "74eaae043a104f54d508d6032a304800663c22ec"
+    },
+    {
+      "branch": "ccr-849bbdaf-u3b258",
+      "source_head": "59891b5a332970656d4522efd70fab5c96ad9c13",
+      "snapshot_commit": "b62e96f512165dd9eeffeb9052f359e9c36f30ac",
+      "snapshot_tree": "11a2918e0de1c97849d499fc8b7228d011fd7e2b",
+      "original_archive_tree": "11a2918e0de1c97849d499fc8b7228d011fd7e2b"
+    },
+    {
+      "branch": "ccr-945848c0-kn6azb",
+      "source_head": "27211be612a8e74426c09f196c817a142a0b0a14",
+      "snapshot_commit": "5ca374d8d197c7f519799b6240e3df00f42b9eab",
+      "snapshot_tree": "131c3f64fc96a08b7a6567a0de835a5da491dd17",
+      "original_archive_tree": "131c3f64fc96a08b7a6567a0de835a5da491dd17"
+    },
+    {
+      "branch": "ccr-988fbfcc-ikstft",
+      "source_head": "4862d8fa52b92cba2c85cc27af82f1ac8cae04d0",
+      "snapshot_commit": "a6c1874aa4a55fd1584af16b24064dc27c6ce5b5",
+      "snapshot_tree": "943148eb6c8b3ecd7c9c9fa4bc1abe7ef36f0b88",
+      "original_archive_tree": "943148eb6c8b3ecd7c9c9fa4bc1abe7ef36f0b88"
+    },
+    {
+      "branch": "ccr-a01323d7-vo0a7d",
+      "source_head": "eb8437e958e6310818aab77fd7893fc80d9c7656",
+      "snapshot_commit": "c51bff90f5e063a9c2b19467ec9c9d8f44888eeb",
+      "snapshot_tree": "439747b563af39dffc2f7e8975497986bc7960e9",
+      "original_archive_tree": "439747b563af39dffc2f7e8975497986bc7960e9"
+    },
+    {
+      "branch": "ccr-a9e780a0-y0dker",
+      "source_head": "e9fb4be810d6995fae38c160d0ed71ae924e0bc4",
+      "snapshot_commit": "2757bbde001f65ebe01d96b0c947f0774d781a06",
+      "snapshot_tree": "458a9fee7fce14cc10dfa90e098625135fbe0154",
+      "original_archive_tree": "458a9fee7fce14cc10dfa90e098625135fbe0154"
+    },
+    {
+      "branch": "ccr-baf3b523-5pnkb5",
+      "source_head": "9c5a70e578960ff9dec7354847e33396b5e43630",
+      "snapshot_commit": "f6dfa59cba0c46b1b52ebe8577472f58ca2c877b",
+      "snapshot_tree": "5e092171b6499610797bff7f3519d7597e4f480b",
+      "original_archive_tree": "42b5b2ef4472ed44c201ff14e4cc3a88f05662a1"
+    },
+    {
+      "branch": "ccr-bd1ae82c-7u966t",
+      "source_head": "1bf599deef02710a507b6652cf4ba068fbda639f",
+      "snapshot_commit": "687f04efca27b4f05e1b2bb8fde8195ba76615ff",
+      "snapshot_tree": "b7b16ee50a363aa528fb175f532ee69e17ec0de6",
+      "original_archive_tree": "2335bb6417326a7c0486c6e1a644c3b0f636a008"
+    },
+    {
+      "branch": "ccr-c43fb24c-katck0",
+      "source_head": "ed37cb633540d08d7151f658becc7b8b9b879d9e",
+      "snapshot_commit": "d4cb33f1e38d3ae97fb2601909b4dc4b93523f5b",
+      "snapshot_tree": "c60e34e44f79f7da9a466408be6e11f12efd83c4",
+      "original_archive_tree": "c60e34e44f79f7da9a466408be6e11f12efd83c4"
+    },
+    {
+      "branch": "ccr-c5b00ecd-hdz8or",
+      "source_head": "bf5adb84776ac5f85a3ca4ca3d1b8521c4b2a81c",
+      "snapshot_commit": "84ff4b99ed4d727b5e9155447c302cc8424a7290",
+      "snapshot_tree": "c340ddf4daca91935c9a6e1fd5082c013ae350da",
+      "original_archive_tree": "bafaf145b0dfed1e74b85c9158db1f64aea45dba"
+    },
+    {
+      "branch": "ccr-cca3a6bd-qb7004",
+      "source_head": "09e67307bb8836a46d44b472691e98c23bf0e321",
+      "snapshot_commit": "4fe22f18bc74d7dc9ee574fddeb26d0a0248204f",
+      "snapshot_tree": "f97de004407c448ae31242ac3b83d111d0350d94",
+      "original_archive_tree": "94c9deea6cf42f5554b9ac76ab5d723fdf205909"
+    },
+    {
+      "branch": "ccr-d248ab5b-lof74j",
+      "source_head": "23503b38f1a59b833b092027276a8afb6f6da0ba",
+      "snapshot_commit": "faaa82d7b4b9854214719215ea0d80d944b31066",
+      "snapshot_tree": "1d9d96782cc82f0694e5fb82abf6ffa19dc5ac9e",
+      "original_archive_tree": "1d9d96782cc82f0694e5fb82abf6ffa19dc5ac9e"
+    },
+    {
+      "branch": "ccr-d5e23467-28iel9",
+      "source_head": "7c05c241fe657ef1784f86dd47da3b5b7c0690a7",
+      "snapshot_commit": "3c349fd76c573bdd27219dd9afa63805fd7dac2f",
+      "snapshot_tree": "bcff0c2e859b0c5422923a0cb601ed198a03e4d2",
+      "original_archive_tree": "bcff0c2e859b0c5422923a0cb601ed198a03e4d2"
+    },
+    {
+      "branch": "ccr-d9a09636-crxqp4",
+      "source_head": "65cca13a2e20321c5499345d6a75da8e85f19f3e",
+      "snapshot_commit": "1a289ec8bcaed432362dbaa7983a718db9c5a417",
+      "snapshot_tree": "a87bb2b50a2ba985c08900d8a27fb1dac2d22947",
+      "original_archive_tree": "3628c0ba1fc8394a0f0e909c51bfab90e9d5a4de"
+    },
+    {
+      "branch": "ccr-da013216-1tuhh2",
+      "source_head": "17efbe0ec2370d1a6550b9793107170af269dbfe",
+      "snapshot_commit": "63c016c21f373982305d804157f4e32ecf1509e6",
+      "snapshot_tree": "5fc1a4683affb4e82d5e5092b861821aacff99fa",
+      "original_archive_tree": "ba98e726817848f48813cc27eb622d78b1064ef0"
+    },
+    {
+      "branch": "ccr-e10c4814-hjeu4w",
+      "source_head": "a67605acdb37ffcd3f6038132f76129889e32e19",
+      "snapshot_commit": "458a81e196d6a3cb87b2a7f995cbfd7d7a78b31d",
+      "snapshot_tree": "1de5ecc94931320598d1e4f02fa8508d7179fd7f",
+      "original_archive_tree": "739b23263e4aa69f1b21f1c97fc724bf1c15ba3d"
+    },
+    {
+      "branch": "ccr-ea4a3a84-cdhbcd",
+      "source_head": "7352b2e6e45b253b5781c030ccec302c980a94a0",
+      "snapshot_commit": "bdc4c69862ec4e2acc965a27f18689a9dc797dee",
+      "snapshot_tree": "8a640f5e9e1196a96e70cdd8955eeba255732588",
+      "original_archive_tree": "8a640f5e9e1196a96e70cdd8955eeba255732588"
+    },
+    {
+      "branch": "ccr-f10418e4-op0q83",
+      "source_head": "fb651b19d00a3cb589488bf28602c7b994855c24",
+      "snapshot_commit": "4c69871d596e4d82b61a6160448ba5bdbaab3691",
+      "snapshot_tree": "827ecba61b1dab382c3c54538924f4001ae4e942",
+      "original_archive_tree": "93c7b7fb7f3cf277e6fb0c83c64cbe8faa1e26bc"
+    },
+    {
+      "branch": "ccr-f43dc4e9-7ul71g",
+      "source_head": "a4cd06bf5fc0011ab571eff4732b0725a37fa9b1",
+      "snapshot_commit": "f4a02bf5bd96e893d71ff1a466f22490286f01c2",
+      "snapshot_tree": "af6c0db466c427086e108f015a887fd9b0ad3eab",
+      "original_archive_tree": "af6c0db466c427086e108f015a887fd9b0ad3eab"
+    },
+    {
+      "branch": "ccr-f6655a84-pd290x",
+      "source_head": "4d9c185500d0bf1d1074d468967b4f1207580fac",
+      "snapshot_commit": "23e94760db970f1dbde31a49469f2efe0cd27695",
+      "snapshot_tree": "e0ed747cded1bf7385def5d083b5090d508194d0",
+      "original_archive_tree": "e0ed747cded1bf7385def5d083b5090d508194d0"
+    },
+    {
+      "branch": "ccr-ffd2c6fe-scdz66",
+      "source_head": "38139513f4c97390cf43287a2287fde80297078c",
+      "snapshot_commit": "55fabf2858d23216a59aa7991f5464a4af71484c",
+      "snapshot_tree": "7f02f5ab22094bb86c595da7e70d953edd49499e",
+      "original_archive_tree": "6a9618ae3bc340ce656f9bc08eaefe2313d653a5"
+    },
+    {
+      "branch": "claude/audio-review-analyzer-rgg1fw",
+      "source_head": "bbf73523e05fab034e85774ce0e6f24335777adf",
+      "snapshot_commit": "247c0ed858ea030302c401e99488258ce1c7746c",
+      "snapshot_tree": "dd4d83b7a563ffe6a1a14eabcef423f6ecc2deb4",
+      "original_archive_tree": "dd4d83b7a563ffe6a1a14eabcef423f6ecc2deb4"
+    },
+    {
+      "branch": "claude/awesome-meitner-4xrd90",
+      "source_head": "43c19650be439861cd2caae0ce99f4033b9590c2",
+      "snapshot_commit": "1c2e938135f3a8e2fc66616654ca69f077cba00c",
+      "snapshot_tree": "d5dbbc741936be3ba8953c8c40195dc31a37006f",
+      "original_archive_tree": "d5dbbc741936be3ba8953c8c40195dc31a37006f"
+    },
+    {
+      "branch": "claude/balago-29-twenty-five-envelopes-quc238",
+      "source_head": "70ce8f0c3fc60a0bb0e8673a495e0d55187e206c",
+      "snapshot_commit": "b5d022a5278fdac623df1f9bb2ee20395dd1eede",
+      "snapshot_tree": "183ef41028fb3550ed300edca7eeb60c68b70f3e",
+      "original_archive_tree": "cb90b3e058e5a0f6894dcc83a9f7578fc1f1a510"
+    },
+    {
+      "branch": "claude/balago-33-moms-old-video-24ds8n",
+      "source_head": "de43a46f4cfae673eb435fe071ab6b19c507215a",
+      "snapshot_commit": "7049341d7edc8a139f86358ed55a19c27d78e17f",
+      "snapshot_tree": "5da068e187e5a4d33c267ec85d212187164378da",
+      "original_archive_tree": "5da068e187e5a4d33c267ec85d212187164378da"
+    },
+    {
+      "branch": "claude/balago-34-extra-line-yywmh7",
+      "source_head": "809a4197a5d6765dfdcd6300c8e08597d3d7dad8",
+      "snapshot_commit": "f3fea409c898aba9b40f8c98aed3894c1e0caa68",
+      "snapshot_tree": "08c11e196493ffbccfc6343a9aeb8dd8a940fcff",
+      "original_archive_tree": "08c11e196493ffbccfc6343a9aeb8dd8a940fcff"
+    },
+    {
+      "branch": "claude/balago-bg-012-video-e89ckv",
+      "source_head": "af83f1ce524d8d8bedcfedea9d4d1ba4e89cc1f8",
+      "snapshot_commit": "63367012949356dc55d852be8ddf38f6bdfd6fbc",
+      "snapshot_tree": "8f4ef1f40fcdf4d2374d1b67775a12203ede1c2f",
+      "original_archive_tree": "8f4ef1f40fcdf4d2374d1b67775a12203ede1c2f"
+    },
+    {
+      "branch": "claude/balago-bg-032-video-75hnz7",
+      "source_head": "f46013d249fc30f5b97d0a3cd2450f77aeb2341f",
+      "snapshot_commit": "0dd07892d9fb30099cb5ee488eba8929e591623a",
+      "snapshot_tree": "646c2fc6ea67915124ebe3392246abfb23afc1e9",
+      "original_archive_tree": "646c2fc6ea67915124ebe3392246abfb23afc1e9"
+    },
+    {
+      "branch": "claude/balago-episode-26-production-j9ycw9",
+      "source_head": "a45b2d353d698d5e46ae03fce91a5102e877f2dd",
+      "snapshot_commit": "7ed874d1c111d6ae589749a29b15db515df06db7",
+      "snapshot_tree": "e20215f359ab68ad2222aeae9a9805a2331fc9dd",
+      "original_archive_tree": "e20215f359ab68ad2222aeae9a9805a2331fc9dd"
+    },
+    {
+      "branch": "claude/balago-episode-28-bg-027-782opk",
+      "source_head": "41fc9ff3ae29d221db64228a6493562ca2619567",
+      "snapshot_commit": "5e2fdfb88bd2b4ddfa2b183e4d7ca91a06e829f6",
+      "snapshot_tree": "d8e425615d64d34ed0a3b8913c6d67d17f11d56f",
+      "original_archive_tree": "d8e425615d64d34ed0a3b8913c6d67d17f11d56f"
+    },
+    {
+      "branch": "claude/balago-episode-35-prep-4dc5ua",
+      "source_head": "03af934d54ac90a96a679ef2f4a505bb770a932c",
+      "snapshot_commit": "482269c55d8b5dca9cbcf9f6a1d68937f8c415be",
+      "snapshot_tree": "20691cfaef0ed736dac8a49f5a6273f635df8e88",
+      "original_archive_tree": "20691cfaef0ed736dac8a49f5a6273f635df8e88"
+    },
+    {
+      "branch": "claude/balago-half-hour-2d-qjhgwq",
+      "source_head": "f8cdfbf47c0c9b757a7d1d195851913eefd38c5b",
+      "snapshot_commit": "f878f5a21bc7175dd34c2b7b30d2268fd5ab5969",
+      "snapshot_tree": "ec93b6e0e168a39959604c3725bf7d36c65f910c",
+      "original_archive_tree": "ec93b6e0e168a39959604c3725bf7d36c65f910c"
+    },
+    {
+      "branch": "claude/balago-video-17-bonuhn",
+      "source_head": "ff4d6011ef469157dfa7c2372fa22a1807f104bc",
+      "snapshot_commit": "908217ccfc876f8bc6165aeb5a2fe717d3358ddb",
+      "snapshot_tree": "5140f1b52962f5c8e02cabedf1168dda4252ff05",
+      "original_archive_tree": "5140f1b52962f5c8e02cabedf1168dda4252ff05"
+    },
+    {
+      "branch": "claude/balago-video-18-cnfaih",
+      "source_head": "b73160a8179df233881da0a753d187ff84e3672a",
+      "snapshot_commit": "7b26effbf9394b37c009bf3e854a3e7b45c2e18e",
+      "snapshot_tree": "01b61a4f68885da6927988f951b5ed1cb54db86e",
+      "original_archive_tree": "01b61a4f68885da6927988f951b5ed1cb54db86e"
+    },
+    {
+      "branch": "claude/balago-video-21-j48hf9",
+      "source_head": "00e72826dfc96c6687c65b22ce75b3c8b7077274",
+      "snapshot_commit": "bae642f47f532bf64d6a03f1f0c694b9eb102866",
+      "snapshot_tree": "e695825fab0663d947cb4a4549bfe2b1cb2fcd10",
+      "original_archive_tree": "e695825fab0663d947cb4a4549bfe2b1cb2fcd10"
+    },
+    {
+      "branch": "claude/balago-video-22-82l7va",
+      "source_head": "1485bcc1e58629bb701110eccce9b95f03863ded",
+      "snapshot_commit": "73648b15df1e7c648b52b75a2408a7ffb2ccc8ec",
+      "snapshot_tree": "ecaf74bf7739c8d4aef08abf49a2f03fc1624e1f",
+      "original_archive_tree": "ecaf74bf7739c8d4aef08abf49a2f03fc1624e1f"
+    },
+    {
+      "branch": "claude/balago-video-23-33gitu",
+      "source_head": "3bc0201593e10fc3894f9d50e1bccbc7897f6269",
+      "snapshot_commit": "83c2acd2e1e1be73526f896f4bd2e9826e308dd1",
+      "snapshot_tree": "9c449f2e0e6802bdbb6c9afae56d4f53c5129e2a",
+      "original_archive_tree": "9c449f2e0e6802bdbb6c9afae56d4f53c5129e2a"
+    },
+    {
+      "branch": "claude/balago-video-25-b8mqrg",
+      "source_head": "3d9f3c7d1c0c9b82433d167ba785444cc1ca17e5",
+      "snapshot_commit": "3bbe0642b0fd02879241be93fe24549400c5a2ba",
+      "snapshot_tree": "ac41ac06947e0e3ba907eed47ebee1ea31f7636b",
+      "original_archive_tree": "ac41ac06947e0e3ba907eed47ebee1ea31f7636b"
+    },
+    {
+      "branch": "claude/balago-video-30-prep-gm7v48",
+      "source_head": "0f4d4fb52d40d6fc965b3335adba92d953f7dd5e",
+      "snapshot_commit": "9d27e9377a0617967139aed4ebf3648b1491a3f1",
+      "snapshot_tree": "337c46c689a528fcb50aa66e8ebd9f6ef8198cdb",
+      "original_archive_tree": "337c46c689a528fcb50aa66e8ebd9f6ef8198cdb"
+    },
+    {
+      "branch": "claude/balago-video-31-prep-09idy8",
+      "source_head": "603a326b61bacd1b846daf30af3ff57205c9e8e3",
+      "snapshot_commit": "b7e3b3b8c48bf47ab4ec9afb97e19d280daf2d22",
+      "snapshot_tree": "c1b2b5e0cae27a58373eed4a9f5826c5d4af52e9",
+      "original_archive_tree": "c1b2b5e0cae27a58373eed4a9f5826c5d4af52e9"
+    },
+    {
+      "branch": "claude/balago-video-bg-004-ep05-io7wl3",
+      "source_head": "fc0391142d89d0b66f09e3d0582da96401717621",
+      "snapshot_commit": "9f116d62bb14d2adc01acbb98106387ae8357ff8",
+      "snapshot_tree": "5277ae5f5d55625b589f375b04686d05a38668a4",
+      "original_archive_tree": "5277ae5f5d55625b589f375b04686d05a38668a4"
+    },
+    {
+      "branch": "claude/balago-video-bg-005-ep06-ahnid9",
+      "source_head": "1882b42ff33634f9ca5d30b84a07aed9aa0eafa4",
+      "snapshot_commit": "10bb049736334736d88f57cb1931754fe065d667",
+      "snapshot_tree": "a81b1b4e5bf0b448c9788938bb16c2c49aac540d",
+      "original_archive_tree": "a81b1b4e5bf0b448c9788938bb16c2c49aac540d"
+    },
+    {
+      "branch": "claude/balago-video-bg-006-ep07-qhh4e6",
+      "source_head": "68397c154d0246e61ecc202d097bb9af06446323",
+      "snapshot_commit": "2090b95a8218e18271eae5bf5fe7e2041cc7d1ec",
+      "snapshot_tree": "2afa5316c0bb43ad81112a5f8c4c15a8de31cb5e",
+      "original_archive_tree": "2afa5316c0bb43ad81112a5f8c4c15a8de31cb5e"
+    },
+    {
+      "branch": "claude/balago-video-bg-007-ep08-4nlcp2",
+      "source_head": "fffd37d50c3c3b860ec7f99e157cd150431f2659",
+      "snapshot_commit": "111e14ecfa46ab517faf4df1c246c72e6ad3637e",
+      "snapshot_tree": "e38282b4fd15ce7662ad5af296c2860e75aedafb",
+      "original_archive_tree": "e38282b4fd15ce7662ad5af296c2860e75aedafb"
+    },
+    {
+      "branch": "claude/balago-video-bg-011-ep12-3157c2",
+      "source_head": "0d98f402224327eaa31cc510ba6cbf48956de4c1",
+      "snapshot_commit": "dfaf086c3c5a6ec4a4253ae3448fb7d3d7cd8c0f",
+      "snapshot_tree": "6ed641ab6930814035f37079dd46bb97cdcc853e",
+      "original_archive_tree": "6ed641ab6930814035f37079dd46bb97cdcc853e"
+    },
+    {
+      "branch": "claude/balago-video-bg-013-npcrjy",
+      "source_head": "803189a565ee05b4c00f1445cc3abe051bdb33bf",
+      "snapshot_commit": "33d70fb0f7627aa454e7a4fe6d94a407444395b4",
+      "snapshot_tree": "9c071100f0e6cae8a21254ed0c9609825a86575d",
+      "original_archive_tree": "9c071100f0e6cae8a21254ed0c9609825a86575d"
+    },
+    {
+      "branch": "claude/balago-video-bg-014-t31za0",
+      "source_head": "31beeb9dddfb0e71de4f9813d356cb95d9f0e531",
+      "snapshot_commit": "cd78c1ad18027325145ade4c56f3438f2663d08c",
+      "snapshot_tree": "ed85872da8f53174e0f9cdbe2dda6941308795c5",
+      "original_archive_tree": "ed85872da8f53174e0f9cdbe2dda6941308795c5"
+    },
+    {
+      "branch": "claude/balago-video-episode-11-8tlxqa",
+      "source_head": "0581fe515833221540feadb31cfe6d9e21cd66df",
+      "snapshot_commit": "092defa06a25808f2d6edd71b0044bebd7e95aba",
+      "snapshot_tree": "9ea5d9fc22ee4f34f60496a2a38dd448207e50ca",
+      "original_archive_tree": "9ea5d9fc22ee4f34f60496a2a38dd448207e50ca"
+    },
+    {
+      "branch": "claude/balago-video-fixes-master-2yz4ai",
+      "source_head": "5210769700f6dd9a18941ae3cf211592d5b2c6bb",
+      "snapshot_commit": "c60508f52b777baac019d6c57d7de7ff2efb49b3",
+      "snapshot_tree": "c4e3aaf079241172b485e0740a3a165215f671b2",
+      "original_archive_tree": "c4e3aaf079241172b485e0740a3a165215f671b2"
+    },
+    {
+      "branch": "claude/balago-video-refinement-smne63",
+      "source_head": "7f8e58dd41e7e6bd6fbab27e7e983f0503da8f74",
+      "snapshot_commit": "286b6c1a92fdcd2630d028fc19be3658f577f27f",
+      "snapshot_tree": "12d6ff5602238b82ca850caaadeb461af341522b",
+      "original_archive_tree": "12d6ff5602238b82ca850caaadeb461af341522b"
+    },
+    {
+      "branch": "claude/banamind-bm-027-guns-germs-steel-cuh8z3",
+      "source_head": "417d08e241596e5188daf571819009efbc829f19",
+      "snapshot_commit": "e3d5ea4c1c6c7c21515738854e2f3a5e5fdd5b36",
+      "snapshot_tree": "de1899ab769880d9dc3365931d9d72a800d07744",
+      "original_archive_tree": "bdf453d9312690860046b086a9c37a7b089c8af2"
+    },
+    {
+      "branch": "claude/banamind-bm-030-animation-buqj94",
+      "source_head": "0154e91cb3dd4bcf449d0edc907b0526fed181a0",
+      "snapshot_commit": "a07d88fa2b41564aaab967ada9e6ba07c01c5c10",
+      "snapshot_tree": "ad6e653b085e6d2598cbb9d80ca4524206570c09",
+      "original_archive_tree": "11ef80b7eda6f24ce075e8a9594b38ae0588625f"
+    },
+    {
+      "branch": "claude/banamind-bm-030-war-peace-6awnth",
+      "source_head": "ab4a591a046944297622479ce2700f8a3bf531ac",
+      "snapshot_commit": "cf01c129c0d33be27294c1d475aee2fc07dd037a",
+      "snapshot_tree": "ac0bbcb7671330cba50f6f653eae02f9232d40d6",
+      "original_archive_tree": "de23ec550775638d4bc851dcab7e40a2d2f22caf"
+    },
+    {
+      "branch": "claude/banamind-bm-031-production-uvwe0p",
+      "source_head": "ef6af89ec02878427dc188a1f6d65cfc42d5dbda",
+      "snapshot_commit": "5513fb6665196349165fc745458af81771bcd1ca",
+      "snapshot_tree": "ef8811db5a7593ad06fa5962e65c5a14539bfe57",
+      "original_archive_tree": "3f68bd14602c8a0096fd970cdf0229d335ffe4c7"
+    },
+    {
+      "branch": "claude/bg-037-episode-37-nyj34v",
+      "source_head": "0a782b8af63aa37980d2a760c11b246148d0f96b",
+      "snapshot_commit": "121f8bc38fbcf98970e237b13d780bfbada8eaf1",
+      "snapshot_tree": "0b1b8f1fa521c6ae57959804c17fafee72287078",
+      "original_archive_tree": "0b1b8f1fa521c6ae57959804c17fafee72287078"
+    },
+    {
+      "branch": "claude/bg-045-episode-45-9muqbp",
+      "source_head": "5ab8e1177b5eac8b41a4a750ea986ab9a1145516",
+      "snapshot_commit": "78ba8bef5bac8d8d3d81bbad9ee895e3c4f4a1b9",
+      "snapshot_tree": "7700739499732b37213a7559f407a5d1aa58f9e5",
+      "original_archive_tree": "7700739499732b37213a7559f407a5d1aa58f9e5"
+    },
+    {
+      "branch": "claude/bg-048-episode-48-bd51gn",
+      "source_head": "b16abdca3270f523cf0a0884fd952b79cd20bd54",
+      "snapshot_commit": "6a1ab82020e388141c04cd04c16c3cd01b4a8edc",
+      "snapshot_tree": "d3f63d34908741f58ed2f4ece5bbbe5fd228d07e",
+      "original_archive_tree": "d3f63d34908741f58ed2f4ece5bbbe5fd228d07e"
+    },
+    {
+      "branch": "docs/banamind-500-production-system",
+      "source_head": "178666d2d596d645d135559a5ee3c9f3be42967b",
+      "snapshot_commit": "b176f046eec0392f041b5568acc902bdd39f3b0e",
+      "snapshot_tree": "03f0a9d073c95517ee83323ac091e47ac51d8fe1",
+      "original_archive_tree": "03f0a9d073c95517ee83323ac091e47ac51d8fe1"
+    },
+    {
+      "branch": "docs/live-cancel-run-38464139695",
+      "source_head": "6e55bb0b506b3001a4dbf5b75811f059f886a692",
+      "snapshot_commit": "61c3205438a56c76cb28ffee2c54bfe5fafc29e4",
+      "snapshot_tree": "23b818b7a8a21250740506e5117e26771106f1da",
+      "original_archive_tree": "23b818b7a8a21250740506e5117e26771106f1da"
+    },
+    {
+      "branch": "docs/live-video-production-v1",
+      "source_head": "d840cc5a722c6c2a117bfc7318f9d94863e25242",
+      "snapshot_commit": "36ccd0eb64bd1467c5891fcabd3e040478f07b46",
+      "snapshot_tree": "88490e16ef04ebc409f32b7ca4040445df655521",
+      "original_archive_tree": "88490e16ef04ebc409f32b7ca4040445df655521"
+    },
+    {
+      "branch": "docs/three-books-production-system",
+      "source_head": "49be81b14a158618f947062e8476a85eca741e35",
+      "snapshot_commit": "3d2496bdcf435816b2d351cb993b6bbc233ef7ce",
+      "snapshot_tree": "827c50e6aee18ee5a1a146d101c79ed8ee929cc2",
+      "original_archive_tree": "989fe403530a0009cd2f708a3a7a36e7d9fac730"
+    },
+    {
+      "branch": "feature/27-chess-2d",
+      "source_head": "a159fd37477863b84d226c38c098eacfb7367a35",
+      "snapshot_commit": "33bc068bfa91cd2efb903725eac907ed3dfedfea",
+      "snapshot_tree": "9f1bc2c2afd0547ccd7a33ad6fc1989779ce8621",
+      "original_archive_tree": "9f1bc2c2afd0547ccd7a33ad6fc1989779ce8621"
+    },
+    {
+      "branch": "feature/balago-50-campaign-plan",
+      "source_head": "47113a9389b8616307c9fb805b4478a62e28b170",
+      "snapshot_commit": "df5238320b008f12377a4fa3cb7750d52f202cb8",
+      "snapshot_tree": "c4b2fd3899db363e4a1444858c3c6280fca50d96",
+      "original_archive_tree": "c4b2fd3899db363e4a1444858c3c6280fca50d96"
+    },
+    {
+      "branch": "feature/balago-50-episode-26-script",
+      "source_head": "c85bc39155e862b29bc5ca57bdb7552035f5cbcb",
+      "snapshot_commit": "947fcab28c0c72c9497f37c95c2ee6cf282b2037",
+      "snapshot_tree": "c81acb08cc6928b63609e8642d23efc84c62cd3b",
+      "original_archive_tree": "c81acb08cc6928b63609e8642d23efc84c62cd3b"
+    },
+    {
+      "branch": "feature/balago-50-episodes-03-10",
+      "source_head": "17e01d06e15f9621d233c272900a96f83cc07f57",
+      "snapshot_commit": "aaa1dfa88949a9acf14fc4f06f19277d5f7ff846",
+      "snapshot_tree": "4674c6fffd7dc6e72d60635ef5a27244e8e5afb1",
+      "original_archive_tree": "4674c6fffd7dc6e72d60635ef5a27244e8e5afb1"
+    },
+    {
+      "branch": "feature/balago-50-episodes-11-15",
+      "source_head": "76c809ab67084862c067533a6fcb3e03a7d75f90",
+      "snapshot_commit": "43be74a563c714e3695dae58c6a8efc79c53c5e4",
+      "snapshot_tree": "381456135617ccb9d5c4b3b32d111964d005bebc",
+      "original_archive_tree": "381456135617ccb9d5c4b3b32d111964d005bebc"
+    },
+    {
+      "branch": "feature/balago-50-episodes-16-25",
+      "source_head": "1a5bf277ae8d27fd8bcfb7552307ccded52e5508",
+      "snapshot_commit": "fd83559858a6831f5a54be423b2b594427d8f199",
+      "snapshot_tree": "2cb0ca2f0c3d6c3e4fe1645e0579c36b36c73eec",
+      "original_archive_tree": "2cb0ca2f0c3d6c3e4fe1645e0579c36b36c73eec"
+    },
+    {
+      "branch": "feature/balago-50-episodes-27-35",
+      "source_head": "b411ce83105ef78648f7942400afc12acbcd2f18",
+      "snapshot_commit": "da17066d5c56681fd311ca80964c55090027ac6d",
+      "snapshot_tree": "fe73d64252f0998543fd35b38dd1d5b2f2d56599",
+      "original_archive_tree": "fe73d64252f0998543fd35b38dd1d5b2f2d56599"
+    },
+    {
+      "branch": "feature/balago-50-episodes-36-50",
+      "source_head": "33ab0d000e913446f698dfa9a4f5cdaa3b2303ff",
+      "snapshot_commit": "475919331cdcc42d0da7c19c8947d0212cf7ac27",
+      "snapshot_tree": "fd5405b4a4462882785114787cc4c7545c873dec",
+      "original_archive_tree": "fd5405b4a4462882785114787cc4c7545c873dec"
+    },
+    {
+      "branch": "feature/banamind-bm-002-ibn-khisham",
+      "source_head": "e6a3c44c66ef12ecaa73dd30f921476266922818",
+      "snapshot_commit": "1f14287d7c042c828b7de39c6b2f063b172387c6",
+      "snapshot_tree": "16dc979e85c05390fa3aae59073207f88ba843fe",
+      "original_archive_tree": "6893d2536001cd76bc717de2e79b4603c10e18ef"
+    },
+    {
+      "branch": "feature/banamind-bm-003-akaida",
+      "source_head": "0807e927cc5b98a74f08d35f78dd19946cd09a37",
+      "snapshot_commit": "8b2508ccc54701ba749acba01b57af59122f50b8",
+      "snapshot_tree": "5dbd8034e1493d94b87ea9e41c362a8d1d177b75",
+      "original_archive_tree": "69bd6068ae74f05abe0bb6febb610ce3f46f1ade"
+    },
+    {
+      "branch": "feature/banamind-bm-004-kahneman",
+      "source_head": "7393125e3045ff74c12a5723c4c5e2135eb2a9fa",
+      "snapshot_commit": "f4decc4fb5cfcfd6a4a3054075fa93ed6039d927",
+      "snapshot_tree": "68480fc2ceb8d80d90ebf5254e7dc6ae857d208d",
+      "original_archive_tree": "ce23fb8e02bb781b0d2c4ec3f82e0d70f68a58ee"
+    },
+    {
+      "branch": "feature/banamind-bm-005-robert-greene",
+      "source_head": "fc4638f754ad83d3803615a531683b848ef370ac",
+      "snapshot_commit": "39155b315e5d653ee99cbd94554f608c1fb79f27",
+      "snapshot_tree": "afd5b1a7c84bfe7b3b75af07b1043c99a88e83bb",
+      "original_archive_tree": "b40f59f958aee0a3595049995b936be3108c7a1f"
+    },
+    {
+      "branch": "feature/banamind-bm-006-ayn-rand",
+      "source_head": "fea27244cef9a445229850c4b105fe27e61ab423",
+      "snapshot_commit": "7ff8e43421cccc89c1884c0c3a416e8e6081a73e",
+      "snapshot_tree": "29cad5c99a9843a49765c14a66fa86aa18112ff7",
+      "original_archive_tree": "d3327975be01f6d97522ac5173e4e42438a69c3e"
+    },
+    {
+      "branch": "feature/banamind-bm-007-robin-sharma",
+      "source_head": "49b1d1fe49f3beecf21979af046878091c371c9b",
+      "snapshot_commit": "28263b84f4e18ce1051b61ed85ebabcafadb6ad7",
+      "snapshot_tree": "40d270f636774deebb7d3036c30bf9dc4cf8f7d5",
+      "original_archive_tree": "6cc46df274dfe2e6fbaeae68dad106e2a2427600"
+    },
+    {
+      "branch": "feature/banamind-bm-008-atomic-habits",
+      "source_head": "3cdcbd550008792f647a71bc2953db80e254c85e",
+      "snapshot_commit": "2a9993159869b24de5e535e8b29cca573afc60d9",
+      "snapshot_tree": "64ffdea1d667bf110ee03cad3aef3899cd9f4515",
+      "original_archive_tree": "19f1a45a0e897fdb107a93858971dd93df59f745"
+    },
+    {
+      "branch": "feature/banamind-bm-009-psychology-of-money",
+      "source_head": "1ce7362c1ab9127ed616ea88172e09125995d886",
+      "snapshot_commit": "d061d25b860875baf30b0ef16018365f08028a86",
+      "snapshot_tree": "d44bb1a0f7870044b434e6f5ebf1419e7128258b",
+      "original_archive_tree": "3e4f8b513121ee9cafcce97aec378a40d763033a"
+    },
+    {
+      "branch": "feature/banamind-bm-010-zero-to-one",
+      "source_head": "28ac350683938b0d2b4cda79ac940fbbfc838f23",
+      "snapshot_commit": "98d087ddb34db431639de6724a6839cabc58a3df",
+      "snapshot_tree": "10afc45136cf69517ef3e9d47dd7bcad50fc26b7",
+      "original_archive_tree": "4d0ee6cab27130ea5db9b1cae24c9bc9a60a5f7a"
+    },
+    {
+      "branch": "feature/banamind-bm-011-22-laws-of-marketing",
+      "source_head": "8f965fa1fff7427e6a0a17d40733b8c554a078d4",
+      "snapshot_commit": "38775db9fb3d65b8ccac95c9bc9eae382e5550ae",
+      "snapshot_tree": "06780f62eca3fe2e91c6697c83ebdc749eb64872",
+      "original_archive_tree": "6379247fe1e77d9706770f30a0760bc86abab0e3"
+    },
+    {
+      "branch": "feature/banamind-bm-012-marcus-aurelius-meditations",
+      "source_head": "ea7de8fed6f6d61b32ed2bce014ffdbeb39d0b01",
+      "snapshot_commit": "4207c074eaae54fa565f7642a35cb2f362705660",
+      "snapshot_tree": "53b6f405e39c3caef2ad460382205bfe14ac555f",
+      "original_archive_tree": "fe667eacf6b7dce2a6dd0ffe72b9a0a8949bbf10"
+    },
+    {
+      "branch": "feature/banamind-bm-013-sapiens-history-humankind",
+      "source_head": "4650acc3a2d857f0619f22402b3f718e7c427238",
+      "snapshot_commit": "782f74a5300c6a19c472f163c130f089337cd457",
+      "snapshot_tree": "cfa76a0db3ccd035932f9786bf7f2ceca2c708ef",
+      "original_archive_tree": "04040839afe08ef932162c401184b286d44ff92c"
+    },
+    {
+      "branch": "feature/banamind-bm-014-hawking-brief-history-time",
+      "source_head": "b5a3fa7483d51624668f28b875d59efd4be5d0c4",
+      "snapshot_commit": "2075738c88b74af98e57ab96ff8340cfd5d370df",
+      "snapshot_tree": "3e3b5fd838334702ad594642ef2b4e67bd974307",
+      "original_archive_tree": "b85ac03afdf587aea44b29fdf554f46caf1b4e58"
+    },
+    {
+      "branch": "feature/banamind-bm-015-steve-jobs-isaacson",
+      "source_head": "01403b431b710d512816f06c34852337cb2924ca",
+      "snapshot_commit": "41888760520d557278cc316ae5d9730139f04798",
+      "snapshot_tree": "30cb4a598f377aafb9adf7386111bb6a1cf37325",
+      "original_archive_tree": "601cb151c139f8207490c8f7c9d02317b7abaa76"
+    },
+    {
+      "branch": "feature/banamind-bm-016-crime-and-punishment",
+      "source_head": "cf5bfbf1ecc9fc3989d68692607ab3c451b4d25b",
+      "snapshot_commit": "461f0880f274857458e644f8336519cab7ff8865",
+      "snapshot_tree": "5b773b2d84b296f54db19cea7112d9caf73af62c",
+      "original_archive_tree": "53605a1ca472195449f29dd8e4d5bfca4c730f4f"
+    },
+    {
+      "branch": "feature/banamind-bm-017-and-then-there-were-none",
+      "source_head": "aac969ebb3ca3d60a88590d025889712a4692ce9",
+      "snapshot_commit": "0a0fe960f88b581e7432efbae94ce84527e767b0",
+      "snapshot_tree": "85595531e7abea54ab5a4dd1141dc51180542d2e",
+      "original_archive_tree": "b752578641389b236077eb18ea1196edcb01616a"
+    },
+    {
+      "branch": "feature/banamind-bm-018-lord-of-the-rings",
+      "source_head": "3c74c8d78aff80505aa6bb6c73b97f7711ea72e2",
+      "snapshot_commit": "0514a556553db628ae3793a36aa71bc090014b43",
+      "snapshot_tree": "a2cbc6aafa4a89903a69dd78281fc9666462ff0d",
+      "original_archive_tree": "1904a1127bc888bfd85d021e22013100b9a78384"
+    },
+    {
+      "branch": "feature/banamind-bm-019-pride-and-prejudice",
+      "source_head": "831a5976a593a1bd7c5f4b01611cac39b9002a81",
+      "snapshot_commit": "652b4d9f6e76edb9a5d7e36a0dfdd485c2c03fcd",
+      "snapshot_tree": "410e5794ced286990cd733477f9ddde0733e4f61",
+      "original_archive_tree": "afc2eef0eb3c0ba9320ea124ef6e88e30d48142c"
+    },
+    {
+      "branch": "feature/banamind-bm-020-it-king-volume-one",
+      "source_head": "977a9b83e99d755ebd623b22b9459eaf03f869da",
+      "snapshot_commit": "aa2b7ba6fe8756f9deb54c743a3f51cb3af4bbcf",
+      "snapshot_tree": "c97d49405274bb5f15f33a0ad25c4ed4275f0614",
+      "original_archive_tree": "6a9f4fbb1ee21aedfba509a8e824ff7d6a402afc"
+    },
+    {
+      "branch": "feature/banamind-bm-021-influence-cialdini",
+      "source_head": "5ff4bc901aa63d458ec3a50a3110875afa55d3a1",
+      "snapshot_commit": "58bd2f71e8f6c7779073d92660138cddd93fe337",
+      "snapshot_tree": "8605726fa24240177a973c5e2aeb969530ed4dc3",
+      "original_archive_tree": "afdc70111ee8c22d9a4d6ac6f6e38b17d4e80558"
+    },
+    {
+      "branch": "feature/banamind-bm-023-rich-dad-poor-dad",
+      "source_head": "2f109c2cd72ba29475ae4c317b88d428536612d5",
+      "snapshot_commit": "5af5e57b43edce76362eed6d06b7819c0bd994f9",
+      "snapshot_tree": "13e04fbbbb51688d0067d599b4d5bc0dd753bdcf",
+      "original_archive_tree": "fd66048f87c42b83f327cde4c01b6e6656705b19"
+    },
+    {
+      "branch": "feature/banamind-bm-024-lean-startup-ries",
+      "source_head": "d33c5b1d9026e6ef376fde99612ae8b0c2dc51ed",
+      "snapshot_commit": "20152df8529587f3c2589e926880dd3a51ca02ce",
+      "snapshot_tree": "6bef47a95d3e2a6bfa2cd283a2d3ea37b43ea6fa",
+      "original_archive_tree": "b5cdb8503eb5470595bed6123eb90dbb462c48f8"
+    },
+    {
+      "branch": "feature/banamind-bm-026-seneca-letters-lucilius",
+      "source_head": "e15af14b1b6c73c6714cf03a25820347e7520b18",
+      "snapshot_commit": "2fb46f76dabf186045051a691d4ed44e000b4d83",
+      "snapshot_tree": "12d9b8f1ec89641f8abbb9c8c153c38283bb6c75",
+      "original_archive_tree": "53ff23cdfcf1212f0c6e9bbedb13e086dce0cf0b"
+    },
+    {
+      "branch": "feature/banamind-bm-027-guns-germs-and-steel",
+      "source_head": "417d08e241596e5188daf571819009efbc829f19",
+      "snapshot_commit": "e3d5ea4c1c6c7c21515738854e2f3a5e5fdd5b36",
+      "snapshot_tree": "de1899ab769880d9dc3365931d9d72a800d07744",
+      "original_archive_tree": "bdf453d9312690860046b086a9c37a7b089c8af2"
+    },
+    {
+      "branch": "feature/banamind-bm-028-cosmos-carl-sagan",
+      "source_head": "d0a174ff84364c9b5bbac0cabf81f00d9d4c5152",
+      "snapshot_commit": "2b5f4b821fca68bed775a579a085c817b453b262",
+      "snapshot_tree": "034d040d9e61c781b6047f982aca4b21d88b696f",
+      "original_archive_tree": "13e498f2672a781cd6f4fbebb7b7208717f329e6"
+    },
+    {
+      "branch": "feature/banamind-bm-029-elon-musk-vance",
+      "source_head": "f575c2f77dd93b09380d33d2469c9de3947f0680",
+      "snapshot_commit": "61179199de0c8895df91a620aa126851c8f7a6d8",
+      "snapshot_tree": "c840a7148f0a479e54838ea4543d4de6fa9d29a4",
+      "original_archive_tree": "f90ce7e6aaadc2955e27dd01ebd6e8bef55bf572"
+    },
+    {
+      "branch": "feature/banamind-bm-030-war-and-peace-tolstoy",
+      "source_head": "60e30ef87fae1f85e52d53e12f65c63a4158ff6e",
+      "snapshot_commit": "ae0eccede32a996072660ec75bf822bc193b7c42",
+      "snapshot_tree": "3c756a8b19f2e92e4f31c3f2dd30b4fecf150970",
+      "original_archive_tree": "c12a12bd2d6b5a18aef56f89629742e4b8c38e78"
+    },
+    {
+      "branch": "feature/banamind-bm-031-harry-potter-philosophers-stone",
+      "source_head": "ef6af89ec02878427dc188a1f6d65cfc42d5dbda",
+      "snapshot_commit": "5513fb6665196349165fc745458af81771bcd1ca",
+      "snapshot_tree": "ef8811db5a7593ad06fa5962e65c5a14539bfe57",
+      "original_archive_tree": "3f68bd14602c8a0096fd970cdf0229d335ffe4c7"
+    },
+    {
+      "branch": "feature/banamind-bm-032-jane-eyre-bronte",
+      "source_head": "b24bdc770c7c4726547798ef1c4129bcd19a2f07",
+      "snapshot_commit": "df830e38eb3a6a40cea499a675db7e761be05e0d",
+      "snapshot_tree": "1e3c614ab70c3f6934ef5cc56ce2b6edafdadc68",
+      "original_archive_tree": "456f776b08d1de12de572a0a39857159299c0f14"
+    },
+    {
+      "branch": "feature/banamind-bm-033-dracula-stoker",
+      "source_head": "4116e23f9f696da4889f84c5de1b38adee0ce3ae",
+      "snapshot_commit": "41a030afbd2ff9d9d28304bac8700e80ac45e131",
+      "snapshot_tree": "8c2bbaf52d1200105b393eef0e8ed84f3398e02e",
+      "original_archive_tree": "7d2f90a96b32ed17d788cf5a5777ab5a975428fa"
+    },
+    {
+      "branch": "feature/banamind-bm-034-games-people-play-berne",
+      "source_head": "e2a1b9f3b37a5403c1473c954492026777ff13a3",
+      "snapshot_commit": "21423fe1aa3df2f74f2da3436fefdd55e9d527a0",
+      "snapshot_tree": "57c365ca43063026a67b0c284f0d38b7e9b0a110",
+      "original_archive_tree": "b262f2c6f1e9ba1d020d7812168b5c88dd1b8501"
+    },
+    {
+      "branch": "feature/banamind-bm-035-power-of-habit-duhigg",
+      "source_head": "344f15305fa0890ed1f57ea01c8461634b8befb4",
+      "snapshot_commit": "b340e4e847d03d55e0d715220e57b0b70568c254",
+      "snapshot_tree": "77353073dc75c951faffcb8954b8fe70c94af38d",
+      "original_archive_tree": "d551e7bf69cf3eff737eef350615a111ca95a585"
+    },
+    {
+      "branch": "feature/banamind-bm-036-richest-man-in-babylon-clason",
+      "source_head": "f86194a2d89a652b1a85afcf5227d15256b1f39c",
+      "snapshot_commit": "ba6ea4c5f02e0998f46c5c46a265a16c11443804",
+      "snapshot_tree": "97dbbb2a82804648929481620b449b4ed9a9e42b",
+      "original_archive_tree": "e167ccc8fb408d4f29e0c0a9d1b0c7a7f3a1dfd8"
+    },
+    {
+      "branch": "feature/banamind-bm-037-good-to-great-collins",
+      "source_head": "3522f0302ae89ca67a2ae08b10a610522650fe4f",
+      "snapshot_commit": "9ed0391c9c8aa698e39fc0513a474c7a36fd4265",
+      "snapshot_tree": "d0570754b16cb1770dbc087902ff31df05339fd9",
+      "original_archive_tree": "7d6bf7a39e222549e4693b42702a6ff3e3c28766"
+    },
+    {
+      "branch": "feature/banamind-bm-039-plato-republic",
+      "source_head": "0dc6e7ec48e1444905876961240863f5c226539d",
+      "snapshot_commit": "a7cac2680bdb5238bbc1542f808d0dd8a6ca6a14",
+      "snapshot_tree": "a2ccb1502791f1244c0544373698b6abdc0968db",
+      "original_archive_tree": "658dd3fe2db4039fe084211088dcfc4007d3f83a"
+    },
+    {
+      "branch": "feature/banamind-bm-040-spqr-ancient-rome-beard",
+      "source_head": "38f3d25915eb5d7915eb10cec8a71f7dfdca57eb",
+      "snapshot_commit": "4cb2c0059ee9900d09674ed6a80fe38d9fc3ad91",
+      "snapshot_tree": "1707f4d200b7e6e86d7da06ad3d71e96bd741777",
+      "original_archive_tree": "7002a38b20a06fc1076a7c9a4375c3267b268522"
+    },
+    {
+      "branch": "feature/banamind-bm-041-selfish-gene-dawkins",
+      "source_head": "c1bab2507f20bcf3fe199b0405ee05bcd1558343",
+      "snapshot_commit": "e7ebaa4e5e6353dc9cd9548dbe66bfae02327296",
+      "snapshot_tree": "0f8f5aef0339513592690e6ff2df7f623ecaef7f",
+      "original_archive_tree": "b96a0652a72a7d5e79ab4ea83d53b23a9e10c751"
+    },
+    {
+      "branch": "feature/banamind-bm-042-long-walk-to-freedom-mandela",
+      "source_head": "e373ff3355d6756ea9c28c899af87e73214f4152",
+      "snapshot_commit": "a54d8f9b28d8cf28a826292b05bd72aa9b8b66d6",
+      "snapshot_tree": "f586ca014fd43c13da37763fd60d5351a8015399",
+      "original_archive_tree": "f4f816c250363f8a82d34f4e8469f7a9ce775d08"
+    },
+    {
+      "branch": "feature/banamind-bm-043-hound-of-the-baskervilles",
+      "source_head": "869d8b10d309ef899f4fd8aec1a0431e23ea87e3",
+      "snapshot_commit": "dc16379c17bc5ee02582340f6d118fd58f730892",
+      "snapshot_tree": "8153de87707a6254a84134cdb273da069868df43",
+      "original_archive_tree": "d187b7b92e7e533108c57ef38f15fe0ba5a81559"
+    },
+    {
+      "branch": "feature/banamind-bm-044-martian-andy-weir",
+      "source_head": "58c41e4bef8e41f2f949dc8e08719b00bbff26f8",
+      "snapshot_commit": "8dba579cabea9c768d4e8a1602f4e8aee5f7c6bc",
+      "snapshot_tree": "cf1c817c9d41825f6bc64b77b2a97b88bf4360ca",
+      "original_archive_tree": "c59a8ad28d9254010a540675e7d61e51a1211819"
+    },
+    {
+      "branch": "feature/bg-026-episode-27",
+      "source_head": "c3728d167c92df9a7d0b6202514e629385f3b391",
+      "snapshot_commit": "9aa76bfd91bdf613141c2205867fb9e9c00953f0",
+      "snapshot_tree": "ebf93ab5a34ad48389aa4e6dc0737bf1e4605df3",
+      "original_archive_tree": "ebf93ab5a34ad48389aa4e6dc0737bf1e4605df3"
+    },
+    {
+      "branch": "feature/bg-031-episode-32",
+      "source_head": "6a3f22708fba9b30b83d34163a74b7dc5f4c5c1e",
+      "snapshot_commit": "a60246529839531109ae489e8d1affa10bb7d143",
+      "snapshot_tree": "6763dab795f1468bcc178e2be7fd337f5b38e4e8",
+      "original_archive_tree": "6763dab795f1468bcc178e2be7fd337f5b38e4e8"
+    },
+    {
+      "branch": "feature/bg-036-episode-36",
+      "source_head": "10c2525542be3107ff3ff0f233aa51be04b2ef1e",
+      "snapshot_commit": "7aa05fe0522f2dfb625b5ec1a071176dd0be680f",
+      "snapshot_tree": "1487a0841a5e2eed42b5cd008e9c1e3ddbdfd972",
+      "original_archive_tree": "1487a0841a5e2eed42b5cd008e9c1e3ddbdfd972"
+    },
+    {
+      "branch": "feature/bg-037-episode-37",
+      "source_head": "0a782b8af63aa37980d2a760c11b246148d0f96b",
+      "snapshot_commit": "121f8bc38fbcf98970e237b13d780bfbada8eaf1",
+      "snapshot_tree": "0b1b8f1fa521c6ae57959804c17fafee72287078",
+      "original_archive_tree": "0b1b8f1fa521c6ae57959804c17fafee72287078"
+    },
+    {
+      "branch": "feature/bg-038-episode-38",
+      "source_head": "10bc764548045272a1af29706b5222083e1da759",
+      "snapshot_commit": "938140008f5b7d27fb9c9d8bc6c8d227a5ba1107",
+      "snapshot_tree": "98c90ad9e4e83fda9c29162cf8a66406f52cb8e0",
+      "original_archive_tree": "98c90ad9e4e83fda9c29162cf8a66406f52cb8e0"
+    },
+    {
+      "branch": "feature/bg-039-episode-39",
+      "source_head": "428768278836b295d8c99b714eac5440c5ad95bf",
+      "snapshot_commit": "84bb7de5627d5cc1bf06aea28a74b1785241d8bc",
+      "snapshot_tree": "74fb152cf7beecc4efdf19a13c037f5768b0ee71",
+      "original_archive_tree": "74fb152cf7beecc4efdf19a13c037f5768b0ee71"
+    },
+    {
+      "branch": "feature/bg-040-episode-40",
+      "source_head": "e6352dda2d505438cf59353414d08f758af0c848",
+      "snapshot_commit": "361afae564e8bc6d4cb8f17350bdea7ddb9fe31a",
+      "snapshot_tree": "2b5d9fa4a0c5a797f0ec09758fa4d6f0bca40493",
+      "original_archive_tree": "48c61251c9f00d8873d69a70e9846b308a82bca8"
+    },
+    {
+      "branch": "feature/bg-041-episode-41",
+      "source_head": "132324273d3d34966aedaebef6b02377c0c28521",
+      "snapshot_commit": "0dc8a3a4d2533336c3db51977f726f34f8097e81",
+      "snapshot_tree": "5f61563e7e8ea2a26d387710a0b224686605a969",
+      "original_archive_tree": "5f61563e7e8ea2a26d387710a0b224686605a969"
+    },
+    {
+      "branch": "feature/bg-042-episode-42",
+      "source_head": "43c98fc7923f43a087b9147f0fea59528c5c2284",
+      "snapshot_commit": "94a404c4650cc677b388bf8685cfe26fee6625f3",
+      "snapshot_tree": "20b77cce377d539b01cbe657db9820acde14c98f",
+      "original_archive_tree": "20b77cce377d539b01cbe657db9820acde14c98f"
+    },
+    {
+      "branch": "feature/bg-043-episode-43",
+      "source_head": "e40c5c622bae8e935e38b0b472554a0a18644882",
+      "snapshot_commit": "281e8006d781d3b07bdfad3bed663e97f75711ae",
+      "snapshot_tree": "8d61b2bbd3149ad4473fc5d18d891d947910623d",
+      "original_archive_tree": "8d61b2bbd3149ad4473fc5d18d891d947910623d"
+    },
+    {
+      "branch": "feature/bg-044-episode-44",
+      "source_head": "c80fe6885ab5dd7cfc4dd4837948e81f15ffa061",
+      "snapshot_commit": "86b6c78925fb3d735461fb22270f92d6d79e3d92",
+      "snapshot_tree": "3ac339002c4f021b323942461ea7b55ae3c53074",
+      "original_archive_tree": "3ac339002c4f021b323942461ea7b55ae3c53074"
+    },
+    {
+      "branch": "feature/bg-045-episode-45",
+      "source_head": "5ab8e1177b5eac8b41a4a750ea986ab9a1145516",
+      "snapshot_commit": "78ba8bef5bac8d8d3d81bbad9ee895e3c4f4a1b9",
+      "snapshot_tree": "7700739499732b37213a7559f407a5d1aa58f9e5",
+      "original_archive_tree": "7700739499732b37213a7559f407a5d1aa58f9e5"
+    },
+    {
+      "branch": "feature/bg-046-episode-46",
+      "source_head": "5d701f55f1a908b049571dc4b26cf6aa55f520f7",
+      "snapshot_commit": "0b51b3aab3316342c099566cc42a43b8a05fbfc1",
+      "snapshot_tree": "bf32c8a74cce961e15e1c0cf2506d05cdfc39c23",
+      "original_archive_tree": "bf32c8a74cce961e15e1c0cf2506d05cdfc39c23"
+    },
+    {
+      "branch": "feature/bg-047-episode-47",
+      "source_head": "48f6bfe8de017c3cc94b3bc3f945f2e3e74174dd",
+      "snapshot_commit": "f239eee8336399077831330dcf877843fdd994dc",
+      "snapshot_tree": "5fcbd8be293dbcc53aa108a5d7700679d895100c",
+      "original_archive_tree": "5fcbd8be293dbcc53aa108a5d7700679d895100c"
+    },
+    {
+      "branch": "feature/bg-048-episode-48",
+      "source_head": "b16abdca3270f523cf0a0884fd952b79cd20bd54",
+      "snapshot_commit": "6a1ab82020e388141c04cd04c16c3cd01b4a8edc",
+      "snapshot_tree": "d3f63d34908741f58ed2f4ece5bbbe5fd228d07e",
+      "original_archive_tree": "d3f63d34908741f58ed2f4ece5bbbe5fd228d07e"
+    },
+    {
+      "branch": "feature/bg-049-episode-49",
+      "source_head": "d2698fa7c8cbc0057b33d665de9725b7208fe8dc",
+      "snapshot_commit": "465fd348c36c75e78891bc8252df64a8242e7250",
+      "snapshot_tree": "fa230a34a55ae8a7f89537c764428687f5bfc167",
+      "original_archive_tree": "fa230a34a55ae8a7f89537c764428687f5bfc167"
+    },
+    {
+      "branch": "feature/bg-050-episode-50",
+      "source_head": "1166ecfddb7e65591ddf3d3b885a55b3c1449778",
+      "snapshot_commit": "63d8a24a642515f334a1c14dc2dc8dfb4c31d766",
+      "snapshot_tree": "be0c4631d56d3347801eecfbb7248828d5d79d11",
+      "original_archive_tree": "be0c4631d56d3347801eecfbb7248828d5d79d11"
+    },
+    {
+      "branch": "feature/driver-intro",
+      "source_head": "1594814cf7c5c1f82b099ee082ce0721d0bb0b01",
+      "snapshot_commit": "2e303a656d75163fbf9e9e83fae46a6d7a67cea7",
+      "snapshot_tree": "b6d60f78e663e76006efa37ff6fbc78e73f3ab0c",
+      "original_archive_tree": "b6d60f78e663e76006efa37ff6fbc78e73f3ab0c"
+    },
+    {
+      "branch": "feature/eleven-minutes-2d",
+      "source_head": "b802d3ceabc7071867b8ac224d2c442d4752f987",
+      "snapshot_commit": "24dd194f1ef36b1dc623336736d8f1949315b63b",
+      "snapshot_tree": "c84a6545fddadd240a84ef1885c6bb6d0cb26afe",
+      "original_archive_tree": "c84a6545fddadd240a84ef1885c6bb6d0cb26afe"
+    },
+    {
+      "branch": "feature/five-unsent-messages-2d",
+      "source_head": "6defd64e6ba3298dd4d017347c7775050187cfcd",
+      "snapshot_commit": "8528dd0fe02cd4dfd6961711b7769b9d5785eb43",
+      "snapshot_tree": "96181fbab4eb324f6f1f1bf3692b93209a1c2f83",
+      "original_archive_tree": "96181fbab4eb324f6f1f1bf3692b93209a1c2f83"
+    },
+    {
+      "branch": "feature/founder-story-60s",
+      "source_head": "f306b72e507e4a0876ae084d65c527e8782795c5",
+      "snapshot_commit": "76a7544c9abf48fbdf73e016ff5723f788d06b9c",
+      "snapshot_tree": "3f0faf7381678fc81c94240ea5e87668bfa966e8",
+      "original_archive_tree": "3f0faf7381678fc81c94240ea5e87668bfa966e8"
+    },
+    {
+      "branch": "feature/half-hour-v3",
+      "source_head": "99728c23b95f2f50186b25869dcc456dcc16c45e",
+      "snapshot_commit": "753ff9fe8a33e5972ee60fc74d22c5827811581f",
+      "snapshot_tree": "147508917b1e5cffe4b7d06516b3f6868b2bac48",
+      "original_archive_tree": "147508917b1e5cffe4b7d06516b3f6868b2bac48"
+    },
+    {
+      "branch": "feature/half-hour-v4",
+      "source_head": "281ec10c2eb43b29d411699532b508703fdedfbf",
+      "snapshot_commit": "1e7251e045ca6de2de3be4ef1607c10b59891f31",
+      "snapshot_tree": "e37638af97c56249586fcb91929a6f988932afb4",
+      "original_archive_tree": "e37638af97c56249586fcb91929a6f988932afb4"
+    },
+    {
+      "branch": "feature/how-it-works",
+      "source_head": "837258f908c1de0929c2ba42db59e94d57c1ba94",
+      "snapshot_commit": "2de1ae941c2f6edfef5bb8d771848d6c67b58a1c",
+      "snapshot_tree": "641c0cd0be597757b798008e14fc9b5f158e5ef7",
+      "original_archive_tree": "641c0cd0be597757b798008e14fc9b5f158e5ef7"
+    },
+    {
+      "branch": "feature/invitation-without-name-2d",
+      "source_head": "d64f8e78fa46a04d1a832108bed4d2a6d7a494a4",
+      "snapshot_commit": "fab73494c6c279fe4620bdf314cd1e318648a067",
+      "snapshot_tree": "39398290753c6bb6f3bb2c9f9ba579dae8843460",
+      "original_archive_tree": "39398290753c6bb6f3bb2c9f9ba579dae8843460"
+    },
+    {
+      "branch": "feature/morning-rush",
+      "source_head": "30aeb17f480e1fba29269bc94b3abcd674c1b4b5",
+      "snapshot_commit": "daf4e69a20e63f61761b22f8a05284bc61ad5cfb",
+      "snapshot_tree": "6281e2e7ac08f7ba7e22417eb131e4ec6cefd518",
+      "original_archive_tree": "6281e2e7ac08f7ba7e22417eb131e4ec6cefd518"
+    },
+    {
+      "branch": "feature/morning-story",
+      "source_head": "b9796f1de53d1285ed8d0f240b531775a2490cb8",
+      "snapshot_commit": "b26869c6a37081a43245b3320294ba882c90b34a",
+      "snapshot_tree": "64f3f27aa4766350bbada36c02ff19349fea2317",
+      "original_archive_tree": "64f3f27aa4766350bbada36c02ff19349fea2317"
+    },
+    {
+      "branch": "feature/nine-year-old-employee-2d",
+      "source_head": "edc9978273d303e3a791be3798175c199abf1f7f",
+      "snapshot_commit": "74036e985584ed2eec361fb7c855566da47f604a",
+      "snapshot_tree": "d41141be8357b6a21c29e05a25aa61428b2f2ca0",
+      "original_archive_tree": "d41141be8357b6a21c29e05a25aa61428b2f2ca0"
+    },
+    {
+      "branch": "feature/no-backup",
+      "source_head": "07713790357e612c886514644fa4af3ce8a297a5",
+      "snapshot_commit": "640e78ad20869f9e711e001e82d67dd057ea9f36",
+      "snapshot_tree": "06e9f6a346a30c3db60ffeaa3de628e28cf00196",
+      "original_archive_tree": "06e9f6a346a30c3db60ffeaa3de628e28cf00196"
+    },
+    {
+      "branch": "feature/no-backup-2d",
+      "source_head": "2f07e9ffa37ef2ba5564711ff2840e27a76b019e",
+      "snapshot_commit": "e06855bb912f3ebcba8cb7a789bd8b9331839eb7",
+      "snapshot_tree": "e3a9fbfe0b3d4048db00b54bf5a47f1e9ea49ace",
+      "original_archive_tree": "194ca1c71139313fa786960a674ab02eaa2a1937"
+    },
+    {
+      "branch": "feature/promo-v2",
+      "source_head": "67b58840d4a48799d572c496b2669e905846d567",
+      "snapshot_commit": "e71e647532173f446ad704f4f5a53a8be52e1281",
+      "snapshot_tree": "2eb66dd95f72d3820aef218ec84971c748700a7a",
+      "original_archive_tree": "2eb66dd95f72d3820aef218ec84971c748700a7a"
+    },
+    {
+      "branch": "feature/remotion-promo",
+      "source_head": "ef262b1950c43042bdb83ce53b33e467295917e2",
+      "snapshot_commit": "51573d071f650fd1d5834e3a7f681bb948a4ddac",
+      "snapshot_tree": "2e4b325240376d7a37d0d77b4ee33989f4e6bf11",
+      "original_archive_tree": "2e4b325240376d7a37d0d77b4ee33989f4e6bf11"
+    },
+    {
+      "branch": "feature/taxi-child-sabak-buttu",
+      "source_head": "c4cd5310007c3e80bed6820a3eb633fea1d0fd2f",
+      "snapshot_commit": "e5439a0a9e3947bee1dae17f3ee4cce89ea50573",
+      "snapshot_tree": "c47940921925fd10e0e2ddb8f0dec4064f40494c",
+      "original_archive_tree": "c47940921925fd10e0e2ddb8f0dec4064f40494c"
+    },
+    {
+      "branch": "feature/third-b-meeting-2d",
+      "source_head": "1595cc7f62b1b891c2700b6d17f3887bff823f9c",
+      "snapshot_commit": "c6c19da3efc2373a854cced9d0647171728cfe60",
+      "snapshot_tree": "9357c3390ac93bb72306b0accef823be41fb4e5e",
+      "original_archive_tree": "9357c3390ac93bb72306b0accef823be41fb4e5e"
+    },
+    {
+      "branch": "feature/three-books-tb-002-tiko",
+      "source_head": "c98e27c6e9090c4d041906fb2a23e88e523b5292",
+      "snapshot_commit": "57579148e4e3c04d24a9a11bc44b95bfa1897646",
+      "snapshot_tree": "fda6b941a537446441e43d3bf9958107638b99e6",
+      "original_archive_tree": "1d18c411e5e56b58d1ac2fd057f8d1b6f8253e18"
+    },
+    {
+      "branch": "feature/three-books-tb-003-rin",
+      "source_head": "990ec5c838d91e4a0400508b7bf733cd373f946f",
+      "snapshot_commit": "ba6d66d0c3635a99d657d83fc1565d104cfd4a2e",
+      "snapshot_tree": "7f6c05ace6939a47958dbdac4bdf5d564d66b9ee",
+      "original_archive_tree": "63cd2952e50cb811ca14c986162757f4e0328387"
+    },
+    {
+      "branch": "feature/trip-questions-60s",
+      "source_head": "9c05c22b91f935b4cf37f4f98753b3fc2d511f50",
+      "snapshot_commit": "3199d9aff5978ab8c0b8070a8b1f897653b23bc3",
+      "snapshot_tree": "3e34d4339019f2514a2913dafc0c727979fd5531",
+      "original_archive_tree": "3e34d4339019f2514a2913dafc0c727979fd5531"
+    },
+    {
+      "branch": "feature/two-schedules-2d",
+      "source_head": "a710e7471cdd7ab057fa1c339f27d851f605237a",
+      "snapshot_commit": "a28134c17c48f0e95d3bd2a238aa8afa8df174d5",
+      "snapshot_tree": "b916d525ce3f91545237c849e35f414226784fd9",
+      "original_archive_tree": "b916d525ce3f91545237c849e35f414226784fd9"
+    },
+    {
+      "branch": "feature/two-sundays-2d",
+      "source_head": "da0463ae18d0ed10562d4c29cc61acd21568a708",
+      "snapshot_commit": "4feab0fa0c2ef97f744c40c6b512cda84b87da64",
+      "snapshot_tree": "3c5426b1e6df7a45b02d1902a4721f207807e00f",
+      "original_archive_tree": "3c5426b1e6df7a45b02d1902a4721f207807e00f"
+    },
+    {
+      "branch": "feature/unanswered-letter-2d",
+      "source_head": "03d45aa98e1b0460d600e3fadaf06ecc7778b351",
+      "snapshot_commit": "8666cbe3c186b6ddddc4be9a1bc51d9654bcbe66",
+      "snapshot_tree": "829d3af2d57ae7180076ce9a48b59b9e04d26731",
+      "original_archive_tree": "829d3af2d57ae7180076ce9a48b59b9e04d26731"
+    },
+    {
+      "branch": "feature/voiceover-audio",
+      "source_head": "a91d4b3ccf8020d1d67679d7b3beeca3b6c94e01",
+      "snapshot_commit": "eb1d81e99eb09b2d80551fca20a643b5d8e5dbfa",
+      "snapshot_tree": "7bc427eb672782c3db23fe3d9a9be3cc781cbc58",
+      "original_archive_tree": "7bc427eb672782c3db23fe3d9a9be3cc781cbc58"
+    },
+    {
+      "branch": "feature/work-half-hour",
+      "source_head": "d7379227c4510610562b8b39d88d5520918505af",
+      "snapshot_commit": "e288ab8f271c1fd6b42410b4a2a428ddc27dab14",
+      "snapshot_tree": "d4a6d9ef3d7a46b8879ead2af416f2c21ab51b5e",
+      "original_archive_tree": "d4a6d9ef3d7a46b8879ead2af416f2c21ab51b5e"
+    },
+    {
+      "branch": "main",
+      "source_head": "e0df9c8885bf3c613724c84daa1f9afd08e5d98b",
+      "snapshot_commit": "fdd7c4081a95a61d85085f81fa207dcb3a7575d4",
+      "snapshot_tree": "f09eba71b5afd4989ae67550e25f1524cbc77dc5",
+      "original_archive_tree": "f09eba71b5afd4989ae67550e25f1524cbc77dc5"
+    }
+  ],
+  "remaining_branch_names": [
+    "claude/bm-022-seven-habits-film-8mrfpk",
+    "claude/bm-025-win-friends-hpamvi",
+    "claude/bm-038-contagious-film-zedqlk",
+    "claude/bold-dirac-1qvmff",
+    "claude/crystal-knowledge-animation-phv8jt",
+    "claude/magnetic-universe-animation-42s8ol",
+    "claude/muslim-kids-living-matter-ve21dc",
+    "claude/sleepy-allen-quk54h",
+    "claude/tb-004-video-production-jx7c3n",
+    "claude/video-29-bg-028-prep-9tvtuf",
+    "claude/vigilant-wozniak-edoiv5",
+    "claude/windows-of-wonder-animation-tk92fn",
+    "claude/zen-dijkstra-7hipmb",
+    "codex/audio-review-chatgpt-service",
+    "codex/half-hour-polish",
+    "feat/balago-25-two-cars-one-question",
+    "feat/balago-live-02-motion-edit",
+    "feat/balago-video-studio-mvp",
+    "feat/live-videos-system",
+    "feat/studio-auto-claude-live006",
+    "feature/banamind-bm-022-seven-habits-covey",
+    "feature/banamind-bm-025-how-to-win-friends-carnegie",
+    "feature/banamind-bm-038-contagious-berger",
+    "feature/three-books-tb-004-vey",
+    "fix/eleven-minutes-2d-review",
+    "fix/eleven-minutes-2d-v2",
+    "fix/five-unsent-messages-2d-family-choice",
+    "fix/five-unsent-messages-2d-music-voice-finale",
+    "fix/five-unsent-messages-2d-voice-sound",
+    "fix/founder-chat-continuity",
+    "fix/founder-family-chat",
+    "fix/morning-story-natural-motion",
+    "fix/studio-auth-smoke-tools-args",
+    "fix/studio-claude-auth-smoke-115",
+    "fix/studio-cli-oauth-diagnostic",
+    "fix/studio-retry-live006-asr-pyav",
+    "fix/two-schedules-2d-final-polish",
+    "nb2d-foley-candidates",
+    "qa/two-schedules-2d-37211230942",
+    "qa/two-schedules-2d-37211317012"
+  ],
+  "archive_sha256": "d0aaf84864211db311d6ac170bca3fbe3fc1255cb901e284927299e6467687ba"
+}
