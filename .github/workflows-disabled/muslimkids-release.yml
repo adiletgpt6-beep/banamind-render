@@ -1,0 +1,59 @@
+# Muslim Kids 005 «Когда краски оживают» — рендер и выдача MP4 через GitHub Releases.
+# Запускается ТОЛЬКО при изменении маркера muslimkids-invisible-painter/RELEASE
+# (или вручную). Рендер — тот же код Remotion, что и локально.
+name: muslimkids-release
+on:
+  push:
+    paths:
+      - "muslimkids-invisible-painter/RELEASE"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: muslimkids-release
+  cancel-in-progress: true
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: muslimkids-invisible-painter
+    env:
+      OUT: MuslimKids_InvisiblePainter_005
+      TAG: muslimkids-005
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: npm ci --no-audit --no-fund
+      - run: npx tsc
+      - name: Render 1080×1920 (H.264/AAC)
+        run: npx remotion render src/index.ts MuslimKidsInvisiblePainter005 "out/$OUT.mp4" --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --audio-bitrate=192k --crf=16 --log=error
+      - name: Faststart + mobile copy (540×960)
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -c copy -movflags +faststart "out/$OUT-fs.mp4"
+          mv "out/$OUT-fs.mp4" "out/$OUT.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -vf scale=540:960 -c:v libx264 -crf 23 -preset medium \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "out/$OUT-mobile-540x960.mp4"
+      - name: Verify
+        run: |
+          for f in out/*.mp4; do ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate:format=duration -of default=nw=1 "$f"; done
+          d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "out/$OUT.mp4")
+          python3 -c "import sys; d=float('$d'); sys.exit(0 if 59.9 < d < 60.2 else 1)"
+          ffprobe -v error -select_streams v -show_entries stream=width,height,r_frame_rate -of csv=p=0 "out/$OUT.mp4" | grep -q "1080,1920,30/1"
+          ffprobe -v error -select_streams a -show_entries stream=codec_name -of csv=p=0 "out/$OUT.mp4" | grep -q aac
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NOTES="Muslim Kids 005 — «Когда краски оживают» (The Invisible Painter). 1080×1920, 30 fps, 60 с, H.264/AAC. Коммит ${GITHUB_SHA::7}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "Muslim Kids 005 — Когда краски оживают" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber "out/$OUT.mp4" "out/$OUT-mobile-540x960.mp4"
+          echo "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$OUT.mp4" >> "$GITHUB_STEP_SUMMARY"

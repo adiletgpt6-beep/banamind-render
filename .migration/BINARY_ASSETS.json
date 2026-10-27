@@ -1,0 +1,68 @@
+[
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/nunito-cyrillic-800-normal.woff2",
+    "sha": "4e8a202415fb34c25c4038b39a1c006b5ffc00e0",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/nunito-cyrillic-900-normal.woff2",
+    "sha": "afe05baa848a11d78b56ff649369c2e345cf8f2c",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/nunito-latin-800-normal.woff2",
+    "sha": "21502e09358f34ff5107052b8fe4ea20a1d98721",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/nunito-latin-900-normal.woff2",
+    "sha": "13ec320d7d8fb533a91291103930bb3803c3f8cc",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/pt-serif-cyrillic-400-italic.woff2",
+    "sha": "d034239ed6491d53a6c4f992dcc933178e668b93",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/pt-serif-cyrillic-400-normal.woff2",
+    "sha": "64eb86e867070f6faf9ea8c846e56a6f4469d0a4",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/pt-serif-cyrillic-700-normal.woff2",
+    "sha": "9a82657113fe405ce726574147b6fc0f568f0e44",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/pt-serif-latin-400-italic.woff2",
+    "sha": "48f819a1c4bb024e3a1c5336c9cbfff4f188162d",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/pt-serif-latin-400-normal.woff2",
+    "sha": "02448bcb689398e4bef03d2506a511f47a5e599f",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "muslimkids-invisible-painter/public/fonts/pt-serif-latin-700-normal.woff2",
+    "sha": "b7aaf513910ae7665d25d2cb0fc08433c6de9a12",
+    "kind": "font",
+    "license_sha": "a8322a0c10914617b5b7dda089e18a7145fcf98a"
+  },
+  {
+    "path": "public/fonts/Nunito-Variable.ttf",
+    "sha": "2ec1f4b0676c83ef33049db87b311171699e9192",
+    "kind": "font",
+    "license_sha": "c8210f08ca3cece05b4f7baa428afe8e1abe3293"
+  }
+]

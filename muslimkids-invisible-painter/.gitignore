@@ -1,0 +1,5 @@
+node_modules
+output/previews/frame_*.jpg
+output/previews/*.mp4
+output/final/*.mp4
+public/audio/raw

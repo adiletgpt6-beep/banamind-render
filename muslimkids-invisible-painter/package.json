@@ -1,0 +1,32 @@
+{
+  "name": "muslimkids-invisible-painter",
+  "version": "1.0.0",
+  "description": "Muslim Kids 005 — «Когда краски оживают» (The Invisible Painter, Remotion)",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc",
+    "voice": "node scripts/voice.mjs",
+    "stills": "node scripts/stills.mjs",
+    "render": "remotion render src/index.ts MuslimKidsInvisiblePainter005 output/final/MuslimKids_InvisiblePainter_005.mp4 --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --audio-bitrate=192k --crf=16",
+    "render:preview": "remotion render src/index.ts MuslimKidsInvisiblePainter005 output/previews/preview_540.mp4 --scale=0.5 --codec=h264 --audio-codec=aac"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.532",
+    "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "4.0.532",
+    "@remotion/media": "4.0.532",
+    "@remotion/renderer": "4.0.532",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@fontsource/nunito": "^5.3.0",
+    "@fontsource/pt-serif": "^5.3.0",
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  }
+}
