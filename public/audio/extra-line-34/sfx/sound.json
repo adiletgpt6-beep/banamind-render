@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "sampleRate": 48000,
+  "refLufs": -18,
+  "files": {
+    "bed.mp3": {
+      "hash": "6bbbd8055748a876",
+      "sha256": "08ea69c27dfd59b748e59d29707cc889de113604d353f12cb6b109be66907d25",
+      "sec": 160,
+      "channels": 2,
+      "lufs": -15,
+      "peakDb": -3
+    },
+    "bed-end.mp3": {
+      "hash": "618478d31d59fa4c",
+      "sha256": "a34d0b90ad33040a9e4ba04e9aa767d862950b0320f59405760f6f737210a975",
+      "sec": 7.5,
+      "channels": 2,
+      "lufs": -15.6,
+      "peakDb": -1.5
+    },
+    "room.mp3": {
+      "hash": "ba47cfde25e986d4",
+      "sha256": "256b068add2395bf780aa59e43e404df67920f34854f950b714e11db5e80396b",
+      "sec": 160,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -2.5
+    },
+    "typing.mp3": {
+      "hash": "aab9a06ae2f9ea18",
+      "sha256": "94d5b53bef15cf36995f5c6f873cbabb01ff2c00e6c4978bf76591509e5fbdfc",
+      "sec": 12,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -1.7
+    },
+    "key.mp3": {
+      "hash": "bb917c33e8af3329",
+      "sha256": "ea5ebecacff3104b68cfc20954c1160dad6e0a0888b9994a7f125cdc9f34c911",
+      "sec": 0.2,
+      "channels": 1,
+      "lufs": -19.4,
+      "peakDb": -1.5
+    },
+    "key-delete.mp3": {
+      "hash": "a31f8ba0396db1da",
+      "sha256": "61634fce30b3cc63dff29c512f76a669b2c0524bc48ce8d16f0893824c0aa533",
+      "sec": 0.2,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -2
+    },
+    "page-turn.mp3": {
+      "hash": "e9e26c6429318396",
+      "sha256": "df7439b45bb3cadedd72cc471d56ab27c77a9af67e2ddf52c8051b9762671de4",
+      "sec": 0.99,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -9.3
+    },
+    "page-riffle.mp3": {
+      "hash": "23d65ad299b0fd4a",
+      "sha256": "f8a2829734a1b81ff707df3002cd3d8bb1a2c6bb01c829150adf1ce95eafc43a",
+      "sec": 0.92,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -9.4
+    },
+    "book-open.mp3": {
+      "hash": "65d7aff1c17d5a61",
+      "sha256": "59a91d295e735b2ce84a7bb580ae535e03e67477ee6d4dad4cd8815ac111e2cb",
+      "sec": 0.7,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -7.9
+    },
+    "book-take.mp3": {
+      "hash": "fadcfa7fc03a94c6",
+      "sha256": "2914c2d9b9db496029f94feb2a2311ca9428b3c49a5e690cbaea50feddb8bf0a",
+      "sec": 0.55,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -10.3
+    },
+    "bookmark.mp3": {
+      "hash": "108cc6e97b7eceec",
+      "sha256": "6d375c10304864a70ac970cfe2fb7a98c6c26997571bf99db01bdafe97338f18",
+      "sec": 0.8,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -10.1
+    },
+    "cloth.mp3": {
+      "hash": "819298dda2202f94",
+      "sha256": "457adb13bed358befd23f0d4320923c2e2d23ae50097e0f9813dfbebcdf65575",
+      "sec": 0.6,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -8.6
+    },
+    "cloth-long.mp3": {
+      "hash": "250ff1c26d59ac7a",
+      "sha256": "53b3efcf517b6f1b29ef52ddcf41f006f7d2f204dc6a47a09d8ddc5ebef81fdc",
+      "sec": 0.95,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -8
+    },
+    "sit.mp3": {
+      "hash": "6b9353ae0d866159",
+      "sha256": "108c52d78eb8585d4d75caaf75b8ad1e3bf720a99f1d33af7389b8d859cc80a6",
+      "sec": 0.6,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -7.1
+    },
+    "phone-tap.mp3": {
+      "hash": "bf037fac7937d8eb",
+      "sha256": "87211f1ec4ca6a7c6d610632db33a8a53e95580537d3021aaaa218010c98c87a",
+      "sec": 0.1,
+      "channels": 1,
+      "lufs": -21.3,
+      "peakDb": -1.5
+    },
+    "click.mp3": {
+      "hash": "acd996c8f11aece8",
+      "sha256": "35f7c7f4b9e5b5b8a366ec01384f2fd389b6854c4cfcfdb71c7c2ddb6183ff37",
+      "sec": 0.1,
+      "channels": 1,
+      "lufs": -19.4,
+      "peakDb": -1.5
+    },
+    "tick.mp3": {
+      "hash": "e95a871c0ec87f04",
+      "sha256": "e903f233094af6fdd0117f15366fb721289acc3244a70a29af40fafd06ea36e7",
+      "sec": 0.16,
+      "channels": 1,
+      "lufs": -18,
+      "peakDb": -4.9
+    }
+  }
+}

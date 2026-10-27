@@ -1,0 +1,230 @@
+[
+  {
+    "path": "voice-samples/extra-line-34/probe/narrator-KG-teacher-N05.mp3",
+    "heard": "бир күнү аларга көп жыл бала бакчада тарбиячу болуп иштеген аял келди",
+    "cer": 0.014,
+    "f0": 235.3,
+    "profile": {
+      "age": 39.7,
+      "female": 0.997,
+      "male": 0.003,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/narrator-KG-teacher-P10.mp3",
+    "heard": "балаго мешкеттеге мектеп окуучулар үчүн балаго менен долго чыгалы",
+    "cer": 0.091,
+    "f0": 248.1,
+    "profile": {
+      "age": 40.9,
+      "female": 0.996,
+      "male": 0.004,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/narrator-KG-daughter-N05.mp3",
+    "heard": "бир күнү аларга көпчү убагабакчыда тарбиятчы болуп иштеген аял келди",
+    "cer": 0.13,
+    "f0": 262.3,
+    "profile": {
+      "age": 23.7,
+      "female": 0.988,
+      "male": 0.009,
+      "child": 0.003
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/narrator-KG-daughter-P10.mp3",
+    "heard": "балаго бишкектеги мектеп окуучулар үчүн балаго менен жолбочуп алы",
+    "cer": 0.091,
+    "f0": 266.7,
+    "profile": {
+      "age": 23.6,
+      "female": 0.964,
+      "male": 0.014,
+      "child": 0.023
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/caregiver-KG-teacher-C01.mp3",
+    "heard": "кичинекей каармандосуна жардам берүү үчүн кайра артка бурулду",
+    "cer": 0.016,
+    "f0": 207.8,
+    "profile": {
+      "age": 37.7,
+      "female": 0.995,
+      "male": 0.005,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/caregiver-KG-teacher-C03.mp3",
+    "heard": "жок балдар менен тажирибам көп бирок машина айдабайм",
+    "cer": 0.058,
+    "f0": 200.0,
+    "profile": {
+      "age": 36.8,
+      "female": 0.993,
+      "male": 0.007,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/caregiver-KG-daughter-C01.mp3",
+    "heard": "кичинеге кармандоосуна жардам берүү үчүн кайра артка бурулду",
+    "cer": 0.081,
+    "f0": 254.0,
+    "profile": {
+      "age": 21.9,
+      "female": 0.977,
+      "male": 0.01,
+      "child": 0.013
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/caregiver-KG-daughter-C03.mp3",
+    "heard": "жок балдар менен тажрыбам көп бирок машина айдабайм",
+    "cer": 0.019,
+    "f0": 262.3,
+    "profile": {
+      "age": 21.7,
+      "female": 0.969,
+      "male": 0.009,
+      "child": 0.021
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/mother-KG-mother-M01.mp3",
+    "heard": "а сиз машина айдайсызбы",
+    "cer": 0.0,
+    "f0": 200.0,
+    "profile": {
+      "age": 27.3,
+      "female": 0.994,
+      "male": 0.005,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/father-KG-husband-F01.mp3",
+    "heard": "балдар бул эже менен бат тил табышты эми мектептен үйгө кантип жеткирүүнү өзүнчө чечеэле",
+    "cer": 0.023,
+    "f0": 102.6,
+    "profile": {
+      "age": 40.4,
+      "female": 0.002,
+      "male": 0.998,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-son_v7_remix-2-S01.mp3",
+    "heard": "сиз бул китепти ох бере аласызбы",
+    "cer": 0.088,
+    "f0": 271.2,
+    "profile": {
+      "age": 26.9,
+      "female": 0.992,
+      "male": 0.007,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-son_v7_remix-2-S02.mp3",
+    "heard": "дусун жалгыз калтырбасы келген жок",
+    "cer": 0.088,
+    "f0": 225.4,
+    "profile": {
+      "age": 27.9,
+      "female": 0.989,
+      "male": 0.01,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-son_v7_remix-2-S04.mp3",
+    "heard": "эң кызыктуу жерине келгенде токтопкаганбыз",
+    "cer": 0.045,
+    "f0": 271.2,
+    "profile": {
+      "age": 34.0,
+      "female": 0.987,
+      "male": 0.013,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-boy_a2-3-S01.mp3",
+    "heard": "сиз бул китепти ок бер аласызба",
+    "cer": 0.118,
+    "f0": 290.9,
+    "profile": {
+      "age": 25.5,
+      "female": 0.989,
+      "male": 0.008,
+      "child": 0.002
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-boy_a2-3-S02.mp3",
+    "heard": "досунун жалгыз калтыргысы келген жок",
+    "cer": 0.059,
+    "f0": 266.7,
+    "profile": {
+      "age": 36.2,
+      "female": 0.992,
+      "male": 0.007,
+      "child": 0.0
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-boy_a2-3-S04.mp3",
+    "heard": "эң кызыктуу жерине келгенде токтоп алганбыз",
+    "cer": 0.023,
+    "f0": 271.2,
+    "profile": {
+      "age": 30.6,
+      "female": 0.964,
+      "male": 0.035,
+      "child": 0.001
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-son-S01.mp3",
+    "heard": "сиз бу китепде окуп бере аласызбы",
+    "cer": 0.088,
+    "f0": 320.0,
+    "profile": {
+      "age": 23.2,
+      "female": 0.985,
+      "male": 0.007,
+      "child": 0.008
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-son-S02.mp3",
+    "heard": "досун жалгыз калтыргысу келген жок",
+    "cer": 0.029,
+    "f0": 280.7,
+    "profile": {
+      "age": 25.6,
+      "female": 0.979,
+      "male": 0.011,
+      "child": 0.009
+    }
+  },
+  {
+    "path": "voice-samples/extra-line-34/probe/son-KG-son-S04.mp3",
+    "heard": "эң кызыктуу жерине келгенде токтоп калганбыз",
+    "cer": 0.0,
+    "f0": 307.7,
+    "profile": {
+      "age": 26.6,
+      "female": 0.976,
+      "male": 0.021,
+      "child": 0.003
+    }
+  }
+]

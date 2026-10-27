@@ -1,0 +1,6 @@
+# Распознавание кыргызской речи и основной тон (scripts/el34_asr.py): Meta MMS на CPU.
+--index-url https://download.pytorch.org/whl/cpu
+--extra-index-url https://pypi.org/simple
+torch
+transformers>=4.40,<5
+numpy

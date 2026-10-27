@@ -1,0 +1,368 @@
+{
+  "hash": "f9faa21c548828e1",
+  "done": true,
+  "account": [],
+  "samples": [
+    {
+      "role": "narrator",
+      "voice": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "id": "N05",
+      "file": "narrator-KG-teacher-N05.mp3",
+      "text": "Бир күнү аларга көп жыл бала бакчада тарбиячы болуп иштеген аял келди.",
+      "tag": null,
+      "speechSec": 4.47,
+      "heard": "бир күнү аларга көп жыл бала бакчада тарбиячу болуп иштеген аял келди",
+      "cer": 0.014,
+      "f0": 235.3,
+      "profile": {
+        "age": 39.7,
+        "female": 0.997,
+        "male": 0.003,
+        "child": 0
+      }
+    },
+    {
+      "role": "narrator",
+      "voice": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "id": "P10",
+      "file": "narrator-KG-teacher-P10.mp3",
+      "text": "БалаГо — Бишкектеги мектеп окуучулары үчүн. БалаГо менен жолго чыгалы!",
+      "tag": "[warmly]",
+      "speechSec": 4.69,
+      "heard": "балаго мешкеттеге мектеп окуучулар үчүн балаго менен долго чыгалы",
+      "cer": 0.091,
+      "f0": 248.1,
+      "profile": {
+        "age": 40.9,
+        "female": 0.996,
+        "male": 0.004,
+        "child": 0
+      }
+    },
+    {
+      "role": "narrator",
+      "voice": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "id": "N05",
+      "file": "narrator-KG-daughter-N05.mp3",
+      "text": "Бир күнү аларга көп жыл бала бакчада тарбиячы болуп иштеген аял келди.",
+      "tag": null,
+      "speechSec": 3.59,
+      "heard": "бир күнү аларга көпчү убагабакчыда тарбиятчы болуп иштеген аял келди",
+      "cer": 0.13,
+      "f0": 262.3,
+      "profile": {
+        "age": 23.7,
+        "female": 0.988,
+        "male": 0.009,
+        "child": 0.003
+      }
+    },
+    {
+      "role": "narrator",
+      "voice": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "id": "P10",
+      "file": "narrator-KG-daughter-P10.mp3",
+      "text": "БалаГо — Бишкектеги мектеп окуучулары үчүн. БалаГо менен жолго чыгалы!",
+      "tag": "[warmly]",
+      "speechSec": 3.86,
+      "heard": "балаго бишкектеги мектеп окуучулар үчүн балаго менен жолбочуп алы",
+      "cer": 0.091,
+      "f0": 266.7,
+      "profile": {
+        "age": 23.6,
+        "female": 0.964,
+        "male": 0.014,
+        "child": 0.023
+      }
+    },
+    {
+      "role": "caregiver",
+      "voice": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "id": "C01",
+      "file": "caregiver-KG-teacher-C01.mp3",
+      "text": "Кичинекей каарман досуна жардам берүү үчүн кайра артка бурулду.",
+      "tag": "[warmly]",
+      "speechSec": 4.04,
+      "heard": "кичинекей каармандосуна жардам берүү үчүн кайра артка бурулду",
+      "cer": 0.016,
+      "f0": 207.8,
+      "profile": {
+        "age": 37.7,
+        "female": 0.995,
+        "male": 0.005,
+        "child": 0
+      }
+    },
+    {
+      "role": "caregiver",
+      "voice": "KG-teacher",
+      "voiceId": "EBOfpUWl9G5ltD2PkFgy",
+      "id": "C03",
+      "file": "caregiver-KG-teacher-C03.mp3",
+      "text": "Жок. Балдар менен тажрыйбам көп, бирок машина айдабайм.",
+      "tag": null,
+      "speechSec": 3.84,
+      "heard": "жок балдар менен тажирибам көп бирок машина айдабайм",
+      "cer": 0.058,
+      "f0": 200,
+      "profile": {
+        "age": 36.8,
+        "female": 0.993,
+        "male": 0.007,
+        "child": 0
+      }
+    },
+    {
+      "role": "caregiver",
+      "voice": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "id": "C01",
+      "file": "caregiver-KG-daughter-C01.mp3",
+      "text": "Кичинекей каарман досуна жардам берүү үчүн кайра артка бурулду.",
+      "tag": "[warmly]",
+      "speechSec": 3.46,
+      "heard": "кичинеге кармандоосуна жардам берүү үчүн кайра артка бурулду",
+      "cer": 0.081,
+      "f0": 254,
+      "profile": {
+        "age": 21.9,
+        "female": 0.977,
+        "male": 0.01,
+        "child": 0.013
+      }
+    },
+    {
+      "role": "caregiver",
+      "voice": "KG-daughter",
+      "voiceId": "AeboPz5CtE7qRUVvW93b",
+      "id": "C03",
+      "file": "caregiver-KG-daughter-C03.mp3",
+      "text": "Жок. Балдар менен тажрыйбам көп, бирок машина айдабайм.",
+      "tag": null,
+      "speechSec": 2.96,
+      "heard": "жок балдар менен тажрыбам көп бирок машина айдабайм",
+      "cer": 0.019,
+      "f0": 262.3,
+      "profile": {
+        "age": 21.7,
+        "female": 0.969,
+        "male": 0.009,
+        "child": 0.021
+      }
+    },
+    {
+      "role": "mother",
+      "voice": "KG-mother",
+      "voiceId": "5Xx0r0RX4XWEq5vEdv8p",
+      "id": "M01",
+      "file": "mother-KG-mother-M01.mp3",
+      "text": "А сиз машина айдайсызбы?",
+      "tag": "[curious]",
+      "speechSec": 1.34,
+      "heard": "а сиз машина айдайсызбы",
+      "cer": 0,
+      "f0": 200,
+      "profile": {
+        "age": 27.3,
+        "female": 0.994,
+        "male": 0.005,
+        "child": 0
+      }
+    },
+    {
+      "role": "father",
+      "voice": "KG-husband",
+      "voiceId": "NVEGeFqcDqc5o29VoAQm",
+      "id": "F01",
+      "file": "father-KG-husband-F01.mp3",
+      "text": "Балдар бул эже менен бат тил табышты. Эми мектептен үйгө кантип жеткирүүнү өзүнчө чечели.",
+      "tag": "[warmly]",
+      "speechSec": 5.77,
+      "heard": "балдар бул эже менен бат тил табышты эми мектептен үйгө кантип жеткирүүнү өзүнчө чечеэле",
+      "cer": 0.023,
+      "f0": 102.6,
+      "profile": {
+        "age": 40.4,
+        "female": 0.002,
+        "male": 0.998,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "id": "S01",
+      "file": "son-KG-son_v7_remix-2-S01.mp3",
+      "text": "Сиз бул китепти окуп бере аласызбы?",
+      "tag": "[curious]",
+      "speechSec": 1.8,
+      "heard": "сиз бул китепти ох бере аласызбы",
+      "cer": 0.088,
+      "f0": 271.2,
+      "profile": {
+        "age": 26.9,
+        "female": 0.992,
+        "male": 0.007,
+        "child": 0.001
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "id": "S02",
+      "file": "son-KG-son_v7_remix-2-S02.mp3",
+      "text": "Досун жалгыз калтыргысы келген жок.",
+      "tag": "[thoughtfully]",
+      "speechSec": 1.93,
+      "heard": "дусун жалгыз калтырбасы келген жок",
+      "cer": 0.088,
+      "f0": 225.4,
+      "profile": {
+        "age": 27.9,
+        "female": 0.989,
+        "male": 0.01,
+        "child": 0.001
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son v7 remix-2",
+      "voiceId": "1c81DEBcmaJMj1QDHWU6",
+      "id": "S04",
+      "file": "son-KG-son_v7_remix-2-S04.mp3",
+      "text": "Эң кызыктуу жерине келгенде токтоп калганбыз.",
+      "tag": "[excited]",
+      "speechSec": 2.42,
+      "heard": "эң кызыктуу жерине келгенде токтопкаганбыз",
+      "cer": 0.045,
+      "f0": 271.2,
+      "profile": {
+        "age": 34,
+        "female": 0.987,
+        "male": 0.013,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "id": "S01",
+      "file": "son-KG-boy_a2-3-S01.mp3",
+      "text": "Сиз бул китепти окуп бере аласызбы?",
+      "tag": "[curious]",
+      "speechSec": 1.82,
+      "heard": "сиз бул китепти ок бер аласызба",
+      "cer": 0.118,
+      "f0": 290.9,
+      "profile": {
+        "age": 25.5,
+        "female": 0.989,
+        "male": 0.008,
+        "child": 0.002
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "id": "S02",
+      "file": "son-KG-boy_a2-3-S02.mp3",
+      "text": "Досун жалгыз калтыргысы келген жок.",
+      "tag": "[thoughtfully]",
+      "speechSec": 1.85,
+      "heard": "досунун жалгыз калтыргысы келген жок",
+      "cer": 0.059,
+      "f0": 266.7,
+      "profile": {
+        "age": 36.2,
+        "female": 0.992,
+        "male": 0.007,
+        "child": 0
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-boy a2-3",
+      "voiceId": "8QMDSJuOqCscZvQ6PqlL",
+      "id": "S04",
+      "file": "son-KG-boy_a2-3-S04.mp3",
+      "text": "Эң кызыктуу жерине келгенде токтоп калганбыз.",
+      "tag": "[excited]",
+      "speechSec": 2.17,
+      "heard": "эң кызыктуу жерине келгенде токтоп алганбыз",
+      "cer": 0.023,
+      "f0": 271.2,
+      "profile": {
+        "age": 30.6,
+        "female": 0.964,
+        "male": 0.035,
+        "child": 0.001
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "id": "S01",
+      "file": "son-KG-son-S01.mp3",
+      "text": "Сиз бул китепти окуп бере аласызбы?",
+      "tag": "[curious]",
+      "speechSec": 1.82,
+      "heard": "сиз бу китепде окуп бере аласызбы",
+      "cer": 0.088,
+      "f0": 320,
+      "profile": {
+        "age": 23.2,
+        "female": 0.985,
+        "male": 0.007,
+        "child": 0.008
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "id": "S02",
+      "file": "son-KG-son-S02.mp3",
+      "text": "Досун жалгыз калтыргысы келген жок.",
+      "tag": "[thoughtfully]",
+      "speechSec": 1.93,
+      "heard": "досун жалгыз калтыргысу келген жок",
+      "cer": 0.029,
+      "f0": 280.7,
+      "profile": {
+        "age": 25.6,
+        "female": 0.979,
+        "male": 0.011,
+        "child": 0.009
+      }
+    },
+    {
+      "role": "son",
+      "voice": "KG-son",
+      "voiceId": "Oxj8oi9pAu19zqQOffmM",
+      "id": "S04",
+      "file": "son-KG-son-S04.mp3",
+      "text": "Эң кызыктуу жерине келгенде токтоп калганбыз.",
+      "tag": "[excited]",
+      "speechSec": 2.33,
+      "heard": "эң кызыктуу жерине келгенде токтоп калганбыз",
+      "cer": 0,
+      "f0": 307.7,
+      "profile": {
+        "age": 26.6,
+        "female": 0.976,
+        "male": 0.021,
+        "child": 0.003
+      }
+    }
+  ]
+}
