@@ -1,0 +1,257 @@
+name: BalaGoBG042 (BalaGo-50 №42)
+
+# Выпуск №42 / BG-042 «Кеңседен шашылыш кабар». Собирается ТОЛЬКО эта
+# композиция (src/campaign50/bg-042/index.ts); прежние ролики и соседние
+# выпуски здесь не рендерятся. Общий render.yml эти пути игнорирует
+# (paths-ignore: src/campaign50/**, scripts/campaign50/**, …).
+#   voice   → реплики ElevenLabs; готовые (тот же хэш) не синтезируются,
+#             новые сохраняются в ветку (без повторной оплаты).
+#   render  → lint/TypeScript, тесты, контрольные кадры и MP4. Режим —
+#             файл scripts/campaign50/bg-042/RENDER_MODE:
+#               voice   → только озвучка, без рендера и публикации;
+#               preview → только облегчённый черновик 540×960 (дёшево);
+#               final   → оригинал 1080×1920 30 fps H.264/AAC + копия 540×960
+#                         из оригинала (faststart без пережатия оригинала).
+#   publish → MP4 файлами предварительного релиза bg-042-ep42.
+
+on:
+  push:
+    paths:
+      - "src/campaign50/bg-042/**"
+      - "scripts/campaign50/bg-042/**"
+      - "public/audio/campaign50/bg-042/**"
+      - ".github/workflows/campaign50-bg-042.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: campaign50-bg-042-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  OUT: balago-bg-042-ep42
+  ENTRY: src/campaign50/bg-042/index.ts
+  COMP: BalaGoBG042
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    outputs:
+      mode: ${{ steps.mode.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Render mode
+        id: mode
+        run: |
+          MODE=$(tr -d '[:space:]' < scripts/campaign50/bg-042/RENDER_MODE)
+          case "$MODE" in voice|preview|final) ;; *) echo "Неизвестный режим: $MODE"; exit 1 ;; esac
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "Режим: $MODE" >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Check whether new lines need synthesis
+        id: need
+        run: |
+          if ELEVENLABS_API_KEY= node scripts/campaign50/bg-042/voice.mjs; then
+            echo "new=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "new=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.need.outputs.new == 'true'
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements-ts2d-asr.txt
+
+      - name: Install MMS speech recognition
+        if: steps.need.outputs.new == 'true'
+        run: pip install --quiet -r scripts/requirements-ts2d-asr.txt
+
+      - name: Cache MMS model
+        if: steps.need.outputs.new == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-mms-1b-all-v1
+
+      - name: Voiceover (cached lines are reused)
+        if: steps.need.outputs.new == 'true'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/campaign50/bg-042/voice.mjs
+
+      - name: Save new voice files to the branch
+        if: always() && steps.need.outputs.new == 'true' && github.ref_name != 'main'
+        run: |
+          git add public/audio/campaign50/bg-042 || true
+          if git diff --cached --quiet; then
+            echo "Новых файлов озвучки нет."
+            exit 0
+          fi
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(bg-042): save narration files"
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+  render:
+    needs: voice
+    if: needs.voice.outputs.mode != 'voice'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    outputs:
+      mode: ${{ steps.mode.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render mode
+        id: mode
+        run: |
+          MODE=$(tr -d '[:space:]' < scripts/campaign50/bg-042/RENDER_MODE)
+          case "$MODE" in preview|final) ;; *) echo "Неизвестный режим: $MODE"; exit 1 ;; esac
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Tests (texts, CTA, timeline, voice files)
+        env:
+          BG42_STRICT_VOICE: "1"
+        run: node --test scripts/campaign50/bg-042/bg042.test.mjs
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Render check frames
+        run: node scripts/campaign50/bg-042/stills.mjs --scale=0.5
+
+      - name: Render draft preview 540×960
+        if: steps.mode.outputs.mode == 'preview'
+        run: |
+          npx remotion render "$ENTRY" "$COMP" "out/$OUT-preview-540x960.mp4" --scale=0.5 --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --log=warn
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT-preview-540x960.mp4" -c copy -movflags +faststart "out/fs.mp4"
+          mv out/fs.mp4 "out/$OUT-preview-540x960.mp4"
+          node scripts/campaign50/bg-042/verify.mjs "out/$OUT-preview-540x960.mp4" --mobile --frames=out/frames-mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Render final MP4 1080×1920 (H.264/AAC, yuv420p)
+        if: steps.mode.outputs.mode == 'final'
+        run: npx remotion render "$ENTRY" "$COMP" "out/$OUT.mp4" --codec=h264 --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --log=warn
+
+      - name: Faststart + mobile copy (540×960) from the original
+        if: steps.mode.outputs.mode == 'final'
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" -c copy -movflags +faststart "out/fs.mp4"
+          mv out/fs.mp4 "out/$OUT.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i "out/$OUT.mp4" \
+            -vf scale=540:960:flags=lanczos -r 30 -c:v libx264 -profile:v high -preset slow -crf 24 \
+            -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart \
+            "out/$OUT-preview-540x960.mp4"
+          node scripts/campaign50/bg-042/verify.mjs "out/$OUT.mp4" --frames=out/frames-mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+          node scripts/campaign50/bg-042/verify.mjs "out/$OUT-preview-540x960.mp4" --mobile | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload MP4s
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-bg-042-mp4
+          path: out/*.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-bg-042-frames
+          path: |
+            out/frames-bg-042/*.png
+            out/frames-mp4/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: balago-bg-042-mp4
+          path: out
+
+      - name: Publish preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: bg-042-ep42
+          MODE: ${{ needs.render.outputs.mode }}
+        run: |
+          ls -la out
+          NOTES="BalaGo-50 №42 / BG-042 «Кеңседен шашылыш кабар» — на просмотр владельцу (ещё не принят). Режим: ${MODE}. Ветка ${GITHUB_REF_NAME}, коммит ${GITHUB_SHA::7}, прогон ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}."
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes "$NOTES" --prerelease
+          else
+            gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "BalaGo №42 — BG-042 (на просмотр)" --notes "$NOTES" --prerelease --target "$GITHUB_SHA"
+          fi
+          gh release upload "$TAG" -R "$GITHUB_REPOSITORY" --clobber out/*.mp4
+          {
+            echo "### MP4 (${MODE})"
+            for f in out/*.mp4; do echo "- ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/$TAG/$(basename "$f")"; done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify the published files (download back from the release)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: bg-042-ep42
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+          mkdir -p check && cd check
+          gh release download "$TAG" -R "$GITHUB_REPOSITORY" --pattern "*.mp4" --clobber
+          for f in *.mp4; do
+            echo "== $f"
+            ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate,pix_fmt,sample_rate -show_entries format=duration,size -of compact "$f"
+            cmp "$f" "../out/$f" && echo "совпадает с отрендеренным файлом"
+          done | tee -a "$GITHUB_STEP_SUMMARY"
