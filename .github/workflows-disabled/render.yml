@@ -1,0 +1,145 @@
+name: Check & render BalaGoPromo
+
+on:
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint + TypeScript
+        run: npm run lint
+
+      # Полный FFmpeg нужен для PCM, atempo и loudnorm при обработке голоса.
+      - name: Install FFmpeg for audio processing
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Check audio processing + voice timing
+        run: npm run test:audio
+
+      # Подбор голоса: только если в корне есть voice-lab.json.
+      # Сэмплы и отчёт — в artifact balago-voice-lab, итоги — в логе.
+      - name: Voice lab (ElevenLabs voice test)
+        if: hashFiles('voice-lab.json') != ''
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/voice-lab.mjs
+
+      - name: Upload voice lab samples
+        if: always() && hashFiles('public/audio/voice-lab/report.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-voice-lab
+          path: public/audio/voice-lab/
+          retention-days: 30
+
+      # Готовая дорожка переиспользуется, пока не изменились текст/голос:
+      # тот же дубль в каждом прогоне и без лишнего расхода кредитов.
+      - name: Restore cached voiceover
+        uses: actions/cache@v4
+        with:
+          path: public/audio/voice
+          key: voice-v2-${{ vars.ELEVENLABS_VOICE_ID }}-${{ hashFiles('src/config.ts', 'scripts/generate-voice.mjs') }}
+
+      # Озвучка ИИ-голосом ElevenLabs. Нужен секрет репозитория
+      # ELEVENLABS_API_KEY (Settings → Secrets and variables → Actions).
+      # Без него ролик собирается с музыкой и эффектами, но без голоса.
+      - name: Generate voiceover (ElevenLabs)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+          ELEVENLABS_MODEL_ID: ${{ vars.ELEVENLABS_MODEL_ID }}
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run audio:voice 2>&1 | tee voice.log
+          if [ -f public/audio/voice/manifest.json ]; then
+            echo "### 🎙 Озвучка создана" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### ⚠️ Озвучки нет: секрет ELEVENLABS_API_KEY не задан — видео без голоса" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if grep -q "⚠" voice.log; then
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            grep "⚠" voice.log >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Install Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Render check frames (one per scene)
+        run: npm run stills
+
+      - name: Render MP4 (H.264)
+        run: npm run render -- --log=warn
+
+      - name: Inspect video
+        run: |
+          ls -la out out/frames
+          npx remotion ffprobe -v error -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,pix_fmt,sample_rate,channels -show_entries format=duration -of compact out/balago-promo.mp4
+
+      # Громкость итогового ролика: интегральная (LUFS) и пиковая (дБTP).
+      # Если озвучка есть, а ролик тише −20 LUFS — голос, скорее всего, пропал.
+      - name: Audio QC (loudness, peak, voice present)
+        shell: bash
+        run: |
+          set -o pipefail
+          ffmpeg -hide_banner -nostats -i out/balago-promo.mp4 -vn -af ebur128=peak=true -f null - 2>&1 | tail -12 | tee loudness.log
+          I=$(awk '/I:/ {print $2}' loudness.log | tail -1)
+          P=$(awk '/Peak:/ {print $2}' loudness.log | tail -1)
+          echo "### 🔊 Громкость: ${I} LUFS, пик ${P} дБTP" >> "$GITHUB_STEP_SUMMARY"
+          if awk -v p="$P" 'BEGIN{exit !(p > -0.5)}'; then
+            echo "::error::Перегруз: пик ${P} дБTP"; exit 1
+          fi
+          if [ -f public/audio/voice/manifest.json ] && awk -v i="$I" 'BEGIN{exit !(i < -20)}'; then
+            echo "::error::Ролик слишком тихий (${I} LUFS) — голос не слышен"; exit 1
+          fi
+
+      - name: Upload video
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-promo-mp4
+          path: out/balago-promo.mp4
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload voiceover
+        if: always() && hashFiles('public/audio/voice/manifest.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-voice
+          path: public/audio/voice/
+          retention-days: 30
+
+      - name: Upload check frames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balago-promo-frames
+          path: out/frames/*.png
+          if-no-files-found: warn
+          retention-days: 30
